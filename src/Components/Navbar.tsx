@@ -2,8 +2,9 @@ import React from 'react'
 // @ts-ignore
 import styled from "styled-components";
 import Container from '@mui/material/Container';
-import { Link } from '@mui/material';
+import { Link } from "react-router-dom";
 import { FaFacebookF, FaGoogle, FaLinkedinIn } from "react-icons/fa";
+import logo from './logo.png'
 
 
 export const Navbar = () => {
@@ -12,26 +13,26 @@ export const Navbar = () => {
 
             <SocialNavbar>
                 <Container maxWidth="lg" className="container">
-                    <Link href="/" className="iconLink"><FaFacebookF color="#252f3e" size={16} /></Link>
-                    <Link href="/" className="iconLink"><FaLinkedinIn color="#252f3e" size={16} /></Link>
-                    <Link href="/" className="iconLink"><FaGoogle color="#252f3e" size={16} /></Link>
+                    <Link to="/" className="iconLink"><FaFacebookF color="#252f3e" size={16} /></Link>
+                    <Link to="/" className="iconLink"><FaLinkedinIn color="#252f3e" size={16} /></Link>
+                    <Link to="/" className="iconLink"><FaGoogle color="#252f3e" size={16} /></Link>
                 </Container>
             </SocialNavbar>
 
         <Nav>
         <Container maxWidth="lg" className="container">
-       <div>Logo</div>
+       <div><img src="/images/logo.png" style={{height:"68px",width:"68px"}}></img></div>
        <div>
         <ul className="insideNav">
-            <li><Link  href={"/home"}>Home</Link></li>
-            <li><Link href="/aboutus" >About Us</Link></li>
-            <li><Link href="/ourservices">Our Services</Link></li>
-            <li><Link href="/works">Works</Link></li>
-            <li><Link href="/blogs">Blog</Link></li>
-            <li><Link href="/news">News</Link></li>
+            <li><Link to="/home">Home</Link></li>
+            <li><Link to="/aboutus" >About Us</Link></li>
+            <li><Link to="/ourservices">Our Services</Link></li>
+            <li><Link to="/works">Works</Link></li>
+            <li><Link to="/blogs">Blog</Link></li>
+            <li><Link to="/news">News</Link></li>
         </ul>
        </div>
-       <div>C</div>
+       <button className="btn">Set Meeting</button>
         </Container>
         </Nav>
 
@@ -63,6 +64,8 @@ const SocialNavbar = styled.div`
     margin-right: unset;
   }
 }
+
+
   }
 
 `
@@ -103,11 +106,39 @@ align-items:center;
 
 
     &:hover{
-        font-weight:700
+        font-weight:700;
     }
+
+   
   }
         }
     }
+
+    .btn{
+    display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 24px;
+  border-radius: 8px;
+  background-color: #5956e9;
+  border:0px;
+
+
+
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.43;
+  /* letter-spacing: 1px; */
+  text-align: center;
+  color: #fffcfc;
+
+  &:hover{
+    background-color: #34338a;
+    cursor: pointer;
+  }
+}
 
 }
 `
