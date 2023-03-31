@@ -4,6 +4,7 @@ import { Hero } from '../Components/Hero'
 import { HomepageScroll } from '../Container/Homepage/HomepageScroll'
 import { MidWhoBanner } from '../Container/Homepage/MidWhoBanner'
 import { ToolBanner } from '../Container/Homepage/ToolBanner'
+import { OurApproach } from '../Container/Homepage/OurApproach'
 
 export const Homepage = () => {
   return (
@@ -12,7 +13,8 @@ export const Homepage = () => {
    {/* <HomepageScroll /> */}
    <Counter />
    <MidWhoBanner />
-   <ToolBanner />
+   {/* <ToolBanner /> */}
+   <OurApproach />
    </div>
   )
 }

@@ -13,9 +13,9 @@ export const Navbar = () => {
 
             <SocialNavbar>
                 <Container maxWidth="lg" className="container">
-                    <Link href="/" className="iconLink"><FaFacebookF color="#252f3e" size={16} /></Link>
-                    <Link href="/" className="iconLink"><FaLinkedinIn color="#252f3e" size={16} /></Link>
-                    <Link href="/" className="iconLink"><FaGoogle color="#252f3e" size={16} /></Link>
+                    <Link to="/" className="iconLink"><FaFacebookF color="#252f3e" size={16} /></Link>
+                    <Link to="/" className="iconLink"><FaLinkedinIn color="#252f3e" size={16} /></Link>
+                    <Link to="/" className="iconLink"><FaGoogle color="#252f3e" size={16} /></Link>
                 </Container>
             </SocialNavbar>
 

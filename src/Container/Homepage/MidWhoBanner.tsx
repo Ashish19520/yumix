@@ -3,20 +3,20 @@ import React from 'react'
 import styled from "styled-components";
 
 export const MidWhoBanner = () => {
-  return (
-    <Banner>
-       <Container maxWidth="lg" className="container">
-           <div className='first'><img src="./images/Ecommerce_10.png"></img></div>
-           <div className='second'>
-            <h2>Who's Eservz?</h2>
-            <p>Eservz is a leading and globally renowned e-commerce and Amazon specialist agency that provides cutting edge, groundbreaking and truly revolutionary back office support to e-commerce sellers, business owners and vendors on multiple online channels especially Amazon.</p>
-           </div>
-        </Container>
-    </Banner>
-  )
+    return (
+        <Banner>
+            <Container maxWidth="lg" className="container">
+                <div className='first'><img src="./images/Ecommerce_10.png"></img></div>
+                <div className='second'>
+                    <h2>Who's Eservz?</h2>
+                    <p>Eservz is a leading and globally renowned e-commerce and Amazon specialist agency that provides cutting edge, groundbreaking and truly revolutionary back office support to e-commerce sellers, business owners and vendors on multiple online channels especially Amazon.</p>
+                </div>
+            </Container>
+        </Banner>
+    )
 }
 
-const Banner=styled.div`
+const Banner = styled.div`
     /* background-color: cadetblue; */
     .container{
         margin:auto;
@@ -24,7 +24,7 @@ const Banner=styled.div`
         .first{
             width: 50%;
             img{
-                width: 464px;
+                width: 100%;
                 height: 372px;
                 object-fit: contain;
             }

@@ -65,16 +65,18 @@ const Tool = styled.div`
             display: flex;
             /* align-items: center; */
             justify-content: space-between;
+           
+            width:100%;
 
             .fba{
                 width: 280px;
                  height: 280px;
                  border-radius: 500px;
                  background-color: #eff5fc;
-                 margin-right: 100px;
+                 
 
                  img{
-                    width: 228px;
+                    width: 100%;
                         height: 286px;
                         object-fit: contain;
                        
@@ -109,12 +111,14 @@ const Tool = styled.div`
                             }
 
                             .link{
+                                border-bottom: 1.4px solid #f90;
                                 font-size: 14px;
-  font-weight: 600;
-  line-height: 1.43;
-  letter-spacing: 1px;
-  text-align: left;
-  color: #3a3b44;
+                                font-weight: 600;
+                                 line-height: 1.43;
+                                letter-spacing: 1px;
+                                text-align: left;
+                                color: #3a3b44;
+                                
                             }
                     }
                  
@@ -125,10 +129,10 @@ const Tool = styled.div`
                 height: 280px; 
                 border-radius: 500px;
                 background-color: #e6e2ff;
-                margin-right: 100px;
+               
                 
                 img{
-                    width: 316px;
+                    width: 100%;
                     height: 258px;
                     object-fit: contain;
 
@@ -164,6 +168,7 @@ const Tool = styled.div`
                             }
 
                             .link{
+                                border-bottom: 1.4px solid #f90;
                                 font-size: 14px;
                                 font-weight: 600;
                                 line-height: 1.43;
@@ -181,7 +186,7 @@ const Tool = styled.div`
                 background-color: #ffe9ce;
 
                 img{
-                    width: 276px;
+                    width: 100%;
                     height: 276px;
                     object-fit: contain;
                        
@@ -217,6 +222,7 @@ const Tool = styled.div`
                             }
 
                             .link{
+                                border-bottom: 1.4px solid #f90;
                                 font-size: 14px;
                                 font-weight: 600;
                                 line-height: 1.43;
