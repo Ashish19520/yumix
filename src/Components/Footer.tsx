@@ -1,12 +1,14 @@
 import React from 'react'
 import '../Style/Footer.css';
+import { FaFacebookF, FaGoogle, FaLinkedinIn } from "react-icons/fa";
+import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <div>
         <footer>
             <div className="row">
                 <div className="col">
-                    <img src='' alt='logo' />
+                    <img src="/images/logo.png" alt='logo' />
                     <p>Eservz is a leading and globally renowned e-commerce and Amazon specialist agency.</p>
                 </div>
                 <div className="col">
@@ -33,10 +35,9 @@ export default function Footer() {
                         Uttar Pradesh, 221001, India
                     </p>
                     <div className="social-icons">
-                        <i></i>
-                        <i></i>
-                        <i></i>
-                        <i></i>
+                    <Link to="/" className="iconLink"><FaFacebookF color="#252f3e" size={16} /></Link>
+                    <Link to="/" className="iconLink"><FaLinkedinIn color="#252f3e" size={16} /></Link>
+                    <Link to="/" className="iconLink"><FaGoogle color="#252f3e" size={16} /></Link>
                     </div>
                 </div>
             </div>
