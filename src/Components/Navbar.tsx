@@ -45,7 +45,7 @@ export const Navbar = () => {
 const SocialNavbar = styled.div`
     height: 38px;
   
-  background-color: #eef1f8;
+    background-color: #eef1f8;
 
     display:flex;
     justify-content: center;
