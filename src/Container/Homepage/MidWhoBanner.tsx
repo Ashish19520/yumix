@@ -42,10 +42,13 @@ const Banner = styled.div`
       img {
         width: 100%;
         object-fit: contain;
+
+        
       }
 
       @media (max-width: 600px) {
         width: 100%;
+        align-items:center;
       }
     }
     .second {

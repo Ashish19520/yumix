@@ -59,8 +59,15 @@ export const People = () => {
 const Users = styled.div`
   background: #fffcfc;
   padding: 75px 0px;
+  
+  background-image: url("./images/Testimonials Bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+  
   .container {
     margin: auto;
+
+   
 
     .aboutus {
       .info {

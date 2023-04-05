@@ -9,6 +9,8 @@ import { Certificate } from '../Container/Homepage/Certificate'
 import { Tool } from '../Container/Homepage/Tool'
 import { People } from '../Container/Homepage/People'
 import { WhyUs } from '../Container/Homepage/WhyUs'
+import Footer from '../Components/Footer'
+import ContactForm from '../Components/contactForm'
 
 export const Homepage = () => {
   return (
@@ -20,9 +22,11 @@ export const Homepage = () => {
    <Certificate />
    <Counter />
    <Tool />
-   {/* <ToolBanner /> */}
    <People />
    <WhyUs />
+   <ContactForm />
+   <Footer />
+
    </div>
   )
 }

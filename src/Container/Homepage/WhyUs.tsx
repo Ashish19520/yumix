@@ -60,6 +60,10 @@ const WhyUsWrapper = styled.div`
       text-align: left;
       color: #000;
       margin-bottom: 154px;
+
+      @media (max-width: 600px) {
+          text-align:center;
+        }
     }
 
     .wrapper {
@@ -67,15 +71,26 @@ const WhyUsWrapper = styled.div`
 
       .left-box {
         width: 40%;
+        img {
+          width: 100%;
+        }
+
+        @media (max-width: 600px) {
+          display: none;
+        }
       }
 
       .right-box {
         width: 60%;
         padding-left: 150px;
 
+        @media (max-width: 600px) {
+          width: 100%;
+        }
+
         .title {
-            margin-top:44px;
-            margin-bottom:8px;
+          margin-top: 44px;
+          margin-bottom: 8px;
           font-size: 24px;
           font-weight: 500;
           line-height: 1.33;
@@ -83,13 +98,12 @@ const WhyUsWrapper = styled.div`
           text-align: left;
           color: #3a3b44;
 
-
-          &:first-of-type{
-        margin-top:unset;
+          &:first-of-type {
+            margin-top: unset;
           }
         }
         .subTitle {
-            max-width:70%;
+          max-width: 70%;
           font-size: 14px;
           line-height: 1.29;
           letter-spacing: 0.1px;

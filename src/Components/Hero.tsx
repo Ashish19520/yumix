@@ -23,7 +23,7 @@ export const Hero = () => {
         </div>
         <div className="btn">
           <p>Scroll to explore more</p>
-          <button>Click</button>
+          {/* <button>Click</button> */}
         </div>
       </Container>
     </HeroLayout>
@@ -32,24 +32,34 @@ export const Hero = () => {
 
 const HeroLayout = styled.div`
   background: #fffcfc;
+
+
   .container {
     background-image: url("./images/Hero component.png");
     background-repeat: no-repeat;
     background-position: 0% 75%;
 
-    @media (max-width:900px){
+    @media (max-width: 1100px) {
       background-image: unset;
-}
+    }
 
-    @media (max-width:600px){
-      background-image: unset;
-}
+   
 
     .outter {
       display: flex;
 
+      @media (max-width: 600px) {
+            flex-direction:column;
+            align-items:center;
+          }
+
       .titleBox {
         max-width: 700px;
+        width: 70%;
+
+        @media (max-width: 600px) { 
+            width:100%;
+          }
 
         h1 {
           font-size: 40px;
@@ -58,6 +68,10 @@ const HeroLayout = styled.div`
           color: #3a3b44;
           margin-top: 80px;
           margin-bottom: 20px;
+
+          @media (max-width: 600px) {
+            text-align:center;
+          }
         }
 
         p {
@@ -67,13 +81,26 @@ const HeroLayout = styled.div`
           line-height: 1.5;
           text-align: left;
           color: #828490;
+
+          @media (max-width: 600px) {
+            text-align:center;
+            max-width: 100%;
+          }
         }
       }
 
       .imageBox {
         margin-top: 20px;
+        width: 40%;
         img {
           width: 100%;
+
+          /* @media (max-width: 900px) {
+            display: none;
+          } */
+          /* @media (max-width: 600) {
+            display: none;
+          } */
           /* height: 534px;
             object-fit: cover; */
         }

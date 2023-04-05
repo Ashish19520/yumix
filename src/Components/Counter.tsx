@@ -88,6 +88,11 @@ const Count = styled.div`
         flex-wrap: wrap;
       }
 
+      /* @media (max-width: 901px) {
+          border-right: unset;
+          padding:0px 100px;
+        } */
+
       @media (max-width: 600px) {
         flex-direction: column;
         width: 100%;
