@@ -9,7 +9,7 @@ export default function OurLeaders() {
             <Container  maxWidth="lg" className="container">
                 <div className="leaders">
                     <div className="leadersHeading">
-                        <h3>Our Leaders</h3>
+                        <h1>Our Leaders</h1>
                     </div>
                     <div className="leaderImage">
                         <div className="leaderImage1">
@@ -38,6 +38,9 @@ const Banner = styled.div`
             display:flex;
             margin-top:20px;
             justify-content:center;
+            .leaderImage2{
+                margin-left:40px
+            }
         }
     }
 `

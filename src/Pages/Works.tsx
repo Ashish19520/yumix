@@ -1,0 +1,40 @@
+import React from "react";
+import { OurWorks } from "../Container/Work/OurWorks";
+import { Counter } from "../Components/Counter";
+import styled from "styled-components";
+import ContactForm from "../Components/contactForm";
+import Footer from "../Components/Footer";
+
+export const Works = () => {
+  return (
+    <div>
+      <WorksWrapper>
+        <div className="banner">
+          <OurWorks />
+        </div>
+        <div className="counter">
+          <Counter />
+        </div>
+        <ContactForm />
+        <Footer />
+      </WorksWrapper>
+    </div>
+  );
+};
+
+const WorksWrapper = styled.div`
+  background: #fffcfc;
+
+
+  .banner {
+    margin-bottom: 120px;
+
+    @media (max-width: 600px) {
+        padding-bottom: 0px;
+    }
+  }
+
+  .counter{
+    padding-bottom:60px;
+  }
+`;

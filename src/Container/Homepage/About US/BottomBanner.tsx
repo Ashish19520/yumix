@@ -35,9 +35,7 @@ export default function BottomBanner() {
 
 const Banner = styled.div`
     .container{
-        width: 1280px;
-        height: 720px;
-        margin: 307px 0 0;
+        width: 100%;
         padding: 24px 16px 108px 0;
         background-color: #fffcfc;
         display:flex;
@@ -53,6 +51,7 @@ const Banner = styled.div`
             }
             .bannerButton{
                 display:flex;
+                padding-top:10px;
                 .btn-our-portfolio {
                     margin-left:10px;
                     width: 100%;
@@ -81,6 +80,7 @@ const Banner = styled.div`
                     border-radius: 8px;
                     border: solid 0.8px #5956E9;
                     background-color: #5956E9;
+                    color:white;
                 }
             }
         }

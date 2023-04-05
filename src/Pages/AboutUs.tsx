@@ -2,6 +2,7 @@ import React from 'react'
 import ContactForm from '../Components/contactForm'
 import { Counter } from '../Components/Counter'
 import Footer from '../Components/Footer'
+import BannerList from '../Container/Homepage/About US/BannerList'
 import BottomBanner from '../Container/Homepage/About US/BottomBanner'
 import MidBanner from '../Container/Homepage/About US/MidBanner'
 import OurLeaders from '../Container/Homepage/About US/OurLeaders'
@@ -11,6 +12,7 @@ export default function AboutUs() {
   return (
     <div>
       <TopBanner />
+      <BannerList />
       <MidBanner />
       <Counter />
       
