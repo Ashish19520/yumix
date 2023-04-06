@@ -24,8 +24,8 @@ export const Homepage = () => {
       <Certificate />
       <Counter />
       <Tool />
-      <People />
       <WhyUs />
+      <People />
       <FotterArea>
         <div className="cf">
         <ContactForm />

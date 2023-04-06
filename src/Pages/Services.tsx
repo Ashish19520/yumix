@@ -11,8 +11,8 @@ export const Services = () => {
         <OurServices />
         <ServiceWeProvide />
         <ServicesBanner />
-        {/* <ContactForm />
-        <Footer /> */}
+        <ContactForm />
+        <Footer />
         
     </div>
   )
