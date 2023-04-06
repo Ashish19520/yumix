@@ -8,8 +8,8 @@ export default function Footer() {
         <footer>
             <div className="row">
                 <div className="col">
-                    <img src="/images/logo.png" alt='logo' />
-                    <p>Eservz is a leading and globally renowned e-commerce and Amazon specialist agency.</p>
+                    <img src="/images/logo.png" alt='logo' style={{height:"68px",width:"68px"}}/>
+                    <p className='content'>Eservz is a leading and globally renowned e-commerce and Amazon specialist agency.</p>
                 </div>
                 <div className="col">
                     <h3>Quick Link</h3>
@@ -31,7 +31,7 @@ export default function Footer() {
                 </div>
                 <div className="col">
                     <h3>Address</h3>
-                    <p>Bighatch Consulting Private Limited 88/1, H.K.D.Compound, G.T. Road,Mahespur, Lahartara, Varanasi,
+                    <p className='address'>Bighatch Consulting Private Limited 88/1, H.K.D.Compound, G.T. Road,Mahespur, Lahartara, Varanasi,
                         Uttar Pradesh, 221001, India
                     </p>
                     <div className="social-icons">
