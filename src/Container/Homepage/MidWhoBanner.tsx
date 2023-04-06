@@ -52,6 +52,7 @@ const Banner = styled.div`
       }
     }
     .second {
+      font-family: Montserrat;
       width: 60%;
       padding-left: 80px;
       display: flex;

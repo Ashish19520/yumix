@@ -12,13 +12,12 @@ import { AiOutlineClose } from "react-icons/ai";
 export const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
-  
-  useEffect(()=>{
-    console.log("first",drawerOpen)
+  useEffect(() => {
+    console.log("first", drawerOpen);
     // setDrawerOpen(!drawerOpen)
-    
-    console.log("check",drawerOpen)
-  },[])
+
+    console.log("check", drawerOpen);
+  }, []);
 
   return (
     <div>
@@ -82,10 +81,14 @@ export const Navbar = () => {
             <AiOutlineClose />
           </button>
           <div className="navbar">
-            <ul className="insideNav" onClick={()=>{setDrawerOpen(!drawerOpen)
-            }}>
+            <ul
+              className="insideNav"
+              onClick={() => {
+                setDrawerOpen(!drawerOpen);
+              }}
+            >
               <li>
-                <Link to="/" >Home</Link>
+                <Link to="/">Home</Link>
               </li>
               <li>
                 <Link to="/aboutus">About Us</Link>
@@ -115,13 +118,12 @@ export const Navbar = () => {
 const SocialNavbar = styled.div`
   height: 38px;
 
-  
   display: flex;
   justify-content: center;
   align-items: center;
-  position:fixed;
-  width:100%;
-  z-index:999;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
   background-color: #eef1f8;
   .container {
     margin: auto;
@@ -157,7 +159,7 @@ const Nav = styled(Grid)<NavProps>`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top:40px;
+    margin-top: 40px;
 
     .hamburger {
       display: none;
@@ -175,6 +177,7 @@ const Nav = styled(Grid)<NavProps>`
       display: flex;
       align-items: center;
       list-style: none;
+      font-family: Montserrat;
 
       @media (max-width: 900px) {
         display: none;
@@ -210,6 +213,7 @@ const Nav = styled(Grid)<NavProps>`
       background-color: #5956e9;
       border: 0px;
 
+      font-family: Montserrat;
       font-size: 14px;
       font-weight: 500;
       line-height: 1.43;
@@ -244,7 +248,7 @@ const Nav = styled(Grid)<NavProps>`
       @media (max-width: 900px) {
         display: block;
       }
-      margin-top:50px;
+      margin-top: 50px;
       margin-left: auto;
       background: unset;
       border: 0px;
@@ -253,22 +257,20 @@ const Nav = styled(Grid)<NavProps>`
       padding: 10px;
     }
 
-    .navbar{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      margin-top:80px;
-      .insideNav{
-        display:flex;
-        flex-direction:column;
-        justify-content:space-evenly;
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 80px;
+      .insideNav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
         
-        
-       a{
-        color: rgb(48, 48, 48);
-       }
-        
-
+        a {
+          font-family: Montserrat;
+          color: rgb(48, 48, 48);
+        }
       }
     }
   }

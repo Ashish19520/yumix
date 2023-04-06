@@ -144,6 +144,7 @@ const ToolDiv = styled.div`
               margin:8px 0px;
             }
             .subTitle {
+              font-family: Montserrat;
               font-size: 16px;
               line-height: 1.5;
               letter-spacing: 0.25px;

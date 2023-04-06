@@ -68,15 +68,14 @@ const MidBanner = styled.div`
         width: 100%;
 
         @media (max-width: 900px) {
-        
-        flex-wrap:wrap;
-        align-items:center;
-        justify-content:center;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
         }
-        
+
         @media (max-width: 600px) {
-        flex-direction:column;
-        width:100%;
+          flex-direction: column;
+          width: 100%;
         }
 
         .singleicon {
@@ -97,6 +96,7 @@ const MidBanner = styled.div`
           }
 
           p {
+            font-family: Montserrat;
             font-size: 16px;
             max-width: 80%;
             line-height: 1.5;
