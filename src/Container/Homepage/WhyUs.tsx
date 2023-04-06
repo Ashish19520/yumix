@@ -62,8 +62,8 @@ const WhyUsWrapper = styled.div`
       margin-bottom: 154px;
 
       @media (max-width: 600px) {
-          text-align:center;
-        }
+        text-align: center;
+      }
     }
 
     .wrapper {
@@ -103,6 +103,7 @@ const WhyUsWrapper = styled.div`
           }
         }
         .subTitle {
+          font-family: Montserrat;
           max-width: 70%;
           font-size: 14px;
           line-height: 1.29;

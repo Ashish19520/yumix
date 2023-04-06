@@ -17,7 +17,7 @@ export default function TopBanner() {
                     </div>
                 </div>
                 <div className="bannerImage">
-                    <img src='/images/Illustration.png' style={{width:"80%",float:"right"}} />
+                    <img src='/images/Illustrations.png' style={{width:"80%",float:"right"}} />
                 </div>
             </Container>
         </Banner>

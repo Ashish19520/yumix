@@ -68,7 +68,7 @@ const Certif = styled.div`
       }
 
       .subtitle {
-        /* font-family: Montserrat; */
+        font-family: Montserrat;
         font-size: 16px;
         line-height: 1.5;
         letter-spacing: 0.25px;
