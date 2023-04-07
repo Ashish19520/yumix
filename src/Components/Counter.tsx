@@ -26,7 +26,7 @@ export const Counter = () => {
                 <div className="outter">
                   <h2>
                     {counterOn && (
-                      <CountUp start={0} end={20} duration={1} delay={0} />
+                      <CountUp start={0} end={20} duration={2} delay={0} />
                     )}
                     K+
                   </h2>
@@ -35,7 +35,7 @@ export const Counter = () => {
                 <div className="outter">
                   <h2>
                     {counterOn && (
-                      <CountUp start={0} end={15} duration={1} delay={0} />
+                      <CountUp start={0} end={15} duration={2} delay={0} />
                     )}
                     K+
                   </h2>
@@ -44,7 +44,7 @@ export const Counter = () => {
                 <div className="outter">
                   <h2>
                     {counterOn && (
-                      <CountUp start={0} end={20} duration={1} delay={0} />
+                      <CountUp start={0} end={20} duration={2} delay={0} />
                     )}
                     0+
                   </h2>
@@ -53,7 +53,7 @@ export const Counter = () => {
                 <div className="outter">
                   <h2>
                     {counterOn && (
-                      <CountUp start={0} end={18} duration={1} delay={0} />
+                      <CountUp start={0} end={18} duration={2} delay={0} />
                     )}
                     K+
                   </h2>
