@@ -6,6 +6,7 @@ import AboutUs from '../Pages/AboutUs';
 import { Homepage } from '../Pages/Homepage';
 import { Works } from '../Pages/Works';
 import { Services } from '../Pages/Services';
+import { News } from '../Pages/News';
 import Blog from '../Pages/Blog';
 
 
@@ -23,7 +24,7 @@ const MainRouter = () => {
         <Route path="/ourservices" element={<Services />} />
         <Route path="/works" element={<Works />} />
         <Route path="/blogs" element={<Blog />} />
-        <Route path="/news" element={<h1>News</h1>} />
+        <Route path="/news" element={<News />} />
       </Routes>
       
     </div>

@@ -15,7 +15,7 @@ export const OurServices = () => {
             business.
           </div>
           <div className="img-block">
-            <img src="./images/Illustration.png"></img>
+            <img src="./images/IllustrationService.png"></img>
           </div>
         </div>
       </Container>
