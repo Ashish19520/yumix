@@ -3,35 +3,53 @@ import React from "react";
 import styled from "styled-components";
 
 export const OurApproach = () => {
+  
+  
+  // const observer = new IntersectionObserver((entries) => {
+  //   entries.forEach((entry) => {
+  //     if (entry.isIntersecting) {
+  //       console.log("Enterin into zoe")
+  //       entry.target.classList.add("show");
+  //     } else {
+  //       entry.target.classList.remove("show");
+  //     }
+  //   });
+  // });
+
+  // const hiddenElements = document.querySelectorAll(".hidden");
+  // hiddenElements.forEach((el) => observer.observe(el));
+
   return (
     <MidBanner>
       <Container maxWidth="lg" className="container">
-        <div className="banner">
-          <h2>Our Approach</h2>
-          <div className="icons">
-            <div className="singleicon">
-              <img src="./images/A1.png"></img>
-              <p>Schedule a Meeting</p>
-            </div>
+        <div className="">
+          <div className="banner">
+            <h2>Our Approach</h2>
+            <div className="icons">
+              <div className="singleicon">
+                <img src="./images/A1.png"></img>
+                <p>Schedule a Meeting</p>
+              </div>
 
-            <div className="singleicon">
-              <img src="./images/A2.png"></img>
-              <p>Onboarding Process</p>
-            </div>
+              <div className="singleicon">
+                <img src="./images/A2.png"></img>
+                <p>Onboarding Process</p>
+              </div>
 
-            <div className="singleicon">
-              <img src="./images/A3.png"></img>
-              <p>Hire your amazon expert</p>
-            </div>
+              <div className="singleicon">
+                <img src="./images/A3.png"></img>
+                <p>Hire your amazon expert</p>
+              </div>
 
-            <div className="singleicon">
-              <img src="./images/A4.png"></img>
-              <p>Manage your business</p>
-            </div>
+              <div className="singleicon">
+                <img src="./images/A4.png"></img>
+                <p>Manage your business</p>
+              </div>
 
-            <div className="singleicon">
-              <img src="./images/A5.png"></img>
-              <p>Focus on strategies and growth</p>
+              <div className="singleicon">
+                <img src="./images/A5.png"></img>
+                <p>Focus on strategies and growth</p>
+              </div>
             </div>
           </div>
         </div>
@@ -46,6 +64,16 @@ const MidBanner = styled.div`
 
   .container {
     margin: auto;
+
+    .hidden {
+      opacity: 0;
+      
+    }
+
+    .show {
+      opacity: 1;
+      transition: all 1s;
+    }
 
     .banner {
       display: flex;
@@ -88,6 +116,11 @@ const MidBanner = styled.div`
 
           &:last-of-type {
             margin-right: unset;
+          }
+
+          &:hover{
+            transition: all .2s ease-in-out;
+            transform: scale(1.1);
           }
 
           img {
