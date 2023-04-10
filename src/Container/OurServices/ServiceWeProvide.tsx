@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 export const ServiceWeProvide = () => {
   return (
-    <div>
+    <div id="digitalMedia">
       <ServiceWeProvideWrapper>
         <Container maxWidth="lg" className="container">
           <div className="title-box">

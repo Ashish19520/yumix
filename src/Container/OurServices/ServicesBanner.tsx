@@ -6,7 +6,7 @@ export const ServicesBanner = () => {
   return (
     <ServiceBanner>
       <Container maxWidth="lg" className="container">
-        <div className="box-1">
+        <div className="box-1" id="analytics">
           <div className="img-box">
             <img src="./images/Group 38606.png"></img>
           </div>
@@ -24,7 +24,7 @@ export const ServicesBanner = () => {
             <button className="btn">View More</button>
           </div>
         </div>
-        <div className="box-2">
+        <div className="box-2" id="customerExperience">
           <div className="text-box">
             <div className="title">Customer Experience</div>
             <div className="subtitle">
