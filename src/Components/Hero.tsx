@@ -1,24 +1,88 @@
 import Container from "@mui/material/Container";
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const Hero = () => {
+  const typingContainer = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.03,
+      },
+    },
+  };
+  const typingText = {
+    hidden: { opacity: 0, y: "-20px" },
+    show: {
+      opacity: 1,
+      y: "0",
+      transition: {
+        ease: "easeInOut",
+      },
+    },
+  };
+
+  const explainProduct = {
+    hidden: { opacity: 0, y: "-20px" },
+    show: {
+      opacity: 1,
+      y: "0",
+      transition: {
+        delay: 2.2,
+        ease: "easeInOut",
+      },
+    },
+  };
+
+  const imgProduct1 = {
+    hidden: {
+      opacity: 0,
+      y: "400px",
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        delay: 2.5,
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
     <HeroLayout>
       <Container maxWidth="lg" className="container">
         <div className="outter">
           <div className="titleBox">
-            <h1>
-              The complete multi-channel solution for Brands and Retailers
-            </h1>
-            <p>
+            <motion.h1
+              variants={typingContainer}
+              initial="hidden"
+              animate="show"
+            >
+              {Array.from(
+                "The complete multi-channel solution for Brands and Retailers"
+              ).map((word, i) => (
+                <motion.span key={i} variants={typingText}>
+                  {word}
+                </motion.span>
+              ))}
+            </motion.h1>
+            <motion.p variants={explainProduct} initial="hidden" animate="show">
               With our complete multi-channel solution, you'll have access to
               everything you need to succeed in today's competitive online
               marketplace.
-            </p>
+            </motion.p>
           </div>
           <div className="imageBox">
-            <img src="./images/illustration 1.png"></img>
+            <motion.img
+              src="./images/illustration 1.png"
+              variants={imgProduct1}
+              initial="hidden"
+              animate="show"
+            ></motion.img>
           </div>
         </div>
         <div className="btn">
@@ -33,33 +97,30 @@ export const Hero = () => {
 const HeroLayout = styled.div`
   background: #fffcfc;
 
-
   .container {
-    background-image: url("./images/Hero component.png");
+    /* background-image: url("./images/Hero component.png");
     background-repeat: no-repeat;
-    background-position: 0% 75%;
+    background-position: 0% 75%; */
 
     @media (max-width: 1100px) {
       background-image: unset;
     }
 
-   
-
     .outter {
       display: flex;
 
       @media (max-width: 600px) {
-            flex-direction:column;
-            align-items:center;
-          }
+        flex-direction: column;
+        align-items: center;
+      }
 
       .titleBox {
         max-width: 700px;
         width: 70%;
 
-        @media (max-width: 600px) { 
-            width:100%;
-          }
+        @media (max-width: 600px) {
+          width: 100%;
+        }
 
         h1 {
           font-size: 40px;
@@ -70,7 +131,7 @@ const HeroLayout = styled.div`
           margin-bottom: 20px;
 
           @media (max-width: 600px) {
-            text-align:center;
+            text-align: center;
           }
         }
 
@@ -83,7 +144,7 @@ const HeroLayout = styled.div`
           color: #828490;
 
           @media (max-width: 600px) {
-            text-align:center;
+            text-align: center;
             max-width: 100%;
           }
         }

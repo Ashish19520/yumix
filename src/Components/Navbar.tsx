@@ -8,6 +8,7 @@ import logo from "./logo.png";
 import { Grid } from "@mui/material";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { AiOutlineClose } from "react-icons/ai";
+import { motion } from "framer-motion";
 
 export const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -18,6 +19,29 @@ export const Navbar = () => {
 
     console.log("check", drawerOpen);
   }, []);
+
+  const navAnimation = {
+    show: {
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 3.8,
+        ease: "easeInOut",
+      },
+    },
+  };
+  const navText = {
+    hidden: {
+      opacity: 0,
+      y: "-10px",
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        ease: "easeInOut",
+      },
+    },
+  };
 
   return (
     <div>
@@ -37,35 +61,50 @@ export const Navbar = () => {
 
       <Nav drawer={drawerOpen}>
         <Container maxWidth="lg" className="container">
-          <div>
-            <img
+          <motion.div
+            className="insideNav"
+            variants={navAnimation}
+            initial="hidden"
+            animate="show"
+          >
+            <motion.img
               src="/images/logo.png"
               style={{ height: "68px", width: "68px" }}
-            ></img>
-          </div>
+              variants={navText}
+            ></motion.img>
+          </motion.div>
           <div>
-            <ul className="insideNav">
-              <li>
+            <motion.ul
+              className="insideNav"
+              variants={navAnimation}
+              initial="hidden"
+              animate="show"
+            >
+              <motion.li variants={navText}>
                 <Link to="/">Home</Link>
-              </li>
-              <li>
+              </motion.li>
+              <motion.li variants={navText}>
                 <Link to="/aboutus">About Us</Link>
-              </li>
-              <li>
+              </motion.li>
+              <motion.li variants={navText}>
                 <Link to="/ourservices">Our Services</Link>
-              </li>
-              <li>
+              </motion.li>
+              <motion.li variants={navText}>
                 <Link to="/works">Works</Link>
-              </li>
-              <li>
+              </motion.li>
+              <motion.li variants={navText}>
                 <Link to="/blogs">Blog</Link>
-              </li>
-              <li>
+              </motion.li>
+              <motion.li variants={navText}>
                 <Link to="/news">News</Link>
-              </li>
-            </ul>
+              </motion.li>
+            </motion.ul>
           </div>
-          <button className="btn">Set Meeting</button>
+          <motion.div variants={navAnimation} initial="hidden" animate="show">
+            <motion.button className="btn" variants={navText}>
+              <span>Set Meeting</span>
+            </motion.button>
+          </motion.div>
           <button
             onClick={() => setDrawerOpen(!drawerOpen)}
             className="hamburger"
@@ -266,7 +305,7 @@ const Nav = styled(Grid)<NavProps>`
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-        
+
         a {
           font-family: Montserrat;
           color: rgb(48, 48, 48);

@@ -1,7 +1,8 @@
 import React from 'react'
 import '../Style/Footer.css';
 import { FaFacebookF, FaGoogle, FaLinkedinIn } from "react-icons/fa";
-import { TfiLocationPin } from "react-icons/tfi";
+import { HiLocationMarker } from "react-icons/hi";
+
 import { Link } from "react-router-dom";
 //@ts-ignore
 import { HashLink } from 'react-router-hash-link';
@@ -33,13 +34,11 @@ export default function Footer() {
                     <HashLink to='#digitalMedia' smooth style={{ textDecoration:'none'}}><p className='services'>Digital Media</p></HashLink>
                     <HashLink to='#analytics' smooth style={{ textDecoration:'none'}}><p className='services'>Analytics</p></HashLink>
                     <HashLink to='#customerExperience' smooth style={{ textDecoration:'none'}}><p className='services'>Customer Experience</p></HashLink>
-                    <p className='services'>Inventory planning & Managment</p>
-                    <p className='services'>Pricing Strategy & Management</p>
-                    <p className='services'>Keywords Analysis</p>
+                    
                 </div>
                 <div className="col">
                     <h3>Address</h3>
-                    <p className='address'><span style={{marginRight:'8px'}}> <TfiLocationPin color='#rgb(37, 47, 62)'/></span>Bighatch Consulting Private Limited 88/1, H.K.D.Compound, G.T. Road,Mahespur, Lahartara, Varanasi,
+                    <p className='address'><span style={{marginRight:'4px'}}> <HiLocationMarker size={18}color='#rgb(37, 47, 62)'/></span>Bighatch Consulting Private Limited 88/1, H.K.D.Compound, G.T. Road,Mahespur, Lahartara, Varanasi,
                         Uttar Pradesh, 221001, India
                     </p>
                     <div className="social-icons">
