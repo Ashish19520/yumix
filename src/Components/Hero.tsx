@@ -1,7 +1,8 @@
 import Container from "@mui/material/Container";
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { AiOutlineDown } from "react-icons/ai";
 
 export const Hero = () => {
   const typingContainer = {
@@ -52,6 +53,78 @@ export const Hero = () => {
     },
   };
 
+  useEffect(() => {
+    const card = document.querySelector(".imageBox");
+    const container = document.querySelector(".outter");
+    const rock = document.querySelector(".rock");
+    const subject = document.querySelector(".subject");
+    const shopify = document.querySelector(".shopify");
+
+    container?.addEventListener("mousemove", (e) => {
+      //@ts-ignore
+      console.log(e.pageX);
+      //@ts-ignore
+      let xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+      //@ts-ignore
+      let yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+      //@ts-ignore
+      // card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+
+      //@ts-ignore
+      // subject.style.transform = `rotateY(${xAxis + 2}deg) rotateX(${
+      //   yAxis + 2
+      // }deg)`;
+
+      //@ts-ignore
+      rock.style.transform = `rotateY(${xAxis - 5}deg) rotateX(${
+        yAxis - 5
+      }deg)`;
+
+      //@ts-ignore
+      shopify.style.transform = `rotateY(${xAxis + 20}deg) rotateX(${
+        yAxis + 20
+      }deg)`;
+
+      card?.addEventListener("mouseenter", (e) => {
+        //@ts-ignore
+        card.style.transition = `none`;
+        //@ts-ignore
+        rock.style.transform = "translateZ(150px)";
+
+        //@ts-ignore
+        subject.style.transform = "translateZ(75px)";
+
+        //@ts-ignore
+        shopify.style.transform = "translateZ(150px)";
+      });
+
+      card?.addEventListener("mouseleave", (e) => {
+        //@ts-ignore
+        card.style.transition = `all 0.5s ease`;
+        //@ts-ignore
+        card.style.transform = `rotateY(0deg) rotateX(0deg)`;
+
+        //@ts-ignore
+        subject.style.transform = `rotateY(0deg) rotateX(0deg)`;
+
+        //@ts-ignore
+        rock.style.transform = `rotateY(0deg) rotateX(0deg)`;
+
+        //@ts-ignore
+        shopify.style.transform = `rotateY(0deg) rotateX(0deg)`;
+
+        //@ts-ignore
+        rock.style.transform = "translateZ(0px)";
+
+        //@ts-ignore
+        subject.style.transform = "translateZ(0px)";
+
+        //@ts-ignore
+        shopify.style.transform = "translateZ(0px)";
+      });
+    });
+  }, []);
+
   return (
     <HeroLayout>
       <Container maxWidth="lg" className="container">
@@ -77,16 +150,59 @@ export const Hero = () => {
             </motion.p>
           </div>
           <div className="imageBox">
-            <motion.img
-              src="./images/illustration 1.png"
+            <motion.div
+              className="circle"
               variants={imgProduct1}
               initial="hidden"
               animate="show"
-            ></motion.img>
+            >
+              <motion.img
+                src="./images/3 - Brisa Shops Online@3x.png"
+                variants={imgProduct1}
+                initial="hidden"
+                animate="show"
+                className="subject"
+              ></motion.img>
+              <motion.img
+                src="./images/Rock2@3x.png"
+                variants={imgProduct1}
+                initial="hidden"
+                animate="show"
+                className="rock"
+              ></motion.img>
+              <motion.img
+                src="./images/partner-shopify@3x.png"
+                variants={imgProduct1}
+                initial="hidden"
+                animate="show"
+                className="shopify"
+              ></motion.img>
+              <motion.img
+                src="./images/google-partner@3x.png"
+                variants={imgProduct1}
+                initial="hidden"
+                animate="show"
+                className="google"
+              ></motion.img>
+              <motion.img
+                src="./images/partner-certified@3x.png"
+                variants={imgProduct1}
+                initial="hidden"
+                animate="show"
+                className="certified"
+              ></motion.img>
+            </motion.div>
           </div>
         </div>
         <div className="btn">
           <p>Scroll to explore more</p>
+          <a href="#demo">
+            <div className="box">
+              <span>
+                <AiOutlineDown color="rgb(176, 186, 199)" />
+              </span>
+            </div>
+          </a>
           {/* <button>Click</button> */}
         </div>
       </Container>
@@ -96,11 +212,16 @@ export const Hero = () => {
 
 const HeroLayout = styled.div`
   background: #fffcfc;
+  margin-top: 20px;
 
+  @media (max-width: 600px) {
+    margin-top: -60px;
+  }
   .container {
     /* background-image: url("./images/Hero component.png");
     background-repeat: no-repeat;
     background-position: 0% 75%; */
+    perspective: 1000px;
 
     @media (max-width: 1100px) {
       background-image: unset;
@@ -116,7 +237,7 @@ const HeroLayout = styled.div`
 
       .titleBox {
         max-width: 700px;
-        width: 70%;
+        width: 60%;
 
         @media (max-width: 600px) {
           width: 100%;
@@ -153,17 +274,69 @@ const HeroLayout = styled.div`
       .imageBox {
         margin-top: 20px;
         width: 40%;
-        img {
-          width: 100%;
+        position: relative;
 
-          /* @media (max-width: 900px) {
-            display: none;
-          } */
-          /* @media (max-width: 600) {
-            display: none;
-          } */
-          /* height: 534px;
-            object-fit: cover; */
+        transform-style: preserve-3d;
+        transition: all 0.5s ease;
+
+        @media (max-width: 600px) {
+          width: 100%;
+        }
+
+        .circle {
+          aspect-ratio: 1;
+          border-radius: 500px;
+          background-color: #eff5fc;
+          /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+         
+          .rock {
+            width: 30%;
+            position: absolute;
+            left: 0;
+            top: -40px !important;
+
+            @media (max-width: 600px) {
+              display: none;
+            }
+          }
+
+          .shopify {
+            width: 38%;
+            position: absolute;
+            right: -50px;
+            top: 120px !important;
+
+            @media (max-width: 600px) {
+              display: none;
+            }
+          }
+
+          .google {
+            width: 38%;
+            position: absolute;
+            left: -120px;
+            top: 170px !important;
+            @media (max-width: 600px) {
+              display: none;
+            }
+          }
+
+          .certified {
+            width: 38%;
+            position: absolute;
+            left: 0;
+            top: 350px !important;
+            @media (max-width: 600px) {
+              display: none;
+            }
+          }
+
+          img {
+            width: 90%;
+            padding: 25px;
+
+           
+          }
         }
       }
     }
@@ -172,11 +345,46 @@ const HeroLayout = styled.div`
       display: flex;
       flex-direction: column;
       align-items: center;
-
+      margin-top: -20px;
       p {
         font-size: 16px;
         letter-spacing: 0.44px;
         color: #b0bac7;
+      }
+
+      a {
+        text-decoration: none;
+        .box {
+          span {
+            display: block;
+            border-right: 2px solid #fff;
+            border-bottom: 2px solid #fff;
+            /* transform: rotate(45deg); */
+            margin: -14px;
+            animation: animate 2s infinite;
+
+            &:nth-child(2) {
+              animation-delay: -0.2s;
+            }
+
+            &:nth-child(3) {
+              animation-delay: -0.4s;
+            }
+          }
+
+          @keyframes animate {
+            0% {
+              opacity: 0;
+            }
+            50% {
+              opacity: 1;
+              transform: translate(10px, 10px);
+            }
+            100% {
+              opacity: 0;
+            }
+          }
+        }
       }
     }
   }

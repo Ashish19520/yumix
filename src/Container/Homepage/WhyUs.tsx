@@ -1,8 +1,35 @@
 import { Container } from "@mui/material";
-import React from "react";
+import React,{useEffect} from "react";
 import styled from "styled-components";
 
+
+
 export const WhyUs = () => {
+
+
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver((entries) => {
+  //     entries.forEach((entry) => {
+  //       if (entry.isIntersecting) {
+  //         console.log("enter")
+  //         entry.target.classList.add("highlight");
+  //         entry.target.classList.add("show");        
+  //       } else {
+  //         console.log("remove")
+  //         entry.target.classList.remove("highlight");
+  //       }
+  //     });
+  //   });
+
+  //   const hiddenElements = document.querySelectorAll(".one");
+  //   hiddenElements.forEach((el) => observer.observe(el));
+
+  //   const hiddenElementstwo = document.querySelectorAll(".two");
+  //   hiddenElementstwo.forEach((el) => observer.observe(el));
+  // }, []);
+  
+
+
   return (
     <WhyUsWrapper>
       <Container maxWidth="lg" className="container">
@@ -13,26 +40,26 @@ export const WhyUs = () => {
           </div>
           <div className="right-box">
             <div className="scroll-Effect">
-              <div className="title">Save Time</div>
+              <div className="title one">Save Time</div>
               <div className="subTitle">
                 Skip the Learning Curve. Eservz has the established best
                 practices to help you quickly achieve your eCommerce and Amazon
                 goals.
               </div>
 
-              <div className="title">Save Money</div>
+              <div className="title two">Save Money</div>
               <div className="subTitle">
                 No need to create a new department or hire additional staff.
                 When you work with us, you get a new E-Commerce division.
               </div>
 
-              <div className="title">Make Money</div>
+              <div className="title three">Make Money</div>
               <div className="subTitle">
                 We have worked with 100s of partners. We know what to do, what
                 to analyze & how to focus on getting you a Return on Investment
               </div>
 
-              <div className="title">Be Secure</div>
+              <div className="title four">Be Secure</div>
               <div className="subTitle">
                 We value the security of our partners & take your
                 confidentiality very seriously. We are insured for any breaches
@@ -73,6 +100,7 @@ const WhyUsWrapper = styled.div`
         width: 40%;
         img {
           width: 100%;
+          padding-left: 20px;
         }
 
         @media (max-width: 600px) {
@@ -88,7 +116,12 @@ const WhyUsWrapper = styled.div`
           width: 100%;
         }
 
+        .highlight{
+          color: #5956e9 !important;
+        }
+
         .title {
+          
           margin-top: 44px;
           margin-bottom: 8px;
           font-size: 24px;
@@ -97,6 +130,7 @@ const WhyUsWrapper = styled.div`
           letter-spacing: normal;
           text-align: left;
           color: #3a3b44;
+
 
           &:first-of-type {
             margin-top: unset;

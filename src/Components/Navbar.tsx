@@ -24,7 +24,7 @@ export const Navbar = () => {
     show: {
       transition: {
         staggerChildren: 0.2,
-        delayChildren: 3.8,
+        delayChildren: 2.3,
         ease: "easeInOut",
       },
     },
@@ -281,6 +281,7 @@ const Nav = styled(Grid)<NavProps>`
     transform: ${(props: NavProps) =>
       props.drawer ? "translateX(0%)" : "translateX(-100%)"};
     transition: transform 0.5s;
+    z-index: 99;
 
     .hamburger {
       display: none;

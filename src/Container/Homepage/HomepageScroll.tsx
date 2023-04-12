@@ -1,7 +1,7 @@
 import { Container } from '@mui/material';
 import React from 'react'
 import styled from "styled-components";
-import { Slider } from '../../Components/Slider';
+import { Slide } from '../../Components/Slide';
 
 
 export const HomepageScroll = () => {
@@ -12,7 +12,7 @@ export const HomepageScroll = () => {
           Brands / Companies we have worked with
         </h1>
         {//@ts-ignore
-        <Slider className="slider"/>
+        <Slide className="slider"/>
 }
       </Container>
     </Scroll>
