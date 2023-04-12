@@ -1,15 +1,45 @@
 import { Container } from "@mui/material";
-import React from "react";
+import React,{useEffect,useState} from "react";
 import styled from "styled-components";
+import 'animate.css';
+
 
 export const MidWhoBanner = () => {
+
+  
+
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          console.log("Entering into zone");
+          entry.target.classList.add("animate__animated");
+          entry.target.classList.add("animate__fadeIn");
+        } else {
+          console.log("exit into zone");
+          entry.target.classList.remove("animate__fadeIn");
+        }
+      });
+    });
+
+    const hiddenElements = document.querySelectorAll(".hidden");
+    hiddenElements.forEach((el) => observer.observe(el));
+  }, []);
+
+
+   
+
   return (
     <Banner>
       <Container maxWidth="lg" className="container">
         <div className="first">
+          <div className="hidden">
           <img src="./images/Ecommerce_10.png"></img>
+          </div>
         </div>
         <div className="second">
+          <div className="hidden">
           <h2>Who's Eservz?</h2>
           <p>
             Eservz is a leading and globally renowned e-commerce and Amazon
@@ -18,6 +48,7 @@ export const MidWhoBanner = () => {
             business owners and vendors on multiple online channels especially
             Amazon.
           </p>
+        </div>
         </div>
       </Container>
     </Banner>

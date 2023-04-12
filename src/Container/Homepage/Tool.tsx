@@ -58,8 +58,8 @@ export const Tool = () => {
 };
 
 const ToolDiv = styled.div`
- background: #fffcfc;
- padding:90px 0px;
+  background: #fffcfc;
+  padding: 90px 0px;
 
   .container {
     margin: auto;
@@ -75,11 +75,11 @@ const ToolDiv = styled.div`
         line-height: 1.31;
         letter-spacing: 0.25px;
         color: #3a3b44;
-        margin-bottom:50px;
+        margin-bottom: 50px;
 
-        @media (max-width:600px){
-        text-align:center;
-}
+        @media (max-width: 600px) {
+          text-align: center;
+        }
       }
       .tool {
         display: flex;
@@ -87,87 +87,97 @@ const ToolDiv = styled.div`
         align-items: center;
         width: 100%;
 
-
-        
-@media (max-width:600px){
-    flex-wrap:wrap;
-    flex-direction:column;
-}
+        @media (max-width: 600px) {
+          flex-wrap: wrap;
+          flex-direction: column;
+        }
 
         .box {
           width: 30%;
 
-          @media (max-width:600px){
-            margin-bottom:50px;
-}
-
-        
+          @media (max-width: 600px) {
+            width: 50%;
+            margin-bottom: 50px;
+          }
 
           .fba {
             aspect-ratio: 1;
             border-radius: 500px;
             background-color: #eff5fc;
-            img{
-                width:75%;
-            }
-          }
-            .lq {
-                aspect-ratio: 1;
-            border-radius: 500px;
-              background-color: #ffe9ce;
+            img {
+              width: 75%;
+              transition: all 0.2s ease-in-out;
 
-              img{
-                width:100%;
-            }
-            }
-            .dtc{
-                aspect-ratio: 1;
-            border-radius: 500px;
-              background-color: #e6e2ff;
-              img{
-                width:100%;
-            }
-            }
-          }
-
-          .info {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-
-            .infoTitle {
-              font-size: 18px;
-              font-weight: 600;
-              line-height: 1.33;
-              color: #3a3b44;
-              margin:8px 0px;
-            }
-            .subTitle {
-              font-family: Montserrat;
-              font-size: 16px;
-              line-height: 1.5;
-              letter-spacing: 0.25px;
-              text-align: center;
-              color: #828490;
-              margin:8px 0px;
-            }
-            .link {
-              font-size: 14px;
-              font-weight: 600;
-              line-height: 1.43;
-              letter-spacing: 1px;
-              text-align: left;
-              color: #3a3b44;
-              border-bottom:1px solid #f90;
-              margin:8px 0px;
-              cursor:pointer;
-
-              &:hover{
-                border-bottom:1.5px solid #b16a00;
-                
+              &:hover {
+                transform: scale(1.1) rotate(3deg);
               }
+            }
+          }
+          .lq {
+            aspect-ratio: 1;
+            border-radius: 500px;
+            background-color: #ffe9ce;
 
+            img {
+              width: 100%;
+              transition: all 0.2s ease-in-out;
+
+              &:hover {
+                transform: scale(1.1) rotate(-3deg);
+              }
+            }
+          }
+          .dtc {
+            aspect-ratio: 1;
+            border-radius: 500px;
+            background-color: #e6e2ff;
+            img {
+              width: 100%;
+
+              transition: all 0.2s ease-in-out;
+
+              &:hover {
+                transform: scale(1.1) rotate(3deg);
+              }
+            }
+          }
+        }
+
+        .info {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          .infoTitle {
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.33;
+            color: #3a3b44;
+            margin: 8px 0px;
+          }
+          .subTitle {
+            font-family: Montserrat;
+            font-size: 16px;
+            line-height: 1.5;
+            letter-spacing: 0.25px;
+            text-align: center;
+            color: #828490;
+            margin: 8px 0px;
+          }
+          .link {
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.43;
+            letter-spacing: 1px;
+            text-align: left;
+            color: #3a3b44;
+            border-bottom: 1px solid #f90;
+            margin: 8px 0px;
+            cursor: pointer;
+
+            &:hover {
+              border-bottom: 1.5px solid #b16a00;
             }
           }
         }

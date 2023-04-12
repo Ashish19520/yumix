@@ -1,11 +1,32 @@
 import { Container } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 export const Certificate = () => {
+
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          console.log("Entering into zone");
+          entry.target.classList.add("animate__animated");
+          entry.target.classList.add("animate__fadeIn");
+          
+        } else {
+          console.log("exit into zone");
+          entry.target.classList.remove("animate__fadeIn");
+        }
+      });
+    });
+
+    const hiddenElements = document.querySelectorAll(".hidden");
+    hiddenElements.forEach((el) => observer.observe(el));
+  }, []);
+
   return (
     <Certif>
-      <Container maxWidth="lg" className="container">
+      <Container maxWidth="lg" className="container hidden">
         <div className="leftDiv">
           <div className="title">
             <h2>Authorised Seller Partner for Amazon</h2>

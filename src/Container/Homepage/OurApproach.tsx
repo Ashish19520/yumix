@@ -1,30 +1,31 @@
 import { Container } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 export const OurApproach = () => {
-  
-  
-  // const observer = new IntersectionObserver((entries) => {
-  //   entries.forEach((entry) => {
-  //     if (entry.isIntersecting) {
-  //       console.log("Enterin into zoe")
-  //       entry.target.classList.add("show");
-  //     } else {
-  //       entry.target.classList.remove("show");
-  //     }
-  //   });
-  // });
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          console.log("Enterin into zone");
+          entry.target.classList.add("show");
+        } else {
+          console.log("exit into zone");
+          entry.target.classList.remove("show");
+        }
+      });
+    });
 
-  // const hiddenElements = document.querySelectorAll(".hidden");
-  // hiddenElements.forEach((el) => observer.observe(el));
+    const hiddenElements = document.querySelectorAll(".hidden");
+    hiddenElements.forEach((el) => observer.observe(el));
+  }, []);
 
   return (
     <MidBanner>
       <Container maxWidth="lg" className="container">
-        <div className="">
           <div className="banner">
             <h2>Our Approach</h2>
+        <div className="hidden">
             <div className="icons">
               <div className="singleicon">
                 <img src="./images/A1.png"></img>
@@ -67,12 +68,21 @@ const MidBanner = styled.div`
 
     .hidden {
       opacity: 0;
-      
+      filter: blur(5px);
+      transform: translateX(-100%);
+      transition: all;
     }
 
+    @media (prefers-reduced-motion) {
+      .hidden {
+        transition: none;
+      }
+    }
     .show {
       opacity: 1;
-      transition: all 1s;
+      filter: blur(0);
+      transform: translateX(0%);
+      transition: all 3s;
     }
 
     .banner {
@@ -113,13 +123,27 @@ const MidBanner = styled.div`
           justify-content: center;
           align-items: center;
           margin-right: 10px;
+          transition: all 0.2s ease-in-out;
+
+          &:nth-child(2) {
+            transition-delay: 400ms;
+          }
+          &:nth-child(3) {
+            transition-delay: 800ms;
+          }
+          &:nth-child(4) {
+            transition-delay: 200ms;
+          }
+          &:nth-child(5) {
+            transition-delay: 500ms;
+          }
 
           &:last-of-type {
             margin-right: unset;
           }
 
-          &:hover{
-            transition: all .2s ease-in-out;
+          &:hover {
+           
             transform: scale(1.1);
           }
 

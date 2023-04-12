@@ -2,6 +2,7 @@ import { Container } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
 import { Card } from "../../Components/Card";
+import { motion } from "framer-motion";
 
 const data = [
   {
@@ -31,6 +32,26 @@ const data = [
 ];
 
 export const People = () => {
+  const cardContainer = {
+    hidden: { opacity: 1, scale: 0 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delayChildren: 0.4,
+        staggerChildren: 0.4,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+  };
+
   return (
     <Users>
       <Container maxWidth="lg" className="container">
@@ -39,17 +60,24 @@ export const People = () => {
             <div className="title">What people say about us</div>
             <div className="subTitle">See what people say about us</div>
           </div>
-          <div className="cards">
+          <motion.div className="cards">
             {data.map((d) => (
-              <Card
-                title={d.title}
-                stars={d.stars}
-                images={d.images}
-                name={d.name}
-                designation={d.designation}
-              />
+              <motion.div
+                initial={{ opacity: 0, scale: 0, x: 100 }}
+                whileInView={{ opacity: 1, scale: 1, x: 0 }}
+                transition= {{duration: 0.6}}
+                // viewport={{once:true}}
+              >
+                <Card
+                  title={d.title}
+                  stars={d.stars}
+                  images={d.images}
+                  name={d.name}
+                  designation={d.designation}
+                />
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </Container>
     </Users>
@@ -59,22 +87,20 @@ export const People = () => {
 const Users = styled.div`
   background: #fffcfc;
   padding: 75px 0px;
-  
+
   background-image: url("./images/Testimonials Bg.png");
-    background-repeat: no-repeat;
-    background-position: center;
-  
+  background-repeat: no-repeat;
+  background-position: center;
+
   .container {
     margin: auto;
-
-   
 
     .aboutus {
       .info {
         text-align: left;
 
         @media (max-width: 600px) {
-            text-align: center;
+          text-align: center;
         }
         .title {
           font-size: 32px;
