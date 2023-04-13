@@ -1,11 +1,31 @@
 import { Container } from "@mui/material";
-import React from "react";
+import React,{useEffect}from "react";
 import styled from "styled-components";
 
 export const HotTopics = () => {
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          console.log("Entering into zone");
+          entry.target.classList.add("animate__animated");
+          entry.target.classList.add("animate__fadeIn");
+        } 
+        // else {
+        //   console.log("exit into zone");
+        //   entry.target.classList.remove("animate__fadeIn");
+        // }
+      });
+    });
+
+    const hiddenElements = document.querySelectorAll(".hidden");
+    hiddenElements.forEach((el) => observer.observe(el));
+  }, []);
+
   return (
     <HotTopicsWrapper>
-      <Container maxWidth="lg" className="container">
+      <Container maxWidth="lg" className="container hidden">
         <div className="hero-title">Hot Topics</div>
         <div className="topicContainer">
           <div className="img-box">
@@ -48,15 +68,26 @@ const HotTopicsWrapper = styled.div`
       text-align: left;
       color: #121221;
       margin-bottom: 26px;
+      @media (max-width: 600px) {
+        text-align: center;
+      }
     }
 
     .topicContainer {
       display: flex;
       /* align-items: center; */
 
+      @media (max-width: 600px) {
+        flex-direction: column;
+      }
+
       .img-box {
         width: 60%;
         position: relative;
+
+        @media (max-width: 600px) {
+          width: 100%;
+        }
 
         img {
           width: 100%;
@@ -73,6 +104,15 @@ const HotTopicsWrapper = styled.div`
             text-align: left;
             width: 80%;
             padding: 16px 25px;
+
+            @media (max-width: 900px) {
+              margin-top: 120px;
+              font-size: 15px;
+            }
+            @media (max-width: 600px) {
+              margin-top: 150px;
+              font-size: 19px;
+            }
           }
           .subtitle {
             display: flex;
@@ -92,6 +132,11 @@ const HotTopicsWrapper = styled.div`
       .text-box {
         width: 40%;
         padding-left: 40px;
+
+        @media (max-width: 600px) {
+          width: 100%;
+          margin-top: 20px;
+        }
 
         .title {
           /* font-size: 18px;

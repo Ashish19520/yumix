@@ -38,6 +38,10 @@ const Crd = styled.div`
   margin: 0 14.4px 0 0;
   padding: 28.8px;
   box-shadow: 0 3.6px 7.2px 0 rgba(0, 0, 0, 0.1);
+
+  &:hover{
+    box-shadow: 0 3.6px 7.2px 0 rgba(0, 0, 0, 0.15);
+  }
   background-color: #fff;
 
   .stars {

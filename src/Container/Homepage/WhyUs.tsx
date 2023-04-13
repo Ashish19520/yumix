@@ -7,26 +7,50 @@ import styled from "styled-components";
 export const WhyUs = () => {
 
 
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver((entries) => {
-  //     entries.forEach((entry) => {
-  //       if (entry.isIntersecting) {
-  //         console.log("enter")
-  //         entry.target.classList.add("highlight");
-  //         entry.target.classList.add("show");        
-  //       } else {
-  //         console.log("remove")
-  //         entry.target.classList.remove("highlight");
-  //       }
-  //     });
-  //   });
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          
+          setTimeout(() => {
+            entry.target.classList.add("highlight");
+            entry.target.classList.add("show");        
+          }, 1500);
+        } else {
+          entry.target.classList.remove("highlight");
+        }
+      });
+    });
 
-  //   const hiddenElements = document.querySelectorAll(".one");
-  //   hiddenElements.forEach((el) => observer.observe(el));
+    const observerPara = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          
+          setTimeout(() => {
+            entry.target.classList.add("highlight");
+            entry.target.classList.add("show");
+            
+          }, 1500);
+        } else {
+          entry.target.classList.remove("highlight");
+        }
+      });
+    });
 
-  //   const hiddenElementstwo = document.querySelectorAll(".two");
-  //   hiddenElementstwo.forEach((el) => observer.observe(el));
-  // }, []);
+    const hiddenElements = document.querySelectorAll(".one");
+    hiddenElements.forEach((el) => observer.observe(el));
+
+    const hiddenElementstwo = document.querySelectorAll(".two");
+    hiddenElementstwo.forEach((el) => observer.observe(el));
+
+    const hiddenElementsthree = document.querySelectorAll(".three");
+    hiddenElementsthree.forEach((el) => observer.observe(el));
+
+    const hiddenElementsfour = document.querySelectorAll(".four");
+    hiddenElementsfour.forEach((el) => observer.observe(el));
+
+  
+  }, []);
   
 
 
@@ -36,7 +60,8 @@ export const WhyUs = () => {
         <div className="Title">Why brands work with us?</div>
         <div className="wrapper">
           <div className="left-box">
-            <img src="./images/11 - Lucas Floating.png"></img>
+            <img src="./images/Ellipse 75@3x.png" className="circle"></img>
+            <img src="./images/11 - Lucas Floating.png" className="imgSubject"></img>
           </div>
           <div className="right-box">
             <div className="scroll-Effect">
@@ -98,9 +123,15 @@ const WhyUsWrapper = styled.div`
 
       .left-box {
         width: 40%;
-        img {
+        .imgSubject {
           width: 100%;
           padding-left: 20px;
+          position: relative;
+        }
+        .circle{
+          width: 35%;
+          padding-left: 20px;
+          position: absolute;
         }
 
         @media (max-width: 600px) {
@@ -118,6 +149,8 @@ const WhyUsWrapper = styled.div`
 
         .highlight{
           color: #5956e9 !important;
+
+          
         }
 
         .title {

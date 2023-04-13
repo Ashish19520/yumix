@@ -59,6 +59,9 @@ export const Hero = () => {
     const rock = document.querySelector(".rock");
     const subject = document.querySelector(".subject");
     const shopify = document.querySelector(".shopify");
+    const certified = document.querySelector(".certified");
+    const google = document.querySelector(".google");
+
 
     container?.addEventListener("mousemove", (e) => {
       //@ts-ignore
@@ -76,12 +79,22 @@ export const Hero = () => {
       // }deg)`;
 
       //@ts-ignore
-      rock.style.transform = `rotateY(${xAxis - 5}deg) rotateX(${
+      // rock.style.transform = `rotateY(${xAxis - 5}deg) rotateX(${
+      //   yAxis - 5
+      // }deg)`;
+
+      //@ts-ignore
+      shopify.style.transform = `rotateY(${xAxis + 20}deg) rotateX(${
+        yAxis + 20
+      }deg)`;
+
+      //@ts-ignore
+      certified.style.transform = `rotateY(${xAxis}deg) rotateX(${
         yAxis - 5
       }deg)`;
 
       //@ts-ignore
-      shopify.style.transform = `rotateY(${xAxis + 20}deg) rotateX(${
+      google.style.transform = `rotateY(${-xAxis}deg) rotateX(${
         yAxis + 20
       }deg)`;
 
@@ -96,6 +109,12 @@ export const Hero = () => {
 
         //@ts-ignore
         shopify.style.transform = "translateZ(150px)";
+
+        //@ts-ignore
+        certified.style.transform = "translateZ(150px)";
+
+        //@ts-ignore
+        google.style.transform = "translateZ(150px)";
       });
 
       card?.addEventListener("mouseleave", (e) => {
@@ -121,6 +140,12 @@ export const Hero = () => {
 
         //@ts-ignore
         shopify.style.transform = "translateZ(0px)";
+
+        //@ts-ignore
+        certified.style.transform = "translateZ(0px)";
+
+        //@ts-ignore
+        google.style.transform = "translateZ(0px)";
       });
     });
   }, []);
@@ -215,7 +240,7 @@ const HeroLayout = styled.div`
   margin-top: 20px;
 
   @media (max-width: 600px) {
-    margin-top: -60px;
+    margin-top: unset;
   }
   .container {
     /* background-image: url("./images/Hero component.png");
@@ -253,6 +278,8 @@ const HeroLayout = styled.div`
 
           @media (max-width: 600px) {
             text-align: center;
+            margin-top: 40px;
+            font-size: 30px;
           }
         }
 
@@ -267,6 +294,7 @@ const HeroLayout = styled.div`
           @media (max-width: 600px) {
             text-align: center;
             max-width: 100%;
+            font-size: 17px;
           }
         }
       }
@@ -280,7 +308,7 @@ const HeroLayout = styled.div`
         transition: all 0.5s ease;
 
         @media (max-width: 600px) {
-          width: 100%;
+          width: 50%;
         }
 
         .circle {
@@ -288,7 +316,11 @@ const HeroLayout = styled.div`
           border-radius: 500px;
           background-color: #eff5fc;
           /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
-         
+          @media (max-width: 600px) {
+            aspect-ratio: unset;
+          border-radius: unset;
+          background-color: #fffcfc;
+            }
           .rock {
             width: 30%;
             position: absolute;
@@ -335,6 +367,11 @@ const HeroLayout = styled.div`
             width: 90%;
             padding: 25px;
 
+            @media (max-width: 600px) {
+              width: 100%;
+              padding: unse;
+            }
+
            
           }
         }
@@ -346,10 +383,17 @@ const HeroLayout = styled.div`
       flex-direction: column;
       align-items: center;
       margin-top: -20px;
+
+   
+
       p {
         font-size: 16px;
         letter-spacing: 0.44px;
         color: #b0bac7;
+
+        @media (max-width: 600px) {
+              z-index: 200;
+            }
       }
 
       a {
