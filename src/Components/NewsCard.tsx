@@ -47,7 +47,9 @@ const NewsCardWrapper = styled.div`
       text-align: left;
       color: #121221;
       margin-bottom: 20px;
-
+      @media (max-width: 600px) {
+              font-size: 15px;
+          }
      
     }
     .subtitle {
@@ -60,6 +62,11 @@ const NewsCardWrapper = styled.div`
       letter-spacing: 0.1px;
       text-align: left;
       color: #949494;
+
+      @media (max-width: 600px) {
+              display: none;
+
+          }
 
       p {
         &:last-of-type{

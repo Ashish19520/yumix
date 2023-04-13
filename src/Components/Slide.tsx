@@ -50,7 +50,7 @@ export const Slide = () => {
       <Slider {...settings}>
         {[1, 2, 3, 4, 5, 6].map((d) => (
           <>
-            <h1>hello</h1>
+            <img src="./images/dummy1.png"></img>
           </>
         ))}
       </Slider>

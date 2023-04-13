@@ -5,14 +5,17 @@ import styled from 'styled-components'
 import { LatestNews } from '../Container/News/LatestNews'
 import ContactForm from '../Components/contactForm'
 import Footer from '../Components/Footer'
+import { Container } from '@mui/material'
 
 export const News = () => {
   return (
     <div>
         <NewsWrapper>
+        <Container maxWidth="lg" className="container">
         <NewsContainer />
         <HotTopics />   
         <LatestNews />
+        </Container>
         <ContactForm />
         <Footer />
         </NewsWrapper>
@@ -22,4 +25,7 @@ export const News = () => {
 
 const NewsWrapper=styled.div`
      background: #fffcfc;;
+     .container{
+      margin: auto;
+     }
 `

@@ -1,5 +1,5 @@
 import { Container } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { Banner } from "../../Components/Banner";
 
@@ -21,14 +21,35 @@ export const OurWorks = () => {
     imgPath:"./images/Img2.png"
   };
 
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          console.log("Entering into zone");
+          entry.target.classList.add("animate__animated");
+          entry.target.classList.add("animate__fadeIn");
+          
+        } 
+        // else {
+        //   console.log("exit into zone");
+        //   entry.target.classList.remove("animate__fadeIn");
+        // }
+      });
+    });
+
+    const hiddenElements = document.querySelectorAll(".hidden");
+    hiddenElements.forEach((el) => observer.observe(el));
+  }, []);
+
+
   return (
     <WorkWrapper>
       <Container maxWidth="lg" className="container">
         <div className="title">Our Works</div>
-        <div className="BannerCloth">
+        <div className="BannerCloth hidden">
         <Banner data={data1} direction={"regular"}/>
         </div>
-        <div className="BannerGrocery">
+        <div className="BannerGrocery hidden">
         <Banner data={data2} direction={"reverse"}/>
         </div>
       </Container>
