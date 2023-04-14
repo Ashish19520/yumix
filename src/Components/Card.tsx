@@ -7,12 +7,11 @@ export const Card = (props: any) => {
   return (
     <Crd>
       <div className="stars">
-        <AiFillStar color="#f19e38"  size={20}/>
-        <AiFillStar color="#f19e38d1"  size={20}/>
-        <AiFillStar color="#f19e387b"  size={20}/>
-        <AiFillStar color="#f19e384b"  size={20}/>
-        <AiFillStar color="#f19e382f"  size={20} />
-
+        <AiFillStar color="#f19e38" size={20} />
+        <AiFillStar color="#f19e38d1" size={20} />
+        <AiFillStar color="#f19e387b" size={20} />
+        <AiFillStar color="#f19e384b" size={20} />
+        <AiFillStar color="#f19e382f" size={20} />
       </div>
       <div className="info">{props.title}</div>
       <div className="userInfo">
@@ -39,7 +38,7 @@ const Crd = styled.div`
   padding: 28.8px;
   box-shadow: 0 3.6px 7.2px 0 rgba(0, 0, 0, 0.1);
 
-  &:hover{
+  &:hover {
     box-shadow: 0 3.6px 7.2px 0 rgba(0, 0, 0, 0.15);
   }
   background-color: #fff;
@@ -48,12 +47,17 @@ const Crd = styled.div`
   }
 
   .info {
+    font-family: Montserrat;
     align-self: stretch;
     font-size: 14px;
     line-height: 1.29;
     letter-spacing: 0.1px;
     text-align: left;
     color: #3a3b44;
+
+    @media (max-width: 600px) {
+      font-size: 12px;
+    }
   }
 
   .userInfo {
@@ -65,18 +69,28 @@ const Crd = styled.div`
       padding-left: 10px;
 
       .title {
+        font-family: Poppins-semiBold;
         font-size: 14px;
         font-weight: 600;
         line-height: 1.5;
         text-align: left;
         color: #3a3b44;
+
+        @media (max-width: 600px) {
+          font-size: 12px;
+        }
       }
 
       .subTitle {
+        font-family: Montserrat;
         font-size: 12px;
         line-height: 1.5;
         text-align: left;
         color: #3a3b44;
+
+        @media (max-width: 600px) {
+          font-size: 10px;
+        }
       }
     }
   }

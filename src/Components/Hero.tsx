@@ -40,7 +40,7 @@ export const Hero = () => {
   const imgProduct1 = {
     hidden: {
       opacity: 0,
-      y: "400px",
+      y: "200px",
     },
     show: {
       opacity: 1,
@@ -61,7 +61,6 @@ export const Hero = () => {
     const shopify = document.querySelector(".shopify");
     const certified = document.querySelector(".certified");
     const google = document.querySelector(".google");
-
 
     container?.addEventListener("mousemove", (e) => {
       //@ts-ignore
@@ -148,6 +147,39 @@ export const Hero = () => {
         google.style.transform = "translateZ(0px)";
       });
     });
+  }, []);
+
+  useEffect(() => {
+    
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            console.log("Enterin into zone");
+            // entry.target.classList.add("show");
+
+            document
+              .querySelector(".imageBox")
+              ?.classList.add("animate__animated");
+            document
+              .querySelector(".imageBox")
+              ?.classList.add("animate__bounceInUp");
+            document
+              .querySelector(".imageBox")
+              ?.classList.add("animate__delay-3s");
+          } else {
+            console.log("exit into zone");
+            // entry.target.classList.remove("show");
+
+            document
+              .querySelector(".icons-zoom")
+              ?.classList.remove("animate__bounceInUp");
+          }
+        });
+      });
+
+      const hiddenElements = document.querySelectorAll(".outter");
+      hiddenElements.forEach((el) => observer.observe(el));
+   
   }, []);
 
   return (
@@ -269,8 +301,9 @@ const HeroLayout = styled.div`
         }
 
         h1 {
+          font-family: Poppins-Bold;
           font-size: 40px;
-          font-weight: bold;
+          /* font-weight: bold; */
           text-align: left;
           color: #3a3b44;
           margin-top: 80px;
@@ -284,6 +317,7 @@ const HeroLayout = styled.div`
         }
 
         p {
+          font-family: Montserrat-Medium;
           max-width: 80%;
           font-size: 20px;
           font-weight: 500;
@@ -308,7 +342,8 @@ const HeroLayout = styled.div`
         transition: all 0.5s ease;
 
         @media (max-width: 600px) {
-          width: 50%;
+          padding: 0px 50px;
+          width: 100%;
         }
 
         .circle {
@@ -318,9 +353,9 @@ const HeroLayout = styled.div`
           /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
           @media (max-width: 600px) {
             aspect-ratio: unset;
-          border-radius: unset;
-          background-color: #fffcfc;
-            }
+            border-radius: unset;
+            background-color: #fffcfc;
+          }
           .rock {
             width: 30%;
             position: absolute;
@@ -371,8 +406,6 @@ const HeroLayout = styled.div`
               width: 100%;
               padding: unse;
             }
-
-           
           }
         }
       }
@@ -384,16 +417,14 @@ const HeroLayout = styled.div`
       align-items: center;
       margin-top: -20px;
 
-   
-
       p {
         font-size: 16px;
         letter-spacing: 0.44px;
         color: #b0bac7;
 
         @media (max-width: 600px) {
-              z-index: 200;
-            }
+          z-index: 200;
+        }
       }
 
       a {

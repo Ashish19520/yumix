@@ -14,16 +14,20 @@ export const MidWhoBanner = () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           console.log("Entering into zone");
-          entry.target.classList.add("animate__animated");
-          entry.target.classList.add("animate__fadeIn");
+          // entry.target.classList.add("animate__animated");
+          // entry.target.classList.add("animate__backInDown")
+
+          document.querySelector(".image-who")?.classList.add("animate__animated");
+          document.querySelector(".image-who")?.classList.add("animate__backInLeft");
+
         } else {
           console.log("exit into zone");
-          entry.target.classList.remove("animate__fadeIn");
+          document.querySelector(".image-who")?.classList.remove("animate__backInLeft");
         }
       });
     });
 
-    const hiddenElements = document.querySelectorAll(".hidden");
+    const hiddenElements = document.querySelectorAll(".whoEservz");
     hiddenElements.forEach((el) => observer.observe(el));
   }, []);
 
@@ -32,14 +36,14 @@ export const MidWhoBanner = () => {
 
   return (
     <Banner>
-      <Container maxWidth="lg" className="container">
+      <Container maxWidth="lg" className="container whoEservz">
         <div className="first">
-          <div className="hidden">
+          <div className="image-who">
           <img src="./images/Ecommerce_10.png"></img>
           </div>
         </div>
         <div className="second">
-          <div className="hidden">
+          <div>
           <h2>Who's Eservz?</h2>
           <p>
             Eservz is a leading and globally renowned e-commerce and Amazon
@@ -66,6 +70,7 @@ const Banner = styled.div`
     @media (max-width: 600px) {
       flex-direction: column;
       width: 100%;
+      padding-bottom: 40px 
     }
 
     .first {
@@ -74,7 +79,9 @@ const Banner = styled.div`
         width: 100%;
         object-fit: contain;
 
-        
+        @media (max-width: 600px) {
+        padding: 0px 20px;
+      }
       }
 
       @media (max-width: 600px) {
@@ -91,8 +98,8 @@ const Banner = styled.div`
       justify-content: center;
 
       h2 {
+        font-family: Poppins-semiBold;
         font-size: 32px;
-        font-weight: 600;
         line-height: 1.31;
         letter-spacing: 0.25px;
         text-align: left;
@@ -101,6 +108,7 @@ const Banner = styled.div`
 
         @media (max-width: 600px) {
             text-align: center;
+            font-size: 25px;
       }
       }
       p {
@@ -109,6 +117,11 @@ const Banner = styled.div`
         letter-spacing: 0.25px;
         text-align: left;
         color: #828490;
+
+        @media (max-width: 600px) {
+          font-size: 12px;
+          text-align: center;
+      }
       }
       @media (max-width: 600px) {
         width: 100%;

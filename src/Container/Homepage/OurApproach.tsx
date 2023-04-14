@@ -8,24 +8,36 @@ export const OurApproach = () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           console.log("Enterin into zone");
-          entry.target.classList.add("show");
+          // entry.target.classList.add("show");
+
+          document
+            .querySelector(".icons-zoom")
+            ?.classList.add("animate__animated");
+          document
+            .querySelector(".icons-zoom")
+            ?.classList.add("animate__backInLeft");
+          // document.querySelector(".icons-zoom")?.classList.add("animate__delay-1s");
         } else {
           console.log("exit into zone");
-          entry.target.classList.remove("show");
+          // entry.target.classList.remove("show");
+
+          document
+            .querySelector(".icons-zoom")
+            ?.classList.remove("animate__backInLeft");
         }
       });
     });
 
-    const hiddenElements = document.querySelectorAll(".hidden");
+    const hiddenElements = document.querySelectorAll(".banner");
     hiddenElements.forEach((el) => observer.observe(el));
   }, []);
 
   return (
     <MidBanner>
       <Container maxWidth="lg" className="container">
-          <div className="banner">
-            <h2>Our Approach</h2>
-        <div className="hidden">
+        <div className="banner">
+          <h2>Our Approach</h2>
+          <div className="icons-zoom">
             <div className="icons">
               <div className="singleicon">
                 <img src="./images/A1.png"></img>
@@ -63,15 +75,19 @@ const MidBanner = styled.div`
   background: #fffcfc;
   padding: 40px 0px 56px 0px;
 
+  @media (max-width: 600px) {
+      padding: 40px 0px 0px 0px;
+    }
+
   .container {
     margin: auto;
 
-    .hidden {
+    /* .hidden {
       opacity: 0;
       filter: blur(5px);
       transform: translateX(-100%);
       transition: all;
-    }
+    } */
 
     @media (prefers-reduced-motion) {
       .hidden {
@@ -91,12 +107,17 @@ const MidBanner = styled.div`
       align-items: center;
 
       h2 {
+        font-family: Poppins-semiBold;
         font-size: 32px;
         font-weight: 600;
         line-height: 1.31;
         letter-spacing: 0.25px;
         color: #3a3b44;
         margin-bottom: 45px;
+
+        @media (max-width: 600px) {
+          font-size: 25px;
+        }
       }
 
       .icons {
@@ -143,13 +164,13 @@ const MidBanner = styled.div`
           }
 
           &:hover {
-           
             transform: scale(1.1);
           }
 
           img {
             margin-bottom: 20px;
             /* width:100%; */
+            
           }
 
           p {
@@ -160,6 +181,11 @@ const MidBanner = styled.div`
             letter-spacing: 0.25px;
             text-align: center;
             color: #383838;
+
+            @media (max-width: 600px) {
+              font-size: 12px;
+              margin-bottom: 20px;
+            }
           }
         }
       }

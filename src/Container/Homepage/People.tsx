@@ -88,6 +88,10 @@ const Users = styled.div`
   background: #fffcfc;
   padding: 75px 0px;
 
+  @media (max-width: 600px) {
+    padding: 40px 0px;
+  }
+
   background-image: url("./images/Testimonials Bg.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -103,19 +107,29 @@ const Users = styled.div`
           text-align: center;
         }
         .title {
+          font-family: Poppins-semiBold;
           font-size: 32px;
           font-weight: 600;
           line-height: 1.31;
           letter-spacing: 0.25px;
           color: #3a3b44;
           margin-bottom: 16px;
+          @media (max-width: 600px) {
+            font-size: 25px;
+
+        }
         }
         .subTitle {
+          font-family: Montserrat;
           font-size: 16px;
           line-height: 1.5;
           letter-spacing: 0.25px;
           color: #3a3b44;
           margin-bottom: 64px;
+          @media (max-width: 600px) {
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
         }
       }
 

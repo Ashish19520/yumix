@@ -1,8 +1,62 @@
 import { Container } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 export const Tool = () => {
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          console.log("Entering into zone");
+          // entry.target.classList.add("animate__animated");
+          // entry.target.classList.add("animate__backInDown")
+
+          document
+            .querySelector(".images-tools-bounce1")
+            ?.classList.add("animate__animated");
+
+          document
+            .querySelector(".images-tools-bounce1")
+            ?.classList.add("animate__bounceIn");
+          // document.querySelector(".images-tools-bounce1")?.classList.add("animate__delay-1s");
+
+          document
+            .querySelector(".images-tools-bounce2")
+            ?.classList.add("animate__animated");
+          document
+            .querySelector(".images-tools-bounce2")
+            ?.classList.add("animate__bounceIn");
+          // document.querySelector(".images-tools-bounce2")?.classList.add("animate__delay-1s");
+
+          document
+            .querySelector(".images-tools-bounce3")
+            ?.classList.add("animate__animated");
+          document
+            .querySelector(".images-tools-bounce3")
+            ?.classList.add("animate__bounceIn");
+          // document.querySelector(".images-tools-bounce3")?.classList.add("animate__delay-1s");
+        }
+        // else {
+        //   console.log("exit into zone");
+        //   document
+        //     .querySelector(".images-tools-bounce1")
+        //     ?.classList.remove("animate__bounceIn");
+
+        //     document
+        //     .querySelector(".images-tools-bounce2")
+        //     ?.classList.remove("animate__bounceIn");
+
+        //     document
+        //     .querySelector(".images-tools-bounce3")
+        //     ?.classList.remove("animate__bounceIn");
+        // }
+      });
+    });
+
+    const hiddenElements = document.querySelectorAll(".outter");
+    hiddenElements.forEach((el) => observer.observe(el));
+  }, []);
+
   return (
     <div>
       <ToolDiv>
@@ -14,7 +68,10 @@ export const Tool = () => {
             <div className="tool">
               <div className="box">
                 <div className="fba">
-                  <img src="./images/1 - Brisa Receiving Her Package.png"></img>
+                  <img
+                    src="./images/1 - Brisa Receiving Her Package.png"
+                    className="images-tools-bounce1"
+                  ></img>
                 </div>
                 <div className="info">
                   <div className="infoTitle">FBA Calculator</div>
@@ -27,7 +84,10 @@ export const Tool = () => {
 
               <div className="box">
                 <div className="lq">
-                  <img src="./images/14 - Brisa doing Checklist.png"></img>
+                  <img
+                    src="./images/14 - Brisa doing Checklist.png"
+                    className="images-tools-bounce2"
+                  ></img>
                 </div>
                 <div className="info">
                   <div className="infoTitle">Listing Quality</div>
@@ -39,7 +99,10 @@ export const Tool = () => {
               </div>
               <div className="box">
                 <div className="dtc">
-                  <img src="./images/18 - Lucas Floats with His Laptop.png"></img>
+                  <img
+                    src="./images/18 - Lucas Floats with His Laptop.png"
+                    className="images-tools-bounce3"
+                  ></img>
                 </div>
                 <div className="info">
                   <div className="infoTitle">Description to Code</div>
@@ -61,6 +124,10 @@ const ToolDiv = styled.div`
   background: #fffcfc;
   padding: 90px 0px;
 
+  @media (max-width: 600px) {
+    padding: 40px 0px;
+  }
+
   .container {
     margin: auto;
 
@@ -79,6 +146,7 @@ const ToolDiv = styled.div`
 
         @media (max-width: 600px) {
           text-align: center;
+          font-size: 25px;
         }
       }
       .tool {
@@ -106,10 +174,10 @@ const ToolDiv = styled.div`
             background-color: #eff5fc;
             img {
               width: 75%;
-              transition: all 0.2s ease-in-out;
+              transition: all 0.2s ease-in-out !important;
 
               &:hover {
-                transform: scale(1.1) rotate(3deg);
+                transform: scale(1.1) rotate(3deg) !important;
               }
             }
           }
@@ -120,10 +188,10 @@ const ToolDiv = styled.div`
 
             img {
               width: 100%;
-              transition: all 0.2s ease-in-out;
+              transition: all 0.2s ease-in-out !important;
 
               &:hover {
-                transform: scale(1.1) rotate(-3deg);
+                transform: scale(1.1) rotate(-3deg) !important;
               }
             }
           }
@@ -134,10 +202,10 @@ const ToolDiv = styled.div`
             img {
               width: 100%;
 
-              transition: all 0.2s ease-in-out;
+              transition: all 0.2s ease-in-out !important;
 
               &:hover {
-                transform: scale(1.1) rotate(3deg);
+                transform: scale(1.1) rotate(3deg) !important;
               }
             }
           }
@@ -150,11 +218,17 @@ const ToolDiv = styled.div`
           justify-content: center;
 
           .infoTitle {
+            font-family: Poppins-semiBold;
             font-size: 18px;
             font-weight: 600;
             line-height: 1.33;
             color: #3a3b44;
             margin: 8px 0px;
+
+            @media (max-width: 600px) {
+              font-size:16px;
+              text-align: center;
+            }
           }
           .subTitle {
             font-family: Montserrat;
@@ -164,8 +238,13 @@ const ToolDiv = styled.div`
             text-align: center;
             color: #828490;
             margin: 8px 0px;
+            @media (max-width: 600px) {
+              font-size:12px;
+              text-align: center;
+            }
           }
           .link {
+            font-family: Montserrat-SemiBold;
             font-size: 14px;
             font-weight: 600;
             line-height: 1.43;
@@ -175,6 +254,12 @@ const ToolDiv = styled.div`
             border-bottom: 1px solid #f90;
             margin: 8px 0px;
             cursor: pointer;
+
+            @media (max-width: 600px) {
+              font-size:10px;
+              text-align: center;
+              margin:2px 0px;
+            }
 
             &:hover {
               border-bottom: 1.5px solid #b16a00;
