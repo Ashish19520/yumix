@@ -105,13 +105,14 @@ const WhyUsWrapper = styled.div`
     margin: auto;
 
     .Title {
+      font-family: Poppins-semiBold;
       font-size: 32px;
       font-weight: 600;
       line-height: 1.31;
       letter-spacing: 0.25px;
       text-align: left;
       color: #000;
-      margin-bottom: 154px;
+      margin-bottom: 90px;
 
       @media (max-width: 600px) {
         text-align: center;
@@ -125,7 +126,7 @@ const WhyUsWrapper = styled.div`
         width: 40%;
         .imgSubject {
           width: 100%;
-          padding-left: 20px;
+          padding-left: 40px;
           position: relative;
         }
         .circle{
@@ -154,7 +155,7 @@ const WhyUsWrapper = styled.div`
         }
 
         .title {
-          
+          font-family: Poppins-Medium;
           margin-top: 44px;
           margin-bottom: 8px;
           font-size: 24px;

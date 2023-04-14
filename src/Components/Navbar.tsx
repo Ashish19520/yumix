@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Container from "@mui/material/Container";
 import { Link } from "react-router-dom";
-import { FaFacebookF, FaGoogle, FaLinkedinIn } from "react-icons/fa";
+import { FaFacebookF, FaGoogle, FaLinkedinIn, } from "react-icons/fa";
+import { AiFillInstagram } from "react-icons/ai";
 import logo from "./logo.png";
 import { Grid } from "@mui/material";
 import { RxHamburgerMenu } from "react-icons/rx";
@@ -54,7 +55,7 @@ export const Navbar = () => {
             <FaLinkedinIn color="#252f3e" size={16} />
           </Link>
           <Link to="/" className="iconLink">
-            <FaGoogle color="#252f3e" size={16} />
+            <AiFillInstagram color="#252f3e" size={16} />
           </Link>
         </Container>
       </SocialNavbar>

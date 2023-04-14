@@ -18,7 +18,7 @@ export const Homepage = () => {
   return (
     <div>
       <Hero />
-      {/* <HomepageScroll /> */}
+      <HomepageScroll />
       <MidWhoBanner />
       <OurApproach />
       <Certificate />
@@ -26,14 +26,14 @@ export const Homepage = () => {
       <Tool />
       <WhyUs />
       <People />
-      <FotterArea>
+      {/* <FotterArea>
         <div className="cf">
         <ContactForm />
         </div>
         <div className="footer">
         <Footer />
         </div>
-      </FotterArea>
+      </FotterArea> */}
     </div>
   );
 };

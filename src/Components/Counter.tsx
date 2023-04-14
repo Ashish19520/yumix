@@ -76,6 +76,8 @@ const Count = styled.div`
 
   padding: 40px 0px;
 
+
+
   .container {
     margin: auto;
 
@@ -106,21 +108,27 @@ const Count = styled.div`
         }
         @media (max-width: 900px) {
           border-right: unset;
-          padding:0px 20px;
+          padding: 0px 20px;
         }
         @media (max-width: 600px) {
           border-right: unset;
         }
 
         h2 {
+          font-family: Poppins-Bold;
           font-size: 80px;
-          font-weight: 1000;
+          /* font-weight: 1000; */
           color: #000;
+          letter-spacing: -0.5px;
 
+          @media (max-width: 600px) {
+            font-size: 50px;
+          }
           @media (max-width: 900px) {
-          text-align:center;
+            text-align: center;
+          }
         }
-        }
+
         p {
           color: #000;
           font-size: 18px;
@@ -128,6 +136,15 @@ const Count = styled.div`
           letter-spacing: 0.25px;
           text-align: center;
           color: #828490;
+
+          @media (max-width: 600px) {
+            font-size: 16px;
+            /* padding-bottom: 20px;
+
+            &:last-of-type{
+              padding-bottom: unset;
+            } */
+          }
         }
       }
     }
