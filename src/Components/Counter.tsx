@@ -23,6 +23,7 @@ export const Counter = () => {
           >
             <Container maxWidth="lg" className="container">
               <div className="countBody">
+                <img src="./images/Ellipse 65@3x.png" className="img-dot1"></img>
                 <div className="outter">
                   <h2>
                     {counterOn && (
@@ -85,6 +86,15 @@ const Count = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
+      position: relative;
+
+      .img-dot1{
+        position: absolute;
+        width: 3%;
+        left: -25px;
+        top: -35px;
+      }
+
 
       @media (max-width: 900px) {
         flex-wrap: wrap;

@@ -1,14 +1,9 @@
 import { Container } from "@mui/material";
-import React,{useEffect,useState} from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import 'animate.css';
-
+import "animate.css";
 
 export const MidWhoBanner = () => {
-
-  
-
-
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -17,12 +12,17 @@ export const MidWhoBanner = () => {
           // entry.target.classList.add("animate__animated");
           // entry.target.classList.add("animate__backInDown")
 
-          document.querySelector(".image-who")?.classList.add("animate__animated");
-          document.querySelector(".image-who")?.classList.add("animate__backInLeft");
-
+          document
+            .querySelector(".image-who")
+            ?.classList.add("animate__animated");
+          document
+            .querySelector(".image-who")
+            ?.classList.add("animate__backInLeft");
         } else {
           console.log("exit into zone");
-          document.querySelector(".image-who")?.classList.remove("animate__backInLeft");
+          document
+            .querySelector(".image-who")
+            ?.classList.remove("animate__backInLeft");
         }
       });
     });
@@ -31,28 +31,29 @@ export const MidWhoBanner = () => {
     hiddenElements.forEach((el) => observer.observe(el));
   }, []);
 
-
-   
-
   return (
     <Banner>
       <Container maxWidth="lg" className="container whoEservz">
         <div className="first">
+          <img src="./images/Ellipse 65@3x.png" className="img-dot1"></img>
           <div className="image-who">
-          <img src="./images/Ecommerce_10.png"></img>
+            <img src="./images/Ecommerce_10.png"></img>
           </div>
+          <img src="./images/Ellipse 64@3x.png" className="img-dot2"></img>
         </div>
         <div className="second">
           <div>
-          <h2>Who's Eservz?</h2>
-          <p>
-            Eservz is a leading and globally renowned e-commerce and Amazon
-            specialist agency that provides cutting edge, groundbreaking and
-            truly revolutionary back office support to e-commerce sellers,
-            business owners and vendors on multiple online channels especially
-            Amazon.
-          </p>
-        </div>
+            <img src="./images/Ellipse 63@3x.png" className="img-dot3"></img>
+            <h2>Who's Eservz?</h2>
+            <p>
+              Eservz is a leading and globally renowned e-commerce and Amazon
+              specialist agency that provides cutting edge, groundbreaking and
+              truly revolutionary back office support to e-commerce sellers,
+              business owners and vendors on multiple online channels especially
+              Amazon.
+            </p>
+          </div>
+          <img src="./images/Round Cube2@3x.png" className="cube-img"></img>
         </div>
       </Container>
     </Banner>
@@ -70,23 +71,44 @@ const Banner = styled.div`
     @media (max-width: 600px) {
       flex-direction: column;
       width: 100%;
-      padding-bottom: 40px 
+      padding-bottom: 40px;
     }
 
     .first {
       width: 40%;
+      position: relative;
+
+      .img-dot1 {
+        width: 5%;
+        top: 0%;
+        right: 0%;
+
+        @media (max-width: 600px) {
+          display: none;
+        }
+      }
+      .img-dot2 {
+        position: absolute;
+        width: 5%;
+        right: 0%;
+        bottom: 60px;
+        @media (max-width: 600px) {
+          display: none;
+        }
+      }
+
       img {
         width: 100%;
         object-fit: contain;
 
         @media (max-width: 600px) {
-        padding: 0px 20px;
-      }
+          padding: 0px 20px;
+        }
       }
 
       @media (max-width: 600px) {
         width: 100%;
-        align-items:center;
+        align-items: center;
       }
     }
     .second {
@@ -96,6 +118,27 @@ const Banner = styled.div`
       display: flex;
       flex-direction: column;
       justify-content: center;
+      position: relative;
+
+      .img-dot3 {
+        position: absolute;
+        width: 3%;
+        top: 70px;
+        left: 299px;
+        @media (max-width: 600px) {
+          display: none;
+        }
+      }
+
+      .cube-img {
+        position: absolute;
+        width: 20%;
+        right: 0%;
+        bottom: -40px;
+        @media (max-width: 600px) {
+          display: none;
+        }
+      }
 
       h2 {
         font-family: Poppins-semiBold;
@@ -107,9 +150,9 @@ const Banner = styled.div`
         margin-bottom: 16px;
 
         @media (max-width: 600px) {
-            text-align: center;
-            font-size: 25px;
-      }
+          text-align: center;
+          font-size: 25px;
+        }
       }
       p {
         font-size: 16px;
@@ -121,14 +164,12 @@ const Banner = styled.div`
         @media (max-width: 600px) {
           font-size: 12px;
           text-align: center;
-      }
+        }
       }
       @media (max-width: 600px) {
         width: 100%;
-        padding-left:unset;
+        padding-left: unset;
       }
     }
-
-   
   }
 `;

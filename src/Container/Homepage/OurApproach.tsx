@@ -76,8 +76,8 @@ const MidBanner = styled.div`
   padding: 40px 0px 56px 0px;
 
   @media (max-width: 600px) {
-      padding: 40px 0px 0px 0px;
-    }
+    padding: 40px 0px 0px 0px;
+  }
 
   .container {
     margin: auto;
@@ -105,6 +105,9 @@ const MidBanner = styled.div`
       display: flex;
       flex-direction: column;
       align-items: center;
+      position: relative;
+
+      
 
       h2 {
         font-family: Poppins-semiBold;
@@ -170,7 +173,6 @@ const MidBanner = styled.div`
           img {
             margin-bottom: 20px;
             /* width:100%; */
-            
           }
 
           p {

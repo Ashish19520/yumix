@@ -10,7 +10,7 @@ export const HomepageScroll = () => {
         <h1 className="title">Brands / Companies we have worked with</h1>
         {
           //@ts-ignore
-          <Slide className="slide" />
+          <Slide className="slide"/>
         }
       </Container>
     </Scroll>
@@ -18,11 +18,12 @@ export const HomepageScroll = () => {
 };
 
 const Scroll = styled.div`
+  background-color: #fffcfc;
   .container {
     margin: auto;
     padding-bottom: 20px;
     padding-top: 60px;
-    background-color: #fffcfc;
+    
 
     h1 {
       font-family: Poppins-Bold;

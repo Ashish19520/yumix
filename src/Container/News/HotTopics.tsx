@@ -26,6 +26,8 @@ export const HotTopics = () => {
   return (
     <HotTopicsWrapper>
       <Container maxWidth="lg" className="container hidden">
+        <img src="./images/Ellipse 63@3x.png" className="img-dot_1"></img>
+        <img src="./images/Ellipse 65@3x.png" className="img-dot_2"></img>
         <div className="hero-title">Hot Topics</div>
         <div className="topicContainer">
           <div className="img-box">
@@ -61,6 +63,21 @@ const HotTopicsWrapper = styled.div`
   .container {
     margin: auto;
     padding: 90px 0px;
+    position: relative;
+
+    .img-dot_1{
+      position: absolute;
+      width: 2%;
+      top: 10%;
+      right: 0%;
+    }
+
+    .img-dot_2{
+      position: absolute;
+      width: 4%;
+      left: -4%;
+      top:45%;
+    }
     .hero-title {
       font-family: Poppins-Bold;
       font-size: 36px;

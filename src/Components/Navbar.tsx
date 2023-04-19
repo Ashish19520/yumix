@@ -48,13 +48,13 @@ export const Navbar = () => {
     <div>
       <SocialNavbar>
         <Container maxWidth="lg" className="container">
-          <Link to="/" className="iconLink">
+          <Link to="https://www.facebook.com/ESERVZ" className="iconLink">
             <FaFacebookF color="#252f3e" size={16} />
           </Link>
-          <Link to="/" className="iconLink">
+          <Link to="https://www.linkedin.com/company/eservz" className="iconLink">
             <FaLinkedinIn color="#252f3e" size={16} />
           </Link>
-          <Link to="/" className="iconLink">
+          <Link to="https://www.instagram.com/eservz_amz/" className="iconLink">
             <AiFillInstagram color="#252f3e" size={16} />
           </Link>
         </Container>

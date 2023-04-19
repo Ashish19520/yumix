@@ -25,6 +25,7 @@ export const Certificate = () => {
     <Certif>
       <Container maxWidth="lg" className="container hidden">
         <div className="leftDiv">
+          <img src="./images/Ellipse 64@3x.png" className="img-dot2"></img>
           <div className="title">
             <h2>Authorised Seller Partner for Amazon</h2>
           </div>
@@ -36,6 +37,7 @@ export const Certificate = () => {
               launch, manage and grow your business on Amazon.
             </p>
           </div>
+          <img src="./images/Ellipse 63@3x.png" className="img-dot3"></img>
         </div>
         <div className="rightDiv">
           <img src="./images/certificate 1.png"></img>
@@ -58,10 +60,29 @@ const Certif = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 
     @media (max-width: 600px) {
       flex-direction: column;
       width: 100%;
+    }
+
+    .img-dot2 {
+      position: absolute;
+      width: 2%;
+      top: -50px;
+      right: 65%;
+
+      @media (max-width: 600px) {
+        display: none;
+      }
+    }
+
+    .img-dot3{
+      position: absolute;
+      width: 2%;
+      top: 40px;
+      right: 85%;
     }
 
     .leftDiv {
@@ -72,7 +93,6 @@ const Certif = styled.div`
         width: 100%;
         align-items: center;
       }
-
       .title {
         h2 {
           font-family: Poppins-semiBold;

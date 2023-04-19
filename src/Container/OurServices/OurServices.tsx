@@ -6,7 +6,10 @@ export const OurServices = () => {
   return (
     <ServicesWrapper>
       <Container maxWidth="lg" className="container">
+
         <div className="hero">
+          <img src="./images/Round Cube2@3x.png" className="img-cube_1"></img>
+          <img src="./images/FullRock1@3x.png" className="img-rock_1"></img>
           <h1>Our Services</h1>
           <div className="subTitle">
             ESERVZ is a full cycle Amazon Business Management Agency. If you run
@@ -40,6 +43,21 @@ const ServicesWrapper = styled.div`
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      position: relative;
+
+      .img-cube_1{
+        width: 15%;
+        right: 6%;
+        top: 20%;
+        position: absolute;
+      }
+
+      .img-rock_1{
+        position: absolute;
+        width: 10%;
+        left: 5%;
+        bottom: 20%;
+      }
 
       h1 {
         font-family: Poppins-bold;

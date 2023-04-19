@@ -43,7 +43,7 @@ const FotterArea = styled.div`
   display:flex;
   align-items:center;
   justify-content:center;
-
+  
 
 }
 .footer{

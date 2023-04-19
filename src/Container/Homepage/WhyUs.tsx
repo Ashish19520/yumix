@@ -1,20 +1,15 @@
 import { Container } from "@mui/material";
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
-
-
 export const WhyUs = () => {
-
-
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          
           setTimeout(() => {
             entry.target.classList.add("highlight");
-            entry.target.classList.add("show");        
+            entry.target.classList.add("show");
           }, 1500);
         } else {
           entry.target.classList.remove("highlight");
@@ -25,11 +20,9 @@ export const WhyUs = () => {
     const observerPara = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          
           setTimeout(() => {
             entry.target.classList.add("highlight");
             entry.target.classList.add("show");
-            
           }, 1500);
         } else {
           entry.target.classList.remove("highlight");
@@ -48,11 +41,7 @@ export const WhyUs = () => {
 
     const hiddenElementsfour = document.querySelectorAll(".four");
     hiddenElementsfour.forEach((el) => observer.observe(el));
-
-  
   }, []);
-  
-
 
   return (
     <WhyUsWrapper>
@@ -61,7 +50,16 @@ export const WhyUs = () => {
         <div className="wrapper">
           <div className="left-box">
             <img src="./images/Ellipse 75@3x.png" className="circle"></img>
-            <img src="./images/11 - Lucas Floating.png" className="imgSubject"></img>
+            <div className="imgSubject"></div>
+            <img
+              src="./images/11 - Lucas Floating.png"
+              className="imgSubject"
+            ></img>
+            <img src="./images/Round Cube3@3x.png" className="img-cube1"></img>
+            <img src="./images/HalfRock2@3x.png" className="img-rock1"></img>
+            <img src="./images/Ellipse 63@3x.png" className="img-dot3"></img>
+            <img src="./images/Ellipse 63@3x.png" className="img-dot3_1"></img>
+            <img src="./images/Ellipse 65@3x.png" className="img-dot1"></img>
           </div>
           <div className="right-box">
             <div className="scroll-Effect">
@@ -129,10 +127,43 @@ const WhyUsWrapper = styled.div`
           padding-left: 40px;
           position: relative;
         }
-        .circle{
+        .circle {
           width: 35%;
           padding-left: 20px;
           position: absolute;
+        }
+        .img-cube1 {
+          position: absolute;
+          width: 10%;
+          right: 50%;
+        }
+
+        .img-rock1 {
+          position: absolute;
+          width: 10%;
+          left: 0%;
+          padding-top: 325px;
+        }
+
+        .img-dot3 {
+          position: absolute;
+          width: 2%;
+          left: 15%;
+          margin-top: -50px;
+        }
+
+        .img-dot3_1 {
+          position: absolute;
+          width: 1%;
+          left: 45%;
+          padding-top: 215px;
+        }
+
+        .img-dot1{
+          position: absolute;
+          width: 2%;
+          padding-top: 520px;
+          left:20%;
         }
 
         @media (max-width: 600px) {
@@ -148,10 +179,8 @@ const WhyUsWrapper = styled.div`
           width: 100%;
         }
 
-        .highlight{
+        .highlight {
           color: #5956e9 !important;
-
-          
         }
 
         .title {
@@ -164,7 +193,6 @@ const WhyUsWrapper = styled.div`
           letter-spacing: normal;
           text-align: left;
           color: #3a3b44;
-
 
           &:first-of-type {
             margin-top: unset;
