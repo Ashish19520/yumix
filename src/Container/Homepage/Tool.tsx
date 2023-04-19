@@ -3,69 +3,72 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 
 export const Tool = () => {
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          console.log("Entering into zone");
-          // entry.target.classList.add("animate__animated");
-          // entry.target.classList.add("animate__backInDown")
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver((entries) => {
+  //     entries.forEach((entry) => {
+  //       if (entry.isIntersecting) {
+  //         console.log("Entering into zone");
+  //         // entry.target.classList.add("animate__animated");
+  //         // entry.target.classList.add("animate__backInDown")
 
-          document
-            .querySelector(".images-tools-bounce1")
-            ?.classList.add("animate__animated");
+  //         document
+  //           .querySelector(".images-tools-bounce1")
+  //           ?.classList.add("animate__animated");
 
-          document
-            .querySelector(".images-tools-bounce1")
-            ?.classList.add("animate__bounceIn");
-          // document.querySelector(".images-tools-bounce1")?.classList.add("animate__delay-1s");
+  //         document
+  //           .querySelector(".images-tools-bounce1")
+  //           ?.classList.add("animate__bounceIn");
+  //         // document.querySelector(".images-tools-bounce1")?.classList.add("animate__delay-1s");
 
-          document
-            .querySelector(".images-tools-bounce2")
-            ?.classList.add("animate__animated");
-          document
-            .querySelector(".images-tools-bounce2")
-            ?.classList.add("animate__bounceIn");
-          // document.querySelector(".images-tools-bounce2")?.classList.add("animate__delay-1s");
+  //         document
+  //           .querySelector(".images-tools-bounce2")
+  //           ?.classList.add("animate__animated");
+  //         document
+  //           .querySelector(".images-tools-bounce2")
+  //           ?.classList.add("animate__bounceIn");
+  //         // document.querySelector(".images-tools-bounce2")?.classList.add("animate__delay-1s");
 
-          document
-            .querySelector(".images-tools-bounce3")
-            ?.classList.add("animate__animated");
-          document
-            .querySelector(".images-tools-bounce3")
-            ?.classList.add("animate__bounceIn");
-          // document.querySelector(".images-tools-bounce3")?.classList.add("animate__delay-1s");
-        }
-        // else {
-        //   console.log("exit into zone");
-        //   document
-        //     .querySelector(".images-tools-bounce1")
-        //     ?.classList.remove("animate__bounceIn");
+  //         document
+  //           .querySelector(".images-tools-bounce3")
+  //           ?.classList.add("animate__animated");
+  //         document
+  //           .querySelector(".images-tools-bounce3")
+  //           ?.classList.add("animate__bounceIn");
+  //         // document.querySelector(".images-tools-bounce3")?.classList.add("animate__delay-1s");
+  //       }
+  //       // else {
+  //       //   console.log("exit into zone");
+  //       //   document
+  //       //     .querySelector(".images-tools-bounce1")
+  //       //     ?.classList.remove("animate__bounceIn");
 
-        //     document
-        //     .querySelector(".images-tools-bounce2")
-        //     ?.classList.remove("animate__bounceIn");
+  //       //     document
+  //       //     .querySelector(".images-tools-bounce2")
+  //       //     ?.classList.remove("animate__bounceIn");
 
-        //     document
-        //     .querySelector(".images-tools-bounce3")
-        //     ?.classList.remove("animate__bounceIn");
-        // }
-      });
-    });
+  //       //     document
+  //       //     .querySelector(".images-tools-bounce3")
+  //       //     ?.classList.remove("animate__bounceIn");
+  //       // }
+  //     });
+  //   });
 
-    const hiddenElements = document.querySelectorAll(".outter");
-    hiddenElements.forEach((el) => observer.observe(el));
-  }, []);
+  //   const hiddenElements = document.querySelectorAll(".outter");
+  //   hiddenElements.forEach((el) => observer.observe(el));
+  // }, []);
 
   return (
     <div>
       <ToolDiv>
         <Container maxWidth="lg" className="container">
           <div className="outter">
+          <img src="./images/FullRock2@3x.png" className="fRock-img-1"></img>
             <div className="title">
               Resources that'll help scale your business
             </div>
             <div className="tool">
+            {/* <img src="./images/Group 38634@3x.png" className="img-bg-2"></img> */}
+              <img src="./images/Group 38635@3x.png" className="img-bg-1"></img>
               <div className="box">
                 <div className="fba">
                   <img
@@ -135,6 +138,14 @@ const ToolDiv = styled.div`
       display: flex;
       flex-direction: column;
       align-items: center;
+      position: relative;
+
+      .fRock-img-1{
+        position: absolute;
+        width: 10%;
+        left: 0%;
+        top: -40px;
+      }
 
       .title {
         font-size: 32px;
@@ -154,6 +165,30 @@ const ToolDiv = styled.div`
         justify-content: space-between;
         align-items: center;
         width: 100%;
+        position: relative;
+
+        .img-bg-2{
+          position: absolute;
+          width: 80%;
+          z-index: 0;
+        }
+        
+        .img-bg-1{
+          width: 30%;
+          position: absolute;
+          z-index: 0;
+          right: -8%;
+          top: -51.5%;
+          @media (max-width:1100px){
+            display: none;
+          }
+          @media (max-width:900px){
+            display: none;
+          }
+          @media (max-width:600px){
+            display: none;
+          }
+        }
 
         @media (max-width: 600px) {
           flex-wrap: wrap;

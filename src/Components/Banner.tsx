@@ -53,6 +53,7 @@ const BannerWrapper = styled(Grid)<WrapperProps>`
     padding: ${(props: WrapperProps) =>
       props.direction === "regular" ? "0px 30px 0px 0px" : "0px 0px 0px 80px"};
       .title {
+        font-family: Poppins-semiBold;
         font-size: 32px;
         font-weight: 600;
         font-stretch: normal;
@@ -71,6 +72,7 @@ const BannerWrapper = styled(Grid)<WrapperProps>`
 
       }
       .subTitle {
+        font-family: Montserrat;
         font-size: 16px;
         line-height: 1.5;
         letter-spacing: 0.25px;
@@ -86,6 +88,7 @@ const BannerWrapper = styled(Grid)<WrapperProps>`
         
       }
       .btn {
+        font-family: Montserrat-SemiBold;
         padding: 12px 24px;
         border-radius: 8px;
         background-color: #5956e9;

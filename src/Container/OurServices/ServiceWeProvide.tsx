@@ -53,7 +53,7 @@ const ServiceWeProvideWrapper = styled.div`
       align-items: center;
 
       .title {
-        font-family: Poppins-semiBold;
+        font-family: Inter-Bold;
         font-size: 32px;
         font-weight: 600;
         line-height: 1.31;
@@ -117,7 +117,7 @@ const ServiceWeProvideWrapper = styled.div`
           border-radius: 8px;
           background-color: #5956e9;
           border: 0px;
-          font-family: Montserrat;
+          font-family: Montserrat-SemiBold;
 
           color: #fffcfc;
           @media (max-width: 600px) {

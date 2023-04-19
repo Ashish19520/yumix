@@ -40,7 +40,7 @@ const NewsCardWrapper = styled.div`
         text-decoration: none;
       }
     .title {
-      font-family: Poppins;
+      font-family: Poppins-semiBold;
       font-size: 18px;
       font-weight: 600;
       line-height: 1.33;

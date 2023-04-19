@@ -150,41 +150,46 @@ export const Hero = () => {
   }, []);
 
   useEffect(() => {
-    
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            console.log("Enterin into zone");
-            // entry.target.classList.add("show");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          console.log("Enterin into zone");
+          // entry.target.classList.add("show");
 
-            document
-              .querySelector(".imageBox")
-              ?.classList.add("animate__animated");
-            document
-              .querySelector(".imageBox")
-              ?.classList.add("animate__bounceInUp");
-            document
-              .querySelector(".imageBox")
-              ?.classList.add("animate__delay-3s");
-          } else {
-            console.log("exit into zone");
-            // entry.target.classList.remove("show");
+          document
+            .querySelector(".imageBox")
+            ?.classList.add("animate__animated");
+          document
+            .querySelector(".imageBox")
+            ?.classList.add("animate__bounceInUp");
+          document
+            .querySelector(".imageBox")
+            ?.classList.add("animate__delay-3s");
+        } else {
+          console.log("exit into zone");
+          // entry.target.classList.remove("show");
 
-            document
-              .querySelector(".icons-zoom")
-              ?.classList.remove("animate__bounceInUp");
-          }
-        });
+          document
+            .querySelector(".icons-zoom")
+            ?.classList.remove("animate__bounceInUp");
+        }
       });
+    });
 
-      const hiddenElements = document.querySelectorAll(".outter");
-      hiddenElements.forEach((el) => observer.observe(el));
-   
+    const hiddenElements = document.querySelectorAll(".outter");
+    hiddenElements.forEach((el) => observer.observe(el));
   }, []);
 
   return (
     <HeroLayout>
       <Container maxWidth="lg" className="container">
+      <motion.img
+        src="./images/Group 38633@3x.png"
+        className="bg-line-img_1"
+        variants={imgProduct1}
+        initial="hidden"
+        animate="show"
+      ></motion.img>
         <div className="outter">
           <div className="titleBox">
             <motion.h1
@@ -205,6 +210,20 @@ export const Hero = () => {
               everything you need to succeed in today's competitive online
               marketplace.
             </motion.p>
+            <motion.img
+              src="./images/FullRock2@3x.png"
+              className="rock-img_1"
+              variants={imgProduct1}
+              initial="hidden"
+              animate="show"
+            ></motion.img>
+            <motion.img
+              src="./images/Group 38632@3x.png"
+              className="bg-line-img-2"
+              variants={imgProduct1}
+              initial="hidden"
+              animate="show"
+            ></motion.img>
           </div>
           <div className="imageBox">
             <motion.div
@@ -270,10 +289,35 @@ export const Hero = () => {
 const HeroLayout = styled.div`
   background: #fffcfc;
   margin-top: 20px;
+  position: relative;
 
   @media (max-width: 600px) {
     margin-top: unset;
   }
+
+  .hid {
+    display: none;
+  }
+
+  .bg-line-img_1 {
+    position: absolute;
+    width: 100%;
+
+    bottom: -30px;
+    z-index: 0;
+
+    @media (max-width: 1100px) {
+      display: none;
+    }
+
+    @media (max-width: 900px) {
+      display: none;
+    }
+    @media (max-width: 600px) {
+      display: none;
+    }
+  }
+
   .container {
     /* background-image: url("./images/Hero component.png");
     background-repeat: no-repeat;
@@ -295,6 +339,45 @@ const HeroLayout = styled.div`
       .titleBox {
         max-width: 700px;
         width: 60%;
+        position: relative;
+
+        .rock-img_1 {
+          position: absolute;
+          width: 10%;
+          bottom: 60px;
+          left: 200px;
+
+          @media (max-width: 1100px) {
+            display: none;
+          }
+          @media (max-width: 900px) {
+            display: none;
+          }
+          @media (max-width: 900px) {
+            display: none;
+          }
+          @media (max-width: 600px) {
+            display: none;
+          }
+        }
+
+        .bg-line-img-2 {
+          position: absolute;
+          width: 100%;
+          bottom: -40px;
+          left: 0;
+          z-index: -22;
+
+          @media (max-width: 1100px) {
+            display: none;
+          }
+          @media (max-width: 900px) {
+            display: none;
+          }
+          @media (max-width: 600px) {
+            display: none;
+          }
+        }
 
         @media (max-width: 600px) {
           width: 100%;
@@ -361,6 +444,9 @@ const HeroLayout = styled.div`
             position: absolute;
             left: 0;
             top: -40px !important;
+            @media (max-width: 900px) {
+              display: none;
+            }
 
             @media (max-width: 600px) {
               display: none;
@@ -373,6 +459,10 @@ const HeroLayout = styled.div`
             right: -50px;
             top: 120px !important;
 
+            @media (max-width: 900px) {
+              display: none;
+            }
+
             @media (max-width: 600px) {
               display: none;
             }
@@ -383,6 +473,9 @@ const HeroLayout = styled.div`
             position: absolute;
             left: -120px;
             top: 170px !important;
+            @media (max-width: 900px) {
+              display: none;
+            }
             @media (max-width: 600px) {
               display: none;
             }
@@ -393,6 +486,9 @@ const HeroLayout = styled.div`
             position: absolute;
             left: 0;
             top: 350px !important;
+            @media (max-width: 900px) {
+              display: none;
+            }
             @media (max-width: 600px) {
               display: none;
             }

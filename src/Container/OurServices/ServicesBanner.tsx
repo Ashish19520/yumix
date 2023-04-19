@@ -86,6 +86,7 @@ const ServiceBanner = styled.div`
           align-items: center;
         }
         .title {
+          font-family: Inter-Bold;
           font-size: 32px;
           font-weight: bold;
           line-height: 1.33;
@@ -110,7 +111,7 @@ const ServiceBanner = styled.div`
           background-color: #5956e9;
           border: 0px;
           color: #fffcfc;
-          font-family: Montserrat;
+          font-family: Montserrat-SemiBold;
         }
       }
     }
@@ -147,6 +148,7 @@ const ServiceBanner = styled.div`
         }
 
         .title {
+          font-family: Inter-Bold;
           font-size: 32px;
           font-weight: bold;
           line-height: 1.33;
@@ -176,7 +178,7 @@ const ServiceBanner = styled.div`
           background-color: #5956e9;
           border: 0px;
           color: #fffcfc;
-          font-family: Montserrat;
+          font-family: Montserrat-SemiBold;
         }
       }
     }
