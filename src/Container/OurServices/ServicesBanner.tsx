@@ -1,12 +1,31 @@
 import { Container } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 export const ServicesBanner = () => {
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          console.log("Entering into zone");
+          entry.target.classList.add("animate__animated");
+          entry.target.classList.add("animate__fadeIn");
+        }
+        // else {
+        //   console.log("exit into zone");
+        //   entry.target.classList.remove("animate__fadeIn");
+        // }
+      });
+    });
+
+    const hiddenElements = document.querySelectorAll(".service-fade-banner");
+    hiddenElements.forEach((el) => observer.observe(el));
+  }, []);
+
   return (
     <ServiceBanner>
       <Container maxWidth="lg" className="container">
-        <div className="box-1" id="analytics">
+        <div className="box-1 service-fade-banner" id="analytics">
           <div className="img-box">
             <img src="./images/Group 38606.png"></img>
           </div>
@@ -24,7 +43,7 @@ export const ServicesBanner = () => {
             <button className="btn">View More</button>
           </div>
         </div>
-        <div className="box-2" id="customerExperience">
+        <div className="box-2 service-fade-banner" id="customerExperience">
           <div className="text-box">
             <div className="title">Customer Experience</div>
             <div className="subtitle">
@@ -121,7 +140,7 @@ const ServiceBanner = styled.div`
       align-items: center;
       justify-content: center;
 
-      margin-bottom:40px;
+      margin-bottom: 40px;
 
       @media (max-width: 600px) {
         flex-direction: column-reverse;

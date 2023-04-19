@@ -1,13 +1,36 @@
 import { Container } from "@mui/material";
-import React from "react";
+import React,{useEffect} from "react";
 import styled from "styled-components";
 
 export const ServiceWeProvide = () => {
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          console.log("Entering into zone");
+          entry.target.classList.add("animate__animated");
+          entry.target.classList.add("animate__fadeIn");
+        }
+        // else {
+        //   console.log("exit into zone");
+        //   entry.target.classList.remove("animate__fadeIn");
+        // }
+      });
+    });
+
+    const hiddenElements = document.querySelectorAll(".service-fade");
+    hiddenElements.forEach((el) => observer.observe(el));
+  }, []);
+
   return (
     <div id="digitalMedia">
       <ServiceWeProvideWrapper>
         <Container maxWidth="lg" className="container">
-          <div className="title-box">
+          <div className="title-box service-fade">
+            <img
+              src="./images/Group 38608@3x.png"
+              className="img-line_bg"
+            ></img>
             <div className="title">Services We Provide</div>
             <div className="subtitle">
               Here are the services offered by Eservz
@@ -39,18 +62,26 @@ const ServiceWeProvideWrapper = styled.div`
   padding: 40px 0px;
   .container {
     margin: auto;
-    background-image: url("./images/Sec 1 bg.png");
+    /* background-image: url("./images/Sec 1 bg.png");
     background-repeat: no-repeat;
     background-position: 0% 55%;
 
     @media (max-width: 1100px) {
       background-image: unset;
-    }
+    } */
 
     .title-box {
       display: flex;
       flex-direction: column;
       align-items: center;
+      position: relative;
+
+      .img-line_bg {
+        width: 100%;
+        position: absolute;
+        z-index: 1;
+        top: 15%;
+      }
 
       .title {
         font-family: Inter-Bold;
@@ -78,6 +109,7 @@ const ServiceWeProvideWrapper = styled.div`
     .content-box {
       display: flex;
       align-items: center;
+      z-index: 2;
 
       @media (max-width: 600px) {
         flex-direction: column-reverse;
@@ -127,6 +159,7 @@ const ServiceWeProvideWrapper = styled.div`
       }
       .img-box {
         width: 40%;
+        z-index: 2;
 
         img {
           width: 90%;

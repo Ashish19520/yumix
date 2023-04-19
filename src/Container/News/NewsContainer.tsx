@@ -101,7 +101,7 @@ export const NewsContainer = () => {
       });
     });
 
-    const hiddenElements = document.querySelectorAll(".hidden");
+    const hiddenElements = document.querySelectorAll(".hiddenNews");
     hiddenElements.forEach((el) => observer.observe(el));
   }, []);
 
@@ -109,7 +109,7 @@ export const NewsContainer = () => {
   return (
     <NewsWrapper>
       <Container maxWidth="lg" className="container">
-        <div className="news-wrapper hidden">
+        <div className="news-wrapper hiddenNews">
           <div className="text-box">
             <div className="title">News</div>
             <div className="subtitle">

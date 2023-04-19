@@ -53,101 +53,116 @@ export const Hero = () => {
     },
   };
 
-  useEffect(() => {
-    const card = document.querySelector(".imageBox");
-    const container = document.querySelector(".outter");
-    const rock = document.querySelector(".rock");
-    const subject = document.querySelector(".subject");
-    const shopify = document.querySelector(".shopify");
-    const certified = document.querySelector(".certified");
-    const google = document.querySelector(".google");
+  const lines = {
+    hidden: {
+      opacity: 0,
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        delay: 3.5,
+        ease: "easeInOut",
+      },
+    },
+  };
 
-    container?.addEventListener("mousemove", (e) => {
-      //@ts-ignore
-      console.log(e.pageX);
-      //@ts-ignore
-      let xAxis = (window.innerWidth / 2 - e.pageX) / 25;
-      //@ts-ignore
-      let yAxis = (window.innerHeight / 2 - e.pageY) / 25;
-      //@ts-ignore
-      // card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+  // useEffect(() => {
+  //   const card = document.querySelector(".imageBox");
+  //   const container = document.querySelector(".outter");
+  //   const rock = document.querySelector(".rock");
+  //   const subject = document.querySelector(".subject");
+  //   const shopify = document.querySelector(".shopify");
+  //   const certified = document.querySelector(".certified");
+  //   const google = document.querySelector(".google");
 
-      //@ts-ignore
-      // subject.style.transform = `rotateY(${xAxis + 2}deg) rotateX(${
-      //   yAxis + 2
-      // }deg)`;
+  //   container?.addEventListener("mousemove", (e) => {
+  //     //@ts-ignore
+  //     console.log(e.pageX);
+  //     //@ts-ignore
+  //     let xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+  //     //@ts-ignore
+  //     let yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+  //     //@ts-ignore
+  //     // card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
 
-      //@ts-ignore
-      // rock.style.transform = `rotateY(${xAxis - 5}deg) rotateX(${
-      //   yAxis - 5
-      // }deg)`;
+  //     //@ts-ignore
+  //     // subject.style.transform = `rotateY(${xAxis + 2}deg) rotateX(${
+  //     //   yAxis + 2
+  //     // }deg)`;
 
-      //@ts-ignore
-      shopify.style.transform = `rotateY(${xAxis + 20}deg) rotateX(${
-        yAxis + 20
-      }deg)`;
+  //     //@ts-ignore
+  //     // rock.style.transform = `rotateY(${xAxis - 5}deg) rotateX(${
+  //     //   yAxis - 5
+  //     // }deg)`;
 
-      //@ts-ignore
-      certified.style.transform = `rotateY(${xAxis}deg) rotateX(${
-        yAxis - 5
-      }deg)`;
+  //     //@ts-ignore
+  //     shopify.style.transform = `rotateY(${xAxis + 20}deg) rotateX(${
+  //       yAxis + 20
+  //     }deg)`;
 
-      //@ts-ignore
-      google.style.transform = `rotateY(${-xAxis}deg) rotateX(${
-        yAxis + 20
-      }deg)`;
+  //     //@ts-ignore
+  //     certified.style.transform = `rotateY(${xAxis}deg) rotateX(${
+  //       yAxis - 5
+  //     }deg)`;
 
-      card?.addEventListener("mouseenter", (e) => {
-        //@ts-ignore
-        card.style.transition = `none`;
-        //@ts-ignore
-        rock.style.transform = "translateZ(150px)";
+  //     //@ts-ignore
+  //     google.style.transform = `rotateY(${-xAxis}deg) rotateX(${
+  //       yAxis + 20
+  //     }deg)`;
 
-        //@ts-ignore
-        subject.style.transform = "translateZ(75px)";
+  //     card?.addEventListener("mouseenter", (e) => {
+  //       //@ts-ignore
+  //       card.style.transition = `none`;
+  //       //@ts-ignore
+  //       rock.style.transform = "translateZ(150px)";
 
-        //@ts-ignore
-        shopify.style.transform = "translateZ(150px)";
+  //       //@ts-ignore
+  //       subject.style.transform = "translateZ(75px)";
 
-        //@ts-ignore
-        certified.style.transform = "translateZ(150px)";
+  //       //@ts-ignore
+  //       shopify.style.transform = "translateZ(150px)";
 
-        //@ts-ignore
-        google.style.transform = "translateZ(150px)";
-      });
+  //       //@ts-ignore
+  //       certified.style.transform = "translateZ(150px)";
 
-      card?.addEventListener("mouseleave", (e) => {
-        //@ts-ignore
-        card.style.transition = `all 0.5s ease`;
-        //@ts-ignore
-        card.style.transform = `rotateY(0deg) rotateX(0deg)`;
+  //       //@ts-ignore
+  //       google.style.transform = "translateZ(150px)";
+  //     });
 
-        //@ts-ignore
-        subject.style.transform = `rotateY(0deg) rotateX(0deg)`;
+  //     card?.addEventListener("mouseleave", (e) => {
+  //       //@ts-ignore
+  //       card.style.transition = `all 0.5s ease`;
+  //       //@ts-ignore
+  //       card.style.transform = `rotateY(0deg) rotateX(0deg)`;
 
-        //@ts-ignore
-        rock.style.transform = `rotateY(0deg) rotateX(0deg)`;
+  //       //@ts-ignore
+  //       subject.style.transform = `rotateY(0deg) rotateX(0deg)`;
 
-        //@ts-ignore
-        shopify.style.transform = `rotateY(0deg) rotateX(0deg)`;
+  //       //@ts-ignore
+  //       rock.style.transform = `rotateY(0deg) rotateX(0deg)`;
 
-        //@ts-ignore
-        rock.style.transform = "translateZ(0px)";
+  //       //@ts-ignore
+  //       shopify.style.transform = `rotateY(0deg) rotateX(0deg)`;
 
-        //@ts-ignore
-        subject.style.transform = "translateZ(0px)";
+  //       //@ts-ignore
+  //       rock.style.transform = "translateZ(0px)";
 
-        //@ts-ignore
-        shopify.style.transform = "translateZ(0px)";
+  //       //@ts-ignore
+  //       subject.style.transform = "translateZ(0px)";
 
-        //@ts-ignore
-        certified.style.transform = "translateZ(0px)";
+  //       //@ts-ignore
+  //       shopify.style.transform = "translateZ(0px)";
 
-        //@ts-ignore
-        google.style.transform = "translateZ(0px)";
-      });
-    });
-  }, []);
+  //       //@ts-ignore
+  //       certified.style.transform = "translateZ(0px)";
+
+  //       //@ts-ignore
+  //       google.style.transform = "translateZ(0px)";
+  //     });
+  //   });
+  // }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -186,7 +201,7 @@ export const Hero = () => {
       <motion.img
         src="./images/Group 38633@3x.png"
         className="bg-line-img_1"
-        variants={imgProduct1}
+        variants={lines}
         initial="hidden"
         animate="show"
       ></motion.img>
@@ -213,14 +228,14 @@ export const Hero = () => {
             <motion.img
               src="./images/FullRock2@3x.png"
               className="rock-img_1"
-              variants={imgProduct1}
+              variants={lines}
               initial="hidden"
               animate="show"
             ></motion.img>
             <motion.img
               src="./images/Group 38632@3x.png"
               className="bg-line-img-2"
-              variants={imgProduct1}
+              variants={lines}
               initial="hidden"
               animate="show"
             ></motion.img>
@@ -303,7 +318,7 @@ const HeroLayout = styled.div`
     position: absolute;
     width: 100%;
 
-    bottom: -30px;
+    bottom: -50px;
     z-index: 0;
 
     @media (max-width: 1100px) {
@@ -364,7 +379,7 @@ const HeroLayout = styled.div`
         .bg-line-img-2 {
           position: absolute;
           width: 100%;
-          bottom: -40px;
+          bottom: -50px;
           left: 0;
           z-index: -22;
 
@@ -494,13 +509,22 @@ const HeroLayout = styled.div`
             }
           }
 
+          .subject{
+            margin-left: 35px;
+          }
+
+          @media (max-width: 600px) {
+              
+              margin-left: unset;
+            }
+
           img {
             width: 90%;
             padding: 25px;
 
             @media (max-width: 600px) {
               width: 100%;
-              padding: unse;
+              padding: unset;
             }
           }
         }

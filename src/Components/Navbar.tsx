@@ -72,6 +72,7 @@ export const Navbar = () => {
               src="/images/logo.png"
               style={{ height: "68px", width: "68px" }}
               variants={navText}
+              className="logo-img"
             ></motion.img>
           </motion.div>
           <div>
@@ -213,6 +214,7 @@ const Nav = styled(Grid)<NavProps>`
       cursor: pointer;
     }
 
+    
     .insideNav {
       display: flex;
       align-items: center;
@@ -240,6 +242,11 @@ const Nav = styled(Grid)<NavProps>`
           }
         }
       }
+
+      .logo-img{
+     
+      z-index: 999;
+    }
     }
 
     .btn {

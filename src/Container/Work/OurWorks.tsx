@@ -2,6 +2,7 @@ import { Container } from "@mui/material";
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import { Banner } from "../../Components/Banner";
+import { motion } from "framer-motion";
 
 export const OurWorks = () => {
   const data1 = {
@@ -18,6 +19,41 @@ export const OurWorks = () => {
       "While most digital marketing agencies excel at one or two channels, Eservz has deep expertise across all performance marketing services, which allows us to provide a rich digital marketing services offering.",
     btnText: "View Case Study",
     imgPath: "./images/Img2.png",
+  };
+
+  const typingContainer = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.03,
+      },
+    },
+  };
+  const typingText = {
+    hidden: { opacity: 0, y: "-20px" },
+    show: {
+      opacity: 1,
+      y: "0",
+      transition: {
+        ease: "easeInOut",
+      },
+    },
+  };
+
+  const elements = {
+    hidden: {
+      opacity: 0,
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        delay: 0.4,
+        ease: "easeInOut",
+      },
+    },
   };
 
   useEffect(() => {
@@ -42,11 +78,22 @@ export const OurWorks = () => {
   return (
     <WorkWrapper>
       <Container maxWidth="lg" className="container">
-        <img src="./images/Group 38636@3x.png" className="img-line-bg"></img>
-        <img src="./images/Group 38637@3x.png" className="img-line-bg_2"></img>
-        <img src="./images/Round Cube2@3x.png" className="img-cube_1"></img>
-        <img src="./images/Ellipse 63@3x.png" className="img-dot_1"></img>
-        <div className="title">Our Works</div>
+        <motion.img src="./images/Group 38636@3x.png" variants={elements}  initial="hidden" animate="show" className="img-line-bg"></motion.img>
+        <motion.img src="./images/Group 38637@3x.png" variants={elements}  initial="hidden" animate="show" className="img-line-bg_2"></motion.img>
+        <motion.img src="./images/Round Cube2@3x.png" variants={elements}  initial="hidden" animate="show" className="img-cube_1"></motion.img>
+        <motion.img src="./images/Ellipse 63@3x.png" variants={elements}  initial="hidden" animate="show" className="img-dot_1"></motion.img>
+        <motion.div
+          variants={typingContainer}
+          initial="hidden"
+          animate="show"
+          className="title"
+        >
+          {Array.from("Our Works").map((word, i) => (
+            <motion.span key={i} variants={typingText}>
+              {word}
+            </motion.span>
+          ))}
+        </motion.div>
 
         <div className="BannerCloth hidden">
           <Banner data={data1} direction={"regular"} />
@@ -64,9 +111,10 @@ const WorkWrapper = styled.div`
     margin: auto;
     position: relative;
     .img-cube_1 {
-      width: 30%;
+      width: 20%;
       position: absolute;
-      right: 0;
+      right: 10%;
+      top: 6%;
 
       @media (max-width: 900px) {
         display: none;
@@ -95,6 +143,7 @@ const WorkWrapper = styled.div`
       position: absolute;
       top: 0%;
       left: 4%;
+      z-index: 0;
 
       @media (max-width: 900px) {
         display: none;
@@ -120,6 +169,8 @@ const WorkWrapper = styled.div`
       color: #303030;
       margin-bottom: 40px;
       margin-top: 40px;
+      position: relative;
+      z-index: 1 !important;
 
       @media (max-width: 600px) {
         /* width:100%; */
