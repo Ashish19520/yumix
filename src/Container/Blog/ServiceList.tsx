@@ -1,5 +1,5 @@
 import { Box, Grid, Typography } from "@mui/material";
-
+import {useEffect} from "react";
 
 export default function ServiceList() {
 
@@ -50,7 +50,27 @@ export default function ServiceList() {
             image : "./images/Image@3x.png"
         }
     ]
+
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              console.log("Entering into zone");
+              entry.target.classList.add("animate__animated");
+              entry.target.classList.add("animate__fadeIn");
+            }
+            // else {
+            //   console.log("exit into zone");
+            //   entry.target.classList.remove("animate__fadeIn");
+            // }
+          });
+        });
+    
+        const hiddenElements = document.querySelectorAll(".services-list-imgs");
+        hiddenElements.forEach((el) => observer.observe(el));
+      }, []);
   return (
+    <div className="services-list-imgs">
     <Grid container style={{maxWidth:"1200px", padding:"80px 20px", margin:"auto"}}>
         {
             blogs.map((item) => {
@@ -64,5 +84,6 @@ export default function ServiceList() {
             })
         }
     </Grid>
+    </div>
   )
 }

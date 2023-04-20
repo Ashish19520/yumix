@@ -1,5 +1,5 @@
 import { Container } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { NewsCard } from "../../Components/NewsCard";
 
@@ -55,13 +55,32 @@ const data = [
 ];
 
 export const LatestNews = () => {
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          console.log("Entering into zone");
+          entry.target.classList.add("animate__animated");
+          entry.target.classList.add("animate__fadeIn");
+        }
+        // else {
+        //   console.log("exit into zone");
+        //   entry.target.classList.remove("animate__fadeIn");
+        // }
+      });
+    });
+
+    const hiddenElements = document.querySelectorAll(".latestnews_hidden");
+    hiddenElements.forEach((el) => observer.observe(el));
+  }, []);
   return (
     <LatestNewsWrapper>
-      <Container maxWidth="lg" className="container">
+      <Container maxWidth="lg" className="container ">
         <div className="heading">Latest News</div>
-        <div className="cards">
+        <div className="cards ">
           {data.map((d) => (
-            <div className="eachCard">
+            <div className="eachCard latestnews_hidden">
               <NewsCard data={d} />
             </div>
           ))}

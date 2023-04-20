@@ -1,13 +1,32 @@
 import { Container } from '@mui/system';
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from "styled-components";
 
 export default function OurLeaders() {
+
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              console.log("Entering into zone");
+              entry.target.classList.add("animate__animated");
+              entry.target.classList.add("animate__fadeIn");
+            } 
+            // else {
+            //   console.log("exit into zone");
+            //   entry.target.classList.remove("animate__fadeIn");
+            // }
+          });
+        });
+    
+        const hiddenElements = document.querySelectorAll(".ourLeaders_hidden");
+        hiddenElements.forEach((el) => observer.observe(el));
+      }, []);
   return (
     <div>
         <Banner>
             <Container  maxWidth="lg" className="container">
-                <div className="leaders">
+                <div className="leaders ourLeaders_hidden">
                     <div className="leadersHeading">
                         <h1>Our Leaders</h1>
                     </div>

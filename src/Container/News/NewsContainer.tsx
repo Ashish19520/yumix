@@ -1,6 +1,43 @@
 import { Container } from "@mui/material";
 import React, { useEffect } from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
+
+const typingContainer = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.06,
+    },
+  },
+};
+const typingText = {
+  hidden: { opacity: 0, y: "-20px" },
+  show: {
+    opacity: 1,
+    y: "0",
+    transition: {
+      ease: "easeInOut",
+    },
+  },
+};
+
+const elements = {
+  hidden: {
+    opacity: 0,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+      delay: 0.3,
+      ease: "easeInOut",
+    },
+  },
+};
+
 export const NewsContainer = () => {
   useEffect(() => {
     const card = document.querySelector(".img-box");
@@ -18,12 +55,12 @@ export const NewsContainer = () => {
       let yAxis = (window.innerHeight / 2 - e.pageY) / 50;
 
       //@ts-ignore
-      rock.style.transform = `rotateY(${xAxis - 5}deg) rotateX(${
-        yAxis - 5
-      }deg)`;
+      // rock.style.transform = `rotateY(${xAxis - 5}deg) rotateX(${
+      //   yAxis - 5
+      // }deg)`;
 
-      //@ts-ignore
-      cone.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+      // //@ts-ignore
+      // cone.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
 
       //@ts-ignore
       cube.style.transform = `translate(${xAxis}% , ${yAxis}%)`;
@@ -38,10 +75,10 @@ export const NewsContainer = () => {
         //@ts-ignore
         card.style.transition = `none`;
         //@ts-ignore
-        rock.style.transform = "translateZ(150px)";
+        // rock.style.transform = "translateZ(150px)";
 
-        //@ts-ignore
-        cone.style.transform = "translateZ(150px)";
+        // //@ts-ignore
+        // cone.style.transform = "translateZ(150px)";
 
         //@ts-ignore
         cube.style.transform = "translateZ(150px)";
@@ -60,19 +97,19 @@ export const NewsContainer = () => {
         card.style.transform = `rotateY(0deg) rotateX(0deg)`;
 
         //@ts-ignore
-        rock.style.transform = `rotateY(0deg) rotateX(0deg)`;
+        // rock.style.transform = `rotateY(0deg) rotateX(0deg)`;
 
-        //@ts-ignore
-        cone.style.transform = `rotateY(0deg) rotateX(0deg)`;
+        // //@ts-ignore
+        // cone.style.transform = `rotateY(0deg) rotateX(0deg)`;
 
         //@ts-ignore
         cube.style.transform = `rotateY(0deg) rotateX(0deg)`;
 
         //@ts-ignore
-        rock.style.transform = "translateZ(0px)";
+        // rock.style.transform = "translateZ(0px)";
 
-        //@ts-ignore
-        cone.style.transform = "translateZ(0px)";
+        // //@ts-ignore
+        // cone.style.transform = "translateZ(0px)";
 
         //@ts-ignore
         cube.style.transform = "translateZ(0px)";
@@ -86,46 +123,42 @@ export const NewsContainer = () => {
     });
   }, []);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          console.log("Entering into zone");
-          entry.target.classList.add("animate__animated");
-          entry.target.classList.add("animate__fadeIn");
-        } 
-        // else {
-        //   console.log("exit into zone");
-        //   entry.target.classList.remove("animate__fadeIn");
-        // }
-      });
-    });
-
-    const hiddenElements = document.querySelectorAll(".hiddenNews");
-    hiddenElements.forEach((el) => observer.observe(el));
-  }, []);
-
+ 
 
   return (
     <NewsWrapper>
       <Container maxWidth="lg" className="container">
-        <div className="news-wrapper hiddenNews">
+        <div className="news-wrapper">
           <div className="text-box">
-            <div className="title">News</div>
-            <div className="subtitle">
+            
+              <motion.div
+                variants={typingContainer}
+                initial="hidden"
+                animate="show"
+                className="title"
+              >
+                {Array.from("News").map((word, i) => (
+                  <motion.span key={i} variants={typingText}>
+                    {word}
+                  </motion.span>
+                ))}
+              
+              </motion.div>
+            
+            <motion.div className="subtitle" variants={elements}  initial="hidden" animate="show">
               World's Best News for insights from experts about solutions and
               progress in E-Commerce development.
-            </div>
-            <img src="./images/Round Cube2@3x.png" className="cube"></img>
+            </motion.div>
+            <motion.img src="./images/Round Cube2@3x.png" className="cube" variants={elements}  initial="hidden" animate="show"></motion.img>
           </div>
-          <div className="img-box">
+          <motion.div className="img-box" variants={elements}  initial="hidden" animate="show">
             <img src="./images/Illustration (1).png" className="subject"></img>
             <img src="./images/Cone3@3x.png" className="cone"></img>
             <img src="./images/newRock2@3x.png" className="rock"></img>
             <img src="./images/Ellipse 62@3x.png" className="dot"></img>
             <img src="./images/Ellipse 62@3x.png" className="dottwo"></img>
             <img src="./images/Group 38623@3x.png" className="line"></img>
-          </div>
+          </motion.div>
         </div>
       </Container>
     </NewsWrapper>

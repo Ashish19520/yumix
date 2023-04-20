@@ -26,7 +26,7 @@ export const OurWorks = () => {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.03,
+        staggerChildren: 0.04,
       },
     },
   };
@@ -71,7 +71,7 @@ export const OurWorks = () => {
       });
     });
 
-    const hiddenElements = document.querySelectorAll(".hidden");
+    const hiddenElements = document.querySelectorAll(".bannerhidden");
     hiddenElements.forEach((el) => observer.observe(el));
   }, []);
 
@@ -95,10 +95,10 @@ export const OurWorks = () => {
           ))}
         </motion.div>
 
-        <div className="BannerCloth hidden">
+        <motion.div variants={elements}  initial="hidden" animate="show" className="BannerCloth bannerhidden">
           <Banner data={data1} direction={"regular"} />
-        </div>
-        <div className="BannerGrocery hidden">
+        </motion.div>
+        <div className="BannerGrocery bannerhidden">
           <Banner data={data2} direction={"reverse"} />
         </div>
       </Container>
