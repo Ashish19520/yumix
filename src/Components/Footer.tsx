@@ -1,56 +1,109 @@
+import { Box, Grid, Typography } from '@mui/material';
 import React from 'react'
-import '../Style/Footer.css';
-import { FaFacebookF, FaGoogle, FaLinkedinIn } from "react-icons/fa";
+import { AiFillInstagram, AiFillLinkedin, AiOutlineCopyrightCircle } from 'react-icons/ai';
+import { FaFacebook, FaFacebookF, FaGoogle, FaLinkedinIn } from "react-icons/fa";
 import { HiLocationMarker } from "react-icons/hi";
-
-import { Link } from "react-router-dom";
-//@ts-ignore
-import { HashLink } from 'react-router-hash-link';
-
-
+import { useNavigate } from 'react-router-dom';
 export default function Footer() {
+
+    const links = [
+        {
+            link : "Home",
+            to : "/"
+        },
+        {
+            link : "About Us",
+            to : "/aboutus"
+        },
+        {
+            link : "Portfolio",
+            to : "/works"
+        },
+        {
+            link : "Contact Us",
+            to : "/"
+        },
+        {
+            link : "Terms & Conditions",
+            to : "/"
+        },
+        {
+            link : "Privacy Policy",
+            to : "/"
+        }
+    ]
+
+    const services = [
+        {
+            link : "Account Set Up & Management",
+            to : "/"
+        },
+        {
+            link : "Inventory Planning & Management",
+            to : "/"
+        },
+        {
+            link : "Pricing Strategy & Management",
+            to : "/"
+        },
+        {
+            link : "Keywords Analysis",
+            to : "/"
+        },
+        
+    ]
+
+    const navigate = useNavigate()
+
   return (
-    
-    <div>
-        <footer>
-            <div className="row">
-                <div className="col">
-                    <img src="/images/logo.png" alt='logo' style={{height:"68px",width:"68px"}}/>
-                    <p className='content'>Eservz is a leading and globally renowned e-commerce and Amazon specialist agency.</p>
-                </div>
-                <div className="col">
-                    <h3>Quick Link</h3>
-                    <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="">About Us</a></li>
-                        <li><a href="">Portfolio</a></li>
-                        <li><a href="">Contact Us</a></li>
-                        <li><a href="">Terms & Conditions</a></li>
-                        <li><a href="">Privacy Policy</a></li>
-                    </ul>
-                </div>
-                <div className="col">
-                    <h3>Services</h3>
-                    <HashLink to='#digitalMedia' smooth style={{ textDecoration:'none'}}><p className='services'>Digital Media</p></HashLink>
-                    <HashLink to='#analytics' smooth style={{ textDecoration:'none'}}><p className='services'>Analytics</p></HashLink>
-                    <HashLink to='#customerExperience' smooth style={{ textDecoration:'none'}}><p className='services'>Customer Experience</p></HashLink>
-                    
-                </div>
-                <div className="col">
-                    <h3>Address</h3>
-                    <p className='address'><span style={{marginRight:'4px'}}> <HiLocationMarker size={18}color='#rgb(37, 47, 62)'/></span>Bighatch Consulting Private Limited 88/1, H.K.D.Compound, G.T. Road,Mahespur, Lahartara, Varanasi,
-                        Uttar Pradesh, 221001, India
-                    </p>
-                    <div className="social-icons">
-                    <Link to="/" className="iconLink"><FaFacebookF color="#252f3e" size={16} /></Link>
-                    <Link to="/" className="iconLink"><FaLinkedinIn color="#252f3e" size={16} /></Link>
-                    <Link to="/" className="iconLink"><FaGoogle color="#252f3e" size={16} /></Link>
-                    </div>
-                </div>
-            </div>
-            <hr />
-            <p className='copyright'>©Eservz 2023 all right reserved</p>
-        </footer>
-    </div>
+    <Box style={{width:"100%", backgroundColor:"white", padding:"80px 40px"}}>
+        <Grid container sx={{maxWidth:"1200px", padding:"20px 0px" , margin:"auto", borderBottom:"2px solid #E8E8E8"}}>
+            <Grid item xs={12} sm={4} md={3} p={3}>
+                <img src="./images/logo.png" width="80px" alt="logo" />
+                <Typography style={{color:"#404040", fontSize:"14px", lineHeight:"18px", fontFamily:"Montserrat"}}>Eservz is a leading and globally renowned e-commerce and Amazon specialist agency.</Typography>
+            </Grid>
+            <Grid item xs={12} sm={4} md={3} p={3}>
+                <Typography style={{letterSpacing:"1px", color:"#404040", fontSize:"14px", lineHeight:"20px", fontFamily:"Montserrat-SemiBold", marginBottom:"16px"}}>
+                    Quick Link
+                </Typography>
+                {
+                    links.map((item)=>
+                    <Typography key={item.link} onClick={()=>navigate(item.to)} style={{color:"#404040", fontSize:"12px", lineHeight:"18px", fontFamily:"Montserrat", cursor:"pointer", marginBottom:"16px"}}>
+                        {item.link}
+                    </Typography>)
+                }
+            </Grid>
+            <Grid item xs={12} sm={4} md={3} p={3}>
+                <Typography style={{letterSpacing:"1px", color:"#404040", fontSize:"14px", lineHeight:"20px", fontFamily:"Montserrat-SemiBold", marginBottom:"16px"}}>
+                    Services
+                </Typography>
+                {
+                    services.map((item)=>
+                    <Typography key={item.link} onClick={()=>navigate(item.to)} style={{color:"#404040", fontSize:"12px", lineHeight:"18px", fontFamily:"Montserrat", cursor:"pointer", marginBottom:"16px"}}>
+                        {item.link}
+                    </Typography>)
+                }
+            </Grid>
+            <Grid item xs={12} sm={4} md={3} p={3}>
+                <Typography style={{letterSpacing:"1px", color:"#404040", fontSize:"14px", lineHeight:"20px", fontFamily:"Montserrat-SemiBold", marginBottom:"16px"}}>
+                    Address
+                </Typography>
+                <Typography onClick={()=>navigate("/")} style={{color:"#404040", fontSize:"12px", lineHeight:"18px", fontFamily:"Montserrat", cursor:"pointer", marginBottom:"16px"}}>
+                Bighatch Consulting Private Limited<br/>88/1, H.K.D.Compound, G.T. Road,Mahespur, Lahartara, Varanasi,<br/>Uttar Pradesh, 221001, India
+                </Typography>
+                <Box style={{display:"flex", alignItems:"center", gap:"10px"}}>
+                    <AiFillInstagram onClick={()=>window.open("https://www.linkedin.com/company/eservz")} style={{fontSize:"32px", color:'#949494', cursor:"pointer"}}/>
+                    <FaFacebook onClick={()=>window.open("https://www.facebook.com/ESERVZ")} style={{fontSize:"28px", color:'#949494', cursor:"pointer"}}/>
+                    <AiFillLinkedin onClick={()=>window.open("https://www.linkedin.com/company/eservz")} style={{fontSize:"30px", color:'#949494', cursor:"pointer"}}/>   
+                </Box>
+            </Grid>
+        </Grid>
+        <Box style={{width:'100%', textAlign:"center", marginTop:"20px", display:"flex", alignItems:'center', justifyContent:'center'}}>
+            <AiOutlineCopyrightCircle style={{color:"#404040"}} />
+            <Typography style={{fontSize:"14px", fontFamily:"Montserrat-SemiBold", color:"#6A6A6A"}}>
+                <span style={{color:"#6349FF"}}>Eservz 2023</span> all right reserved
+            </Typography>
+        </Box>
+    </Box>
   )
 }

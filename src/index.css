@@ -2,6 +2,7 @@
   font-family: "Poppins-Bold";   /*Can be any text*/
   src: local("Poppins-Bold"),
     url("./fonts/Poppins-Bold.ttf") format("truetype");
+  font-weight: 700;
 }
 
 @font-face {
