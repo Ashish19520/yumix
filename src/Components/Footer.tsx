@@ -1,10 +1,20 @@
-import { Box, Grid, Typography } from '@mui/material';
+import { Box, Dialog, DialogContent, DialogTitle, Grid, Typography } from '@mui/material';
 import React from 'react'
 import { AiFillInstagram, AiFillLinkedin, AiOutlineCopyrightCircle } from 'react-icons/ai';
 import { FaFacebook, FaFacebookF, FaGoogle, FaLinkedinIn } from "react-icons/fa";
+import {ImLocation2} from "react-icons/im";
+
+
+import "../Style/Footer.css";
+
+import {RxCross1 } from "react-icons/rx";
 import { HiLocationMarker } from "react-icons/hi";
 import { useNavigate } from 'react-router-dom';
 export default function Footer() {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
 
     const links = [
         {
@@ -89,7 +99,7 @@ export default function Footer() {
                     Address
                 </Typography>
                 <Typography onClick={()=>navigate("/")} style={{color:"#404040", fontSize:"12px", lineHeight:"18px", fontFamily:"Montserrat", cursor:"pointer", marginBottom:"16px"}}>
-                Bighatch Consulting Private Limited<br/>88/1, H.K.D.Compound, G.T. Road,Mahespur, Lahartara, Varanasi,<br/>Uttar Pradesh, 221001, India
+                <span onClick={handleOpen}><ImLocation2 size={16}/></span> Bighatch Consulting Private Limited<br/>88/1, H.K.D.Compound, G.T. Road,Mahespur, Lahartara, Varanasi,<br/>Uttar Pradesh, 221001, India
                 </Typography>
                 <Box style={{display:"flex", alignItems:"center", gap:"10px"}}>
                     <AiFillInstagram onClick={()=>window.open("https://www.linkedin.com/company/eservz")} style={{fontSize:"32px", color:'#949494', cursor:"pointer"}}/>
@@ -104,6 +114,33 @@ export default function Footer() {
                 <span style={{color:"#6349FF"}}>Eservz 2023</span> all right reserved
             </Typography>
         </Box>
+        <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+        fullWidth
+        maxWidth="sm"
+        
+      >
+        <DialogTitle >
+          <div className="title" style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
+          <span></span>
+          <button onClick={handleClose} style={{border:'0px', background:'unset',cursor:'pointer'}}><RxCross1/></button>
+          </div>
+        </DialogTitle>
+        <DialogContent>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230614.64567786886!2d81.81434728271336!3d25.42643128665752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39854cc6cba4ce4b%3A0xbe9ebdba200575e2!2sBIGHATCH%20CONSULTING%20PRIVATE%20LIMITED!5e0!3m2!1sen!2sin!4v1681919513995!5m2!1sen!2sin"
+            width="100%"
+            height="450"
+            style={{border:0}}
+            allowFullScreen={false}
+            loading="lazy"
+            referrerPolicy={"no-referrer-when-downgrade"}
+          ></iframe>
+        </DialogContent>
+      </Dialog>
     </Box>
   )
 }
