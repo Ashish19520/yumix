@@ -62,14 +62,14 @@ export const Tool = () => {
       <ToolDiv>
         <Container maxWidth="lg" className="container">
           <div className="outter">
-          <img src="./images/FullRock2@3x.png" className="fRock-img-1"></img>
+            <img src="./images/FullRock2@3x.png" className="fRock-img-1"></img>
             <div className="title">
               Resources that'll help scale your business
             </div>
             <div className="tool">
-            {/* <img src="./images/Group 38634@3x.png" className="img-bg-2"></img> */}
+              {/* <img src="./images/Group 38634@3x.png" className="img-bg-2"></img> */}
               <img src="./images/Group 38635@3x.png" className="img-bg-1"></img>
-              <div className="box">
+              <div className="box hoverimg">
                 <div className="fba">
                   <img
                     src="./images/1 - Brisa Receiving Her Package.png"
@@ -85,7 +85,7 @@ export const Tool = () => {
                 </div>
               </div>
 
-              <div className="box">
+              <div className="box hoverimg">
                 <div className="lq">
                   <img
                     src="./images/14 - Brisa doing Checklist.png"
@@ -100,7 +100,7 @@ export const Tool = () => {
                   <div className="link">RUN CALCULATOR</div>
                 </div>
               </div>
-              <div className="box">
+              <div className="box hoverimg">
                 <div className="dtc">
                   <img
                     src="./images/18 - Lucas Floats with His Laptop.png"
@@ -134,13 +134,25 @@ const ToolDiv = styled.div`
   .container {
     margin: auto;
 
+    .hoverimg {
+      &:hover {
+        img {
+          transition: all 0.2s ease-in-out !important;
+
+          &:hover {
+            transform: scale(1.1) rotate(3deg) !important;
+          }
+        }
+      }
+    }
+
     .outter {
       display: flex;
       flex-direction: column;
       align-items: center;
       position: relative;
 
-      .fRock-img-1{
+      .fRock-img-1 {
         position: absolute;
         width: 10%;
         left: 0%;
@@ -167,25 +179,25 @@ const ToolDiv = styled.div`
         width: 100%;
         position: relative;
 
-        .img-bg-2{
+        .img-bg-2 {
           position: absolute;
           width: 80%;
           z-index: 0;
         }
-        
-        .img-bg-1{
+
+        .img-bg-1 {
           width: 30%;
           position: absolute;
           z-index: 0;
           right: -8%;
           top: -51.5%;
-          @media (max-width:1100px){
+          @media (max-width: 1100px) {
             display: none;
           }
-          @media (max-width:900px){
+          @media (max-width: 900px) {
             display: none;
           }
-          @media (max-width:600px){
+          @media (max-width: 600px) {
             display: none;
           }
         }
@@ -261,7 +273,7 @@ const ToolDiv = styled.div`
             margin: 8px 0px;
 
             @media (max-width: 600px) {
-              font-size:16px;
+              font-size: 16px;
               text-align: center;
             }
           }
@@ -274,7 +286,7 @@ const ToolDiv = styled.div`
             color: #828490;
             margin: 8px 0px;
             @media (max-width: 600px) {
-              font-size:12px;
+              font-size: 12px;
               text-align: center;
             }
           }
@@ -291,9 +303,9 @@ const ToolDiv = styled.div`
             cursor: pointer;
 
             @media (max-width: 600px) {
-              font-size:10px;
+              font-size: 10px;
               text-align: center;
-              margin:2px 0px;
+              margin: 2px 0px;
             }
 
             &:hover {

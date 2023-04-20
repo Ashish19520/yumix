@@ -1,19 +1,34 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
+// import { useForm, ValidationError } from '@formspree/react';
 
 export default function ContactForm() {
+
+//   const [state, handleSubmit] = useForm("mbjeqgpr");
+//   if (state.succeeded) {
+//     return <p>Thanks for joining!</p>;
+// }
+
+const sentForm=()=>{
+    return(
+      <p>Message is sent</p>
+    )
+}
   return (
     <Box sx={{maxWidth:"1200px", padding:"80px 40px", margin:"auto", overflow:{xs:"hidden", md:"visible"}}}>
       <Grid container sx={{width:"100%", backgroundColor:"#232F3F", borderRadius:"42px", boxShadow:"2px 4px 10px rgba(0, 0, 0, 0.1)", backdropFilter:"blur(21px)", padding:{xs:"20px 40px", md:"50px 100px"}}}>
         <Grid item xs={12} md={8} style={{marginBottom:"30px"}}>
           <Typography style={{color:"#FFFCFC", fontSize:"32px", fontFamily:"Poppins-SemiBold"}}>Get in Touch</Typography>
           <Typography style={{margin:"20px 0px 40px 0px", color:"#D3D2F9", fontSize:"16px", fontFamily:"Montserrat", lineHeight:"24px"}}>Enim tempor eget pharetra facilisis sed maecenas adipiscing. Eu leo molestie vel, ornare non id blandit netus.</Typography>
+            <form action="https://formspree.io/f/mbjeqgpr" method="POST">
           <Box style={{display:"flex", alignItems:"stretch", gap:"20px", flexWrap:"wrap"}}>
-            <input type="email" placeholder="Email" required style={{...style.input}}/>
-            <input type="text" placeholder="Your Message" required style={{...style.input}}/>
-            <Button disableElevation variant='contained' sx={{...style.button, color:"white", backgroundColor:"#5856e9"}}>
+            <input type="email" placeholder="Email" required style={{...style.input}} name="Email"/>
+            <input type="text" placeholder="Your Message" required style={{...style.input}} name="Message"/>
+            <Button type="submit" disableElevation variant='contained' sx={{...style.button, color:"white", backgroundColor:"#5856e9"}}>
                 Send
             </Button>
+            <input type="hidden" name="_next" value="/" />
           </Box>
+            </form>
         </Grid>
         <Grid item xs={12} md={4}>
           <img src="./images/brisaTakingParcelRight.png" width="80%" style={{scale:"2", transform:"translate(40px, -20px)"}}/>
