@@ -67,6 +67,7 @@ export const Navbar = () => {
             variants={navAnimation}
             initial="hidden"
             animate="show"
+            style={{alignItems:"center"}}
           >
             <motion.img
               src="/images/logo.png"
