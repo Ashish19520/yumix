@@ -1,12 +1,31 @@
 import { Container } from '@mui/system'
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from "styled-components";
 
 export default function BottomBanner() {
+
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              console.log("Entering into zone");
+              entry.target.classList.add("animate__animated");
+              entry.target.classList.add("animate__fadeIn");
+            } 
+            // else {
+            //   console.log("exit into zone");
+            //   entry.target.classList.remove("animate__fadeIn");
+            // }
+          });
+        });
+    
+        const hiddenElements = document.querySelectorAll(".bottomBanner_hidden");
+        hiddenElements.forEach((el) => observer.observe(el));
+      }, []);
   return (
     <div>
         <Banner>
-            <Container maxWidth="lg" className="container">
+            <Container maxWidth="lg" className="container bottomBanner_hidden">
                 
                 <div className="bannerText">
                     <div className="bannerHeading">

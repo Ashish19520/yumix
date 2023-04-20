@@ -1,10 +1,29 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Container } from '@mui/material';
 import styled from "styled-components";
 export default function MidBanner() {
+
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              console.log("Entering into zone");
+              entry.target.classList.add("animate__animated");
+              entry.target.classList.add("animate__fadeIn");
+            }
+            // else {
+            //   console.log("exit into zone");
+            //   entry.target.classList.remove("animate__fadeIn");
+            // }
+          });
+        });
+    
+        const hiddenElements = document.querySelectorAll(".midBanner_hidden");
+        hiddenElements.forEach((el) => observer.observe(el));
+      }, []);
   return (
         <Banner>
-            <Container maxWidth="lg" className="container">
+            <Container maxWidth="lg" className="container midBanner_hidden">
                 <div className='bannerImage'>
                     <img src='/images/Business-Success.png' style={{width:"50%"}}/>
                 </div>

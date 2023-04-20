@@ -1,6 +1,6 @@
 import { Box, Button, Typography } from '@mui/material';
 import { Container } from '@mui/system';
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from "styled-components";
 
 export default function BlogService() {
@@ -19,7 +19,27 @@ export default function BlogService() {
         "Web & Mobile Development"
     ]
 
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              console.log("Entering into zone");
+              entry.target.classList.add("animate__animated");
+              entry.target.classList.add("animate__fadeIn");
+            }
+            // else {
+            //   console.log("exit into zone");
+            //   entry.target.classList.remove("animate__fadeIn");
+            // }
+          });
+        });
+    
+        const hiddenElements = document.querySelectorAll(".services-btn");
+        hiddenElements.forEach((el) => observer.observe(el));
+      }, []);
+
   return (
+    <div className='services-btn'>
     <Box style={{maxWidth:"1200px", padding:"80px 40px", margin:"auto"}}>
         <Typography style={{fontWeight:600, fontFamily:"Poppins-semiBold", fontSize:"32px"}}>
             Services We Provide
@@ -37,6 +57,7 @@ export default function BlogService() {
             View All
         </Button>
     </Box>
+    </div>
   )
 
 }
