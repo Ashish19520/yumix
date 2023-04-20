@@ -1,105 +1,54 @@
+import { Box, Button, Typography } from '@mui/material';
 import { Container } from '@mui/system';
 import React from 'react';
 import styled from "styled-components";
 
 export default function BlogService() {
+
+    const services = [
+        "Affiliate & Influencer",
+        "Amazon",
+        "Analytics",
+        "B2C",
+        "Eservz News & People",
+        "Marketing & Retail Media",
+        "Paid Search",
+        "Partnerships",
+        "Premium Content",
+        "SEO",
+        "Web & Mobile Development"
+    ]
+
   return (
-    <Banner>
-        <Container maxWidth="lg" className="container">
-            <div className="service">
-                <h1 className='serviceHeading'>Service We Provide</h1>
-                <div className="service1">
-                    <div>
-                        <button>Affiliate & Influencer</button>
-                    </div>
-                    <div>
-                        <button>Amazon</button>
-                    </div>
-                    <div>
-                        <button>Analytics</button>
-                    </div>
-                    <div>
-                        <button>B2C</button>
-                    </div>
-                    <div>
-                        <button>Eservz News & People</button>
-                    </div>
-                </div>
-
-                <div className="service2">
-                    <div>
-                        <button>Marketing & Retail Media</button>
-                    </div>
-                    <div>
-                        <button>Paid Search</button>
-                    </div>
-                    <div>
-                        <button>Partnerships</button>
-                    </div>
-                    <div>
-                        <button>Premium Content</button>
-                    </div>
-                    <div>
-                        <button>Seo</button>
-                    </div>
-                </div>
-
-                <div className="service3">
-                    <div>
-                        <button>Web & Mobile </button>
-                    </div>
-                </div>   
-            </div>
-
-        </Container>
-    </Banner>
+    <Box style={{maxWidth:"1200px", padding:"80px 40px", margin:"auto"}}>
+        <Typography style={{fontWeight:600, fontFamily:"Poppins-semiBold", fontSize:"32px"}}>
+            Services We Provide
+        </Typography>
+        <Box style={{display:"flex", flexWrap:"wrap", alignItems:"center", marginTop:"40px", gap:"25px"}}>
+            {
+                services.map((item,index) => {
+                    return(
+                        <Button key={item} variant='outlined' sx={{...style.button, color:"#3A3B44", display : { xs:index>3 ? "none" : "block", sm:index>5 ? "none" : "block", md:"block" }}}>{item}</Button>
+                    )
+                })
+            }
+        </Box>
+        <Button disableElevation variant='contained' sx={{...style.button, color:"white", backgroundColor:"#5856e9", display:{xs:"block", sm:"block", md:"none"}, marginTop:"30px"}}>
+            View All
+        </Button>
+    </Box>
   )
+
 }
-const Banner = styled.div `
-    .container{
-        width:100%;
-        .service{
-            margin-top:60px;
-            .serviceHeading{
-                margin-left:30px;
-            }
-            button{
-                align-items: center;
-                gap: 10px;
-                padding: 16px 32px;
-                border-radius: 8px;
-                border: solid 1px #d1d1d1;
-                margin-left:30px;
-                margin-top:10px;font-family: Montserrat;
-                font-size: 14px;
-                font-weight: 600;
-                font-stretch: normal;
-                font-style: normal;
-                line-height: 1.43;
-                letter-spacing: 1px;
-                text-align: center;
-                color: #3a3b44;
-              
-            }
-            .serviceHeading{
-                font-family: Poppins;
-                font-size: 32px;
-                font-weight: 600;
-                font-stretch: normal;
-                font-style: normal;
-                line-height: 1.31;
-                letter-spacing: 0.25px;
-                text-align: left;
-                color: #0b0720;
-            }
-            .service1{
-                width:100%;
-                display:flex;
-            }
-            .service2{
-                display:flex;
-            }
-        }
-        
+
+const style = {
+    button : {
+        padding : { xs : "7px 16px", md : "16px 21px"},
+        borderRadius : "8px",
+        border : "1px solid #D1D1D1",
+        textTransform : "none",
+        fontSize : "14px",
+        fontWeight : 600,
+        fontFamily : "Montserrat-semiBold",
     }
-`
+}

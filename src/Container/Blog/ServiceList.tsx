@@ -1,152 +1,68 @@
-import { Container } from '@mui/system';
-import React from 'react';
-import styled from "styled-components";
+import { Box, Grid, Typography } from "@mui/material";
+
 
 export default function ServiceList() {
+
+    const blogs = [
+        {
+            name : "How To Gear Forward in 2023",
+            type : "Tips",
+            image : "./images/Image@3x.png"
+        },
+        {
+            name : "Digital commerce is changing rapidly",
+            type : "Blog",
+            image : "./images/Img1.png"
+        },
+        {
+            name : "How to deal with SVB collapse",
+            type : "Blog",
+            image : "./images/Image@3x.png"
+        },
+        {
+            name : "Inspiration to build your online store",
+            type : "Inspiration",
+            image : "./images/Img1.png"
+        },
+        {
+            name : "How To Gear Forward in 2023",
+            type : "Tips",
+            image : "./images/Image@3x.png"
+        },
+        {
+            name : "Digital commerce is changing rapidly",
+            type : "Blog",
+            image : "./images/Img1.png"
+        },
+        {
+            name : "How to deal with SVB collapse",
+            type : "Blog",
+            image : "./images/Image@3x.png"
+        },
+        {
+            name : "Inspiration to build your online store",
+            type : "Inspiration",
+            image : "./images/Img1.png"
+        },
+        {
+            name : "How To Gear Forward in 2023",
+            type : "Tips",
+            image : "./images/Image@3x.png"
+        }
+    ]
   return (
-    <Banner>
-        <Container maxWidth="lg" className="container">
-            <div className="serviceList1">
-                <div>
-                    <img src='/images/Rectangle 1223.png' style={{width:"80%"}} />
-                    <p className='tips'>Tips</p>
-                    <h1 className='headingTips'>How TO Gear Forward in 2023</h1>
-                </div>
-                <div>
-                    <img src='/images/Rectangle 1223.png' style={{width:"80%"}} />
-                    <p className='tips'>Tips</p>
-                    <h1 className='headingTips'>How TO Gear Forward in 2023</h1>
-                </div>
-                <div>
-                    <img src='/images/Rectangle 1223.png' style={{width:"80%"}} />
-                    <p className='tips'>Tips</p>
-                    <h1 className='headingTips'>How TO Gear Forward in 2023</h1>
-                </div>
-            </div>
-            <div className="serviceList2">
-                <div>
-                    <img src='/images/Rectangle 1223.png' style={{width:"80%"}} />
-                    <p className='tips'>Tips</p>
-                    <h1 className='headingTips'>How TO Gear Forward in 2023</h1>
-                </div>
-                <div>
-                    <img src='/images/Rectangle 1223.png' style={{width:"80%"}} />
-                    <p className='tips'>Tips</p>
-                    <h1 className='headingTips'>How TO Gear Forward in 2023</h1>
-                </div>
-                <div>
-                    <img src='/images/Rectangle 1223.png' style={{width:"80%"}} />
-                    <p className='tips'>Tips</p>
-                    <h1 className='headingTips'>How TO Gear Forward in 2023</h1>
-                </div>
-            </div>
-            <div className="serviceList3">
-                <div>
-                    <img src='/images/Rectangle 1223.png' style={{width:"80%"}} />
-                    <p className='tips'>Tips</p>
-                    <h1 className='headingTips'>How TO Gear Forward in 2023</h1>
-                </div>
-                <div>
-                    <img src='/images/Rectangle 1223.png' style={{width:"80%"}} />
-                    <p className='tips'>Tips</p>
-                    <h1 className='headingTips'>How TO Gear Forward in 2023</h1>
-                </div>
-                <div>
-                    <img src='/images/Rectangle 1223.png' style={{width:"80%"}} />
-                    <p className='tips'>Tips</p>
-                    <h1 className='headingTips'>How TO Gear Forward in 2023</h1>
-                </div>
-            </div>
-        </Container>
-    </Banner>
+    <Grid container style={{maxWidth:"1200px", padding:"80px 20px", margin:"auto"}}>
+        {
+            blogs.map((item) => {
+                return(
+                    <Grid item xs={12} sm={6} md={4} key={item.name} style={{padding:"20px 10px"}}>
+                        <Box style={{backgroundImage:`url(${item.image})`, width:"100%", backgroundSize:"cover", backgroundPosition:"center", borderRadius:"12px", height:"200px"}}/>
+                        <Typography style={{fontSize:"14px", fontFamily:"Montserrat-Medium", color:"#40424C", marginTop:"20px"}}>{item.type}</Typography>
+                        <Typography style={{fontSize:"16px", fontFamily:"Montserrat-SemiBold", color:"#40424C"}}>{item.name}</Typography>
+                    </Grid>
+                )
+            })
+        }
+    </Grid>
   )
 }
-
-const Banner=styled.div`
-    .container{
-        width:100%;
-        .serviceList1{
-            margin-top:120px;
-            margin-left:30px;
-            display:flex;
-            .tips{
-                font-family: Montserrat;
-                font-size: 10px;
-                font-weight: 600;
-                font-stretch: normal;
-                font-style: normal;
-                line-height: 1.43;
-                letter-spacing: 0.1px;
-                text-align: left;
-                color: #40424c;
-            }
-            .headingTips{
-                font-family: Montserrat;
-                font-size: 14px;
-                font-weight: bold;
-                font-stretch: normal;
-                font-style: normal;
-                line-height: 1.22;
-                letter-spacing: 0.25px;
-                text-align: left;
-                color: #40424c;
-                margin-top:5px
-            }
-        }
-        .serviceList2{
-            margin-top:20px;
-            display:flex;
-            margin-left:30px;
-            .tips{
-                font-family: Montserrat;
-                font-size: 10px;
-                font-weight: 600;
-                font-stretch: normal;
-                font-style: normal;
-                line-height: 1.43;
-                letter-spacing: 0.1px;
-                text-align: left;
-                color: #40424c;
-            }
-            .headingTips{
-                font-family: Montserrat;
-                font-size: 14px;
-                font-weight: bold;
-                font-stretch: normal;
-                font-style: normal;
-                line-height: 1.22;
-                letter-spacing: 0.25px;
-                text-align: left;
-                color: #40424c;
-                margin-top:5px
-            }
-        }.serviceList3{
-            margin-top:20px;
-            display:flex;
-            margin-left:30px;
-            .tips{
-                font-family: Montserrat;
-                font-size: 10px;
-                font-weight: 600;
-                font-stretch: normal;
-                font-style: normal;
-                line-height: 1.43;
-                letter-spacing: 0.1px;
-                text-align: left;
-                color: #40424c;
-            }
-            .headingTips{
-                font-family: Montserrat;
-                font-size: 14px;
-                font-weight: bold;
-                font-stretch: normal;
-                font-style: normal;
-                line-height: 1.22;
-                letter-spacing: 0.25px;
-                text-align: left;
-                color: #40424c;
-                margin-top:5px
-            }
-        }
-    }
-`
