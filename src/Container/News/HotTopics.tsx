@@ -128,7 +128,7 @@ const HotTopicsWrapper = styled.div`
             }
             @media (max-width: 600px) {
               margin-top: 150px;
-              font-size: 19px;
+              font-size: 15px;
             }
           }
           .subtitle {
