@@ -42,7 +42,7 @@ const typingContainer = {
 export default function TopBanner() {
   return (
     <>
-    <Grid rowGap={4} position="relative" container alignItems="center" style={{maxWidth:"1200px", margin:"auto", padding:"80px 40px"}}>
+    <Grid wrap="wrap-reverse" rowGap={4} position="relative" container alignItems="center" style={{maxWidth:"1200px", margin:"auto", padding:"80px 40px", overflow:"hidden"}}>
         <Grid item xs={12} md={5}>
         <motion.div
           variants={typingContainer}
@@ -64,11 +64,20 @@ export default function TopBanner() {
             </Typography>
             </motion.div>
         </Grid>
-        <Grid item xs={12} md={7} sx={{textAlign:{xs:"center", md:"right"}}}>
+        <Grid item xs={12} md={7} sx={{textAlign:{xs:"center", md:"right"}, zIndex:1}}>
             <motion.img src='/images/Illustrations.png' style={{maxHeight:"500px", width:"90%"}} alt="Blog Banner" variants={elements}  initial="hidden" animate="show"></motion.img>
         </Grid>
-        {/* <Box style={style.blueDot}></Box>
-        <img src="./images/Round Cube2@3x.png" style={style.bluredBox}></img> */}
+        <motion.div
+          variants={elements}
+          initial="hidden"
+          animate="show"
+          className="title"
+        >
+        <Box style={style.blueDot}></Box>
+        <Box sx={{...style.bluredBox, top : {xs:"40%", md:"70%"}}}><img src="./images/Round Cube2@3x.png" width="100%"></img></Box>
+        <img src="./images/Rock2.png" style={style.bluredRock}></img>
+        <img src="./images/aboutusThread.png" style={style.thread}></img>
+        </motion.div>
     </Grid>
     </>
   )
@@ -85,9 +94,24 @@ const style = {
         left : "100px"
     } as React.CSSProperties,
     bluredBox : {
-        width : "105px",
+        width : "10%",
+        minWidth : "80px",
         position : "absolute",
-        bottom : "80px",
-        left : "-20px"
+        left : "0px"
+    } as React.CSSProperties,
+    bluredRock : {
+        width : "15%",
+        minWidth : "100px",
+        position : "absolute",
+        top : "20px",
+        right : "0px",
+        zIndex : 2,
+    } as React.CSSProperties,
+    thread : {
+        width : "100%",
+        minWidth : "500px",
+        position : "absolute",
+        top : "200px",
+        left : "20%",
     } as React.CSSProperties
 }

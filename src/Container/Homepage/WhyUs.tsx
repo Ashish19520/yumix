@@ -1,213 +1,88 @@
-import { Container } from "@mui/material";
-import React, { useEffect } from "react";
-import styled from "styled-components";
+import { Box, Grid, Typography } from '@mui/material'
+import React, { useEffect, useState } from 'react'
+import { motion as m} from "framer-motion";
 
-export const WhyUs = () => {
+function WhyUs() {
+
+  const [selectedIndex, setSelectedIndex] = useState<number>(0)
+
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.add("highlight");
-            entry.target.classList.add("show");
-          }, 1500);
-        } else {
-          entry.target.classList.remove("highlight");
+          entry.target.classList.add("animate__animated");
+          entry.target.classList.add("animate__fadeIn");
         }
       });
     });
 
-    const observerPara = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.add("highlight");
-            entry.target.classList.add("show");
-          }, 1500);
-        } else {
-          entry.target.classList.remove("highlight");
-        }
-      });
-    });
-
-    const hiddenElements = document.querySelectorAll(".one");
+    const hiddenElements = document.querySelectorAll(".bannerList_hidden");
     hiddenElements.forEach((el) => observer.observe(el));
-
-    const hiddenElementstwo = document.querySelectorAll(".two");
-    hiddenElementstwo.forEach((el) => observer.observe(el));
-
-    const hiddenElementsthree = document.querySelectorAll(".three");
-    hiddenElementsthree.forEach((el) => observer.observe(el));
-
-    const hiddenElementsfour = document.querySelectorAll(".four");
-    hiddenElementsfour.forEach((el) => observer.observe(el));
   }, []);
 
+  const points = [
+    {
+      title : "Save Time",
+      para : "Skip the Learning Curve. Eservz has the established best practices to help you quickly achieve your eCommerce and Amazon goals.",
+      image : "/images/work1.png"
+    },
+    {
+      title : "Save Money",
+      para : "No need to create a new department or hire additional staff. When you work with us, you get a new E‑Commerce division.",
+      image : "/images/work2.png"
+    },
+    {
+      title : "Make Money",
+      para : "We have worked with 100s of partners. We know what to do, what to analyze & how to focus on getting you a Return on Investment",
+      image : "/images/work3.png"
+    },
+    {
+      title : "Be Secure",
+      para : "We value the security of our partners & take your confidentiality very seriously. We are insured for any breaches of data, so you can rest at ease.",
+      image : "/images/work4.png"
+    }
+  ]
+
   return (
-    <WhyUsWrapper>
-      <Container maxWidth="lg" className="container">
-        <div className="Title">Why brands work with us?</div>
-        <div className="wrapper">
-          <div className="left-box">
-            <img src="./images/Ellipse 75@3x.png" className="circle"></img>
-            <div className="imgSubject"></div>
-            <img
-              src="./images/11 - Lucas Floating.png"
-              className="imgSubject"
-            ></img>
-            <img src="./images/Round Cube3@3x.png" className="img-cube1"></img>
-            <img src="./images/HalfRock2@3x.png" className="img-rock1"></img>
-            <img src="./images/Ellipse 63@3x.png" className="img-dot3"></img>
-            <img src="./images/Ellipse 63@3x.png" className="img-dot3_1"></img>
-            <img src="./images/Ellipse 65@3x.png" className="img-dot1"></img>
-          </div>
-          <div className="right-box">
-            <div className="scroll-Effect">
-              <div className="title one">Save Time</div>
-              <div className="subTitle">
-                Skip the Learning Curve. Eservz has the established best
-                practices to help you quickly achieve your eCommerce and Amazon
-                goals.
-              </div>
-
-              <div className="title two">Save Money</div>
-              <div className="subTitle">
-                No need to create a new department or hire additional staff.
-                When you work with us, you get a new E-Commerce division.
-              </div>
-
-              <div className="title three">Make Money</div>
-              <div className="subTitle">
-                We have worked with 100s of partners. We know what to do, what
-                to analyze & how to focus on getting you a Return on Investment
-              </div>
-
-              <div className="title four">Be Secure</div>
-              <div className="subTitle">
-                We value the security of our partners & take your
-                confidentiality very seriously. We are insured for any breaches
-                of data, so you can rest at ease.
-              </div>
-            </div>
-          </div>
-        </div>
-      </Container>
-    </WhyUsWrapper>
-  );
-};
-
-const WhyUsWrapper = styled.div`
-  background: #fffcfc;
-  padding: 60px 0px;
-  .container {
-    margin: auto;
-
-    .Title {
-      font-family: Poppins-semiBold;
-      font-size: 32px;
-      font-weight: 600;
-      line-height: 1.31;
-      letter-spacing: 0.25px;
-      text-align: left;
-      color: #000;
-      margin-bottom: 90px;
-
-      @media (max-width: 600px) {
-        text-align: center;
-      }
-    }
-
-    .wrapper {
-      display: flex;
-
-      .left-box {
-        width: 40%;
-        .imgSubject {
-          width: 100%;
-          padding-left: 40px;
-          position: relative;
-        }
-        .circle {
-          width: 35%;
-          padding-left: 20px;
-          position: absolute;
-        }
-        .img-cube1 {
-          position: absolute;
-          width: 10%;
-          right: 50%;
-        }
-
-        .img-rock1 {
-          position: absolute;
-          width: 10%;
-          left: 0%;
-          padding-top: 325px;
-        }
-
-        .img-dot3 {
-          position: absolute;
-          width: 2%;
-          left: 15%;
-          margin-top: -50px;
-        }
-
-        .img-dot3_1 {
-          position: absolute;
-          width: 1%;
-          left: 45%;
-          padding-top: 215px;
-        }
-
-        .img-dot1{
-          position: absolute;
-          width: 2%;
-          padding-top: 520px;
-          left:20%;
-        }
-
-        @media (max-width: 600px) {
-          display: none;
-        }
-      }
-
-      .right-box {
-        width: 60%;
-        padding-left: 150px;
-
-        @media (max-width: 600px) {
-          width: 100%;
-        }
-
-        .highlight {
-          color: #5956e9 !important;
-        }
-
-        .title {
-          font-family: Poppins-Medium;
-          margin-top: 44px;
-          margin-bottom: 8px;
-          font-size: 24px;
-          font-weight: 500;
-          line-height: 1.33;
-          letter-spacing: normal;
-          text-align: left;
-          color: #3a3b44;
-
-          &:first-of-type {
-            margin-top: unset;
+    <Box style={{background: "#fffcfc"}}>
+    <Box className="bannerList_hidden" style={{maxWidth:"1200px", margin:"auto", padding:"120px 40px"}}>
+      <Grid container alignItems="center">
+        <Grid position="relative" item xs={12} md={6} style={{display:"flex", alignItems:"center", justifyContent:'center'}}>
+          <Box style={{width:"80%", aspectRatio:1, borderRadius:"50%", backgroundColor:"#F1F6FF"}}></Box>
+          <Box style={{width:"80%",position:"absolute", top:"50%", left:"50%", transform:"translate(-50%,-50%)" }}>
+          <m.img 
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.5 }}
+            transition={{ duration: 0.5 }} 
+            src={points[selectedIndex].image}
+            alt={points[selectedIndex].title} 
+            width="100%" 
+          />
+          </Box>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          {
+            points.map((item, index) => {
+              return(
+                <Box key={item.title} style={{display:'flex', gap:"15px"}}>
+                  <Box style={{display:'flex', flexDirection:'column', alignItems:"center"}}>
+                    <Box style={{width:"20px", height:'20px', borderRadius:"50%", border:`6px solid ${ selectedIndex>=index ? "#5856e9" : "#D1D1D1"}`,cursor:"pointer"}} onClick={()=>setSelectedIndex(index)}/>
+                    <Box style={{width:"2px", height:'150px', backgroundColor: selectedIndex>index ? "#5856e9" : "#D1D1D1", display: index===points.length-1 ? "none" : "block" }}/>
+                  </Box>
+                  <Box style={{height:index===points.length-1 ? "auto" : "150px", width:"100%", position:"relative", top:"-10px"}}>
+                    <Typography fontSize="24px" fontFamily="Poppins-Medium" color={selectedIndex===index ? "#5856e9" :"#3A3B44"} style={{cursor:"pointer"}} onClick={()=>setSelectedIndex(index)}>{item.title}</Typography>
+                    <Typography fontSize="14px" fontFamily="Montserrat" color="#828490" style={{cursor:"pointer"}} onClick={()=>setSelectedIndex(index)}>{item.para}</Typography>
+                  </Box>
+                </Box>
+              )
+            })
           }
-        }
-        .subTitle {
-          font-family: Montserrat;
-          max-width: 70%;
-          font-size: 14px;
-          line-height: 1.29;
-          letter-spacing: 0.1px;
-          text-align: left;
-          color: #828490;
-        }
-      }
-    }
-  }
-`;
+        </Grid>
+      </Grid>
+    </Box>
+    </Box>
+  )
+}
+
+export default WhyUs
