@@ -70,7 +70,7 @@ export const Counter = () => {
 };
 
 const Count = styled.div`
-  background: #fffcfc;
+  
   color: #fff;
   /* margin-top:250px; */
   /* margin-bottom:250px; */
@@ -111,17 +111,18 @@ const Count = styled.div`
       }
 
       .outter {
-        padding: 0px 40px;
+        padding: 20px 40px;
         border-right: 0.1px solid rgba(0, 0, 0, 0.3);
         &:last-of-type {
           border-right: unset;
         }
         @media (max-width: 900px) {
           border-right: unset;
-          padding: 0px 20px;
+          padding: 20px 20px;
         }
         @media (max-width: 600px) {
           border-right: unset;
+          padding: 20px 20px;
         }
 
         h2 {

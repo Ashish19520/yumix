@@ -7,6 +7,7 @@ import BottomBanner from '../Container/About US/BottomBanner'
 import MidBanner from '../Container/About US/MidBanner'
 import OurLeaders from '../Container/About US/OurLeaders'
 import TopBanner from '../Container/About US/TopBanner'
+import { Typography } from '@mui/material'
 
 export default function AboutUs() {
   return (
@@ -14,8 +15,8 @@ export default function AboutUs() {
       <TopBanner />
       <BannerList />
       <MidBanner />
+      <Typography fontSize="32px" textAlign="center" width="100%" fontFamily="Poppins-SemiBold" color="#3A3B44" style={{maxWidth:"1100px", margin:"auto"}}>Actions speak louder than words</Typography>
       <Counter />
-      
       <BottomBanner />
       <OurLeaders />
       <ContactForm />
