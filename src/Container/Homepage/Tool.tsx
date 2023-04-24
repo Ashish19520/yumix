@@ -215,6 +215,8 @@ const ToolDiv = styled.div`
             margin-bottom: 50px;
           }
 
+         
+
           .fba {
             aspect-ratio: 1;
             border-radius: 500px;
@@ -264,6 +266,15 @@ const ToolDiv = styled.div`
           align-items: center;
           justify-content: center;
 
+          &:hover ~ .box {
+            img {
+              transition: all 0.2s ease-in-out !important;
+
+              &:hover {
+                transform: scale(1.1) rotate(-3deg) !important;
+              }
+            }
+          }
           .infoTitle {
             font-family: Poppins-semiBold;
             font-size: 18px;

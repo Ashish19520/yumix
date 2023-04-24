@@ -318,7 +318,8 @@ const HeroLayout = styled.div`
     position: absolute;
     width: 100%;
 
-    bottom: -50px;
+    bottom: -20px;
+    left: 1%;
     z-index: 0;
 
     @media (max-width: 1100px) {
@@ -352,6 +353,7 @@ const HeroLayout = styled.div`
       }
 
       .titleBox {
+        margin-top: 40px;
         max-width: 700px;
         width: 60%;
         position: relative;
@@ -379,7 +381,7 @@ const HeroLayout = styled.div`
         .bg-line-img-2 {
           position: absolute;
           width: 100%;
-          bottom: -50px;
+          bottom: -40px;
           left: 0;
           z-index: -22;
 
@@ -432,7 +434,7 @@ const HeroLayout = styled.div`
       }
 
       .imageBox {
-        margin-top: 20px;
+        margin-top: 60px;
         width: 40%;
         position: relative;
 
