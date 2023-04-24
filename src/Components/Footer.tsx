@@ -99,7 +99,19 @@ export default function Footer() {
                     Address
                 </Typography>
                 <Typography onClick={()=>navigate("/")} style={{color:"#404040", fontSize:"12px", lineHeight:"18px", fontFamily:"Montserrat", cursor:"pointer", marginBottom:"16px"}}>
-                <span onClick={handleOpen}><ImLocation2 size={16}/></span> Bighatch Consulting Private Limited<br/>88/1, H.K.D.Compound, G.T. Road,Mahespur, Lahartara, Varanasi,<br/>Uttar Pradesh, 221001, India
+                
+                     Bighatch Consulting Private Limited<br/>88/1, H.K.D.Compound, G.T. Road,Mahespur, Lahartara, Varanasi,<br/>Uttar Pradesh, 221001, India<span onClick={handleOpen} style={{marginBottom:"90px"}}>
+                    {/* <ImLocation2 size={16}/> */}
+                    <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230614.64567786886!2d81.81434728271336!3d25.42643128665752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39854cc6cba4ce4b%3A0xbe9ebdba200575e2!2sBIGHATCH%20CONSULTING%20PRIVATE%20LIMITED!5e0!3m2!1sen!2sin!4v1681919513995!5m2!1sen!2sin"
+            width="100%"
+            height="150"
+            style={{border:0,marginTop:"10px"}}
+            allowFullScreen={false}
+            loading="lazy"
+            referrerPolicy={"no-referrer-when-downgrade"}
+          ></iframe>
+                    </span>
                 </Typography>
                 <Box style={{display:"flex", alignItems:"center", gap:"10px"}}>
                     <AiFillInstagram onClick={()=>window.open("https://www.linkedin.com/company/eservz")} style={{fontSize:"32px", color:'#949494', cursor:"pointer"}}/>

@@ -1,21 +1,18 @@
-import React from 'react'
+import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import { Navbar } from '../Components/Navbar'
-import AboutUs from '../Pages/AboutUs';
-import { Homepage } from '../Pages/Homepage';
-import { Works } from '../Pages/Works';
-import { Services } from '../Pages/Services';
-import { News } from '../Pages/News';
-import Blog from '../Pages/Blog';
-
-
+import { Navbar } from "../Components/Navbar";
+import AboutUs from "../Pages/AboutUs";
+import { Homepage } from "../Pages/Homepage";
+import { Works } from "../Pages/Works";
+import { Services } from "../Pages/Services";
+import { News } from "../Pages/News";
+import Blog from "../Pages/Blog";
+import { FbaCalculator } from "../Pages/FbaCalculator";
 
 const MainRouter = () => {
   return (
     <div>
-      
-
       <Navbar />
       <Routes>
         <Route path="/" element={<Homepage />} />
@@ -25,10 +22,10 @@ const MainRouter = () => {
         <Route path="/works" element={<Works />} />
         <Route path="/blogs" element={<Blog />} />
         <Route path="/news" element={<News />} />
+        <Route path="/home/fbaCalculator" element={<FbaCalculator />}></Route>
       </Routes>
-      
     </div>
-  )
-}
+  );
+};
 
-export default MainRouter
+export default MainRouter;
