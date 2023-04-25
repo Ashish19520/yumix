@@ -38,7 +38,7 @@ const Calender = (props:CalenderProps) => {
           Custom Button
         </button> */}
         <PopupModal
-          url="https://calendly.com/kishanpal-saini"
+          url="https://calendly.com/vishal-agarwal-1/15min"
           // pageSettings={this.props.pageSettings}
           // utm={this.props.utm}
           // prefill={this.props.prefill}
