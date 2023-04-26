@@ -160,6 +160,8 @@ const ToolDiv = styled.div`
       }
 
       .title {
+        text-align: center ;
+        max-width: 40%;
         font-size: 32px;
         font-weight: 600;
         line-height: 1.31;
@@ -167,10 +169,15 @@ const ToolDiv = styled.div`
         color: #3a3b44;
         margin-bottom: 50px;
 
-        @media (max-width: 600px) {
-          text-align: center;
+        @media (max-width: 900px) {
           font-size: 25px;
+          max-width: 90%;
         }
+        @media (max-width: 600px) {
+          font-size: 25px;
+          max-width: 90%;
+        }
+        
       }
       .tool {
         display: flex;

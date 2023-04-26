@@ -114,7 +114,7 @@ export default function Footer() {
                     </span>
                 </Typography>
                 <Box style={{display:"flex", alignItems:"center", gap:"10px"}}>
-                    <AiFillInstagram onClick={()=>window.open("https://www.linkedin.com/company/eservz")} style={{fontSize:"32px", color:'#949494', cursor:"pointer"}}/>
+                    <AiFillInstagram onClick={()=>window.open("https://www.instagram.com/eservz_amz/")} style={{fontSize:"32px", color:'#949494', cursor:"pointer"}}/>
                     <FaFacebook onClick={()=>window.open("https://www.facebook.com/ESERVZ")} style={{fontSize:"28px", color:'#949494', cursor:"pointer"}}/>
                     <AiFillLinkedin onClick={()=>window.open("https://www.linkedin.com/company/eservz")} style={{fontSize:"30px", color:'#949494', cursor:"pointer"}}/>   
                 </Box>

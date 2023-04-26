@@ -118,7 +118,7 @@ export const Navbar = () => {
             onClick={() => setDrawerOpen(!drawerOpen)}
             className="hamburger"
           >
-            <RxHamburgerMenu />
+            <RxHamburgerMenu color="#5956E9"/>
           </button>
         </Container>
         <div className="drawer">
@@ -126,7 +126,7 @@ export const Navbar = () => {
             onClick={() => setDrawerOpen(!drawerOpen)}
             className="hamburger"
           >
-            <AiOutlineClose />
+            <AiOutlineClose color="#5956E9"/>
           </button>
           <div className="navbar">
             <ul
@@ -246,6 +246,9 @@ const Nav = styled(Grid)<NavProps>`
           font-size: 14px;
 
           &:hover {
+            font-weight: 700;
+          }
+          &:focus{
             font-weight: 700;
           }
         }

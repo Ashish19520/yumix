@@ -61,7 +61,7 @@ export const OurApproach = () => {
 
               <div className="singleicon">
                 <img src="./images/A5.png"></img>
-                <p>Focus on strategies and growth</p>
+                <p className="para">Focus on strategies and growth</p>
               </div>
             </div>
           </div>
@@ -178,7 +178,7 @@ const MidBanner = styled.div`
           p {
             font-family: Montserrat;
             font-size: 16px;
-            max-width: 80%;
+            max-width: 65%;
             line-height: 1.5;
             letter-spacing: 0.25px;
             text-align: center;
@@ -188,6 +188,10 @@ const MidBanner = styled.div`
               font-size: 12px;
               margin-bottom: 20px;
             }
+          }
+
+          .para{
+            width: 60%;
           }
         }
       }

@@ -1,6 +1,9 @@
 import { Container } from "@mui/material";
 import React, { useEffect } from "react";
 import styled from "styled-components";
+//@ts-ignore
+import { DefaultPlayer as Video } from "react-html5video";
+import 'react-html5video/dist/styles.css'
 
 export const Certificate = () => {
   useEffect(() => {
@@ -37,10 +40,13 @@ export const Certificate = () => {
               launch, manage and grow your business on Amazon.
             </p>
           </div>
-          <img src="./images/Ellipse 63@3x.png" className="img-dot3"></img>
+          {/* <img src="./images/Ellipse 63@3x.png" className="img-dot3"></img> */}
         </div>
         <div className="rightDiv">
-          <img src="./images/certificate 1.png"></img>
+          {/* <img src="./images/certificate 1.png"></img> */}
+          <Video autoplay loop poster="./images/thumb.png" >
+            <source src="./videos/Video Testimonial.mp4" type="video/webm" />
+          </Video>
         </div>
       </Container>
     </Certif>
@@ -78,7 +84,7 @@ const Certif = styled.div`
       }
     }
 
-    .img-dot3{
+    .img-dot3 {
       position: absolute;
       width: 2%;
       top: 40px;
@@ -135,6 +141,10 @@ const Certif = styled.div`
         align-items: center;
       }
 
+      .rh5v-Volume_icon{
+        height: 29px;
+        width: 29px;
+      }
       img {
         width: 100%;
       }
