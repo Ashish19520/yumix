@@ -28,10 +28,10 @@ export const Homepage = () => {
       <People />
       <FotterArea>
         <div className="cf">
-        <ContactForm />
+          <ContactForm />
         </div>
         <div className="footer">
-        <Footer />
+          <Footer />
         </div>
       </FotterArea>
     </div>
@@ -39,16 +39,14 @@ export const Homepage = () => {
 };
 
 const FotterArea = styled.div`
-.cf{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  
-
-}
-.footer{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
+  .cf {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;

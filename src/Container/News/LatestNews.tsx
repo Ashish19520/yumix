@@ -1,7 +1,9 @@
 import { Container } from "@mui/material";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { NewsCard } from "../../Components/NewsCard";
+//@ts-ignore
+import axios from 'axios';
 
 const data = [
   {
@@ -55,6 +57,7 @@ const data = [
 ];
 
 export const LatestNews = () => {
+  const [news, setNews] = useState([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -74,6 +77,30 @@ export const LatestNews = () => {
     const hiddenElements = document.querySelectorAll(".latestnews_hidden");
     hiddenElements.forEach((el) => observer.observe(el));
   }, []);
+
+  useEffect(() => {
+    getNews()
+  }, []);
+
+  const getNews = async () => {
+    const options = {
+      method: "GET",
+      url: "https://amazon-news.p.rapidapi.com/top-news",
+      headers: {
+        "content-type": "application/octet-stream",
+        "X-RapidAPI-Key": "22691429b4mshce1c1f1fb673d0bp1dc3afjsna4222eca9496",
+        "X-RapidAPI-Host": "amazon-news.p.rapidapi.com",
+      },
+    };
+
+    try {
+      const response = await axios.request(options);
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <LatestNewsWrapper>
       <Container maxWidth="lg" className="container ">
@@ -91,7 +118,7 @@ export const LatestNews = () => {
 };
 
 const LatestNewsWrapper = styled.div`
-      padding: 90px 0px;
+  padding: 90px 0px;
   .container {
     margin: auto;
     padding: 0px 0px;
@@ -112,7 +139,7 @@ const LatestNewsWrapper = styled.div`
       .eachCard {
         width: 25%;
         margin-bottom: 26px;
-        padding:10px;
+        padding: 10px;
       }
     }
   }

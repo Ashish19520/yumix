@@ -412,7 +412,7 @@ const HeroLayout = styled.div`
           @media (max-width: 600px) {
             text-align: center;
             margin-top: 40px;
-            font-size: 30px;
+            font-size: 16px;
           }
         }
 
@@ -428,7 +428,7 @@ const HeroLayout = styled.div`
           @media (max-width: 600px) {
             text-align: center;
             max-width: 100%;
-            font-size: 17px;
+            font-size: 14px;
           }
         }
       }
