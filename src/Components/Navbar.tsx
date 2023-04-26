@@ -10,9 +10,11 @@ import { Grid } from "@mui/material";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { AiOutlineClose } from "react-icons/ai";
 import { motion } from "framer-motion";
+import Calender from './Calender'
 
 export const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [openCalender, setOpenCalender] = useState(false)
 
   useEffect(() => {
     console.log("first", drawerOpen);
@@ -100,12 +102,16 @@ export const Navbar = () => {
               </motion.li>
               <motion.li variants={navText}>
                 <Link to="/news">News</Link>
+                <Calender
+                open={openCalender}
+                setClose={() => setOpenCalender(false)}
+                />
               </motion.li>
             </motion.ul>
           </div>
           <motion.div variants={navAnimation} initial="hidden" animate="show">
-            <motion.button className="btn" variants={navText}>
-              <span>Set Meeting</span>
+            <motion.button className="btn" variants={navText} onClick={() => setOpenCalender(true)}>
+              <span id="calender">Set Meeting</span>
             </motion.button>
           </motion.div>
           <button
@@ -146,6 +152,7 @@ export const Navbar = () => {
               </li>
               <li>
                 <Link to="/news">News</Link>
+
               </li>
             </ul>
           </div>
