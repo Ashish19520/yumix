@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+//@ts-ignore
 import { InlineWidget, PopupWidget,PopupModal } from "react-calendly";
 
 
