@@ -44,7 +44,7 @@ export const Certificate = () => {
         </div>
         <div className="rightDiv">
           {/* <img src="./images/certificate 1.png"></img> */}
-          <Video autoplay loop poster="./images/thumb.png" >
+          <Video autoplay loop poster="./images/thumb2.png" >
             <source src="./videos/Video Testimonial.mp4" type="video/webm" />
           </Video>
         </div>
@@ -113,7 +113,7 @@ const Certif = styled.div`
           @media (max-width: 600px) {
             text-align: center;
             margin-bottom: 20px;
-            font-size: 25px !important;
+            font-size: 16px !important;
           }
         }
       }
@@ -129,7 +129,7 @@ const Certif = styled.div`
         @media (max-width: 600px) {
           text-align: center;
           margin-bottom: 40px;
-          font-size: 12px;
+          font-size: 14px;
         }
       }
     }

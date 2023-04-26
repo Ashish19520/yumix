@@ -1,4 +1,4 @@
-import { Container } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { NewsCard } from "../../Components/NewsCard";
@@ -107,9 +107,11 @@ export const LatestNews = () => {
         <div className="heading">Latest News</div>
         <div className="cards ">
           {data.map((d) => (
-            <div className="eachCard latestnews_hidden">
+            <Grid item xs={12} sm={6} md={4} style={{padding:"20px 10px"}}  className="eachCard latestnews_hidden">
+         
               <NewsCard data={d} />
-            </div>
+          
+            </Grid>
           ))}
         </div>
       </Container>
@@ -136,10 +138,19 @@ const LatestNewsWrapper = styled.div`
       display: flex;
       flex-wrap: wrap;
 
+      @media (max-width:600px){
+        flex-direction: column;
+      }
+
       .eachCard {
         width: 25%;
         margin-bottom: 26px;
-        padding: 10px;
+        padding: 0px;
+        @media (max-width:600px){
+          width: 100%;
+          margin-bottom: 2px;
+          padding: 0px;
+      }
       }
     }
   }

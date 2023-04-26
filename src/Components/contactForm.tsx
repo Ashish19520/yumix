@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography, useMediaQuery } from "@mui/material";
 import { useForm, ValidationError } from '@formspree/react';
 import { motion } from "framer-motion";
 
@@ -73,7 +73,7 @@ export default function ContactForm() {
             </form>
         </Grid>
         <Grid item xs={12} md={4}>
-          <img src="./images/brisaTakingParcelRight.png" width="80%" style={{scale:"2", transform:"translate(40px, -20px)"}}/>
+          <img src="./images/brisaTakingParcelRight.png" width="80%" style={{scale:"1.7", transform:"translate(44px, 4px)"}}/>
         </Grid>
       </Grid>
     </Box>
@@ -100,6 +100,11 @@ const style={
   }
 }
 
+const imgStyle={
+  scale:"1.7",
+   transform:"translate(44px, 4px)",
+   
+}
 
 
 

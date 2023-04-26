@@ -100,7 +100,9 @@ const SliderWrapper = styled.div`
           display: none;
         }
         @media (max-width: 600px) {
-          display: none;
+          display: block;
+          left: 0;
+          bottom: 22px;
         }
       }
       .next-arrow {
@@ -113,7 +115,9 @@ const SliderWrapper = styled.div`
           display: none;
         }
         @media (max-width: 600px) {
-          display: none;
+          display: block;
+          bottom: 22px;
+          right: -5%;
         }
       }
     }

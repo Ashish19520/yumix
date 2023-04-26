@@ -150,8 +150,8 @@ const Banner = styled.div`
         margin-bottom: 16px;
 
         @media (max-width: 600px) {
-          text-align: center;
-          font-size: 25px;
+          text-align: left;
+          font-size: 16px;
         }
       }
       p {
@@ -163,7 +163,7 @@ const Banner = styled.div`
 
         @media (max-width: 600px) {
           font-size: 12px;
-          text-align: center;
+          text-align: left;
         }
       }
       @media (max-width: 600px) {

@@ -107,8 +107,6 @@ const MidBanner = styled.div`
       align-items: center;
       position: relative;
 
-      
-
       h2 {
         font-family: Poppins-semiBold;
         font-size: 32px;
@@ -119,7 +117,8 @@ const MidBanner = styled.div`
         margin-bottom: 45px;
 
         @media (max-width: 600px) {
-          font-size: 25px;
+          font-size: 16px;
+          text-align: left !important;
         }
       }
 
@@ -149,6 +148,27 @@ const MidBanner = styled.div`
           margin-right: 10px;
           transition: all 0.2s ease-in-out;
 
+          @media (max-width: 600px) {
+            flex-direction: row;
+
+            &:nth-child(2) {
+              transition-delay: 400ms;
+              flex-direction: row-reverse;
+            }
+            &:nth-child(3) {
+              transition-delay: 800ms;
+            }
+            &:nth-child(4) {
+              transition-delay: 200ms;
+              flex-direction: row-reverse;
+            }
+            &:nth-child(5) {
+              transition-delay: 500ms;
+            }
+
+           
+          }
+
           &:nth-child(2) {
             transition-delay: 400ms;
           }
@@ -172,6 +192,10 @@ const MidBanner = styled.div`
 
           img {
             margin-bottom: 20px;
+
+            @media (max-width:600px){
+              padding: 0px 20px;
+            }
             /* width:100%; */
           }
 
@@ -185,12 +209,13 @@ const MidBanner = styled.div`
             color: #383838;
 
             @media (max-width: 600px) {
-              font-size: 12px;
+              font-size: 16px;
               margin-bottom: 20px;
+              padding: 0px 20px;
             }
           }
 
-          .para{
+          .para {
             width: 60%;
           }
         }

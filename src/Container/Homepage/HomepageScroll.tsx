@@ -7,7 +7,7 @@ export const HomepageScroll = () => {
   return (
     <Scroll>
       <Container maxWidth="lg" className="container">
-        <h1 className="title">Brands / Companies we have worked with</h1>
+        <h2 className="title">Brands / Companies we have worked with</h2>
         {
           //@ts-ignore
           <Slide className="slide"/>
@@ -25,7 +25,7 @@ const Scroll = styled.div`
     padding-top: 60px;
     
 
-    h1 {
+    h2 {
       font-family: Poppins-Bold;
       font-size: 32px;
       /* font-weight: bold; */
@@ -35,7 +35,7 @@ const Scroll = styled.div`
       text-align: center;
       @media (max-width: 600px) {
         text-align: center;
-        font-size: 25px;
+        font-size: 16px;
       }
     }
 

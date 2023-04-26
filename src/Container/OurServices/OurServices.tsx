@@ -61,7 +61,7 @@ export const OurServices = () => {
       y: 0,
       transition: {
         duration: 1,
-        delay: 0.8,
+        delay: 1,
         ease: "easeInOut",
       },
     },
@@ -205,7 +205,7 @@ const ServicesWrapper = styled.div`
       justify-content: center;
 
       .subject-img {
-        width: 70%;
+        width: 100%;
         z-index: 2;
       }
       @media (max-width: 600px) {
