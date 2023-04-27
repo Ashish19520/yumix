@@ -47,7 +47,7 @@ export const Navbar = () => {
   };
 
   return (
-    <div>
+    <div className="outter_div_nav">
       <SocialNavbar>
         <Container maxWidth="lg" className="container">
           <Link to="https://www.facebook.com/ESERVZ" className="iconLink">
@@ -118,7 +118,7 @@ export const Navbar = () => {
             onClick={() => setDrawerOpen(!drawerOpen)}
             className="hamburger"
           >
-            <RxHamburgerMenu color="#5956E9"/>
+            <RxHamburgerMenu color="#5956E9"  style={{marginTop:"20px"}} size={35}/>
           </button>
         </Container>
         <div className="drawer">
@@ -198,6 +198,7 @@ const Nav = styled(Grid)<NavProps>`
   height: 80px;
   display: flex;
   align-items: center;
+  margin-bottom: 20px;
 
   /* @media (max-width:900px){
     display:none;

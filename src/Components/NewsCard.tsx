@@ -30,7 +30,7 @@ const NewsCardWrapper = styled.div`
     margin: auto;
     .img-box {
       img {
-        width:80%;
+        width:100%;
         object-fit: contain;
         border-radius: 8px;
         background-color: #c4c4c4;
@@ -49,6 +49,7 @@ const NewsCardWrapper = styled.div`
       margin-bottom: 20px;
       @media (max-width: 600px) {
               font-size: 15px;
+              margin-bottom: 10px;
           }
      
     }

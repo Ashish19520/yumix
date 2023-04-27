@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { AiOutlineDown } from "react-icons/ai";
 
-export const Hero = () => {
+export const  Hero = () => {
   const typingContainer = {
     hidden: { opacity: 0 },
     show: {
@@ -450,11 +450,14 @@ const HeroLayout = styled.div`
           aspect-ratio: 1;
           border-radius: 500px;
           background-color: #eff5fc;
+          margin-left: -42px;
           /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
           @media (max-width: 600px) {
             aspect-ratio: unset;
             border-radius: unset;
             background-color: #fffcfc;
+            margin-left: unset;
+            padding-bottom: 20px;
           }
           .rock {
             width: 30%;
@@ -467,6 +470,11 @@ const HeroLayout = styled.div`
 
             @media (max-width: 600px) {
               display: none;
+              /* width: 20%;
+              left: unset;
+              top: -25% !important; */
+              
+              right: 30%;
             }
           }
 
@@ -482,14 +490,16 @@ const HeroLayout = styled.div`
 
             @media (max-width: 600px) {
               display: none;
+              /* width: 20%;
+              right: -10px; */
             }
           }
 
           .google {
             width: 38%;
             position: absolute;
-            left: -120px;
-            top: 170px !important;
+            left: -129px;
+            top: 210px !important;
             @media (max-width: 900px) {
               display: none;
             }
@@ -499,10 +509,10 @@ const HeroLayout = styled.div`
           }
 
           .certified {
-            width: 38%;
+            width: 40%;
             position: absolute;
-            left: 0;
-            top: 350px !important;
+            left: -5%;
+            top: 375px !important;
             @media (max-width: 900px) {
               display: none;
             }
@@ -512,7 +522,7 @@ const HeroLayout = styled.div`
           }
 
           .subject{
-            margin-left: 35px;
+            margin-left: 55px;
           }
 
           @media (max-width: 600px) {
@@ -575,7 +585,7 @@ const HeroLayout = styled.div`
             }
             50% {
               opacity: 1;
-              transform: translate(10px, 10px);
+              transform: translate(0px,10px);
             }
             100% {
               opacity: 0;

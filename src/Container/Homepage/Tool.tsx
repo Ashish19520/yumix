@@ -136,11 +136,13 @@ const ToolDiv = styled.div`
 
     .hoverimg {
       &:hover {
-        img {
-          transition: all 0.2s ease-in-out !important;
+        .fba {
+          img {
+            transition: all 0.2s ease-in-out !important;
 
-          &:hover {
-            transform: scale(1.1) rotate(3deg) !important;
+            &:hover {
+              transform: scale(1.1) rotate(3deg) !important;
+            }
           }
         }
       }
@@ -160,7 +162,7 @@ const ToolDiv = styled.div`
       }
 
       .title {
-        text-align: center ;
+        text-align: center;
         max-width: 40%;
         font-size: 32px;
         font-weight: 600;
@@ -174,10 +176,9 @@ const ToolDiv = styled.div`
           max-width: 90%;
         }
         @media (max-width: 600px) {
-          font-size: 25px;
+          font-size: 16px;
           max-width: 90%;
         }
-        
       }
       .tool {
         display: flex;
@@ -214,6 +215,31 @@ const ToolDiv = styled.div`
           flex-direction: column;
         }
 
+        .hoverimg {
+          &:hover {
+            .fba {
+              transition: all 0.2s ease-in-out !important;
+              img {
+                transform: scale(1.1) rotate(3deg) !important;
+              }
+            }
+
+            .lq {
+              transition: all 0.2s ease-in-out !important;
+              img {
+                transform: scale(1.1) rotate(-3deg) !important;
+              }
+            }
+
+            .dtc {
+              transition: all 0.2s ease-in-out !important;
+              img {
+                transform: scale(1.1) rotate(3deg) !important;
+              }
+            }
+          }
+        }
+
         .box {
           width: 30%;
 
@@ -221,8 +247,6 @@ const ToolDiv = styled.div`
             width: 50%;
             margin-bottom: 50px;
           }
-
-         
 
           .fba {
             aspect-ratio: 1;
@@ -234,6 +258,9 @@ const ToolDiv = styled.div`
 
               &:hover {
                 transform: scale(1.1) rotate(3deg) !important;
+              }
+              @media (max-width: 600px) {
+                width: 80%;
               }
             }
           }

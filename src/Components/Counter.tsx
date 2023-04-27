@@ -96,7 +96,7 @@ const Count = styled.div`
       }
 
 
-      @media (max-width: 900px) {
+      @media (max-width: 1115px) {
         flex-wrap: wrap;
       }
 
@@ -106,7 +106,7 @@ const Count = styled.div`
         } */
 
       @media (max-width: 600px) {
-        flex-direction: column;
+        flex-direction: row;
         width: 100%;
       }
 
@@ -116,14 +116,13 @@ const Count = styled.div`
         &:last-of-type {
           border-right: unset;
         }
+        @media (max-width: 1115px) {
+          border-right: unset;
+        }
         @media (max-width: 900px) {
-          border-right: unset;
           padding: 20px 20px;
         }
-        @media (max-width: 600px) {
-          border-right: unset;
-          padding: 20px 20px;
-        }
+        
 
         h2 {
           font-family: Poppins-Bold;
@@ -133,7 +132,7 @@ const Count = styled.div`
           letter-spacing: -0.5px;
 
           @media (max-width: 600px) {
-            font-size: 50px;
+            font-size: 40px;
           }
           @media (max-width: 900px) {
             text-align: center;
