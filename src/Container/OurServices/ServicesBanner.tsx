@@ -1,4 +1,4 @@
-import { Container } from "@mui/material";
+import { Button, Container } from "@mui/material";
 import React, { useEffect } from "react";
 import styled from "styled-components";
 
@@ -40,7 +40,18 @@ export const ServicesBanner = () => {
               gain a competitive advantage by providing a holistic view of your
               customers and business to inform continuous optimization.
             </div>
-            <button className="btn">View More</button>
+            <Button
+              disableElevation
+              variant="contained"
+              sx={{
+                ...style.buttonBorder,
+                color: "white",
+                backgroundColor: "#5856e9",
+              }}
+            >
+              View More
+            </Button>
+            {/* <button className="btn">View More</button> */}
           </div>
         </div>
         <div className="box-2 service-fade-banner" id="customerExperience">
@@ -57,7 +68,18 @@ export const ServicesBanner = () => {
               produce, and optimize the creative components needed to make
               meaningful connections with your customers.
             </div>
-            <button className="btn">View More</button>
+            <Button
+              disableElevation
+              variant="contained"
+              sx={{
+                ...style.buttonBorder,
+                color: "white",
+                backgroundColor: "#5856e9",
+              }}
+            >
+               View More
+            </Button>
+            {/* <button className="btn">View More</button> */}
           </div>
           <div className="img-box">
             <img src="./images/Group 38605.png"></img>
@@ -66,6 +88,19 @@ export const ServicesBanner = () => {
       </Container>
     </ServiceBanner>
   );
+};
+
+const style = {
+  buttonBorder: {
+    padding: { xs: "7px 24x", md: "8px 24px" },
+    borderRadius: "8px",
+    border: "1px solid #5856e9",
+    textTransform: "none",
+    fontSize: "14px",
+    fontWeight: 600,
+    fontFamily: "Montserrat-semiBold",
+    letterSpacing: "1px",
+  },
 };
 
 const ServiceBanner = styled.div`
@@ -88,8 +123,16 @@ const ServiceBanner = styled.div`
 
       .img-box {
         width: 40%;
+        @media (max-width: 600px) {
+          width: 100%;
+        }
         img {
           width: 95%;
+
+          @media (max-width: 600px) {
+            width: 100%;
+            margin-bottom: 20px;
+          }
         }
       }
 
@@ -148,8 +191,16 @@ const ServiceBanner = styled.div`
 
       .img-box {
         width: 40%;
+
+        @media (max-width: 600px) {
+          width: 100%;
+        }
         img {
           width: 100%;
+
+          @media (max-width: 600px) {
+            margin-bottom: 20px;
+          }
         }
       }
 

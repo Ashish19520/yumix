@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Counter } from "../Components/Counter";
 import { Hero } from "../Components/Hero";
 import { HomepageScroll } from "../Container/Homepage/HomepageScroll";
@@ -15,6 +15,11 @@ import ContactForm from "../Components/contactForm";
 import styled from "styled-components";
 
 export const Homepage = () => {
+
+
+  useEffect(()=>{
+    window.scroll(0,0)
+  },[])
   return (
     <div>
       <Hero />

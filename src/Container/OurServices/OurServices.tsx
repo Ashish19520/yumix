@@ -3,7 +3,8 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-export const OurServices = () => {
+export const 
+OurServices = () => {
   const typingContainer = {
     hidden: { opacity: 0 },
     show: {
@@ -75,6 +76,7 @@ export const OurServices = () => {
           <motion.img variants={lines}  initial="hidden" animate="show" src="./images/Vector 13@3x.png" className="img-line_bg_2"></motion.img>
           <motion.img variants={lines}  initial="hidden" animate="show" src="./images/Round Cube2@3x.png" className="img-cube_1"></motion.img>
           <motion.img variants={lines}  initial="hidden" animate="show" src="./images/FullRock1@3x.png" className="img-rock_1"></motion.img>
+          <div className="text-wrapper">
           <motion.h1 variants={typingContainer} initial="hidden" animate="show">
             {Array.from("Our Services").map((word, i) => (
               <motion.span key={i} variants={typingText}>
@@ -93,6 +95,7 @@ export const OurServices = () => {
             went for Amazon FBA or Amazon MFN we have everything to rock your
             business.
           </motion.div>
+          </div>
           <motion.div
             variants={imgProduct1}
             initial="hidden"
@@ -129,6 +132,10 @@ const ServicesWrapper = styled.div`
       align-items: center;
       justify-content: center;
       position: relative;
+
+      @media(max-width:600px){
+        flex-direction: column-reverse;
+      }
 
       .img-cube_1 {
         width: 15%;
@@ -171,6 +178,18 @@ const ServicesWrapper = styled.div`
         }
       }
 
+      .text-wrapper{
+        padding-left: 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @media(max-width:600px){
+          align-items: start;
+          margin-top: 40px;
+        }
+      }
+
       h1 {
         font-family: Poppins-bold;
         font-size: 40px;
@@ -197,6 +216,8 @@ const ServicesWrapper = styled.div`
 
         @media (max-width: 600px) {
           font-size: 16px;
+          width: 100%;
+          text-align: unset;
         }
       }
     }
@@ -213,6 +234,7 @@ const ServicesWrapper = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-top: 40px;
         img {
           width: 80%;
         }

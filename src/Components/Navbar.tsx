@@ -299,7 +299,7 @@ const Nav = styled(Grid)<NavProps>`
     height: 100vh;
     top: 0px;
     transform: ${(props: NavProps) =>
-      props.drawer ? "translateX(0%)" : "translateX(-100%)"};
+      props.drawer ? "translateX(0%)" : "translateX(100%)"};
     transition: transform 0.5s;
     z-index: 99;
 

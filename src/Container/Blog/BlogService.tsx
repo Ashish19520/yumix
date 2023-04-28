@@ -1,6 +1,6 @@
 import { Box, Button, Typography } from '@mui/material';
 import { Container } from '@mui/system';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from "styled-components";
 
 export default function BlogService() {
@@ -18,6 +18,8 @@ export default function BlogService() {
         "SEO",
         "Web & Mobile Development"
     ]
+
+    const [flag,setFlag]=useState(true)
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
@@ -48,12 +50,12 @@ export default function BlogService() {
             {
                 services.map((item,index) => {
                     return(
-                        <Button key={item} variant='outlined' sx={{...style.button, color:"#3A3B44", display : { xs:index>3 ? "none" : "block", sm:index>5 ? "none" : "block", md:"block" }}}>{item}</Button>
+                        <Button key={item} variant='outlined' sx={{...style.button, color:"#3A3B44", display : { xs:index>3 && flag ? "none" : "block", sm:index>5 && flag ? "none" : "block", md:"block" }}}>{item}</Button>
                     )
                 })
             }
         </Box>
-        <Button disableElevation variant='contained' sx={{...style.button, color:"white", backgroundColor:"#5856e9", display:{xs:"block", sm:"block", md:"none"}, marginTop:"30px"}}>
+        <Button disableElevation variant='contained' sx={{...style.button, color:"white", backgroundColor:"#5856e9", display:{xs: flag? "block":"none", sm:flag? "block":"none", md:"none",}, marginTop:"30px"}} onClick={()=>setFlag(false)}>
             View All
         </Button>
     </Box>

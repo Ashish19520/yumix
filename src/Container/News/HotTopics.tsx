@@ -1,8 +1,20 @@
 import { Container } from "@mui/material";
-import React,{useEffect}from "react";
+import { fontSize } from "@mui/system";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 export const HotTopics = () => {
+  const newsString =
+    "Nisi, sagittis aliquet sit rutrum. Nunc, id vestibulum quam ornare adipiscing. Pellentesque sed turpis nunc gravida pharetra, sit necvivamus pharetra. Velit, dui, egestas nisi, elementum mattis mauris, magnis. Massa tortor nibh nulla condimentum imperdiet scelerisque. Massa tortor nibh nulla condimentum imperdiet scelerisque. Massa tortor nibh nulla condimentum imperdiet scelerisque...";
+  let firstLetter = "";
+  let restOfString = "";
+  const newsLetterArray = newsString.split(" ");
+  firstLetter = newsLetterArray[0];
+  console.log("checking ", firstLetter);
+  for (let i = 1; i < newsLetterArray.length; i++) {
+    restOfString = restOfString + newsLetterArray[i];
+  }
+  useEffect(() => {}, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -11,7 +23,7 @@ export const HotTopics = () => {
           console.log("Entering into zone");
           entry.target.classList.add("animate__animated");
           entry.target.classList.add("animate__fadeIn");
-        } 
+        }
         // else {
         //   console.log("exit into zone");
         //   entry.target.classList.remove("animate__fadeIn");
@@ -44,13 +56,24 @@ export const HotTopics = () => {
           </div>
           <div className="text-box">
             <div className="title">
-              Nisi, sagittis aliquet sit rutrum. Nunc, id vestibulum quam ornare
-              adipiscing. Pellentesque sed turpis nunc gravida pharetra, sit nec
-              vivamus pharetra. Velit, dui, egestas nisi, elementum mattis
-              mauris, magnis. Massa tortor nibh nulla condimentum imperdiet
-              scelerisque. Massa tortor nibh nulla condimentum imperdiet
-              scelerisque. Massa tortor nibh nulla condimentum imperdiet
-              scelerisque...<span className="read-more">read more</span>
+              {/* {<span style={{fontFamily:"Poppins-semiBold",fontSize:"32px"}}>{newsString.split(" ")[0]}</span>}
+              {<span className="text-span" style={{}}>{restOfString}</span>} */}
+              <span
+                style={{ fontFamily: "Poppins-semiBold", fontSize: "32px" }}
+              >
+                Nisi, 
+              </span>
+
+              <span style={{fontFamily:"Montserrat",paddingLeft:"8px",fontSize:"14px"}}>
+                 sagittis aliquet sit rutrum. Nunc, id vestibulum quam ornare
+                adipiscing. Pellentesque sed turpis nunc gravida pharetra, sit
+                nec vivamus pharetra. Velit, dui, egestas nisi, elementum mattis
+                mauris, magnis. Massa tortor nibh nulla condimentum imperdiet
+                scelerisque. Massa tortor nibh nulla condimentum imperdiet
+                scelerisque. Massa tortor nibh nulla condimentum imperdiet
+                scelerisque
+              </span><br></br>
+              <span className="read-more" style={{fontFamily:"Montserrat-SemiBold", marginTop:"40px", fontSize:"14px"}}>read more</span>
             </div>
             <div className="subtitle"></div>
           </div>
@@ -65,18 +88,18 @@ const HotTopicsWrapper = styled.div`
     padding: 90px 0px;
     position: relative;
 
-    .img-dot_1{
+    .img-dot_1 {
       position: absolute;
       width: 2%;
       top: 10%;
       right: 0%;
     }
 
-    .img-dot_2{
+    .img-dot_2 {
       position: absolute;
       width: 4%;
       left: -4%;
-      top:45%;
+      top: 45%;
     }
     .hero-title {
       font-family: Poppins-Bold;
@@ -147,7 +170,8 @@ const HotTopicsWrapper = styled.div`
         }
       }
       .text-box {
-        width: 40%;
+       
+        max-width: 40%;
         padding-left: 40px;
 
         @media (max-width: 600px) {
@@ -162,6 +186,10 @@ const HotTopicsWrapper = styled.div`
           letter-spacing: 0.25px;
           text-align: left;
           color: #444; */
+          .text-span {
+            background-color: aqua;
+            padding-right: 40px;
+          }
         }
       }
     }

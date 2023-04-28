@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { OurWorks } from "../Container/Work/OurWorks";
 import { Counter } from "../Components/Counter";
 import styled from "styled-components";
@@ -6,6 +6,10 @@ import ContactForm from "../Components/contactForm";
 import Footer from "../Components/Footer";
 
 export const Works = () => {
+
+  useEffect(()=>{
+    window.scroll(0,0)
+  },[])
   return (
     <div>
       <WorksWrapper>
