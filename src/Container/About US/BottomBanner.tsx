@@ -1,6 +1,8 @@
 import { Button, Grid, Typography } from "@mui/material";
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router";
+import { HashLink } from "react-router-hash-link";
 
 const typingContainer = {
   hidden: { opacity: 0 },
@@ -40,6 +42,9 @@ const elements = {
 
 
 export default function TopBanner() {
+  
+  const navigate=useNavigate();
+  
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -77,12 +82,12 @@ export default function TopBanner() {
             </Typography>
             </motion.div>
             <motion.div variants={elements}  initial="hidden" animate="show" style={{gap:"30px", flexWrap:"wrap", display:"flex", alignItems:"center", marginTop:"30px"}}>
-            <Button disableElevation variant='outlined' sx={{...style.button, color:"#5856e9", backgroundColor:"white"}}>
+            <Button disableElevation variant='outlined' sx={{...style.button, color:"#5856e9", backgroundColor:"white"}} onClick={()=>navigate("/works")}>
                 Our Portfolio
             </Button>
-            <Button disableElevation variant='contained' sx={{...style.buttonBorder, color:"white", backgroundColor:"#5856e9"}}>
+            <HashLink to={"/aboutus#contactForm"} smooth><Button disableElevation variant='contained' sx={{...style.buttonBorder, color:"white", backgroundColor:"#5856e9"}}>
                 Get in Touch
-            </Button>
+            </Button></HashLink>
             </motion.div>
         </Grid>
         <Grid item xs={12} md={7} sx={{textAlign:{xs:"center", md:"right"}}}>
@@ -109,7 +114,7 @@ const style = {
       left : "-20px"
   } as React.CSSProperties,
   button : {
-    padding : { xs : "7px 24px", md : "16px 32px"},
+    padding : { xs : "7px 24px", md : "10px 32px"},
     borderRadius : "8px",
     border : "1px solid #D1D1D1",
     textTransform : "none",
@@ -119,7 +124,7 @@ const style = {
     letterSpacing : '1px'
     },
   buttonBorder : {
-    padding : { xs : "7px 24x", md : "16px 32px"},
+    padding : { xs : "7px 24x", md : "10px 32px"},
     borderRadius : "8px",
     border : "1px solid #5856e9",
     textTransform : "none",

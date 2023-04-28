@@ -9,14 +9,14 @@ export const NewsCard = (props: any) => {
     <NewsCardWrapper>
       <Container maxWidth="lg" className="container">
         <div className="img-box">
-          <img src={props.data.imgsrc}></img>
+          <img src={props?.data?.imgsrc}></img>
         </div>
         <Link to={""}>
-        <div className="title">{props.data.newsTitle}</div>
+        <div className="title">{props?.data?.newsTitle}</div>
         </Link>
         <div className="subtitle">
-          <p>{props.data.time}</p>
-          <p>{props.data.source}</p>
+          <p>{props?.data?.time}</p>
+          <p>{props?.data?.source}</p>
         </div>
       </Container>
     </NewsCardWrapper>

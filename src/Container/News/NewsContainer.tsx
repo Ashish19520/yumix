@@ -123,35 +123,47 @@ export const NewsContainer = () => {
     });
   }, []);
 
- 
-
   return (
     <NewsWrapper>
       <Container maxWidth="lg" className="container">
         <div className="news-wrapper">
           <div className="text-box">
-            
-              <motion.div
-                variants={typingContainer}
-                initial="hidden"
-                animate="show"
-                className="title"
-              >
-                {Array.from("News").map((word, i) => (
-                  <motion.span key={i} variants={typingText}>
-                    {word}
-                  </motion.span>
-                ))}
-              
-              </motion.div>
-            
-            <motion.div className="subtitle" variants={elements}  initial="hidden" animate="show">
+            <motion.div
+              variants={typingContainer}
+              initial="hidden"
+              animate="show"
+              className="title"
+            >
+              {Array.from("News").map((word, i) => (
+                <motion.span key={i} variants={typingText}>
+                  {word}
+                </motion.span>
+              ))}
+            </motion.div>
+
+            <motion.div
+              className="subtitle"
+              variants={elements}
+              initial="hidden"
+              animate="show"
+            >
               World's Best News for insights from experts about solutions and
               progress in E-Commerce development.
             </motion.div>
-            <motion.img src="./images/Round Cube2@3x.png" className="cube" variants={elements}  initial="hidden" animate="show"></motion.img>
+            <motion.img
+              src="./images/Round Cube2@3x.png"
+              className="cube"
+              variants={elements}
+              initial="hidden"
+              animate="show"
+            ></motion.img>
           </div>
-          <motion.div className="img-box" variants={elements}  initial="hidden" animate="show">
+          <motion.div
+            className="img-box"
+            variants={elements}
+            initial="hidden"
+            animate="show"
+          >
             <img src="./images/Illustration (1).png" className="subject"></img>
             <img src="./images/Cone3@3x.png" className="cone"></img>
             <img src="./images/newRock2@3x.png" className="rock"></img>
@@ -184,6 +196,7 @@ const NewsWrapper = styled.div`
         width: 50%;
         display: flex;
         flex-direction: column;
+        position: relative;
 
         @media (max-width: 600px) {
           width: 100%;
@@ -218,10 +231,10 @@ const NewsWrapper = styled.div`
           }
         }
         .cube {
-          width: 10%;
+          width: 20%;
           position: absolute;
-          left: 40px;
-          bottom: 50px;
+          left: -10%;
+          bottom: -100%;
           z-index: 0;
           @media (max-width: 600px) {
             display: none;

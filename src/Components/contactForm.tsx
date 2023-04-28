@@ -1,6 +1,7 @@
 import { Box, Button, Grid, Typography, useMediaQuery } from "@mui/material";
 import { useForm, ValidationError } from '@formspree/react';
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 
 const typingContainer = {
@@ -26,6 +27,7 @@ const typingText = {
 export default function ContactForm() {
 
   const [state, handleSubmit] = useForm("mbjeqgpr");
+  let flag=false;
   if (state.succeeded) {
     return (
       <Box sx={{maxWidth:"1200px", padding:"80px 40px", margin:"auto", overflow:{xs:"hidden", md:"visible"}}}>
@@ -55,19 +57,32 @@ export default function ContactForm() {
 
 }
 
+
+
+
+  if(state?.errors){
+    console.log("hello")
+    if(state?.errors[0]?.code=="TYPE_EMAIL"){
+     flag=true;
+    }
+  }
+
+
+
   return (
-    <Box sx={{maxWidth:"1200px", padding:"80px 40px", margin:"auto", overflow:{xs:"hidden", md:"visible"}}}>
+    <Box sx={{maxWidth:"1200px", padding:"80px 40px", margin:"auto", overflow:{xs:"hidden", md:"visible"}}} id="contactForm">
       <Grid container sx={{width:"100%", backgroundColor:"#232F3F", borderRadius:"42px", boxShadow:"2px 4px 10px rgba(0, 0, 0, 0.1)", backdropFilter:"blur(21px)", padding:{xs:"20px 40px", md:"50px 100px"}}}>
         <Grid item xs={12} md={8} style={{marginBottom:"30px"}}>
           <Typography style={{color:"#FFFCFC", fontSize:"32px", fontFamily:"Poppins-SemiBold"}}>Get in Touch</Typography>
           <Typography style={{margin:"20px 0px 40px 0px", color:"#D3D2F9", fontSize:"16px", fontFamily:"Montserrat", lineHeight:"24px"}}>Enim tempor eget pharetra facilisis sed maecenas adipiscing. Eu leo molestie vel, ornare non id blandit netus.</Typography>
           <form onSubmit={handleSubmit}>
           <Box style={{display:"flex", alignItems:"stretch", gap:"20px", flexWrap:"wrap"}}>
-            <input type="email" placeholder="Email" required style={{...style.input}} name="Email"/>
+            <input type="email" placeholder="Email*" required style={{...style.input}} name="Email"/>
             <input type="text" placeholder="Your Message" required style={{...style.input}} name="Message"/>
             <Button type="submit" disabled={state.submitting} disableElevation variant='contained' sx={{...style.button, color:"white", backgroundColor:"#5856e9"}}>
                 Send
             </Button>
+            {flag &&  <Typography style={{color:"#D3D2F9", fontSize:"16px", fontFamily:"Montserrat", lineHeight:"24px"}}>Please Enter Email Again</Typography>}
             
           </Box>
             </form>

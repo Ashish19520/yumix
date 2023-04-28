@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ContactForm from '../Components/contactForm'
 import { Counter } from '../Components/Counter'
 import Footer from '../Components/Footer'
@@ -10,6 +10,11 @@ import TopBanner from '../Container/About US/TopBanner'
 import { Typography } from '@mui/material'
 
 export default function AboutUs() {
+
+useEffect(()=>{
+  window.scroll(0,0)
+},[])
+
   return (
     <div>
       <TopBanner />

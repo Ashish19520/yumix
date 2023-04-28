@@ -1,5 +1,5 @@
-import { Container } from "@mui/material";
-import React,{useEffect} from "react";
+import { Button, Container } from "@mui/material";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 export const ServiceWeProvide = () => {
@@ -44,7 +44,18 @@ export const ServiceWeProvide = () => {
                   marketing services, which allows us to provide a rich digital
                   marketing services offering.
                 </div>
-                <button className="btn">View More</button>
+                <Button
+                  disableElevation
+                  variant="contained"
+                  sx={{
+                    ...style.buttonBorder,
+                    color: "white",
+                    backgroundColor: "#5856e9",
+                  }}
+                >
+                  View More
+                </Button>
+                {/* <button className="btn">View More</button> */}
               </div>
               <div className="img-box">
                 <img src="./images/Group 38607.png"></img>
@@ -55,6 +66,21 @@ export const ServiceWeProvide = () => {
       </ServiceWeProvideWrapper>
     </div>
   );
+};
+
+const style = {
+ 
+ 
+  buttonBorder: {
+    padding: { xs: "7px 24x", md: "8px 24px" },
+    borderRadius: "8px",
+    border: "1px solid #5856e9",
+    textTransform: "none",
+    fontSize: "14px",
+    fontWeight: 600,
+    fontFamily: "Montserrat-semiBold",
+    letterSpacing: "1px",
+  },
 };
 
 const ServiceWeProvideWrapper = styled.div`
@@ -161,8 +187,17 @@ const ServiceWeProvideWrapper = styled.div`
         width: 40%;
         z-index: 2;
 
+        @media (max-width: 600px) {
+          width: 100%;
+        }
+
         img {
           width: 90%;
+
+          @media (max-width: 600px) {
+            margin-bottom: 20px;
+            width: 100%;
+          }
         }
       }
     }
