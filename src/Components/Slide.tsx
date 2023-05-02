@@ -108,6 +108,7 @@ const SliderWrapper = styled.div`
         bottom: 40px;
         left: -40px;
         cursor: pointer;
+        z-index: 1;
 
         @media (max-width: 1100px) {
           display: none;
