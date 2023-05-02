@@ -69,7 +69,7 @@ const Certif = styled.div`
     position: relative;
 
     @media (max-width: 600px) {
-      flex-direction: column;
+      flex-direction: column-reverse;
       width: 100%;
     }
 
@@ -139,6 +139,7 @@ const Certif = styled.div`
       @media (max-width: 600px) {
         width: 100%;
         align-items: center;
+        padding-bottom: 40px;
       }
 
       .rh5v-Volume_icon{

@@ -120,7 +120,8 @@ const WorkWrapper = styled.div`
         display: none;
       }
       @media (max-width: 600px) {
-        display: none;
+        display: block;
+        top: 5%;
       }
     }
 
@@ -134,7 +135,10 @@ const WorkWrapper = styled.div`
         display: none;
       }
       @media (max-width: 600px) {
-        display: none;
+        display: block;
+        top: unset;
+        bottom: 0%;
+        left: 0%;
       }
     }
 
@@ -149,7 +153,9 @@ const WorkWrapper = styled.div`
         display: none;
       }
       @media (max-width: 600px) {
-        display: none;
+        display: block;
+        left: 23%;
+        top: 1%;
       }
     }
 
@@ -175,7 +181,7 @@ const WorkWrapper = styled.div`
       @media (max-width: 600px) {
         /* width:100%; */
         text-align: center;
-        font-size: 80px;
+        font-size: 48px;
         margin: 40px 20px;
       }
     }

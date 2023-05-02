@@ -159,6 +159,13 @@ const ToolDiv = styled.div`
         width: 10%;
         left: 0%;
         top: -40px;
+
+        @media(max-width:600px){
+          width: 15%;
+          top: -5%;
+        }
+
+        
       }
 
       .title {

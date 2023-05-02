@@ -142,13 +142,19 @@ const ServicesWrapper = styled.div`
         right: 6%;
         top: 20%;
         position: absolute;
+
+        @media(max-width:600px){
+          top: 2%;
+          right: 4%;
+        }
       }
 
       .img-rock_1 {
         position: absolute;
         width: 10%;
         left: 5%;
-        bottom: 20%;
+        bottom: 25%;
+        z-index: 0;
       }
 
       .img-line_bg {
@@ -160,7 +166,8 @@ const ServicesWrapper = styled.div`
           display: none;
         }
         @media (max-width: 600px) {
-          display: none;
+          display: block;
+          top: 4%;
         }
       }
 
@@ -174,7 +181,8 @@ const ServicesWrapper = styled.div`
           display: none;
         }
         @media (max-width: 600px) {
-          display: none;
+          display: block;
+          top: 8%;
         }
       }
 
@@ -201,7 +209,7 @@ const ServicesWrapper = styled.div`
         margin-top: 30px;
 
         @media (max-width: 600px) {
-          font-size: 35px;
+          font-size: 16px;
         }
       }
       .subTitle {
@@ -215,9 +223,9 @@ const ServicesWrapper = styled.div`
         margin-bottom: 10px;
 
         @media (max-width: 600px) {
-          font-size: 16px;
+          font-size: 14px;
           width: 100%;
-          text-align: unset;
+          text-align: left;
         }
       }
     }
@@ -230,7 +238,7 @@ const ServicesWrapper = styled.div`
         z-index: 2;
       }
       @media (max-width: 600px) {
-        width: 100%;
+        width: 80%;
         display: flex;
         align-items: center;
         justify-content: center;

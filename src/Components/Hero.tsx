@@ -1,10 +1,12 @@
 import Container from "@mui/material/Container";
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import { AiOutlineDown } from "react-icons/ai";
 
-export const  Hero = () => {
+export const Hero = () => {
+  
+  
   const typingContainer = {
     hidden: { opacity: 0 },
     show: {
@@ -24,6 +26,8 @@ export const  Hero = () => {
       },
     },
   };
+
+  
 
   const explainProduct = {
     hidden: { opacity: 0, y: "-20px" },
@@ -47,7 +51,23 @@ export const  Hero = () => {
       y: 0,
       transition: {
         duration: 1,
-        delay: 2.5,
+        delay:2.5,
+        ease: "easeInOut",
+      },
+    },
+  };
+
+  const imgProduct2 = {
+    hidden: {
+      opacity: 0,
+      y: "200px",
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        delay: 0.2,
         ease: "easeInOut",
       },
     },
@@ -165,6 +185,7 @@ export const  Hero = () => {
   // }, []);
 
   useEffect(() => {
+    console.log("Checking##########," ,window.screen.width)
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -198,13 +219,30 @@ export const  Hero = () => {
   return (
     <HeroLayout>
       <Container maxWidth="lg" className="container">
-      <motion.img
-        src="./images/Group 38633@3x.png"
-        className="bg-line-img_1"
-        variants={lines}
-        initial="hidden"
-        animate="show"
-      ></motion.img>
+
+        <motion.img
+          src="./images/Group 38633@3x.png"
+          className="bg-line-img_1"
+          variants={lines}
+          initial="hidden"
+          animate="show"
+        ></motion.img>
+        <motion.img
+          src="./images/Group 38632.png"
+          className="res-bg-line-img_1"
+          variants={lines}
+          initial="hidden"
+          animate="show"
+        ></motion.img>
+        <motion.img
+          src="./images/Group 38633.png"
+          className="res-bg-line-img_2"
+          variants={lines}
+          initial="hidden"
+          animate="show"
+        ></motion.img>
+        
+
         <div className="outter">
           <div className="titleBox">
             <motion.h1
@@ -238,46 +276,46 @@ export const  Hero = () => {
               variants={lines}
               initial="hidden"
               animate="show"
-            ></motion.img>
+            ></motion.img>  
           </div>
           <div className="imageBox">
             <motion.div
               className="circle"
-              variants={imgProduct1}
+              variants={window.screen.width<601? imgProduct2:imgProduct1}
               initial="hidden"
               animate="show"
             >
               <motion.img
                 src="./images/3 - Brisa Shops Online@3x.png"
-                variants={imgProduct1}
+               variants={window.screen.width<601? imgProduct2:imgProduct1}
                 initial="hidden"
                 animate="show"
                 className="subject"
               ></motion.img>
               <motion.img
                 src="./images/Rock2@3x.png"
-                variants={imgProduct1}
+               variants={window.screen.width<601? imgProduct2:imgProduct1}
                 initial="hidden"
                 animate="show"
                 className="rock"
               ></motion.img>
               <motion.img
                 src="./images/partner-shopify@3x.png"
-                variants={imgProduct1}
+               variants={window.screen.width<601? imgProduct2:imgProduct1}
                 initial="hidden"
                 animate="show"
                 className="shopify"
               ></motion.img>
               <motion.img
                 src="./images/google-partner@3x.png"
-                variants={imgProduct1}
+               variants={window.screen.width<601? imgProduct2:imgProduct1}
                 initial="hidden"
                 animate="show"
                 className="google"
               ></motion.img>
               <motion.img
                 src="./images/partner-certified@3x.png"
-                variants={imgProduct1}
+               variants={window.screen.width<601? imgProduct2:imgProduct1}
                 initial="hidden"
                 animate="show"
                 className="certified"
@@ -314,6 +352,32 @@ const HeroLayout = styled.div`
     display: none;
   }
 
+
+  .res-bg-line-img_1{
+    display: none;
+    
+    @media (max-width:600px){
+      display: block;
+      position: absolute;
+      bottom: 35%;
+    }
+
+
+
+    
+  }
+
+  .res-bg-line-img_2{
+    display: none;
+    @media (max-width:600px){
+      display: block;
+      position: absolute;
+      bottom: 34%;
+      left: 20%;
+    }
+    
+  }
+
   .bg-line-img_1 {
     position: absolute;
     width: 100%;
@@ -348,7 +412,7 @@ const HeroLayout = styled.div`
       display: flex;
 
       @media (max-width: 600px) {
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: center;
       }
 
@@ -357,6 +421,10 @@ const HeroLayout = styled.div`
         max-width: 700px;
         width: 60%;
         position: relative;
+
+        @media(max-width:600px){
+          padding-top: 40px;
+        }
 
         .rock-img_1 {
           position: absolute;
@@ -370,11 +438,11 @@ const HeroLayout = styled.div`
           @media (max-width: 900px) {
             display: none;
           }
-          @media (max-width: 900px) {
-            display: none;
-          }
           @media (max-width: 600px) {
-            display: none;
+            display: unset;
+            width: 15% !important;
+            left: 0%;
+            top: -10%;
           }
         }
 
@@ -443,6 +511,7 @@ const HeroLayout = styled.div`
 
         @media (max-width: 600px) {
           padding: 0px 50px;
+          padding-top: 15px;
           width: 100%;
         }
 
@@ -453,10 +522,10 @@ const HeroLayout = styled.div`
           margin-left: -42px;
           /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
           @media (max-width: 600px) {
-            aspect-ratio: unset;
-            border-radius: unset;
-            background-color: #fffcfc;
-            margin-left: unset;
+            aspect-ratio: 1;
+            /* border-radius: unset; */
+            /* background-color: #fffcfc; */
+            /* margin-left: unset; */
             padding-bottom: 20px;
           }
           .rock {
@@ -469,11 +538,15 @@ const HeroLayout = styled.div`
             }
 
             @media (max-width: 600px) {
-              display: none;
+              display: unset;
+              width: 15%;
+              left: unset;
+              right: 0%;
+              top: -18% !important;
               /* width: 20%;
               left: unset;
               top: -25% !important; */
-              
+
               right: 30%;
             }
           }
@@ -489,7 +562,9 @@ const HeroLayout = styled.div`
             }
 
             @media (max-width: 600px) {
-              display: none;
+              display: unset;
+              width: 25%;
+              right: -2%;
               /* width: 20%;
               right: -10px; */
             }
@@ -504,7 +579,10 @@ const HeroLayout = styled.div`
               display: none;
             }
             @media (max-width: 600px) {
-              display: none;
+              display: unset;
+              left: 0%;
+              top: 40% !important;
+              width: 25%;
             }
           }
 
@@ -517,18 +595,23 @@ const HeroLayout = styled.div`
               display: none;
             }
             @media (max-width: 600px) {
-              display: none;
+              display: unset;
+              width: 25%;
+              left: 15%;
+              top: unset !important;
+              bottom: 0%;
             }
           }
 
-          .subject{
+          .subject {
             margin-left: 55px;
           }
 
           @media (max-width: 600px) {
-              
-              margin-left: unset;
-            }
+            margin-left: unset;
+            padding-right: 40px;
+           
+          }
 
           img {
             width: 90%;
@@ -544,6 +627,10 @@ const HeroLayout = styled.div`
     }
 
     .btn {
+
+      @media (max-width:600px) {
+          display: none;
+        }
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -561,6 +648,10 @@ const HeroLayout = styled.div`
 
       a {
         text-decoration: none;
+
+        @media (max-width:600px) {
+          display: none;
+        }
         .box {
           span {
             display: block;
@@ -585,7 +676,7 @@ const HeroLayout = styled.div`
             }
             50% {
               opacity: 1;
-              transform: translate(0px,10px);
+              transform: translate(0px, 10px);
             }
             100% {
               opacity: 0;

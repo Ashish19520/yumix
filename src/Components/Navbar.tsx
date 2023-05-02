@@ -3,18 +3,18 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Container from "@mui/material/Container";
 import { Link } from "react-router-dom";
-import { FaFacebookF, FaGoogle, FaLinkedinIn, } from "react-icons/fa";
+import { FaFacebookF, FaGoogle, FaLinkedinIn } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import logo from "./logo.png";
 import { Grid } from "@mui/material";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { AiOutlineClose } from "react-icons/ai";
 import { motion } from "framer-motion";
-import Calender from './Calender'
+import Calender from "./Calender";
 
 export const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [openCalender, setOpenCalender] = useState(false)
+  const [openCalender, setOpenCalender] = useState(false);
 
   useEffect(() => {
     console.log("first", drawerOpen);
@@ -50,13 +50,25 @@ export const Navbar = () => {
     <div className="outter_div_nav">
       <SocialNavbar>
         <Container maxWidth="lg" className="container">
-          <Link to="https://www.facebook.com/ESERVZ" className="iconLink">
+          <Link
+            to="https://www.facebook.com/ESERVZ"
+            className="iconLink"
+            target="_blank"
+          >
             <FaFacebookF color="#252f3e" size={16} />
           </Link>
-          <Link to="https://www.linkedin.com/company/eservz" className="iconLink">
+          <Link
+            to="https://www.linkedin.com/company/eservz"
+            className="iconLink"
+            target="_blank"
+          >
             <FaLinkedinIn color="#252f3e" size={16} />
           </Link>
-          <Link to="https://www.instagram.com/eservz_amz/" className="iconLink">
+          <Link
+            to="https://www.instagram.com/eservz_amz/"
+            className="iconLink"
+            target="_blank"
+          >
             <AiFillInstagram color="#252f3e" size={16} />
           </Link>
         </Container>
@@ -65,11 +77,11 @@ export const Navbar = () => {
       <Nav drawer={drawerOpen}>
         <Container maxWidth="lg" className="container">
           <motion.div
-            className="insideNav"
+            className="insideNavbar"
             variants={navAnimation}
             initial="hidden"
             animate="show"
-            style={{alignItems:"center"}}
+            style={{ alignItems: "center" }}
           >
             <motion.img
               src="/images/logo.png"
@@ -103,14 +115,18 @@ export const Navbar = () => {
               <motion.li variants={navText}>
                 <Link to="/news">News</Link>
                 <Calender
-                open={openCalender}
-                setClose={() => setOpenCalender(false)}
+                  open={openCalender}
+                  setClose={() => setOpenCalender(false)}
                 />
               </motion.li>
             </motion.ul>
           </div>
           <motion.div variants={navAnimation} initial="hidden" animate="show">
-            <motion.button className="btn" variants={navText} onClick={() => setOpenCalender(true)}>
+            <motion.button
+              className="btn"
+              variants={navText}
+              onClick={() => setOpenCalender(true)}
+            >
               <span id="calender">Set Meeting</span>
             </motion.button>
           </motion.div>
@@ -118,7 +134,11 @@ export const Navbar = () => {
             onClick={() => setDrawerOpen(!drawerOpen)}
             className="hamburger"
           >
-            <RxHamburgerMenu color="#5956E9"  style={{marginTop:"20px"}} size={35}/>
+            <RxHamburgerMenu
+              color="#5956E9"
+              
+              size={35}
+            />
           </button>
         </Container>
         <div className="drawer">
@@ -126,7 +146,7 @@ export const Navbar = () => {
             onClick={() => setDrawerOpen(!drawerOpen)}
             className="hamburger"
           >
-            <AiOutlineClose color="#5956E9"/>
+            <AiOutlineClose color="#5956E9" style={{padding:"unset"}} />
           </button>
           <div className="navbar">
             <ul
@@ -152,7 +172,6 @@ export const Navbar = () => {
               </li>
               <li>
                 <Link to="/news">News</Link>
-
               </li>
             </ul>
           </div>
@@ -211,6 +230,17 @@ const Nav = styled(Grid)<NavProps>`
     justify-content: space-between;
     margin-top: 40px;
 
+    .insideNavbar {
+      .logo-img {
+        padding: 11px;
+        z-index: 99;
+        position: relative;
+        @media (max-width: 600px) {
+         
+        }
+      }
+    }
+
     .hamburger {
       display: none;
       @media (max-width: 900px) {
@@ -220,10 +250,10 @@ const Nav = styled(Grid)<NavProps>`
       background: unset;
       border: 0px;
       font-size: 25px;
+      font-weight: 800;
       cursor: pointer;
     }
 
-    
     .insideNav {
       display: flex;
       align-items: center;
@@ -249,16 +279,11 @@ const Nav = styled(Grid)<NavProps>`
           &:hover {
             font-weight: 700;
           }
-          &:focus{
+          &:focus {
             font-weight: 700;
           }
         }
       }
-
-      .logo-img{
-     
-      z-index: 999;
-    }
     }
 
     .btn {

@@ -13,6 +13,7 @@ import Footer from "../Components/Footer";
 import ContactForm from "../Components/contactForm";
 
 import styled from "styled-components";
+import { VideoSlide } from "../Components/VideoSlide";
 
 export const Homepage = () => {
 

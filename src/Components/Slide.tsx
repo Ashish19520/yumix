@@ -32,6 +32,9 @@ const NextArrow: any = ({ onClick }: any) => (
 );
 
 export const Slide = () => {
+
+  //@ts-ignore
+  console.log()
   const data = [
     {
       id: "1",
@@ -59,8 +62,18 @@ export const Slide = () => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: window.screen.width==600?3:4,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          dots: false,
+        }
+      },
+    ],
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
   };

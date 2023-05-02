@@ -48,7 +48,7 @@ const NewsCardWrapper = styled.div`
       color: #121221;
       margin-bottom: 20px;
       @media (max-width: 600px) {
-              font-size: 15px;
+              font-size: 12px;
               margin-bottom: 10px;
           }
      

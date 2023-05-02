@@ -2,6 +2,7 @@ import { Box, Button, Grid, Typography, useMediaQuery } from "@mui/material";
 import { useForm, ValidationError } from '@formspree/react';
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import styled from "styled-components";
 
 
 const typingContainer = {
@@ -32,7 +33,8 @@ export default function ContactForm() {
     return (
       <Box sx={{maxWidth:"1200px", padding:"80px 40px", margin:"auto", overflow:{xs:"hidden", md:"visible"}}}>
       <Grid container sx={{width:"100%", backgroundColor:"#232F3F", borderRadius:"42px", boxShadow:"2px 4px 10px rgba(0, 0, 0, 0.1)", backdropFilter:"blur(21px)", padding:{xs:"20px 40px", md:"50px 100px"}}}>
-        <Grid item xs={12} md={8} style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+        <FormWrapper>
+        <Grid item xs={12} md={8} style={{display:"flex",justifyContent:"center",alignItems:"center", }}>
         <motion.div
           variants={typingContainer}
           initial="hidden"
@@ -49,8 +51,11 @@ export default function ContactForm() {
             </motion.div>
         </Grid>
         <Grid item xs={12} md={4}>
-          <img src="./images/brisaTakingParcelRight.png" width="80%" style={{scale:"2", transform:"translate(40px, -20px)"}}/>
-        </Grid>
+        
+        <img className="img-sub_aboutus" src="./images/brisaTakingParcelRight.png" width="80%" style={{scale:"1.7"}}/>
+       
+      </Grid>
+      </FormWrapper>
       </Grid>
     </Box>
     )
@@ -71,10 +76,14 @@ export default function ContactForm() {
 
   return (
     <Box sx={{maxWidth:"1200px", padding:"80px 40px", margin:"auto", overflow:{xs:"hidden", md:"visible"}}} id="contactForm">
+      
+
+      
       <Grid container sx={{width:"100%", backgroundColor:"#232F3F", borderRadius:"42px", boxShadow:"2px 4px 10px rgba(0, 0, 0, 0.1)", backdropFilter:"blur(21px)", padding:{xs:"20px 40px", md:"50px 100px"}}}>
+     <FormWrapper>
         <Grid item xs={12} md={8} style={{marginBottom:"30px"}}>
-          <Typography style={{color:"#FFFCFC", fontSize:"32px", fontFamily:"Poppins-SemiBold"}}>Get in Touch</Typography>
-          <Typography style={{margin:"20px 0px 40px 0px", color:"#D3D2F9", fontSize:"16px", fontFamily:"Montserrat", lineHeight:"24px"}}>Enim tempor eget pharetra facilisis sed maecenas adipiscing. Eu leo molestie vel, ornare non id blandit netus.</Typography>
+          <Typography  className="form-title">Get in Touch</Typography>
+          <Typography  className="form-subTitle">Enim tempor eget pharetra facilisis sed maecenas adipiscing. Eu leo molestie vel, ornare non id blandit netus.</Typography>
           <form onSubmit={handleSubmit}>
           <Box style={{display:"flex", alignItems:"stretch", gap:"20px", flexWrap:"wrap"}}>
             <input type="email" placeholder="Email*" required style={{...style.input}} name="Email"/>
@@ -88,13 +97,84 @@ export default function ContactForm() {
             </form>
         </Grid>
         <Grid item xs={12} md={4}>
-          <img src="./images/brisaTakingParcelRight.png" width="80%" style={{scale:"1.7", transform:"translate(44px, 4px)"}}/>
+        
+          <img className="img-sub_aboutus" src="./images/brisaTakingParcelRight.png" width="80%" style={{scale:"1.7"}}/>
+         
         </Grid>
+        </FormWrapper>
       </Grid>
     </Box>
   )
 }
 
+
+const FormWrapper=styled.div`
+  display: flex;
+  justify-content: space-evenly;
+
+  @media (max-width:600px){
+    flex-direction:column-reverse;
+    
+  }
+
+  .form-title{
+    color:#FFFCFC; 
+    font-size:32px;
+    font-family:"Poppins-SemiBold";
+
+    @media(max-width:600px){
+      
+      font-size: 16px;
+    }
+  }
+
+  .form-subTitle{
+    margin:20px 0px 40px 0px;
+     color:#D3D2F9;
+     font-size:16px;
+     font-family:"Montserrat";
+    line-height:"24px";
+
+    @media(max-width:600px){
+      font-size: 14px;
+    }
+  }
+
+  .img-sub_aboutus{
+    margin-left: 90px;
+
+    @media (max-width:600px){
+      margin-left: unset;
+      width:50%;
+      margin-top: -90px;
+      margin-bottom: 40px;
+      margin-left: 20%;
+
+    }
+  }
+  
+`
+
+ const ImgWrapper=styled.div`
+//   .img-wrapper{
+
+//     @media(max-width:600px){
+//       position: relative;
+//     }
+
+//     img{
+//       @media(max-width:600px){
+//         padding-top: 50px;
+//         width: 50%;
+//         position: absolute;
+//         background-color: aqua;
+//         transform:none !important;
+//         right: 0%;
+//         top: 0%;
+//       }
+//     }
+//   }
+`
 const style={
   input : {
     padding:"14px 16px",

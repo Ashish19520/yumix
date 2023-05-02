@@ -35,6 +35,8 @@ const BannerWrapper = styled(Grid)<WrapperProps>`
 
     @media (max-width:600px){
         flex-direction:column-reverse;
+        align-items: start;
+        justify-content: start;
 
 }
 
@@ -43,7 +45,7 @@ const BannerWrapper = styled(Grid)<WrapperProps>`
 
       @media (max-width:600px){
       width:100%;
-      text-align:center;
+      text-align:left;
       padding: ${(props: WrapperProps) =>
       props.direction === "regular" ? "0px" : "0px"};
       
@@ -66,7 +68,10 @@ const BannerWrapper = styled(Grid)<WrapperProps>`
 
         @media (max-width:600px){
       width:100%;
-      text-align:center;
+      padding: unset;
+      
+      font-size: 16px;
+      margin-left: unset;
       
 }
 
@@ -82,7 +87,8 @@ const BannerWrapper = styled(Grid)<WrapperProps>`
         
         @media (max-width:600px){
       width:100%;
-      text-align:center;
+      
+      font-size: 14px;
       
 }
         
@@ -99,8 +105,16 @@ const BannerWrapper = styled(Grid)<WrapperProps>`
 
     .cb-right-box {
       width: 55%;
+
+      @media(max-width:600px){
+        width: 100%;
+      }
       img {
         width: 100%;
+
+        @media(max-width:600px){
+        width: 100%;
+      }
       }
     }
   }
