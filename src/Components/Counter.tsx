@@ -96,7 +96,7 @@ const Count = styled.div`
       }
 
 
-      @media (max-width: 1115px) {
+      @media (max-width: 420px) {
         flex-wrap: wrap;
       }
 
@@ -127,12 +127,12 @@ const Count = styled.div`
         h2 {
           font-family: Poppins-Bold;
           font-size: 80px;
-          /* font-weight: 1000; */
+          font-weight: 700;
           color: #000;
           letter-spacing: -0.5px;
 
           @media (max-width: 600px) {
-            font-size: 40px;
+            font-size: 24px;
           }
           @media (max-width: 900px) {
             text-align: center;
@@ -148,7 +148,7 @@ const Count = styled.div`
           color: #828490;
 
           @media (max-width: 600px) {
-            font-size: 16px;
+            font-size: 8px;
             /* padding-bottom: 20px;
 
             &:last-of-type{

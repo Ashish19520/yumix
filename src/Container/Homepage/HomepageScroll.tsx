@@ -23,7 +23,11 @@ const Scroll = styled.div`
     margin: auto;
     padding-bottom: 20px;
     padding-top: 60px;
-    
+
+    /* @media(max-width:600px){
+      padding-top: 40px;
+    }
+     */
 
     h2 {
       font-family: Poppins-Bold;

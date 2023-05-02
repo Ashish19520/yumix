@@ -1,6 +1,7 @@
 import { Box, Grid, Typography } from "@mui/material";
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
+import styled from "styled-components";
 
 const typingContainer = {
   hidden: { opacity: 0 },
@@ -37,8 +38,6 @@ const elements = {
   },
 };
 
-
-
 export default function TopBanner() {
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -53,32 +52,66 @@ export default function TopBanner() {
     const hiddenElements = document.querySelectorAll(".ourLeaders_hidden");
     hiddenElements.forEach((el) => observer.observe(el));
   }, []);
-  
+
   return (
-    <Grid wrap="wrap-reverse" className="ourLeaders_hidden" rowGap={4} position="relative" container alignItems="center" style={{maxWidth:"1200px", margin:"auto", padding:"80px 40px", overflow:"hidden"}}>
+    <TopBannerWrapper>
+      <Grid
+        wrap="wrap-reverse"
+        className="ourLeaders_hidden"
+        rowGap={4}
+        position="relative"
+        container
+        alignItems="center"
+        style={{
+          maxWidth: "1200px",
+          margin: "auto",
+          padding: "80px 40px",
+          overflow: "hidden",
+        }}
+      >
         <Grid item xs={12} md={5}>
-        <motion.div
-          variants={typingContainer}
-          initial="hidden"
-          animate="show"
-          className="title"
-        >
-            <Typography variant="h2" style={{fontSize:"40px", fontWeight:"700", color:"#0B0720", fontFamily:"Poppins-Bold"}}>
-            {Array.from("About Us").map((word, i) => (
-            <motion.span key={i} variants={typingText}>
-              {word}
-            </motion.span>
-          ))}
+          <motion.div
+            variants={typingContainer}
+            initial="hidden"
+            animate="show"
+            className="title"
+          >
+            <Typography variant="h2" className="about_title">
+              {Array.from("About Us").map((word, i) => (
+                <motion.span key={i} variants={typingText}>
+                  {word}
+                </motion.span>
+              ))}
             </Typography>
-            </motion.div>
-            <motion.div variants={elements}  initial="hidden" animate="show">
-            <Typography variant="h2" style={{marginTop:"40px",fontSize:"16px", fontWeight:"400", color:"#696969", fontFamily:"Montserrat", lineHeight:"24px"}}>
-                Eservz is a leading and globally renowned e-commerce and Amazon specialist agency that provides cutting edge, groundbreaking and truly revolutionary back office support to e-commerce sellers, business owners and vendors on multiple online channels especially Amazon.
+          </motion.div>
+          <motion.div variants={elements} initial="hidden" animate="show">
+            <Typography
+              variant="h2"
+              className="about_subtitle"
+            
+            >
+              Eservz is a leading and globally renowned e-commerce and Amazon
+              specialist agency that provides cutting edge, groundbreaking and
+              truly revolutionary back office support to e-commerce sellers,
+              business owners and vendors on multiple online channels especially
+              Amazon.
             </Typography>
-            </motion.div>
+          </motion.div>
         </Grid>
-        <Grid item xs={12} md={7} sx={{textAlign:{xs:"center", md:"right"}, zIndex:1}}>
-            <motion.img src='/images/about.png' style={{width:"90%"}} alt="About Banner" variants={elements}  initial="hidden" animate="show"></motion.img>
+        <Grid
+          item
+          xs={12}
+          md={7}
+          sx={{ textAlign: { xs: "center", md: "right" }, zIndex: 1 }}
+        >
+          <motion.img
+            src="/images/about.png"
+            style={{ width: "90%" }}
+            alt="About Banner"
+            variants={elements}
+            initial="hidden"
+            animate="show"
+          ></motion.img>
         </Grid>
         <motion.div
           variants={elements}
@@ -86,34 +119,62 @@ export default function TopBanner() {
           animate="show"
           className="title"
         >
-          <Box sx={{...style.bluredBox, top : {xs:"40%", md:"70%"}}}><img src="./images/Round Cube2@3x.png" width="100%"></img></Box>
+          <Box sx={{ ...style.bluredBox, top: { xs: "40%", md: "70%" } }}>
+            <img src="./images/Round Cube2@3x.png" width="100%"></img>
+          </Box>
           <img src="./images/Rock2.png" style={style.bluredRock}></img>
           <img src="./images/aboutusThread.png" style={style.thread}></img>
         </motion.div>
-    </Grid>
-  )
+      </Grid>
+    </TopBannerWrapper>
+  );
 }
 
+const TopBannerWrapper = styled.div`
+ .about_title {
+    font-size: 40px;
+    font-weight: 700;
+    color: #0b0720;
+    font-family: "Poppins-Bold";
+
+    @media (max-width: 600px) {
+      padding-top: 40px;
+      font-size: 16px;
+    }
+  }
+
+  .about_subtitle {
+    margin-top: 40px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #696969;
+    font-family: Montserrat;
+    line-height: 24px;
+    @media (max-width: 600px) {
+      font-size: 14px;
+    }
+  }
+`;
 const style = {
-  bluredBox : {
-      width : "10%",
-      minWidth : "80px",
-      position : "absolute",
-      left : "0px"
+  bluredBox: {
+    width: "10%",
+    minWidth: "80px",
+    position: "absolute",
+    left: "0px",
   } as React.CSSProperties,
-  bluredRock : {
-      width : "15%",
-      minWidth : "100px",
-      position : "absolute",
-      top : "20px",
-      right : "0px",
-      zIndex : 2,
+  bluredRock: {
+    width: "15%",
+    minWidth: "100px",
+    position: "absolute",
+    top: "20px",
+    right: "0px",
+    zIndex: 2,
   } as React.CSSProperties,
-  thread : {
-      width : "100%",
-      minWidth : "500px",
-      position : "absolute",
-      top : "200px",
-      left : "20%",
-  } as React.CSSProperties
-}
+  thread: {
+    width: "100%",
+    minWidth: "500px",
+    position: "absolute",
+    top: "200px",
+    left: "20%",
+  } as React.CSSProperties,
+};

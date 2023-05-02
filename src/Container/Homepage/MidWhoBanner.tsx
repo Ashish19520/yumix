@@ -62,7 +62,7 @@ export const MidWhoBanner = () => {
 
 const Banner = styled.div`
   background: #fffcfc;
-  padding: 55px 0px 0px 0px;
+  padding: 60px 0px 90px 0px;
 
   .container {
     margin: auto;
@@ -84,7 +84,8 @@ const Banner = styled.div`
         right: 0%;
 
         @media (max-width: 600px) {
-          display: none;
+          display: unset;
+          width: 17%;
         }
       }
       .img-dot2 {
@@ -93,7 +94,8 @@ const Banner = styled.div`
         right: 0%;
         bottom: 60px;
         @media (max-width: 600px) {
-          display: none;
+          display: unset;
+          width: 17%;
         }
       }
 
@@ -136,7 +138,8 @@ const Banner = styled.div`
         right: 0%;
         bottom: -40px;
         @media (max-width: 600px) {
-          display: none;
+          display: unset;
+          bottom: -80%;
         }
       }
 

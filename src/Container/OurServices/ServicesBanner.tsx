@@ -128,10 +128,13 @@ const ServiceBanner = styled.div`
         }
         img {
           width: 95%;
+          
 
           @media (max-width: 600px) {
-            width: 100%;
+            width: 80%;
             margin-bottom: 20px;
+            
+            margin-left:10%;
           }
         }
       }
@@ -145,7 +148,7 @@ const ServiceBanner = styled.div`
           padding-left: unset;
           display: flex;
           flex-direction: column;
-          align-items: center;
+          align-items: start;
         }
         .title {
           font-family: Inter-Bold;
@@ -154,6 +157,10 @@ const ServiceBanner = styled.div`
           line-height: 1.33;
           color: #000;
           margin-bottom: 24px;
+
+          @media(max-width:600px){
+            font-size: 16px;
+          }
         }
         .subtitle {
           font-family: Montserrat;
@@ -164,7 +171,8 @@ const ServiceBanner = styled.div`
           margin-bottom: 24px;
 
           @media (max-width: 600px) {
-            padding: 10px 20px;
+            
+            font-size: 14px;
           }
         }
         .btn {
@@ -200,6 +208,8 @@ const ServiceBanner = styled.div`
 
           @media (max-width: 600px) {
             margin-bottom: 20px;
+            width: 80%;
+            margin-left:10%;
           }
         }
       }
@@ -213,7 +223,7 @@ const ServiceBanner = styled.div`
           padding-right: unset;
           display: flex;
           flex-direction: column;
-          align-items: center;
+          align-items: start;
           justify-content: center;
         }
 
@@ -227,7 +237,8 @@ const ServiceBanner = styled.div`
 
           @media (max-width: 600px) {
             width: 100%;
-            text-align: center;
+            font-size: 16px;
+            text-align: left;
           }
         }
         .subtitle {
@@ -239,7 +250,8 @@ const ServiceBanner = styled.div`
           margin-bottom: 24px;
 
           @media (max-width: 600px) {
-            padding: 10px 20px;
+            padding: 10px 0px;
+            font-size: 14px;
           }
         }
         .btn {

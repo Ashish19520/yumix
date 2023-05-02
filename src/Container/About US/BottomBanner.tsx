@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router";
 import { HashLink } from "react-router-hash-link";
+import styled from "styled-components";
 
 const typingContainer = {
   hidden: { opacity: 0 },
@@ -39,12 +40,9 @@ const elements = {
   },
 };
 
-
-
 export default function TopBanner() {
-  
-  const navigate=useNavigate();
-  
+  const navigate = useNavigate();
+
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -58,79 +56,163 @@ export default function TopBanner() {
     const hiddenElements = document.querySelectorAll(".ourLeaders_hidden");
     hiddenElements.forEach((el) => observer.observe(el));
   }, []);
-  
+
   return (
-    <Grid className="ourLeaders_hidden" rowGap={4} position="relative" container alignItems="center" style={{maxWidth:"1200px", margin:"auto", padding:"80px 40px"}}>
+    <BottomBannerWrapper>
+      <Grid
+        className="ourLeaders_hidden"
+        rowGap={4}
+        position="relative"
+        container
+        alignItems="center"
+        style={{ maxWidth: "1200px", margin: "auto", padding: "80px 40px" }}
+      >
         <Grid item xs={12} md={5}>
-        <motion.div
-          variants={typingContainer}
-          initial="hidden"
-          animate="show"
-          className="title"
-        >
-            <Typography variant="h2" style={{fontSize:"32px", fontWeight:"700", color:"#0B0720", fontFamily:"Poppins-SemiBold"}}>
-            {Array.from("We keep the focus on driving results").map((word, i) => (
-            <motion.span key={i} variants={typingText}>
-              {word}
-            </motion.span>
-          ))}
+          <motion.div
+            variants={typingContainer}
+            initial="hidden"
+            animate="show"
+            className="title"
+          >
+            <Typography variant="h2" className="btmbanner-title">
+              {Array.from("We keep the focus on driving results").map(
+                (word, i) => (
+                  <motion.span key={i} variants={typingText}>
+                    {word}
+                  </motion.span>
+                )
+              )}
             </Typography>
-            </motion.div>
-            <motion.div variants={elements}  initial="hidden" animate="show">
-            <Typography variant="h2" style={{marginTop:"20px",fontSize:"16px", fontWeight:"400", color:"#696969", fontFamily:"Montserrat", lineHeight:"24px"}}>
-                With our complete multi-channel solution, you'll have access to everything you need to succeed in today's competitive online marketplace.
+          </motion.div>
+          <motion.div variants={elements} initial="hidden" animate="show">
+            <Typography
+              variant="h2"
+              
+              className="btmbanner-subtitle"
+            >
+              With our complete multi-channel solution, you'll have access to
+              everything you need to succeed in today's competitive online
+              marketplace.
             </Typography>
-            </motion.div>
-            <motion.div variants={elements}  initial="hidden" animate="show" style={{gap:"30px", flexWrap:"wrap", display:"flex", alignItems:"center", marginTop:"30px"}}>
-            <Button disableElevation variant='outlined' sx={{...style.button, color:"#5856e9", backgroundColor:"white"}} onClick={()=>navigate("/works")}>
-                Our Portfolio
+          </motion.div>
+          <motion.div
+            variants={elements}
+            initial="hidden"
+            animate="show"
+            style={{
+              gap: "30px",
+              flexWrap: "wrap",
+              display: "flex",
+              alignItems: "center",
+              marginTop: "30px",
+            }}
+          >
+            <Button
+              disableElevation
+              variant="outlined"
+              sx={{
+                ...style.button,
+                color: "#5856e9",
+                backgroundColor: "white",
+              }}
+              onClick={() => navigate("/works")}
+            >
+              Our Portfolio
             </Button>
-            <HashLink to={"/aboutus#contactForm"} smooth><Button disableElevation variant='contained' sx={{...style.buttonBorder, color:"white", backgroundColor:"#5856e9"}}>
+            <HashLink to={"/aboutus#contactForm"} smooth>
+              <Button
+                disableElevation
+                variant="contained"
+                sx={{
+                  ...style.buttonBorder,
+                  color: "white",
+                  backgroundColor: "#5856e9",
+                }}
+              >
                 Get in Touch
-            </Button></HashLink>
-            </motion.div>
+              </Button>
+            </HashLink>
+          </motion.div>
         </Grid>
-        <Grid item xs={12} md={7} sx={{textAlign:{xs:"center", md:"right"}}}>
-            <motion.img src='/images/aboutusTargey.png' style={{width:"80%"}} alt="About Target" variants={elements}  initial="hidden" animate="show"></motion.img>
+        <Grid
+          item
+          xs={12}
+          md={7}
+          sx={{ textAlign: { xs: "center", md: "right" } }}
+        >
+          <motion.img
+            src="/images/aboutusTargey.png"
+            style={{ width: "80%" }}
+            alt="About Target"
+            variants={elements}
+            initial="hidden"
+            animate="show"
+          ></motion.img>
         </Grid>
-    </Grid>
-  )
+      </Grid>
+    </BottomBannerWrapper>
+  );
 }
 
+const BottomBannerWrapper = styled.div`
+  .btmbanner-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #0b0720;
+    font-family: Poppins-SemiBold;
+
+    @media (max-width: 600px) {
+      font-size: 16px;
+    }
+  }
+
+  .btmbanner-subtitle {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #696969;
+    font-family: Montserrat;
+    line-height: 24px;
+
+    @media (max-width:600px){
+      font-size: 14px;
+    }
+  }
+`;
 const style = {
-  blueDot :{
-      width : "30px",
-      aspectRatio : 1,
-      backgroundColor : "#5956E9",
-      borderRadius : "50%",
-      position : "absolute",
-      top : "100px",
-      left : "100px"
+  blueDot: {
+    width: "30px",
+    aspectRatio: 1,
+    backgroundColor: "#5956E9",
+    borderRadius: "50%",
+    position: "absolute",
+    top: "100px",
+    left: "100px",
   } as React.CSSProperties,
-  bluredBox : {
-      width : "105px",
-      position : "absolute",
-      bottom : "80px",
-      left : "-20px"
+  bluredBox: {
+    width: "105px",
+    position: "absolute",
+    bottom: "80px",
+    left: "-20px",
   } as React.CSSProperties,
-  button : {
-    padding : { xs : "7px 24px", md : "10px 32px"},
-    borderRadius : "8px",
-    border : "1px solid #D1D1D1",
-    textTransform : "none",
-    fontSize : "14px",
-    fontWeight : 600,
-    fontFamily : "Montserrat-semiBold",
-    letterSpacing : '1px'
-    },
-  buttonBorder : {
-    padding : { xs : "7px 24x", md : "10px 32px"},
-    borderRadius : "8px",
-    border : "1px solid #5856e9",
-    textTransform : "none",
-    fontSize : "14px",
-    fontWeight : 600,
-    fontFamily : "Montserrat-semiBold",
-    letterSpacing : '1px'
-    }  
-}
+  button: {
+    padding: { xs: "7px 24px", md: "10px 32px" },
+    borderRadius: "8px",
+    border: "1px solid #D1D1D1",
+    textTransform: "none",
+    fontSize: "14px",
+    fontWeight: 600,
+    fontFamily: "Montserrat-semiBold",
+    letterSpacing: "1px",
+  },
+  buttonBorder: {
+    padding: { xs: "7px 24x", md: "10px 32px" },
+    borderRadius: "8px",
+    border: "1px solid #5856e9",
+    textTransform: "none",
+    fontSize: "14px",
+    fontWeight: 600,
+    fontFamily: "Montserrat-semiBold",
+    letterSpacing: "1px",
+  },
+};

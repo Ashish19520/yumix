@@ -188,7 +188,7 @@ const NewsWrapper = styled.div`
       align-items: center;
 
       @media (max-width: 600px) {
-        flex-direction: column;
+        flex-direction: column-reverse;
         justify-content: center;
       }
 
@@ -213,7 +213,8 @@ const NewsWrapper = styled.div`
           margin-bottom: 24px;
 
           @media (max-width: 600px) {
-            text-align: center;
+            text-align: left;
+            font-size: 16px;
           }
         }
         .subtitle {
@@ -226,7 +227,8 @@ const NewsWrapper = styled.div`
           color: #696969;
           @media (max-width: 600px) {
             width: 100%;
-            text-align: center;
+            text-align: left;
+            font-size: 14px;
             margin-bottom: 40px;
           }
         }
@@ -237,7 +239,8 @@ const NewsWrapper = styled.div`
           bottom: -100%;
           z-index: 0;
           @media (max-width: 600px) {
-            display: none;
+            display: block;
+            bottom: -40%;
           }
         }
       }
@@ -259,7 +262,7 @@ const NewsWrapper = styled.div`
         .subject {
           width: 75%;
           @media (max-width: 600px) {
-            width: 50%;
+            width: 60%;
           }
         }
         .cone {
@@ -268,7 +271,9 @@ const NewsWrapper = styled.div`
           left: 80px;
           bottom: 50px;
           @media (max-width: 600px) {
-            display: none;
+            display: block;
+            bottom: 0%;
+            left: 20%;
           }
         }
         .rock {
@@ -277,7 +282,9 @@ const NewsWrapper = styled.div`
           right: 80px;
           top: 0;
           @media (max-width: 600px) {
-            display: none;
+            display: block;
+            width: 25%;
+            right: 10%;
           }
         }
 
@@ -287,7 +294,9 @@ const NewsWrapper = styled.div`
           left: 0;
           bottom: 150px;
           @media (max-width: 600px) {
-            display: none;
+            display: block;
+            bottom: -10%;
+            left: -4%;
           }
         }
 
@@ -308,7 +317,11 @@ const NewsWrapper = styled.div`
           right: -90px;
           z-index: -1;
           @media (max-width: 600px) {
-            display: none;
+            display: block;
+            width: 100%;
+            left: 0%;
+            top: unset;
+            bottom: 0%;
           }
         }
       }

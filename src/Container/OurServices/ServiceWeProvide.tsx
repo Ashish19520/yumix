@@ -117,6 +117,11 @@ const ServiceWeProvideWrapper = styled.div`
         letter-spacing: 0.25px;
         color: #0b0720;
         margin-bottom: 16px;
+
+        @media (max-width: 600px) {
+          
+          font-size: 16px;
+        }
       }
       .subtitle {
         font-family: Montserrat;
@@ -128,6 +133,7 @@ const ServiceWeProvideWrapper = styled.div`
 
         @media (max-width: 600px) {
           padding-bottom: 20px;
+          font-size: 14px;
         }
       }
     }
@@ -149,7 +155,7 @@ const ServiceWeProvideWrapper = styled.div`
           width: 100%;
           display: flex;
           flex-direction: column;
-          align-items: center;
+          align-items: start;
           justify-content: center;
         }
 
@@ -160,6 +166,12 @@ const ServiceWeProvideWrapper = styled.div`
           text-align: left;
           color: #000;
           margin-bottom: 24px;
+
+          @media (max-width: 600px) {
+          
+          font-size: 16px;
+          text-align: left !important;
+        }
         }
 
         .subtitle {
@@ -169,6 +181,10 @@ const ServiceWeProvideWrapper = styled.div`
           color: #494949;
           width: 85%;
           margin-bottom: 24px;
+
+          @media(max-width:600px){
+            font-size: 14px;
+          }
         }
         .btn {
           padding: 15px 24px;
@@ -188,7 +204,7 @@ const ServiceWeProvideWrapper = styled.div`
         z-index: 2;
 
         @media (max-width: 600px) {
-          width: 100%;
+          width: 80%;
         }
 
         img {
@@ -196,7 +212,7 @@ const ServiceWeProvideWrapper = styled.div`
 
           @media (max-width: 600px) {
             margin-bottom: 20px;
-            width: 100%;
+            width: 90%;
           }
         }
       }

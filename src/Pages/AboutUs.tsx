@@ -8,6 +8,7 @@ import MidBanner from '../Container/About US/MidBanner'
 import OurLeaders from '../Container/About US/OurLeaders'
 import TopBanner from '../Container/About US/TopBanner'
 import { Typography } from '@mui/material'
+import styled from 'styled-components'
 
 export default function AboutUs() {
 
@@ -20,7 +21,9 @@ useEffect(()=>{
       <TopBanner />
       <BannerList />
       <MidBanner />
-      <Typography fontSize="32px" textAlign="center" width="100%" fontFamily="Poppins-SemiBold" color="#3A3B44" style={{maxWidth:"1100px", margin:"auto"}}>Actions speak louder than words</Typography>
+      <TypoWrapper>
+      <Typography fontSize="32px" textAlign="center" width="100%" fontFamily="Poppins-SemiBold" color="#3A3B44" style={{maxWidth:"1100px", margin:"auto"}} className='about-typo'>Actions speak louder than words</Typography>
+      </TypoWrapper>
       <Counter />
       <BottomBanner />
       <OurLeaders />
@@ -29,3 +32,20 @@ useEffect(()=>{
     </div>
   )
 }
+
+const TypoWrapper=styled.div`
+  margin: auto;
+
+  .about-typo{
+    font-size:32px; 
+    text-align:center;
+     width:100%;
+    font-family:Poppins-SemiBold;
+    color:#3A3B44;
+
+    @media(max-width:600px){
+      font-size:16px;
+    }
+  }
+
+`

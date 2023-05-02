@@ -119,6 +119,7 @@ const MidBanner = styled.div`
         @media (max-width: 600px) {
           font-size: 16px;
           text-align: left !important;
+          
         }
       }
 
@@ -150,6 +151,7 @@ const MidBanner = styled.div`
 
           @media (max-width: 600px) {
             flex-direction: row;
+            padding-bottom: 40px;
 
             &:nth-child(2) {
               transition-delay: 400ms;

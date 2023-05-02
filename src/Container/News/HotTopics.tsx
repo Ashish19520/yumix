@@ -64,7 +64,7 @@ export const HotTopics = () => {
                 Nisi, 
               </span>
 
-              <span style={{fontFamily:"Montserrat",paddingLeft:"8px",fontSize:"14px"}}>
+              <span style={{fontFamily:"Montserrat",paddingLeft:"8px",fontSize:"14px",}}>
                  sagittis aliquet sit rutrum. Nunc, id vestibulum quam ornare
                 adipiscing. Pellentesque sed turpis nunc gravida pharetra, sit
                 nec vivamus pharetra. Velit, dui, egestas nisi, elementum mattis
@@ -110,6 +110,8 @@ const HotTopicsWrapper = styled.div`
       margin-bottom: 26px;
       @media (max-width: 600px) {
         text-align: center;
+        font-size: 16px;
+        text-align: left;
       }
     }
 
@@ -150,8 +152,13 @@ const HotTopicsWrapper = styled.div`
               font-size: 15px;
             }
             @media (max-width: 600px) {
-              margin-top: 150px;
-              font-size: 15px;
+              margin-bottom: 10%;
+              font-size: 12px;
+             
+            }
+            @media (max-width: 375px) {
+              font-size: 10px;
+              margin-top: 20%;   
             }
           }
           .subtitle {
@@ -166,6 +173,13 @@ const HotTopicsWrapper = styled.div`
             p {
               padding-left: 25px;
             }
+            @media (max-width: 600px) {
+              margin-top: -10%;   
+            }
+            @media (max-width: 300px) {
+              font-size: 8px;
+              margin-top: -70%;   
+            }
           }
         }
       }
@@ -175,8 +189,10 @@ const HotTopicsWrapper = styled.div`
         padding-left: 40px;
 
         @media (max-width: 600px) {
-          width: 100%;
+          max-width: 100%;
           margin-top: 20px;
+          padding-left: unset;
+          font-size: 14px;
         }
 
         .title {

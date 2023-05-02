@@ -31,7 +31,7 @@ const WorksWrapper = styled.div`
 
 
   .banner {
-    margin-bottom: 120px;
+    margin-bottom: 64px;
 
     @media (max-width: 600px) {
         padding-bottom: 0px;
@@ -39,6 +39,6 @@ const WorksWrapper = styled.div`
   }
 
   .counter{
-    padding-bottom:60px;
+    padding-bottom:41px;
   }
 `;

@@ -1,6 +1,7 @@
 import { Box, Grid, Typography } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { motion as m} from "framer-motion";
+import styled from 'styled-components';
 
 function WhyUs() {
 
@@ -47,9 +48,9 @@ function WhyUs() {
     <Box style={{background: "#fffcfc"}}>
     <Box className="bannerList_hidden" style={{maxWidth:"1200px", margin:"auto", padding:"120px 40px"}}>
       <Grid container alignItems="center">
-        <Grid position="relative" item xs={12} md={6} style={{display:"flex", alignItems:"center", justifyContent:'center'}}>
+        <Grid position="relative" item xs={12} md={6} style={{display:"flex", alignItems:"center", justifyContent:'center', marginBottom:"40px"}}>
           <Box style={{width:"80%", aspectRatio:1, borderRadius:"50%", backgroundColor:"#F1F6FF"}}></Box>
-          <Box style={{width:"80%",position:"absolute", top:"50%", left:"50%", transform:"translate(-50%,-50%)" }}>
+          <Box style={{width:"80%",position:"absolute", top:"40%", left:"50%", transform:"translate(-50%,-50%)" }}>
           <m.img 
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -71,9 +72,14 @@ function WhyUs() {
                     <Box style={{width:"2px", height:'150px', backgroundColor: selectedIndex>index ? "#5856e9" : "#D1D1D1", display: index===points.length-1 ? "none" : "block" }}/>
                   </Box>
                   <Box style={{height:index===points.length-1 ? "auto" : "150px", width:"100%", position:"relative", top:"-10px"}}>
-                    <Typography fontSize="24px" fontFamily="Poppins-Medium" color={selectedIndex===index ? "#5856e9" :"#3A3B44"} style={{cursor:"pointer"}} onClick={()=>setSelectedIndex(index)}>{item.title}</Typography>
-                    <Typography fontSize="14px" fontFamily="Montserrat" color="#828490" style={{cursor:"pointer"}} onClick={()=>setSelectedIndex(index)}>{item.para}</Typography>
-                  </Box>
+                  <FontWrapper>
+                    <Typography fontSize="24px"  fontFamily="Poppins-Medium" color={selectedIndex===index ? "#5856e9" :"#3A3B44"} className='whyus-title' style={{cursor:"pointer"}} onClick={()=>setSelectedIndex(index)}>{item.title}</Typography>
+                    </FontWrapper>
+                    <FontWrapper>
+                    <Typography fontSize="14px" fontFamily="Montserrat" color="#828490" style={{cursor:"pointer"}} className="whyus-para" onClick={()=>setSelectedIndex(index)}>{item.para}</Typography>
+                    </FontWrapper>
+                  
+                    </Box>
                 </Box>
               )
             })
@@ -86,3 +92,19 @@ function WhyUs() {
 }
 
 export default WhyUs
+
+
+const FontWrapper=styled.div`
+  
+  .whyus-title{
+    @media (max-width:600px){
+      font-size: 16px;
+    }
+  }
+
+  .whyus-para{
+    @media(max-width:600px){
+      font-size: 14px;
+    }
+  }
+`

@@ -2,8 +2,9 @@ import { Button, Container, Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { NewsCard } from "../../Components/NewsCard";
+import { GrNext, GrPrevious } from "react-icons/gr";
 //@ts-ignore
-import axios from 'axios';
+import axios from "axios";
 
 const data = [
   {
@@ -258,14 +259,12 @@ const data = [
     time: "1 Hour Ago",
     source: "CNN Indonesia",
   },
-  
 ];
 
 export const LatestNews = () => {
   const [news, setNews] = useState([]);
-  const res:any=[]
-  const pageNo=[1,2,3,4,5]
-
+  const res: any = [];
+  const pageNo = [1, 2, 3, 4, 5];
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -287,13 +286,13 @@ export const LatestNews = () => {
   }, []);
 
   useEffect(() => {
-    let res:any=[]
-    getNews()
+    let res: any = [];
+    getNews();
 
-    for(let i=0;i<8;i++){
-      res.push(data[i])
+    for (let i = 0; i < 8; i++) {
+      res.push(data[i]);
     }
-    setNews(res)
+    setNews(res);
   }, []);
 
   const getNews = async () => {
@@ -315,34 +314,52 @@ export const LatestNews = () => {
     }
   };
 
-  const handlePage=(pNo:any)=>{
-    let res:any=[]
-    for(let i=pNo*8;i<pNo*8+8;i++){
-      res.push(data[i])
+  const handlePage = (pNo: any) => {
+    let res: any = [];
+    for (let i = pNo * 8; i < pNo * 8 + 8; i++) {
+      res.push(data[i]);
     }
-    
-    setNews(res)
-  }
+
+    setNews(res);
+  };
   return (
     <LatestNewsWrapper>
       <Container maxWidth="lg" className="container ">
         <div className="heading">Latest News</div>
         <div className="cards ">
           {news.map((d) => (
-            <Grid item xs={12} sm={6} md={4} style={{padding:"20px 10px"}}  className="eachCard latestnews_hidden">
-         
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              md={4}
+              style={{ padding: "20px 10px" }}
+              className="eachCard latestnews_hidden"
+            >
               <NewsCard data={d} />
-          
             </Grid>
           ))}
         </div>
-        <div className="pagination" style={{display:"flex",justifyContent:"end" }}>
-            {pageNo.map((pNo)=>(
-              <Button onClick={()=>handlePage(pNo)} variant="text" sx={{color:"#7b7b7b",":focus":{
-                color:"#000000"
-              } }}>{pNo}
-              </Button>
-            ))}
+        <div
+          className="pagination"
+          style={{ display: "flex", justifyContent: "end" }}
+        >
+          <GrPrevious />
+          {pageNo.map((pNo) => (
+            <Button
+              onClick={() => handlePage(pNo)}
+              variant="text"
+              sx={{
+                color: "#7b7b7b",
+                ":focus": {
+                  color: "#000000",
+                },
+              }}
+            >
+              {pNo}
+            </Button>
+          ))}
+          <GrNext />
         </div>
       </Container>
     </LatestNewsWrapper>
@@ -363,12 +380,17 @@ const LatestNewsWrapper = styled.div`
       text-align: left;
       color: #121221;
       margin-bottom: 20px;
+
+      @media (max-width: 600px) {
+        font-size: 16px;
+        text-align: left;
+      }
     }
     .cards {
       display: flex;
       flex-wrap: wrap;
 
-      @media (max-width:600px){
+      @media (max-width: 600px) {
         flex-direction: column;
       }
 
@@ -376,22 +398,22 @@ const LatestNewsWrapper = styled.div`
         width: 25%;
         margin-bottom: 26px;
         padding: 0px;
-        @media (max-width:600px){
+        @media (max-width: 600px) {
           width: 100%;
           margin-bottom: 2px;
-          padding: 0px;
-      }
+          padding-left: 0px !important;
+        }
       }
     }
 
-    .pagination{
+    .pagination {
       display: flex;
       justify-content: end;
+      align-items: center;
 
-      @media(max-width:600px){
+      @media (max-width: 600px) {
         justify-content: center;
         align-items: center;
-        
       }
     }
   }

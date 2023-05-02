@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { Card } from "../../Components/Card";
 import { motion } from "framer-motion";
+import { VideoSlide } from "../../Components/VideoSlide";
 
 const data = [
   {
@@ -61,7 +62,7 @@ export const People = () => {
             <div className="subTitle">See what people say about us</div>
           </div>
           <motion.div className="cards">
-            {data.map((d) => (
+            {/* {data.map((d) => (
               <motion.div
                 initial={{ opacity: 0, scale: 0, x: 100 }}
                 whileInView={{ opacity: 1, scale: 1, x: 0 }}
@@ -76,7 +77,10 @@ export const People = () => {
                   designation={d.designation}
                 />
               </motion.div>
-            ))}
+            ))} */}
+
+            <VideoSlide />
+
           </motion.div>
         </div>
       </Container>
@@ -109,13 +113,15 @@ const Users = styled.div`
         .title {
           font-family: Poppins-semiBold;
           font-size: 32px;
+          text-align: center;
           font-weight: 600;
           line-height: 1.31;
           letter-spacing: 0.25px;
           color: #3a3b44;
           margin-bottom: 16px;
           @media (max-width: 600px) {
-            font-size: 25px;
+            font-size: 16px;
+            text-align: left;
 
         }
         }
@@ -125,10 +131,13 @@ const Users = styled.div`
           line-height: 1.5;
           letter-spacing: 0.25px;
           color: #3a3b44;
-          margin-bottom: 64px;
+          text-align: center;
+          /* margin-bottom: 64px; */
+          margin-bottom: 40px;
           @media (max-width: 600px) {
             font-size: 14px;
             margin-bottom: 30px;
+            text-align: left;
         }
         }
       }

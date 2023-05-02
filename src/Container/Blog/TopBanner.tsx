@@ -1,6 +1,7 @@
 import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 import { motion } from "framer-motion";
+import styled from "styled-components";
 
 
 const typingContainer = {
@@ -41,7 +42,7 @@ const typingContainer = {
 
 export default function TopBanner() {
   return (
-    <>
+    <TopBannerWrapper>
     <Grid wrap="wrap-reverse" rowGap={4} position="relative" container alignItems="center" style={{maxWidth:"1200px", margin:"auto", padding:"80px 40px", overflow:"hidden"}}>
         <Grid item xs={12} md={5}>
         <motion.div
@@ -50,7 +51,7 @@ export default function TopBanner() {
           animate="show"
           className="title"
         >
-            <Typography variant="h2" style={{fontSize:"40px", fontWeight:"700", color:"#0B0720", fontFamily:"Poppins-Bold"}}>
+            <Typography variant="h2" className="blog-top-title">
             {Array.from("Blogs").map((word, i) => (
             <motion.span key={i} variants={typingText}>
               {word}
@@ -59,7 +60,7 @@ export default function TopBanner() {
             </Typography>
             </motion.div>
             <motion.div variants={elements}  initial="hidden" animate="show">
-            <Typography variant="h2" style={{marginTop:"40px",fontSize:"16px", fontWeight:"400", color:"#696969", fontFamily:"Montserrat", lineHeight:"24px"}}>
+            <Typography variant="h2" className="blog-top-subtitle">
                 Eservz is a leading and globally renowned e-commerce and Amazon specialist agency that provides cutting edge, groundbreaking and truly revolutionary back office support to e-commerce sellers, business owners and vendors on multiple online channels especially Amazon.
             </Typography>
             </motion.div>
@@ -79,10 +80,35 @@ export default function TopBanner() {
         <img src="./images/aboutusThread.png" style={style.thread}></img>
         </motion.div>
     </Grid>
-    </>
+    </TopBannerWrapper>
   )
 }
 
+const TopBannerWrapper=styled.div`
+.blog-top-title{
+  font-size:40px;
+   font-weight:700;
+   color:#0B0720; 
+   font-family:Poppins-Bold;
+   @media (max-width:600px){
+    font-size: 16px;
+   }
+}
+
+.blog-top-subtitle{
+
+  margin-top:40px;
+  font-size:16px;
+  font-weight:400; 
+  color:#696969;
+   font-family:Montserrat;
+  line-height:24px;
+
+  @media (max-width:600px){
+    font-size: 14px;
+  }
+}
+`
 const style = {
     blueDot :{
         width : "30px",
