@@ -3,7 +3,9 @@ import React from "react";
 import styled from "styled-components";
 import { Slide } from "../../Components/Slide";
 
+
 export const HomepageScroll = () => {
+ 
   return (
     <Scroll>
       <Container maxWidth="lg" className="container">

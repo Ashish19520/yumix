@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect,useState} from "react";
 
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
@@ -8,6 +8,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styled from "styled-components";
 import { Container } from "@mui/material";
+import { useDispatch } from 'react-redux';
+import { Dispatch } from 'redux';
+import {  clients} from "../actions/posts"
+import { useSelector } from "react-redux/es/exports"
 
 const PrevArrow: any = ({ onClick }: any) => (
   <div
@@ -32,9 +36,15 @@ const NextArrow: any = ({ onClick }: any) => (
 );
 
 export const Slide = () => {
+  const response=useSelector((state:any)=>state?.posts);
+  const dispatch: Dispatch<any> = useDispatch();
+  
+  useEffect(()=>{
+    dispatch(clients())
+  },[]);
 
-  //@ts-ignore
-  console.log()
+
+  
   const data = [
     {
       id: "1",
@@ -82,9 +92,9 @@ export const Slide = () => {
     <SliderWrapper>
       <Container className="container">
         <Slider {...settings} className="slider_main">
-          {data.map((d) => (
-            <div className="slide_item">
-              <img src={d.src} />
+          {response?.clientList?.data?.map((data:any,index:number) => (  
+            <div className="slide_item" key={index}>
+              <img src={data.attributes.logo_url} alt="img"/>
             </div>
           ))}
         </Slider>

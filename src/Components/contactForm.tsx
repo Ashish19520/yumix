@@ -1,8 +1,12 @@
-import { Box, Button, Grid, Typography, useMediaQuery } from "@mui/material";
+import { Box, Button, Grid, Typography, useMediaQuery,Alert,AlertTitle } from "@mui/material";
 import { useForm, ValidationError } from '@formspree/react';
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+import { useDispatch } from 'react-redux';
+import { Dispatch } from 'redux';
+import { postForm } from "../actions/posts";
+import { useSelector } from "react-redux/es/exports";
 
 
 const typingContainer = {
@@ -28,6 +32,39 @@ const typingText = {
 export default function ContactForm() {
 
   const [state, handleSubmit] = useForm("mbjeqgpr");
+  const [showAlert, setShowAlert] = useState(false);
+  const [formData,setFormData]=useState({
+    email:"",
+    message:"",
+    name:""
+  });
+  const response=useSelector((state:any)=>state?.posts?.formData?.data);
+
+  const dispatch: Dispatch<any> = useDispatch();
+
+  const changeHandalar=(e:any)=>{
+    const { name, value } = e.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value
+  }));
+  }
+
+  useEffect(() => {
+    if (response?.id) {
+      setShowAlert(true);
+    }
+  }, [response]);
+
+  const onSubmit = (e:any)=>{
+    e.preventDefault();
+    let data={
+      data:{
+        ...formData
+      }
+    }
+    dispatch(postForm(data));
+  }
   let flag=false;
   if (state.succeeded) {
     return (
@@ -66,33 +103,55 @@ export default function ContactForm() {
 
 
   if(state?.errors){
-    console.log("hello")
     if(state?.errors[0]?.code=="TYPE_EMAIL"){
      flag=true;
     }
   }
 
-
+  if(showAlert){
+    setTimeout(()=>{
+      setShowAlert(false)
+    },2000)
+  }
 
   return (
     <Box sx={{maxWidth:"1200px", padding:"80px 40px", margin:"auto", overflow:{xs:"hidden", md:"visible"}}} id="contactForm">
       
-
       
       <Grid container sx={{width:"100%", backgroundColor:"#232F3F", borderRadius:"42px", boxShadow:"2px 4px 10px rgba(0, 0, 0, 0.1)", backdropFilter:"blur(21px)", padding:{xs:"20px 40px", md:"50px 100px"}}}>
+      {showAlert && (
+               <Alert severity="success">
+              <AlertTitle>Success</AlertTitle>
+              Your form has been submitted successfully!
+              </Alert>
+          )}
+
      <FormWrapper>
         <Grid item xs={12} md={8} style={{marginBottom:"30px"}}>
-          <Typography  className="form-title">Get in Touch</Typography>
+          <Typography  className="form-title">Get in Touch </Typography>
           <Typography  className="form-subTitle">Enim tempor eget pharetra facilisis sed maecenas adipiscing. Eu leo molestie vel, ornare non id blandit netus.</Typography>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={onSubmit}>
           <Box style={{display:"flex", alignItems:"stretch", gap:"20px", flexWrap:"wrap"}}>
-            <input type="email" placeholder="Email*" required style={{...style.input}} name="Email"/>
-            <input type="text" placeholder="Your Message" required style={{...style.input}} name="Message"/>
+            <input
+             type="email" 
+             placeholder="Email*" 
+             required style={{...style.input}}
+              name="email"
+              onChange={changeHandalar}/>
+
+
+            <input
+             type="text"
+              placeholder="Your Message"
+              required style={{...style.input}}
+               name="message"
+               onChange={changeHandalar}/>
+
             <Button type="submit" disabled={state.submitting} disableElevation variant='contained' sx={{...style.button, color:"white", backgroundColor:"#5856e9"}}>
                 Send
             </Button>
             {flag &&  <Typography style={{color:"#D3D2F9", fontSize:"16px", fontFamily:"Montserrat", lineHeight:"24px"}}>Please Enter Email Again</Typography>}
-            
+           
           </Box>
             </form>
         </Grid>

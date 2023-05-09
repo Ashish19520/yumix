@@ -3,6 +3,11 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { NewsCard } from "../../Components/NewsCard";
 import { GrNext, GrPrevious } from "react-icons/gr";
+import { useDispatch } from 'react-redux';
+import { Dispatch } from 'redux';
+import {  fetchNews} from "../../actions/posts"
+import { useSelector } from "react-redux/es/exports"
+
 //@ts-ignore
 import axios from "axios";
 
@@ -262,6 +267,15 @@ const data = [
 ];
 
 export const LatestNews = () => {
+  const response=useSelector((state:any)=>state?.posts?.fetchNews?.data);
+  const dispatch: Dispatch<any> = useDispatch();
+
+  useEffect(()=>{
+    dispatch(fetchNews())
+  },[]);
+
+  console.log("+++",response);
+
   const [news, setNews] = useState([]);
   const res: any = [];
   const pageNo = [1, 2, 3, 4, 5];
@@ -285,34 +299,9 @@ export const LatestNews = () => {
     hiddenElements.forEach((el) => observer.observe(el));
   }, []);
 
-  useEffect(() => {
-    let res: any = [];
-    getNews();
+ 
 
-    for (let i = 0; i < 8; i++) {
-      res.push(data[i]);
-    }
-    setNews(res);
-  }, []);
-
-  const getNews = async () => {
-    const options = {
-      method: "GET",
-      url: "https://amazon-news.p.rapidapi.com/top-news",
-      headers: {
-        "content-type": "application/octet-stream",
-        "X-RapidAPI-Key": "22691429b4mshce1c1f1fb673d0bp1dc3afjsna4222eca9496",
-        "X-RapidAPI-Host": "amazon-news.p.rapidapi.com",
-      },
-    };
-
-    try {
-      const response = await axios.request(options);
-      console.log(response.data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+ 
 
   const handlePage = (pNo: any) => {
     let res: any = [];
@@ -327,7 +316,7 @@ export const LatestNews = () => {
       <Container maxWidth="lg" className="container ">
         <div className="heading">Latest News</div>
         <div className="cards ">
-          {news.map((d) => (
+          {response.map((d:any) => (
             <Grid
               item
               xs={12}
@@ -336,7 +325,7 @@ export const LatestNews = () => {
               style={{ padding: "20px 10px" }}
               className="eachCard latestnews_hidden"
             >
-              <NewsCard data={d} />
+              <NewsCard data={d?.attributes} />
             </Grid>
           ))}
         </div>

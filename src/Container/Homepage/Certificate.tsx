@@ -1,11 +1,23 @@
 import { Container } from "@mui/material";
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import styled from "styled-components";
 //@ts-ignore
 import { DefaultPlayer as Video } from "react-html5video";
 import 'react-html5video/dist/styles.css'
+import { useDispatch } from 'react-redux';
+import { Dispatch } from 'redux';
+import {  testimonialPlay} from "../../actions/posts"
+import { useSelector } from "react-redux/es/exports"
 
 export const Certificate = () => {
+  const response=useSelector((state:any)=>state?.posts?.testimonials);
+  const dispatch: Dispatch<any> = useDispatch();
+  const [brands,setBrands]=useState();
+
+  useEffect(()=>{
+    dispatch(testimonialPlay())
+  },[])
+
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -23,7 +35,7 @@ export const Certificate = () => {
     const hiddenElements = document.querySelectorAll(".hidden");
     hiddenElements.forEach((el) => observer.observe(el));
   }, []);
-
+console.log(response?.data[0]?.attributes?.t_url)
   return (
     <Certif>
       <Container maxWidth="lg" className="container hidden">
@@ -43,10 +55,12 @@ export const Certificate = () => {
           {/* <img src="./images/Ellipse 63@3x.png" className="img-dot3"></img> */}
         </div>
         <div className="rightDiv">
-          {/* <img src="./images/certificate 1.png"></img> */}
-          <Video autoplay loop poster="./images/thumb2.png" >
-            <source src="./videos/Video Testimonial.mp4" type="video/webm" />
-          </Video>
+          {/* <img src="./images/certificate 1.png"></img> */}  
+          <video width="500" height="350" controls autoPlay muted>
+            <source src="https://assets.visme.co/templates/banners/videoThumbnails/i_Cafe-Reviews-Testimonial-Ad_full.mp4" type="video/mp4"/>
+ 
+             Your browser does not support the video tag.
+            </video>
         </div>
       </Container>
     </Certif>

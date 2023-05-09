@@ -14,13 +14,21 @@ import ContactForm from "../Components/contactForm";
 
 import styled from "styled-components";
 import { VideoSlide } from "../Components/VideoSlide";
-
+import { useDispatch } from 'react-redux';
+import { Dispatch } from 'redux';
+import { getPost } from "../actions/posts";
+import { useSelector } from "react-redux/es/exports";
 export const Homepage = () => {
 
-
+  const {post}=useSelector((state:any)=>state.posts);
+  console.log(post);
+  const dispatch: Dispatch<any> = useDispatch();
   useEffect(()=>{
     window.scroll(0,0)
+    dispatch(getPost());
   },[])
+  
+
   return (
     <div>
       <Hero />

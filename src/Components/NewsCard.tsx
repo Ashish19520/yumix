@@ -4,20 +4,21 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const NewsCard = (props: any) => {
-  console.log(props.data);
+  console.log("??????",props.data); 
   return (
     <NewsCardWrapper>
       <Container maxWidth="lg" className="container">
         <div className="img-box">
-          <img src={props?.data?.imgsrc}></img>
+          <img src={props?.data?.img_url} height="180px" width="180"></img>
         </div>
         <Link to={""}>
-        <div className="title">{props?.data?.newsTitle}</div>
+
+        <div className="title">{props?.data?.title}</div>
         </Link>
-        <div className="subtitle">
+        {/* <div className="subtitle">
           <p>{props?.data?.time}</p>
           <p>{props?.data?.source}</p>
-        </div>
+        </div> */}
       </Container>
     </NewsCardWrapper>
   );

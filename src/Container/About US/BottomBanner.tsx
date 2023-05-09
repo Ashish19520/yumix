@@ -129,7 +129,7 @@ export default function TopBanner() {
                   backgroundColor: "#5856e9",
                 }}
               >
-                Get in Touch
+                Get in Touch 
               </Button>
             </HashLink>
           </motion.div>
