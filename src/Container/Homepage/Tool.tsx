@@ -1,8 +1,10 @@
 import { Container } from "@mui/material";
 import React, { useEffect } from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 export const Tool = () => {
+  
   // useEffect(() => {
   //   const observer = new IntersectionObserver((entries) => {
   //     entries.forEach((entry) => {
@@ -56,7 +58,10 @@ export const Tool = () => {
   //   const hiddenElements = document.querySelectorAll(".outter");
   //   hiddenElements.forEach((el) => observer.observe(el));
   // }, []);
-
+  const navigate=useNavigate();
+const onClickHandlar=()=>{
+  navigate("/home/fbaCalculator")
+}
   return (
     <div>
       <ToolDiv>
@@ -64,7 +69,7 @@ export const Tool = () => {
           <div className="outter">
             <img src="./images/FullRock2@3x.png" className="fRock-img-1"></img>
             <div className="title">
-              Resources that'll help scale your business
+              Resources that'll  help scale your business
             </div>
             <div className="tool">
               {/* <img src="./images/Group 38634@3x.png" className="img-bg-2"></img> */}
@@ -81,7 +86,7 @@ export const Tool = () => {
                   <div className="subTitle">
                     FBM or FBA? Choose what’s right for your Amazon products.
                   </div>
-                  <div className="link">RUN CALCULATOR</div>
+                  <div className="link" onClick={onClickHandlar}>RUN CALCULATOR</div>
                 </div>
               </div>
 

@@ -274,7 +274,6 @@ export const LatestNews = () => {
     dispatch(fetchNews())
   },[]);
 
-  console.log("+++",response);
 
   const [news, setNews] = useState([]);
   const res: any = [];
@@ -316,7 +315,7 @@ export const LatestNews = () => {
       <Container maxWidth="lg" className="container ">
         <div className="heading">Latest News</div>
         <div className="cards ">
-          {response.map((d:any) => (
+          {response?.length>0&&response?.map((d:any) => (
             <Grid
               item
               xs={12}

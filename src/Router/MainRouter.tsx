@@ -8,7 +8,7 @@ import { Works } from "../Pages/Works";
 import { Services } from "../Pages/Services";
 import { News } from "../Pages/News";
 import Blog from "../Pages/Blog";
-import { FbaCalculator } from "../Pages/FbaCalculator";
+import  FbaCalculator  from "../Pages/FbaCalculator";
 
 const MainRouter = () => {
   return (

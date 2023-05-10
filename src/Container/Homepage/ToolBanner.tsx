@@ -7,7 +7,7 @@ export const ToolBanner = () => {
     <Tool>
       <Container maxWidth="lg" className="container">
         <div className="outter">
-          <h2>Resources that'll help scale your business</h2>
+          <h2>Resources  that'll help scale your business</h2>
           <div className="tools">
             <div className="fba">
               <img src="./images/1 - Brisa Receiving Her Package.png"></img>

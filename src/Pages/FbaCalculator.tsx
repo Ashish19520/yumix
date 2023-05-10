@@ -1,7 +1,7 @@
 import React from 'react'
 import { Fba } from '../Container/FbaCalculator/Fba'
 
-export const FbaCalculator = () => {
+function FbaCalculator() {
   return (
     <div>
         <Fba/>
@@ -9,3 +9,4 @@ export const FbaCalculator = () => {
     </div>
   )
 }
+export default FbaCalculator;
