@@ -33,14 +33,14 @@ function ListCalc() {
             </div>
           </div>
           <div className="img-box_FBA">
-            <img src="../images/certificate 1.png" alt="img" height="400px" width="509px"></img>
+            <img src="../images/Saly-10.png" alt="img" height="517px" width="517px"></img>
           </div>
         </div>
       </Container>
       <Container maxWidth='lg' className="container">
         <div className={classes.wrapper}>
           <div className={classes.img}>
-            <img src="../images/certificate 1.png" alt="img" height="200px" width="250px"></img>
+            <img src="../images/61+lhpMw+2L 1.png" alt="img" height="200px" width="250px"></img>
           </div>
 
 
@@ -263,12 +263,12 @@ function ListCalc() {
 
           <div className={classes.innerSeventh} >
             <div className={classes.img}>
-              <img src="../images/certificate 1.png" alt="img" height="200px" width="250px"></img>
+              <img src="../images/Rectangle first.png" alt="img" height="200px" width="250px"></img>
               <p> Resources</p>
               <h2> FBA Calculator</h2>
             </div>
             <div className={`${classes.img} `}>
-              <img src="../images/certificate 1.png" alt="img" height="200px" width="250px"></img>
+              <img src="../images/Rectangle second.png" alt="img" height="200px" width="250px"></img>
               <p> Optimising Listing Library</p>
               <h2> FBA Calculator</h2>
             </div>

@@ -11,6 +11,17 @@ export default makeStyles((theme:any) => ({
     img:{
         width:"30%",
     },
+    imageTextPara:{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: "0px 1px",
+        gap: "8px",
+        height:"173px",
+        width:"120px"
+
+    },
     innerWrapper:{
         display: 'flex',
         flexWrap:'wrap',
@@ -162,24 +173,26 @@ export default makeStyles((theme:any) => ({
     sixthContainer:{
         display: "flex",
         justifyContent: "center",
-        gap:"15px",
+        gap:"40px",
     },
     sixthRight:{
         display: "flex",
         flexDirection: "row",
-        justifyContent: "space-between",
+        justifyContent: "flex-start",
         alignItems: "flex-start",
-        padding: "0px",
-        gap: "40px",
+        gap: "50px",
         width: "565px",
         height: "152px",
+        textAlign: "center",
+        marginBottom:"40px",
+        
     },
     innerSeventh:{
         marginTop:"20px",
         display: "flex",
         flexDirection: "row",
         flexWrap:"wrap",
-        gap:"-40px"
+        gap:"70px"
     },
    
 }));
