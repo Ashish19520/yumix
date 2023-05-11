@@ -1,8 +1,8 @@
-import { Container } from "@mui/material";
+import { Container ,Typography} from "@mui/material";
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-// import styles from './styles';
+import useStyles from './styles';
 
 export const Fba = () => {
   const elements = {
@@ -19,10 +19,10 @@ export const Fba = () => {
       },
     },
   };
-  // const classes=styles();
+  const classes = useStyles();
   return (
-    <FbaContainer>
-      <Container maxWidth="lg" className="container">
+    <FbaContainer style={{backgroundColor:"#FFFCFC"}}>
+      <Container maxWidth="lg" className="container" >
         <div className="hero_wrapper">
           <div className="info-box_FBA">
             <div className="fba-Title">FBA Calculator</div>
@@ -39,51 +39,196 @@ export const Fba = () => {
             </div>
           </div>
           <div className="img-box_FBA">
-          <img src="../images/certificate 1.png" alt="img" height="400px" width="509px"></img>
-          </div>
-        </div>
-        {/* <div>
-        <motion.div
-            className="img-box"
-            variants={elements}
-            initial="hidden"
-            animate="show"
-          >
-            <img src="../images/Illustration (1).png" className="subject"></img>
-            <img src="./images/Cone3@3x.png" className="cone"></img>
-            <img src="../images/newRock2@3x.png" className="rock"></img>
-            <img src="../images/Ellipse 62@3x.png" className="dot"></img>
-            <img src="../images/Ellipse 62@3x.png" className="dottwo"></img>
-            <img src="../images/Group 38623@3x.png" className="line"></img>
-          </motion.div>
-        </div> */}
-      </Container>
-      <Container maxWidth='lg' className="container">
-        <div >
-          <div >
             <img src="../images/certificate 1.png" alt="img" height="400px" width="509px"></img>
           </div>
+        </div>
+        
+        
+      </Container>
+      <Container maxWidth='lg' className="container">
+        <div className={classes.wrapper}>
+          <div className={classes.img}>
+            <img src="../images/certificate 1.png" alt="img" height="200px" width="250px"></img>
+          </div>
 
 
-          <div >
+          <div className={classes.innerWrapper}>
             <div >
-              <h4>Bose Quietcomfort 45</h4>
+              <h2>Bose Quietcomfort 45</h2>
             </div>
-            <div>
-              <div>
-                <p>pid</p>
+            <div className={classes.items}>
+              <div >
+                <p>Product Id</p>
                 <p>1245</p>
               </div>
+              <div>
+                <p>Price</p>
+                <p>$3000</p>
+              </div>
+              <div>
+                <p>Unit Weigth</p>
+                <p>419gm</p>
+              </div>
+              <div>
+                <p>Product Dimension</p>
+                <p>19.5cm X 8386cm X 02.95 cm</p>
+              </div>
             </div>
+          </div>
         </div>
-
-  
-
-        </div>
-
-       
       </Container>
-    </FbaContainer>
+      <Container maxWidth='lg' className='container'>
+        <div className={classes.monitor}>
+          <div className={classes.firstRow}>
+            <p>Item Price</p>
+            <p>Shipping Price</p>
+            <p>Total Revenue</p>
+            <p>Amazon Selling Fees</p>
+            <p>Seller fulfillment cost</p>
+            <p>-----</p>
+            <p>Amazon fulfillment fees</p>
+            <p>ship to Amazon</p>
+            <p>Total fulfillment cost</p>
+            <p>Selling proceeds</p>
+            <p>Cost of product</p>
+          </div>
+          <div className={classes.pair}>
+          <div className={classes.secondRow}>
+            <h1>FBA</h1>
+            
+            <input className={classes.input}/>
+            <input className={classes.input}/>
+            <p>-</p>
+            <p>-</p>
+            <input className={classes.input}/>
+            <input className={classes.input}/>
+            <p>-</p>
+            <p>-</p>
+            <p>-</p>
+            <p>-</p>
+            </div>
+          <div className={classes.thirdRow}>
+            <h1>FBM</h1>
+            <input className={classes.input}/>
+            <input className={classes.input}/>
+            <p>-</p>
+            <p>-</p>
+            <input className={classes.input}/>
+            <input className={classes.input}/>
+            <p>-</p>
+            <p>-</p>
+            <p>-</p>
+            <p>-</p>
+            </div>
+          </div>
+        </div>    
+    </Container>
+    <Container maxWidth='lg' className="container">
+    <div className={classes.twoContainer}>
+      <div className={classes.innerTwoContainer}>
+        <h2>FBA</h2>
+        <div className={classes.innerThirdContainer}>
+          <div>
+              <p>Net Profit</p>
+              <h1>$50</h1>
+          </div>
+          <div>
+              <p>Net Profit</p>
+              <h1>$70</h1>
+          </div>
+        </div>
+      </div>
+      <div className={classes.innerTwoContainer}>
+        <h2>FBM</h2>
+        <div className={classes.innerThirdContainer}>
+          <div>
+              <p>Net Profit</p>
+              <h1>$50</h1>
+          </div>
+          <div>
+              <p>Net Profit</p>
+              <h1>$70</h1>
+          </div>
+        </div>
+        </div>
+    </div>
+    </Container>
+    <Container maxWidth='lg' className="container">
+      <div className={classes.fifthContainer}>
+        <div className={classes.fifthHeading}>
+          <h1 >FBA v/s FBM</h1>
+          <p>which one is right for your bussiness? </p>
+        </div>
+        <div className={classes.fifthInner}>
+          <div>
+            <h2>FBA</h2>
+            <div  className={classes.fonts} >
+            <p > strong management skills for shipments and customer service</p>
+            <p>Offers more flexibility and control over inventory, packaging, and shipping</p>
+            <p>Offers more flexibility and control over inventory, packaging, and shipping</p>
+            <p> Charges fees for various services</p>
+            </div>
+          </div>
+          <div>
+          <h2>FBM</h2>
+          <div className={classes.fonts}>
+          <p>Provides faster delivery and wider customer base.</p>
+          <p>Provides access to Prime eligibility and BuyBox advantage.</p>
+          <p>Beneficial for new and high-volume sellers, large or expensive products.</p>
+          <p>Doesn't charge numerous fees for various services</p>
+          </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+    <Container maxWidth='lg' className="container">
+      <div className={classes.sixthContainer}>
+        <div>
+          <h1>Other Costs</h1>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla accusantium placeat ab, officia doloremque doloribus sed porro debitis deleniti illo laudantium beatae magnam accusamus rerum ipsum atque eligendi ea? Asperiores?</p>
+        </div>
+        <div>
+          <div className={classes.sixthRight}>
+            <p>Maintenance Security.</p>
+            <p>Shipping Costs</p> 
+            <p>Storage Warehousing Costs</p>
+          </div>
+          <div className={classes.sixthRight}>
+            <p>Costs of Goods</p>
+            <p>Market Costs products ads.</p> 
+            <p>Product packing labelling cost. </p>
+          </div>
+          <div className={classes.sixthRight}>
+            <p>Product Sample and Product Cost</p>
+            <p></p>
+            <p></p>
+          </div>
+        </div>
+        </div>
+    </Container>
+    <Container>
+        <div>
+          <div >
+            <h1>Try out other resources for your business</h1>
+          </div>
+         
+          <div className={classes.innerSeventh} >
+          <div className={classes.img}>
+            <img src="../images/certificate 1.png" alt="img" height="200px" width="250px"></img>
+            <p> Resources</p>
+            <h2> FBA Calculator</h2>
+          </div>
+          <div className={`${classes.img} ` }>
+            <img src="../images/certificate 1.png" alt="img" height="200px" width="250px"></img>
+            <p> Optimising Listing Library</p>
+            <h2> FBA Calculator</h2>
+          </div>
+          </div>
+        
+        </div>
+    </Container>
+    </FbaContainer >
+    
   );
 };
 
@@ -95,8 +240,15 @@ const FbaContainer = styled.div`
       display: flex;
       align-items: center;
       justify-content: space-evenly;
+      @media (max-width: 600px) {
+        flex-direction: column-reverse;
+        justify-content: center;
+      }
 
       .info-box_FBA {
+        @media (max-width: 600px) {
+          width: 100%;
+        }
         width: 50%;
         .fba-Title {
           //styleName: Display P 40;

@@ -59,8 +59,12 @@ export const Tool = () => {
   //   hiddenElements.forEach((el) => observer.observe(el));
   // }, []);
   const navigate=useNavigate();
+
 const onClickHandlar=()=>{
   navigate("/home/fbaCalculator")
+}
+const onClickListingHandlar=()=>{
+  navigate("/home/listingCalculator")
 }
   return (
     <div>
@@ -102,7 +106,7 @@ const onClickHandlar=()=>{
                   <div className="subTitle">
                     Increase your Amazon sales with optimised listing.
                   </div>
-                  <div className="link">RUN CALCULATOR</div>
+                  <div className="link" onClick={onClickListingHandlar}>RUN CALCULATOR</div>
                 </div>
               </div>
               <div className="box hoverimg">

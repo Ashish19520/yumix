@@ -9,6 +9,7 @@ import { Services } from "../Pages/Services";
 import { News } from "../Pages/News";
 import Blog from "../Pages/Blog";
 import  FbaCalculator  from "../Pages/FbaCalculator";
+import ListingCalculator from "../Pages/ListingCalculator";
 
 const MainRouter = () => {
   return (
@@ -23,6 +24,7 @@ const MainRouter = () => {
         <Route path="/blogs" element={<Blog />} />
         <Route path="/news" element={<News />} />
         <Route path="/home/fbaCalculator" element={<FbaCalculator />}></Route>
+        <Route path="/home/listingCalculator" element={<ListingCalculator />}></Route>
       </Routes>
     </div>
   );

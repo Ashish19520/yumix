@@ -1,16 +1,16 @@
 import React from 'react'
-import { Fba } from '../Container/FbaCalculator/Fba'
+import ListCalc from '../Container/ListingCalculator/ListCalc';
 import ContactForm from '../Components/contactForm';
 import Footer from '../Components/Footer';
 
-function FbaCalculator() {
+function ListingCalculator() {
   return (
     <div>
-        <Fba/>
+        <ListCalc/>
         <ContactForm/>
         <Footer/>
         
     </div>
   )
 }
-export default FbaCalculator;
+export default ListingCalculator;
