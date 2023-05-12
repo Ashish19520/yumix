@@ -66,6 +66,10 @@ const onClickHandlar=()=>{
 const onClickListingHandlar=()=>{
   navigate("/home/listingCalculator")
 }
+
+const onClickCodeDescriptionHandlar=()=>{
+  navigate("/home/descriptionToCode")
+}
   return (
     <div>
       <ToolDiv>
@@ -121,7 +125,7 @@ const onClickListingHandlar=()=>{
                   <div className="subTitle">
                     Convert descriptions to code with zero HTML knowledge.
                   </div>
-                  <div className="link">RUN CALCULATOR</div>
+                  <div className="link" onClick={onClickCodeDescriptionHandlar}>RUN CALCULATOR</div>
                 </div>
               </div>
             </div>

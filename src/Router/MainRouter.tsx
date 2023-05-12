@@ -10,6 +10,7 @@ import { News } from "../Pages/News";
 import Blog from "../Pages/Blog";
 import  FbaCalculator  from "../Pages/FbaCalculator";
 import ListingCalculator from "../Pages/ListingCalculator";
+import DiscriptionToCode from "../Pages/DiscriptionToCode";
 
 const MainRouter = () => {
   return (
@@ -25,6 +26,7 @@ const MainRouter = () => {
         <Route path="/news" element={<News />} />
         <Route path="/home/fbaCalculator" element={<FbaCalculator />}></Route>
         <Route path="/home/listingCalculator" element={<ListingCalculator />}></Route>
+        <Route path="/home/descriptionToCode" element={<DiscriptionToCode/>}></Route>
       </Routes>
     </div>
   );

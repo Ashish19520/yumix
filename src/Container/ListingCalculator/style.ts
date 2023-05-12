@@ -159,8 +159,8 @@ export default makeStyles((theme:any) => ({
     selectors:{
         padding:"0px",
         margin:"0px",
-    }
-      
+    },
+    
 }));
 
            
