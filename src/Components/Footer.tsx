@@ -6,7 +6,7 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
-import React from "react";
+import React,{useState,useEffect} from "react";
 import {
   AiFillInstagram,
   AiFillLinkedin,
@@ -26,10 +26,12 @@ import "../Style/Footer.css";
 import { RxCross1 } from "react-icons/rx";
 import { HiLocationMarker } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
+
 export default function Footer() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const [topNavigate,setTopNavigate]=useState(true);
 
   const links = [
     {
@@ -72,8 +74,15 @@ export default function Footer() {
       to: "/ourservices#customerExperience",
     },
   ];
-
   const navigate = useNavigate();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [topNavigate]);
+  
+ const onHomeNavigateHandlar=()=>{
+  navigate('/');
+  setTopNavigate(!topNavigate);
+ }
  
   return (
         <Box
@@ -93,7 +102,8 @@ export default function Footer() {
           width="80px" 
           alt="logo" 
           style={{cursor:"pointer"}}
-          onClick={()=>navigate("/")} />
+          onClick={onHomeNavigateHandlar} />
+
           <Typography
             style={{
               color: "#404040",
