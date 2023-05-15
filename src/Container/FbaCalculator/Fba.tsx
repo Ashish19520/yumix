@@ -1,5 +1,5 @@
 import { Container, Typography } from "@mui/material";
-import React from "react";
+import React,{useEffect} from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import useStyles from './styles';
@@ -19,10 +19,13 @@ export const Fba = () => {
       },
     },
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const classes = useStyles();
   return (
     <FbaContainer style={{ backgroundColor: "#FFFCFC" }}>
-      <Container maxWidth="lg" className="container" >
+      <Container fixed className="container" >
         <div className="hero_wrapper">
           <div className="info-box_FBA">
             <div className="fba-Title">FBA Calculator</div>
@@ -61,7 +64,7 @@ export const Fba = () => {
 
 
       </Container>
-      <Container maxWidth='lg' className="container">
+      <Container fixed className="container">
         <div className={classes.wrapper}>
           <div className={classes.img}>
             <img src="../images/61+lhpMw+2L 1.png" alt="img" height="200px" width="250px"></img>
@@ -93,7 +96,7 @@ export const Fba = () => {
           </div>
         </div>
       </Container>
-      <Container maxWidth='lg' className='container'>
+      <Container fixed className='container'>
         <div className={classes.monitor}>
           <div className={classes.firstRow}>
             <p>Item Price</p>
@@ -139,7 +142,7 @@ export const Fba = () => {
           </div>
         </div>
       </Container>
-      <Container maxWidth='lg' className="container">
+      <Container fixed maxWidth='lg' className="container">
         <div className={classes.twoContainer}>
           <div className={classes.innerTwoContainer}>
             <h2>FBA</h2>
@@ -169,7 +172,7 @@ export const Fba = () => {
           </div>
         </div>
       </Container>
-      <Container maxWidth='lg' className="container">
+      <Container fixed  className="container">
         <div className={classes.fifthContainer}>
           <div className={classes.fifthHeading}>
             <h1 >FBA v/s FBM</h1>
@@ -197,12 +200,11 @@ export const Fba = () => {
           </div>
         </div>
       </Container>
-      <Container maxWidth='lg' className="container">
+      <Container fixed className="container">
         <div className={classes.sixthContainer}>
           <div>
             <h1>Other Costs</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla accusantium placeat ab, officia doloremque doloribus sed porro debitis deleniti illo laudantium beatae magnam accusamus rerum ipsum atque eligendi ea? Asperiores?</p>
-          </div>
+            <p>Amazon Sellers analyze pre and post-launch revenue, investigating initial investments, cost, marketing, and other factors like projected sales to understand profit margins. Let's delve into the initial costs associated.</p>          </div>
           <div>
             <div className={classes.sixthRight}>
               <div className={classes.imageTextPara}>
@@ -241,7 +243,7 @@ export const Fba = () => {
           </div>
         </div>
       </Container>
-      <Container>
+      <Container fixed>
         <div>
           <div >
             <h1>Try out other resources for your business</h1>
@@ -325,7 +327,7 @@ const FbaContainer = styled.div`
           
         @media (max-width: 600px) {
           width: 100%;
-          padding-left: unset;
+          padding-left: 20px;
           display: flex;
           align-items: center;
           justify-content: center;

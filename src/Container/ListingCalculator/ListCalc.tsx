@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import { Container, Typography, Input, Button, Select } from "@mui/material";
 import styled from "styled-components";
 import { motion } from "framer-motion";
@@ -14,7 +14,11 @@ function ListCalc() {
 
   const handleChange = (event: SelectChangeEvent) => {
     setAge(event.target.value);
+    
   }
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <ListContainer style={{ backgroundColor: "#FFFCFC" }}>
       <Container maxWidth="lg" className="container" >

@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import { Container, TextField, Typography } from "@mui/material";
 import styled from "styled-components";
 import { motion } from "framer-motion";
@@ -6,6 +6,9 @@ import useStyles from './styles';
 
 function CodeDesc() {
     const classes = useStyles();
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   return (
     <CodeContainer style={{ backgroundColor: "#FFFCFC" }}>
     <Container maxWidth="lg" className="container" >
