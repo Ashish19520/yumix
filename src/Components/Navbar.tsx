@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 // @ts-ignore
 import styled from "styled-components";
 import Container from "@mui/material/Container";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import { FaFacebookF, FaGoogle, FaLinkedinIn } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import logo from "./logo.png";
@@ -15,6 +15,7 @@ import Calender from "./Calender";
 export const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [openCalender, setOpenCalender] = useState(false);
+  const navigate=useNavigate();
 
   useEffect(() => {
     console.log("first", drawerOpen);
@@ -22,6 +23,7 @@ export const Navbar = () => {
 
     console.log("check", drawerOpen);
   }, []);
+
 
   const navAnimation = {
     show: {
@@ -83,9 +85,11 @@ export const Navbar = () => {
             animate="show"
             style={{ alignItems: "center" }}
           >
+            
             <motion.img
+              onClick={()=>{navigate('/')}}
               src="/images/logo.png"
-              style={{ height: "68px", width: "68px" }}
+              style={{ height: "68px", width: "68px",cursor: "pointer" }}
               variants={navText}
               className="logo-img"
             ></motion.img>
