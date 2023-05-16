@@ -4,12 +4,15 @@ import styled from "styled-components";
 import { NewsCard } from "../../Components/NewsCard";
 import { GrNext, GrPrevious } from "react-icons/gr";
 import { getNews } from "../../api/services";
+import { useNavigate } from "react-router-dom";
+import NewsContent from "./NewsContent";
 
 
 
 export const LatestNews = () => {
  const [response,setResponse] =useState<Array<{}>>([]);;
  const [pageNO, setPageNO] = useState(1);
+ const navigate=useNavigate();
 
   useEffect(()=>{
    fetch();
@@ -21,6 +24,10 @@ export const LatestNews = () => {
   const fetch=async ()=>{
     const news=await getNews(pageNO,20);
     setResponse(news?.articles)
+  }
+  
+  const showContent = ()=>{
+    navigate('/newsContent');
   }
 
   
@@ -72,7 +79,9 @@ export const LatestNews = () => {
               className="eachCard latestnews_hidden"
             >
               <NewsCard data={d} />
+             
             </Grid>
+          
           ))}
         </div>
         <div

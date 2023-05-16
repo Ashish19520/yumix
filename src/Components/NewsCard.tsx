@@ -1,9 +1,16 @@
 import { Container } from "@mui/material";
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 export const NewsCard = (props: any) => {
+  
+  const navigate=useNavigate();
+
+  const openContent = ()=>{
+    localStorage.setItem('data', JSON.stringify(props?.data));
+    navigate('/newsContent');
+  }
   return (
     <NewsCardWrapper>
       <Container maxWidth="lg" className="container">
@@ -12,10 +19,13 @@ export const NewsCard = (props: any) => {
 
           height="180px" width="180" alt="img"></img>
         </div>
-        <Link to={""}>
 
-        <div className="title">{props?.data?.title?.length>40?props.data.title.substring(0, 40)+"...":props?.data?.title}<Link to="">read more</Link></div>
-        </Link>
+
+        <div className="title">
+          <p>{props?.data?.title?.length>40?props.data.title.substring(0, 40)+"...":props?.data?.title}</p>
+        <p style={{color:"purple",cursor:"pointer"}} onClick={openContent}>read more...</p>
+        </div>
+       
         {/* <div className="subtitle">
           <p>{props?.data?.publishedAt}</p>
           <p>{props?.data?.source?.name}</p>
