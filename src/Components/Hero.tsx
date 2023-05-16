@@ -285,7 +285,13 @@ export const Hero = () => {
               initial="hidden"
               animate="show"
             >
-              <motion.img
+              <motion.img id="subject" onMouseEnter={()=>
+              setTimeout(()=>{
+                const element:any = document.getElementById("subject");
+                // element.classList.add("transformed")
+              },1000)
+              }
+              
                 src="./images/3 - Brisa Shops Online@3x.png"
                variants={window.screen.width<601? imgProduct2:imgProduct1}
                 initial="hidden"
@@ -603,8 +609,9 @@ const HeroLayout = styled.div`
             }
           }
 
-          .subject {
+          #subject {
             margin-left: 55px;
+            border:"1px solid red"
           }
 
           @media (max-width: 600px) {
