@@ -3,281 +3,29 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { NewsCard } from "../../Components/NewsCard";
 import { GrNext, GrPrevious } from "react-icons/gr";
-import { useDispatch } from 'react-redux';
-import { Dispatch } from 'redux';
-import {  fetchNews} from "../../actions/posts"
-import { useSelector } from "react-redux/es/exports"
+import { getNews } from "../../api/services";
 
-//@ts-ignore
-import axios from "axios";
 
-const data = [
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-  {
-    newsTitle: "Random news title yo show dummy",
-    imgsrc: "./images/Rectangle 6@3x.png",
-    time: "1 Hour Ago",
-    source: "CNN Indonesia",
-  },
-];
 
 export const LatestNews = () => {
-  const response=useSelector((state:any)=>state?.posts?.fetchNews?.data);
-  const dispatch: Dispatch<any> = useDispatch();
+ const [response,setResponse] =useState<Array<{}>>([]);;
+ const [pageNO, setPageNO] = useState(1);
 
   useEffect(()=>{
-    dispatch(fetchNews())
-  },[]);
+   fetch();
+   window.scrollTo(0, 1350.2857666015625);
+  },[pageNO]);
 
 
-  const [news, setNews] = useState([]);
-  const res: any = [];
-  const pageNo = [1, 2, 3, 4, 5];
+
+  const fetch=async ()=>{
+    const news=await getNews(pageNO,20);
+    setResponse(news?.articles)
+  }
+
+  
+
+  const [pageNo,setPageNo] = useState([1, 2, 3, 4, 5]);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -298,17 +46,16 @@ export const LatestNews = () => {
     hiddenElements.forEach((el) => observer.observe(el));
   }, []);
 
- 
-
- 
-
+ const handleNext = () => {
+  if(pageNO>20) return;
+  setPageNO(pageNO+1);
+ };
+ const handlePrevious = () => {
+  if(pageNO===1) return;
+  setPageNO(pageNO-1);
+ }
   const handlePage = (pNo: any) => {
-    let res: any = [];
-    for (let i = pNo * 8; i < pNo * 8 + 8; i++) {
-      res.push(data[i]);
-    }
-
-    setNews(res);
+    setPageNO(pNo);
   };
   return (
     <LatestNewsWrapper>
@@ -324,15 +71,15 @@ export const LatestNews = () => {
               style={{ padding: "20px 10px" }}
               className="eachCard latestnews_hidden"
             >
-              <NewsCard data={d?.attributes} />
+              <NewsCard data={d} />
             </Grid>
           ))}
         </div>
         <div
           className="pagination"
-          style={{ display: "flex", justifyContent: "end" }}
+          style={{ display: "flex", justifyContent: "center" }}
         >
-          <GrPrevious />
+          <GrPrevious onClick={handlePrevious}/>
           {pageNo.map((pNo) => (
             <Button
               onClick={() => handlePage(pNo)}
@@ -347,7 +94,7 @@ export const LatestNews = () => {
               {pNo}
             </Button>
           ))}
-          <GrNext />
+          <GrNext onClick={handleNext} />
         </div>
       </Container>
     </LatestNewsWrapper>

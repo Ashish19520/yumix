@@ -8,15 +8,17 @@ export const NewsCard = (props: any) => {
     <NewsCardWrapper>
       <Container maxWidth="lg" className="container">
         <div className="img-box">
-          <img src={props?.data?.img_url} height="180px" width="180" alt="img"></img>
+          <img src={(props?.data.urlToImage)?(props?.data?.urlToImage):"../images/Rectangle first.png"} 
+
+          height="180px" width="180" alt="img"></img>
         </div>
         <Link to={""}>
 
-        <div className="title">{props?.data?.title}</div>
+        <div className="title">{props?.data?.title?.length>40?props.data.title.substring(0, 40)+"...":props?.data?.title}<Link to="">read more</Link></div>
         </Link>
         {/* <div className="subtitle">
-          <p>{props?.data?.time}</p>
-          <p>{props?.data?.source}</p>
+          <p>{props?.data?.publishedAt}</p>
+          <p>{props?.data?.source?.name}</p>
         </div> */}
       </Container>
     </NewsCardWrapper>
@@ -42,7 +44,6 @@ const NewsCardWrapper = styled.div`
     .title {
       font-family: Poppins-semiBold;
       font-size: 18px;
-      font-weight: 600;
       line-height: 1.33;
       text-align: left;
       color: #121221;
