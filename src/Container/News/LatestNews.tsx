@@ -1,4 +1,4 @@
-import { Button, Container, Grid } from "@mui/material";
+import { Button, Container, Grid ,Pagination} from "@mui/material";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { NewsCard } from "../../Components/NewsCard";
@@ -22,18 +22,16 @@ export const LatestNews = () => {
 
 
   const fetch=async ()=>{
-    const news=await getNews(pageNO,20);
-    setResponse(news?.articles)
+    let date=new Date();
+    let currentDate=JSON.stringify(date).split("T")[0]
+    const news=await getNews(pageNO,16,currentDate);
+    setResponse(news?.articles);
+    let random = Math.floor((Math.random() * 16) + 1);
+    localStorage.setItem('hotTopic', JSON.stringify(news.articles[random||4]));
+    
   }
   
-  const showContent = ()=>{
-    navigate('/newsContent');
-  }
-
-  
-
-  const [pageNo,setPageNo] = useState([1, 2, 3, 4, 5]);
-
+ 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -53,16 +51,10 @@ export const LatestNews = () => {
     hiddenElements.forEach((el) => observer.observe(el));
   }, []);
 
- const handleNext = () => {
-  if(pageNO>20) return;
-  setPageNO(pageNO+1);
- };
- const handlePrevious = () => {
-  if(pageNO===1) return;
-  setPageNO(pageNO-1);
- }
-  const handlePage = (pNo: any) => {
-    setPageNO(pNo);
+ 
+ 
+  const handlePage = (e:any,no:any) => {
+    setPageNO(no);
   };
   return (
     <LatestNewsWrapper>
@@ -88,22 +80,11 @@ export const LatestNews = () => {
           className="pagination"
           style={{ display: "flex", justifyContent: "center" }}
         >
-          <GrPrevious onClick={handlePrevious}/>
-          {pageNo.map((pNo) => (
-            <Button
-              onClick={() => handlePage(pNo)}
-              variant="text"
-              sx={{
-                color: "#7b7b7b",
-                ":focus": {
-                  color: "#000000",
-                },
-              }}
-            >
-              {pNo}
-            </Button>
-          ))}
-          <GrNext onClick={handleNext} />
+         
+          <Pagination count={6}
+          onChange={(event, pageNumber) => handlePage(event, pageNumber)}
+          color="primary" />
+
         </div>
       </Container>
     </LatestNewsWrapper>
