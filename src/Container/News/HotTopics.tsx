@@ -41,6 +41,7 @@ console.log("++",data);
 
 const fetch=async ()=>{
     const response=await JSON.parse(localStorage.getItem("hotTopic") || "{}");
+
     setData(response);
 }
   return (
