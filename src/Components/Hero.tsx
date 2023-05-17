@@ -329,7 +329,7 @@ export const Hero = () => {
             </motion.div>
           </div>
         </div>
-        <div className="btn" style={{marginTop:"80px",marginBottom:"12px"}} >
+        <div className="btn" style={{marginTop:"80px"}} >
           <p>Scroll to explore more</p>
           <a href="#demo">
             <div className="box">
