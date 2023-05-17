@@ -329,7 +329,7 @@ export const Hero = () => {
             </motion.div>
           </div>
         </div>
-        <div className="btn">
+        <div className="btn" style={{marginTop:"80px",marginBottom:"12px"}} >
           <p>Scroll to explore more</p>
           <a href="#demo">
             <div className="box">
@@ -385,6 +385,7 @@ const HeroLayout = styled.div`
   }
 
   .bg-line-img_1 {
+    // border:1px solid red;
     position: absolute;
     width: 100%;
 

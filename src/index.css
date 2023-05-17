@@ -60,13 +60,13 @@ body {
   transform: none;
   animation-name: flo;
   animation-duration: 5s;
-  animation-iteration-count: 4;
+  animation-iteration-count: infinite;
   position: relative;
   bottom: 0;
   left: 0;
 }
 @keyframes flo {
   50% {
-    transform: translateY(20px);
+    transform: translateY(10px);
   }
 }
