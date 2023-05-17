@@ -6,6 +6,7 @@ import styled from 'styled-components';
 function WhyUs() {
 
   const [selectedIndex, setSelectedIndex] = useState<number>(0)
+  const [image, setImage] = useState<string>('/images/work1.png')
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -56,7 +57,8 @@ function WhyUs() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.5 }}
             transition={{ duration: 0.5 }} 
-            src={points[selectedIndex].image}
+            // src={points[selectedIndex].image}
+            src={image}
             alt={points[selectedIndex].title} 
             width="100%" 
           />
@@ -66,17 +68,17 @@ function WhyUs() {
           {
             points.map((item, index) => {
               return(
-                <Box key={item.title} style={{display:'flex', gap:"15px"}}>
+                <Box onMouseEnter={() => setImage(points[index].image)} onMouseLeave={() => setImage(points[selectedIndex].image)} key={item.title} style={{display:'flex', gap:"15px"}}>
                   <Box style={{display:'flex', flexDirection:'column', alignItems:"center"}}>
-                    <Box style={{width:"20px", height:'20px', borderRadius:"50%", border:`6px solid ${ selectedIndex>=index ? "#5856e9" : "#D1D1D1"}`,cursor:"pointer"}} onClick={()=>setSelectedIndex(index)}/>
+                    <Box style={{width:"20px", height:'20px', borderRadius:"50%", border:`6px solid ${ selectedIndex>=index ? "#5856e9" : "#D1D1D1"}`,cursor:"pointer"}} onClick={()=>{setImage(points[index].image);setSelectedIndex(index);}}/>
                     <Box style={{width:"2px", height:'150px', backgroundColor: selectedIndex>index ? "#5856e9" : "#D1D1D1", display: index===points.length-1 ? "none" : "block" }}/>
                   </Box>
                   <Box style={{height:index===points.length-1 ? "auto" : "150px", width:"100%", position:"relative", top:"-10px"}}>
                   <FontWrapper>
-                    <Typography fontSize="24px"  fontFamily="Poppins-Medium" color={selectedIndex===index ? "#5856e9" :"#3A3B44"} className='whyus-title' style={{cursor:"pointer"}} onClick={()=>setSelectedIndex(index)}>{item.title}</Typography>
+                    <Typography fontSize="24px"  fontFamily="Poppins-Medium" color={selectedIndex===index ? "#5856e9" :"#3A3B44"} className='whyus-title' style={{cursor:"pointer"}} onClick={()=>{setImage(points[index].image);setSelectedIndex(index);}}>{item.title}</Typography>
                     </FontWrapper>
                     <FontWrapper>
-                    <Typography fontSize="14px" fontFamily="Montserrat" color="#828490" style={{cursor:"pointer"}} className="whyus-para" onClick={()=>setSelectedIndex(index)}>{item.para}</Typography>
+                    <Typography fontSize="14px" fontFamily="Montserrat" color="#828490" style={{cursor:"pointer"}} className="whyus-para" onClick={()=>{setImage(points[index].image);setSelectedIndex(index);}}>{item.para}</Typography>
                     </FontWrapper>
                   
                     </Box>
