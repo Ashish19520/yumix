@@ -17,3 +17,4 @@ export const testimonials=()=>API.get(`api/testimonials`);
 export const sitecounters=()=>API.get(`api/sitecounters`);
 export const fetchNews=()=>API.get(`api/latest-newsses`);
 
+

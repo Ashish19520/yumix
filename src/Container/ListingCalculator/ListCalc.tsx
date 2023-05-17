@@ -180,82 +180,84 @@ function ListCalc() {
       <Container>
         <div className={classes.sixthContainer}>
           <div>
-            <FormControl sx={{ m: 1, minWidth: 800 }}>
-              <InputLabel id="demo-simple-select-autowidth-label">
-                Does the Amazon Listing Optimization tool work for all the Amazon marketplaces?
-              </InputLabel>
-              <Select
-                labelId="demo-simple-select-autowidth-label"
-                id="demo-simple-select-autowidth"
-                value={age}
-                onChange={handleChange}
-                autoWidth
-                label="Age"
-              >
-                <MenuItem value="">
-                  <em>None</em>
-                </MenuItem>
-              </Select>
-            </FormControl>
+          <FormControl variant="standard" className={classes.selectors}>
+        <InputLabel  id="demo-simple-select-standard-label">Does the Amazon Listing Optimization tool work for all the Amazon marketplaces?</InputLabel>
+        <Select
+          labelId="demo-simple-select-standard-label"
+          id="demo-simple-select-standard"
+          value={age}
+          onChange={handleChange}
+          label="Age"
+        >
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+      </FormControl>
+     
           </div>
           <div>
-            <FormControl sx={{ m: 1, minWidth: 800 }}>
-              <InputLabel id="demo-simple-select-autowidth-label">
-                What are the qualities of a good Amazon listing?
-              </InputLabel>
-              <Select
-                labelId="demo-simple-select-autowidth-label"
-                id="demo-simple-select-autowidth"
-                value={age}
-                onChange={handleChange}
-                autoWidth
-                label="Age"
-              >
-                <MenuItem value="">
-                  <em>None</em>
-                </MenuItem>
-              </Select>
-            </FormControl >
+          <FormControl variant="standard" className={classes.selectors}>
+        <InputLabel  id="demo-simple-select-standard-label">What are the qualities of a good Amazon listing?</InputLabel>
+        <Select
+          labelId="demo-simple-select-standard-label"
+          id="demo-simple-select-standard"
+          value={age}
+          onChange={handleChange}
+          label="Age"
+        >
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+      </FormControl>
+     
           </div>
           <div>
-            <FormControl sx={{ m: 1, minWidth: 800 }} className={classes.selectors}>
-              <InputLabel id="demo-simple-select-autowidth-label" >
-                How to optimize Amazon Listings?
-              </InputLabel>
-              <Select
-
-                labelId="demo-simple-select-autowidth-label"
-                id="demo-simple-select-autowidth"
-
-                value={age}
-                onChange={handleChange}
-                autoWidth
-                label="Age"
-              >
-                <MenuItem value="">
-                  <em>None</em>
-                </MenuItem>
-              </Select>
-            </FormControl>
+          <FormControl variant="standard" className={classes.selectors}>
+        <InputLabel  id="demo-simple-select-standard-label">How to optimize Amazon Listings?</InputLabel>
+        <Select
+          labelId="demo-simple-select-standard-label"
+          id="demo-simple-select-standard"
+          value={age}
+          onChange={handleChange}
+          label="Age"
+        >
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+      </FormControl>
+     
           </div>
           <div>
-            <FormControl sx={{ m: 1, minWidth: 800 }}>
-              <InputLabel id="demo-simple-select-autowidth-label">
-                How does Amazon decide the ranking of my products?
-              </InputLabel>
-              <Select
-                labelId="demo-simple-select-autowidth-label"
-                id="demo-simple-select-autowidth"
-                value={age}
-                onChange={handleChange}
-                autoWidth
-                label="Age"
-              >
-                <MenuItem value="">
-                  <em>None</em>
-                </MenuItem>
-              </Select>
-            </FormControl>
+          <FormControl variant="standard"  className={classes.selectors}>
+        <InputLabel  id="demo-simple-select-standard-label">How does Amazon decide the ranking of my products?</InputLabel>
+        <Select
+          labelId="demo-simple-select-standard-label"
+          id="demo-simple-select-standard"
+          value={age}
+          onChange={handleChange}
+          label="Age"
+        >
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+      </FormControl>
+     
           </div>
         </div>
       </Container>

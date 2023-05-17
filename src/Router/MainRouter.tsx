@@ -11,6 +11,7 @@ import Blog from "../Pages/Blog";
 import  FbaCalculator  from "../Pages/FbaCalculator";
 import ListingCalculator from "../Pages/ListingCalculator";
 import DiscriptionToCode from "../Pages/DiscriptionToCode";
+import NewsContent from "../Container/News/NewsContent";
 
 const MainRouter = () => {
   return (
@@ -24,6 +25,7 @@ const MainRouter = () => {
         <Route path="/works" element={<Works />} />
         <Route path="/blogs" element={<Blog />} />
         <Route path="/news" element={<News />} />
+        <Route path="/newsContent" element={<NewsContent />} />
         <Route path="/home/fbaCalculator" element={<FbaCalculator />}></Route>
         <Route path="/home/listingCalculator" element={<ListingCalculator />}></Route>
         <Route path="/home/descriptionToCode" element={<DiscriptionToCode/>}></Route>

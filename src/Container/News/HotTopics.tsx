@@ -1,26 +1,24 @@
 import { Container } from "@mui/material";
 import { fontSize } from "@mui/system";
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import styled from "styled-components";
 
 export const HotTopics = () => {
-  const newsString =
-    "Nisi, sagittis aliquet sit rutrum. Nunc, id vestibulum quam ornare adipiscing. Pellentesque sed turpis nunc gravida pharetra, sit necvivamus pharetra. Velit, dui, egestas nisi, elementum mattis mauris, magnis. Massa tortor nibh nulla condimentum imperdiet scelerisque. Massa tortor nibh nulla condimentum imperdiet scelerisque. Massa tortor nibh nulla condimentum imperdiet scelerisque...";
-  let firstLetter = "";
-  let restOfString = "";
-  const newsLetterArray = newsString.split(" ");
-  firstLetter = newsLetterArray[0];
-  console.log("checking ", firstLetter);
-  for (let i = 1; i < newsLetterArray.length; i++) {
-    restOfString = restOfString + newsLetterArray[i];
-  }
+
+  const [data,setData]=useState({
+    urlToImage:"",
+    title:"",
+    publishedAt:"",
+    author:"",
+    description:"",
+});
+  
   useEffect(() => {}, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          console.log("Entering into zone");
           entry.target.classList.add("animate__animated");
           entry.target.classList.add("animate__fadeIn");
         }
@@ -35,6 +33,17 @@ export const HotTopics = () => {
     hiddenElements.forEach((el) => observer.observe(el));
   }, []);
 
+  
+useEffect(()=>{
+    fetch();
+},[]);
+console.log("++",data);
+
+const fetch=async ()=>{
+    const response=await JSON.parse(localStorage.getItem("hotTopic") || "{}");
+
+    setData(response);
+}
   return (
     <HotTopicsWrapper>
       <Container maxWidth="lg" className="container hidden">
@@ -43,14 +52,14 @@ export const HotTopics = () => {
         <div className="hero-title">Hot Topics</div>
         <div className="topicContainer">
           <div className="img-box">
-            <img src="./images/Image@3x.png"></img>
+            <img src={data?.urlToImage} alt="img"></img>
             <div className="img-text">
               <div className="title">
-                Massa tortor nibh nulla condimentum imperdiet scelerisque...
+                {data?.title}
               </div>
               <div className="subtitle">
-                <p>2 Hours Ago</p>
-                <p>CNN Indonesia</p>
+                <p>{data?.publishedAt?.split("T")[0]}.</p>
+                <p>{data?.author}</p>
               </div>
             </div>
           </div>
@@ -61,19 +70,14 @@ export const HotTopics = () => {
               <span
                 style={{ fontFamily: "Poppins-semiBold", fontSize: "32px" }}
               >
-                Nisi, 
+               {data?.description?.split(" ")[0]}
               </span>
 
               <span style={{fontFamily:"Montserrat",paddingLeft:"8px",fontSize:"14px",}}>
-                 sagittis aliquet sit rutrum. Nunc, id vestibulum quam ornare
-                adipiscing. Pellentesque sed turpis nunc gravida pharetra, sit
-                nec vivamus pharetra. Velit, dui, egestas nisi, elementum mattis
-                mauris, magnis. Massa tortor nibh nulla condimentum imperdiet
-                scelerisque. Massa tortor nibh nulla condimentum imperdiet
-                scelerisque. Massa tortor nibh nulla condimentum imperdiet
-                scelerisque
-              </span><br></br>
-              <span className="read-more" style={{fontFamily:"Montserrat-SemiBold", marginTop:"40px", fontSize:"14px"}}>read more</span>
+              {data?.description?.split(" ").slice(1).join(" ")}
+              </span>
+              {/* <br></br>
+              <span className="read-more" style={{fontFamily:"Montserrat-SemiBold", marginTop:"40px", fontSize:"14px"}}>read more</span> */}
             </div>
             <div className="subtitle"></div>
           </div>
