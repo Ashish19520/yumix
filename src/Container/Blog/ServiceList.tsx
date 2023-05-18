@@ -1,59 +1,27 @@
-import { Box, Grid, Typography,Button } from "@mui/material";
-import { useEffect } from "react";
+import { Box, Grid, Typography,Button ,Pagination} from "@mui/material";
+import { useEffect,useState } from "react";
 import styled from "styled-components";
-import { GrNext, GrPrevious } from "react-icons/gr";
+import { useDispatch } from 'react-redux';
+import { Dispatch } from 'redux';
+import { fetchBlogs } from "../../actions/posts";
+import { useSelector } from "react-redux/es/exports";
+import { useNavigate } from "react-router-dom";
 
 
 export default function ServiceList() {
-  const blogs = [
-    {
-      name: "How To Gear Forward in 2023",
-      type: "Tips",
-      image: "./images/Image@3x.png",
-    },
-    {
-      name: "Digital commerce is changing rapidly",
-      type: "Blog",
-      image: "./images/Img1.png",
-    },
-    {
-      name: "How to deal with SVB collapse",
-      type: "Blog",
-      image: "./images/Image@3x.png",
-    },
-    {
-      name: "Inspiration to build your online store",
-      type: "Inspiration",
-      image: "./images/Img1.png",
-    },
-    {
-      name: "How To Gear Forward in 2023",
-      type: "Tips",
-      image: "./images/Image@3x.png",
-    },
-    {
-      name: "Digital commerce is changing rapidly",
-      type: "Blog",
-      image: "./images/Img1.png",
-    },
-    {
-      name: "How to deal with SVB collapse",
-      type: "Blog",
-      image: "./images/Image@3x.png",
-    },
-    {
-      name: "Inspiration to build your online store",
-      type: "Inspiration",
-      image: "./images/Img1.png",
-    },
-    {
-      name: "How To Gear Forward in 2023",
-      type: "Tips",
-      image: "./images/Image@3x.png",
-    },
-  ];
+  const [pageNO, setPageNO] = useState(1);
+  const response=useSelector((state:any)=>state?.posts?.fetchBlogs?.data);
+  const navigate=useNavigate();
+  
+  const dispatch: Dispatch<any> = useDispatch();
+  
+  useEffect(()=>{
+    dispatch(fetchBlogs());
+  },[]);
 
-  const pageNo = [1, 2, 3, 4, 5];
+  const handlePage = (e:any,no:any) => {
+    setPageNO(no);
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -73,6 +41,12 @@ export default function ServiceList() {
     const hiddenElements = document.querySelectorAll(".services-list-imgs");
     hiddenElements.forEach((el) => observer.observe(el));
   }, []);
+  
+  const showDetails=(item:any,index:any)=>{
+    localStorage.setItem('blogData', JSON.stringify(response[index].attributes));
+    navigate(`/blogs/${index}`);
+
+    }
   return (
     <ServiceListWrapper>
       <div className="services-list-imgs">
@@ -80,19 +54,19 @@ export default function ServiceList() {
           container
           style={{ maxWidth: "1200px", padding: "80px 20px", margin: "auto" }}
         >
-          {blogs.map((item) => {
+          {response?.map((item:any,index:any) => {
             return (
               <Grid
                 item
                 xs={12}
                 sm={6}
                 md={4}
-                key={item.name}
+                key={item.id}
                 style={{ padding: "20px 10px" }}
               >
                 <Box
                   style={{
-                    backgroundImage: `url(${item.image})`,
+                    backgroundImage: `url(${item?.attributes?.blog_img})`,
                     width: "100%",
                     backgroundSize: "cover",
                     backgroundPosition: "center",
@@ -100,7 +74,7 @@ export default function ServiceList() {
                     height: "200px",
                   }}
                 />
-                <Typography className="item-type">{item.type}</Typography>
+                <Typography className="item-type" onClick={()=>showDetails(item.id,index)}>{item?.attributes?.title}</Typography>
                 <Typography
                   style={{
                     fontSize: "16px",
@@ -118,24 +92,11 @@ export default function ServiceList() {
 
       <div
         className="pagination"
-        style={{ display: "flex", justifyContent: "end" }}
+        style={{ display: "flex", justifyContent: "center" }}
       >
-        <GrPrevious style={{marginTop:"10px"}}/>
-        {pageNo.map((pNo) => (
-          <Button
-            onClick={() => {}}
-            variant="text"
-            sx={{
-              color: "#7b7b7b",
-              ":focus": {
-                color: "#000000",
-              },
-            }}
-          >
-            {pNo}
-          </Button>
-        ))}
-        <GrNext style={{marginTop:"10px"}} className="nxt-btn"/>
+        <Pagination count={5}
+          onChange={(event, pageNumber) => handlePage(event, pageNumber)}
+          color="primary" />
       </div>
     </ServiceListWrapper>
   );

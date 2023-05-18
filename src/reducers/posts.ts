@@ -1,4 +1,4 @@
-import { FETCH_POST,FILL_FORM,CLIENT_LIST,TESTIMONIALS,SITE_COUNTERS, FETCH_NEWS} from "../constants/actionTypes";
+import { FETCH_POST,FILL_FORM,CLIENT_LIST,TESTIMONIALS,SITE_COUNTERS, FETCH_BLOGS,FETCH_NEWS} from "../constants/actionTypes";
 
 export default (state={},action:any)=>{
     switch(action.type){
@@ -12,6 +12,8 @@ export default (state={},action:any)=>{
                 return {...state, sitecounters:action.payload};
         case FETCH_NEWS:      
         return {...state, fetchNews:action.payload};
+        case FETCH_BLOGS:
+        return {...state, fetchBlogs:action.payload};
         default:
             return state;   
     }   

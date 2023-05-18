@@ -27,6 +27,13 @@ export const Fba = () => {
     <FbaContainer style={{ backgroundColor: "#FFFCFC" }}>
       <Container fixed className="container" >
         <div className="hero_wrapper">
+        <motion.img
+              src="../images/Testimonials Bg.png"
+              className={classes.imageLines2}
+              initial="hidden"
+              animate="show"
+              width="100%"
+            ></motion.img>
           <div className="info-box_FBA">
             <div className="fba-Title">FBA Calculator</div>
             <div className="fba-subTitle">
@@ -44,8 +51,8 @@ export const Fba = () => {
           {/* <div className="img-box_FBA">
             <img src="../images/8 - Lucas Dancing.png" alt="img" height="480px" width="552px"></img>
           </div> */}
-          <div className="box hoverimg">
-            <div className="fba">
+          <div className="box hoverimg" style={{zIndex:"1"}}>
+            <div className="fba" >
               {/* <img
                     src="../images/Ellipse 75@3x.png"
                     className="images-tools-bounce1"
@@ -54,11 +61,12 @@ export const Fba = () => {
                     width="44px"
                   ></img> */}
               <img
+              
                 src="../images/8 - Lucas Dancing.png"
                 className="images-tools-bounce1"
                 alt="img"
               ></img>
-            </div>
+            </div> 
           </div>
         </div>
 
@@ -93,11 +101,27 @@ export const Fba = () => {
                 <p>19.5cm X 8386cm X 02.95 cm</p>
               </div>
             </div>
+        <motion.img
+              src="../images/newRock2@3x.png"
+              className={classes.imageLines3}
+              initial="hidden"
+              animate="show"
+              width="100px"
+              height="100px"
+            ></motion.img>
           </div>
         </div>
       </Container>
       <Container fixed className='container'>
         <div className={classes.monitor}>
+        
+        <motion.img
+              src="../images/Group 38632@3x.png"
+              className={classes.imageLines}
+              initial="hidden"
+              animate="show"
+              width="80%"
+            ></motion.img> 
           <div className={classes.firstRow}>
             <p>Item Price</p>
             <p>Shipping Price</p>
@@ -144,6 +168,13 @@ export const Fba = () => {
       </Container>
       <Container fixed maxWidth='lg' className="container">
         <div className={classes.twoContainer}>
+        <motion.img
+              src="../images/Group 38608@3x.png"
+              className={classes.imageLines2}
+              initial="hidden"
+              animate="show"
+              width="100%"
+            ></motion.img>
           <div className={classes.innerTwoContainer}>
             <h2>FBA</h2>
             <div className={classes.innerThirdContainer}>
@@ -174,6 +205,14 @@ export const Fba = () => {
       </Container>
       <Container fixed  className="container">
         <div className={classes.fifthContainer}>
+        <motion.img
+              src="../images/newRock2@3x.png"
+              className={classes.imageLines4}
+              initial="hidden"
+              animate="show"
+              width="100px"
+              height="100px"
+            ></motion.img>
           <div className={classes.fifthHeading}>
             <h1 >FBA v/s FBM</h1>
             <p>which one is right for your bussiness? </p>
@@ -271,28 +310,34 @@ export const Fba = () => {
 
 const FbaContainer = styled.div`
   .container {
+    z-index:1;  
     margin: auto;
     padding-top: 80px;
     .hero_wrapper {
       display: flex;
       align-items: center;
       justify-content: space-evenly;
+      z-indes:1;
+      position: relative;
       @media (max-width: 600px) {
         flex-direction: column-reverse;
         justify-content: center;
       }
 
       .info-box_FBA {
+        z-index:1;
         @media (max-width: 600px) {
           width: 100%;
         }
+        z-index:1;
         width: 50%;
         .fba-Title {
           //styleName: Display P 40;
           font-family: Poppins-Bold;
           font-size: 40px;
           font-weight: 700;
-          line-height: 50px;
+          line-height: 50px;  
+          z-index:1;
           letter-spacing: 0.25px;
           padding-bottom: 24px;
         }
@@ -305,10 +350,13 @@ const FbaContainer = styled.div`
           line-height: 24px;
           letter-spacing: 0.25px;
           padding-bottom: 24px;
+          z-index:1;
         }
         .input-field {
           display: flex;
           justify-content: space-between;
+
+          z-index:1;
           input {
            
             background: #e0e0e0;

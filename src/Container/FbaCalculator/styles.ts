@@ -41,6 +41,7 @@ export default makeStyles((theme) => ({
     gap: "30px",
     alignItems: "center",
     background: "#FFFCFC",
+    position: "relative",
   },
   items: {
     display: 'flex',
@@ -57,6 +58,7 @@ export default makeStyles((theme) => ({
     justifyContent: 'center',
     gap: "30px",
     background: "#FFFCFC",
+    position: "relative",
   },
   pair: {
     display: "flex",
@@ -75,6 +77,7 @@ export default makeStyles((theme) => ({
     padding: "0px",
     gap: "20px",
     marginTop: "95px",
+    zIndex:1,
   },
   secondRow: {
     display: 'flex',
@@ -87,6 +90,7 @@ export default makeStyles((theme) => ({
     height: "565px",
     background: "#FFFFFF",
     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.08)",
+    zIndex:1,
     borderRadius: "16px",
     [theme.breakpoints.down('sm')]: {
       maxWidth: "100%",
@@ -100,6 +104,7 @@ export default makeStyles((theme) => ({
     radius: "4px",
     padding: "14px, 16px, 14px, 16px",
     gap: "10px",
+    zIndex:1,
   },
   thirdRow: {
     display: "flex",
@@ -113,6 +118,7 @@ export default makeStyles((theme) => ({
     background: "#FFFFFF",
     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.08)",
     borderRadius: "16px",
+    zIndex:1, 
     marginBottom: "0px",
     [theme.breakpoints.down('sm')]: {
       maxWidth: "100%",
@@ -126,6 +132,7 @@ export default makeStyles((theme) => ({
     alignItems: 'center',
     gap: '120px',
     background: '#FFFCFC',
+    position:"relative",
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
       alignItems: 'center',
@@ -142,6 +149,7 @@ export default makeStyles((theme) => ({
     padding: '30px',
     boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.08)',
     borderRadius: '12px',
+    zIndex:1,
   },
   innerThirdContainer: {
     display: 'flex',
@@ -157,6 +165,7 @@ export default makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     gap: '30px',
+    position:"relative",
   },
   fifthInner: {
     width: '100%',
@@ -228,4 +237,34 @@ export default makeStyles((theme) => ({
         maxWidth: '400px',
       },
   },
+  imageLines:{
+    position: 'absolute',
+    left:0,
+    top:"-100px",
+   zIndex:1,
+  },
+  imageLines2:{
+    position: 'absolute',
+    left:0,
+    // top:"100px",
+   zIndex:1,
+  },
+  imageLines3:{
+    alignSelf:"end",
+    position: 'absolute',
+    right:"-20%",
+    bottom:"-30%",
+    // top:"100px",
+   zIndex:1,
+  },
+  imageLines4:{
+    // alignSelf:"flex-start",
+    position: 'absolute',
+    left:"3%",
+    bottom:"10%",
+    zIndex:1,
+   [theme.breakpoints.down('sm')]: {
+    zIndex:"-1",
+  },
+  }
 }));

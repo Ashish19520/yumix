@@ -5,3 +5,4 @@ export const CLIENT_LIST="CLIENTLIST";
 export const TESTIMONIALS="TESTIMONIALS";
 export const SITE_COUNTERS="SITECOUNTERS";
 export const FETCH_NEWS="FETCHNEWS";
+export const FETCH_BLOGS="FETCHBLOGS";

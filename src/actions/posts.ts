@@ -1,6 +1,6 @@
 import { Dispatch ,AnyAction} from 'redux';
 import * as api from '../api/api';
-import {FETCH_POST,FILL_FORM,CLIENT_LIST,TESTIMONIALS, SITE_COUNTERS,FETCH_NEWS} from "../constants/actionTypes";
+import {FETCH_POST,FILL_FORM,CLIENT_LIST,TESTIMONIALS, SITE_COUNTERS,FETCH_NEWS,FETCH_BLOGS} from "../constants/actionTypes";
 
 
 
@@ -56,6 +56,14 @@ export const fetchNews=()=>async (dispatch:Dispatch<AnyAction>)=>{
        let {data}=await api.fetchNews();
     dispatch({type:FETCH_NEWS,payload:data});
     return data;
+    } catch (error) {
+        console.error(error);
+    }
+}
+export const fetchBlogs=()=>async (dispatch:Dispatch<AnyAction>)=>{
+    try {
+       let {data}=await api.blogs();
+    dispatch({type:FETCH_BLOGS,payload:data});
     } catch (error) {
         console.error(error);
     }

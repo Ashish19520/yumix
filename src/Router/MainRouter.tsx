@@ -12,6 +12,7 @@ import  FbaCalculator  from "../Pages/FbaCalculator";
 import ListingCalculator from "../Pages/ListingCalculator";
 import DiscriptionToCode from "../Pages/DiscriptionToCode";
 import NewsContent from "../Container/News/NewsContent";
+import BlogContent from "../Container/Blog/BlogContent";
 
 const MainRouter = () => {
   return (
@@ -24,6 +25,7 @@ const MainRouter = () => {
         <Route path="/ourservices" element={<Services />} />
         <Route path="/works" element={<Works />} />
         <Route path="/blogs" element={<Blog />} />
+        <Route path="/blogs/:id" element={<BlogContent />} />
         <Route path="/news" element={<News />} />
         <Route path="/newsContent" element={<NewsContent />} />
         <Route path="/home/fbaCalculator" element={<FbaCalculator />}></Route>
