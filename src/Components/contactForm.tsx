@@ -142,8 +142,9 @@ export default function ContactForm() {
 
             <input
              type="text"
-              placeholder="Your Message"
-              required style={{...style.input}}
+              placeholder="Your Message*"
+              required
+               style={{...style.input}}
                name="message"
                onChange={changeHandalar}/>
 

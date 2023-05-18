@@ -41,7 +41,7 @@ export default function ServiceList() {
     const hiddenElements = document.querySelectorAll(".services-list-imgs");
     hiddenElements.forEach((el) => observer.observe(el));
   }, []);
-  
+
   const showDetails=(item:any,index:any)=>{
     localStorage.setItem('blogData', JSON.stringify(response[index].attributes));
     navigate(`/blogs/${index}`);
