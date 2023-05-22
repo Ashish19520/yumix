@@ -47,9 +47,9 @@ function WhyUs() {
 
   return (
     <Box style={{background: "#fffcfc"}}>
-    <Box className="bannerList_hidden" style={{maxWidth:"1200px", margin:"auto", padding:"120px 40px"}}>
+    <Box className="bannerList_hidden" style={{maxWidth:"100%", margin:"auto", padding:"100px"}}>
       <Grid container alignItems="center">
-        <Grid position="relative" item xs={12} md={6} style={{display:"flex", alignItems:"center", justifyContent:'center', marginBottom:"40px"}}>
+        <Grid position="relative" item xs={12} md={6} style={{display:"flex", alignItems:"center",justifyContent:'center', marginBottom:"40px"}}>
           <Box style={{width:"80%", aspectRatio:1, borderRadius:"50%", backgroundColor:"#F1F6FF"}}></Box>
           <Box style={{width:"80%",position:"absolute", top:"40%", left:"50%",zIndex:"1200", transform:"translate(-50%,-50%)"}}>
           <m.img 
@@ -101,7 +101,7 @@ function WhyUs() {
           />
           </Box>
 
-          <Box style={{width:"80%",position:"absolute", top:"50%", left:"94%"}}>
+          <Box style={{width:"80%",position:"absolute", top:"50%", left:"9%"}}>
           <m.img 
            initial={{ opacity: 0, scale: 0.5 }}
            animate={{ opacity:1, scale: 1 }}
@@ -163,13 +163,14 @@ const FontWrapper=styled.div`
   
   .whyus-title{
     @media (max-width:600px){
-      font-size: 16px;
+      font-size: 14px;
+      margin:"100px"
     }
   }
 
   .whyus-para{
     @media(max-width:600px){
-      font-size: 14px;
+      font-size: 11px;
     }
   }
 `
