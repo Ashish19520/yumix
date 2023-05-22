@@ -51,7 +51,7 @@ function WhyUs() {
       <Grid container alignItems="center">
         <Grid position="relative" item xs={12} md={6} style={{display:"flex", alignItems:"center", justifyContent:'center', marginBottom:"40px"}}>
           <Box style={{width:"80%", aspectRatio:1, borderRadius:"50%", backgroundColor:"#F1F6FF"}}></Box>
-          <Box style={{width:"80%",position:"absolute", top:"40%", left:"50%", transform:"translate(-50%,-50%)" }}>
+          <Box style={{width:"80%",position:"absolute", top:"40%", left:"50%",zIndex:"1200", transform:"translate(-50%,-50%)"}}>
           <m.img 
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -63,6 +63,69 @@ function WhyUs() {
             width="100%" 
           />
           </Box>
+
+          <Box style={{width:"80%",position:"absolute", top:"-20%", left:"70%"}}>
+          <m.img 
+           initial={{ opacity: 0, scale: 0.5 }}
+           animate={{ opacity:1, scale: 1 }}
+           exit={{ opacity: 0, scale: 0.5 }}
+           transition={{ duration: 0.5 }} 
+           src="./images/rock_branchwork_yellow_Cube.png"
+           alt={points[selectedIndex].title} 
+           width="40%"
+          
+          />
+          </Box>
+
+          <Box style={{width:"80%",position:"absolute", top:"80%", left:"15%"}}>
+          <m.img 
+           initial={{ opacity: 0, scale: 0.5 }}
+           animate={{ opacity:1, scale: 1 }}
+           exit={{ opacity: 0, scale: 0.5 }}
+           transition={{ duration: 0.5 }} 
+           src="./images/Rock_whywork_blue.png"
+           alt={points[selectedIndex].title} 
+           width="45%"
+          />
+          </Box>
+
+          <Box style={{width:"80%",position:"absolute", top:"-25%", left:"15%"}}>
+          <m.img 
+           initial={{ opacity: 0, scale: 0.5 }}
+           animate={{ opacity:1, scale: 1 }}
+           exit={{ opacity: 0, scale: 0.5 }}
+           transition={{ duration: 0.5 }} 
+           src="./images/circle_blue_m.png"
+           alt={points[selectedIndex].title} 
+           width="8%"
+          />
+          </Box>
+
+          <Box style={{width:"80%",position:"absolute", top:"50%", left:"94%"}}>
+          <m.img 
+           initial={{ opacity: 0, scale: 0.5 }}
+           animate={{ opacity:1, scale: 1 }}
+           exit={{ opacity: 0, scale: 0.5 }}
+           transition={{ duration: 0.5 }} 
+          //  src="./images/circle_blue_s.png"
+           src="./images/circle_blue_m.png"
+           alt={points[selectedIndex].title} 
+           width="5%"
+          />
+          </Box>
+
+          <Box style={{width:"80%",position:"absolute", top:"100%", left:"70%"}}>
+          <m.img 
+           initial={{ opacity: 0, scale: 0.5 }}
+           animate={{ opacity:1, scale: 1 }}
+           exit={{ opacity: 0, scale: 0.5 }}
+           transition={{ duration: 0.5 }} 
+           src="./images/circle_pink_m.png"
+           alt={points[selectedIndex].title} 
+           width="8%"
+          />
+          </Box>
+
         </Grid>
         <Grid item xs={12} md={6}>
           {
