@@ -226,6 +226,7 @@ export const Hero = () => {
           variants={lines}
           initial="hidden"
           animate="show"
+          style={{maxWidth:"95%"}}
         ></motion.img>
         <motion.img
           src="./images/Group 38632.png"
