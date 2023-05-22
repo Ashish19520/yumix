@@ -197,7 +197,7 @@ export const Hero = () => {
             ?.classList.add("animate__animated");
           document
             .querySelector(".imageBox")
-            ?.classList.add("animate__bounceInUp");
+            ?.classList.add("animate__backInRight");
           document
             .querySelector(".imageBox")
             ?.classList.add("animate__delay-3s");
@@ -240,6 +240,8 @@ export const Hero = () => {
           variants={lines}
           initial="hidden"
           animate="show"
+          width={720}
+
         ></motion.img>
         
 
