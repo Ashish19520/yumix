@@ -102,7 +102,7 @@ export const Navbar = () => {
               animate="show"
             >
               <motion.li variants={navText}>
-                <Link to="/">Home</Link>
+                <Link to="/" >Home</Link>
               </motion.li>
               <motion.li variants={navText}>
                 <Link to="/aboutus">About Us</Link>
@@ -227,6 +227,9 @@ const Nav = styled(Grid)<NavProps>`
     display:none;
 } */
 
+  link:active {
+    background-color: red;
+}
   .container {
     margin: auto;
     display: flex;

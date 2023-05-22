@@ -24,7 +24,7 @@ export const Fba = () => {
   }, []);
   const classes = useStyles();
   return (
-    <FbaContainer style={{ backgroundColor: "#FFFCFC" }}>
+    <FbaContainer style={{ backgroundColor: "#FFFCFC",width:"100vw"}}>
       <Container fixed className="container" >
         <div className="hero_wrapper">
         <motion.img

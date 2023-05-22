@@ -11,6 +11,53 @@ export default makeStyles((theme:any) => ({
           alignItems: 'center',
         },
       },
+      heroImg:{
+        zIndex:4
+      },
+      relative:{
+        position:"relative",
+      },
+      imageLines1:{
+        position:"absolute",
+        left:"10%",
+        right:"0",
+        top:"60%",
+        bottom:"0",
+        zIndex:1
+      },
+      imageLines2:{
+        position:"absolute",
+        left:"45%",
+        right:"0",
+        top:"80%",
+        bottom:"0",
+        zIndex:1,
+        width:"20px",
+        height:"20px"
+      },
+      index:{
+        zIndex:7
+      },
+      imageLines3:{
+        position:"absolute",
+        left:"0",
+        right:"0",
+        top:"-40%",
+        bottom:"0",
+        zIndex:2,
+        height:"300px",
+        width:"100%"
+      },
+      imageLines4:{
+        position:"absolute",
+        left:"-20px",
+        right:"0",
+        top:"0%",
+        bottom:"0",
+        zIndex:1,
+        height:"300px",
+        width:"100%"
+      },
       img: {
         width: "30%",
         [theme.breakpoints.down('sm')]: {
@@ -50,6 +97,7 @@ export default makeStyles((theme:any) => ({
           alignItems: 'center',
           gap: '30px',
         },
+        marginBottom:"100px"
       },
       innerTwoContainer: {
         display: 'flex',
@@ -79,7 +127,9 @@ export default makeStyles((theme:any) => ({
         flexDirection: 'column',
         flexWrap: "wrap",
         justifyContent: 'flex-start',
+       
       },
+     
       innerOneFourth: {
         display: "flex",
         flexDirection: "row",
@@ -88,6 +138,7 @@ export default makeStyles((theme:any) => ({
         padding: "40px",
         gap: "48px",
         background: "#FFFFFF",
+        zIndex:4,
         border: "1px solid #FFFCFC",
         /* Card Shadow */
         boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.08)",
@@ -173,7 +224,7 @@ export default makeStyles((theme:any) => ({
         display: "flex",
         flexDirection: "row",
         flexWrap: "wrap",
-        gap: "-40px",
+        gap:"40px",
       },
       sixthContainer: {
         display: "flex",
