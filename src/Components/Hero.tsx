@@ -331,7 +331,7 @@ export const Hero = () => {
             </motion.div>
           </div>
         </div>
-        <div className="btn" style={{marginTop:"80px"}} >
+        {/* <div className="btn" style={{marginTop:"80px"}} >
           <p>Scroll to explore more</p>
           <a href="#demo">
             <div className="box">
@@ -340,8 +340,8 @@ export const Hero = () => {
               </span>
             </div>
           </a>
-          {/* <button>Click</button> */}
-        </div>
+          <button>Click</button>
+        </div> */}
       </Container>
     </HeroLayout>
   );

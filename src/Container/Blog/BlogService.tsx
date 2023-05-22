@@ -3,6 +3,7 @@ import { Container } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
+
 export default function BlogService() {
   const services = [
     "Affiliate & Influencer",
@@ -19,6 +20,7 @@ export default function BlogService() {
   ];
 
   const [flag, setFlag] = useState(true);
+  
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {

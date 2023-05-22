@@ -102,7 +102,7 @@ export const Navbar = () => {
               animate="show"
             >
               <motion.li variants={navText}>
-                <Link to="/">Home</Link>
+                <Link to="/" >Home</Link>
               </motion.li>
               <motion.li variants={navText}>
                 <Link to="/aboutus">About Us</Link>
@@ -279,15 +279,20 @@ const Nav = styled(Grid)<NavProps>`
           text-decoration: none;
           color: #40424c;
           font-size: 14px;
-
           &:hover {
             font-weight: 700;
           }
           &:focus {
             font-weight: 700;
+            color: purple;
+            text-decoration:underline;
+
           }
         }
+       
       }
+
+      
     }
 
     .btn {

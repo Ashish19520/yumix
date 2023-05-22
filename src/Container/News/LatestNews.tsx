@@ -2,7 +2,6 @@ import { Button, Container, Grid ,Pagination} from "@mui/material";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { NewsCard } from "../../Components/NewsCard";
-import { GrNext, GrPrevious } from "react-icons/gr";
 import { getNews } from "../../api/services";
 import { useNavigate } from "react-router-dom";
 import NewsContent from "./NewsContent";

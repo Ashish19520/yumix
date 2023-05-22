@@ -6,7 +6,7 @@ export default makeStyles((theme) => ({
     flexDirection: 'row',
     justifyContent: 'flex-start',
     background: "#FFFCFC",
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('xs')]: {
       display:"flex",
       flexDirection: 'column',
       alignItems: 'center',
@@ -16,11 +16,24 @@ export default makeStyles((theme) => ({
 
 
     },
+    [theme.breakpoints.down('sm')]: {
+      display:"flex",
+      flexDirection: 'column',
+      flexWrap: "wrap",
+      alignItems: 'center',
+      justifyContent: 'center',   
+      width:"100%",
+
+
+    },
   },
   img: {
     width: "30%",
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('xs')]: {
       width: "100%",
+    },
+    [theme.breakpoints.down('sm')]: {
+      width: "80%",
     },
   },
   imageTextPara: {
@@ -41,6 +54,7 @@ export default makeStyles((theme) => ({
     gap: "30px",
     alignItems: "center",
     background: "#FFFCFC",
+    position: "relative",
   },
   items: {
     display: 'flex',
@@ -48,7 +62,9 @@ export default makeStyles((theme) => ({
     flexDirection: 'row',
     justifyContent: "space-between",
     gap: '80px',
-    background: "#FFFCFC",
+    background: "#FFFCFC",[theme.breakpoints.down('xs')]: {
+      flexDirection:"column",
+    },
   },
   monitor: {
     display: 'flex',
@@ -57,24 +73,36 @@ export default makeStyles((theme) => ({
     justifyContent: 'center',
     gap: "30px",
     background: "#FFFCFC",
+    position: "relative",
+    [theme.breakpoints.down('sm')]: {
+      maxWidth: "100%",
+      flexDirection:"row",
+    },
   },
   pair: {
     display: "flex",
     flexDirection:"row",
     // flexWrap: "wrap",
     gap: "20px",
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('xs')]: {
         maxWidth: "100%",
         flexDirection:"column",
+        flexWrap:"wrap",
+      },
+      [theme.breakpoints.down('sm')]: {
+        maxWidth: "100%",
+        flexDirection:"row",
       },
   },
   firstRow: {
     display: "flex",
     flexDirection: "column",
     alignItems: "flex-start",
+    flexWrap: "wrap",
     padding: "0px",
     gap: "20px",
     marginTop: "95px",
+    zIndex:1,
   },
   secondRow: {
     display: 'flex',
@@ -87,8 +115,9 @@ export default makeStyles((theme) => ({
     height: "565px",
     background: "#FFFFFF",
     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.08)",
+    zIndex:1,
     borderRadius: "16px",
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('xs')]: {
       maxWidth: "100%",
       marginBottom: "20px",
     },
@@ -100,6 +129,7 @@ export default makeStyles((theme) => ({
     radius: "4px",
     padding: "14px, 16px, 14px, 16px",
     gap: "10px",
+    zIndex:1,
   },
   thirdRow: {
     display: "flex",
@@ -113,8 +143,9 @@ export default makeStyles((theme) => ({
     background: "#FFFFFF",
     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.08)",
     borderRadius: "16px",
+    zIndex:1, 
     marginBottom: "0px",
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('xs')]: {
       maxWidth: "100%",
       marginBottom: "20px",
     },
@@ -126,9 +157,15 @@ export default makeStyles((theme) => ({
     alignItems: 'center',
     gap: '120px',
     background: '#FFFCFC',
-    [theme.breakpoints.down('sm')]: {
+    position:"relative",
+    [theme.breakpoints.down('xs')]: {
       flexDirection: 'column',
       alignItems: 'center',
+    },
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'row',
+      alignItems: 'flex-start',
+      flexWrap: 'nowrap',
     },
   },
   innerTwoContainer: {
@@ -142,6 +179,7 @@ export default makeStyles((theme) => ({
     padding: '30px',
     boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.08)',
     borderRadius: '12px',
+    zIndex:1,
   },
   innerThirdContainer: {
     display: 'flex',
@@ -157,20 +195,25 @@ export default makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     gap: '30px',
+    position:"relative",
   },
   fifthInner: {
-    width: '100%',
-    maxWidth: '850px',
+    width: '90%',
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     alignItems: 'flex-start',
     padding: '0px',
     marginBottom: '150px',
     gap: '120px',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('xs')]: {
       flexDirection: 'column',
       alignItems: 'center',
+      flexWrap: 'wrap',
+    },
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'row',
+      width:"100%",
     },
   },
   fifthHeading: {
@@ -184,18 +227,31 @@ export default makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'flex-start',
     padding: '0px',
+    // flexWrap: 'wrap',
     gap: '24px',
     width: '332px',
     height: '180px',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'row',
+      width:"290px",
+      flexWrap: 'wrap',
+    },
   },
   sixthContainer: {
     display: 'flex',
     justifyContent: 'center',
     gap: '40px',
     alignItems: 'center',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('xs')]: {
         width: '100%',
         maxWidth: '400px',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingLeft:"30px"
+      },
+      [theme.breakpoints.down('sm')]: {
+        width: '100%',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
@@ -212,7 +268,7 @@ export default makeStyles((theme) => ({
     height: '152px',
     textAlign: 'center',
     marginBottom: '40px',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('xs')]: {
       width: '100%',
       maxWidth: '400px',
     },
@@ -223,9 +279,44 @@ export default makeStyles((theme) => ({
     flexDirection: 'row',
     flexWrap: 'wrap',
     gap: '70px',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('xs')]: {
         width: '100%',
         maxWidth: '400px',
       },
+      [theme.breakpoints.down('sm')]: {
+        width: '90%',
+        maxWidth: '280px',
+      
+      },
   },
+  imageLines:{
+    position: 'absolute',
+    left:0,
+    top:"-100px",
+   zIndex:1,
+  },
+  imageLines2:{
+    position: 'absolute',
+    left:0,
+    // top:"100px",
+   zIndex:1,
+  },
+  imageLines3:{
+    alignSelf:"end",
+    position: 'absolute',
+    right:"-20%",
+    bottom:"-30%",
+    // top:"100px",
+   zIndex:1,
+  },
+  imageLines4:{
+    // alignSelf:"flex-start",
+    position: 'absolute',
+    left:"3%",
+    bottom:"10%",
+    zIndex:1,
+   [theme.breakpoints.down('xs')]: {
+    zIndex:"-1",
+  },
+  }
 }));

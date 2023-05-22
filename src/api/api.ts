@@ -15,6 +15,7 @@ export const fillForm=(data:any)=>API.post(`api/feedback-forms`,data);
 export const clientList=()=>API.get(`api/clients`);
 export const testimonials=()=>API.get(`api/testimonials`);
 export const sitecounters=()=>API.get(`api/sitecounters`);
+export const blogs=()=>API.get(`api/blogs`);  
 export const fetchNews=()=>API.get(`api/latest-newsses`);
 
 

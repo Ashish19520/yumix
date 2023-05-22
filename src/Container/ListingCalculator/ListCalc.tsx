@@ -36,10 +36,34 @@ function ListCalc() {
               <button className="btn_FBACalculate">Optimising Visibilty</button>
             </div>
           </div>
-          <div className="img-box_FBA">
-            <img src="../images/Saly-10.png" alt="img" height="517px" width="517px"></img>
+          <div className={classes.heroImg} >
+            <img
+            className={classes.heroImg}
+            src="../images/Saly-10.png"
+             alt="img"
+              height="517px" 
+              width="517px"></img>
+
           </div>
+          
         </div>
+        
+        <motion.img
+              src="../images/Group 38639.png"
+              className={classes.imageLines1}
+              initial="hidden"
+              animate="show"
+              width="70%"
+              height="70%"
+            ></motion.img>
+             <motion.img
+              src="../images/Ellipse 63@3x.png"
+              className={classes.imageLines2}
+              initial="hidden"
+              animate="show"
+              width="70%"
+              height="70%"
+            ></motion.img>
       </Container>
       <Container maxWidth='lg' className="container">
         <div className={classes.wrapper}>
@@ -74,34 +98,34 @@ function ListCalc() {
         </div>
       </Container>
       <Container maxWidth='lg' className="container">
-        <div className={classes.twoContainer}>
-          <div className={classes.innerTwoContainer}>
+        <div className={`${classes.twoContainer} `}>
+          <div className={`${classes.innerTwoContainer} ${classes.index}`}>
 
-            <div className={classes.innerThirdContainer}>
+            <div className={`${classes.innerThirdContainer}`}>
               <div>
-                <p>Durability</p>
+                <p>Desirability</p>
               </div>
               <div>
-                <p>Net Profit</p>
+              <img src="../images/Oval.png" alt="" height="72px" width="72px"/>
               </div>
             </div>
           </div>
-          <div className={classes.innerTwoContainer}>
+          <div className={`${classes.innerTwoContainer} ${classes.index}`}>
             <div className={classes.innerThirdContainer}>
               <div>
                 <p>Discoverability</p>
               </div>
               <div>
-                <p>Net Profit</p>
+              <img src="../images/Oval.png" alt="" height="72px" width="72px"/>
               </div>
             </div>
           </div>
         </div>
       </Container>
-      <Container>
+      <Container className={classes.relative}>
         <div className={classes.fourthContainer}>
-          <div>
-            <h1>Analysis</h1>
+        <div style={{zIndex:"5"}}>
+            <h1 >Analysis</h1>  
           </div>
           <div className={classes.innerOneFourth}>
             <p>4 possible error(s) analyzed.</p>
@@ -110,6 +134,14 @@ function ListCalc() {
             </div>
           </div>
         </div>
+         <motion.img
+              src="../images/Frame 54 (1).png"
+              className={classes.imageLines3}
+              initial="hidden"
+              animate="show"
+              width="70%"
+              height="70%"
+            ></motion.img>
       </Container>
       <Container>
         <div className={classes.fifthContainer}>
@@ -120,7 +152,7 @@ function ListCalc() {
             </div>
             <div className={classes.innersecondFifthContainer}  >
               <p>Title is possibly the most important part of the product listing. Ensure the title is readable, is relevant to your product and is keyword rich. Most of your main keywords go here.</p>
-              <p>img</p>
+              <img src="../images/Oval.png" alt="" height="72px" width="72px"/>
             </div>
           </div>
         </div>
@@ -133,7 +165,7 @@ function ListCalc() {
             </div>
             <div className={classes.innersecondFifthContainer}  >
               <p>Title is possibly the most important part of the product listing. Ensure the title is readable, is relevant to your product and is keyword rich. Most of your main keywords go here.</p>
-              <p>img</p>
+              <img src="../images/Oval.png" alt="" height="72px" width="72px"/>
             </div>
           </div>
         </div>
@@ -146,7 +178,7 @@ function ListCalc() {
             </div>
             <div className={classes.innersecondFifthContainer}  >
               <p>Title is possibly the most important part of the product listing. Ensure the title is readable, is relevant to your product and is keyword rich. Most of your main keywords go here.</p>
-              <p>img</p>
+              <img src="../images/Oval.png" alt="" height="72px" width="72px"/>
             </div>
           </div>
         </div>
@@ -155,11 +187,11 @@ function ListCalc() {
           <div className={classes.innerFifthContainer} >
             <div className={classes.innersecondFifthContainer}>
               <h4>Ratings</h4>
-              <div className={classes.greenGood}>Good</div>
+              <div className={classes.greenGood}>Bad</div>
             </div>
             <div className={classes.innersecondFifthContainer}  >
               <p>Title is possibly the most important part of the product listing. Ensure the title is readable, is relevant to your product and is keyword rich. Most of your main keywords go here.</p>
-              <p>img</p>
+              <img src="../images/Frame 1000003793.png" alt="" height="72px" width="72px"/>
             </div>
           </div>
         </div>
@@ -168,11 +200,11 @@ function ListCalc() {
           <div className={classes.innerFifthContainer} >
             <div className={classes.innersecondFifthContainer}>
               <h4>Reviews</h4>
-              <div className={classes.redGood}>Red</div>
+              <div className={classes.redGood}>Good</div>
             </div>
             <div className={classes.innersecondFifthContainer}  >
               <p>Title is possibly the most important part of the product listing. Ensure the title is readable, is relevant to your product and is keyword rich. Most of your main keywords go here.</p>
-              <p>img</p>
+              <img src="../images/Oval.png" alt="" height="72px" width="72px"/>
             </div>
           </div>
         </div>
@@ -261,20 +293,27 @@ function ListCalc() {
           </div>
         </div>
       </Container>
-      <Container>
+      <Container className={classes.relative}>
+      <motion.img
+              src="../images/Frame 56.png"
+              className={classes.imageLines4}
+              initial="hidden"
+              animate="show"
+              width="100%"
+            ></motion.img>
         <div>
           <div >
             <h1>Try out other resources for your business</h1>
           </div>
 
           <div className={classes.innerSeventh} >
-            <div className={classes.img}>
-              <img src="../images/Rectangle first.png" alt="img" height="200px" width="250px"></img>
+            <div className={`${classes.img} ${classes.index}`}>
+              <img src="../images/Rectangle first.png" alt="img" height="200px" width="369px"></img>
               <p> Resources</p>
               <h2> FBA Calculator</h2>
             </div>
-            <div className={`${classes.img} `}>
-              <img src="../images/Rectangle second.png" alt="img" height="200px" width="250px"></img>
+            <div className={`${classes.img} ${classes.index}`}>
+              <img src="../images/Rectangle second.png" alt="img" height="200px" width="369px"></img>
               <p> Optimising Listing Library</p>
               <h2> FBA Calculator</h2>
             </div>
@@ -289,6 +328,7 @@ const ListContainer = styled.div`
   .container {
     margin: auto;
     padding-top: 80px;
+    position :relative;
     .hero_wrapper {
       display: flex;
       align-items: center;

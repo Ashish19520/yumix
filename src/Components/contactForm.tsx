@@ -129,7 +129,7 @@ export default function ContactForm() {
      <FormWrapper>
         <Grid item xs={12} md={8} style={{marginBottom:"30px"}}>
           <Typography  className="form-title">Get in Touch </Typography>
-          <Typography  className="form-subTitle">Enim tempor eget pharetra facilisis sed maecenas adipiscing. Eu leo molestie vel, ornare non id blandit netus.</Typography>
+          <Typography  className="form-subTitle">Kindly drop your email and message below , someone from our team will get in touch with you soon.</Typography>
           <form onSubmit={onSubmit}>
           <Box style={{display:"flex", alignItems:"stretch", gap:"20px", flexWrap:"wrap"}}>
             <input
@@ -142,8 +142,9 @@ export default function ContactForm() {
 
             <input
              type="text"
-              placeholder="Your Message"
-              required style={{...style.input}}
+              placeholder="Your Message*"
+              required
+               style={{...style.input}}
                name="message"
                onChange={changeHandalar}/>
 
@@ -157,11 +158,11 @@ export default function ContactForm() {
         </Grid>
         <Grid item xs={12} md={4}>
         
-          {/* <img className="img-sub_aboutus" src="./images/brisaTakingParcelRight.png" width="80%" style={{scale:"1.7"}}/> */}
+          <img className="img-sub_aboutus" src="../images/brisaTakingParcelRight.png" width="80%" style={{scale:"1.7"}}/>
          
         </Grid>
         </FormWrapper>
-      </Grid>
+      </Grid> 
     </Box>
   )
 }
