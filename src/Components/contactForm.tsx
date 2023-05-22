@@ -115,7 +115,7 @@ export default function ContactForm() {
   }
 
   return (
-    <Box sx={{maxWidth:"1200px", padding:"80px 40px", margin:"auto", overflow:{xs:"hidden", md:"visible"}}} id="contactForm">
+    <Box sx={{maxWidth:"1200px", padding:"80px 10px", margin:"auto", overflow:{xs:"hidden", md:"visible"}}} id="contactForm">
       
       
       <Grid container sx={{width:"100%", backgroundColor:"#232F3F", borderRadius:"42px", boxShadow:"2px 4px 10px rgba(0, 0, 0, 0.1)", backdropFilter:"blur(21px)", padding:{xs:"20px 40px", md:"50px 100px"}}}>
@@ -158,7 +158,7 @@ export default function ContactForm() {
         </Grid>
         <Grid item xs={12} md={4}>
         
-          <img className="img-sub_aboutus" src="../images/brisaTakingParcelRight.png" width="80%" style={{scale:"1.7"}}/>
+          <img className="img-sub_aboutus" src="./images/brisaTakingParcelRight.png" width="80%" style={{scale:"1.7"}}/>
          
         </Grid>
         </FormWrapper>
