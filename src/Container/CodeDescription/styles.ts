@@ -13,6 +13,25 @@ export default makeStyles((theme) => ({
       alignItems: "center",
     },
   },
+  
+  imageLines1:{
+    position:"absolute",
+    left:"10%",
+    right:"0",
+    top:"50%",
+    bottom:"0",
+    zIndex:1
+  },
+  imageLines2:{
+    position:"absolute",
+    left:"45%",
+    right:"0",
+    top:"70%",
+    bottom:"0",
+    zIndex:1,
+    width:"20px",
+    height:"20px"
+  },
   insideFirstContainer: {
     display: "flex",
     flexDirection: "column",

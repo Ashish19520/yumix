@@ -10,8 +10,12 @@ function CodeDesc() {
       window.scrollTo(0, 0);
     }, []);
   return (
-    <CodeContainer style={{ backgroundColor: "#FFFCFC" }}>
-    <Container maxWidth="lg" className="container" >
+    <CodeContainer style={{ backgroundColor: "#FFFCFC",position:"relative" }}>
+    <Container
+     maxWidth="lg"
+      className="container"
+      style={{position:"relative",marginBottom:"100px" }}
+      >
     <div className="hero_wrapper">
       <div className="info-box_FBA">
         <div className="fba-Title">Description to Code</div>
@@ -40,6 +44,7 @@ function CodeDesc() {
                 width="44px"
               ></img> */}
           <img
+         
             src="../images/04 Market Research.png"
             className="images-tools-bounce1"
             alt="img"
@@ -47,6 +52,22 @@ function CodeDesc() {
         </div>
       </div>
     </div>
+             <motion.img
+              src="../images/Group 38639.png"
+              className={classes.imageLines1}
+              initial="hidden"
+              animate="show"
+              width="70%"
+              height="70%"
+            ></motion.img>
+             <motion.img
+              src="../images/Ellipse 63@3x.png"
+              className={classes.imageLines2}
+              initial="hidden"
+              animate="show"
+              width="70%"
+              height="70%"
+            ></motion.img>
   </Container>
   <Container>
     <div className={classes.firstContainer}>
@@ -76,7 +97,7 @@ function CodeDesc() {
 
         </div>
       </Container>
-      <Container>
+      <Container >
         <div className={classes.fourthWrapper}>
             <div className={classes.firstFourthWrapper}>
                 <div className={`${classes.secondFourthWrapper} ${classes.txt2}`}>
@@ -112,6 +133,22 @@ function CodeDesc() {
                 </div>
             </div>
         </div>
+        <motion.img
+              src="../images/Group 38639.png"
+              className={classes.imageLines1}
+              initial="hidden"
+              animate="show"
+              width="70%"
+              height="70%"
+            ></motion.img>
+             <motion.img
+              src="../images/Ellipse 63@3x.png"
+              className={classes.imageLines2}
+              initial="hidden"
+              animate="show"
+              width="70%"
+              height="70%"
+            ></motion.img>
       </Container>
   <Container>
         <div>

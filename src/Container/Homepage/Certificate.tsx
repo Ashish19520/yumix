@@ -56,8 +56,10 @@ console.log(response?.data[0]?.attributes?.t_url)
         </div>
         <div className="rightDiv">
           {/* <img src="./images/certificate 1.png"></img> */}  
-          <video width="500" height="350" controls autoPlay muted>
-            <source src="https://assets.visme.co/templates/banners/videoThumbnails/i_Cafe-Reviews-Testimonial-Ad_full.mp4" type="video/mp4"/>
+          <video width="100%" height="350" controls autoPlay muted>
+            <source
+            className="vid-src"
+             src="https://assets.visme.co/templates/banners/videoThumbnails/i_Cafe-Reviews-Testimonial-Ad_full.mp4" type="video/mp4"/>
  
              Your browser does not support the video tag.
             </video>
@@ -97,6 +99,7 @@ const Certif = styled.div`
         display: none;
       }
     }
+   
 
     .img-dot3 {
       position: absolute;
@@ -151,6 +154,13 @@ const Certif = styled.div`
       width: 50%;
 
       @media (max-width: 600px) {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        padding-bottom: 40px;
+      }
+      @media (max-width: 300px) {
+        flex-direction: column;
         width: 100%;
         align-items: center;
         padding-bottom: 40px;
