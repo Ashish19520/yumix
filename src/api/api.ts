@@ -11,7 +11,7 @@ const API = axios.create({
   });
 
 export const fetchPost=()=>API.get(`api/sitecounters`);
-export const fillForm=(data:any)=>API.post(`api/feedback-forms`,data);
+export const fillForm=(data:any)=>API.post(`api/send-mails/sendmail`,data);
 export const clientList=()=>API.get(`api/clients`);
 export const testimonials=()=>API.get(`api/testimonials`);
 export const sitecounters=()=>API.get(`api/sitecounters`);

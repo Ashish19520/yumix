@@ -36,7 +36,6 @@ export default function ContactForm() {
   const [formData,setFormData]=useState({
     email:"",
     message:"",
-    name:""
   });
   const response=useSelector((state:any)=>state?.posts?.formData?.data);
 
@@ -58,12 +57,8 @@ export default function ContactForm() {
 
   const onSubmit = (e:any)=>{
     e.preventDefault();
-    let data={
-      data:{
-        ...formData
-      }
-    }
-    dispatch(postForm(data));
+   
+    dispatch(postForm(formData));
   }
   let flag=false;
   if (state.succeeded) {
@@ -129,7 +124,7 @@ export default function ContactForm() {
      <FormWrapper>
         <Grid item xs={12} md={8} style={{marginBottom:"30px"}}>
           <Typography  className="form-title">Get in Touch </Typography>
-          <Typography  className="form-subTitle">Kindly drop your email and message below , someone from our team will get in touch with you soon.</Typography>
+          <Typography  className="form-subTitle">Drop us a message to explore possibilities in selling on Marketplaces</Typography>
           <form onSubmit={onSubmit}>
           <Box style={{display:"flex", alignItems:"stretch", gap:"20px", flexWrap:"wrap"}}>
             <input
