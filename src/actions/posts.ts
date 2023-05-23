@@ -20,6 +20,7 @@ export const postForm=(payload:any)=>async (dispatch:Dispatch<AnyAction>)=>{
     try {
        let {data}=await api.fillForm(payload);
     dispatch({type:FILL_FORM,payload:data});
+    return data;
     } catch (error) {
         console.error(error);
     }

@@ -37,7 +37,9 @@ export default function ContactForm() {
     email:"",
     message:"",
   });
-  const response=useSelector((state:any)=>state?.posts?.formData?.data);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  
+ 
 
   const dispatch: Dispatch<any> = useDispatch();
 
@@ -49,16 +51,25 @@ export default function ContactForm() {
   }));
   }
 
-  useEffect(() => {
-    if (response?.id) {
-      setShowAlert(true);
-    }
-  }, [response]);
+  // useEffect(() => {
+  //   if (response?.message==="Success") {
+  //     setShowAlert(true);
+  //   }
+  // }, [response]);
 
-  const onSubmit = (e:any)=>{
+  const onSubmit = async(e:any)=>{
+
     e.preventDefault();
-   
-    dispatch(postForm(formData));
+    setIsSubmitting(true);
+    let data:any = await dispatch(postForm(formData));
+    setIsSubmitting(false);
+    if(data?.message==="Success"){
+      setShowAlert(true);
+      setFormData({
+        email:"",
+        message:"",
+      });
+    }
   }
   let flag=false;
   if (state.succeeded) {
@@ -143,8 +154,12 @@ export default function ContactForm() {
                name="message"
                onChange={changeHandalar}/>
 
-            <Button type="submit" disabled={state.submitting} disableElevation variant='contained' sx={{...style.button, color:"white", backgroundColor:"#5856e9"}}>
-                Send
+            <Button type="submit" 
+            disabled={isSubmitting} 
+            disableElevation variant='contained'
+            style={{ backgroundColor:"#5856e9",color:"white"}}
+            sx={{...style.button, color:"white", backgroundColor:"#5856e9"}}>
+            {isSubmitting ? 'Submitting' : 'Send'}
             </Button>
             {flag &&  <Typography style={{color:"#D3D2F9", fontSize:"16px", fontFamily:"Montserrat", lineHeight:"24px"}}>Please Enter Email Again</Typography>}
            
