@@ -39,23 +39,20 @@ export default function ContactForm() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   
- 
+ console.log("++++",formData);
 
   const dispatch: Dispatch<any> = useDispatch();
 
   const changeHandalar=(e:any)=>{
     const { name, value } = e.target;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: value
-  }));
-  }
+    setFormData({
+      ...formData,
+      [name]: value})
+}
 
-  // useEffect(() => {
-  //   if (response?.message==="Success") {
-  //     setShowAlert(true);
-  //   }
-  // }, [response]);
+  useEffect(() => {
+   
+  }, [setShowAlert]);
 
   const onSubmit = async(e:any)=>{
 
@@ -65,11 +62,12 @@ export default function ContactForm() {
     setIsSubmitting(false);
     if(data?.message==="Success"){
       setShowAlert(true);
-      setFormData({
-        email:"",
-        message:"",
-      });
+      
     }
+    setFormData({
+      email:"",
+      message:"",
+    });
   }
   let flag=false;
   if (state.succeeded) {
@@ -141,6 +139,7 @@ export default function ContactForm() {
             <input
              type="email" 
              placeholder="Email*" 
+             value={formData.email}
              required style={{...style.input}}
               name="email"
               onChange={changeHandalar}/>
@@ -152,6 +151,7 @@ export default function ContactForm() {
               required
                style={{...style.input}}
                name="message"
+               value={formData.message} 
                onChange={changeHandalar}/>
 
             <Button type="submit" 
