@@ -300,6 +300,7 @@ export const Hero = () => {
                 initial="hidden"
                 animate="show"
                 className="subject"
+                transition={{duration:.8, delay:.3, ease:"easeInOut"}}
               ></motion.img>
               <motion.img
                 src="./images/Rock2@3x.png"
@@ -328,6 +329,8 @@ export const Hero = () => {
                 initial="hidden"
                 animate="show"
                 className="certified"
+                transition={{duration:5, delay:2, ease:"easeInOut"}}
+
               ></motion.img>
             </motion.div>
           </div>
@@ -517,7 +520,7 @@ const HeroLayout = styled.div`
         position: relative;
 
         transform-style: preserve-3d;
-        transition: all 0.5s ease;
+        transition: all 1s ease;
 
         @media (max-width: 600px) {
           padding: 0px 50px;
@@ -526,6 +529,8 @@ const HeroLayout = styled.div`
         }
 
         .circle {
+          transform-style: preserve-3d;
+          transition: all 1s ease;
           aspect-ratio: 1;
           border-radius: 500px;
           background-color: #eff5fc;
@@ -539,6 +544,8 @@ const HeroLayout = styled.div`
             padding-bottom: 20px;
           }
           .rock {
+            transform-style: preserve-3d;
+            transition: all .2s ease;
             width: 30%;
             position: absolute;
             left: 0;
@@ -562,6 +569,8 @@ const HeroLayout = styled.div`
           }
 
           .shopify {
+            transform-style: preserve-3d;
+            transition: all 1.5s ease;
             width: 38%;
             position: absolute;
             right: -50px;
@@ -581,6 +590,8 @@ const HeroLayout = styled.div`
           }
 
           .google {
+            transform-style: preserve-3d;
+            transition: all .5s ease;
             width: 38%;
             position: absolute;
             left: -129px;
@@ -601,6 +612,8 @@ const HeroLayout = styled.div`
             position: absolute;
             left: -5%;
             top: 375px !important;
+            transform-style: preserve-3d;
+            transition: all 1s ease;
             @media (max-width: 900px) {
               display: none;
             }

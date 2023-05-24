@@ -7,6 +7,7 @@ function WhyUs() {
 
   const [selectedIndex, setSelectedIndex] = useState<number>(0)
   const [image, setImage] = useState<string>('/images/work1.png')
+  const [toggleFunction,setToggleFunction] = useState<boolean>(true)
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -45,6 +46,41 @@ function WhyUs() {
     }
   ]
 
+
+  function showElistratorOnSomeInterval(){
+
+    if(selectedIndex ===0 || selectedIndex <=3){
+
+      setTimeout(()=>{
+        setSelectedIndex(1)
+        setImage("/images/work2.png")
+      },4000)
+  
+  
+      setTimeout(()=>{
+        setSelectedIndex(2)
+        setImage("/images/work3.png")
+      },8000)
+  
+  
+      setTimeout(()=>{
+        setSelectedIndex(3)
+        setImage("/images/work4.png")
+      },12000)
+
+      setTimeout(()=>{
+        setSelectedIndex(0)
+        setImage("/images/work1.png")
+      },16000)
+
+    }
+  }
+
+  if(selectedIndex === 0){
+    showElistratorOnSomeInterval()
+  }
+
+
   return (
     <Box style={{background: "#fffcfc"}}>
     <Box className="bannerList_hidden" style={{maxWidth:"1200px", margin:"auto", padding:"120px 40px"}}>
@@ -59,7 +95,7 @@ function WhyUs() {
             transition={{ duration: 0.5 }} 
             // src={points[selectedIndex].image}
             src={image}
-            alt={points[selectedIndex].title} 
+            alt=""
             width="100%" 
           />
           </Box>
@@ -71,7 +107,7 @@ function WhyUs() {
            exit={{ opacity: 0, scale: 0.5 }}
            transition={{ duration: 0.5 }} 
            src="./images/rock_branchwork_yellow_Cube.png"
-           alt={points[selectedIndex].title} 
+           alt=""
            width="40%"
           
           />
@@ -84,7 +120,7 @@ function WhyUs() {
            exit={{ opacity: 0, scale: 0.5 }}
            transition={{ duration: 0.5 }} 
            src="./images/Rock_whywork_blue.png"
-           alt={points[selectedIndex].title} 
+           alt=""
            width="45%"
           />
           </Box>
@@ -96,7 +132,7 @@ function WhyUs() {
            exit={{ opacity: 0, scale: 0.5 }}
            transition={{ duration: 0.5 }} 
            src="./images/circle_blue_m.png"
-           alt={points[selectedIndex].title} 
+           alt=""
            width="8%"
           />
           </Box>
@@ -109,7 +145,7 @@ function WhyUs() {
            transition={{ duration: 0.5 }} 
           //  src="./images/circle_blue_s.png"
            src="./images/circle_blue_m.png"
-           alt={points[selectedIndex].title} 
+           alt="" 
            width="5%"
           />
           </Box>
@@ -121,7 +157,7 @@ function WhyUs() {
            exit={{ opacity: 0, scale: 0.5 }}
            transition={{ duration: 0.5 }} 
            src="./images/circle_pink_m.png"
-           alt={points[selectedIndex].title} 
+           alt=""
            width="8%"
           />
           </Box>
@@ -131,17 +167,17 @@ function WhyUs() {
           {
             points.map((item, index) => {
               return(
-                <Box onMouseEnter={() => setImage(points[index].image)} onMouseLeave={() => setImage(points[selectedIndex].image)} key={item.title} style={{display:'flex', gap:"15px"}}>
+                <Box onMouseEnter={() => setImage(points[index]?.image)} onMouseLeave={() => setImage(points[selectedIndex]?.image)} key={item?.title} style={{display:'flex', gap:"15px"}}>
                   <Box style={{display:'flex', flexDirection:'column', alignItems:"center"}}>
                     <Box style={{width:"20px", height:'20px', borderRadius:"50%", border:`6px solid ${ selectedIndex>=index ? "#5856e9" : "#D1D1D1"}`,cursor:"pointer"}} onClick={()=>{setImage(points[index].image);setSelectedIndex(index);}}/>
                     <Box style={{width:"2px", height:'150px', backgroundColor: selectedIndex>index ? "#5856e9" : "#D1D1D1", display: index===points.length-1 ? "none" : "block" }}/>
                   </Box>
                   <Box style={{height:index===points.length-1 ? "auto" : "150px", width:"100%", position:"relative", top:"-10px"}}>
                   <FontWrapper>
-                    <Typography fontSize="24px"  fontFamily="Poppins-Medium" color={selectedIndex===index ? "#5856e9" :"#3A3B44"} className='whyus-title' style={{cursor:"pointer"}} onClick={()=>{setImage(points[index].image);setSelectedIndex(index);}}>{item.title}</Typography>
+                    <Typography fontSize="24px"  fontFamily="Poppins-Medium" color={selectedIndex===index ? "#5856e9" :"#3A3B44"} className='whyus-title' style={{cursor:"pointer"}} onClick={()=>{setImage(points[index].image);setSelectedIndex(index);}}>{item?.title}</Typography>
                     </FontWrapper>
                     <FontWrapper>
-                    <Typography fontSize="14px" fontFamily="Montserrat" color="#828490" style={{cursor:"pointer"}} className="whyus-para" onClick={()=>{setImage(points[index].image);setSelectedIndex(index);}}>{item.para}</Typography>
+                    <Typography fontSize="14px" fontFamily="Montserrat" color="#828490" style={{cursor:"pointer"}} className="whyus-para" onClick={()=>{setImage(points[index]?.image);setSelectedIndex(index);}}>{item?.para}</Typography>
                     </FontWrapper>
                   
                     </Box>
