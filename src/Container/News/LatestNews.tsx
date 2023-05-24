@@ -86,7 +86,7 @@ export const LatestNews = () => {
           style={{ display: "flex", justifyContent: "center" }}
         >
          
-          {/* <Pagination count={6}
+          {/* <Pagination count={3}
           onChange={(event, pageNumber) => handlePage(event, pageNumber)}
           color="primary" /> */}
 

@@ -96,9 +96,9 @@ export default function ServiceList() {
         className="pagination"
         style={{ display: "flex", justifyContent: "center" }}
       >
-        <Pagination count={5}
+        {/* <Pagination count={5}
           onChange={(event, pageNumber) => handlePage(event, pageNumber)}
-          color="primary" />
+          color="primary" /> */}
       </div>
     </ServiceListWrapper>
   );

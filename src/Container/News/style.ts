@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core';
+import { Widgets } from '@mui/icons-material';
 
 export default makeStyles((theme) => ({
     conatainer:{
@@ -8,6 +9,15 @@ export default makeStyles((theme) => ({
         alignContent:"center",
         flexWrap:"wrap",  
       
+    },
+    relative:{
+        position: "relative",
+    },
+    arr:{
+        position:"absolute",
+        left:"2%",
+        cursor:"pointer",
+        top:"-4%",
     },
     text:{ 
     width:"85%",  
