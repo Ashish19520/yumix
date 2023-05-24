@@ -18,13 +18,10 @@ export const LatestNews = () => {
  const navigate=useNavigate();
  const response=useSelector((state:any)=>state?.posts?.fetchNews?.feedItems);
  const dispatch: Dispatch<any> = useDispatch();
- console.log("+++++++",response);
+
 
   useEffect(()=>{
-  //  fetch();
-   dispatch(fetchNews());
-   let random = Math.floor((Math.random() * 16) + 1);
-   localStorage.setItem('hotTopic', JSON.stringify(response?.[random||4]));
+    dispatch(fetchNews());
    window.scrollTo(0, 1350.2857666015625);
   },[pageNO]);
 

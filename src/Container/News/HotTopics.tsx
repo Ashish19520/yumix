@@ -2,6 +2,10 @@ import { Container } from "@mui/material";
 import { fontSize } from "@mui/system";
 import React, { useEffect,useState } from "react";
 import styled from "styled-components";
+import { useDispatch } from 'react-redux';
+import { Dispatch } from 'redux';
+import { fetchNews } from "../../actions/posts";
+import { useSelector } from "react-redux/es/exports";
 
 export const HotTopics = () => {
 
@@ -15,6 +19,7 @@ export const HotTopics = () => {
     description: [],
   });
   
+ const dispatch: Dispatch<any> = useDispatch();
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -36,14 +41,14 @@ export const HotTopics = () => {
 
   
 useEffect(()=>{
-    fetch();
+  fetch();
 },[]);
-console.log("+++++++++",data);
+
 
 const fetch=async ()=>{
-    const response=await JSON.parse(localStorage.getItem("hotTopic") || "{}");
-
-    setData(response);
+  const dat:any=await dispatch(fetchNews());
+  let random = Math.floor((Math.random() * 10) + 1);
+  setData(dat?.feedItems[random]);
 }
   return (
     <HotTopicsWrapper>
