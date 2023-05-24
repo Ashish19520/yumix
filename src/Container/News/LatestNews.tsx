@@ -25,7 +25,11 @@ export const LatestNews = () => {
    window.scrollTo(0, 1350.2857666015625);
   },[pageNO]);
 
-
+  const itemsPerPage = 8;
+  const totalPages = Math.ceil(response?.length / itemsPerPage);
+  const startIndex = (pageNO - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentItems = response?.slice(startIndex, endIndex);
 
   // const fetch=async ()=>{
   //   let date=new Date();
@@ -66,7 +70,8 @@ export const LatestNews = () => {
       <Container maxWidth="lg" className="container ">
         <div className="heading">Latest News</div>
         <div className="cards ">
-          {response?.length>0&&response?.map((d:any) => (
+          
+          {currentItems?.length>0&&currentItems?.map((d:any) => (
             <Grid
               item
               xs={12}
@@ -86,9 +91,9 @@ export const LatestNews = () => {
           style={{ display: "flex", justifyContent: "center" }}
         >
          
-          {/* <Pagination count={6}
+          <Pagination count={totalPages}
           onChange={(event, pageNumber) => handlePage(event, pageNumber)}
-          color="primary" /> */}
+          color="primary" />
 
         </div>
       </Container>

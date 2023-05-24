@@ -1,9 +1,13 @@
 import { Container } from '@mui/material'
 import React,{useEffect,useState} from 'react'
 import useStyles from "./style"
+import Footer from '../../Components/Footer';
+import {ArrowBackSharp} from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
 
 function NewsContent() {
     const classes=useStyles();
+    const navigate=useNavigate();
     const [data, setData] = useState<{
         [key: string]: any[];
       }>({
@@ -38,10 +42,12 @@ function NewsContent() {
     //     "content": "If you often feel that you have a lot to accomplish but fall short of time in your business life, you are not alone. A majority of entrepreneurs feel this way. But, thanks to Zapier, you no longer ha…"
     // }
   return (
+    <>
     <Container style={{ backgroundColor: "#FFFCFC" }}>
-    <div className={classes.conatainer}>
-    <div>
-            <img src={(data.image[0]?.$.src)?(data.image[0]?.$.src):"../images/Rectangle first.png"} alt="img" width="100%" height="500px"></img>
+    <div className={`${classes.conatainer} ${classes.relative}`}>
+           <div >
+            <ArrowBackSharp className={classes.arr} onClick={() => navigate(-1)}/>
+            <img src={(data.image[0]?.$.src)?(data.image[0]?.$.src):"../images/Rectangle first.png"} alt="img" width="100%" height="500px"/>
         </div>
         <div className={classes.text}>
             <h1>{data.title[0]}</h1>
@@ -53,6 +59,9 @@ function NewsContent() {
         
     </div>
     </Container>
+      <Footer/>
+      </>
+  
   )
 }
 

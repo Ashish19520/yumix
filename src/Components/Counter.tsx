@@ -30,10 +30,10 @@ function formatNumber(num: number): string {
     const k = Math.floor(num / 1000);
     const remainder = num % 1000;
     if (remainder === 0) {
-      return `${k}k`;
+      return `${k} k`;
     } else {
       const decimal = remainder >= 100 ? remainder / 100 : remainder / 10;
-      return `${k}.${decimal}k`;
+      return `${k}.${decimal} k`;
     }
   } else {
     return num.toString();
@@ -61,27 +61,31 @@ function formatNumber(num: number): string {
                 <img src="./images/Ellipse 65@3x.png" className="img-dot1"></img>
                 <div className="outter">
                   <h2>
-                    {counterOn && response && response.length > 0 && formatNumber(response[0]?.attributes.count)}
+                  <CountUp start={0} end={counterOn && response && response.length > 0 &&+formatNumber(response[0]?.attributes.count).split(' ')[0]} duration={2} delay={0} />
+                    {counterOn && response && response.length > 0 && formatNumber(response[0]?.attributes.count).split(' ')[1]}
                     
                   </h2>
                   <p>CATALOG MANAGEMENT</p>
                 </div>
                 <div className="outter">
                   <h2>
-                  {counterOn && response && response.length > 0 && formatNumber(response[1]?.attributes.count)}
+                  <CountUp start={0} end={counterOn && response && response.length > 0 &&+formatNumber(response[1]?.attributes.count).split(' ')[0]} duration={2} delay={0} />
+                    {counterOn && response && response.length > 0 && formatNumber(response[1]?.attributes.count).split(' ')[1]}
                   </h2>
                   <p>ADVERTISING SERVICES</p>
                 </div>
                 <div className="outter">
                   <h2>
-                  {counterOn && response && response.length > 0 && formatNumber(response[2]?.attributes.count)}
+                  <CountUp start={0} end={counterOn && response && response.length > 0 &&+formatNumber(response[2]?.attributes.count).split(' ')[0]} duration={2} delay={0} />
+                    {counterOn && response && response.length > 0 && formatNumber(response[2]?.attributes.count).split(' ')[1]}
                     
                   </h2>
                   <p>AMAZON HEALTH CHECKUP</p>
                 </div>
                 <div className="outter">
                   <h2>
-                  {counterOn && response && response.length > 0 && formatNumber(response[3]?.attributes.count)}
+                  <CountUp start={0} end={counterOn && response && response.length > 0 &&+formatNumber(response[3]?.attributes.count).split(' ')[0]} duration={4} delay={0} />
+                    {counterOn && response && response.length > 0 && formatNumber(response[3]?.attributes.count).split(' ')[1]}
                     
                   </h2>
                   <p>AMAZON REIMBURSEMENTS</p>
