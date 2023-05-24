@@ -3,6 +3,7 @@ import React,{useEffect,useState} from 'react';
 import useStyles from "../News/style";
 import {ArrowBackSharp} from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
+import Footer from '../../Components/Footer';
 
 function BlogContent() {
     const classes=useStyles();
@@ -11,6 +12,7 @@ function BlogContent() {
     
    
   return (
+    <>
     <Container style={{ backgroundColor: "#FFFCFC" }}>
     <div className={`${classes.conatainer} ${classes.relative}`}>
     <ArrowBackSharp className={classes.arr} onClick={() => navigate(-1)}/>
@@ -25,6 +27,8 @@ function BlogContent() {
         </div>  
     </div>
     </Container>
+    <Footer/>
+    </>
   )
 }
 
