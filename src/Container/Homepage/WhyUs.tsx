@@ -54,24 +54,24 @@ function WhyUs() {
       setTimeout(()=>{
         setSelectedIndex(1)
         setImage("/images/work2.png")
-      },4000)
+      },2000)
   
   
       setTimeout(()=>{
         setSelectedIndex(2)
         setImage("/images/work3.png")
-      },8000)
+      },4000)
   
   
       setTimeout(()=>{
         setSelectedIndex(3)
         setImage("/images/work4.png")
-      },12000)
+      },6000)
 
       setTimeout(()=>{
         setSelectedIndex(0)
         setImage("/images/work1.png")
-      },16000)
+      },8000)
 
     }
   }
