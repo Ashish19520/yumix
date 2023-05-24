@@ -5,15 +5,16 @@ import styled from "styled-components";
 
 export const HotTopics = () => {
 
-  const [data,setData]=useState({
-    urlToImage:"",
-    title:"",
-    publishedAt:"",
-    author:"",
-    description:"",
-});
+  const [data, setData] = useState<{
+    [key: string]: any[];
+  }>({
+    image: [],
+    title: [],
+    pubDate: [],
+    link:[],
+    description: [],
+  });
   
-  useEffect(() => {}, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -37,7 +38,7 @@ export const HotTopics = () => {
 useEffect(()=>{
     fetch();
 },[]);
-
+console.log("+++++++++",data);
 
 const fetch=async ()=>{
     const response=await JSON.parse(localStorage.getItem("hotTopic") || "{}");
@@ -52,14 +53,14 @@ const fetch=async ()=>{
         <div className="hero-title">Hot Topics</div>
         <div className="topicContainer">
           <div className="img-box">
-            <img src={data?.urlToImage} alt="img"></img>
+          <img src={(data.image[0]?.$.src)?(data.image[0]?.$.src):"../images/Rectangle first.png"} alt="img" width="100%" height="500px"></img>
             <div className="img-text">
               <div className="title">
                 {data?.title}
               </div>
               <div className="subtitle">
-                <p>{data?.publishedAt?.split("T")[0]}.</p>
-                <p>{data?.author}</p>
+              <p>{data.pubDate[0]?.split("T")[0]}.</p>
+                {/* <p>{data?.author}</p> */}
               </div>
             </div>
           </div>
@@ -70,11 +71,11 @@ const fetch=async ()=>{
               <span
                 style={{ fontFamily: "Poppins-semiBold", fontSize: "32px" }}
               >
-               {data?.description?.split(" ")[0]}
+               {data?.description[0]?.split(" ")[0]}
               </span>
 
               <span style={{fontFamily:"Montserrat",paddingLeft:"8px",fontSize:"14px",}}>
-              {data?.description?.split(" ").slice(1).join(" ")}
+              {data?.description[0]?.split(" ").slice(1).join(" ")}
               </span>
               {/* <br></br>
               <span className="read-more" style={{fontFamily:"Montserrat-SemiBold", marginTop:"40px", fontSize:"14px"}}>read more</span> */}

@@ -23,6 +23,8 @@ export const LatestNews = () => {
   useEffect(()=>{
   //  fetch();
    dispatch(fetchNews());
+   let random = Math.floor((Math.random() * 16) + 1);
+   localStorage.setItem('hotTopic', JSON.stringify(response[random||4]));
    window.scrollTo(0, 1350.2857666015625);
   },[pageNO]);
 
