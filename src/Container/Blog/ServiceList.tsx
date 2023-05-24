@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function ServiceList() {
   const [pageNO, setPageNO] = useState(1);
-  const response=useSelector((state:any)=>state?.posts?.fetchBlogs?.response?.data);
+  const response=useSelector((state:any)=>state?.posts?.fetchBlogs?.data);
   const navigate=useNavigate();
   
   const dispatch: Dispatch<any> = useDispatch();
@@ -22,6 +22,7 @@ export default function ServiceList() {
   const handlePage = (e:any,no:any) => {
     setPageNO(no);
   };
+  console.log()
   const itemsPerPage = 6;
   const totalPages = Math.ceil(response?.length / itemsPerPage);
   const startIndex = (pageNO - 1) * itemsPerPage;
