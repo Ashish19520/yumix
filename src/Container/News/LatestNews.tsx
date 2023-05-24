@@ -5,30 +5,37 @@ import { NewsCard } from "../../Components/NewsCard";
 import { getNews } from "../../api/services";
 import { useNavigate } from "react-router-dom";
 import NewsContent from "./NewsContent";
+import { useDispatch } from 'react-redux';
+import { Dispatch } from 'redux';
+import { fetchNews } from "../../actions/posts";
+import { useSelector } from "react-redux/es/exports";
 
 
 
 export const LatestNews = () => {
- const [response,setResponse] =useState<Array<{}>>([]);;
+//  const [response,setResponse] =useState<Array<{}>>([]);;
  const [pageNO, setPageNO] = useState(1);
  const navigate=useNavigate();
+ const response=useSelector((state:any)=>state?.posts?.fetchNews?.feedItems);
+ const dispatch: Dispatch<any> = useDispatch();
+ console.log("+++++++",response);
 
   useEffect(()=>{
-   fetch();
+  //  fetch();
+   dispatch(fetchNews());
    window.scrollTo(0, 1350.2857666015625);
   },[pageNO]);
 
 
 
-  const fetch=async ()=>{
-    let date=new Date();
-    let currentDate=JSON.stringify(date).split("T")[0]
-    const news=await getNews(pageNO,16,currentDate);
-    setResponse(news?.articles);
-    let random = Math.floor((Math.random() * 16) + 1);
-    localStorage.setItem('hotTopic', JSON.stringify(news.articles[random||4]));
-    
-  }
+  // const fetch=async ()=>{
+  //   let date=new Date();
+  //   let currentDate=JSON.stringify(date).split("T")[0]
+  //   const news=await getNews(pageNO,16,currentDate);
+  //   setResponse(news?.articles);
+  //   let random = Math.floor((Math.random() * 16) + 1);
+  //   localStorage.setItem('hotTopic', JSON.stringify(news.articles[random||4]));
+  // }
   
  
   useEffect(() => {
@@ -80,9 +87,9 @@ export const LatestNews = () => {
           style={{ display: "flex", justifyContent: "center" }}
         >
          
-          <Pagination count={6}
+          {/* <Pagination count={6}
           onChange={(event, pageNumber) => handlePage(event, pageNumber)}
-          color="primary" />
+          color="primary" /> */}
 
         </div>
       </Container>

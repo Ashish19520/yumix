@@ -37,7 +37,7 @@ export const HotTopics = () => {
 useEffect(()=>{
     fetch();
 },[]);
-console.log("++",data);
+
 
 const fetch=async ()=>{
     const response=await JSON.parse(localStorage.getItem("hotTopic") || "{}");
