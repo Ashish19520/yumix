@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function ServiceList() {
   const [pageNO, setPageNO] = useState(1);
-  const response=useSelector((state:any)=>state?.posts?.fetchBlogs?.data);
+  const response=useSelector((state:any)=>state?.posts?.fetchBlogs?.response?.data);
   const navigate=useNavigate();
   
   const dispatch: Dispatch<any> = useDispatch();
@@ -22,7 +22,11 @@ export default function ServiceList() {
   const handlePage = (e:any,no:any) => {
     setPageNO(no);
   };
-
+  const itemsPerPage = 6;
+  const totalPages = Math.ceil(response?.length / itemsPerPage);
+  const startIndex = (pageNO - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentItems = response?.slice(startIndex, endIndex);
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -43,9 +47,8 @@ export default function ServiceList() {
   }, []);
 
   const showDetails=(item:any,index:any)=>{
-    localStorage.setItem('blogData', JSON.stringify(response[index].attributes));
+    localStorage.setItem('blogData', JSON.stringify(response[index]));
     navigate(`/blogs/${index}`);
-
     }
   return (
     <ServiceListWrapper>
@@ -54,7 +57,7 @@ export default function ServiceList() {
           container
           style={{ maxWidth: "1200px", padding: "80px 20px", margin: "auto" }}
         >
-          {response?.map((item:any,index:any) => {
+          {currentItems?.map((item:any,index:any) => {
             return (
               <Grid
                 item
@@ -66,7 +69,8 @@ export default function ServiceList() {
               >
                 <Box
                   style={{
-                    backgroundImage: `url(${item?.attributes?.blog_img})`,
+                    backgroundImage: `url(${item?.['media:content'][1].$.url
+                    })`,
                     width: "100%",
                     backgroundSize: "cover",
                     backgroundPosition: "center",
@@ -76,7 +80,7 @@ export default function ServiceList() {
                 />
                 <Typography className="item-type" 
               style={{cursor:"pointer"}}
-                onClick={()=>showDetails(item.id,index)}>{item?.attributes?.title}</Typography>
+                onClick={()=>showDetails(item.id,index)}>{item.title[0]}</Typography>
                 <Typography
                   style={{
                     fontSize: "16px",
@@ -84,7 +88,7 @@ export default function ServiceList() {
                     color: "#40424C",
                   }}
                 >
-                  {item.name}
+                 
                 </Typography>
               </Grid>
             );
@@ -96,9 +100,9 @@ export default function ServiceList() {
         className="pagination"
         style={{ display: "flex", justifyContent: "center" }}
       >
-        {/* <Pagination count={5}
+        <Pagination count={totalPages}
           onChange={(event, pageNumber) => handlePage(event, pageNumber)}
-          color="primary" /> */}
+          color="primary" />
       </div>
     </ServiceListWrapper>
   );
