@@ -218,7 +218,7 @@ export const Hero = () => {
 
   return (
     <HeroLayout>
-      <Container maxWidth="lg" className="container">
+      <Container  className="container">
 
         <motion.img
           src="./images/Group 38633@3x.png"
@@ -241,8 +241,7 @@ export const Hero = () => {
           variants={lines}
           initial="hidden"
           animate="show"
-          width={720}
-
+          width="100%"
         ></motion.img>
         
 
@@ -385,8 +384,10 @@ const HeroLayout = styled.div`
       display: block;
       position: absolute;
       bottom: 34%;
-      left: 20%;
+      left: 0;
+      width:"100%"
     }
+   
     
   }
 
@@ -420,6 +421,7 @@ const HeroLayout = styled.div`
     @media (max-width: 1100px) {
       background-image: unset;
     }
+    
 
     .outter {
       display: flex;

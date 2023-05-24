@@ -4,19 +4,23 @@ import useStyles from "./style"
 
 function NewsContent() {
     const classes=useStyles();
-    const [data,setData]=useState({
-        urlToImage:"",
-        title:"",
-        publishedAt:"",
-        author:"",
-        description:"",
-    });
+    const [data, setData] = useState<{
+        [key: string]: any[];
+      }>({
+        image: [],
+        title: [],
+        pubDate: [],
+        link:[],
+        description: [],
+      });
+
     useEffect(()=>{
         fetch();
     },[])
     
     const fetch=async ()=>{
         const response=JSON.parse(localStorage.getItem("data") || "{}");
+        console.log("----",response);
         setData(response);
     }
    
@@ -37,13 +41,14 @@ function NewsContent() {
     <Container style={{ backgroundColor: "#FFFCFC" }}>
     <div className={classes.conatainer}>
     <div>
-            <img src={data.urlToImage} alt="img" width="100%" height="500px"></img>
+            <img src={(data.image[0]?.$.src)?(data.image[0]?.$.src):"../images/Rectangle first.png"} alt="img" width="100%" height="500px"></img>
         </div>
         <div className={classes.text}>
-            <h1>{data.title}</h1>
-            <h2>Author : {data.author}.</h2>
-            <h4>{data.publishedAt.split("T")[0]}.</h4>
-            <p>{data.description}</p>
+            <h1>{data.title[0]}</h1>
+            {/* <h2>Author : {data.author}.</h2> */}
+            <h4>{data.pubDate[0]?.split("T")[0]}.</h4>
+            <p>{data.description[0]}</p>
+            <a href={data.link[0]} target='blank'>read full article</a>
         </div>
         
     </div>

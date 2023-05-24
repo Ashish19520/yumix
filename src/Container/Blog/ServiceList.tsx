@@ -74,7 +74,9 @@ export default function ServiceList() {
                     height: "200px",
                   }}
                 />
-                <Typography className="item-type" onClick={()=>showDetails(item.id,index)}>{item?.attributes?.title}</Typography>
+                <Typography className="item-type" 
+              style={{cursor:"pointer"}}
+                onClick={()=>showDetails(item.id,index)}>{item?.attributes?.title}</Typography>
                 <Typography
                   style={{
                     fontSize: "16px",

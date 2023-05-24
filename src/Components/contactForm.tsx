@@ -36,34 +36,38 @@ export default function ContactForm() {
   const [formData,setFormData]=useState({
     email:"",
     message:"",
-    name:""
   });
-  const response=useSelector((state:any)=>state?.posts?.formData?.data);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  
+
 
   const dispatch: Dispatch<any> = useDispatch();
 
   const changeHandalar=(e:any)=>{
     const { name, value } = e.target;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: value
-  }));
-  }
+    setFormData({
+      ...formData,
+      [name]: value})
+}
 
   useEffect(() => {
-    if (response?.id) {
-      setShowAlert(true);
-    }
-  }, [response]);
+   
+  }, [setShowAlert]);
 
-  const onSubmit = (e:any)=>{
+  const onSubmit = async(e:any)=>{
+
     e.preventDefault();
-    let data={
-      data:{
-        ...formData
-      }
+    setIsSubmitting(true);
+    let data:any = await dispatch(postForm(formData));
+    setIsSubmitting(false);
+    if(data?.message==="Success"){
+      setShowAlert(true);
+      
     }
-    dispatch(postForm(data));
+    setFormData({
+      email:"",
+      message:"",
+    });
   }
   let flag=false;
   if (state.succeeded) {
@@ -115,7 +119,7 @@ export default function ContactForm() {
   }
 
   return (
-    <Box sx={{maxWidth:"1200px", padding:"80px 40px", margin:"auto", overflow:{xs:"hidden", md:"visible"}}} id="contactForm">
+    <Box sx={{maxWidth:"1200px", padding:"80px 10px", margin:"auto", overflow:{xs:"hidden", md:"visible"}}} id="contactForm">
       
       
       <Grid container sx={{width:"100%", backgroundColor:"#232F3F", borderRadius:"42px", boxShadow:"2px 4px 10px rgba(0, 0, 0, 0.1)", backdropFilter:"blur(21px)", padding:{xs:"20px 40px", md:"50px 100px"}}}>
@@ -129,12 +133,13 @@ export default function ContactForm() {
      <FormWrapper>
         <Grid item xs={12} md={8} style={{marginBottom:"30px"}}>
           <Typography  className="form-title">Get in Touch </Typography>
-          <Typography  className="form-subTitle">Kindly drop your email and message below , someone from our team will get in touch with you soon.</Typography>
+          <Typography  className="form-subTitle">Drop us a message to explore possibilities in selling on Marketplaces</Typography>
           <form onSubmit={onSubmit}>
           <Box style={{display:"flex", alignItems:"stretch", gap:"20px", flexWrap:"wrap"}}>
             <input
              type="email" 
              placeholder="Email*" 
+             value={formData.email}
              required style={{...style.input}}
               name="email"
               onChange={changeHandalar}/>
@@ -146,10 +151,15 @@ export default function ContactForm() {
               required
                style={{...style.input}}
                name="message"
+               value={formData.message} 
                onChange={changeHandalar}/>
 
-            <Button type="submit" disabled={state.submitting} disableElevation variant='contained' sx={{...style.button, color:"white", backgroundColor:"#5856e9"}}>
-                Send
+            <Button type="submit" 
+            disabled={isSubmitting} 
+            disableElevation variant='contained'
+            style={{ backgroundColor:"#5856e9",color:"white"}}
+            sx={{...style.button, color:"white", backgroundColor:"#5856e9"}}>
+            {isSubmitting ? 'Submitting' : 'Send'}
             </Button>
             {flag &&  <Typography style={{color:"#D3D2F9", fontSize:"16px", fontFamily:"Montserrat", lineHeight:"24px"}}>Please Enter Email Again</Typography>}
            
@@ -158,7 +168,7 @@ export default function ContactForm() {
         </Grid>
         <Grid item xs={12} md={4}>
         
-          <img className="img-sub_aboutus" src="../images/brisaTakingParcelRight.png" width="80%" style={{scale:"1.7"}}/>
+          <img className="img-sub_aboutus" src="./images/brisaTakingParcelRight.png" width="80%" style={{scale:"1.7"}}/>
          
         </Grid>
         </FormWrapper>
