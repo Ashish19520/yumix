@@ -22,10 +22,10 @@ export const Counter = () => {
 function formatNumber(num: number): string {
   if (num >= 10000000) {
     const crore = Math.floor(num / 10000000);
-    return `${crore} cr +`;
+    return `${crore} cr+`;
   } else if (num >= 100000) {
     const lakh = Math.floor(num / 100000);
-    return `${lakh} Lk +`;
+    return `${lakh} Lk+`;
   } else if (num >= 1000) {
     const k = Math.floor(num / 1000);
     const remainder = num % 1000;

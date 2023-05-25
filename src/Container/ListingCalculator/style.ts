@@ -23,7 +23,7 @@ export default makeStyles((theme:any) => ({
         right:"0",
         top:"60%",
         bottom:"0",
-        zIndex:1
+        zIndex:-1
       },
       imageLines2:{
         position:"absolute",
@@ -40,13 +40,11 @@ export default makeStyles((theme:any) => ({
       },
       imageLines3:{
         position:"absolute",
-        left:"0",
-        right:"0",
-        top:"-40%",
-        bottom:"0",
+        bottom:0,
+        left:"-2%",
         zIndex:2,
         height:"300px",
-        width:"100%"
+        width:"100%",
       },
       imageLines4:{
         position:"absolute",
@@ -58,6 +56,36 @@ export default makeStyles((theme:any) => ({
         height:"300px",
         width:"100%"
       },
+      imageLines5:{
+        position:"absolute",
+        right:"5%",
+        top:"27%",
+        zIndex:1,
+        width:"40%"
+      },  
+      imageLines6:{
+        position:"absolute",
+        right:"7%",
+        top:"22%",
+        zIndex:1,
+        width:"10%",
+        height:"12%"
+      },  
+      imageLines7:{
+        position:"absolute",
+        top:"20%",
+        zIndex:1,
+        width:"17%",
+        height:"70%"
+      },  
+      imageLines8:{
+        position:"absolute",
+        left:"-4%",
+        bottom:"-10%",
+        zIndex:1,
+        width:"12px",
+        height:"12px"
+      },  
       img: {
         width: "30%",
         [theme.breakpoints.down('sm')]: {

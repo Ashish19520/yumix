@@ -7,6 +7,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import { SelectChangeEvent } from '@mui/material/Select';
 import useStyles from './style';
+import zIndex from '@mui/material/styles/zIndex';
 
 function ListCalc() {
   const classes = useStyles();
@@ -22,8 +23,8 @@ function ListCalc() {
   return (
     <ListContainer style={{ backgroundColor: "#FFFCFC" }}>
       <Container maxWidth="lg" className="container" >
-        <div className="hero_wrapper">
-          <div className="info-box_FBA">
+        <div className="hero_wrapper"  >
+          <div className="info-box_FBA" >
             <div className="fba-Title">Optimise Listing Visibilty</div>
             <div className="fba-subTitle">
               Increase your Amazon sales and conversions with a perfectly optimised listing alongside on page factors.
@@ -35,8 +36,8 @@ function ListCalc() {
               ></input>
               <button className="btn_FBACalculate">Optimising Visibilty</button>
             </div>
-          </div>
-          <div className={classes.heroImg} >
+           </div>
+           <div className={`${classes.heroImg}`} >
             <img
             className={classes.heroImg}
             src="../images/Saly-10.png"
@@ -47,6 +48,22 @@ function ListCalc() {
           </div>
           
         </div>
+        <motion.img
+              src="../images/Rock2@3x.png"
+              className={classes.imageLines6}
+              initial="hidden"
+              animate="show"
+              width="70%"
+              height="70%"
+            ></motion.img>
+        <motion.img
+              src="../images/Ellipse.png"
+              className={classes.imageLines5}
+              initial="hidden"
+              animate="show"
+              width="70%"
+              height="70%"
+            ></motion.img>
         
         <motion.img
               src="../images/Group 38639.png"
@@ -67,7 +84,7 @@ function ListCalc() {
       </Container>
       <Container maxWidth='lg' className="container">
         <div className={classes.wrapper}>
-          <div className={classes.img}>
+          <div className={`classes.img ${classes.index}`}>
             <img src="../images/61+lhpMw+2L 1.png" alt="img" height="200px" width="250px"></img>
           </div>
 
@@ -96,6 +113,12 @@ function ListCalc() {
             </div>
           </div>
         </div>
+        <motion.img
+              src="../images/Ellipse.png"
+              className={classes.imageLines7}
+              initial="hidden"
+              animate="show"
+            ></motion.img>
       </Container>
       <Container maxWidth='lg' className="container">
         <div className={`${classes.twoContainer} `}>
@@ -121,6 +144,12 @@ function ListCalc() {
             </div>
           </div>
         </div>
+        <motion.img
+              src="../images/Ellipse 63.png"
+              className={classes.imageLines8}
+              initial="hidden"
+              animate="show"
+            ></motion.img>
       </Container>
       <Container className={classes.relative}>
         <div className={classes.fourthContainer}>
@@ -187,7 +216,7 @@ function ListCalc() {
           <div className={classes.innerFifthContainer} >
             <div className={classes.innersecondFifthContainer}>
               <h4>Ratings</h4>
-              <div className={classes.greenGood}>Bad</div>
+              <div className={classes.redGood}>Bad</div>
             </div>
             <div className={classes.innersecondFifthContainer}  >
               <p>Title is possibly the most important part of the product listing. Ensure the title is readable, is relevant to your product and is keyword rich. Most of your main keywords go here.</p>
@@ -200,7 +229,7 @@ function ListCalc() {
           <div className={classes.innerFifthContainer} >
             <div className={classes.innersecondFifthContainer}>
               <h4>Reviews</h4>
-              <div className={classes.redGood}>Good</div>
+              <div className={classes.greenGood}>Good</div>
             </div>
             <div className={classes.innersecondFifthContainer}  >
               <p>Title is possibly the most important part of the product listing. Ensure the title is readable, is relevant to your product and is keyword rich. Most of your main keywords go here.</p>
