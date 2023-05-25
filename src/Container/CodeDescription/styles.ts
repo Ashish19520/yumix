@@ -22,6 +22,23 @@ export default makeStyles((theme) => ({
     bottom:"0",
     zIndex:1
   },
+  imageLines6:{
+    position:"absolute",
+    right:"5%",
+    top:"16%",
+    bottom:"0",
+    zIndex:1,
+    width:"40%"
+  },
+  index:{
+    zIndex:7
+  },
+  toolbar: {
+    display: "none",/* Hide the toolbar */
+  },
+  relative:{
+    position:"relative",
+  },
   imageLines2:{
     position:"absolute",
     left:"45%",
@@ -31,6 +48,33 @@ export default makeStyles((theme) => ({
     zIndex:1,
     width:"20px",
     height:"20px"
+  },
+  imageLines3:{
+    position:"absolute",
+    right:"17%",
+    top:"20%",
+    bottom:"0",
+    zIndex:1,
+    width:"20px",
+    height:"20px"
+  },
+  imageLines4:{
+    position:"absolute",
+    left:"-20px",
+    right:"0",
+    top:"0%",
+    bottom:"0",
+    zIndex:1,
+    height:"300px",
+    width:"100%"
+  },
+  imageLines5:{
+    position:"absolute",
+    left:"31%",
+    bottom:"-9%",
+    zIndex:1,
+    width:"12px",
+    height:"12px"
   },
   insideFirstContainer: {
     display: "flex",
@@ -92,7 +136,8 @@ export default makeStyles((theme) => ({
     padding: "10px",
     width: "500px",
     height: "300px",
-    border: "0",
+    border: "none",
+    outline:"none",
     fontFamily: "Poppins",
     fontSize: "16px",
     lineHeight: "18px",
@@ -118,6 +163,7 @@ export default makeStyles((theme) => ({
     width: "30%",
   },
   btn_FBACalculate: {
+    
     background: "#5956e9",
     color: "#e0e0e0",
     borderRadius: "10px",

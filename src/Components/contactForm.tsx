@@ -168,7 +168,7 @@ export default function ContactForm() {
         </Grid>
         <Grid item xs={12} md={4}>
         
-          <img className="img-sub_aboutus" src="./images/brisaTakingParcelRight.png" width="80%" style={{scale:"1.7"}}/>
+          <img className="img-sub_aboutus" src="../images/brisaTakingParcelRight.png" width="80%" style={{scale:"1.7"}}/>
          
         </Grid>
         </FormWrapper>

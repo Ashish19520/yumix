@@ -1,14 +1,48 @@
-import React,{useEffect} from 'react'
+import React,{useEffect,useState} from 'react'
 import { Container, TextField, Typography } from "@mui/material";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import useStyles from './styles';
+import  Editor  from 'react-rte';
+import { Handshake } from '@mui/icons-material';
+
 
 function CodeDesc() {
     const classes = useStyles();
     useEffect(() => {
       window.scrollTo(0, 0);
     }, []);
+
+    const [editorValue, setEditorValue] = useState(Editor.createEmptyValue());
+    const [copied,setCopied]=useState(false);
+
+    const handleChange = (value: any) => {
+      setEditorValue(value);
+    };
+  
+    const getHtmlContent = () => {
+      return editorValue.toString('html');
+    };
+  
+    const handleHtmlChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+      const htmlContent = event.target.value;
+      const newEditorValue = Editor.createValueFromString(htmlContent, 'html');
+      setEditorValue(newEditorValue);
+    };
+    const copyHandlar=()=>{
+      const valueToCopy = getHtmlContent();
+      if (valueToCopy) {
+        navigator.clipboard.writeText(valueToCopy)
+          .then(() => {
+           setCopied(true);
+          })
+          .catch((error) => {
+            setCopied(false);
+          });
+      }
+    }
+
+    
   return (
     <CodeContainer style={{ backgroundColor: "#FFFCFC",position:"relative" }}>
     <Container
@@ -34,17 +68,9 @@ function CodeDesc() {
       {/* <div className="img-box_FBA">
         <img src="../images/8 - Lucas Dancing.png" alt="img" height="480px" width="552px"></img>
       </div> */}
-      <div className="box hoverimg">
-        <div className="fba">
-          {/* <img
-                src="../images/Ellipse 75@3x.png"
-                className="images-tools-bounce1"
-                alt="img"
-                height="447px"
-                width="44px"
-              ></img> */}
+      <div className={`box hoverimg ${classes.index}`}>
+        <div className="fba" >
           <img
-         
             src="../images/04 Market Research.png"
             className="images-tools-bounce1"
             alt="img"
@@ -52,6 +78,11 @@ function CodeDesc() {
         </div>
       </div>
     </div>
+    <motion.img
+             src="../images/Ellipse 75@3x.png"
+             className={classes.imageLines6}
+             alt="img"
+            ></motion.img>
              <motion.img
               src="../images/Group 38639.png"
               className={classes.imageLines1}
@@ -73,33 +104,54 @@ function CodeDesc() {
     <div className={classes.firstContainer}>
         <div className={classes.insideFirstContainer}>
             <p>Write your product’s description here.</p>
-            <textarea className={classes.txtField}></textarea>
+            {/* <textarea className={classes.txtField}></textarea> */}
+            <Editor
+            className={classes.txtField}
+            value={editorValue}
+            onChange={handleChange}
+            toolbarClassName={classes.toolbar}
+           />
+           
 
         </div>
         <div className={classes.insideFirstContainerTwo}>
             <p>Your HTML code will appear here.</p>
-            <button className={classes.btn1}>copy code</button>
+            <textarea
+            className={classes.txtField}
+            value={getHtmlContent()}
+            // onChange={handleHtmlChange}
+            />
+            <button className={classes.btn1} onClick={copyHandlar}>
+              {copied?"copied":"copy code"}</button>
             
 
         </div>
     </div>
   </Container>
-  <Container>
+  <Container className={classes.relative}>
         <div className={classes.thirdWrapper}> 
             
                 <h1>Amazon Listing Policies</h1>
                 <div className={classes.thirdWrapperTwo}>
                 <p className={classes.txt}>
                 Amazon's listing policies are guidelines that Amazon sellers must follow to create product listings on the platform, ensuring a positive customer experience and maintaining a good seller account standing.
+                <motion.img
+              src="../images/Ellipse 63@3x.png"
+              className={classes.imageLines3}
+              initial="hidden"
+              animate="show"
+              width="70%"
+              height="70%"
+            ></motion.img>
                 </p> 
-                    <button className={classes.btn_FBACalculate}>Check Policies button</button>
+                    <button className={classes.btn_FBACalculate}>Check Policies</button>
                 </div>
 
         </div>
       </Container>
       <Container >
         <div className={classes.fourthWrapper}>
-            <div className={classes.firstFourthWrapper}>
+            <div className={`${classes.firstFourthWrapper} ${classes.relative}`}>
                 <div className={`${classes.secondFourthWrapper} ${classes.txt2}`}>
                     Amazon's Quick Start Style Guide outlines general rules for writing product listings applicable to all products on the platform.
                 </div>
@@ -109,6 +161,12 @@ function CodeDesc() {
                 <div className={`${classes.secondFourthWrapper} ${classes.txt2}`}>
                 Irrespective of the product category, product titles must not exceed 200 characters, including spaces
                 </div>
+                <motion.img
+              src="../images/Ellipse 63.png"
+              className={classes.imageLines5}
+              initial="hidden"
+              animate="show"
+            ></motion.img>
             </div>
             <div className={classes.firstFourthWrapper}>
             <div className={`${classes.secondFourthWrapper} ${classes.txt2}`}>
@@ -133,7 +191,7 @@ function CodeDesc() {
                 </div>
             </div>
         </div>
-        <motion.img
+        {/* <motion.img
               src="../images/Group 38639.png"
               className={classes.imageLines1}
               initial="hidden"
@@ -148,21 +206,28 @@ function CodeDesc() {
               animate="show"
               width="70%"
               height="70%"
-            ></motion.img>
+            ></motion.img> */}
       </Container>
-  <Container>
+  <Container className={classes.relative}>
+  <motion.img
+              src="../images/Frame 56.png"
+              className={classes.imageLines4}
+              initial="hidden"
+              animate="show"
+              width="100%"
+            ></motion.img>
         <div>
           <div >
             <h1>Try out other resources for your business</h1>
           </div>
 
           <div className={classes.innerSeventh} >
-            <div className={classes.img1}>
+            <div className={`${classes.img1} ${classes.index}`}>
               <img src="../images/Rectangle first.png" alt="img" height="200px" width="368px"></img>
               <p> Resources</p>
               <h2> FBA Calculator</h2>
             </div>
-            <div className={`${classes.img1} `}>
+            <div className={`${classes.img1} ${classes.index}`}>
               <img src="../images/Rectangle second.png" alt="img" height="200px" width="368px"></img>
               <p> Optimising Listing Library</p>
               <h2> FBA Calculator</h2>
