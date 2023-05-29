@@ -1,6 +1,7 @@
 import { Button, Container } from "@mui/material";
 import React, { useEffect } from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 export const ServiceWeProvide = () => {
   useEffect(() => {
@@ -21,8 +22,8 @@ export const ServiceWeProvide = () => {
     const hiddenElements = document.querySelectorAll(".service-fade");
     hiddenElements.forEach((el) => observer.observe(el));
   }, []);
-
-  return (
+    const navigate=useNavigate();
+  return (  
     <div id="digitalMedia">
       <ServiceWeProvideWrapper>
         <Container maxWidth="lg" className="container">
@@ -46,12 +47,14 @@ export const ServiceWeProvide = () => {
                 </div>
                 <Button
                   disableElevation
+                  onClick={()=>navigate('digitalMedia')}
                   variant="contained"
                   sx={{
                     ...style.buttonBorder,
                     color: "white",
                     backgroundColor: "#5856e9",
                   }}
+                  
                 >
                   View More
                 </Button>

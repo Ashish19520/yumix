@@ -1,6 +1,7 @@
 import { Button, Container } from "@mui/material";
 import React, { useEffect } from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 export const ServicesBanner = () => {
   useEffect(() => {
@@ -17,11 +18,11 @@ export const ServicesBanner = () => {
         // }
       });
     });
-
+    
     const hiddenElements = document.querySelectorAll(".service-fade-banner");
     hiddenElements.forEach((el) => observer.observe(el));
   }, []);
-
+  const navigate=useNavigate();
   return (
     <ServiceBanner>
       <Container maxWidth="lg" className="container">
@@ -43,6 +44,7 @@ export const ServicesBanner = () => {
             <Button
               disableElevation
               variant="contained"
+              onClick={()=>navigate('/analytics')}
               sx={{
                 ...style.buttonBorder,
                 color: "white",
@@ -71,6 +73,7 @@ export const ServicesBanner = () => {
             <Button
               disableElevation
               variant="contained"
+              onClick={()=>navigate('/customerExperience')}
               sx={{
                 ...style.buttonBorder,
                 color: "white",

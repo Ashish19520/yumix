@@ -79,6 +79,9 @@ export default makeStyles((theme) => ({
       flexDirection:"row",
     },
   },
+  index:{
+    zIndex:7
+  },
   pair: {
     display: "flex",
     flexDirection:"row",
@@ -288,6 +291,27 @@ export default makeStyles((theme) => ({
         maxWidth: '280px',
       
       },
+  },imageLines1:{
+    position:"absolute",
+    left:"10%",
+    bottom:"-24%",
+    zIndex:1
+  },
+  imageLines7:{
+    position:"absolute",
+    left:"48%",
+    bottom:"10%",
+    zIndex:1,
+    width:"20px",
+    height:"20px"
+  },
+  heroRock:{
+    position:"absolute",
+    top:"17%",
+    right:"32%",
+    width:"80px",
+    height:"80px",
+
   },
   imageLines:{
     position: 'absolute',
@@ -297,9 +321,15 @@ export default makeStyles((theme) => ({
   },
   imageLines2:{
     position: 'absolute',
-    left:0,
-    // top:"100px",
+    left:"-5%",
    zIndex:1,
+  },
+  heroCircle:{
+    position:"absolute",
+    width:"38%",
+    height:"70%",
+    top:"10%",
+    right:"5%"
   },
   imageLines3:{
     alignSelf:"end",
@@ -308,6 +338,38 @@ export default makeStyles((theme) => ({
     bottom:"-30%",
     // top:"100px",
    zIndex:1,
+  },
+  imageLines8:{
+    position: 'absolute',
+    top:"-10%",
+    right:"10%",
+    height:"67px",
+    width:"75px",
+   zIndex:1,
+  },
+  imageLines9:{
+    position: 'absolute',
+    top:"15%",
+    right:"20%",
+    height:"34px",
+    width:"34px",
+   zIndex:1,
+  },
+  imageLines10:{
+    position: 'absolute',
+    top:"0",
+    left:"20%",
+    height:"28px",
+    width:"28px",
+   zIndex:1,
+  },
+  imageLines11:{
+    position:"absolute",
+    left:"-20px",
+    bottom:"0",
+    zIndex:-1,
+    height:"300px",
+    width:"100%"
   },
   imageLines4:{
     // alignSelf:"flex-start",

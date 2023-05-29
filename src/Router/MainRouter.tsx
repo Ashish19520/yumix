@@ -13,6 +13,9 @@ import ListingCalculator from "../Pages/ListingCalculator";
 import DiscriptionToCode from "../Pages/DiscriptionToCode";
 import NewsContent from "../Container/News/NewsContent";
 import BlogContent from "../Container/Blog/BlogContent";
+import DigitalMedia from "../Pages/DigitalMedia";
+import Analytics from "../Pages/Analytics";
+import CustomerExpierence from "../Pages/CustomerExpierence";
 
 const MainRouter = () => {
   return (
@@ -23,6 +26,9 @@ const MainRouter = () => {
         <Route path="/home" element={<h1>Hello from Homepage</h1>} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/ourservices" element={<Services />} />
+        <Route path="/ourservices/:digitaMedia" element={<DigitalMedia />} />
+        <Route path="/analytics" element={<Analytics/>} />
+        <Route path="/customerExperience" element={<CustomerExpierence/>} />
         <Route path="/works" element={<Works />} />
         <Route path="/blogs" element={<Blog />} />
         <Route path="/blogs/:id" element={<BlogContent />} />

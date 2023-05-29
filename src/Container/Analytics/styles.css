@@ -1,0 +1,65 @@
+
+.wrapper{
+   
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+}
+.relative{
+    position: relative;
+}
+.ft{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 55px;
+/* identical to box height, or 172% */
+
+    text-align: center;
+    letter-spacing: 1.25px;
+
+    color: #43444D;
+}
+.textCircle{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+/* or 150% */
+    text-align: center;
+    letter-spacing: 0.25px;
+    width:90%;
+}
+.cube{
+    position: absolute;
+    width: 88.65px;
+    height: 81px;
+    right:0%;
+    bottom: 12%;
+}
+.pinkCircle{
+    position: absolute;
+    width: 39px;
+    height: 39px;
+    left: 0;
+    top: -10%;
+}
+.blueCircle{
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    right: 20%;
+    top: 10%;
+}
+.orangeCircle{
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 15%;
+    top: 70%;
+}

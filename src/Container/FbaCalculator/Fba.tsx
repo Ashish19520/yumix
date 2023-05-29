@@ -25,15 +25,9 @@ export const Fba = () => {
   const classes = useStyles();
   return (
     <FbaContainer style={{ backgroundColor: "#FFFCFC",width:"100vw"}}>
-      <Container fixed className="container" >
+      <Container  className="container" >
         <div className="hero_wrapper">
-        <motion.img
-              src="../images/Testimonials Bg.png"
-              className={classes.imageLines2}
-              initial="hidden"
-              animate="show"
-              width="100%"
-            ></motion.img>
+       
           <div className="info-box_FBA">
             <div className="fba-Title">FBA Calculator</div>
             <div className="fba-subTitle">
@@ -48,29 +42,39 @@ export const Fba = () => {
               <button className="btn_FBACalculate">Calculate</button>
             </div>
           </div>
-          {/* <div className="img-box_FBA">
-            <img src="../images/8 - Lucas Dancing.png" alt="img" height="480px" width="552px"></img>
-          </div> */}
           <div className="box hoverimg" style={{zIndex:"1"}}>
             <div className="fba" >
-              {/* <img
-                    src="../images/Ellipse 75@3x.png"
-                    className="images-tools-bounce1"
-                    alt="img"
-                    height="447px"
-                    width="44px"
-                  ></img> */}
               <img
-              
                 src="../images/8 - Lucas Dancing.png"
-                className="images-tools-bounce1"
                 alt="img"
               ></img>
             </div> 
           </div>
         </div>
-
-
+        <motion.img
+              src="../images/Rock2@3x.png"
+              className={classes.heroRock}
+              initial="hidden"
+              animate="show"
+            ></motion.img>
+        <motion.img
+              src="../images/Ellipse 75@3x.png"
+              className={classes.heroCircle}
+              initial="hidden"
+              animate="show"
+            ></motion.img>
+        <motion.img
+              src="../images/Group 38639.png"
+              className={classes.imageLines1}
+              initial="hidden"
+              animate="show"
+            ></motion.img>
+             <motion.img
+              src="../images/Ellipse 63@3x.png"
+              className={classes.imageLines7}
+              initial="hidden"
+              animate="show"
+            ></motion.img>
       </Container>
       <Container fixed className="container">
         <div className={classes.wrapper}>
@@ -169,7 +173,7 @@ export const Fba = () => {
       <Container fixed maxWidth='lg' className="container">
         <div className={classes.twoContainer}>
         <motion.img
-              src="../images/Group 38608@3x.png"
+              src="../images/Line.png"
               className={classes.imageLines2}
               initial="hidden"
               animate="show"
@@ -205,6 +209,7 @@ export const Fba = () => {
       </Container>
       <Container fixed  className="container">
         <div className={classes.fifthContainer}>
+       
         <motion.img
               src="../images/newRock2@3x.png"
               className={classes.imageLines4}
@@ -212,6 +217,26 @@ export const Fba = () => {
               animate="show"
               width="100px"
               height="100px"
+            ></motion.img>
+            
+            <motion.img
+              src="../images/rock_branchwork_yellow_Cube.png"
+              className={classes.imageLines8}
+              initial="hidden"
+              animate="show"
+            ></motion.img>
+            <motion.img
+              src="../images/circle_pink_m.png"
+              className={classes.imageLines9}
+              initial="hidden"
+              animate="show"
+            ></motion.img>
+             <motion.img
+              src="../images/Ellipse 62@3x.png"
+              className={classes.imageLines10}
+              initial="hidden"
+              animate="show"
+      
             ></motion.img>
           <div className={classes.fifthHeading}>
             <h1 >FBA v/s FBM</h1>
@@ -282,19 +307,20 @@ export const Fba = () => {
           </div>
         </div>
       </Container>
-      <Container fixed>
+      <Container className="container">
+      
         <div>
           <div >
             <h1>Try out other resources for your business</h1>
           </div>
 
           <div className={classes.innerSeventh} >
-            <div className={classes.img}>
+            <div className={`${classes.img} ${classes.index}`}>
               <img src="../images/Rectangle first.png" alt="img" height="200px" width="368px"></img>
               <p> Resources</p>
               <h2> FBA Calculator</h2>
             </div>
-            <div className={`${classes.img} `}>
+            <div className={`${classes.img} ${classes.index}`}>
               <img src="../images/Rectangle second.png" alt="img" height="200px" width="368px"></img>
               <p> Optimising Listing Library</p>
               <h2> FBA Calculator</h2>
@@ -302,6 +328,13 @@ export const Fba = () => {
           </div>
 
         </div>
+        <motion.img
+              src="../images/Frame 56.png"
+              className={classes.imageLines11}
+              initial="hidden"
+              animate="show"
+              width="100%"
+            ></motion.img>
       </Container>
     </FbaContainer >
 
@@ -312,6 +345,7 @@ const FbaContainer = styled.div`
   .container {
     z-index:1;  
     margin: auto;
+    position: relative;
     padding-top: 80px;
     .hero_wrapper {
       display: flex;
