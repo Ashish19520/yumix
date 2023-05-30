@@ -1,16 +1,18 @@
 import React from 'react'
 import Footer from '../Components/Footer'
 import ContactForm from '../Components/contactForm'
-import CustomerHero from '../Container/CustomerExpierence/CustomerHero'
+import AmazonHero from '../Container/Amazon/AmazonHero'
+import AmazonMap from '../Container/Amazon/AmazonMap'
 
-function CustomerExpierence() {
+function Amazon() {
   return (
     <div>
-      <CustomerHero/>
+      <AmazonHero/>
+      <AmazonMap/>
       <ContactForm/>
       <Footer/>
     </div>
   )
 }
 
-export default CustomerExpierence
+export default Amazon

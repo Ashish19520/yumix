@@ -1,16 +1,18 @@
 import React from 'react'
+import PaidHero from '../Container/PaidSearch/PaidHero'
 import Footer from '../Components/Footer'
 import ContactForm from '../Components/contactForm'
-import CustomerHero from '../Container/CustomerExpierence/CustomerHero'
+import PaidMap from '../Container/PaidSearch/PaidMap'
 
-function CustomerExpierence() {
+function PaidSearch() {
   return (
     <div>
-      <CustomerHero/>
+      <PaidHero/>
+      <PaidMap/>
       <ContactForm/>
       <Footer/>
     </div>
   )
 }
 
-export default CustomerExpierence
+export default PaidSearch

@@ -1,65 +1,23 @@
-import { Box, Grid, Typography,Button } from "@mui/material";
+import { Box, Grid, Typography,Button, Container } from "@mui/material";
 import { useEffect } from "react";
 import styled from "styled-components";
 import { GrNext, GrPrevious } from "react-icons/gr";
-import {Link,useNavigate} from "react-router-dom";
+import { motion } from "framer-motion";
 
 
-export default function DigitalMap() {
-  const navigate=useNavigate();
+export default function PaidMap() {
   const blogs = [
     {
-      name: "Paid Search Marketing Services",
-      type: "Maximize results and your budget with a unique, granular approach to delivering the most relevant experience to your customers.",
-      image: "../images/laptop.png",
-      open:"view more",
+      name: "Lacoste",
+      type: "Boosting Search Revenue with Hyper-Local Strategies.",
+      image: "../images/lacoste.png",
+      open:"541% improvement on ROl"
     },
-    {
-      name: "Amazon Ads Services",
-      type: "Enhance customer interaction on Amazon to exponentially increase your sales, spanning from creating awareness to driving purchases.",
-      image: "../images/Background.png",open:"view more"
-    },
-    {
-      name: "How to deal with SVB collapse",
-      type: "Blog",
-      image: "../images/Image@3x.png",
-      open:"view more"
-    },
-    {
-      name: "Inspiration to build your online store",
-      type: "Inspiration",
-      image: "../images/Img1.png",
-      open:"view more"
-    },
-    {
-      name: "How To Gear Forward in 2023",
-      type: "Tips",
-      image: "../images/Image@3x.png",
-      open:"view more"
-    },
-    {
-      name: "Digital commerce is changing rapidly",
-      type: "Blog",
-      image: "../images/Img1.png",
-      open:"view more"
-    },
-    {
-      name: "How to deal with SVB collapse",
-      type: "Blog",
-      image: "../images/Image@3x.png",
-      open:"view more"
-    },
-    {
-      name: "Inspiration to build your online store",
-      type: "Inspiration",
-      image: "../images/Img1.png",
-      open:"view more"
-    },
-    {
-      name: "How To Gear Forward in 2023",
-      type: "Tips",
-      image: "../images/Image@3x.png",
-      open:"view more"  
+    { 
+      name: "Crosley",
+      type: "Reaching Qualified B2B Opportunities with offline data integration.",
+      image: "../images/cla.png",
+      open:"10x improvement in Conversion to Opportunity Rate"
     },
   ];
 
@@ -84,12 +42,31 @@ export default function DigitalMap() {
     hiddenElements.forEach((el) => observer.observe(el));
   }, []);
   return (
+   
+    <Container style={{marginTop:"100px",position:"relative"}}>
+      
     <ServiceListWrapper>
+      <div className="dot-wrapper">
+      <div className="heading">Our Results</div>
+      <motion.img
+              src="../images/Ellipse 63.png"
+              className="sphere-half"
+              id="dot"
+              initial="hidden"
+              animate="show"
+            ></motion.img>
+      </div>
+    
+
       <div className="services-list-imgs">
+      
         <Grid
           container
-          style={{ maxWidth: "1200px", padding: "80px 20px", margin: "auto" }}
+          style={{ maxWidth: "1200px", padding: "20px", margin: "auto" }}
+         
         >
+          
+         
           {blogs.map((item) => {
             return (
               <Grid
@@ -108,6 +85,7 @@ export default function DigitalMap() {
                     backgroundPosition: "center",
                     borderRadius: "12px",
                     height: "200px",
+                    marginBottom:"10px"
                   }}
                 />
                 <Typography
@@ -120,15 +98,19 @@ export default function DigitalMap() {
                   {item.name}
                 </Typography>
                 <Typography className="item-type">{item.type}</Typography>
-                <Typography 
-                className="item-type" 
-                  onClick={()=>navigate('/paidSearch')}
-                >{item.open}</Typography>
+                <Typography className="item-type">{item.open}</Typography>
                 
-              </Grid>
+              </Grid> 
             );
           })}
+         
         </Grid>
+        <motion.img
+              src="../images/Round Cube2.png"
+              initial="hidden"
+              animate="show"
+              className="half-cube"
+            ></motion.img>
       </div>
 
       {/* <div
@@ -153,6 +135,8 @@ export default function DigitalMap() {
         <GrNext style={{marginTop:"10px"}} className="nxt-btn"/>
       </div> */}
     </ServiceListWrapper>
+    </Container>
+    
   );
 }
 
@@ -162,13 +146,28 @@ const ServiceListWrapper = styled.div`
     font-family: Montserrat-Medium;
     color: #40424c;
     margin-top: 20px;
-    cursor: pointer;
 
     @media (max-width: 600px) {
       font-size: 11.79px;
     }
   }
-
+ 
+  .sphere-half{
+    width:15px;
+    height:15px;
+  }
+  .dot-wrapper{
+    display:flex;
+    justify-content: flex-start;
+  }
+  #dot{
+    align-self: center;
+    margin:0 auto;
+  }
+  .half-cube{
+    position: absolute;
+    left:-7%;
+  }
   .item-name {
     font-size: 16px;
     font-family: Montserrat-SemiBold;
@@ -181,5 +180,14 @@ const ServiceListWrapper = styled.div`
     @media(max-width:600px){
         margin-right: 5%;
     }
+  }
+  .heading{
+font-style: normal;
+font-weight: 800;
+font-size: 36.8759px;
+line-height: 110%;
+margin-left:40px;
+/* identical to box height, or 41px */
+color: #2F2F2F;
   }
 `;

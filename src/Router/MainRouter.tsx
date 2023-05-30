@@ -16,6 +16,8 @@ import BlogContent from "../Container/Blog/BlogContent";
 import DigitalMedia from "../Pages/DigitalMedia";
 import Analytics from "../Pages/Analytics";
 import CustomerExpierence from "../Pages/CustomerExpierence";
+import PaidSearch from "../Pages/PaidSearch";
+import Amazon from "../Pages/Amazon";
 
 const MainRouter = () => {
   return (
@@ -29,6 +31,8 @@ const MainRouter = () => {
         <Route path="/ourservices/:digitaMedia" element={<DigitalMedia />} />
         <Route path="/analytics" element={<Analytics/>} />
         <Route path="/customerExperience" element={<CustomerExpierence/>} />
+        <Route path="/paidSearch" element={<PaidSearch/>} />
+        <Route path="/amazon" element={<Amazon/>} />
         <Route path="/works" element={<Works />} />
         <Route path="/blogs" element={<Blog />} />
         <Route path="/blogs/:id" element={<BlogContent />} />
