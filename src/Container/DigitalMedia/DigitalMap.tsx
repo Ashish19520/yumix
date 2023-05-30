@@ -13,11 +13,13 @@ export default function DigitalMap() {
       type: "Maximize results and your budget with a unique, granular approach to delivering the most relevant experience to your customers.",
       image: "../images/laptop.png",
       open:"view more",
+      add:"/paidSearch"
     },
     {
       name: "Amazon Ads Services",
       type: "Enhance customer interaction on Amazon to exponentially increase your sales, spanning from creating awareness to driving purchases.",
-      image: "../images/Background.png",open:"view more"
+      image: "../images/Background.png",open:"view more",
+      add:"/amazon"
     },
     {
       name: "How to deal with SVB collapse",
@@ -121,8 +123,8 @@ export default function DigitalMap() {
                 </Typography>
                 <Typography className="item-type">{item.type}</Typography>
                 <Typography 
-                className="item-type" 
-                  onClick={()=>navigate('/paidSearch')}
+                className="item-type hov" 
+                  onClick={()=>navigate(`${item.add}`)}
                 >{item.open}</Typography>
                 
               </Grid>
@@ -162,13 +164,13 @@ const ServiceListWrapper = styled.div`
     font-family: Montserrat-Medium;
     color: #40424c;
     margin-top: 20px;
-    cursor: pointer;
-
     @media (max-width: 600px) {
       font-size: 11.79px;
     }
   }
-
+  .hov{
+    cursor: pointer;
+  }
   .item-name {
     font-size: 16px;
     font-family: Montserrat-SemiBold;
