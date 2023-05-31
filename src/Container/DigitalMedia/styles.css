@@ -6,6 +6,7 @@
     text-align: center;
     flex-direction: column;
     flex-wrap: wrap;
+    position:relative;
 
 }
 .relative{
@@ -33,14 +34,19 @@
 /* or 150% */
     text-align: center;
     letter-spacing: 0.25px;
-    width:90%;
+    /* width:80%; */
+    
+}
+.fx{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 .cube{
-    position: absolute;
     width: 88.65px;
     height: 81px;
-    right:0%;
-    bottom: 12%;
+    
 }
 .pinkCircle{
     position: absolute;

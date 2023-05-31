@@ -13,56 +13,51 @@ export default function DigitalMap() {
       type: "Maximize results and your budget with a unique, granular approach to delivering the most relevant experience to your customers.",
       image: "../images/laptop.png",
       open:"view more",
-      add:"/paidSearch"
+      add:"/digitalMedia/paidSearch"
     },
     {
       name: "Amazon Ads Services",
       type: "Enhance customer interaction on Amazon to exponentially increase your sales, spanning from creating awareness to driving purchases.",
       image: "../images/Background.png",open:"view more",
-      add:"/amazon"
+      add:"/digitalMedia/amazon"
     },
     {
-      name: "How to deal with SVB collapse",
-      type: "Blog",
-      image: "../images/Image@3x.png",
+      name: "Marketplace Listing Services",
+      type: "Shape the journey of potential customers across the marketplace to elevate your chances of success and boost your revenue. ",
+      image: "../images/image.png",
       open:"view more"
     },
     {
-      name: "Inspiration to build your online store",
-      type: "Inspiration",
-      image: "../images/Img1.png",
+      name: "SEO Marketing Services",
+      type: "Drive brand discovery, enhance website engagement, and optimize conversions with our comprehensive cross-functional approach...",
+      image: "../images/image3.png",
       open:"view more"
     },
     {
-      name: "How To Gear Forward in 2023",
-      type: "Tips",
-      image: "../images/Image@3x.png",
+      name: "Affiliate Advertising",
+      type: "Set performance-based guidelines with advertising affiliates to pay for results that directly impact your bottom line.",
+      image: "../images/image2.png",
       open:"view more"
     },
     {
-      name: "Digital commerce is changing rapidly",
-      type: "Blog",
-      image: "../images/Img1.png",
+      name: "Social Media Management",
+      type: "Grow your brand on the largest digital marketing stage with our audience-first approach, capturing attention and driving conversions across top...",
+      image: "../images/image4.png",
       open:"view more"
     },
     {
-      name: "How to deal with SVB collapse",
-      type: "Blog",
-      image: "../images/Image@3x.png",
+      name: "Email Marketing",
+      type: "Foster brand engagement and optimize ROI by delivering tailored messages at the most opportune moments.",
+      image: "../images/image5.png",
       open:"view more"
     },
     {
-      name: "Inspiration to build your online store",
-      type: "Inspiration",
-      image: "../images/Img1.png",
+      name: " Automated Advertising",
+      type: "Engage customers at every stage of the funnel with personalized automated advertising strategies, reaching them wherever they are.",
+      image: "../Images/Image6.png",
       open:"view more"
     },
-    {
-      name: "How To Gear Forward in 2023",
-      type: "Tips",
-      image: "../images/Image@3x.png",
-      open:"view more"  
-    },
+    
   ];
 
   const pageNo = [1, 2, 3, 4, 5];

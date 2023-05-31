@@ -27,8 +27,14 @@ const MainRouter = () => {
         <Route path="/" element={<Homepage />} />
         <Route path="/home" element={<h1>Hello from Homepage</h1>} />
         <Route path="/aboutus" element={<AboutUs />} />
+
         <Route path="/ourservices" element={<Services />} />
-        <Route path="/ourservices/:digitaMedia" element={<DigitalMedia />} />
+        <Route path="/ourservices/digitalMedia" element={<DigitalMedia />} />
+        <Route path="/digitalMedia/paidSearch" element={<PaidSearch/>} />
+        <Route path="/digitalMedia/amazon" element={<Amazon/>} />
+
+
+
         <Route path="/analytics" element={<Analytics/>} />
         <Route path="/customerExperience" element={<CustomerExpierence/>} />
         <Route path="/paidSearch" element={<PaidSearch/>} />

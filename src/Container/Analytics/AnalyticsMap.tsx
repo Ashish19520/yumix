@@ -7,56 +7,28 @@ import { GrNext, GrPrevious } from "react-icons/gr";
 export default function AnalyticsMap() {
   const blogs = [
     {
-      name: "How To Gear Forward in 2023",
-      type: "Tips",
-      image: "../images/Image@3x.png",
+      name: "Customer Experience Analytics",
+      type: "Customer interactions are as complex as ever and successful coordination of experiences depends on timely accurate...",
+      image: "../images/Image8.png",
       open:"view more"
     },
     {
-      name: "Digital commerce is changing rapidly",
-      type: "Blog",
-      image: "../images/Img1.png",open:"view more"
-    },
-    {
-      name: "How to deal with SVB collapse",
-      type: "Blog",
-      image: "../images/Image@3x.png",
+      name: "Advanced Analytics",
+      type: "We’re immersing ourselves in understanding your business, your customers, and the entire competitive landscape. The outcome is an...",
+      image: "../images/unsplash_eveI7MOcSmw.png",
       open:"view more"
     },
     {
-      name: "Inspiration to build your online store",
-      type: "Inspiration",
-      image: "../images/Img1.png",
+      name: "Marketing Measurement",
+      type: "At the core of every healthy marketing strategy lies the right measurement framework. We help our clients answer critical business...",
+      image: "../images/unsplash_H4ClLKv3pqw.png",
       open:"view more"
     },
+   
     {
       name: "How To Gear Forward in 2023",
       type: "Tips",
-      image: "../images/Image@3x.png",
-      open:"view more"
-    },
-    {
-      name: "Digital commerce is changing rapidly",
-      type: "Blog",
-      image: "../images/Img1.png",
-      open:"view more"
-    },
-    {
-      name: "How to deal with SVB collapse",
-      type: "Blog",
-      image: "../images/Image@3x.png",
-      open:"view more"
-    },
-    {
-      name: "Inspiration to build your online store",
-      type: "Inspiration",
-      image: "../images/Img1.png",
-      open:"view more"
-    },
-    {
-      name: "How To Gear Forward in 2023",
-      type: "Tips",
-      image: "../images/Image@3x.png",
+      image: "../images/unsplash_s8HyIEe7lF0.png",
       open:"view more"  
     },
   ];
