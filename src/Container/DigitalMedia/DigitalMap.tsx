@@ -18,44 +18,51 @@ export default function DigitalMap() {
     {
       name: "Amazon Ads Services",
       type: "Enhance customer interaction on Amazon to exponentially increase your sales, spanning from creating awareness to driving purchases.",
-      image: "../images/Background.png",open:"view more",
+      image: "../images/Background.png",
+      open:"view more",
       add:"/digitalMedia/amazon"
     },
     {
       name: "Marketplace Listing Services",
       type: "Shape the journey of potential customers across the marketplace to elevate your chances of success and boost your revenue. ",
       image: "../images/image.png",
-      open:"view more"
+      open:"view more",
+      add:"/digitalMedia/marketPlace"
     },
     {
       name: "SEO Marketing Services",
       type: "Drive brand discovery, enhance website engagement, and optimize conversions with our comprehensive cross-functional approach...",
       image: "../images/image3.png",
-      open:"view more"
+      open:"view more",
+      add:"/digitalMedia/seoMarketing"
     },
     {
       name: "Affiliate Advertising",
       type: "Set performance-based guidelines with advertising affiliates to pay for results that directly impact your bottom line.",
       image: "../images/image2.png",
-      open:"view more"
+      open:"view more",
+      add:"/digitalMedia/affilateAdvertising"
     },
     {
       name: "Social Media Management",
       type: "Grow your brand on the largest digital marketing stage with our audience-first approach, capturing attention and driving conversions across top...",
       image: "../images/image4.png",
-      open:"view more"
+      open:"view more",
+      add:"/digitalMedia/socialMediaManagement"
     },
     {
       name: "Email Marketing",
       type: "Foster brand engagement and optimize ROI by delivering tailored messages at the most opportune moments.",
       image: "../images/image5.png",
-      open:"view more"
+      open:"view more",
+      add:"/digitalMedia/emailMarketing"
     },
     {
       name: " Automated Advertising",
       type: "Engage customers at every stage of the funnel with personalized automated advertising strategies, reaching them wherever they are.",
       image: "../Images/Image6.png",
-      open:"view more"
+      open:"view more",
+      add:"/digitalMedia/automatedAdvertising"
     },
     
   ];

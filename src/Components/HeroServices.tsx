@@ -3,19 +3,19 @@ import { Container } from '@mui/material'
 import { motion } from "framer-motion";
 import { ClassNames } from '@emotion/react';
 
-function PaidHero() {
+function HeroServices({data}:any) {
   return (
     <>
    <Container className='relative' >
     <div className='heroWrappe relative'
     id="hero">
         <div className='heroLef'>
-            <div className='headTex'>Paid Search (PPC) Marketing Services</div>
-             <div className='textPar'>Maximize results and your budget with a unique, granular approach to delivering the most relevant experience to your customers.</div>
+            <div className='headTex'>{data.heading}</div>
+             <div className='textPar'>{data.subHeading}</div>
             <div className='btn'>Contact us</div>
         </div>
         <div className='heroRight relative'>
-            <img src="../images/laptop.png"
+            <img src={data.image}
             className='imghero' 
             alt="" 
             />
@@ -23,7 +23,7 @@ function PaidHero() {
               src="../images/Round Cube2@3x.png"
               initial="hidden"
               animate="show"
-              className='cube'
+              className='cub'
             ></motion.img>
             <motion.img
               src="../images/spec 1.png"
@@ -42,8 +42,8 @@ function PaidHero() {
    </Container> 
    <Container style={{marginTop:"150px"}}>
     <div className="black-Sectio">
-        <div className='black-heading'>Capture and Convert Demand Through Paid Search, with a PPC Agency</div>
-        <div className='black-para'>Eservz started with paid search and has spent more than a decade using a successful strategy to obtain high returns and conversions. Our PPC services target customers at every stage of their journey by optimizing budget allocation and delivering personalized experiences based on data. Our customized approach uses different delivery methods to maximize your budget.</div>
+        <div className='black-heading'>{data.blackHeading}</div>
+        <div className='black-para'>{data.blackSubHeading}</div>
     </div>
    </Container>
    <Container style={{marginTop:"120px"}}>
@@ -55,22 +55,22 @@ function PaidHero() {
               className='Lin'
             ></motion.img>
     <div className="strategy-wrapper relative">
-        <div className='strategy-heading'><h2>Our Paid Search Strategy</h2></div>
+        <div className='strategy-heading'><h2>{data.strategyHeading}</h2></div>
         <div className='strategy-conten'>
             <div className='box1'>
-                <img src="../images/first.png" alt="" />
-                <div className="box-heading">Granularity</div>
-                <div className='box-para'>Find and activate on opportunities with the greatest impact potential through a highly granular, intent-driven account structure. </div>
+                <img src={data.box[0].image} alt="" />
+                <div className="box-heading">{data.box[0].heading}</div>
+                <div className='box-para'>{data.box[0].subHeading} </div>
             </div>
             <div className='box1'>
-                <img src="../images/second.png" alt="" />
-                <div className="box-heading">Team + Technology</div>
-                <div className='box-para'>Scale your program and achieve superior results with our blended, people-powered approach to automation.</div>
+                <img src={data.box[1].image} alt="" />
+                <div className="box-heading">{data.box[1].heading}</div>
+                <div className='box-para'>{data.box[1].subHeading}</div>
             </div>
             <div className='box1 relative'>
-                <img src="../images/Group 38597.png" alt="" />
-                <div className="box-heading">Closed-Loop Strategies</div>
-                <div className='box-para'>Drive ROI, not just conversions, by tying offline data to online keyword performance.</div>
+                <img src={data.box[2].image} alt="" />
+                <div className="box-heading">{data.box[2].heading}</div>
+                <div className='box-para'>{data.box[2].subHeading}</div>
                 <motion.img
               src="../images/Ellipse 63.png"
               initial="hidden"
@@ -85,4 +85,4 @@ function PaidHero() {
   )
 }
 
-export default PaidHero
+export default HeroServices;

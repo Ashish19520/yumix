@@ -1,35 +1,40 @@
 import { Box, Grid, Typography,Button } from "@mui/material";
 import { useEffect } from "react";
 import styled from "styled-components";
-import { GrNext, GrPrevious } from "react-icons/gr";
+import { useNavigate } from "react-router-dom";
 
 
 export default function AnalyticsMap() {
+  const navigate=useNavigate();
   const blogs = [
     {
       name: "Customer Experience Analytics",
-      type: "Customer interactions are as complex as ever and successful coordination of experiences depends on timely accurate...",
+      type: "Achieve improved conversion rates, seamless customer interactions, and enhanced UX with our bespoke testing methodologies and advanced...",
       image: "../images/Image8.png",
-      open:"view more"
+      open:"view more",
+      add:"/analytics/customerExpierenceAnalytics",
     },
     {
       name: "Advanced Analytics",
-      type: "We’re immersing ourselves in understanding your business, your customers, and the entire competitive landscape. The outcome is an...",
+      type: "Gain comprehensive understanding to optimize your marketing budget with our integrated analytics methodology, allowing you to make...",
       image: "../images/unsplash_eveI7MOcSmw.png",
-      open:"view more"
+      open:"view more",
+      add:"/analytics/advancedAnalytics",
     },
     {
-      name: "Marketing Measurement",
-      type: "At the core of every healthy marketing strategy lies the right measurement framework. We help our clients answer critical business...",
+      name: "Platform Enablement",
+      type: "Crafting and deploying a tailored assortment of tools and technologies to address your distinct data, measurement, and business requirements.",
       image: "../images/unsplash_H4ClLKv3pqw.png",
-      open:"view more"
+      open:"view more",
+      add:"/analytics/platformEnablement"
     },
    
     {
-      name: "How To Gear Forward in 2023",
-      type: "Tips",
+      name: "Marketing Measurement",
+      type: "Make fast, informed decisions to drive your business forward with a detailed digital marketing measurement framework that eliminates data...",
       image: "../images/unsplash_s8HyIEe7lF0.png",
-      open:"view more"  
+      open:"view more",
+      add:"/analytics/marketMeasurement"
     },
   ];
 
@@ -90,7 +95,7 @@ export default function AnalyticsMap() {
                   {item.name}
                 </Typography>
                 <Typography className="item-type">{item.type}</Typography>
-                <Typography className="item-type">{item.open}</Typography>
+                <Typography className="item-type hov" onClick={()=>navigate(`${item.add}`)}>{item.open}</Typography>
                 
               </Grid>
             );
@@ -133,6 +138,9 @@ const ServiceListWrapper = styled.div`
     @media (max-width: 600px) {
       font-size: 11.79px;
     }
+  }
+  .hov{
+    cursor: pointer;
   }
 
   .item-name {

@@ -1,12 +1,17 @@
 import React from 'react'
 import Footer from '../Components/Footer'
 import ContactForm from '../Components/contactForm'
-import CustomerHero from '../Container/CustomerExpierence/CustomerHero'
+import CustomerMap from '../Container/CustomerExpierence/CustomerMap'
+import StategyCustomer from '../Container/CustomerExpierence/StategyCustomer'
+import { HeroSectionCustomer } from '../Container/CustomerExpierence/HeroSectionCustomer'
+
 
 function CustomerExpierence() {
   return (
     <div>
-      <CustomerHero/>
+      <HeroSectionCustomer/>
+      <StategyCustomer/>
+      <CustomerMap/>
       <ContactForm/>
       <Footer/>
     </div>
