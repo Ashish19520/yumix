@@ -51,39 +51,7 @@ function CodeDesc() {
       style={{position:"relative",marginBottom:"100px" }}
       >
     <div className="hero_wrapper">
-      <div className="info-box_FBA">
-        <div className="fba-Title">Description to Code</div>
-        <div className="fba-subTitle">
-        Struggling with clumsy HTML codes?
-        Try Description to Code to convert your Amazon description to code
-        </div>
-        <div className="input-field">
-          {/* <input
-            type="text"
-            placeholder="Enter Amazon product's ASIN Number"
-          ></input> */}
-          <button className="btn_FBACalculate">Turn to code</button>
-        </div>
-      </div>
-      {/* <div className="img-box_FBA">
-        <img src="../images/8 - Lucas Dancing.png" alt="img" height="480px" width="552px"></img>
-      </div> */}
-      <div className={`box hoverimg ${classes.index}`}>
-        <div className="fba" >
-          <img
-            src="../images/04 Market Research.png"
-            className="images-tools-bounce1"
-            alt="img"
-          ></img>
-        </div>
-      </div>
-    </div>
     <motion.img
-             src="../images/Ellipse 75@3x.png"
-             className={classes.imageLines6}
-             alt="img"
-            ></motion.img>
-             <motion.img
               src="../images/Group 38639.png"
               className={classes.imageLines1}
               initial="hidden"
@@ -99,6 +67,35 @@ function CodeDesc() {
               width="70%"
               height="70%"
             ></motion.img>
+      <div className="info-box_FBA">
+        <div className="fba-Title">Description to Code</div>
+        <div className="fba-subTitle">
+        Struggling with clumsy HTML codes?
+        Try Description to Code to convert your Amazon description to code
+        </div>
+        <div className="input-field">
+          {/* <input
+            type="text"
+            placeholder="Enter Amazon product's ASIN Number"
+          ></input> */}
+          <button className="btn_FBACalculate">Turn to code</button>
+        </div>
+      </div>
+      <div className={`box ${classes.index}`}>
+      <motion.img
+             src="../images/Ellipse 75@3x.png"
+             className={classes.imageLines6}
+             alt="img"
+            ></motion.img>
+          <img
+            src="../images/04 Market Research.png"
+            alt="img"
+            className='hoverimg'
+          ></img>
+      </div>
+    </div>
+    
+            
   </Container>
   <Container>
     <div className={classes.firstContainer}>
@@ -245,14 +242,15 @@ const CodeContainer = styled.div`
     margin: auto;
     padding-top: 80px;
     .hero_wrapper {
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: space-evenly;
       @media (max-width: 600px) {
-        flex-direction: column-reverse;
-        justify-content: center;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 100%;
       }
-
       .info-box_FBA {
         @media (max-width: 600px) {
           width: 100%;
@@ -267,6 +265,7 @@ const CodeContainer = styled.div`
           letter-spacing: 0.25px;
           padding-bottom: 24px;
         }
+       
 
         .fba-subTitle {
           //styleName: Body M 16;
@@ -301,74 +300,10 @@ const CodeContainer = styled.div`
           padding-left: unset;
           display: flex;
           align-items: center;
-          justify-content: center;
+          justify-content: flex-start;
         }
 
-        .subject {
-          width: 75%;
-          @media (max-width: 600px) {
-            width: 60%;
-          }
-        }
-        .cone {
-          width: 15%;
-          position: absolute;
-          left: 80px;
-          bottom: 50px;
-          @media (max-width: 600px) {
-            display: block;
-            bottom: 0%;
-            left: 20%;
-          }
-        }
-        .rock {
-          width: 30%;
-          position: absolute;
-          right: 80px;
-          top: 0;
-          @media (max-width: 600px) {
-            display: block;
-            width: 25%;
-            right: 10%;
-          }
-        }
-
-        .dot {
-          width: 3%;
-          position: absolute;
-          left: 0;
-          bottom: 150px;
-          @media (max-width: 600px) {
-            display: block;
-            bottom: -10%;
-            left: -4%;
-          }
-        }
-
-        .dottwo {
-          width: 3%;
-          position: absolute;
-          top: 0;
-          left: -500px;
-          @media (max-width: 600px) {
-            display: none;
-          }
-        }
-
-        .line {
-          width: 180%;
-          position: absolute;
-          top: 35px;
-          right: -90px;
-          z-index: -1;
-          @media (max-width: 600px) {
-            display: block;
-            width: 100%;
-            left: 0%;
-            top: unset;
-            bottom: 0%;
-          }
-        }
+       
           .btn_FBACalculate {
             background-color: #5956e9;
             color: #e0e0e0;
@@ -385,6 +320,18 @@ const CodeContainer = styled.div`
           }
         }
       }
+       .box{
+          width:50%;
+          position:relative;
+          @media (max-width: 600px) {
+            width: 100%;
+            justify-content: center;
+
+          }
+        }
+        .hoverimg{
+          width: 100%;
+        }
     }
   }
 `;

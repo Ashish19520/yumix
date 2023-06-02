@@ -34,21 +34,13 @@ function ListCalc() {
                 type="text"
                 placeholder="Enter Amazon product's ASIN Number"
               ></input>
+              
               <button className="btn_FBACalculate">Optimising Visibilty</button>
             </div>
+            
            </div>
-           <div className={`${classes.heroImg}`} >
-            <img
-            className={classes.heroImg}
-            src="../images/Saly-10.png"
-             alt="img"
-              height="517px" 
-              width="517px"></img>
-
-          </div>
-          
-        </div>
-        <motion.img
+           <div className={`${classes.heroImg} box`} >
+           <motion.img
               src="../images/Rock2@3x.png"
               className={classes.imageLines6}
               initial="hidden"
@@ -64,6 +56,19 @@ function ListCalc() {
               width="70%"
               height="70%"
             ></motion.img>
+            <img
+            className={`${classes.heroImg} hoverimg`}
+            src="../images/Saly-10.png"
+             alt="img"
+              height="517px" 
+              width="517px">
+              </img>
+
+
+          </div>
+          
+        </div>
+        
         
         <motion.img
               src="../images/Group 38639.png"
@@ -84,8 +89,14 @@ function ListCalc() {
       </Container>
       <Container maxWidth='lg' className="container">
         <div className={classes.wrapper}>
-          <div className={`classes.img ${classes.index}`}>
+          <div className={`${classes.relative} ${classes.index}`}>
             <img src="../images/61+lhpMw+2L 1.png" alt="img" height="200px" width="250px"></img>
+            <motion.img
+              src="../images/Ellipse.png"
+              className={classes.imageLines7}
+              initial="hidden"
+              animate="show"
+            ></motion.img>
           </div>
 
 
@@ -113,12 +124,7 @@ function ListCalc() {
             </div>
           </div>
         </div>
-        <motion.img
-              src="../images/Ellipse.png"
-              className={classes.imageLines7}
-              initial="hidden"
-              animate="show"
-            ></motion.img>
+        
       </Container>
       <Container maxWidth='lg' className="container">
         <div className={`${classes.twoContainer} `}>
@@ -238,8 +244,67 @@ function ListCalc() {
           </div>
         </div>
       </Container>
+      <Container fixed  className="container">
+      <motion.img
+              src="../images/newRock2@3x.png"
+              className={classes.imageLines11}
+              initial="hidden"
+              animate="show"
+              width="100px"
+              height="100px"
+            ></motion.img>
+            
+            <motion.img
+              src="../images/rock_branchwork_yellow_Cube.png"
+              className={classes.imageLines12}
+              initial="hidden"
+              animate="show"
+            ></motion.img>
+            <motion.img
+              src="../images/circle_pink_m.png"
+              className={classes.imageLines9}
+              initial="hidden"
+              animate="show"
+            ></motion.img>
+             <motion.img
+              src="../images/Ellipse 62@3x.png"
+              className={classes.imageLines10}
+              initial="hidden"
+              animate="show"
+      
+            ></motion.img>
+        <div className={classes.fifthContainer}>
+          <div className={classes.fifthHeading}>
+            <h1 >Why you need to optimize your listing</h1>
+            <p style={{textAlign:"center",width:"80%"}}>Listing optimization boosts success and enhances buying experience. It increases visibility, builds trust, differentiates, improves conversions, and adapts to market changes.</p>
+          </div>
+          <div className={classes.fifthInner}>
+            <div>
+              <h2>Discoverability - The Listing Visibility</h2>
+              <div className={classes.fonts} >
+                <p > Keywords impact listing visibility</p>
+                <p>Search position affects discoverability</p>
+                <p>Discoverability ensures visibility to potential buyer</p>
+                <p> Unfound listing is ineffective</p>
+              </div>
+            </div>
+            <div>
+            <h2>Desirability - On Page Factors</h2>
+              <div className={classes.fonts}>
+                <p>Overview of the product and its specifications</p>
+                <p>In-depth view of product features and applications</p>
+                <p>Emphasise brand and its unique story</p>
+                <p>Add images to give depth to your listing
+</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Container>
+      
       <Container>
         <div className={classes.sixthContainer}>
+          <h1>FAQS</h1>
           <div>
           <FormControl variant="standard" className={classes.selectors}>
         <InputLabel  id="demo-simple-select-standard-label">Does the Amazon Listing Optimization tool work for all the Amazon marketplaces?</InputLabel>
@@ -322,7 +387,7 @@ function ListCalc() {
           </div>
         </div>
       </Container>
-      <Container className={classes.relative}>
+      <Container className={classes.relative} style={{marginTop:"50px"}}>
       <motion.img
               src="../images/Frame 56.png"
               className={classes.imageLines4}
@@ -332,7 +397,7 @@ function ListCalc() {
             ></motion.img>
         <div>
           <div >
-            <h1>Try out other resources for your business</h1>
+            <h3>Try out other resources for your business</h3>
           </div>
 
           <div className={classes.innerSeventh} >
@@ -363,7 +428,7 @@ const ListContainer = styled.div`
       align-items: center;
       justify-content: space-evenly;
       @media (max-width: 600px) {
-        flex-direction: column-reverse;
+        flex-direction: column;
         justify-content: center;
       }
 
@@ -383,7 +448,7 @@ const ListContainer = styled.div`
         }
 
         .fba-subTitle {
-          //styleName: Body M 16;
+          styleName: Body M 16;
           font-family: Montserrat;
           font-size: 16px;
           font-weight: 400;
@@ -413,76 +478,13 @@ const ListContainer = styled.div`
         @media (max-width: 600px) {
           width: 100%;
           padding-left: unset;
-          display: flex;
+          flex-direction: column; 
+          gap:15px;
           align-items: center;
           justify-content: center;
         }
 
-        .subject {
-          width: 75%;
-          @media (max-width: 600px) {
-            width: 60%;
-          }
-        }
-        .cone {
-          width: 15%;
-          position: absolute;
-          left: 80px;
-          bottom: 50px;
-          @media (max-width: 600px) {
-            display: block;
-            bottom: 0%;
-            left: 20%;
-          }
-        }
-        .rock {
-          width: 30%;
-          position: absolute;
-          right: 80px;
-          top: 0;
-          @media (max-width: 600px) {
-            display: block;
-            width: 25%;
-            right: 10%;
-          }
-        }
-
-        .dot {
-          width: 3%;
-          position: absolute;
-          left: 0;
-          bottom: 150px;
-          @media (max-width: 600px) {
-            display: block;
-            bottom: -10%;
-            left: -4%;
-          }
-        }
-
-        .dottwo {
-          width: 3%;
-          position: absolute;
-          top: 0;
-          left: -500px;
-          @media (max-width: 600px) {
-            display: none;
-          }
-        }
-
-        .line {
-          width: 180%;
-          position: absolute;
-          top: 35px;
-          right: -90px;
-          z-index: -1;
-          @media (max-width: 600px) {
-            display: block;
-            width: 100%;
-            left: 0%;
-            top: unset;
-            bottom: 0%;
-          }
-        }
+        
           .btn_FBACalculate {
             background-color: #5956e9;
             color: #e0e0e0;
@@ -497,6 +499,16 @@ const ListContainer = styled.div`
             text-align: center;
           }
         }
+      }.box{
+        width:50%;
+        position: relative;
+        @media (max-width: 600px) {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+      .hoverimg{
+        width: 100%;
       }
     }
   }

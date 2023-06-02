@@ -27,7 +27,6 @@ export const Fba = () => {
     <FbaContainer style={{ backgroundColor: "#FFFCFC",width:"100vw"}}>
       <Container  className="container" >
         <div className="hero_wrapper">
-       
           <div className="info-box_FBA">
             <div className="fba-Title">FBA Calculator</div>
             <div className="fba-subTitle">
@@ -42,16 +41,8 @@ export const Fba = () => {
               <button className="btn_FBACalculate">Calculate</button>
             </div>
           </div>
-          <div className="box hoverimg" style={{zIndex:"1"}}>
-            <div className="fba" >
-              <img
-                src="../images/8 - Lucas Dancing.png"
-                alt="img"
-              ></img>
-            </div> 
-          </div>
-        </div>
-        <motion.img
+          <div className="box " style={{zIndex:"1"}}>
+            <motion.img
               src="../images/Rock2@3x.png"
               className={classes.heroRock}
               initial="hidden"
@@ -63,12 +54,21 @@ export const Fba = () => {
               initial="hidden"
               animate="show"
             ></motion.img>
+              <img
+                src="../images/8 - Lucas Dancing.png"
+                className="hoverimg"
+                alt="img"
+              ></img>
+          </div>
+        </div>
+       
         <motion.img
               src="../images/Group 38639.png"
               className={classes.imageLines1}
               initial="hidden"
               animate="show"
-            ></motion.img>
+              width="100%"
+            ></motion.img>  
              <motion.img
               src="../images/Ellipse 63@3x.png"
               className={classes.imageLines7}
@@ -78,10 +78,14 @@ export const Fba = () => {
       </Container>
       <Container fixed className="container">
         <div className={classes.wrapper}>
-          <div className={classes.img}>
+          <div className={`${classes.img} ${classes.index}`}>
             <img src="../images/61+lhpMw+2L 1.png" alt="img" height="200px" width="250px"></img>
+            <motion.img
+              src="../images/Ellipse 75@3x.png"
+              className={classes.imageLines3}
+            ></motion.img>
           </div>
-
+          
 
           <div className={classes.innerWrapper}>
             <div >
@@ -105,27 +109,20 @@ export const Fba = () => {
                 <p>19.5cm X 8386cm X 02.95 cm</p>
               </div>
             </div>
-        <motion.img
-              src="../images/newRock2@3x.png"
-              className={classes.imageLines3}
-              initial="hidden"
-              animate="show"
-              width="100px"
-              height="100px"
-            ></motion.img>
+        
           </div>
         </div>
       </Container>
       <Container fixed className='container'>
         <div className={classes.monitor}>
         
-        <motion.img
+        {/* <motion.img
               src="../images/Group 38632@3x.png"
               className={classes.imageLines}
               initial="hidden"
               animate="show"
               width="80%"
-            ></motion.img> 
+            ></motion.img>  */}
           <div className={classes.firstRow}>
             <p>Item Price</p>
             <p>Shipping Price</p>
@@ -349,12 +346,14 @@ const FbaContainer = styled.div`
     padding-top: 80px;
     .hero_wrapper {
       display: flex;
+      gap:"10px";
+      position: relative;
       align-items: center;
-      justify-content: space-evenly;
+      justify-content: space-between;
       z-indes:1;
       position: relative;
       @media (max-width: 600px) {
-        flex-direction: column-reverse;
+        flex-direction: column;
         justify-content: center;
       }
 
@@ -389,6 +388,11 @@ const FbaContainer = styled.div`
         .input-field {
           display: flex;
           justify-content: space-between;
+          gap:20px;
+          @media (max-width: 600px) {
+            flex-direction: column;
+            gap:20px;
+          }
 
           z-index:1;
           input {
@@ -414,72 +418,6 @@ const FbaContainer = styled.div`
           align-items: center;
           justify-content: center;
         }
-
-        .subject {
-          width: 75%;
-          @media (max-width: 600px) {
-            width: 60%;
-          }
-        }
-        .cone {
-          width: 15%;
-          position: absolute;
-          left: 80px;
-          bottom: 50px;
-          @media (max-width: 600px) {
-            display: block;
-            bottom: 0%;
-            left: 20%;
-          }
-        }
-        .rock {
-          width: 30%;
-          position: absolute;
-          right: 80px;
-          top: 0;
-          @media (max-width: 600px) {
-            display: block;
-            width: 25%;
-            right: 10%;
-          }
-        }
-
-        .dot {
-          width: 3%;
-          position: absolute;
-          left: 0;
-          bottom: 150px;
-          @media (max-width: 600px) {
-            display: block;
-            bottom: -10%;
-            left: -4%;
-          }
-        }
-
-        .dottwo {
-          width: 3%;
-          position: absolute;
-          top: 0;
-          left: -500px;
-          @media (max-width: 600px) {
-            display: none;
-          }
-        }
-
-        .line {
-          width: 180%;
-          position: absolute;
-          top: 35px;
-          right: -90px;
-          z-index: -1;
-          @media (max-width: 600px) {
-            display: block;
-            width: 100%;
-            left: 0%;
-            top: unset;
-            bottom: 0%;
-          }
-        }
           .btn_FBACalculate {
             background-color: #5956e9;
             color: #e0e0e0;
@@ -496,6 +434,19 @@ const FbaContainer = styled.div`
           }
         }
       }
+      .box{
+        width:50%;
+        position: relative;
+        @media (max-width: 600px) {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+      .hoverimg{
+        width: 100%;
+      }
+    
+      
     }
   }
 `;

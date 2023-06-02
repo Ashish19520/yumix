@@ -20,15 +20,17 @@ export default makeStyles((theme) => ({
     right:"0",
     top:"50%",
     bottom:"0",
-    zIndex:1
+    zIndex:1,
+    [theme.breakpoints.down("sm")]: {
+     display: "none",
+    },
   },
   imageLines6:{
     position:"absolute",
     right:"5%",
-    top:"16%",
-    bottom:"0",
-    zIndex:1,
-    width:"40%"
+    top:"5%",
+    zIndex:-1,
+    width:"90%",
   },
   index:{
     zIndex:7
@@ -47,7 +49,8 @@ export default makeStyles((theme) => ({
     bottom:"0",
     zIndex:1,
     width:"20px",
-    height:"20px"
+    height:"20px",
+    
   },
   imageLines3:{
     position:"absolute",
@@ -56,7 +59,10 @@ export default makeStyles((theme) => ({
     bottom:"0",
     zIndex:1,
     width:"20px",
-    height:"20px"
+    height:"20px",
+    [theme.breakpoints.down("sm")]: {
+      display:"none",
+    },
   },
   imageLines4:{
     position:"absolute",
@@ -66,7 +72,10 @@ export default makeStyles((theme) => ({
     bottom:"0",
     zIndex:1,
     height:"300px",
-    width:"100%"
+    width:"100%",
+    [theme.breakpoints.down("sm")]: {
+      display:"none",
+    },
   },
   imageLines5:{
     position:"absolute",
@@ -74,7 +83,10 @@ export default makeStyles((theme) => ({
     bottom:"-9%",
     zIndex:1,
     width:"12px",
-    height:"12px"
+    height:"12px",
+    [theme.breakpoints.down("sm")]: {
+      display:"none",
+    },
   },
   insideFirstContainer: {
     display: "flex",
