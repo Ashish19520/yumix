@@ -1,15 +1,20 @@
 import { Grid } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 export const Banner = (props: any) => {
+  const navigate=useNavigate();
   return (
     <BannerWrapper direction={props.direction}>
       <div className={`clothing-Banner`}>
         <div className="cb-left-box">
           <div className="title">{props.data.title}</div>
           <p className="subTitle">{props.data.subTitle}</p>
-          <button className="btn">{props.data.btnText}</button>
+          <button className="btn"
+            onClick={()=>navigate(`${props.data.add}`)}
+          >{props.data.btnText}
+          </button>
         </div>
         <div className="cb-right-box">
           <img src={props.data.imgPath}></img>

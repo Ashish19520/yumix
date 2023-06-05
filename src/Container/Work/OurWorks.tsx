@@ -11,6 +11,7 @@ export const OurWorks = () => {
       "While most digital marketing agencies excel at one or two channels, Eservz has deep expertise across all performance marketing services, which allows us to provide a rich digital marketing services offering.",
     btnText: "View Case Study",
     imgPath: "./images/Img1.png",
+    add:"/works/work1"
   };
 
   const data2 = {
@@ -19,6 +20,7 @@ export const OurWorks = () => {
       "While most digital marketing agencies excel at one or two channels, Eservz has deep expertise across all performance marketing services, which allows us to provide a rich digital marketing services offering.",
     btnText: "View Case Study",
     imgPath: "./images/Img2.png",
+    add:"/works/work2"
   };
 
   const typingContainer = {

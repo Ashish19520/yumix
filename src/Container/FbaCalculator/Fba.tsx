@@ -63,7 +63,7 @@ export const Fba = () => {
         </div>
        
         <motion.img
-              src="../images/Group 38639.png"
+              // src="../images/Group 38639.png"
               className={classes.imageLines1}
               initial="hidden"
               animate="show"

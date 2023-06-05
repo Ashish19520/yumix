@@ -242,5 +242,142 @@ color: #808080;
     display: none;
   }
 }
+.con-image-section{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+.content-image{
+  width: 85%;
+  height:350px;
+  border-radius: 15px;
+}
+.content-cube{
+  position:absolute;
+  width: 118px;
+  height:118px;
+  bottom:-50px;
+  left:7%;
+  @media (max-width:600px){
+    width: 70PX;
+    height: 70px;
+    bottom:-25px;
+    
+  }
+}
+.blog-cube{
+  position:absolute;
+  width: 118px;
+  height:118px;
+  bottom:-50px;
+  left:-1%;
+  @media (max-width:600px){
+    width: 70PX;
+    height: 70px;
+    bottom:-25px;
+    
+  }
+}
+.content-sphere{
+  position:absolute;
+  width: 118px;
+  height:118px;
+  bottom:40%;
+  right:7%;
+  @media (max-width:600px){
+    width: 70PX;
+    height: 70px;
+    
+  }
+}
+.blog-sphere{
+  position:absolute;
+  width: 118px;
+  height:118px;
+  bottom:40%;
+  right:0;
+  @media (max-width:600px){
+    width: 70PX;
+    height: 70px;
+    
+  }
+}
+.content-line{
+  position:absolute;
+  bottom:-50px;
+  z-index: -1;
+  width: 50%;
+  @media (max-width:600px){
+    display:none;
+    width: 100%;
+  }
+}
+.blog-line{
+  position:absolute;
+  bottom:-50px;
+  left:25%;
+  z-index: -1;
+  width: 50%;
+  @media (max-width:600px){
+    display:none;
+    width: 100%;
+  }
+}
+.content-ellipse{
+  width: 15px;
+  height: 15px;
+  position:absolute;
+  bottom: -45px;
+  left: 24%;
+  @media (max-width:600px){
+    display:none;
+  }
 
+}
+
+.content-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 70px;
+  position: relative;
+
+}
+.content-heading{
+  font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 32px;
+/* identical to box height, or 133% */
+letter-spacing: 0.15px;
+color: #2F2F2F;
+text-align: center;
+}
+.content-par{
+  width: 75%;
+  text-align:center;
+  margin: 0 auto;
+  position: relative;
+  @media(max-width: 600px){
+    width:100%;
+  }
+ 
+}
+.content-content-ellipse{
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  right: 0;
+  bottom:30%;
+}
+.arr{
+  position:"absolute";
+  left:2%;
+  cursor:"pointer";
+  top:-4%;
+} 
 

@@ -34,7 +34,6 @@ function ListCalc() {
                 type="text"
                 placeholder="Enter Amazon product's ASIN Number"
               ></input>
-              
               <button className="btn_FBACalculate">Optimising Visibilty</button>
             </div>
             
@@ -101,23 +100,29 @@ function ListCalc() {
 
 
           <div className={classes.innerWrapper}>
-            <div >
+            <div className={classes.innerimg}>
               <h2>Bose Quietcomfort 45</h2>
+              <motion.img
+              src="../images/Ellipse 64.png"
+              className={classes.imageLines13}
+              initial="hidden"
+              animate="show"
+            ></motion.img>
             </div>
             <div className={classes.items}>
-              <div >
+              <div className={classes.box}>
                 <p>Product Id</p>
                 <p>1245</p>
               </div>
-              <div>
+              <div className={classes.box}>
                 <p>Price</p>
                 <p>$3000</p>
               </div>
-              <div>
+              <div className={classes.box}>
                 <p>Unit Weigth</p>
                 <p>419gm</p>
               </div>
-              <div>
+              <div className={classes.box}>
                 <p>Product Dimension</p>
                 <p>19.5cm X 8386cm X 02.95 cm</p>
               </div>
@@ -245,7 +250,8 @@ function ListCalc() {
         </div>
       </Container>
       <Container fixed  className="container">
-      <motion.img
+        <div className={`${classes.fifthContainer} ${classes.relative}`}>
+        <motion.img
               src="../images/newRock2@3x.png"
               className={classes.imageLines11}
               initial="hidden"
@@ -261,7 +267,7 @@ function ListCalc() {
               animate="show"
             ></motion.img>
             <motion.img
-              src="../images/circle_pink_m.png"
+              src="../images/Ellipse 64@3x.png"
               className={classes.imageLines9}
               initial="hidden"
               animate="show"
@@ -273,9 +279,9 @@ function ListCalc() {
               animate="show"
       
             ></motion.img>
-        <div className={classes.fifthContainer}>
           <div className={classes.fifthHeading}>
-            <h1 >Why you need to optimize your listing</h1>
+          
+            <div className={classes.fifthMainHeading}>Why you need to optimize your listing</div>
             <p style={{textAlign:"center",width:"80%"}}>Listing optimization boosts success and enhances buying experience. It increases visibility, builds trust, differentiates, improves conversions, and adapts to market changes.</p>
           </div>
           <div className={classes.fifthInner}>
@@ -425,7 +431,7 @@ const ListContainer = styled.div`
     position :relative;
     .hero_wrapper {
       display: flex;
-      align-items: center;
+      align-items:center ;
       justify-content: space-evenly;
       @media (max-width: 600px) {
         flex-direction: column;

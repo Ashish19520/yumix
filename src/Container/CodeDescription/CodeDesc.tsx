@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react'
-import { Container, TextField, Typography } from "@mui/material";
+import { Container, TextField, Typography,MenuItem,FormControl,InputLabel,Select } from "@mui/material";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import useStyles from './styles';
@@ -8,6 +8,7 @@ import { Handshake } from '@mui/icons-material';
 
 
 function CodeDesc() {
+  const [age, setAge] = useState('');
     const classes = useStyles();
     useEffect(() => {
       window.scrollTo(0, 0);
@@ -51,7 +52,8 @@ function CodeDesc() {
       style={{position:"relative",marginBottom:"100px" }}
       >
     <div className="hero_wrapper">
-    <motion.img
+    
+            <motion.img
               src="../images/Group 38639.png"
               className={classes.imageLines1}
               initial="hidden"
@@ -204,6 +206,91 @@ function CodeDesc() {
               width="70%"
               height="70%"
             ></motion.img> */}
+      </Container>
+      <Container>
+        <div className={classes.sixthContainer}>
+          <h1>FAQS</h1>
+          <div>
+          <FormControl variant="standard" className={classes.selectors}>
+        <InputLabel id="demo-simple-select-standard-label">Does the Amazon Listing Optimization tool work for all the Amazon marketplaces?</InputLabel>
+        <Select
+          labelId="demo-simple-select-standard-label"
+          id="demo-simple-select-standard"
+          value={age}
+          onChange={handleChange}
+          label="Age"
+        >
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+      </FormControl>
+     
+          </div>
+          <div>
+          <FormControl variant="standard" className={classes.selectors}>
+        <InputLabel  id="demo-simple-select-standard-label">What are the qualities of a good Amazon listing?</InputLabel>
+        <Select
+          labelId="demo-simple-select-standard-label"
+          id="demo-simple-select-standard"
+          value={age}
+          onChange={handleChange}
+          label="Age"
+        >
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+      </FormControl>
+     
+          </div>
+          <div>
+          <FormControl variant="standard" className={classes.selectors}>
+        <InputLabel  id="demo-simple-select-standard-label">How to optimize Amazon Listings?</InputLabel>
+        <Select
+          labelId="demo-simple-select-standard-label"
+          id="demo-simple-select-standard"
+          value={age}
+          onChange={handleChange}
+          label="Age"
+        >
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+      </FormControl>
+     
+          </div>
+          <div>
+          <FormControl variant="standard"  className={classes.selectors}>
+        <InputLabel  id="demo-simple-select-standard-label">How does Amazon decide the ranking of my products?</InputLabel>
+        <Select
+          labelId="demo-simple-select-standard-label"
+          id="demo-simple-select-standard"
+          value={age}
+          onChange={handleChange}
+          label="Age"
+        >
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+      </FormControl>
+     
+          </div>
+        </div>
       </Container>
   <Container className={classes.relative}>
   <motion.img

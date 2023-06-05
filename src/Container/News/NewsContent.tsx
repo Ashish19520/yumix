@@ -45,9 +45,21 @@ function NewsContent() {
     <>
     <Container style={{ backgroundColor: "#FFFCFC" }}>
     <div className={`${classes.conatainer} ${classes.relative}`}>
-           <div >
-            <ArrowBackSharp className={classes.arr} onClick={() => navigate(-1)}/>
+    <ArrowBackSharp className={classes.arr} onClick={() => navigate(-1)}/>
+    <div style={{position:"relative",zIndex:2}}>
             <img src={(data.image[0]?.$.src)?(data.image[0]?.$.src):"../images/Rectangle first.png"} alt="img" width="100%" height="500px"/>
+            <img src="../images/Round Cube2@3x.png" 
+            alt="some"
+            className='blog-cube'></img>
+            <img src="../images/Rock_whywork_blue.png" 
+             className='blog-sphere'
+            alt="some"></img>
+            <img src="../images/contentLine.png" 
+            className='blog-line'
+            alt="some"></img>
+             <img src="../images/ellipse 63.png" 
+            className='content-ellipse'
+            alt="some"></img>
         </div>
         <div className={classes.text}>
             <h1>{data.title[0]}</h1>

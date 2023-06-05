@@ -20,6 +20,7 @@ export default makeStyles((theme) => ({
         top:"-4%",
     },
     text:{ 
+    marginTop:"70px",
     width:"85%",  
     textAlign: "justify",
     },

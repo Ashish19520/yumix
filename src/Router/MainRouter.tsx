@@ -33,6 +33,8 @@ import PlatformEnablement from "../Pages/Analytics/PlatformEnablement";
 import DesignCustomer from "../Pages/CustomerExpierence/DesignCustomer";
 import WebMobileCustomer from "../Pages/CustomerExpierence/WebMobileCustomer";
 import ContentMarketingCustomer from "../Pages/CustomerExpierence/ContentMarketingCustomer";
+import OurWorks1 from "../Pages/Content/OurWorks1";
+import OurWorks2 from "../Pages/Content/OurWorks2";
 
 
 
@@ -72,8 +74,13 @@ const MainRouter = () => {
         <Route path="/customerExpierence/contactMarketing" element={<ContentMarketingCustomer/>} />
         
 
-        
+        <Route path="/works/work1" element={<OurWorks1 />} />
+        <Route path="/works/work2" element={<OurWorks2 />} />
         <Route path="/works" element={<Works />} />
+        <Route path="/works" element={<Works />} />
+
+
+
         <Route path="/blogs" element={<Blog />} />
         <Route path="/blogs/:id" element={<BlogContent />} />
         <Route path="/news" element={<News />} />

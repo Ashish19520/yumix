@@ -18,13 +18,21 @@ export default makeStyles((theme:any) => ({
       relative:{
         position:"relative",
       },
+      box:{
+        [theme.breakpoints.down('sm')]: {
+         width:"100%"
+         },
+      },
       imageLines1:{
         position:"absolute",
         left:"10%",
         right:"0",
         top:"60%",
         bottom:"0",
-        zIndex:-1
+        zIndex:1,
+        [theme.breakpoints.down('sm')]: {
+         display:"none"
+        },
       },
       imageLines2:{
         position:"absolute",
@@ -83,6 +91,20 @@ export default makeStyles((theme:any) => ({
         justifyContent: 'center',
         alignItems: 'center',
       },
+      fifthMainHeading:{
+        fontfamily: 'Poppins',
+        fontStyle: "normal",
+        fontWeight: 700,
+        fontSize: "32px",
+        lineHeight: "44px",
+        textAlign: "center",
+        letterSpacing: "0.25px",
+        color: "#3A3B44",
+        [theme.breakpoints.down('sm')]: {
+          fontSize: "16px",
+          fontWeight: 700,
+        },
+      },
       imageLines11:{
         // alignSelf:"flex-start",
         position: 'absolute',
@@ -90,41 +112,43 @@ export default makeStyles((theme:any) => ({
         bottom:"8%",
         zIndex:1,
        [theme.breakpoints.down('sm')]: {
-        zIndex:"-1",
-        display:"none",
+        left:"70%",
+        top:"50%"
       },
+
     },
       imageLines12:{
         position: 'absolute',
-        top:"20%",
+        top:"-10%",
         right:"10%",
         height:"67px",
         width:"75px",
        zIndex:1,
        [theme.breakpoints.down('sm')]: {
-        top:"20%",
-        right:"0%",
+        display:"none",
       },
       },
       imageLines9:{
         position: 'absolute',
-        top:"15%",
-        right:"20%",
-        height:"34px",
-        width:"34px",
+        top:"40%",
+        right:"15%",
+        height:"14px",
+        width:"14px",
        zIndex:1,
        [theme.breakpoints.down('sm')]: {
-        left:"10%",
-        right:"0%",
+        left:"5%",
       },
       },
       imageLines10:{
         position: 'absolute',
-        top:"0",
+        top:"-10%",
         left:"20%",
-        height:"28px",
-        width:"28px",
+        height:"26px",
+        width:"26px",
        zIndex:1,
+       [theme.breakpoints.down('sm')]: {
+        top:"-5%",
+      },
       
       },
       fonts: {
@@ -203,6 +227,25 @@ export default makeStyles((theme:any) => ({
         gap: "30px",
         alignItems: "center",
         background: "#FFFCFC",
+      },
+      innerimg:{
+          display: 'flex',
+          flexDirection:"row",
+          justifyContent: 'space-between',
+          position:"relative"
+          
+      },
+      imageLines13:{
+        position:"absolute",
+        top:"-90%",
+        right:"-80%",
+        width:"20px",
+        height:"20px",
+        [theme.breakpoints.down('sm')]: {
+          top:"40%",
+          right:"-20%",
+        },
+        
       },
       items: {
         display: 'flex',
@@ -298,6 +341,7 @@ export default makeStyles((theme:any) => ({
         textAlign: "center",
       },
       fifthContainer: {
+        width: "100%",
         display: "flex",
         flexDirection: "column",
         flexWrap:"wrap",
@@ -361,15 +405,15 @@ export default makeStyles((theme:any) => ({
         gap:"40px",
       },
       sixthContainer: {
+        marginTop: "50px",
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
         flexWrap: "wrap",
         padding: "0px",
         gap: "0",
         width: "100%",
         [theme.breakpoints.down('sm')]: {
-          width: "80%",
+          width: "100vw",
         },
       },
       selectors: {

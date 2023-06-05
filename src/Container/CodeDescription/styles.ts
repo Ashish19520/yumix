@@ -265,4 +265,30 @@ export default makeStyles((theme) => ({
     color: "#40424C",
     paddingTop: "30px",
   },
+  sixthContainer: {
+    display: "flex",
+    flexDirection: "column",
+    flexWrap: "wrap",
+    padding: "0px",
+    gap: "0",
+    width: "100%",
+    marginTop:"50px", 
+    [theme.breakpoints.down('sm')]: {
+      width: "80%",
+    },
+  },
+  selectors: {
+   minWidth: "1150px", 
+   width:"100%",
+   display: "flex",
+   flexDirection: "column",
+   flexWrap: "wrap",
+   [theme.breakpoints.down('sm')]: {
+   minWidth: "100vw",
+  },
+    
+  },
+  overf:{
+    overflow:"scroll",
+  }
 }));
