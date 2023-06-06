@@ -21,6 +21,7 @@ import { Container } from "@mui/material";
 //@ts-ignore
 import { DefaultPlayer as Video } from "react-html5video";
 
+
 const PrevArrow: any = ({ onClick }: any) => (
   <div
     className="prev-arrow"

@@ -55,14 +55,7 @@ console.log(response?.data[0]?.attributes?.t_url)
           {/* <img src="./images/Ellipse 63@3x.png" className="img-dot3"></img> */}
         </div>
         <div className="rightDiv">
-          {/* <img src="./images/certificate 1.png"></img> */}  
-          <video width="100%" height="350" controls autoPlay muted>
-            <source
-            className="vid-src"
-             src="https://assets.visme.co/templates/banners/videoThumbnails/i_Cafe-Reviews-Testimonial-Ad_full.mp4" type="video/mp4"/>
- 
-             Your browser does not support the video tag.
-            </video>
+          <img src="./images/certificate 1.png"></img>  
         </div>
       </Container>
     </Certif>

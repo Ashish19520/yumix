@@ -1,10 +1,13 @@
-import { Container, Typography } from "@mui/material";
-import React,{useEffect} from "react";
+import { Container, Typography,Box } from "@mui/material";
+import React,{useEffect,useState} from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import useStyles from './styles';
 
 export const Fba = () => {
+  const [selectedIndex, setSelectedIndex] = useState<number>(0)
+  const [image, setImage] = useState<string>('/images/work1.png')
+  const [toggleFunction,setToggleFunction] = useState<boolean>(true)
   const elements = {
     hidden: {
       opacity: 0,
@@ -23,6 +26,87 @@ export const Fba = () => {
     window.scrollTo(0, 0);
   }, []);
   const classes = useStyles();
+  const points = [
+    {
+      para : "Requires strong management skills for shipments and customer service.",
+      image : "/images/work1.png"
+    },
+    {
+      para : "Offers more flexibility and control over inventory, packaging, and shipping.",
+      image : "/images/work2.png"
+    },
+    {
+      para : "Suitable for products with lower profit margins.",
+      image : "/images/work3.png"
+    },
+    {
+      para : "Charges fees for various services.",
+      image : "/images/work4.png"
+    }
+  ]
+  const points2 = [
+    {
+      para : "Provides faster delivery and wider customer base.",
+      image : "/images/work1.png"
+    },
+    {
+      para : "Provides access to Prime eligibility and BuyBox advantage.",
+      image : "/images/work2.png"
+    },
+    {
+      para : "Beneficial for new and high-volume sellers, large or expensive products.",
+      image : "/images/work3.png"
+    },
+    {
+      para : "Doesn’t charge numerous fees for various services.",
+      image : "/images/work4.png"
+    }
+  ]
+  function showElistratorOnSomeInterval(){
+
+    if(selectedIndex ===0 || selectedIndex <=3){
+
+      setTimeout(()=>{
+        setSelectedIndex(1)
+        setImage("/images/work2.png")
+      },2000)
+  
+  
+      setTimeout(()=>{
+        setSelectedIndex(2)
+        setImage("/images/work3.png")
+      },4000)
+  
+  
+      setTimeout(()=>{
+        setSelectedIndex(3)
+        setImage("/images/work4.png")
+      },6000)
+
+      setTimeout(()=>{
+        setSelectedIndex(0)
+        setImage("/images/work1.png")
+      },8000)
+
+    }
+  }
+
+  if(selectedIndex === 0){
+    showElistratorOnSomeInterval()
+  }
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate__animated");
+          entry.target.classList.add("animate__fadeIn");
+        }
+      });
+    });
+
+    const hiddenElements = document.querySelectorAll(".bannerList_hidden");
+    hiddenElements.forEach((el) => observer.observe(el));
+  }, []);
   return (
     <FbaContainer style={{ backgroundColor: "#FFFCFC",width:"100vw"}}>
       <Container  className="container" >
@@ -63,7 +147,7 @@ export const Fba = () => {
         </div>
        
         <motion.img
-              // src="../images/Group 38639.png"
+              src="../images/Group 38594.png"
               className={classes.imageLines1}
               initial="hidden"
               animate="show"
@@ -88,6 +172,13 @@ export const Fba = () => {
           
 
           <div className={classes.innerWrapper}>
+          {/* <motion.img
+              src="../images/Ellipse 64.png"
+              className={classes.imageLines13}
+              initial="hidden"
+              animate="show"
+            ></motion.img> */}
+            
             <div >
               <h2>Bose Quietcomfort 45</h2>
             </div>
@@ -111,9 +202,15 @@ export const Fba = () => {
             </div>
         
           </div>
+          {/* <motion.img
+              // src="../images/FullRock1@3x.png"
+              className={classes.imageLines14}
+              initial="hidden"
+              animate="show"
+            ></motion.img> */}
         </div>
       </Container>
-      <Container fixed className='container'>
+      <Container className='container'>
         <div className={classes.monitor}>
         
         {/* <motion.img
@@ -124,47 +221,45 @@ export const Fba = () => {
               width="80%"
             ></motion.img>  */}
           <div className={classes.firstRow}>
-            <p>Item Price</p>
-            <p>Shipping Price</p>
-            <p>Total Revenue</p>
-            <p>Amazon Selling Fees</p>
-            <p>Seller fulfillment cost</p>
-            <p>-----</p>
-            <p>Amazon fulfillment fees</p>
-            <p>ship to Amazon</p>
-            <p>Total fulfillment cost</p>
-            <p>Selling proceeds</p>
-            <p>Cost of product</p>
+            <div className={classes.write}>Item Price</div>
+            <div className={classes.write}>Shipping Price</div>
+            <div className={classes.write}>Total Revenue</div>
+            <div className={classes.write}>Amazon Selling Fees</div>
+            <div className={classes.write}>Seller fulfillment cost</div>
+            <div className={classes.write}>-----</div>
+            <div className={classes.write}>Amazon fulfillment fees</div>
+            <div className={classes.write}>ship to Amazon</div>
+            <div className={classes.write}>Total fulfillment cost</div>
+            <div className={classes.write}>Selling proceeds</div>
+            <div className={classes.write}>Cost of product</div>
           </div>
-          <div className={classes.pair}>
+          
             <div className={classes.secondRow}>
               <h1>FBA</h1>
-
               <input className={classes.input} />
               <input className={classes.input} />
-              <p>-</p>
-              <p>-</p>
               <input className={classes.input} />
               <input className={classes.input} />
-              <p>-</p>
-              <p>-</p>
-              <p>-</p>
-              <p>-</p>
+              <input className={classes.input} />
+              <input className={classes.input} />
+              <input className={classes.input} />
+              <input className={classes.input} />
+              <input className={classes.input} />
+              <input className={classes.input} />
             </div>
             <div className={classes.thirdRow}>
               <h1>FBM</h1>
               <input className={classes.input} />
               <input className={classes.input} />
-              <p>-</p>
-              <p>-</p>
               <input className={classes.input} />
               <input className={classes.input} />
-              <p>-</p>
-              <p>-</p>
-              <p>-</p>
-              <p>-</p>
+              <input className={classes.input} />
+              <input className={classes.input} />
+              <input className={classes.input} />
+              <input className={classes.input} />
+              <input className={classes.input} />
+              <input className={classes.input} />
             </div>
-          </div>
         </div>
       </Container>
       <Container fixed maxWidth='lg' className="container">
@@ -223,7 +318,7 @@ export const Fba = () => {
               animate="show"
             ></motion.img>
             <motion.img
-              src="../images/circle_pink_m.png"
+              src="../images/Ellipse 64@3x.png"
               className={classes.imageLines9}
               initial="hidden"
               animate="show"
@@ -241,22 +336,46 @@ export const Fba = () => {
           </div>
           <div className={classes.fifthInner}>
             <div>
-              <h2>FBA</h2>
-              <div className={classes.fonts} >
-                <p > strong management skills for shipments and customer service</p>
-                <p>Offers more flexibility and control over inventory, packaging, and shipping</p>
-                <p>Offers more flexibility and control over inventory, packaging, and shipping</p>
-                <p> Charges fees for various services</p>
-              </div>
+              <h2 style={{marginBottom:"40px"}}>FBA</h2>
+              {
+            points.map((item, index) => {
+              return(
+                <Box onMouseEnter={() => setImage(points[index]?.image)} onMouseLeave={() => setImage(points[selectedIndex]?.image)} key={item?.para} style={{display:'flex', gap:"15px"}}>
+                  <Box style={{display:'flex', flexDirection:'column', alignItems:"center"}}>
+                    <Box style={{width:"20px", height:'20px', borderRadius:"50%", border:`6px solid ${ selectedIndex>=index ? "#5856e9" : "#D1D1D1"}`,cursor:"pointer"}} onClick={()=>{setImage(points[index].image);setSelectedIndex(index);}}/>
+                    <Box style={{width:"2px", height:'50px', backgroundColor: selectedIndex>index ? "#5856e9" : "#D1D1D1", display: index===points.length-1 ? "none" : "block" }}/>
+                  </Box>
+                  <Box style={{height:index===points.length-1 ? "auto" : "50px", width:"100%", position:"relative", top:"-10px"}}>
+                    <FontWrapper>
+                    <Typography fontSize="14px" fontFamily="Montserrat" color="#828490" style={{cursor:"pointer"}} className="whyus-para" onClick={()=>{setImage(points[index]?.image);setSelectedIndex(index);}}>{item?.para}</Typography>
+                    </FontWrapper>
+                  
+                    </Box>
+                </Box>
+              )
+            })
+          }
             </div>
             <div>
-              <h2>FBM</h2>
-              <div className={classes.fonts}>
-                <p>Provides faster delivery and wider customer base.</p>
-                <p>Provides access to Prime eligibility and BuyBox advantage.</p>
-                <p>Beneficial for new and high-volume sellers, large or expensive products.</p>
-                <p>Doesn't charge numerous fees for various services</p>
-              </div>
+              <h2 style={{marginBottom:"40px"}}>FBM</h2>
+              {
+            points2.map((item, index) => {
+              return(
+                <Box onMouseEnter={() => setImage(points[index]?.image)} onMouseLeave={() => setImage(points[selectedIndex]?.image)} key={item?.para} style={{display:'flex', gap:"15px"}}>
+                  <Box style={{display:'flex', flexDirection:'column', alignItems:"center"}}>
+                    <Box style={{width:"20px", height:'20px', borderRadius:"50%", border:`6px solid ${ selectedIndex>=index ? "#5856e9" : "#D1D1D1"}`,cursor:"pointer"}} onClick={()=>{setImage(points[index].image);setSelectedIndex(index);}}/>
+                    <Box style={{width:"2px", height:'50px', backgroundColor: selectedIndex>index ? "#5856e9" : "#D1D1D1", display: index===points.length-1 ? "none" : "block" }}/>
+                  </Box>
+                  <Box style={{height:index===points.length-1 ? "auto" : "50px", width:"100%", position:"relative", top:"-10px"}}>
+                    <FontWrapper>
+                    <Typography fontSize="14px" fontFamily="Montserrat" color="#828490" style={{cursor:"pointer"}} className="whyus-para" onClick={()=>{setImage(points[index]?.image);setSelectedIndex(index);}}>{item?.para}</Typography>
+                    </FontWrapper>
+                  
+                    </Box>
+                </Box>
+              )
+            })
+          }
             </div>
           </div>
         </div>
@@ -450,3 +569,17 @@ const FbaContainer = styled.div`
     }
   }
 `;
+const FontWrapper=styled.div`
+  
+  .whyus-title{
+    @media (max-width:600px){
+      font-size: 14px;
+      margin:"100px"
+    }
+  }
+
+  .whyus-para{
+    @media(max-width:600px){
+      font-size: 11px;
+    }
+  }`;

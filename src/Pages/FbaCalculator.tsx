@@ -1,5 +1,5 @@
 import React from 'react'
-import { Fba } from '../Container/FbaCalculator/Fba'
+import  {Fba}from '../Container/FbaCalculator/Fba'
 import ContactForm from '../Components/contactForm';
 import Footer from '../Components/Footer';
 
