@@ -298,8 +298,8 @@ export const Hero = () => {
                variants={window.screen.width<601? imgProduct2:imgProduct1}
                 initial="hidden"
                 animate="show"
-                className="subject"
-                transition={{duration:.8, delay:.3, ease:"easeInOut"}}
+                className="image_baisa_shop"
+                // transition={{duration:3, delay:.2, ease:"easeInOut"}}
               ></motion.img>
               <motion.img
                 src="./images/Rock2@3x.png"
@@ -568,6 +568,12 @@ const HeroLayout = styled.div`
 
               right: 30%;
             }
+          }
+
+          .image_baisa_shop{
+            transform-style: preserve-3d;
+            transition: all 1.6s ease;
+
           }
 
           .shopify {
