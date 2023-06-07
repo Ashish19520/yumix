@@ -40,27 +40,27 @@ export const OurApproach = () => {
           <div className="icons-zoom">
             <div className="icons">
               <div className="singleicon">
-                <img src="./images/A1.png"></img>
+                <img className="ig" src="./images/A1.png"></img>
                 <p>Schedule a Meeting</p>
               </div>
 
               <div className="singleicon">
-                <img src="./images/A2.png"></img>
+                <img className="ig" src="./images/A2.png"></img>
                 <p>Onboarding Process</p>
               </div>
 
               <div className="singleicon">
-                <img src="./images/A3.png"></img>
+                <img className="ig" src="./images/A3.png"></img>
                 <p>Hire your amazon expert</p>
               </div>
 
               <div className="singleicon">
-                <img src="./images/A4.png"></img>
+                <img className="ig" src="./images/A4.png"></img>
                 <p>Manage your business</p>
               </div>
 
               <div className="singleicon">
-                <img src="./images/A5.png"></img>
+                <img className="ig" src="./images/A5.png"></img>
                 <p className="para">Focus on strategies and growth</p>
               </div>
             </div>
@@ -194,11 +194,16 @@ const MidBanner = styled.div`
 
           img {
             margin-bottom: 20px;
-
+            width:150px;
+            height:118px;
             @media (max-width:600px){
               padding: 0px 20px;
             }
             /* width:100%; */
+          }
+
+          ig{
+           
           }
 
           p {

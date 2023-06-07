@@ -104,7 +104,7 @@ OurServices = () => {
           >
             <img
               src="./images/IllustrationService.png"
-              className="subject-img"   
+              className="subject-img" 
               alt="img"
             ></img>
           </motion.div>
@@ -186,7 +186,10 @@ const ServicesWrapper = styled.div`
           top: 8%;
         }
       }
-
+      imgtex{
+          width: 50%;
+          height: 50%;
+      }
       .text-wrapper{
         padding-left: 20px;
         text-align: center;
@@ -235,8 +238,12 @@ const ServicesWrapper = styled.div`
       justify-content: center;
 
       .subject-img {
-        width: 100%;
+        width: 50%;
+        height: 50%;
         z-index: 2;
+        @media (max-width: 600px) {
+          width: 100%;
+        }
       }
       @media (max-width: 600px) {
         width: 80%;
