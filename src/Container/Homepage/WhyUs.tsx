@@ -9,6 +9,22 @@ function WhyUs() {
   const [image, setImage] = useState<string>('/images/work1.png')
   const [toggleFunction,setToggleFunction] = useState<boolean>(true)
 
+  const [image_blue_rock_top,setImage_blue_rock_top]  = useState<string>("80%");
+  const [image_blue_rock_left,setImage_blue_rock_left]  = useState<string>("15%");
+
+  const [image_yellow_rock_top,setImage_yellow_rock_top]  = useState<string>("-20%");
+  const [image_yellow_rock_left,setImage_yellow_rock_left]  = useState<string>("70%");
+
+  const [image_blue_BIG_circle_top,setImage_blue_BIG_circle_top]  = useState<string>("-15%");
+  const [image_blue_BIG_circle_left,setImage_blue_BIG_circle_left]  = useState<string>("15%");
+
+  const [image_blue_SMALL_circle_top,setImage_blue_SMALL_circle_top]  = useState<string>("50%");
+  const [image_blue_SMALL_circle_left,setImage_blue_SMALL_circle_left]  = useState<string>("93%");
+
+  const [image_PINK_circle_top,setImage_PINK_circle_top]  = useState<string>("100%");
+  const [image_PINK_circle_left,setImage_PINK_circle_left]  = useState<string>("70%");
+
+
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -53,24 +69,64 @@ function WhyUs() {
 
       setTimeout(()=>{
         setSelectedIndex(1)
-        setImage("/images/work2.png")
+        setImage("/images/work2.png");
+        setImage_blue_rock_top("95%");
+        setImage_blue_rock_left("70%");
+        setImage_yellow_rock_top("-28%");
+        setImage_yellow_rock_left("15%");
+
+        setImage_blue_BIG_circle_top("85%");
+        setImage_blue_BIG_circle_left("6%")
+
+        setImage_PINK_circle_top("-8%");
+        setImage_PINK_circle_left("80%")
       },2000)
   
   
       setTimeout(()=>{
         setSelectedIndex(2)
         setImage("/images/work3.png")
+        setImage_blue_rock_top("-20%");
+        setImage_blue_rock_left("70%");
+        setImage_yellow_rock_top("92%");
+        setImage_yellow_rock_left("15%")
+
+        setImage_blue_BIG_circle_top("100%");
+        setImage_blue_BIG_circle_left("70%");
+
+        setImage_PINK_circle_top("-20%");
+        setImage_PINK_circle_left("15%")
       },4000)
   
   
       setTimeout(()=>{
         setSelectedIndex(3)
         setImage("/images/work4.png")
+        setImage_blue_rock_top("-35%");
+        setImage_blue_rock_left("13%");
+        setImage_yellow_rock_top("80%");
+        setImage_yellow_rock_left("70%")
+
+        setImage_blue_BIG_circle_top("-8%");
+        setImage_blue_BIG_circle_left("80%")
+
+        setImage_PINK_circle_top("85%");
+        setImage_PINK_circle_left("6%")
       },6000)
 
       setTimeout(()=>{
         setSelectedIndex(0)
         setImage("/images/work1.png")
+        setImage_blue_rock_top("80%");
+        setImage_blue_rock_left("15%");
+        setImage_yellow_rock_top("-20%");
+        setImage_yellow_rock_left("70%")
+
+        setImage_blue_BIG_circle_top("-15%");
+        setImage_blue_BIG_circle_left("15%")
+
+        setImage_PINK_circle_top("100%");
+        setImage_PINK_circle_left("70%")
       },8000)
 
     }
@@ -100,7 +156,7 @@ function WhyUs() {
           />
           </Box>
 
-          <Box style={{width:"80%",position:"absolute", top:"-20%", left:"70%"}}>
+          <Box style={{width:"80%",position:"absolute", top:`${image_yellow_rock_top}`, left:`${image_yellow_rock_left}`}}>
           <m.img 
            initial={{ opacity: 0, scale: 0.5 }}
            animate={{ opacity:1, scale: 1 }}
@@ -113,7 +169,7 @@ function WhyUs() {
           />
           </Box>
 
-          <Box style={{width:"80%",position:"absolute", top:"80%", left:"15%"}}>
+          <Box style={{width:"80%",position:"absolute", top:`${image_blue_rock_top}`, left:`${image_blue_rock_left}`}}>
           <m.img 
            initial={{ opacity: 0, scale: 0.5 }}
            animate={{ opacity:1, scale: 1 }}
@@ -121,11 +177,11 @@ function WhyUs() {
            transition={{ duration: 0.5 }} 
            src="./images/Rock_whywork_blue.png"
            alt=""
-           width="45%"
+           width="30%"
           />
           </Box>
 
-          <Box style={{width:"80%",position:"absolute", top:"-25%", left:"15%"}}>
+          <Box style={{width:"80%",position:"absolute", top:`${image_blue_BIG_circle_top}`, left:`${image_blue_BIG_circle_left}`}}>
           <m.img 
            initial={{ opacity: 0, scale: 0.5 }}
            animate={{ opacity:1, scale: 1 }}
@@ -133,11 +189,11 @@ function WhyUs() {
            transition={{ duration: 0.5 }} 
            src="./images/circle_blue_m.png"
            alt=""
-           width="8%"
+           width="7%"
           />
           </Box>
 
-          <Box style={{width:"80%",position:"absolute", top:"50%", left:"9%"}}>
+          <Box style={{width:"80%",position:"absolute", top:`${image_blue_SMALL_circle_top}`, left:`${image_blue_SMALL_circle_left}`}}>
           <m.img 
            initial={{ opacity: 0, scale: 0.5 }}
            animate={{ opacity:1, scale: 1 }}
@@ -150,7 +206,7 @@ function WhyUs() {
           />
           </Box>
 
-          <Box style={{width:"80%",position:"absolute", top:"100%", left:"70%"}}>
+          <Box style={{width:"80%",position:"absolute", top:`${image_PINK_circle_top}`, left:`${image_PINK_circle_left}`}}>
           <m.img 
            initial={{ opacity: 0, scale: 0.5 }}
            animate={{ opacity:1, scale: 1 }}
@@ -158,7 +214,7 @@ function WhyUs() {
            transition={{ duration: 0.5 }} 
            src="./images/circle_pink_m.png"
            alt=""
-           width="8%"
+           width="9%"
           />
           </Box>
 
