@@ -45,9 +45,10 @@ export default makeStyles((theme) => ({
     padding: "0px 1px",
     gap: "8px",
     height: "173px",
-    width: "120px",
+    width: "22%",
   },
-  innerWrapper: {
+  innerWrapper: { 
+    position: "relative",
     display: 'flex',
     flexWrap: 'wrap',
     flexDirection: 'column',
@@ -55,8 +56,16 @@ export default makeStyles((theme) => ({
     gap: "30px",
     alignItems: "center",
     background: "#FFFCFC",
-    position: "relative",
+   
   },
+  innerimg:{
+    position:"relative",
+    display: 'flex',
+    flexDirection:"row",
+    justifyContent: 'space-between',
+  
+    
+},
   items: {
     display: 'flex',
     flexWrap: 'wrap',
@@ -70,7 +79,6 @@ export default makeStyles((theme) => ({
   monitor: {
     display: 'flex',
     flexDirection: 'row',
-    flexWrap: 'wrap',
     justifyContent: 'center',
     gap: "30px",
     background: "#FFFCFC",
@@ -79,57 +87,71 @@ export default makeStyles((theme) => ({
   index:{
     zIndex:7,
   },
-  pair: {
-    display: "flex",
-    flexDirection:"row",
-    // flexWrap: "wrap",
-    gap: "20px",
-  },
+  
   firstRow: {
     display: "flex",
     flexDirection: "column",
     alignItems: "flex-start",
+    justifyContent: "flex-start",
     flexWrap: "wrap",
     padding: "0px",
-    gap: "20px",
-    marginTop: "95px",
+    gap: "19px",
+    marginTop: "100px",
+    width: "33%",
     zIndex:1,
+  },
+  write:{
+    fontFamily: 'Montserrat',
+    fontStyle: "normal",
+    fontWeight: 400,
+    fontSize: "16px",
+    lineHeight: "24px",
+    display: "flex",
+    alignItems: "start",
+    textAlign: "start",
+    letterSpacing: "0.25px",
+    color: "#606060",
+    [theme.breakpoints.down('sm')]: {
+      fontSize: "16px",
+      fontWeight: 100,
+      letterSpacing: "0.5px",
+      lineHeight: "10px",
+    },
   },
   secondRow: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    padding: "23px 33px",
+    padding: "23px 25px",
     gap: "20px",
-    width: "100%",
-    maxWidth: "368px",
+    width:"33%",
     height: "565px",
     background: "#FFFFFF",
     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.08)",
     zIndex:1,
     borderRadius: "16px",
-    [theme.breakpoints.down('xs')]: {
-      maxWidth: "100%",
+    [theme.breakpoints.down('sm')]: {
+      width:"33%",
       marginBottom: "20px",
     },
   },
   input: {
-    width: "282px",
-    height: "36px",
-    left: "16px",
-    radius: "4px",
+    width: "100%",
+    height: "38px",
     padding: "14px, 16px, 14px, 16px",
     gap: "10px",
     zIndex:1,
+    [theme.breakpoints.down('sm')]: {
+      padding: "none",
+    },
   },
   thirdRow: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    padding: "23px 33px",
+    padding: "23px 25px",
     gap: "20px",
-    width: "100%",
-    maxWidth: "368px",
+    width:"33%",
     height: "565px",
     background: "#FFFFFF",
     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.08)",
@@ -137,7 +159,7 @@ export default makeStyles((theme) => ({
     zIndex:1, 
     marginBottom: "0px",
     [theme.breakpoints.down('xs')]: {
-      maxWidth: "100%",
+      width:"33%",
       marginBottom: "20px",
     },
   },
@@ -152,11 +174,6 @@ export default makeStyles((theme) => ({
     [theme.breakpoints.down('xs')]: {
       flexDirection: 'column',
       alignItems: 'center',
-    },
-    [theme.breakpoints.down('sm')]: {
-      flexDirection: 'row',
-      alignItems: 'flex-start',
-      flexWrap: 'nowrap',
     },
   },
   innerTwoContainer: {
@@ -174,10 +191,10 @@ export default makeStyles((theme) => ({
   },
   innerThirdContainer: {
     display: 'flex',
-    flexWrap: 'wrap',
     justifyContent: 'center',
     alignItems: 'center',
     gap: '30px',
+    
   },
   fifthContainer: {
     display: 'flex',
@@ -282,16 +299,23 @@ export default makeStyles((theme) => ({
   },imageLines1:{
     position:"absolute",
     left:"10%",
-    bottom:"-24%",
-    zIndex:1
+    bottom:"-15%",
+    zIndex:-1,
+    width:"70%",
+    [theme.breakpoints.down('xs')]: {
+      display:"none",
+    },
   },
   imageLines7:{
     position:"absolute",
     left:"48%",
-    bottom:"10%",
+    bottom:"15%",
     zIndex:1,
     width:"20px",
-    height:"20px"
+    height:"20px",
+    [theme.breakpoints.down('xs')]: {
+      display:"none",
+    },
   },
   heroRock:{
     position:"absolute",
@@ -320,6 +344,30 @@ export default makeStyles((theme) => ({
     right:"15%",
     zIndex:-1,
   },
+  imageLines13:{
+    position:"absolute",
+    top:"0%",
+    right:"10%",
+    width:"20px",
+    height:"20px",
+    [theme.breakpoints.down('sm')]: {
+      top:"40%",
+      right:"-20%",
+    },
+    
+  },
+  imageLines14:{
+    position:"absolute",
+    bottom:"0%",
+    right:"0%",
+    width:"80px",
+    height:"80px",
+    [theme.breakpoints.down('sm')]: {
+      top:"40%",
+      right:"-20%",
+    },
+    
+  },
   imageLines3:{
     position: 'absolute',
     zIndex:-1,
@@ -343,6 +391,9 @@ export default makeStyles((theme) => ({
     height:"34px",
     width:"34px",
    zIndex:1,
+   [theme.breakpoints.down('sm')]: {
+      display:"none"
+   },
   },
   imageLines10:{
     position: 'absolute',
@@ -351,6 +402,9 @@ export default makeStyles((theme) => ({
     height:"28px",
     width:"28px",
    zIndex:1,
+   [theme.breakpoints.down('sm')]: {
+    display:"none"
+ },
   },
   imageLines11:{
     position:"absolute",

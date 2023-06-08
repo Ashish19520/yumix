@@ -1,9 +1,13 @@
 import { Container } from "@mui/material";
-import React from "react";
+import React,{useState,useEffect} from "react";
 import styled from "styled-components";
 import { Card } from "../../Components/Card";
 import { motion } from "framer-motion";
 import { VideoSlide } from "../../Components/VideoSlide";
+import { useDispatch } from 'react-redux';
+import { Dispatch } from 'redux';
+import {  testimonialPlay} from "../../actions/posts"
+import { useSelector } from "react-redux/es/exports"
 
 const data = [
   {
@@ -52,7 +56,14 @@ export const People = () => {
       opacity: 1,
     },
   };
+  const response=useSelector((state:any)=>state?.posts?.testimonials);
+  const dispatch: Dispatch<any> = useDispatch();
 
+
+  useEffect(()=>{
+    dispatch(testimonialPlay())
+  },[])
+  console.log("--------",response)
   return (
     <Users>
       <Container maxWidth="lg" className="container">

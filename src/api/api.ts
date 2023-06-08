@@ -18,4 +18,10 @@ export const sitecounters=()=>API.get(`api/sitecounters`);
 export const blogs=()=>API.post(`api/blogs/rss-blog/`);  
 export const fetchNews=()=>API.get(`api/latest-newsses/rss-feed`);
 
+// ####### ----  FBA   -----#######################
+export const fetchProductDetails=(asin:any)=>API.get(`api/fbas/getDetails/${asin}`);
+export const fetchProductPriceDetails=(asin:any)=>API.get(`api/fbas/getPriceDetails/${asin}`);
+export const fetchProductProgramDetails=(asin:any)=>API.get(`api/fbas/getProgramDetails/${asin}`);
+export const fetchProductFeesDetails=(data:any)=>API.post(`api/fbas/feesDetails`,data);
+
 

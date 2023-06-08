@@ -1,5 +1,5 @@
-import React,{useEffect} from 'react'
-import { Container, Typography, Input, Button, Select } from "@mui/material";
+import React,{useEffect,useState} from 'react'
+import { Container, Typography, Input, Button, Select,Box } from "@mui/material";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import InputLabel from '@mui/material/InputLabel';
@@ -12,6 +12,9 @@ import zIndex from '@mui/material/styles/zIndex';
 function ListCalc() {
   const classes = useStyles();
   const [age, setAge] = React.useState('');
+  const [selectedIndex, setSelectedIndex] = useState<number>(0)
+  const [image, setImage] = useState<string>('/images/work1.png')
+  const [toggleFunction,setToggleFunction] = useState<boolean>(true)
 
   const handleChange = (event: SelectChangeEvent) => {
     setAge(event.target.value);
@@ -19,6 +22,87 @@ function ListCalc() {
   }
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+  const points = [
+    {
+      para : "Keywords impact listing visibility.",
+      image : "/images/work1.png"
+    },
+    {
+      para : "Search position affects discoverability.",
+      image : "/images/work2.png"
+    },
+    {
+      para : "Discoverability ensures visibility to potential buyer",
+      image : "/images/work3.png"
+    },
+    {
+      para : "Unfound listing is ineffective",
+      image : "/images/work4.png"
+    }
+  ]
+  const points2 = [
+    {
+      para : "Overview of the product and its specifications",
+      image : "/images/work1.png"
+    },
+    {
+      para : "In-depth view of product features and applications.",
+      image : "/images/work2.png"
+    },
+    {
+      para : "Emphasise brand and its unique story",
+      image : "/images/work3.png"
+    },
+    {
+      para : "Add images to give depth to your listing",
+      image : "/images/work4.png"
+    }
+  ]
+  function showElistratorOnSomeInterval(){
+
+    if(selectedIndex ===0 || selectedIndex <=3){
+
+      setTimeout(()=>{
+        setSelectedIndex(1)
+        setImage("/images/work2.png")
+      },2000)
+  
+  
+      setTimeout(()=>{
+        setSelectedIndex(2)
+        setImage("/images/work3.png")
+      },4000)
+  
+  
+      setTimeout(()=>{
+        setSelectedIndex(3)
+        setImage("/images/work4.png")
+      },6000)
+
+      setTimeout(()=>{
+        setSelectedIndex(0)
+        setImage("/images/work1.png")
+      },8000)
+
+    }
+  }
+
+  if(selectedIndex === 0){
+    showElistratorOnSomeInterval()
+  }
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate__animated");
+          entry.target.classList.add("animate__fadeIn");
+        }
+      });
+    });
+
+    const hiddenElements = document.querySelectorAll(".bannerList_hidden");
+    hiddenElements.forEach((el) => observer.observe(el));
   }, []);
   return (
     <ListContainer style={{ backgroundColor: "#FFFCFC" }}>
@@ -286,23 +370,46 @@ function ListCalc() {
           </div>
           <div className={classes.fifthInner}>
             <div>
-              <h2>Discoverability - The Listing Visibility</h2>
-              <div className={classes.fonts} >
-                <p > Keywords impact listing visibility</p>
-                <p>Search position affects discoverability</p>
-                <p>Discoverability ensures visibility to potential buyer</p>
-                <p> Unfound listing is ineffective</p>
-              </div>
+              <h2  style={{marginBottom:"40px"}}>Discoverability - The Listing Visibility</h2>
+              {
+            points.map((item, index) => {
+              return(
+                <Box onMouseEnter={() => setImage(points[index]?.image)} onMouseLeave={() => setImage(points[selectedIndex]?.image)} key={item?.para} style={{display:'flex', gap:"15px"}}>
+                  <Box style={{display:'flex', flexDirection:'column', alignItems:"center"}}>
+                    <Box style={{width:"20px", height:'20px', borderRadius:"50%", border:`6px solid ${ selectedIndex>=index ? "#5856e9" : "#D1D1D1"}`,cursor:"pointer"}} onClick={()=>{setImage(points[index].image);setSelectedIndex(index);}}/>
+                    <Box style={{width:"2px", height:'50px', backgroundColor: selectedIndex>index ? "#5856e9" : "#D1D1D1", display: index===points.length-1 ? "none" : "block" }}/>
+                  </Box>
+                  <Box style={{height:index===points.length-1 ? "auto" : "50px", width:"100%", position:"relative", top:"-10px"}}>
+                    <FontWrapper>
+                    <Typography fontSize="14px" fontFamily="Montserrat" color="#828490" style={{cursor:"pointer"}} className="whyus-para" onClick={()=>{setImage(points[index]?.image);setSelectedIndex(index);}}>{item?.para}</Typography>
+                    </FontWrapper>
+                  
+                    </Box>
+                </Box>
+              )
+            })
+          }
             </div>
             <div>
-            <h2>Desirability - On Page Factors</h2>
-              <div className={classes.fonts}>
-                <p>Overview of the product and its specifications</p>
-                <p>In-depth view of product features and applications</p>
-                <p>Emphasise brand and its unique story</p>
-                <p>Add images to give depth to your listing
-</p>
-              </div>
+            <h2 style={{marginBottom:"40px"}}>Desirability - On Page Factors</h2>
+            {
+            points.map((item, index) => {
+              return(
+                <Box onMouseEnter={() => setImage(points[index]?.image)} onMouseLeave={() => setImage(points[selectedIndex]?.image)} key={item?.para} style={{display:'flex', gap:"15px"}}>
+                  <Box style={{display:'flex', flexDirection:'column', alignItems:"center"}}>
+                    <Box style={{width:"20px", height:'20px', borderRadius:"50%", border:`6px solid ${ selectedIndex>=index ? "#5856e9" : "#D1D1D1"}`,cursor:"pointer"}} onClick={()=>{setImage(points[index].image);setSelectedIndex(index);}}/>
+                    <Box style={{width:"2px", height:'50px', backgroundColor: selectedIndex>index ? "#5856e9" : "#D1D1D1", display: index===points.length-1 ? "none" : "block" }}/>
+                  </Box>
+                  <Box style={{height:index===points.length-1 ? "auto" : "50px", width:"100%", position:"relative", top:"-10px"}}>
+                    <FontWrapper>
+                    <Typography fontSize="14px" fontFamily="Montserrat" color="#828490" style={{cursor:"pointer"}} className="whyus-para" onClick={()=>{setImage(points[index]?.image);setSelectedIndex(index);}}>{item?.para}</Typography>
+                    </FontWrapper>
+                  
+                    </Box>
+                </Box>
+              )
+            })
+          }
             </div>
           </div>
         </div>
@@ -519,5 +626,20 @@ const ListContainer = styled.div`
     }
   }
 `;
+const FontWrapper=styled.div`
+  
+  .whyus-title{
+    @media (max-width:600px){
+      font-size: 14px;
+      margin:"100px"
+    }
+  }
+
+  .whyus-para{
+    @media(max-width:600px){
+      font-size: 11px;
+    }
+  }`;
+
 
 export default ListCalc

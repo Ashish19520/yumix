@@ -294,7 +294,7 @@ export const Hero = () => {
               },1000)
               }
               
-                src="./images/3 - Brisa Shops Online@3x.png"
+                src="./images/3 - Brisa Shops Online.png"
                variants={window.screen.width<601? imgProduct2:imgProduct1}
                 initial="hidden"
                 animate="show"

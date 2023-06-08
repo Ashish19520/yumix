@@ -1,6 +1,17 @@
 import { Dispatch ,AnyAction} from 'redux';
 import * as api from '../api/api';
-import {FETCH_POST,FILL_FORM,CLIENT_LIST,TESTIMONIALS, SITE_COUNTERS,FETCH_NEWS,FETCH_BLOGS} from "../constants/actionTypes";
+import {FETCH_POST,
+    FILL_FORM,
+    CLIENT_LIST,
+    TESTIMONIALS,
+     SITE_COUNTERS,
+     FETCH_NEWS,
+     FETCH_BLOGS,
+     PRODUCT_DETAILS,
+     PRODUCT_PRICE,
+     PRODUCT_PROGRAM,
+     PRODUCT_FEES
+    } from "../constants/actionTypes";
 
 
 
@@ -65,6 +76,44 @@ export const fetchBlogs=()=>async (dispatch:Dispatch<AnyAction>)=>{
     try {
        let {data}=await api.blogs();
     dispatch({type:FETCH_BLOGS,payload:data});
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+// ############################-------FBA-ACTIONS---------------###########
+export const fetchProductDetails=(asin:any)=>async (dispatch:Dispatch<AnyAction>)=>{
+    try {
+       let {data}=await api.fetchProductDetails(asin);
+    dispatch({type:PRODUCT_DETAILS,payload:data});
+    return data;
+    } catch (error) {
+        console.error(error);
+    }
+}
+export const fetchProductPriceDetails=(asin:any)=>async (dispatch:Dispatch<AnyAction>)=>{
+    try {
+       let {data}=await api.fetchProductPriceDetails(asin);
+    dispatch({type:PRODUCT_PRICE,payload:data});
+    return data;
+    } catch (error) {
+        console.error(error);
+    }
+}
+export const fetchProductProgramDetails=(asin:any)=>async (dispatch:Dispatch<AnyAction>)=>{
+    try {
+       let {data}=await api.fetchProductProgramDetails(asin);
+    dispatch({type:PRODUCT_PROGRAM,payload:data});
+    return data;
+    } catch (error) {
+        console.error(error);
+    }
+}
+export const fetchProductFeesDetails=(body:any)=>async (dispatch:Dispatch<AnyAction>)=>{
+    try {
+       let {data}=await api.fetchProductFeesDetails(body);
+    dispatch({type:PRODUCT_FEES,payload:data});
+    return data;
     } catch (error) {
         console.error(error);
     }

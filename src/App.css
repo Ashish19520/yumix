@@ -380,4 +380,106 @@ text-align: center;
   cursor:"pointer";
   top:-4%;
 } 
+.fba-hero-main{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  @media(max-width: 600px){
+    flex-direction:column-reverse;
+  }
+}
+.fba-hero-left{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap:20px;
+  width: 50%;
+  @media(max-width: 600px){
+    width: 100%;
+  }
+}
+.fba-hero-right-heading{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 50px;
+  /* identical to box height, or 125% */
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.25px;
+  
+  color: #0B0720;
+}
+.fba-hero-right-para{
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+/* or 150% */
+  width:70%;
+  letter-spacing: 0.25px;
+  color: #636677;
+}
+.fba-hero-right-inner{
+display: flex;
+gap:20px;
+width:100%;
+}
 
+.btn_FBACalculate {
+  background-color: #5956e9;
+  color: #e0e0e0;
+  border: 0px;
+  border-radius: 10px;
+  padding: 10px 25px;
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0.01em;
+  text-align: center;
+  margin-right:50px;
+}
+/* .input-field{     
+    background: #e0e0e0;
+    width: 70%;
+    border: none;
+    padding: 20px;
+    border-radius: 10px;
+    &::placeholder {
+      color: #828282;
+    }
+    &:focus {
+      outline: none;
+    }
+} */
+
+.fba-hero-right{
+  display: flex;
+  align-items: center;
+  position:"relative";
+  width:50%;
+  @media(max-width: 600px){
+    width:"100%";
+  }
+}
+
+.fba-hero-right-back-ellipse{
+  position: absolute;
+  right:10%;
+  z-index:-1;
+  width:40%;
+  height:100%;
+}
+.fba-hero-right-back-rock{
+  position: absolute;
+  right:35%;
+  top:5%;
+  z-index:2;
+  width:80px;
+  height:80px;
+}
