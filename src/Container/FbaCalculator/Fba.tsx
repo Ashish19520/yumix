@@ -3,7 +3,11 @@ import React,{useEffect,useState} from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import useStyles from './styles';
-
+import { useDispatch } from 'react-redux';
+import { Dispatch } from 'redux';
+import { fetchProductDetails,fetchProductPriceDetails,fetchProductProgramDetails,fetchProductFeesDetails } from "../../actions/posts";
+import { useSelector } from "react-redux/es/exports"
+import { DataObjectOutlined, Straight } from "@mui/icons-material";
 export const Fba = () => {
   const [selectedIndex, setSelectedIndex] = useState<number>(0)
   const [image, setImage] = useState<string>('/images/work1.png')
@@ -107,6 +111,56 @@ export const Fba = () => {
     const hiddenElements = document.querySelectorAll(".bannerList_hidden");
     hiddenElements.forEach((el) => observer.observe(el));
   }, []);
+
+
+  // const response=useSelector((state:any)=>state?.posts?.fetchBlogs?.data);
+  
+  const dispatch: Dispatch<any> = useDispatch();
+
+  const [value,setValue]=useState();
+  const changeHandlar=(e:any)=>{
+    setValue(e.target.value)
+  }
+  
+
+
+  const fetch=async()=>{
+
+    const productDetails:any=await dispatch(fetchProductDetails(value));
+    const priceDetails:any=await dispatch(fetchProductPriceDetails(value));
+    const programDetails:any=await dispatch(fetchProductProgramDetails(value));
+
+    let data={
+      countryCode:productDetails.data.countryCode,
+      itemInfo: {
+        asin: productDetails.data.searchKey,
+        glProductGroupName: productDetails.data.otherProducts.products[0].gl,
+        packageLength:productDetails.data.otherProducts.products[0].length,
+        packageWidth: productDetails.data.otherProducts.products[0].width,
+        packageHeight:productDetails.data.otherProducts.products[0].height,
+        dimensionUnit: productDetails.data.otherProducts.products[0].dimensionUnit,
+        packageWeight: productDetails.data.otherProducts.products[0].weight,
+        weightUnit: productDetails.data.otherProducts.products[0].weightUnit,
+        afnPriceStr: priceDetails.data.price.amount,
+        mfnPriceStr: priceDetails.data.price.amount,
+        mfnShippingPriceStr:priceDetails.data.shipping.amount,
+        currency: "USD",
+        isNewDefined: false
+      },
+      programIdList:[""],
+    }
+    for(let i=0;i<programDetails.programInfoList.length;i++) {
+      data.programIdList.push(programDetails.programInfoList[i].name);
+    } 
+    data.programIdList.shift();
+
+    const productFees:any=await dispatch(fetchProductFeesDetails(data));
+    console.log(productDetails);
+    console.log(priceDetails);
+    console.log(programDetails);
+    console.log(productFees);
+    
+  }
   return (
     <FbaContainer style={{ backgroundColor: "#FFFCFC",width:"100vw"}}>
       <Container  className="container" >
@@ -121,8 +175,12 @@ export const Fba = () => {
               <input
                 type="text"
                 placeholder="Enter Amazon product's ASIN Number"
+                value={value}
+                onChange={changeHandlar}
               ></input>
-              <button className="btn_FBACalculate">Calculate</button>
+              <button 
+              className="btn_FBACalculate"
+              onClick={fetch}>Calculate</button>
             </div>
           </div>
           <div className="box " style={{zIndex:"1"}}>
