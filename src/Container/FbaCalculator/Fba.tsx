@@ -118,47 +118,54 @@ export const Fba = () => {
   const dispatch: Dispatch<any> = useDispatch();
 
   const [value,setValue]=useState();
+  const[pDetails,setpDetails]=useState<any>(null); 
+  const[prDetails,setprDetails]=useState<any>(null); 
+  const[prgDetails,setprgDetails]=useState<any>(null); 
+  const[pfeeDetails,setpfeeDetails]=useState<any>(null); 
+
   const changeHandlar=(e:any)=>{
     setValue(e.target.value)
   }
   
-
-
   const fetch=async()=>{
 
     const productDetails:any=await dispatch(fetchProductDetails(value));
+    setpDetails(productDetails);
     const priceDetails:any=await dispatch(fetchProductPriceDetails(value));
+    setprDetails(priceDetails);
     const programDetails:any=await dispatch(fetchProductProgramDetails(value));
+    setprgDetails(programDetails);
+
 
     let data={
-      countryCode:productDetails.data.countryCode,
-      itemInfo: {
-        asin: productDetails.data.searchKey,
-        glProductGroupName: productDetails.data.otherProducts.products[0].gl,
-        packageLength:productDetails.data.otherProducts.products[0].length,
-        packageWidth: productDetails.data.otherProducts.products[0].width,
-        packageHeight:productDetails.data.otherProducts.products[0].height,
-        dimensionUnit: productDetails.data.otherProducts.products[0].dimensionUnit,
-        packageWeight: productDetails.data.otherProducts.products[0].weight,
-        weightUnit: productDetails.data.otherProducts.products[0].weightUnit,
-        afnPriceStr: priceDetails.data.price.amount,
-        mfnPriceStr: priceDetails.data.price.amount,
-        mfnShippingPriceStr:priceDetails.data.shipping.amount,
-        currency: "USD",
-        isNewDefined: false
+      product_id: productDetails.data.searchKey,
+      afn_fees_request:{
+        item_price:priceDetails.data.price.amount,
+        ship_to_amazon_fees:priceDetails.data.shipping.amount ,
+        product_cost:priceDetails.data.shipping.amount,
       },
-      programIdList:[""],
+      mfn_fees_request:{
+        item_price: priceDetails.data.price.amount,
+        shipping_price:priceDetails.data.shipping.amount,
+        product_cost: priceDetails.data.shipping.amount,
+
+        seller_fulfillment_cost:{
+          total:0,
+          monthly_storage: 0,
+          labor:0,
+          packaging_material: 0,
+          ship_to_customer:0,
+          customer_service:0
+
+        }
+      }
     }
-    for(let i=0;i<programDetails.programInfoList.length;i++) {
-      data.programIdList.push(programDetails.programInfoList[i].name);
-    } 
-    data.programIdList.shift();
+      
 
     const productFees:any=await dispatch(fetchProductFeesDetails(data));
-    console.log(productDetails);
-    console.log(priceDetails);
-    console.log(programDetails);
-    console.log(productFees);
+    setpfeeDetails(productFees);
+    
+    console.log("------",productFees);
     
   }
   return (
@@ -221,11 +228,17 @@ export const Fba = () => {
       <Container fixed className="container">
         <div className={classes.wrapper}>
           <div className={`${classes.img} ${classes.index}`}>
-            <img src="../images/61+lhpMw+2L 1.png" alt="img" height="200px" width="250px"></img>
-            <motion.img
+            {/* <img src=
+            {pDetails&&pDetails?.data?.otherProducts?.products[0]?.imageUrl?
+              pDetails?.data?.otherProducts?.products[0]?.imageUrl:
+              "../images/61+lhpMw+2L 1.png"}
+              alt="img"
+             height="100px" 
+             width="100px"></img> */}
+            {/* <motion.img
               src="../images/Ellipse 75@3x.png"
               className={classes.imageLines3}
-            ></motion.img>
+            ></motion.img> */}
           </div>
           
 
@@ -238,25 +251,43 @@ export const Fba = () => {
             ></motion.img> */}
             
             <div >
-              <h2>Bose Quietcomfort 45</h2>
+              <h2> {pDetails&&pDetails?.data?.otherProducts?.products[0]?.title?
+              pDetails?.data?.otherProducts?.products[0]?.title:
+              "Bose Quiet Comfort 45"}</h2>
             </div>
             <div className={classes.items}>
+              <div>
+                {/* <p>.</p> */}
+                <img src=
+                {pDetails&&pDetails?.data?.otherProducts?.products[0]?.imageUrl?
+                pDetails?.data?.otherProducts?.products[0]?.imageUrl:
+                "../images/61+lhpMw+2L 1.png"}
+                alt="img"
+                height="80px" 
+                width="80px"></img>
+              </div>
               <div >
                 <p>Product Id</p>
-                <p>1245</p>
+                <p>{pDetails&&pDetails?.data?.otherProducts?.products[0]?.asin?
+              pDetails?.data?.otherProducts?.products[0]?.asin:
+              "1245"}</p>
               </div>
               <div>
                 <p>Price</p>
-                <p>$3000</p>
+                <p>${prDetails&&prDetails?.data?.price?.amount?
+              prDetails?.data?.price?.amount:
+              "3000"}</p>
               </div>
               <div>
-                <p>Unit Weigth</p>
-                <p>419gm</p>
+                <p>Unit Weight</p>
+                <p>{pDetails&&pDetails?.data?.otherProducts?.products[0]?.weight?
+              pDetails?.data?.otherProducts?.products[0]?.weight:
+              "00.00"}</p>
               </div>
-              <div>
+              {/* <div>
                 <p>Product Dimension</p>
                 <p>19.5cm X 8386cm X 02.95 cm</p>
-              </div>
+              </div> */}
             </div>
         
           </div>
@@ -279,12 +310,12 @@ export const Fba = () => {
               width="80%"
             ></motion.img>  */}
           <div className={classes.firstRow}>
+                        <h1>Labels</h1>
             <div className={classes.write}>Item Price</div>
             <div className={classes.write}>Shipping Price</div>
             <div className={classes.write}>Total Revenue</div>
             <div className={classes.write}>Amazon Selling Fees</div>
             <div className={classes.write}>Seller fulfillment cost</div>
-            <div className={classes.write}>-----</div>
             <div className={classes.write}>Amazon fulfillment fees</div>
             <div className={classes.write}>ship to Amazon</div>
             <div className={classes.write}>Total fulfillment cost</div>
@@ -294,29 +325,121 @@ export const Fba = () => {
           
             <div className={classes.secondRow}>
               <h1>FBA</h1>
-              <input className={classes.input} />
-              <input className={classes.input} />
-              <input className={classes.input} />
-              <input className={classes.input} />
-              <input className={classes.input} />
-              <input className={classes.input} />
-              <input className={classes.input} />
-              <input className={classes.input} />
-              <input className={classes.input} />
-              <input className={classes.input} />
+
+              <input 
+              type="number"
+               value={pfeeDetails&&pfeeDetails?.mfn_fees_detail?.item_price?
+                pfeeDetails?.mfn_fees_detail?.item_price:
+                "0"} className={classes.input} />
+
+
+              <input 
+              value={pfeeDetails&&pfeeDetails?.afn_fees_detail?.shipping_price?
+                pfeeDetails?.afn_fees_detail?.shipping_price:
+                "0"} className={classes.input} />
+
+              <input 
+               value={pfeeDetails&&pfeeDetails?.afn_fees_detail?.total_revenue?
+                pfeeDetails?.afn_fees_detail?.total_revenue:
+                "0"}  className={classes.input} />
+
+
+            <input 
+              value={pfeeDetails&&pfeeDetails?.afn_fees_detail?.selling_fees?.total_fees?
+                pfeeDetails?.afn_fees_detail?.selling_fees?.total_fees:
+                "0"} className={classes.input} />
+
+
+              <input 
+               value={pfeeDetails&&pfeeDetails?.afn_fees_detail?.seller_fulfillment_cost?.total?
+                pfeeDetails?.afn_fees_detail?.seller_fulfillment_cost?.total:
+                "0"} className={classes.input} />
+
+                
+              <input
+               value={pfeeDetails&&pfeeDetails?.afn_fees_detail?.total_fulfillment_cost?
+                pfeeDetails?.afn_fees_detail?.total_fulfillment_cost:
+                "0"} className={classes.input} />
+
+              <input 
+              value={pfeeDetails&&pfeeDetails?.afn_fees_detail?.ship_to_amazon_fees?
+                pfeeDetails?.afn_fees_detail?.ship_to_amazon_fees:
+                "0"} className={classes.input} />
+
+              <input 
+               value={pfeeDetails&&pfeeDetails?.afn_fees_detail?.total_fulfillment_cost?
+                pfeeDetails?.afn_fees_detail?.total_fulfillment_cost:
+                "0"} className={classes.input} />
+
+
+              <input
+              value={pfeeDetails&&pfeeDetails?.afn_fees_detail?.seller_proceeds?
+                pfeeDetails?.afn_fees_detail?.seller_proceeds:
+                "0"} className={classes.input} />
+
+
+              <input
+              value={pfeeDetails&&pfeeDetails?.afn_fees_detail?.product_cost?
+                pfeeDetails?.afn_fees_detail?.product_cost:
+                "0"} className={classes.input} />
             </div>
             <div className={classes.thirdRow}>
               <h1>FBM</h1>
-              <input className={classes.input} />
-              <input className={classes.input} />
-              <input className={classes.input} />
-              <input className={classes.input} />
-              <input className={classes.input} />
-              <input className={classes.input} />
-              <input className={classes.input} />
-              <input className={classes.input} />
-              <input className={classes.input} />
-              <input className={classes.input} />
+              <input
+              value={pfeeDetails&&pfeeDetails?.mfn_fees_detail?.item_price?
+                pfeeDetails?.mfn_fees_detail?.item_price:
+                "0"} className={classes.input} />
+
+              <input 
+              value={pfeeDetails&&pfeeDetails?.mfn_fees_detail?.shipping_price?
+                pfeeDetails?.mfn_fees_detail?.shipping_price:
+                "0"} className={classes.input} />
+
+
+              <input 
+              value={pfeeDetails&&pfeeDetails?.mfn_fees_detail?.total_revenue?
+                pfeeDetails?.mfn_fees_detail?.total_revenue:
+                "0"} className={classes.input} />
+
+
+              <input 
+              value={pfeeDetails&&pfeeDetails?.mfn_fees_detail?.selling_fees?.total_fees?
+                pfeeDetails?.mfn_fees_detail?.selling_fees?.total_fees:
+                "0"} className={classes.input} />
+
+
+              <input 
+               value={pfeeDetails&&pfeeDetails?.mfn_fees_detail?.seller_fulfillment_cost?.total?
+                pfeeDetails?.mfn_fees_detail?.seller_fulfillment_cost?.total:
+                "0"} className={classes.input} />
+
+                
+              <input
+               value={pfeeDetails&&pfeeDetails?.mfn_fees_detail?.total_fulfillment_cost?
+                pfeeDetails?.mfn_fees_detail?.total_fulfillment_cost:
+                "0"} className={classes.input} />
+
+
+              <input 
+              value={pfeeDetails&&pfeeDetails?.mfn_fees_detail?.shipping_price?
+                pfeeDetails?.mfn_fees_detail?.shipping_price:
+                "0"} className={classes.input} />
+
+              <input
+              value={pfeeDetails&&pfeeDetails?.mfn_fees_detail?.total_fulfillment_cost?
+                pfeeDetails?.mfn_fees_detail?.total_fulfillment_cost:
+                "0"} className={classes.input} />
+
+
+              <input 
+              value={pfeeDetails&&pfeeDetails?.mfn_fees_detail?.seller_proceeds?
+                pfeeDetails?.mfn_fees_detail?.seller_proceeds:
+                "0"} className={classes.input} />
+
+              <input 
+              value={pfeeDetails&&pfeeDetails?.mfn_fees_detail?.product_cost?
+                pfeeDetails?.mfn_fees_detail?.product_cost:
+                "0"} className={classes.input} />
             </div>
         </div>
       </Container>
@@ -334,11 +457,15 @@ export const Fba = () => {
             <div className={classes.innerThirdContainer}>
               <div>
                 <p>Net Profit</p>
-                <h1>$50</h1>
-              </div>
+                <h1>${pfeeDetails&&pfeeDetails?.mfn_fees_detail?.net_profit?
+              pfeeDetails?.mfn_fees_detail?.net_profit:
+              "50"}</h1>
+              </div>  
               <div>
-                <p>Net Profit</p>
-                <h1>$70</h1>
+                <p>Net Margin</p>
+                <h1>${pfeeDetails&&pfeeDetails?.mfn_fees_detail?.net_margin?
+              pfeeDetails?.mfn_fees_detail?.net_margin:
+              "70"}</h1>
               </div>
             </div>
           </div>
@@ -347,11 +474,16 @@ export const Fba = () => {
             <div className={classes.innerThirdContainer}>
               <div>
                 <p>Net Profit</p>
-                <h1>$50</h1>
+                <h1>${pfeeDetails&&pfeeDetails?.afn_fees_detail?.net_profit?
+              pfeeDetails?.afn_fees_detail?.net_profit:
+              "70"}</h1>
               </div>
               <div>
-                <p>Net Profit</p>
-                <h1>$70</h1>
+                <p>Net Margin</p>
+                <h1>${pfeeDetails&&pfeeDetails?.afn_fees_detail?.net_margin?
+              pfeeDetails?.afn_fees_detail?.net_margin
+              :
+              "70"}</h1>
               </div>
             </div>
           </div>
