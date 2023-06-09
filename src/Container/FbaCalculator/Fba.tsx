@@ -132,22 +132,23 @@ export const Fba = () => {
     const productDetails:any=await dispatch(fetchProductDetails(value));
     setpDetails(productDetails);
     const priceDetails:any=await dispatch(fetchProductPriceDetails(value));
+    console.log("++++++",priceDetails); 
     setprDetails(priceDetails);
     const programDetails:any=await dispatch(fetchProductProgramDetails(value));
     setprgDetails(programDetails);
 
 
     let data={
-      product_id: productDetails.data.searchKey,
+      product_id: productDetails?.data?.searchKey,
       afn_fees_request:{
-        item_price:priceDetails.data.price.amount,
-        ship_to_amazon_fees:priceDetails.data.shipping.amount ,
-        product_cost:priceDetails.data.shipping.amount,
+        item_price:priceDetails?.data?.price?.amount,
+        ship_to_amazon_fees:priceDetails?.data?.shipping?.amount ,
+        product_cost:priceDetails?.data?.shipping?.amount,
       },
       mfn_fees_request:{
-        item_price: priceDetails.data.price.amount,
-        shipping_price:priceDetails.data.shipping.amount,
-        product_cost: priceDetails.data.shipping.amount,
+        item_price: priceDetails?.data?.price?.amount,
+        shipping_price:priceDetails?.data?.shipping?.amount,
+        product_cost: priceDetails?.data?.shipping?.amount,
 
         seller_fulfillment_cost:{
           total:0,
@@ -161,11 +162,11 @@ export const Fba = () => {
       }
     }
       
-
+    console.log("------",data); 
     const productFees:any=await dispatch(fetchProductFeesDetails(data));
     setpfeeDetails(productFees);
     
-    console.log("------",productFees);
+    
     
   }
   return (
