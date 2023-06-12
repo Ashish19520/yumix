@@ -95,7 +95,6 @@ export default makeStyles((theme) => ({
     padding: "23px 25px",
     gap: "20px",
     width:"33%",
-    height: "565px",
     background: "#FFFFFF",
     zIndex:1,
     borderRadius: "16px",
@@ -108,7 +107,7 @@ export default makeStyles((theme) => ({
     lineHeight: "24px",
     display: "flex",
     alignItems: "start",
-    height:"38px",
+    height:"30px",
     textAlign: "start",
     letterSpacing: "0.25px",
     color: "#606060",
@@ -126,7 +125,6 @@ export default makeStyles((theme) => ({
     padding: "23px 25px",
     gap: "20px",
     width:"33%",
-    height: "565px",
     background: "#FFFFFF",
     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.08)",
     zIndex:1,
@@ -138,15 +136,29 @@ export default makeStyles((theme) => ({
   },
   input: {
     width: "80%",
-    height: "38px",
+    height: "30px",
+    display: "flex",
+    alignItems: "center",
     padding: "14px, 16px, 14px, 16px",
-    gap: "10px",
     textAlign: 'center',
     zIndex:1,
     [theme.breakpoints.down('sm')]: {
       padding: "none",
     },
   },
+  selector:{
+    backgroundColor:" #F6F6FE",
+    width: "20%", 
+    height: "30px",
+    [theme.breakpoints.down('sm')]: {
+      width: "40%" ,
+    },
+  },
+  
+  inputBox:{
+    width: "100%"
+  },
+  
   thirdRow: {
     display: "flex",
     flexDirection: "column",
@@ -154,7 +166,6 @@ export default makeStyles((theme) => ({
     padding: "23px 25px",
     gap: "20px",
     width:"33%",
-    height: "565px",
     background: "#FFFFFF",
     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.08)",
     borderRadius: "16px",

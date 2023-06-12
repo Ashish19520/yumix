@@ -106,7 +106,7 @@ function CodeDesc() {
             {/* <textarea className={classes.txtField}></textarea> */}
             <Editor
             className={classes.txtField}
-            value={editorValue}
+            value={editorValue}  
             onChange={handleChange}
             toolbarClassName={classes.toolbar}
            />

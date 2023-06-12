@@ -82,36 +82,36 @@ export const fetchBlogs=()=>async (dispatch:Dispatch<AnyAction>)=>{
 }
 
 // ############################-------FBA-ACTIONS---------------###########
-export const fetchProductDetails=(asin:any)=>async (dispatch:Dispatch<AnyAction>)=>{
+export const fetchProductDetails=(asin:any,country:any)=>async (dispatch:Dispatch<AnyAction>)=>{
     try {
-       let {data}=await api.fetchProductDetails(asin);
+       let {data}=await api.fetchProductDetails(asin,country);
     dispatch({type:PRODUCT_DETAILS,payload:data});
     return data;
     } catch (error) {
         console.error(error);
     }
 }
-export const fetchProductPriceDetails=(asin:any)=>async (dispatch:Dispatch<AnyAction>)=>{
+export const fetchProductPriceDetails=(asin:any,country:any)=>async (dispatch:Dispatch<AnyAction>)=>{
     try {
-       let {data}=await api.fetchProductPriceDetails(asin);
+       let {data}=await api.fetchProductPriceDetails(asin,country);
     dispatch({type:PRODUCT_PRICE,payload:data});
     return data;
     } catch (error) {
         console.error(error);
     }
 }
-export const fetchProductProgramDetails=(asin:any)=>async (dispatch:Dispatch<AnyAction>)=>{
+export const fetchProductProgramDetails=(asin:any,country:any)=>async (dispatch:Dispatch<AnyAction>)=>{
     try {
-       let {data}=await api.fetchProductProgramDetails(asin);
+       let {data}=await api.fetchProductProgramDetails(asin,country);
     dispatch({type:PRODUCT_PROGRAM,payload:data});
     return data;
     } catch (error) {
         console.error(error);
     }
 }
-export const fetchProductFeesDetails=(body:any)=>async (dispatch:Dispatch<AnyAction>)=>{
+export const fetchProductFeesDetails=(body:any,country:any)=>async (dispatch:Dispatch<AnyAction>)=>{
     try {
-       let {data}=await api.fetchProductFeesDetails(body);
+       let {data}=await api.fetchProductFeesDetails(body,country);
     dispatch({type:PRODUCT_FEES,payload:data});
     return data;
     } catch (error) {

@@ -573,6 +573,7 @@ const HeroLayout = styled.div`
           .image_baisa_shop{
             transform-style: preserve-3d;
             transition: all 1.6s ease;
+            height:100%;
 
           }
 
