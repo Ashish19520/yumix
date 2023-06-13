@@ -4,12 +4,14 @@ export default makeStyles((theme:any) => ({
     wrapper: {
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'flex-start',
+        gap:"25%",
+        justifyContent: "flex-start",
         background: "#FFFCFC",
         [theme.breakpoints.down('sm')]: {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
+          gap:"15px"
         },
       },
       heroImg:{
@@ -215,8 +217,12 @@ export default makeStyles((theme:any) => ({
       },  
       img: {
         width: "30%",
-        [theme.breakpoints.down('sm')]: {
+        position: "relative",
+        [theme.breakpoints.down('xs')]: {
           width: "100%",
+        },
+        [theme.breakpoints.down('sm')]: {
+          width: "80%",
         },
       },
       innerWrapper: {

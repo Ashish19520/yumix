@@ -574,6 +574,7 @@ const HeroLayout = styled.div`
             transform-style: preserve-3d;
             transition: all 1.6s ease;
             height:100%;
+            width:70%;
 
           }
 
@@ -582,7 +583,7 @@ const HeroLayout = styled.div`
             transition: all 1.5s ease;
             width: 38%;
             position: absolute;
-            right: -50px;
+            right: -90px;
             top: 120px !important;
 
             @media (max-width: 900px) {

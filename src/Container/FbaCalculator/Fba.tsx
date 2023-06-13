@@ -249,13 +249,13 @@ export const Fba = () => {
       <Container fixed className="container">
         <div className={classes.wrapper}>
           <div className={`${classes.img} ${classes.index}`}>
-            {/* <img src=
+            <img src=
             {pDetails&&pDetails?.data?.otherProducts?.products[0]?.imageUrl?
               pDetails?.data?.otherProducts?.products[0]?.imageUrl:
               "../images/61+lhpMw+2L 1.png"}
               alt="img"
              height="100px" 
-             width="100px"></img> */}
+             width="100px"></img>
             {/* <motion.img
               src="../images/Ellipse 75@3x.png"
               className={classes.imageLines3}
@@ -278,14 +278,10 @@ export const Fba = () => {
             </div>
             <div className={classes.items}>
               <div>
-                {/* <p>.</p> */}
-                <img src=
-                {pDetails&&pDetails?.data?.otherProducts?.products[0]?.imageUrl?
-                pDetails?.data?.otherProducts?.products[0]?.imageUrl:
-                "../images/61+lhpMw+2L 1.png"}
-                alt="img"
-                height="80px" 
-                width="80px"></img>
+                <p>customerReviewsCount</p>
+                <p> {pDetails&&pDetails?.data?.otherProducts?.products[0]?.customerReviewsCount?
+              pDetails?.data?.otherProducts?.products[0]?.customerReviewsCount:
+              "-"}</p>
               </div>
               <div >
                 <p>Product Id</p>
@@ -307,14 +303,14 @@ export const Fba = () => {
               :
               "-"}</p>
               </div>
-              <div>
+              {/* <div>
                 <p>offers</p>
                 <p>{pDetails&&pDetails?.data?.otherProducts?.products[0]?.offerCount
 ?
               pDetails?.data?.otherProducts?.products[0]?.offerCount
               :
               "-"}</p>
-              </div>
+              </div> */}
             </div>
         
           </div>
@@ -990,7 +986,7 @@ const FbaContainer = styled.div`
             background: #e0e0e0;
             width: 70%;
             border: none;
-            padding: 20px;
+            padding: 5px;
             border-radius: 10px;
             &::placeholder {
               color: #828282;

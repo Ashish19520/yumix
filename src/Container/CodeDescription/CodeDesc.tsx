@@ -10,6 +10,7 @@ import { Handshake } from '@mui/icons-material';
 function CodeDesc() {
   const [age, setAge] = useState('');
     const classes = useStyles();
+   
     useEffect(() => {
       window.scrollTo(0, 0);
     }, []);
@@ -42,7 +43,6 @@ function CodeDesc() {
           });
       }
     }
-
     
   return (
     <CodeContainer style={{ backgroundColor: "#FFFCFC",position:"relative" }}>

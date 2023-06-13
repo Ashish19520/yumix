@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react'
-import { Container, Typography, Input, Button, Select,Box } from "@mui/material";
+import { Container, Typography, Input, Button, Switch,Select,Box } from "@mui/material";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import InputLabel from '@mui/material/InputLabel';
@@ -8,6 +8,10 @@ import FormControl from '@mui/material/FormControl';
 import { SelectChangeEvent } from '@mui/material/Select';
 import useStyles from './style';
 import zIndex from '@mui/material/styles/zIndex';
+import { useDispatch } from 'react-redux';
+import { Dispatch } from 'redux';
+import { fetchProductDetails,fetchProductPriceDetails,fetchProductProgramDetails,fetchProductFeesDetails } from "../../actions/posts";
+import { useSelector } from "react-redux/es/exports"
 
 function ListCalc() {
   const classes = useStyles();
@@ -104,21 +108,101 @@ function ListCalc() {
     const hiddenElements = document.querySelectorAll(".bannerList_hidden");
     hiddenElements.forEach((el) => observer.observe(el));
   }, []);
+
+  const dispatch: Dispatch<any> = useDispatch();
+  const [value,setValue]=useState();
+  const [country,setCountry]=useState("US");
+  const [loader, setLoader] = useState(false);
+  const[pDetails,setpDetails]=useState<any>(null); 
+  const[prDetails,setprDetails]=useState<any>(null); 
+  const[prgDetails,setprgDetails]=useState<any>(null); 
+  const[pfeeDetails,setpfeeDetails]=useState<any>(null); 
+
+
+  const changeHandlar=(e:any)=>{
+    setValue(e.target.value)
+  }
+  const countryHandlar=(e:any)=>{
+   e.target.checked?setCountry("IN"):setCountry("US")
+  }
+  useEffect(() => {
+    window.scrollTo(0, 700);
+  }, [loader]);
+
+  const fetch=async()=>{
+    setLoader(true);
+    const productDetails:any=await dispatch(fetchProductDetails(value,country));
+    setpDetails(productDetails);
+    const priceDetails:any=await dispatch(fetchProductPriceDetails(value,country));
+    setprDetails(priceDetails);
+    
+    const programDetails:any=await dispatch(fetchProductProgramDetails(value,country));
+    setprgDetails(programDetails);
+
+    let data={
+      countryCode:productDetails?.data?.countryCode,
+      itemInfo: {
+        asin: productDetails?.data?.searchKey,
+        glProductGroupName: productDetails?.data?.otherProducts?.products[0]?.gl,
+        packageLength:productDetails?.data?.otherProducts?.products[0]?.length,
+        packageWidth: productDetails?.data?.otherProducts?.products[0]?.width,
+        packageHeight:productDetails?.data?.otherProducts?.products[0]?.height,
+        dimensionUnit: productDetails?.data?.otherProducts?.products[0]?.dimensionUnit,
+        packageWeight: productDetails?.data?.otherProducts?.products[0]?.weight,
+        weightUnit: productDetails?.data?.otherProducts?.products[0]?.weightUnit,
+        afnPriceStr: priceDetails?.data?.price?.amount,
+        mfnPriceStr: priceDetails?.data?.price?.amount,
+        mfnShippingPriceStr:priceDetails?.data?.shipping?.amount,
+        currency:country==="US"?"USD":"INR" ,
+        isNewDefined: false,
+      },
+      programIdList:[
+        "MFN",
+        "Core"]
+    }
+    const productFees:any=await dispatch(fetchProductFeesDetails(data,country));
+    setpfeeDetails(productFees);
+    setLoader(false); 
+    
+  }
   return (
     <ListContainer style={{ backgroundColor: "#FFFCFC" }}>
+      {loader && (
+                <div className="mainPreloaderMain">
+                    <div className="mainPreloader">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            )}
       <Container maxWidth="lg" className="container" >
         <div className="hero_wrapper"  >
           <div className="info-box_FBA" >
             <div className="fba-Title">Optimise Listing Visibilty</div>
             <div className="fba-subTitle">
               Increase your Amazon sales and conversions with a perfectly optimised listing alongside on page factors.
+             
             </div>
+            US product<Switch  
+            onChange={countryHandlar} />Indian Product
             <div className="input-field">
               <input
                 type="text"
                 placeholder="Enter Amazon product's ASIN Number"
+                value={value}
+                onChange={changeHandlar}
               ></input>
-              <button className="btn_FBACalculate">Optimising Visibilty</button>
+              <button 
+              // disabled={!value}
+               onClick={fetch} 
+              className= {`btn_FBACalculate ${classes.index}`}>
+                Optimising Visibilty</button>
             </div>
             
            </div>
@@ -173,19 +257,27 @@ function ListCalc() {
       <Container maxWidth='lg' className="container">
         <div className={classes.wrapper}>
           <div className={`${classes.relative} ${classes.index}`}>
-            <img src="../images/61+lhpMw+2L 1.png" alt="img" height="200px" width="250px"></img>
-            <motion.img
+          <img src=
+            {pDetails&&pDetails?.data?.otherProducts?.products[0]?.imageUrl?
+              pDetails?.data?.otherProducts?.products[0]?.imageUrl:
+              "../images/61+lhpMw+2L 1.png"}
+              alt="img"
+             height="100px" 
+             width="100px"></img>
+            {/* <motion.img
               src="../images/Ellipse.png"
               className={classes.imageLines7}
               initial="hidden"
               animate="show"
-            ></motion.img>
+            ></motion.img> */}
           </div>
 
 
           <div className={classes.innerWrapper}>
             <div className={classes.innerimg}>
-              <h2>Bose Quietcomfort 45</h2>
+            <h2> {pDetails&&pDetails?.data?.otherProducts?.products[0]?.title?
+              pDetails?.data?.otherProducts?.products[0]?.title:
+              "Your product is going to list here"}</h2>
               <motion.img
               src="../images/Ellipse 64.png"
               className={classes.imageLines13}
@@ -195,20 +287,30 @@ function ListCalc() {
             </div>
             <div className={classes.items}>
               <div className={classes.box}>
-                <p>Product Id</p>
-                <p>1245</p>
+                <p>customerReviewsCount</p>
+                <p> {pDetails&&pDetails?.data?.otherProducts?.products[0]?.customerReviewsCount?
+              pDetails?.data?.otherProducts?.products[0]?.customerReviewsCount:
+              "-"}</p>
               </div>
               <div className={classes.box}>
-                <p>Price</p>
-                <p>$3000</p>
+              <p>Product Id</p>
+                <p>{pDetails&&pDetails?.data?.otherProducts?.products[0]?.asin?
+              pDetails?.data?.otherProducts?.products[0]?.asin:
+              "-"}</p>
               </div>
               <div className={classes.box}>
-                <p>Unit Weigth</p>
-                <p>419gm</p>
+              <p>Price</p>
+                <p>{country==="US"?"$":"₹"}{prDetails&&prDetails?.data?.price?.amount?
+              prDetails?.data?.price?.amount:
+              "0"}</p>
               </div>
               <div className={classes.box}>
-                <p>Product Dimension</p>
-                <p>19.5cm X 8386cm X 02.95 cm</p>
+              <p>Ratings</p>
+                <p>{pDetails&&pDetails?.data?.otherProducts?.products[0]?.customerReviewsRating
+?
+              pDetails?.data?.otherProducts?.products[0]?.customerReviewsRating
+              :
+              "-"}</p>
               </div>
             </div>
           </div>
@@ -246,6 +348,7 @@ function ListCalc() {
               animate="show"
             ></motion.img>
       </Container>
+       
       <Container className={classes.relative}>
         <div className={classes.fourthContainer}>
         <div style={{zIndex:"5"}}>
@@ -571,6 +674,7 @@ const ListContainer = styled.div`
         }
         .input-field {
           display: flex;
+          gap:15px;
           justify-content: space-between;
           input {
            
@@ -598,19 +702,21 @@ const ListContainer = styled.div`
         }
 
         
-          .btn_FBACalculate {
-            background-color: #5956e9;
-            color: #e0e0e0;
-            border: 0px;
-            border-radius: 10px;
-            padding: 10px 25px;
-            font-family: Poppins;
-            font-size: 12px;
-            font-weight: 500;
-            line-height: 18px;
-            letter-spacing: 0.001em;
-            text-align: center;
-          }
+        .btn_FBACalculate {
+          background-color: #5956e9;
+          color: #e0e0e0;
+          border: 0px;
+          border-radius: 10px;
+          padding: 10px 25px;
+          font-family: Poppins;
+          font-size: 12px;
+          font-weight: 500;
+          line-height: 18px;
+          letter-spacing: 0.01em;
+          text-align: center;
+          margin-right:50px;
+          cursor: "pointer";
+        }
         }
       }.box{
         width:50%;

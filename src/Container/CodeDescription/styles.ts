@@ -37,6 +37,7 @@ export default makeStyles((theme) => ({
   },
   toolbar: {
     display: "none",/* Hide the toolbar */
+    height:"100%",
   },
   relative:{
     position:"relative",
