@@ -31,7 +31,7 @@ export default makeStyles((theme:any) => ({
         right:"0",
         top:"60%",
         bottom:"0",
-        zIndex:1,
+        zIndex:-11,
         [theme.breakpoints.down('sm')]: {
          display:"none"
         },

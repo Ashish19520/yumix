@@ -189,13 +189,16 @@ function ListCalc() {
               Increase your Amazon sales and conversions with a perfectly optimised listing alongside on page factors.
              
             </div>
-            US product<Switch  
-            onChange={countryHandlar} />Indian Product
+           <div >
+             US product<Switch 
+             onChange={countryHandlar}
+             className={` ${classes.index}`} />Indian Product</div>
             <div className="input-field">
               <input
                 type="text"
                 placeholder="Enter Amazon product's ASIN Number"
                 value={value}
+                className={` ${classes.index}`}
                 onChange={changeHandlar}
               ></input>
               <button 
@@ -317,7 +320,7 @@ function ListCalc() {
         </div>
         
       </Container>
-      <Container maxWidth='lg' className="container">
+      {/* <Container maxWidth='lg' className="container">
         <div className={`${classes.twoContainer} `}>
           <div className={`${classes.innerTwoContainer} ${classes.index}`}>
 
@@ -348,17 +351,20 @@ function ListCalc() {
               animate="show"
             ></motion.img>
       </Container>
-       
-      <Container className={classes.relative}>
+        */}
+      <Container 
+      style={{marginTop:"150px"}}
+      className={classes.relative}>
         <div className={classes.fourthContainer}>
         <div style={{zIndex:"5"}}>
             <h1 >Analysis</h1>  
           </div>
           <div className={classes.innerOneFourth}>
-            <p>4 possible error(s) analyzed.</p>
-            <div className="input-field">
+            {/* <p>4 possible error(s) analyzed.</p> */}
+            <p>5 details analyized.</p>
+            {/* <div className="input-field">
               <button className={classes.btnFBACalculate}>View all Errors</button>
-            </div>
+            </div> */}
           </div>
         </div>
          <motion.img
@@ -378,8 +384,11 @@ function ListCalc() {
               <div className={classes.greenGood}>Good</div>
             </div>
             <div className={classes.innersecondFifthContainer}  >
-              <p>Title is possibly the most important part of the product listing. Ensure the title is readable, is relevant to your product and is keyword rich. Most of your main keywords go here.</p>
-              <img src="../images/Oval.png" alt="" height="72px" width="72px"/>
+            {/* <p>Title is possibly the most important part of the product listing. Ensure the title is readable, is relevant to your product and is keyword rich. Most of your main keywords go here.</p> */}
+              <p>{pDetails&&pDetails?.data?.otherProducts?.products[0]?.title?
+              pDetails?.data?.otherProducts?.products[0]?.title:
+              "tilte here..."}</p>
+              {/* <img src="../images/Oval.png" alt="" height="72px" width="72px"/> */}
             </div>
           </div>
         </div>
@@ -387,12 +396,15 @@ function ListCalc() {
         <div className={classes.fifthContainer}>
           <div className={classes.innerFifthContainer} >
             <div className={classes.innersecondFifthContainer}>
-              <h4>Description</h4>
+              {/* <h4>Description</h4> */}
+              <h4>Sales rank</h4>
               <div className={classes.greenGood}>Good</div>
             </div>
             <div className={classes.innersecondFifthContainer}  >
-              <p>Title is possibly the most important part of the product listing. Ensure the title is readable, is relevant to your product and is keyword rich. Most of your main keywords go here.</p>
-              <img src="../images/Oval.png" alt="" height="72px" width="72px"/>
+            <p>{pDetails&&pDetails?.data?.otherProducts?.products[0]?.salesRank?
+              pDetails?.data?.otherProducts?.products[0]?.salesRank:
+              "rank here..."}</p>
+              {/* <img src="../images/Oval.png" alt="" height="72px" width="72px"/> */}
             </div>
           </div>
         </div>
@@ -400,12 +412,14 @@ function ListCalc() {
         <div className={classes.fifthContainer}>
           <div className={classes.innerFifthContainer} >
             <div className={classes.innersecondFifthContainer}>
-              <h4>Image Count</h4>
+              <h4>Image </h4>
               <div className={classes.greenGood}>Good</div>
             </div>
             <div className={classes.innersecondFifthContainer}  >
-              <p>Title is possibly the most important part of the product listing. Ensure the title is readable, is relevant to your product and is keyword rich. Most of your main keywords go here.</p>
-              <img src="../images/Oval.png" alt="" height="72px" width="72px"/>
+              {/* <p>.</p> */}
+              <img src={pDetails&&pDetails?.data?.otherProducts?.products[0]?.imageUrl?
+              pDetails?.data?.otherProducts?.products[0]?.imageUrl:
+              "../images/61+lhpMw+2L 1.png"} alt="" height="72px" width="72px"/>
             </div>
           </div>
         </div>
@@ -414,11 +428,14 @@ function ListCalc() {
           <div className={classes.innerFifthContainer} >
             <div className={classes.innersecondFifthContainer}>
               <h4>Ratings</h4>
-              <div className={classes.redGood}>Bad</div>
+              <div className={classes.greenGood}>Good</div>
             </div>
             <div className={classes.innersecondFifthContainer}  >
-              <p>Title is possibly the most important part of the product listing. Ensure the title is readable, is relevant to your product and is keyword rich. Most of your main keywords go here.</p>
-              <img src="../images/Frame 1000003793.png" alt="" height="72px" width="72px"/>
+              {/* <p>Title is possibly the most important part of the product listing. Ensure the title is readable, is relevant to your product and is keyword rich. Most of your main keywords go here.</p> */}
+              <p>{pDetails&&pDetails?.data?.otherProducts?.products[0]?.customerReviewsRating?
+              pDetails?.data?.otherProducts?.products[0]?.customerReviewsRating:
+              "rating here..."}</p>
+              {/* <img src="../images/Frame 1000003793.png" alt="" height="72px" width="72px"/> */}
             </div>
           </div>
         </div>
@@ -426,17 +443,20 @@ function ListCalc() {
         <div className={classes.fifthContainer}>
           <div className={classes.innerFifthContainer} >
             <div className={classes.innersecondFifthContainer}>
-              <h4>Reviews</h4>
+              <h4>Reviews Count</h4>
               <div className={classes.greenGood}>Good</div>
             </div>
             <div className={classes.innersecondFifthContainer}  >
-              <p>Title is possibly the most important part of the product listing. Ensure the title is readable, is relevant to your product and is keyword rich. Most of your main keywords go here.</p>
-              <img src="../images/Oval.png" alt="" height="72px" width="72px"/>
+              {/* <p>Title is possibly the most important part of the product listing. Ensure the title is readable, is relevant to your product and is keyword rich. Most of your main keywords go here.</p> */}
+              <p>{pDetails&&pDetails?.data?.otherProducts?.products[0]?.customerReviewsCount?
+              pDetails?.data?.otherProducts?.products[0]?.customerReviewsCount:
+              "review count here..."}</p>
+              {/* <img src="../images/Oval.png" alt="" height="72px" width="72px"/> */}
             </div>
           </div>
         </div>
       </Container>
-      <Container fixed  className="container">
+      {/* <Container fixed  className="container">
         <div className={`${classes.fifthContainer} ${classes.relative}`}>
         <motion.img
               src="../images/newRock2@3x.png"
@@ -516,7 +536,7 @@ function ListCalc() {
             </div>
           </div>
         </div>
-      </Container>
+      </Container> */}
       
       <Container>
         <div className={classes.sixthContainer}>
