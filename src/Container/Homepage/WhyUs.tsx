@@ -142,8 +142,16 @@ function WhyUs() {
     <Box className="bannerList_hidden" style={{maxWidth:"100%", margin:"auto", padding:"100px"}}>
       <Grid container alignItems="center">
         <Grid position="relative" item xs={12} md={6} style={{display:"flex", alignItems:"center",justifyContent:'center', marginBottom:"40px"}}>
-          <Box style={{width:"80%", aspectRatio:1, borderRadius:"50%", backgroundColor:"#F1F6FF"}}></Box>
-          <Box style={{width:"80%",position:"absolute", top:"40%", left:"50%",zIndex:"1200", transform:"translate(-50%,-50%)"}}>
+          <Box style={{width:"80%",
+                      aspectRatio:1,
+                       borderRadius:"50%",
+                        backgroundColor:"#F1F6FF"}}></Box>
+          <Box style={{width:"80%",
+          position:"absolute", 
+          top:"40%", 
+          left:"50%",
+          zIndex:"1200", 
+          transform:"translate(-50%,-50%)"}}>
           <m.img 
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -156,7 +164,7 @@ function WhyUs() {
           />
           </Box>
 
-          <Box style={{width:"80%",position:"absolute", top:`${image_yellow_rock_top}`, left:`${image_yellow_rock_left}`}}>
+          <Box style={{width:"30%",position:"absolute", top:`${image_yellow_rock_top}`, left:`${image_yellow_rock_left}`}}>
           <m.img 
            initial={{ opacity: 0, scale: 0.5 }}
            animate={{ opacity:1, scale: 1 }}
@@ -164,12 +172,12 @@ function WhyUs() {
            transition={{ duration: 0.5 }} 
            src="./images/rock_branchwork_yellow_Cube.png"
            alt=""
-           width="40%"
+           width="100%"
           
           />
           </Box>
 
-          <Box style={{width:"80%",position:"absolute", top:`${image_blue_rock_top}`, left:`${image_blue_rock_left}`}}>
+          <Box style={{width:"20%",position:"absolute", top:`${image_blue_rock_top}`, left:`${image_blue_rock_left}`}}>
           <m.img 
            initial={{ opacity: 0, scale: 0.5 }}
            animate={{ opacity:1, scale: 1 }}
@@ -177,11 +185,11 @@ function WhyUs() {
            transition={{ duration: 0.5 }} 
            src="./images/Rock_whywork_blue.png"
            alt=""
-           width="30%"
+           width="100%"
           />
           </Box>
 
-          <Box style={{width:"80%",position:"absolute", top:`${image_blue_BIG_circle_top}`, left:`${image_blue_BIG_circle_left}`}}>
+          <Box style={{width:"10%",position:"absolute", top:`${image_blue_BIG_circle_top}`, left:`${image_blue_BIG_circle_left}`}}>
           <m.img 
            initial={{ opacity: 0, scale: 0.5 }}
            animate={{ opacity:1, scale: 1 }}
@@ -189,24 +197,24 @@ function WhyUs() {
            transition={{ duration: 0.5 }} 
            src="./images/circle_blue_m.png"
            alt=""
-           width="7%"
+           width="70%"
           />
           </Box>
 
-          <Box style={{width:"80%",position:"absolute", top:`${image_blue_SMALL_circle_top}`, left:`${image_blue_SMALL_circle_left}`}}>
+          <Box style={{width:"10%",position:"absolute", top:`${image_blue_SMALL_circle_top}`, left:`${image_blue_SMALL_circle_left}`}}>
           <m.img 
            initial={{ opacity: 0, scale: 0.5 }}
            animate={{ opacity:1, scale: 1 }}
            exit={{ opacity: 0, scale: 0.5 }}
            transition={{ duration: 0.5 }} 
           //  src="./images/circle_blue_s.png"
-           src="./images/circle_blue_m.png"
+           src="./images/circle_blue_m.png "
            alt="" 
-           width="5%"
+           width="70%"
           />
           </Box>
 
-          <Box style={{width:"80%",position:"absolute", top:`${image_PINK_circle_top}`, left:`${image_PINK_circle_left}`}}>
+          <Box style={{width:"10%",position:"absolute", top:`${image_PINK_circle_top}`, left:`${image_PINK_circle_left}`}}>
           <m.img 
            initial={{ opacity: 0, scale: 0.5 }}
            animate={{ opacity:1, scale: 1 }}
@@ -214,7 +222,7 @@ function WhyUs() {
            transition={{ duration: 0.5 }} 
            src="./images/circle_pink_m.png"
            alt=""
-           width="9%"
+           width="100%"
           />
           </Box>
 

@@ -2,7 +2,7 @@ import axios from "axios";
 import {TOKEN} from "../constants/actionTypes"
 
 const API = axios.create({
-    baseURL: 'http://52.66.171.52:1337/',
+    baseURL: 'http://lb-eservz-1246575002.ap-south-1.elb.amazonaws.com:1337',
   });
   
   API.interceptors.request.use((req) => { 
@@ -15,7 +15,7 @@ export const fillForm=(data:any)=>API.post(`api/send-mails/sendmail`,data);
 export const clientList=()=>API.get(`api/clients`);
 export const testimonials=()=>API.get(`api/testimonials`);
 export const sitecounters=()=>API.get(`api/sitecounters`);
-export const blogs=()=>API.post(`api/blogs/rss-blog/`);  
+export const blogs=()=>API.get(`api/blogs`);  
 export const fetchNews=()=>API.get(`api/latest-newsses/rss-feed`);
 
 // ####### ----  FBA   -----#######################

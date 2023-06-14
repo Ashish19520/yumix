@@ -316,6 +316,13 @@ export const Hero = () => {
                 className="shopify"
               ></motion.img>
               <motion.img
+                src="./images/shoes.png"
+               variants={window.screen.width<601? imgProduct2:imgProduct1}
+                initial="hidden"
+                animate="show"
+                className="shopify2"
+              ></motion.img>
+              <motion.img
                 src="./images/google-partner@3x.png"
                variants={window.screen.width<601? imgProduct2:imgProduct1}
                 initial="hidden"
@@ -583,8 +590,28 @@ const HeroLayout = styled.div`
             transition: all 1.5s ease;
             width: 38%;
             position: absolute;
-            right: -90px;
+            right: -30px;
             top: 120px !important;
+
+            @media (max-width: 900px) {
+              display: none;
+            }
+
+            @media (max-width: 600px) {
+              display: unset;
+              width: 25%;
+              right: -2%;
+              /* width: 20%;
+              right: -10px; */
+            }
+          }
+          .shopify2 {
+            transform-style: preserve-3d;
+            transition: all 1.5s ease;
+            width: 38%;
+            position: absolute;
+            right: -30px;
+            top: 0px !important;
 
             @media (max-width: 900px) {
               display: none;

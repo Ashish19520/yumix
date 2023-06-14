@@ -17,7 +17,7 @@ function BlogContent() {
     <div className={`${classes.conatainer} ${classes.relative}`}>
     <ArrowBackSharp className={classes.arr} onClick={() => navigate(-1)}/>
     <div style={{position:"relative",zIndex:2}}>
-            <img src={item?.['media:content'][1].$.url} 
+            <img src={item?.attributes?.blog_img} 
             alt="img" width="100%" height="500px"></img>
             <img src="../images/Round Cube2@3x.png" 
             alt="some"
@@ -33,11 +33,11 @@ function BlogContent() {
             alt="some"></img>
         </div>
         <div className={classes.text}>
-            <h1>{item?.title[0]}</h1>
+            <h1>{item?.attributes?.title}</h1>
             {/* <h2>Author : {data.author}.</h2> */}
-            <h4>{item?.['atom:updated'][0].split("T")[0]}.</h4>
-            <h4>{item?.['dc:creator'][0]}.</h4>
-            <p>{item?.['content:encoded'][0]}.</p>
+            <h4>{item?.item?.attributes?.createdAt.split("T")[0]}.</h4>
+           {/* <h4>{item?.['dc:creator'][0]}.</h4> */}
+            <p>{item?.attributes?.whole_bloc}.</p> 
         </div>  
     </div>
     </Container>

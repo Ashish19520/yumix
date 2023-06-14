@@ -14,7 +14,6 @@ export default function ServiceList() {
   const navigate=useNavigate();
   
   const dispatch: Dispatch<any> = useDispatch();
-  
   useEffect(()=>{
     dispatch(fetchBlogs());
   },[]);
@@ -48,8 +47,9 @@ export default function ServiceList() {
   }, []);
 
   const showDetails=(item:any,index:any)=>{
-    localStorage.setItem('blogData', JSON.stringify(response[index]));
-    navigate(`/blogs/${index}`);
+    localStorage.setItem('blogData', JSON.stringify(currentItems[index]));
+    navigate(`/blogs/${item-1}`);
+    // console.log(index)
     }
   return (
     <ServiceListWrapper>
@@ -70,8 +70,7 @@ export default function ServiceList() {
               >
                 <Box
                   style={{
-                    backgroundImage: `url(${item?.['media:content'][1].$.url
-                    })`,
+                    backgroundImage: `url(${item?.attributes?.blog_img})`,
                     width: "100%",
                     backgroundSize: "cover",
                     backgroundPosition: "center",
@@ -81,7 +80,7 @@ export default function ServiceList() {
                 />
                 <Typography className="item-type" 
               style={{cursor:"pointer"}}
-                onClick={()=>showDetails(item.id,index)}>{item.title[0]}</Typography>
+                onClick={()=>showDetails(item?.id,index)}>{item?.attributes?.title}</Typography>
                 <Typography
                   style={{
                     fontSize: "16px",
