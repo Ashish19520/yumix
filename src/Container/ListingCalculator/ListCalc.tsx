@@ -557,12 +557,8 @@ function ListCalc() {
           onChange={handleChange}
           label="Age"
         >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+                    <p className='select-font'>If your workplace involves selling products on Amazon, utilising listing optimization tools can be highly advantageous. They can assist you in improving your product listings, attracting more potential customers, and increasing sales. However, if your workplace does not involve selling products on Amazon or within the e-commerce industry, these tools may not be directly applicable to your specific business needs.</p>
+
         </Select>
       </FormControl>
      
@@ -577,12 +573,8 @@ function ListCalc() {
           onChange={handleChange}
           label="Age"
         >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+               <p className='select-font'>A good Amazon listing should have several key qualities. It should be concise and clear, providing relevant information about the product. The title should be descriptive and include keywords. High-quality images showcasing the product from different angles are essential. The listing should have accurate and detailed product descriptions, highlighting features and benefits. Including customer reviews and ratings helps build trust. Additionally, competitive pricing, well-organised bullet points, and effective use of search terms can improve visibility and attract potential buyer.</p>
+
         </Select>
       </FormControl>
      
@@ -597,12 +589,8 @@ function ListCalc() {
           onChange={handleChange}
           label="Age"
         >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+                      <p className='select-font'>  To optimise Amazon listings, focus on keyword research to include relevant terms in titles, bullet points, and descriptions. Write compelling and concise product descriptions, use high-quality images, and request customer reviews. Optimise backend search terms, leverage enhanced brand content, and monitor and adjust your listings regularly for better performance.</p>
+
         </Select>
       </FormControl>
      
@@ -617,12 +605,7 @@ function ListCalc() {
           onChange={handleChange}
           label="Age"
         >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+          <p className='select-font'> Amazon determines the ranking of products based on various factors including relevance, sales performance, customer reviews, pricing, and availability. The algorithm takes into account the product's title, description, and keywords, as well as the seller's performance metrics. Factors like conversion rate, customer satisfaction, and fulfilment method also play a role. Continuous optimization and updates to the algorithm influence the ranking of products on Amazon's platform.</p>
         </Select>
       </FormControl>
      
