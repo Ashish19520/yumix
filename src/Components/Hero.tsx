@@ -322,6 +322,8 @@ export const Hero = () => {
                 animate="show"
                 className="shopify2"
               ></motion.img>
+              
+              
               <motion.img
                 src="./images/google-partner@3x.png"
                variants={window.screen.width<601? imgProduct2:imgProduct1}
@@ -590,8 +592,8 @@ const HeroLayout = styled.div`
             transition: all 1.5s ease;
             width: 38%;
             position: absolute;
-            right: -30px;
-            top: 120px !important;
+            right: -50px;
+            top: 50px !important;
 
             @media (max-width: 900px) {
               display: none;
@@ -610,8 +612,8 @@ const HeroLayout = styled.div`
             transition: all 1.5s ease;
             width: 38%;
             position: absolute;
-            right: -30px;
-            top: 0px !important;
+            right: -50px;
+            top: 50% !important;
 
             @media (max-width: 900px) {
               display: none;

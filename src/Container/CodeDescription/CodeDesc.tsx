@@ -53,22 +53,21 @@ function CodeDesc() {
       >
     <div className="hero_wrapper">
     
-            <motion.img
-              src="../images/Group 38639.png"
+    <motion.img
+              src="../images/Group 38594.png"
               className={classes.imageLines1}
               initial="hidden"
               animate="show"
-              width="70%"
-              height="70%"
-            ></motion.img>
-             <motion.img
+              width="100%"
+            ></motion.img>  
+             {/* <motion.img
               src="../images/Ellipse 63@3x.png"
               className={classes.imageLines2}
               initial="hidden"
               animate="show"
               width="70%"
               height="70%"
-            ></motion.img>
+            ></motion.img> */}
       <div className="info-box_FBA">
         <div className="fba-Title">Description to Code</div>
         <div className="fba-subTitle">

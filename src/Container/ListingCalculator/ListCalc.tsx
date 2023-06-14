@@ -241,21 +241,26 @@ function ListCalc() {
         
         
         <motion.img
-              src="../images/Group 38639.png"
+              src="../images/Group 38594.png"
               className={classes.imageLines1}
               initial="hidden"
               animate="show"
-              width="70%"
-              height="70%"
-            ></motion.img>
+              width="100%"
+            ></motion.img>  
              <motion.img
+              src="../images/Ellipse 63@3x.png"
+              className={classes.imageLines2}
+              initial="hidden"
+              animate="show"
+            ></motion.img>
+             {/* <motion.img
               src="../images/Ellipse 63@3x.png"
               className={classes.imageLines2}
               initial="hidden"
               animate="show"
               width="70%"
               height="70%"
-            ></motion.img>
+            ></motion.img> */}
       </Container>
       <Container maxWidth='lg' className="container">
         <div className={classes.wrapper}>

@@ -18,7 +18,7 @@ export default makeStyles((theme) => ({
     position:"absolute",
     left:"10%",
     right:"0",
-    top:"50%",
+    top:"30%",
     bottom:"0",
     zIndex:1,
     [theme.breakpoints.down("sm")]: {

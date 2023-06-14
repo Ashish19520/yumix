@@ -29,9 +29,9 @@ export default makeStyles((theme:any) => ({
         position:"absolute",
         left:"10%",
         right:"0",
-        top:"60%",
+        top:"50%",
         bottom:"0",
-        zIndex:-11,
+        zIndex:1,
         [theme.breakpoints.down('sm')]: {
          display:"none"
         },
@@ -55,7 +55,7 @@ export default makeStyles((theme:any) => ({
         bottom:0,
         left:"-2%",
         zIndex:2,
-        height:"300px",
+        height:"250px",
         width:"100%",
       },
       imageTextPara: {
@@ -244,12 +244,12 @@ export default makeStyles((theme:any) => ({
       imageLines13:{
         position:"absolute",
         top:"-90%",
-        right:"-80%",
+        right:"10%",
         width:"20px",
         height:"20px",
         [theme.breakpoints.down('sm')]: {
           top:"40%",
-          right:"-20%",
+          right:"0%",
         },
         
       },
