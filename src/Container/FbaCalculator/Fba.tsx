@@ -6,26 +6,12 @@ import useStyles from './styles';
 import { useDispatch } from 'react-redux';
 import { Dispatch } from 'redux';
 import { fetchProductDetails,fetchProductPriceDetails,fetchProductProgramDetails,fetchProductFeesDetails } from "../../actions/posts";
-import { useSelector } from "react-redux/es/exports"
-import { DataObjectOutlined, Straight } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
+
 export const Fba = () => {
   const [selectedIndex, setSelectedIndex] = useState<number>(0)
   const [image, setImage] = useState<string>('/images/work1.png')
-  const [toggleFunction,setToggleFunction] = useState<boolean>(true)
-  const elements = {
-    hidden: {
-      opacity: 0,
-    },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        delay: 0.3,
-        ease: "easeInOut",
-      },
-    },
-  };
+ const navigate=useNavigate();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -898,15 +884,19 @@ export const Fba = () => {
           </div>
 
           <div className={classes.innerSeventh} >
-            <div className={`${classes.img} ${classes.index}`}>
-              <img src="../images/Rectangle first.png" alt="img" height="200px" width="368px"></img>
-              <p> Resources</p>
-              <h2> FBA Calculator</h2>
-            </div>
-            <div className={`${classes.img} ${classes.index}`}>
+            
+            <div className={`${classes.img} ${classes.index} pointer`}
+            onClick={()=>navigate('/home/listingCalculator')}>
+
               <img src="../images/Rectangle second.png" alt="img" height="200px" width="368px"></img>
-              <p> Optimising Listing Library</p>
-              <h2> FBA Calculator</h2>
+              <p> Resources</p>
+              <h2>Optimising Listing Library</h2>
+            </div>
+            <div className={`${classes.img} ${classes.index} pointer`}
+             onClick={()=>navigate('/home/descriptionToCode')}>
+              <img src="../images/unsplash_s8HyIEe7lF0.png" alt="img" height="200px" width="368px"></img>
+              <p> Resources</p>
+              <h2>Desctiption to code</h2>
             </div>
           </div>
 
@@ -1031,9 +1021,10 @@ const FbaContainer = styled.div`
       .hoverimg{
         width: 100%;
       }
-    
+     
       
     }
+    
   }
 `;
 const FontWrapper=styled.div`

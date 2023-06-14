@@ -5,9 +5,11 @@ import { motion } from "framer-motion";
 import useStyles from './styles';
 import  Editor  from 'react-rte';
 import { Handshake } from '@mui/icons-material';
+import { useNavigate } from "react-router-dom";
 
 
 function CodeDesc() {
+  const navigate=useNavigate();
   const [age, setAge] = useState('');
     const classes = useStyles();
    
@@ -79,7 +81,7 @@ function CodeDesc() {
             type="text"
             placeholder="Enter Amazon product's ASIN Number"
           ></input> */}
-          <button className="btn_FBACalculate">Turn to code</button>
+          {/* <button className="btn_FBACalculate">Turn to code</button> */}
         </div>
       </div>
       <div className={`box ${classes.index}`}>
@@ -142,7 +144,7 @@ function CodeDesc() {
               height="70%"
             ></motion.img>
                 </p> 
-                    <button className={classes.btn_FBACalculate}>Check Policies</button>
+                    {/* <button className={classes.btn_FBACalculate}>Check Policies</button> */}
                 </div>
 
         </div>
@@ -305,15 +307,17 @@ function CodeDesc() {
           </div>
 
           <div className={classes.innerSeventh} >
-            <div className={`${classes.img1} ${classes.index}`}>
+            <div className={`${classes.img1} ${classes.index} pointer`}
+            onClick={()=>navigate('/home/fbaCalculator')}>
               <img src="../images/Rectangle first.png" alt="img" height="200px" width="368px"></img>
               <p> Resources</p>
               <h2> FBA Calculator</h2>
             </div>
-            <div className={`${classes.img1} ${classes.index}`}>
+            <div className={`${classes.img1} ${classes.index} pointer`}
+             onClick={()=>navigate('/home/listingCalculator')}>
               <img src="../images/Rectangle second.png" alt="img" height="200px" width="368px"></img>
-              <p> Optimising Listing Library</p>
-              <h2> FBA Calculator</h2>
+              <p> Resources</p>
+              <h2> Optimising Listing Library</h2>
             </div>
           </div>
         </div>

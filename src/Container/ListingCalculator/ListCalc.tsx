@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react'
-import { Container, Typography, Input, Button, Switch,Select,Box } from "@mui/material";
+import { Container,Switch,Select } from "@mui/material";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import InputLabel from '@mui/material/InputLabel';
@@ -7,11 +7,11 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import { SelectChangeEvent } from '@mui/material/Select';
 import useStyles from './style';
-import zIndex from '@mui/material/styles/zIndex';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { Dispatch } from 'redux';
 import { fetchProductDetails,fetchProductPriceDetails,fetchProductProgramDetails,fetchProductFeesDetails } from "../../actions/posts";
-import { useSelector } from "react-redux/es/exports"
+
 
 function ListCalc() {
   const classes = useStyles();
@@ -19,6 +19,7 @@ function ListCalc() {
   const [selectedIndex, setSelectedIndex] = useState<number>(0)
   const [image, setImage] = useState<string>('/images/work1.png')
   const [toggleFunction,setToggleFunction] = useState<boolean>(true)
+  const navigate=useNavigate();
 
   const handleChange = (event: SelectChangeEvent) => {
     setAge(event.target.value);
@@ -642,15 +643,17 @@ function ListCalc() {
           </div>
 
           <div className={classes.innerSeventh} >
-            <div className={`${classes.img} ${classes.index}`}>
+            <div className={`${classes.img} ${classes.index} pointer`}
+             onClick={()=>navigate('/home/fbaCalculator')}>
               <img src="../images/Rectangle first.png" alt="img" height="200px" width="369px"></img>
               <p> Resources</p>
               <h2> FBA Calculator</h2>
             </div>
-            <div className={`${classes.img} ${classes.index}`}>
-              <img src="../images/Rectangle second.png" alt="img" height="200px" width="369px"></img>
-              <p> Optimising Listing Library</p>
-              <h2> FBA Calculator</h2>
+            <div className={`${classes.img} ${classes.index} pointer`}
+             onClick={()=>navigate('/home/descriptionToCode')}>
+              <img src="../images/unsplash_s8HyIEe7lF0.png" alt="img" height="200px" width="369px"></img>
+              <p> Resources</p>
+              <h2>Description to code</h2>
             </div>
           </div>
 
