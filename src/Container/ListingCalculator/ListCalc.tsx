@@ -184,7 +184,7 @@ function ListCalc() {
             )}
       <Container maxWidth="lg" className="container" >
         <div className="hero_wrapper"  >
-          <div className="info-box_FBA" >
+          <div className={`info-box_FBA ${classes.index}`}  >
             <div className="fba-Title">Optimise Listing Visibilty</div>
             <div className="fba-subTitle">
               Increase your Amazon sales and conversions with a perfectly optimised listing alongside on page factors.

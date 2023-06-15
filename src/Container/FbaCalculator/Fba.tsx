@@ -120,13 +120,14 @@ export const Fba = () => {
   useEffect(() => {
     window.scrollTo(0, 700);
   }, [loader]);
-
+  console.log("++++",prDetails.data?"hi":"bye");
   const fetch=async()=>{
     setLoader(true);
     const productDetails:any=await dispatch(fetchProductDetails(value,country));
     setpDetails(productDetails);
     const priceDetails:any=await dispatch(fetchProductPriceDetails(value,country));
     setprDetails(priceDetails);
+    
     
     const programDetails:any=await dispatch(fetchProductProgramDetails(value,country));
     setprgDetails(programDetails);
