@@ -386,7 +386,7 @@ function ListCalc() {
         <div className={classes.fifthContainer}>
           <div className={classes.innerFifthContainer} >
             <div className={classes.innersecondFifthContainer}>
-              <h4>Title</h4>
+              <h2>Title</h2>
               <div className={classes.greenGood}>Good</div>
             </div>
             <div className={classes.innersecondFifthContainer}  >
@@ -403,7 +403,7 @@ function ListCalc() {
           <div className={classes.innerFifthContainer} >
             <div className={classes.innersecondFifthContainer}>
               {/* <h4>Description</h4> */}
-              <h4>Sales rank</h4>
+              <h2>Sales rank</h2>
               <div className={classes.greenGood}>Good</div>
             </div>
             <div className={classes.innersecondFifthContainer}  >
@@ -418,7 +418,7 @@ function ListCalc() {
         <div className={classes.fifthContainer}>
           <div className={classes.innerFifthContainer} >
             <div className={classes.innersecondFifthContainer}>
-              <h4>Image </h4>
+              <h2>Image </h2>
               <div className={classes.greenGood}>Good</div>
             </div>
             <div className={classes.innersecondFifthContainer}  >
@@ -433,7 +433,7 @@ function ListCalc() {
         <div className={classes.fifthContainer}>
           <div className={classes.innerFifthContainer} >
             <div className={classes.innersecondFifthContainer}>
-              <h4>Ratings</h4>
+              <h2>Ratings</h2>
               <div className={classes.greenGood}>Good</div>
             </div>
             <div className={classes.innersecondFifthContainer}  >
@@ -449,7 +449,7 @@ function ListCalc() {
         <div className={classes.fifthContainer}>
           <div className={classes.innerFifthContainer} >
             <div className={classes.innersecondFifthContainer}>
-              <h4>Reviews Count</h4>
+              <h2>Reviews Count</h2>
               <div className={classes.greenGood}>Good</div>
             </div>
             <div className={classes.innersecondFifthContainer}  >

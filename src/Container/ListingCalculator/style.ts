@@ -354,12 +354,12 @@ export default makeStyles((theme:any) => ({
         justifyContent: "center",
         alignItems: "center",
         padding: "0px",
-        gap: "64px",
+        gap: "10px",
         margin: "0 auto",
         
         [theme.breakpoints.down('sm')]: {
           gap: "30px",
-          marginBottom:"150px",
+          marginBottom:"10px",
         },
       },
       innerFifthContainer: {
@@ -368,7 +368,7 @@ export default makeStyles((theme:any) => ({
         flexDirection: "column",
         width: "956px",
         height: "125px",
-        gap:"20px",
+        gap:"5px",
         [theme.breakpoints.down('sm')]: {
           width: "100%",
         },
