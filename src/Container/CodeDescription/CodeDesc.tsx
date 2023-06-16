@@ -34,7 +34,7 @@ function CodeDesc() {
       setEditorValue(newEditorValue);
     };
     const copyHandlar=()=>{
-      const valueToCopy = getHtmlContent(editorValue);
+      const valueToCopy = editorValue.toString('html');
       if (valueToCopy) {
         navigator.clipboard.writeText(valueToCopy)
           .then(() => {
@@ -227,7 +227,7 @@ function CodeDesc() {
           </div>
           <div>
           <FormControl variant="standard" className={classes.selectors}>
-        <InputLabel   >What are the qualities of a good Amazon listing?</InputLabel>
+        <InputLabel id="select-font-faq" >What are the qualities of a good Amazon listing?</InputLabel>
         <Select
           labelId="demo-simple-select-standard-label"
           id="demo-simple-select-standard"
