@@ -35,15 +35,15 @@ function CodeDesc() {
     };
     const copyHandlar=()=>{
       const valueToCopy = editorValue.toString('html');
-      if (valueToCopy) {
         navigator.clipboard.writeText(valueToCopy)
           .then(() => {
            setCopied(true);
           })
           .catch((error) => {
             setCopied(false);
+            console.log("error while copying",error)
           });
-      }
+      
     }
     console.log(editorValue);
   return (
