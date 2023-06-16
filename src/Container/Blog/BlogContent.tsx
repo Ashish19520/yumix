@@ -28,7 +28,7 @@ function BlogContent() {
             <img src="../images/contentLine.png" 
             className='blog-line'
             alt="some"></img>
-             <img src="../images/ellipse 63.png" 
+             <img src="../images/Ellipse 63.png" 
             className='content-ellipse'
             alt="some"></img>
         </div>
