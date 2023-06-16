@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Typography, useMediaQuery,Alert,AlertTitle } from "@mui/material";
+import { Box, Button, Grid, Typography,TextField, useMediaQuery,Alert,AlertTitle } from "@mui/material";
 import { useForm, ValidationError } from '@formspree/react';
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -148,11 +148,13 @@ export default function ContactForm() {
             <input
              type="text"
               placeholder="Your Message*"
-              required
                style={{...style.input}}
                name="message"
                value={formData.message} 
-               onChange={changeHandalar}/>
+               onChange={changeHandalar}
+               required
+               />
+
 
             <Button type="submit" 
             disabled={isSubmitting} 

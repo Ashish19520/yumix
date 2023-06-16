@@ -10,7 +10,7 @@ export const ToolBanner = () => {
           <h2>Resources  that'll help scale your business</h2>
           <div className="tools">
             <div className="fba">
-              <img src="./images/1 - Brisa Receiving Her Package.png"></img>
+              <img src="./images/fbatools1.png"></img>
               <div className="info">
                 <p className="heading">FBA Calculator</p>
                 <p className="mid">

@@ -77,7 +77,9 @@ export const Navbar = () => {
       </SocialNavbar>
 
       <Nav drawer={drawerOpen}>
-        <Container maxWidth="lg" className="container">
+        <Container maxWidth="lg" 
+        
+        className="container">
           <motion.div
             className="insideNavbar"
             variants={navAnimation}
@@ -233,6 +235,10 @@ const Nav = styled(Grid)<NavProps>`
     align-items: center;
     justify-content: space-between;
     margin-top: 40px;
+    position: fixed;
+    z-index: 7;
+    padding-top: 20px;
+  
 
     .insideNavbar {
       .logo-img {
@@ -305,6 +311,8 @@ const Nav = styled(Grid)<NavProps>`
       border-radius: 8px;
       background-color: #5956e9;
       border: 0px;
+      text-align:start;
+      padding:5px;
 
       font-family: Montserrat;
       font-size: 14px;

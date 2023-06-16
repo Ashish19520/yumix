@@ -39,7 +39,7 @@ export const OurApproach = () => {
           <h2>Our Approach</h2>
           <div className="icons-zoom">
             <div className="icons">
-              <div className="singleicon">
+              <div  className="singleicon">
                 <img className="ig" src="./images/A1.png"></img>
                 <p>Schedule a Meeting</p>
               </div>
@@ -128,6 +128,7 @@ const MidBanner = styled.div`
         align-items: center;
         justify-content: space-between;
         width: 100%;
+  
 
         @media (max-width: 900px) {
           flex-wrap: wrap;
@@ -148,6 +149,8 @@ const MidBanner = styled.div`
           align-items: center;
           margin-right: 10px;
           transition: all 0.2s ease-in-out;
+          height:"190px";
+          
 
           @media (max-width: 600px) {
             flex-direction: row;
@@ -193,9 +196,9 @@ const MidBanner = styled.div`
           }
 
           img {
+            width: 150px;
+            height: 150px;
             margin-bottom: 20px;
-            width:150px;
-            height:118px;
             @media (max-width:600px){
               padding: 0px 20px;
             }
@@ -203,7 +206,8 @@ const MidBanner = styled.div`
           }
 
           ig{
-           
+            // width: 151px;
+            // height: 118px;
           }
 
           p {
