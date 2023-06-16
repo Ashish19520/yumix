@@ -15,14 +15,14 @@ export const NewsCard = (props: any) => {
     <NewsCardWrapper>
       <Container maxWidth="lg" className="container">
         <div className="img-box">
-          <img src={(props?.data.image[0].$.src)?(props?.data.image[0].$.src):"../images/Rectangle first.png"} 
+          <img src={(props?.data?.image[0])?(props?.data?.image[0]):"../images/Rectangle first.png"} 
 
           height="180px" width="180" alt="img"></img>
         </div>
 
 
         <div className="title">
-          <p>{props?.data?.title[0]?.length>40?props.data.title[0].substring(0, 40)+"...":props?.data?.title[0]}</p>
+          <p>{props?.data?.title[0]?.length>40?props?.data?.title[0].substring(0, 40)+"...":props?.data?.title[0]}</p>
         <p style={{color:"purple",cursor:"pointer"}} onClick={openContent}>read more...</p>
         </div>
        

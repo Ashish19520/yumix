@@ -58,7 +58,7 @@ const fetch=async ()=>{
         <div className="hero-title">Hot Topics</div>
         <div className="topicContainer">
           <div className="img-box">
-          <img src={(data?.image[0]?.$.src)?(data.image[0]?.$.src):"../images/Rectangle first.png"} alt="img" width="100%" height="500px"></img>
+          <img src={(data?.image[0])?(data?.image[0]):"../images/Rectangle first.png"} alt="img" width="100%" height="500px"></img>
             <div className="img-text">
               <div className="title">
                 {data?.title}

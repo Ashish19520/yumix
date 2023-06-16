@@ -24,7 +24,6 @@ function NewsContent() {
     
     const fetch=async ()=>{
         const response=JSON.parse(localStorage.getItem("data") || "{}");
-        console.log("----",response);
         setData(response);
     }
    
@@ -47,7 +46,7 @@ function NewsContent() {
     <div className={`${classes.conatainer} ${classes.relative}`}>
     <ArrowBackSharp className={classes.arr} onClick={() => navigate(-1)}/>
     <div style={{position:"relative",zIndex:2}}>
-            <img src={(data.image[0]?.$.src)?(data.image[0]?.$.src):"../images/Rectangle first.png"} alt="img" width="100%" height="500px"/>
+            <img src={(data.image[0])?(data.image[0]):"../images/Rectangle first.png"} alt="img" width="100%" height="500px"/>
             <img src="../images/Round Cube2@3x.png" 
             alt="some"
             className='blog-cube'></img>
