@@ -12,7 +12,7 @@ export const Works = () => {
   },[])
   return (
     <div>
-      <WorksWrapper>
+      <WorksWrapper className="container margin-nav">
         <div className="banner">
           <OurWorks />
         </div>

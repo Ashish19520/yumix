@@ -8,7 +8,7 @@ function Content({data}:any) {
   return (
     <>
    <Container>
-   <ArrowBackSharp className='arr' onClick={() => navigate(-1)}/>
+   <ArrowBackSharp className='arr margin-nav' onClick={() => navigate(-1)}/>
     <div>
         <div className='con-image-section'>
             <img src={data.img} alt="some"

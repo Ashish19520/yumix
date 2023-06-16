@@ -17,8 +17,8 @@ useEffect(()=>{
 },[])
 
   return (
-    <div>
-      <TopBanner />
+    <div >
+      <TopBanner/>
       <BannerList />
       <MidBanner />
       <TypoWrapper>

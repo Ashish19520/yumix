@@ -357,11 +357,11 @@ export const Fba = () => {
               <option value="option2"> ₹</option>
               </select>
               <input
-                value={pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.FixedClosingFee
-                  ?.feeAmount?.amount?
-                  pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.FixedClosingFee
-                  ?.feeAmount?.amount:
-                  "0"} 
+               value={pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.ReferralFee
+                ?.total?.amount?
+                pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.ReferralFee
+                ?.total?.amount:
+                "0"}
               type="text" className={classes.input}/>
               </div>
               
@@ -372,11 +372,12 @@ export const Fba = () => {
               <option value="option2"> ₹</option>
               </select>
               <input
-                 value={pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.ReferralFee
-                  ?.feeAmount?.amount?
-                  pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.ReferralFee
-                  ?.feeAmount?.amount:
-                  "0"}
+               value={pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.FixedClosingFee
+                ?.feeAmount?.amount?
+                pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.FixedClosingFee
+                ?.feeAmount?.amount:
+                "0"} 
+                 
               type="text" className={classes.input}/>
               </div>
 
@@ -509,11 +510,12 @@ export const Fba = () => {
               <option value="option2"> ₹</option>
               </select>
               <input
-               value={pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FixedClosingFee
-                ?.feeAmount?.amount?
-                pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FixedClosingFee
-                ?.feeAmount?.amount:
+              value={pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.ReferralFee
+                ?.total?.amount?
+                pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.ReferralFee
+                ?.total?.amount:
                 "0"} 
+              
               type="text" className={classes.input}/>
               </div>
 
@@ -524,9 +526,9 @@ export const Fba = () => {
               <option value="option2"> ₹</option>
               </select>
               <input
-                value={pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.ReferralFee
+                 value={pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FixedClosingFee
                   ?.feeAmount?.amount?
-                  pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.ReferralFee
+                  pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FixedClosingFee
                   ?.feeAmount?.amount:
                   "0"} 
               type="text" className={classes.input}/>

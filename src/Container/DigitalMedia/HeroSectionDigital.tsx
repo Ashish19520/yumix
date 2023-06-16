@@ -1,7 +1,7 @@
-import { Container } from "@mui/material";
-import React from "react";
-import styled from "styled-components";
-import { motion } from "framer-motion";
+import { Container } from '@mui/material'
+import React from 'react'
+import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
 export const HeroSectionDigital = () => {
   const typingContainer = {
@@ -9,37 +9,37 @@ export const HeroSectionDigital = () => {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.03,
-      },
-    },
-  };
+        staggerChildren: 0.03
+      }
+    }
+  }
   const typingText = {
-    hidden: { opacity: 0, y: "-20px" },
+    hidden: { opacity: 0, y: '-20px' },
     show: {
       opacity: 1,
-      y: "0",
+      y: '0',
       transition: {
-        ease: "easeInOut",
-      },
-    },
-  };
+        ease: 'easeInOut'
+      }
+    }
+  }
 
   const explainProduct = {
-    hidden: { opacity: 0, y: "-20px" },
+    hidden: { opacity: 0, y: '-20px' },
     show: {
       opacity: 1,
-      y: "0",
+      y: '0',
       transition: {
         delay: 0.2,
-        ease: "easeInOut",
-      },
-    },
-  };
+        ease: 'easeInOut'
+      }
+    }
+  }
 
   const imgProduct1 = {
     hidden: {
       opacity: 0,
-      y: "200px",
+      y: '200px'
     },
     show: {
       opacity: 1,
@@ -47,14 +47,14 @@ export const HeroSectionDigital = () => {
       transition: {
         duration: 1,
         delay: 0.2,
-        ease: "easeInOut",
-      },
-    },
-  };
+        ease: 'easeInOut'
+      }
+    }
+  }
 
   const lines = {
     hidden: {
-      opacity: 0,
+      opacity: 0
     },
     show: {
       opacity: 1,
@@ -62,53 +62,74 @@ export const HeroSectionDigital = () => {
       transition: {
         duration: 1,
         delay: 1,
-        ease: "easeInOut",
-      },
-    },
-  };
+        ease: 'easeInOut'
+      }
+    }
+  }
 
   return (
     <ServicesWrapper>
-      <Container maxWidth="lg" className="container">
-        <div className="hero">
-          <motion.img variants={lines}  initial="hidden" animate="show" src="../images/Group 38625@3x.png" className="img-line_bg"></motion.img>
+      <Container maxWidth='lg' className='container margin-nav'>
+        <div className='hero'>
+          <motion.img
+            variants={lines}
+            initial='hidden'
+            animate='show'
+            src='../images/Group 38625@3x.png'
+            className='img-line_bg'
+          ></motion.img>
           {/* <motion.img variants={lines}  initial="hidden" animate="show" src="../images/Vector 13@3x.png" className="img-line_bg_2"></motion.img> */}
-          <motion.img variants={lines}  initial="hidden" animate="show" src="../images/Round Cube2@3x.png" className="img-cube_1"></motion.img>
-          <motion.img variants={lines}  initial="hidden" animate="show" src="../images/FullRock1@3x.png" className="img-rock_1"></motion.img>
-          <div className="text-wrapper">
-          <motion.h1 variants={typingContainer} initial="hidden" animate="show">
-            {Array.from("Digital Media").map((word, i) => (
-              <motion.span key={i} variants={typingText}>
-                {word}
-              </motion.span>
-            ))}
-          </motion.h1>
-          <motion.div
-            variants={explainProduct}
-            initial="hidden"
-            animate="show"
-            className="subTitle"
-          >
-           Focusing on customers  not just channels
-
-          </motion.div>
+          <motion.img
+            variants={lines}
+            initial='hidden'
+            animate='show'
+            src='../images/Round Cube2@3x.png'
+            className='img-cube_1'
+          ></motion.img>
+          <motion.img
+            variants={lines}
+            initial='hidden'
+            animate='show'
+            src='../images/FullRock1@3x.png'
+            className='img-rock_1'
+          ></motion.img>
+          <div className='text-wrapper'>
+            <motion.h1
+              variants={typingContainer}
+              initial='hidden'
+              animate='show'
+            >
+              {Array.from('Digital Media').map((word, i) => (
+                <motion.span key={i} variants={typingText}>
+                  {word}
+                </motion.span>
+              ))}
+            </motion.h1>
+            <motion.div
+              variants={explainProduct}
+              initial='hidden'
+              animate='show'
+              className='subTitle'
+            >
+              Focusing on customers not just channels
+            </motion.div>
           </div>
           <motion.div
             variants={imgProduct1}
-            initial="hidden"
-            animate="show"
-            className="img-block"
+            initial='hidden'
+            animate='show'
+            className='img-block'
           >
             <img
-              src="../images/IllustrationService.png"
-              className="subject-img"
+              src='../images/IllustrationService.png'
+              className='subject-img'
             ></img>
           </motion.div>
         </div>
       </Container>
     </ServicesWrapper>
-  );
-};
+  )
+}
 
 const ServicesWrapper = styled.div`
   background: #fffcfc;
@@ -130,7 +151,7 @@ const ServicesWrapper = styled.div`
       justify-content: center;
       position: relative;
 
-      @media(max-width:600px){
+      @media (max-width: 600px) {
         flex-direction: column-reverse;
       }
 
@@ -140,7 +161,7 @@ const ServicesWrapper = styled.div`
         top: 20%;
         position: absolute;
 
-        @media(max-width:600px){
+        @media (max-width: 600px) {
           top: 2%;
           right: 4%;
         }
@@ -183,13 +204,13 @@ const ServicesWrapper = styled.div`
         }
       }
 
-      .text-wrapper{
+      .text-wrapper {
         padding-left: 20px;
         text-align: center;
         display: flex;
         flex-direction: column;
         align-items: center;
-        @media(max-width:600px){
+        @media (max-width: 600px) {
           align-items: start;
           margin-top: 40px;
         }
@@ -210,7 +231,7 @@ const ServicesWrapper = styled.div`
         }
       }
       .subTitle {
-        font-family: "Montserrat";
+        font-family: 'Montserrat';
         width: 65%;
         text-align: center;
         font-size: 18px;
@@ -231,7 +252,7 @@ const ServicesWrapper = styled.div`
       justify-content: center;
 
       .subject-img {
-        width: 100%;
+        width: 50%;
         z-index: 2;
       }
       @media (max-width: 600px) {
@@ -246,4 +267,4 @@ const ServicesWrapper = styled.div`
       }
     }
   }
-`;
+`

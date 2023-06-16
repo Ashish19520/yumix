@@ -43,8 +43,9 @@ const MainRouter = () => {
     <div>
       <Navbar />
       <Routes>
+        <Route path="/home" element={<Homepage />} />
         <Route path="/" element={<Homepage />} />
-        <Route path="/home" element={<h1>Hello from Homepage</h1>} />
+        <Route path="*" element={<h1>404 Page,not found</h1>} />
         <Route path="/aboutus" element={<AboutUs />} />
 
         <Route path="/ourservices" element={<Services />} />

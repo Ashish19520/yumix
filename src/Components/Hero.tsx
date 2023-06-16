@@ -217,8 +217,8 @@ export const Hero = () => {
   }, []);
 
   return (
-    <HeroLayout>
-      <Container  className="container">
+    <HeroLayout >
+      <Container  className="container margin-nav">
 
         <motion.img
           src="./images/Group 38633@3x.png"

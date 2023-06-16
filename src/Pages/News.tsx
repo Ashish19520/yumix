@@ -9,7 +9,7 @@ import { Container } from '@mui/material'
 
 export const News = () => {
   return (
-    <div>
+    <div className="container margin-nav">
         <NewsWrapper>
         <Container maxWidth="lg" className="container">
         <NewsContainer />

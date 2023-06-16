@@ -54,7 +54,7 @@ export default function TopBanner() {
   }, []);
 
   return (
-    <TopBannerWrapper>
+    <TopBannerWrapper className="container margin-nav">
       <Grid
         wrap="wrap-reverse"
         className="ourLeaders_hidden"

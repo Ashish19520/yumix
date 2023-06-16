@@ -191,13 +191,13 @@ export const Navbar = () => {
 
 const SocialNavbar = styled.div`
   height: 38px;
-
   display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
   width: 100%;
-  z-index: 999;
+  z-index: 1000;
+  top:0;
   background-color: #eef1f8;
   .container {
     margin: auto;
@@ -219,12 +219,18 @@ type NavProps = {
   drawer?: boolean;
 };
 
-const Nav = styled(Grid)<NavProps>`
-  height: 80px;
+const Nav = styled.div`
+ 
+  height: 120px;
   display: flex;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
-
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  top: 0;
+  margin-top: -20px;
+  background-color: white;
   /* @media (max-width:900px){
     display:none;
 } */

@@ -13,7 +13,7 @@ function BlogContent() {
    
   return (
     <>
-    <Container style={{ backgroundColor: "#FFFCFC" }}>
+    <Container className="container margin-nav" style={{ backgroundColor: "#FFFCFC" }}>
     <div className={`${classes.conatainer} ${classes.relative}`}>
     <ArrowBackSharp className={classes.arr} onClick={() => navigate(-1)}/>
     <div style={{position:"relative",zIndex:2}}>
