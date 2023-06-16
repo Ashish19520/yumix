@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react'
-import { Container, TextField, Typography,MenuItem,FormControl,InputLabel,Select } from "@mui/material";
+import { Container, TextField, Typography,MenuItem,FormControl,InputLabel,Select, } from "@mui/material";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import useStyles from './styles';
@@ -24,7 +24,7 @@ function CodeDesc() {
       setEditorValue(value);
     };
   
-    const getHtmlContent = () => {
+    const getHtmlContent = (editorValue:any) => {
       return editorValue.toString('html');
     };
   
@@ -34,7 +34,7 @@ function CodeDesc() {
       setEditorValue(newEditorValue);
     };
     const copyHandlar=()=>{
-      const valueToCopy = getHtmlContent();
+      const valueToCopy = getHtmlContent(editorValue);
       if (valueToCopy) {
         navigator.clipboard.writeText(valueToCopy)
           .then(() => {
@@ -45,7 +45,7 @@ function CodeDesc() {
           });
       }
     }
-    
+    console.log(editorValue);
   return (
     <CodeContainer style={{ backgroundColor: "#FFFCFC",position:"relative" }}>
     <Container
@@ -103,13 +103,14 @@ function CodeDesc() {
   <Container>
     <div className={classes.firstContainer}>
         <div className={classes.insideFirstContainer}>
-            <p>Write your product’s description here.</p>
+            {/* <p>Write your product’s description here.</p> */}
             {/* <textarea className={classes.txtField}></textarea> */}
             <Editor
             className={classes.txtField}
             value={editorValue}  
             onChange={handleChange}
             toolbarClassName={classes.toolbar}
+            placeholder='write your product description here'
            />
            
 
@@ -117,11 +118,12 @@ function CodeDesc() {
         <div className={classes.insideFirstContainerTwo}>
             <p>Your HTML code will appear here.</p>
             <textarea
+            placeholder='Your HTML code will appear here.'
             className={classes.txtField}
-            value={getHtmlContent()}
+            value={getHtmlContent(editorValue)}
             // onChange={handleHtmlChange}
             />
-            <button className={classes.btn1} onClick={copyHandlar}>
+            <button className={`${classes.btn1} pointer`} onClick={copyHandlar}>
               {copied?"copied":"copy code"}</button>
             
 
@@ -213,14 +215,11 @@ function CodeDesc() {
           <h1>FAQS</h1>
           <div>
           <FormControl variant="standard" className={classes.selectors}>
-        <InputLabel id="demo-simple-select-standard-label">Does the Amazon Listing Optimization tool work for all the Amazon marketplaces?</InputLabel>
+        <InputLabel id="select-font-faq">Does the Amazon Listing Optimization tool work for all the Amazon marketplaces?</InputLabel>
         <Select
           labelId="demo-simple-select-standard-label"
           id="demo-simple-select-standard"
-          value={age}
-          onChange={handleChange}
-          label="Age"
-        >
+          onChange={handleChange}>
           <p className='select-font'>If your workplace involves selling products on Amazon, utilising listing optimization tools can be highly advantageous. They can assist you in improving your product listings, attracting more potential customers, and increasing sales. However, if your workplace does not involve selling products on Amazon or within the e-commerce industry, these tools may not be directly applicable to your specific business needs.</p>
         </Select>
       </FormControl>
@@ -228,11 +227,10 @@ function CodeDesc() {
           </div>
           <div>
           <FormControl variant="standard" className={classes.selectors}>
-        <InputLabel  id="demo-simple-select-standard-label">What are the qualities of a good Amazon listing?</InputLabel>
+        <InputLabel   >What are the qualities of a good Amazon listing?</InputLabel>
         <Select
           labelId="demo-simple-select-standard-label"
           id="demo-simple-select-standard"
-          value={age}
           onChange={handleChange}
           label="Age"
         >
@@ -244,11 +242,10 @@ function CodeDesc() {
           </div>
           <div>
           <FormControl variant="standard" className={classes.selectors}>
-        <InputLabel  id="demo-simple-select-standard-label">How to optimize Amazon Listings?</InputLabel>
+        <InputLabel id="select-font-faq">How to optimize Amazon Listings?</InputLabel>
         <Select
           labelId="demo-simple-select-standard-label"
           id="demo-simple-select-standard"
-          value={age}
           onChange={handleChange}
           label="Age"
         >
@@ -261,11 +258,10 @@ function CodeDesc() {
           </div>
           <div>
           <FormControl variant="standard"  className={classes.selectors}>
-        <InputLabel  id="demo-simple-select-standard-label">How does Amazon decide the ranking of my products?</InputLabel>
+        <InputLabel  id="select-font-faq">How does Amazon decide the ranking of my products?</InputLabel>
         <Select
           labelId="demo-simple-select-standard-label"
           id="demo-simple-select-standard"
-          value={age}
           onChange={handleChange}
           label="Age"
         >

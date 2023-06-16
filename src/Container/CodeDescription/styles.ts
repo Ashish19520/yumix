@@ -155,6 +155,7 @@ export default makeStyles((theme) => ({
     fontSize: "16px",
     lineHeight: "18px",
     letterSpacing: "0.001em",
+    overflow: "auto",
     textAlign: "center",
     [theme.breakpoints.down("sm")]: {
       width: "100%",

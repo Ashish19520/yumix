@@ -549,13 +549,12 @@ function ListCalc() {
           <h1>FAQS</h1>
           <div>
           <FormControl variant="standard" className={classes.selectors}>
-        <InputLabel  id="demo-simple-select-standard-label">Does the Amazon Listing Optimization tool work for all the Amazon marketplaces?</InputLabel>
+        <InputLabel  id="select-font-faq">Does the Amazon Listing Optimization tool work for all the Amazon marketplaces?</InputLabel>
         <Select
           labelId="demo-simple-select-standard-label"
           id="demo-simple-select-standard"
-          value={age}
           onChange={handleChange}
-          label="Age"
+
         >
                     <p className='select-font'>If your workplace involves selling products on Amazon, utilising listing optimization tools can be highly advantageous. They can assist you in improving your product listings, attracting more potential customers, and increasing sales. However, if your workplace does not involve selling products on Amazon or within the e-commerce industry, these tools may not be directly applicable to your specific business needs.</p>
 
@@ -565,13 +564,11 @@ function ListCalc() {
           </div>
           <div>
           <FormControl variant="standard" className={classes.selectors}>
-        <InputLabel  id="demo-simple-select-standard-label">What are the qualities of a good Amazon listing?</InputLabel>
+        <InputLabel id="select-font-faq">What are the qualities of a good Amazon listing?</InputLabel>
         <Select
           labelId="demo-simple-select-standard-label"
           id="demo-simple-select-standard"
-          value={age}
           onChange={handleChange}
-          label="Age"
         >
                <p className='select-font'>A good Amazon listing should have several key qualities. It should be concise and clear, providing relevant information about the product. The title should be descriptive and include keywords. High-quality images showcasing the product from different angles are essential. The listing should have accurate and detailed product descriptions, highlighting features and benefits. Including customer reviews and ratings helps build trust. Additionally, competitive pricing, well-organised bullet points, and effective use of search terms can improve visibility and attract potential buyer.</p>
 
@@ -581,13 +578,11 @@ function ListCalc() {
           </div>
           <div>
           <FormControl variant="standard" className={classes.selectors}>
-        <InputLabel  id="demo-simple-select-standard-label">How to optimize Amazon Listings?</InputLabel>
+        <InputLabel  id="select-font-faq">How to optimize Amazon Listings?</InputLabel>
         <Select
           labelId="demo-simple-select-standard-label"
           id="demo-simple-select-standard"
-          value={age}
           onChange={handleChange}
-          label="Age"
         >
                       <p className='select-font'>  To optimise Amazon listings, focus on keyword research to include relevant terms in titles, bullet points, and descriptions. Write compelling and concise product descriptions, use high-quality images, and request customer reviews. Optimise backend search terms, leverage enhanced brand content, and monitor and adjust your listings regularly for better performance.</p>
 
@@ -597,13 +592,11 @@ function ListCalc() {
           </div>
           <div>
           <FormControl variant="standard"  className={classes.selectors}>
-        <InputLabel  id="demo-simple-select-standard-label">How does Amazon decide the ranking of my products?</InputLabel>
+        <InputLabel  id="select-font-faq">How does Amazon decide the ranking of my products?</InputLabel>
         <Select
           labelId="demo-simple-select-standard-label"
           id="demo-simple-select-standard"
-          value={age}
           onChange={handleChange}
-          label="Age"
         >
           <p className='select-font'> Amazon determines the ranking of products based on various factors including relevance, sales performance, customer reviews, pricing, and availability. The algorithm takes into account the product's title, description, and keywords, as well as the seller's performance metrics. Factors like conversion rate, customer satisfaction, and fulfilment method also play a role. Continuous optimization and updates to the algorithm influence the ranking of products on Amazon's platform.</p>
         </Select>

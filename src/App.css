@@ -615,5 +615,26 @@ width:100%;
   letter-spacing: 0.25px;
   color: #636677;
   text-align: center;
+  overflow-x:auto;
   padding:1%;
+}
+
+#select-font-faq{
+  width: 747px;
+height: 24px;
+
+/* Title P 18 */
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 24px;
+/* identical to box height, or 133% */
+
+text-align: start;
+
+/* Greys/C-04 */
+
+color: #3A3B44;
 }
