@@ -94,7 +94,7 @@ export const Slide = () => {
         <Slider {...settings} className="slider_main">
           {response?.clientList?.data?.map((data:any,index:number) => (  
             <div className="slide_item" key={index}>
-              <img src={data.attributes.logo_url} alt="img"/>
+              <img src={data.attributes.logo_url} alt="img" className="imgs"/>
             </div>
           ))}
         </Slider>
@@ -115,7 +115,7 @@ const SliderWrapper = styled.div`
       .prev-arrow {
         font-size: larger;
         position: absolute;
-        bottom: 40px;
+        bottom: 80px;
         left: -40px;
         cursor: pointer;
         z-index: 1;
@@ -126,13 +126,13 @@ const SliderWrapper = styled.div`
         @media (max-width: 600px) {
           display: block;
           left: 0;
-          bottom: 22px;
+          bottom: 30px;
         }
       }
       .next-arrow {
         font-size: larger;
         position: absolute;
-        bottom: 40px;
+        bottom: 80px;
         right: 0;
         cursor: pointer;
         @media (max-width: 1100px) {
@@ -140,8 +140,8 @@ const SliderWrapper = styled.div`
         }
         @media (max-width: 600px) {
           display: block;
-          bottom: 22px;
           right: -5%;
+          bottom: 30px;
         }
       }
     }
@@ -153,11 +153,15 @@ const SliderWrapper = styled.div`
       justify-content: center;
 
       img {
-        width: 100%;
+        width: 200px;
+        height: 200px;
+        
         padding: 0px 10%;
         @media (max-width: 600px) {
           padding: unset;
-          width: 150%;
+          width: 100px;
+          height:100px;
+          gap:15px;
         }
         
       }

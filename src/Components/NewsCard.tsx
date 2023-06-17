@@ -9,6 +9,7 @@ export const NewsCard = (props: any) => {
 
   const openContent = ()=>{
     localStorage.setItem('data', JSON.stringify(props?.data));
+    localStorage.setItem('counter', props?.page);
     navigate('/newsContent');
   }
   return (
@@ -23,7 +24,7 @@ export const NewsCard = (props: any) => {
 
         <div className="title">
           <p>{props?.data?.title[0]?.length>40?props?.data?.title[0].substring(0, 40)+"...":props?.data?.title[0]}</p>
-        <p style={{color:"purple",cursor:"pointer"}} onClick={openContent}>read more...</p>
+        <p style={{color:"purple",cursor:"pointer"}} onClick={openContent}>Read more...</p>
         </div>
        
         {/* <div className="subtitle">

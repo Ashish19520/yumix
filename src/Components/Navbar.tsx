@@ -116,7 +116,7 @@ export const Navbar = () => {
                 <Link to="/works">Works</Link>
               </motion.li>
               <motion.li variants={navText}>
-                <Link to="/blogs">Blog</Link>
+                <Link to="/blogs">Blogs</Link>
               </motion.li>
               <motion.li variants={navText}>
                 <Link to="/news">News</Link>

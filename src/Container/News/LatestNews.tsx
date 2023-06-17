@@ -14,7 +14,10 @@ import { useSelector } from "react-redux/es/exports";
 
 export const LatestNews = () => {
 //  const [response,setResponse] =useState<Array<{}>>([]);;
- const [pageNO, setPageNO] = useState(1);
+ const [pageNO, setPageNO] = useState(()=>{
+  const storedValue = localStorage.getItem('counter');
+  return storedValue ? parseInt(storedValue) : 1;
+ });
  const navigate=useNavigate();
  const response=useSelector((state:any)=>state?.posts?.fetchNews?.feedItems);
  const dispatch: Dispatch<any> = useDispatch();
@@ -39,8 +42,6 @@ export const LatestNews = () => {
   //   let random = Math.floor((Math.random() * 16) + 1);
   //   localStorage.setItem('hotTopic', JSON.stringify(news.articles[random||4]));
   // }
-  
- 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -80,7 +81,7 @@ export const LatestNews = () => {
               style={{ padding: "20px 10px" }}
               className="eachCard latestnews_hidden"
             >
-              <NewsCard data={d} />
+              <NewsCard data={d} page={pageNO}/>
              
             </Grid>
           
@@ -91,7 +92,9 @@ export const LatestNews = () => {
           style={{ display: "flex", justifyContent: "center" }}
         >
          
-          <Pagination count={totalPages}
+          <Pagination
+           count={totalPages}
+           defaultPage={pageNO}
           onChange={(event, pageNumber) => handlePage(event, pageNumber)}
           color="primary" />
 

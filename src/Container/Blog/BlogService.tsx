@@ -2,22 +2,56 @@ import { Box, Button, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 
 export default function BlogService() {
+  const navigate=useNavigate();
   const services = [
-    "Affiliate & Influencer",
-    "Amazon",
-    "Analytics",
-    "B2C",
-    "Eservz News & People",
-    "Marketing & Retail Media",
-    "Paid Search",
-    "Partnerships",
-    "Premium Content",
-    "SEO",
-    "Web & Mobile Development",
-  ];
+    {name:"Affiliate & Influencer",
+    add:"/digitalMedia/affilateAdvertising"
+  },
+    {name:"Amazon",
+    add:"/digitalMedia/amazon"
+  },
+    {name:"Analytics",
+   add:"/analytics/customerExpierenceAnalytics"
+  },
+    {
+      name:"Email-marketing",
+    add:"/digitalMedia/emailMarketing"
+  },
+
+    {
+      name:"Socila media management",
+    add:"/digitalMedia/socialMediaManagement"
+  },
+
+    {
+      name:"Marketing & Retail Media",
+    add:"/analytics/marketMeasurement"
+    },
+    {
+      name:"Paid Search",
+    add:"/digitalMedia/paidSearch"
+    },
+    {
+      name:"Platform Enablement",
+    add:"/analytics/platformEnablement"
+    },
+    {
+      name:"Premium Content",
+    add:"/customerExpierence/contactMarketing"
+    },
+    
+    {
+    name:"SEO",
+     add:"/digitalMedia/seoMarketing"
+    },
+    {
+      name:"Web & Mobile Developmen",
+      add:"/customerExpierence/mobileWebDev"
+  }];
 
   const [flag, setFlag] = useState(true);
   
@@ -65,8 +99,9 @@ export default function BlogService() {
             {services.map((item, index) => {
               return (
                 <Button
-                  key={item}
+                  key={item.name}
                   variant="outlined"
+                  onClick={()=>navigate(`${item.add}`)}
                   sx={{
                     ...style.button,
                     color: "#3A3B44",
@@ -77,7 +112,7 @@ export default function BlogService() {
                     },
                   }}
                 >
-                  {item}
+                  {item.name}
                 </Button>
               );
             })}

@@ -8,6 +8,7 @@ import FormControl from '@mui/material/FormControl';
 import { SelectChangeEvent } from '@mui/material/Select';
 import useStyles from './style';
 import { useDispatch } from 'react-redux';
+import {ValidatorForm, TextValidator} from 'react-material-ui-form-validator'
 import { useNavigate } from 'react-router-dom';
 import { Dispatch } from 'redux';
 import { fetchProductDetails,fetchProductPriceDetails,fetchProductProgramDetails,fetchProductFeesDetails } from "../../actions/posts";
@@ -166,6 +167,10 @@ function ListCalc() {
     setLoader(false); 
     
   }
+  const isUsernameUnique = (value:any) => {
+    return value.trim() !== '';
+  };
+  ValidatorForm.addValidationRule('isUsernameUnique', isUsernameUnique);
   return (
     <ListContainer style={{ backgroundColor: "#FFFCFC" }}>
       {loader && (
@@ -195,15 +200,26 @@ function ListCalc() {
              onChange={countryHandlar}
              className={` ${classes.index}`} />Indian Product</div>
             <div className="input-field">
+              {/* <ValidatorForm onSubmit={fetch}>
+                  <TextValidator      
+                    placeholder="Enter Amazon Product's ASIN Number"              
+                    value={value}
+                    onChange={changeHandlar}
+                    className={` ${classes.index}`}
+                    name="Asin"
+                    validators={['required',"isUsernameUnique"]}
+                    errorMessages={['this field is required', 'enter valid ASIN of 10 Digit']}
+                  />
+              </ValidatorForm> */}
               <input
                 type="text"
-                placeholder="Enter Amazon product's ASIN Number"
+                placeholder="Enter Amazon Product's ASIN Number"
                 value={value}
                 className={` ${classes.index}`}
                 onChange={changeHandlar}
               ></input>
               <button 
-              // disabled={!value}
+              disabled={!value}
                onClick={fetch} 
               className= {`btn_FBACalculate ${classes.index}`}>
                 Optimising Visibilty</button>
@@ -296,25 +312,25 @@ function ListCalc() {
             </div>
             <div className={classes.items}>
               <div className={classes.box}>
-                <p>customerReviewsCount</p>
+                <h3>customerReviewsCount</h3>
                 <p> {pDetails&&pDetails?.data?.otherProducts?.products[0]?.customerReviewsCount?
               pDetails?.data?.otherProducts?.products[0]?.customerReviewsCount:
               "-"}</p>
               </div>
               <div className={classes.box}>
-              <p>Product Id</p>
+              <h3>Product Id</h3>
                 <p>{pDetails&&pDetails?.data?.otherProducts?.products[0]?.asin?
               pDetails?.data?.otherProducts?.products[0]?.asin:
               "-"}</p>
               </div>
               <div className={classes.box}>
-              <p>Price</p>
+              <h3>Price</h3>
                 <p>{country==="US"?"$":"₹"}{prDetails&&prDetails?.data?.price?.amount?
               prDetails?.data?.price?.amount:
               "0"}</p>
               </div>
               <div className={classes.box}>
-              <p>Ratings</p>
+              <h3>Ratings</h3>
                 <p>{pDetails&&pDetails?.data?.otherProducts?.products[0]?.customerReviewsRating
 ?
               pDetails?.data?.otherProducts?.products[0]?.customerReviewsRating
@@ -367,7 +383,7 @@ function ListCalc() {
           </div>
           <div className={classes.innerOneFourth}>
             {/* <p>4 possible error(s) analyzed.</p> */}
-            <p>5 details analyized.</p>
+            <p>5 details analyzed.</p>
             {/* <div className="input-field">
               <button className={classes.btnFBACalculate}>View all Errors</button>
             </div> */}
@@ -387,13 +403,13 @@ function ListCalc() {
           <div className={classes.innerFifthContainer} >
             <div className={classes.innersecondFifthContainer}>
               <h2>Title</h2>
-              <div className={classes.greenGood}>Good</div>
+              {/* <div className={classes.greenGood}>Good</div> */}
             </div>
             <div className={classes.innersecondFifthContainer}  >
             {/* <p>Title is possibly the most important part of the product listing. Ensure the title is readable, is relevant to your product and is keyword rich. Most of your main keywords go here.</p> */}
               <p>{pDetails&&pDetails?.data?.otherProducts?.products[0]?.title?
               pDetails?.data?.otherProducts?.products[0]?.title:
-              "tilte here..."}</p>
+              "Tilte here..."}</p>
               {/* <img src="../images/Oval.png" alt="" height="72px" width="72px"/> */}
             </div>
           </div>
@@ -403,13 +419,13 @@ function ListCalc() {
           <div className={classes.innerFifthContainer} >
             <div className={classes.innersecondFifthContainer}>
               {/* <h4>Description</h4> */}
-              <h2>Sales rank</h2>
-              <div className={classes.greenGood}>Good</div>
+              <h2>Sales Rank</h2>
+              {/* <div className={classes.greenGood}>Good</div> */}
             </div>
             <div className={classes.innersecondFifthContainer}  >
             <p>{pDetails&&pDetails?.data?.otherProducts?.products[0]?.salesRank?
               pDetails?.data?.otherProducts?.products[0]?.salesRank:
-              "rank here..."}</p>
+              "Rank here..."}</p>
               {/* <img src="../images/Oval.png" alt="" height="72px" width="72px"/> */}
             </div>
           </div>
@@ -419,7 +435,7 @@ function ListCalc() {
           <div className={classes.innerFifthContainer} >
             <div className={classes.innersecondFifthContainer}>
               <h2>Image </h2>
-              <div className={classes.greenGood}>Good</div>
+              {/* <div className={classes.greenGood}>Good</div> */}
             </div>
             <div className={classes.innersecondFifthContainer}  >
               {/* <p>.</p> */}
@@ -430,17 +446,17 @@ function ListCalc() {
           </div>
         </div>
 
-        <div className={classes.fifthContainer}>
+        <div className={classes.fifthContainer} style={{marginTop:"50px"}}>
           <div className={classes.innerFifthContainer} >
             <div className={classes.innersecondFifthContainer}>
               <h2>Ratings</h2>
-              <div className={classes.greenGood}>Good</div>
+              {/* <div className={classes.greenGood}>Good</div> */}
             </div>
             <div className={classes.innersecondFifthContainer}  >
               {/* <p>Title is possibly the most important part of the product listing. Ensure the title is readable, is relevant to your product and is keyword rich. Most of your main keywords go here.</p> */}
               <p>{pDetails&&pDetails?.data?.otherProducts?.products[0]?.customerReviewsRating?
               pDetails?.data?.otherProducts?.products[0]?.customerReviewsRating:
-              "rating here..."}</p>
+              "Rating here..."}</p>
               {/* <img src="../images/Frame 1000003793.png" alt="" height="72px" width="72px"/> */}
             </div>
           </div>
@@ -450,13 +466,13 @@ function ListCalc() {
           <div className={classes.innerFifthContainer} >
             <div className={classes.innersecondFifthContainer}>
               <h2>Reviews Count</h2>
-              <div className={classes.greenGood}>Good</div>
+              {/* <div className={classes.greenGood}>Good</div> */}
             </div>
             <div className={classes.innersecondFifthContainer}  >
               {/* <p>Title is possibly the most important part of the product listing. Ensure the title is readable, is relevant to your product and is keyword rich. Most of your main keywords go here.</p> */}
               <p>{pDetails&&pDetails?.data?.otherProducts?.products[0]?.customerReviewsCount?
               pDetails?.data?.otherProducts?.products[0]?.customerReviewsCount:
-              "review count here..."}</p>
+              "Review count here..."}</p>
               {/* <img src="../images/Oval.png" alt="" height="72px" width="72px"/> */}
             </div>
           </div>
