@@ -8,10 +8,10 @@ import FormControl from '@mui/material/FormControl';
 import { SelectChangeEvent } from '@mui/material/Select';
 import useStyles from './style';
 import { useDispatch } from 'react-redux';
-import {ValidatorForm, TextValidator} from 'react-material-ui-form-validator'
 import { useNavigate } from 'react-router-dom';
 import { Dispatch } from 'redux';
 import { fetchProductDetails,fetchProductPriceDetails,fetchProductProgramDetails,fetchProductFeesDetails } from "../../actions/posts";
+import {ValidatorForm, TextValidator} from 'react-material-ui-form-validator'
 
 
 function ListCalc() {
@@ -170,7 +170,12 @@ function ListCalc() {
   const isUsernameUnique = (value:any) => {
     return value.trim() !== '';
   };
+  const minTen = (value:any) => {
+    return value.match(/^[^\s]{10}$/);
+  };
+
   ValidatorForm.addValidationRule('isUsernameUnique', isUsernameUnique);
+  ValidatorForm.addValidationRule('minTen', minTen);
   return (
     <ListContainer className="margin-nav" style={{ backgroundColor: "#FFFCFC" }}>
       {loader && (
@@ -199,19 +204,8 @@ function ListCalc() {
              US product<Switch 
              onChange={countryHandlar}
              className={` ${classes.index}`} />Indian Product</div>
-            <div className="input-field">
-              {/* <ValidatorForm onSubmit={fetch}>
-                  <TextValidator      
-                    placeholder="Enter Amazon Product's ASIN Number"              
-                    value={value}
-                    onChange={changeHandlar}
-                    className={` ${classes.index}`}
-                    name="Asin"
-                    validators={['required',"isUsernameUnique"]}
-                    errorMessages={['this field is required', 'enter valid ASIN of 10 Digit']}
-                  />
-              </ValidatorForm> */}
-              <input
+            
+              {/* <input
                 type="text"
                 placeholder="Enter Amazon Product's ASIN Number"
                 value={value}
@@ -222,8 +216,25 @@ function ListCalc() {
               disabled={!value}
                onClick={fetch} 
               className= {`btn_FBACalculate ${classes.index}`}>
-                Optimising Visibilty</button>
-            </div>
+                Optimising Visibilty</button> */}
+          <ValidatorForm className="input-field" onSubmit={fetch}>
+               <TextValidator
+                   placeholder="Enter Amazon Product's ASIN Number"
+                    name="message"
+                    type="text"
+                    value={value}
+                    style={{borderRadius:"5px",width:"305px"}}
+                    className="input"
+                    onChange={changeHandlar}
+                    validators={['required','isUsernameUnique','minTen']}
+                    errorMessages={['this field is required','Blank spaces are not allowed','A valid ASIN no contain 10 digits and no white spaces']}
+                />
+                
+              <button 
+              // disabled={!value||value?.length<10||value.length>10}
+              className="btn_FBACalculate pointer"
+              >Calculate</button>
+              </ValidatorForm>
             
            </div>
            <div className={`${classes.heroImg} box`} >
@@ -661,6 +672,7 @@ const ListContainer = styled.div`
     position :relative;
     .hero_wrapper {
       display: flex;
+      gap:70px;
       align-items:center ;
       justify-content: space-evenly;
       @media (max-width: 600px) {
@@ -695,14 +707,14 @@ const ListContainer = styled.div`
         .input-field {
           display: flex;
           gap:15px;
-          justify-content: space-between;
+          justify-content: flex-start;
+          width: 100%;
+          gap:10px;
           input {
            
             background: #e0e0e0;
-            width: 70%;
+            width: 100%;
             border: none;
-            padding: 20px;
-            border-radius: 10px;
             &::placeholder {
               color: #828282;
             }

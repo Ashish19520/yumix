@@ -89,10 +89,11 @@ export const People = () => {
               </motion.div>
             ))} */}
 
-            <VideoSlide items={response}/>
+           
 
           </motion.div>
         </div>
+        <VideoSlide items={response}/>
       </Container>
     </Users>
   );

@@ -7,6 +7,8 @@ import { useDispatch } from 'react-redux';
 import { Dispatch } from 'redux';
 import { fetchProductDetails,fetchProductPriceDetails,fetchProductProgramDetails,fetchProductFeesDetails } from "../../actions/posts";
 import { useNavigate } from "react-router-dom";
+import {ValidatorForm, TextValidator} from 'react-material-ui-form-validator'
+
 
 export const Fba = () => {
   const [selectedIndex, setSelectedIndex] = useState<number>(0)
@@ -103,7 +105,7 @@ export const Fba = () => {
   
   const dispatch: Dispatch<any> = useDispatch();
 
-  const [value,setValue]=useState();
+  const [value,setValue]=useState("");
   const [country,setCountry]=useState("US");
   const [loader, setLoader] = useState(false);
   const[pDetails,setpDetails]=useState<any>(null); 
@@ -156,9 +158,17 @@ export const Fba = () => {
     const productFees:any=await dispatch(fetchProductFeesDetails(data,country));
     setpfeeDetails(productFees);
     setLoader(false); 
-    
-    
+  
   }
+  const isUsernameUnique = (value:any) => {
+    return value.trim() !== '';
+  };
+  const minTen = (value:any) => {
+    return value.match(/^[^\s]{10}$/);
+  };
+
+  ValidatorForm.addValidationRule('isUsernameUnique', isUsernameUnique);
+  ValidatorForm.addValidationRule('minTen', minTen);
   return (
     <FbaContainer className="margin-nav" style={{ backgroundColor: "#FFFCFC",width:"100vw"}}>
        {loader && (
@@ -185,20 +195,34 @@ export const Fba = () => {
             </div>  
             US product<Switch  
             onChange={countryHandlar} />Indian Product
-            <div className="input-field">
-              <input
+            
+              {/* <input
                 type="text"
                 placeholder="Enter Amazon Product's ASIN Number"
                 value={value}
                 onChange={changeHandlar}
                 className="input"
                 style={{padding:"20px"}}
-              ></input>
+              ></input> */}
+               <ValidatorForm className="input-field" onSubmit={fetch}>
+               <TextValidator
+                   placeholder="Enter Amazon Product's ASIN Number"
+                    name="message"
+                    type="text"
+                    value={value}
+                    style={{borderRadius:"5px",width:"305px"}}
+                    className="input"
+                    onChange={changeHandlar}
+                    validators={['required','isUsernameUnique','minTen']}
+                    errorMessages={['this field is required','Blank spaces are not allowed','A valid ASIN no contain 10 digits and no white spaces']}
+                />
+                
               <button 
-              disabled={!value}
+              // disabled={!value||value?.length<10||value.length>10}
               className="btn_FBACalculate pointer"
-              onClick={fetch}>Calculate</button>
-            </div>
+              >Calculate</button>
+              </ValidatorForm>
+            
           </div>
           <div className="box " style={{zIndex:"1"}}>
             <motion.img
@@ -927,7 +951,7 @@ const FbaContainer = styled.div`
     padding-top: 80px;
     .hero_wrapper {
       display: flex;
-      gap:"10px";
+      gap:70px;
       position: relative;
       align-items: center;
       justify-content: space-between;
@@ -968,8 +992,9 @@ const FbaContainer = styled.div`
         }
         .input-field {
           display: flex;
-          justify-content: space-between;
-          gap:20px;
+          justify-content: flex-start;
+          width: 100%;
+          gap:10px;
           @media (max-width: 600px) {
             flex-direction: column;
             gap:20px;
@@ -978,10 +1003,9 @@ const FbaContainer = styled.div`
           z-index:1;
           .input {
             background: #e0e0e0;
-            width: 70%;
+            width: 100%;
             border: none;
-            padding: 5px;
-            border-radius: 10px;
+            overflow:visible;
             &::placeholder {
               color: #828282;
             }

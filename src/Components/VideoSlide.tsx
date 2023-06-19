@@ -84,16 +84,17 @@ export const VideoSlide = ({items}:any) => {
     <SliderWrapper>
       <Container className="container">
         <Slider {...settings} className="slider_main">
-          {data.map((d) => (
+          {items?.data?.map((d:any) => (
             <div className="slide_item">
               {/* <Video autoplay loop poster={items?.thumb} className="vid-slide">
                 <source src={items?.video} type="video/webm" />
               </Video> */}
       <iframe 
+      title={items?.data[0]?.attributes?.t_name}
       className="vid-slide"
       width="700px"
       height="400px"
-      src={items?.data[0]?.attributes?.t_url}>
+      src={d?.attributes?.t_url}>
       </iframe>
             </div>
           ))}
