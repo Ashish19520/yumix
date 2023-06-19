@@ -581,9 +581,9 @@ export const Fba = () => {
               <option value="option2"> ₹</option>
               </select>
               <input
-                 value={pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FulfillmentFee?.feeAmount?.amount?
+                 value={pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FulfillmentFee?.total?.amount?
                   (pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FulfillmentFee  
-                  ?.feeAmount?.amount).toFixed(2):
+                  ?.total?.amount).toFixed(2):
                   "0"}
               type="text" className={classes.input}/>
               </div>
