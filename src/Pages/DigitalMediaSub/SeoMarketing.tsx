@@ -7,7 +7,7 @@ function SeoMarketing() {
   const data={
     heading:"SEO Marketing Services",
     subHeading:"Drive brand discovery, enhance website engagement, and optimize conversions with our comprehensive cross-functional approach, delivering the ultimate customer experience. ",
-    image: "../images/image3.png",
+    image: "../images/Image3.png",
     blackHeading:"Skyrocket Your Organic Performance with Proven SEO Solutions",
     blackSubHeading:"Harness the power of SEO to unlock your website's full potential with our expert services at Eservz. We integrate content, technical, offsite, and user experience (UX) best practices to deliver real results. Our team of experts guides you through the complex world of SEO, creating a prioritized plan based on speed and impact. With dedicated content strategists, copywriters, web development experts, and UX designers, we keep you ahead of industry changes.",
     strategyHeading:"Our SEO Marketing Strategy",
