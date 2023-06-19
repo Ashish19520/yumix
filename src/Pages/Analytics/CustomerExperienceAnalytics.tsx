@@ -7,7 +7,7 @@ function CustomerExperienceAnalytics() {
   const data={
     heading:"Customer Experience Analytics",
     subHeading:"Achieve improved conversion rates, seamless customer interactions, and enhanced UX with our bespoke testing methodologies and advanced statistical techniques.",
-    image:"../images/image8.png",
+    image:"../images/Image8.png",
     blackHeading:"Make the most of client data to cultivate remarkable experiences.",
     blackSubHeading:"Our customer analytics approach focuses on the crucial role of user experience (UX) in building strong customer relationships. Through behavioral analysis, A/B testing, and personalized on-site interventions, data guides every step of our marketing analytics agency services. We help brands leverage customer analytics to create relevant online experiences that drive loyalty, engagement, and conversions.",
     strategyHeading:"Strategy",
