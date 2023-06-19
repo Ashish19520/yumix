@@ -63,7 +63,6 @@ export const People = () => {
   useEffect(()=>{
     dispatch(testimonialPlay())
   },[])
-  console.log("--------",response)
   return (
     <Users>
       <Container maxWidth="lg" className="container">
@@ -90,7 +89,7 @@ export const People = () => {
               </motion.div>
             ))} */}
 
-            <VideoSlide />
+            <VideoSlide items={response}/>
 
           </motion.div>
         </div>

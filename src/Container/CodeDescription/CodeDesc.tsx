@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from 'react'
+import React,{useEffect,useState,useRef} from 'react'
 import { Container, TextField, Typography,MenuItem,FormControl,InputLabel,Select, } from "@mui/material";
 import styled from "styled-components";
 import { motion } from "framer-motion";
@@ -12,6 +12,7 @@ function CodeDesc() {
   const navigate=useNavigate();
   const [age, setAge] = useState('');
     const classes = useStyles();
+    const inputRef:any=useRef();
    
     useEffect(() => {
       window.scrollTo(0, 0);
@@ -33,21 +34,41 @@ function CodeDesc() {
       const newEditorValue = Editor.createValueFromString(htmlContent, 'html');
       setEditorValue(newEditorValue);
     };
-    const copyHandlar=()=>{
-      const valueToCopy = editorValue.toString('html');
-        navigator.clipboard.writeText(valueToCopy)
+    // const copyHandlar=()=>{
+    //   const valueToCopy = editorValue.toString('html');
+    //     navigator.clipboard.writeText(valueToCopy)
+    //       .then(() => {
+    //        setCopied(true);
+    //       })
+    //       .catch((error) => {
+    //         setCopied(false);
+    //         console.log("error while copying",error)
+    //       });
+      
+    // }
+    const copyHandlar = () => {
+      const valueToCopy = editorValue.toString("html");
+      if (navigator.clipboard) {
+        navigator.clipboard
+          .writeText(valueToCopy)
           .then(() => {
-           setCopied(true);
+            setCopied(true);
           })
           .catch((error) => {
             setCopied(false);
-            console.log("error while copying",error)
+            console.log("error while copying", error);
           });
-      
-    }
-    console.log(editorValue);
+      } else {
+        inputRef.current.select();
+        if (document.execCommand("copy")) {
+          setCopied(true);
+        } else {
+          setCopied(false);
+        }
+      }
+    };
   return (
-    <CodeContainer style={{ backgroundColor: "#FFFCFC",position:"relative" }}>
+    <CodeContainer className="margin-nav" style={{ backgroundColor: "#FFFCFC",position:"relative" }}>
     <Container
      maxWidth="lg"
       className="container"
@@ -122,6 +143,7 @@ function CodeDesc() {
             className={classes.txtField}
             value={getHtmlContent(editorValue)}
             // onChange={handleHtmlChange}
+            ref={inputRef as any}
             />
             <button className={`${classes.btn1} pointer`} onClick={copyHandlar}>
               {copied?"copied":"copy code"}</button>

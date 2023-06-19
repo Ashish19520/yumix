@@ -172,7 +172,7 @@ function ListCalc() {
   };
   ValidatorForm.addValidationRule('isUsernameUnique', isUsernameUnique);
   return (
-    <ListContainer style={{ backgroundColor: "#FFFCFC" }}>
+    <ListContainer className="margin-nav" style={{ backgroundColor: "#FFFCFC" }}>
       {loader && (
                 <div className="mainPreloaderMain">
                     <div className="mainPreloader">

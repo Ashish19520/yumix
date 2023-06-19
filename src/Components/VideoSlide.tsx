@@ -44,7 +44,7 @@ const NextArrow: any = ({ onClick }: any) => (
   </div>
 );
 
-export const VideoSlide = () => {
+export const VideoSlide = ({items}:any) => {
   //@ts-ignore
   console.log();
   const data = [
@@ -86,9 +86,15 @@ export const VideoSlide = () => {
         <Slider {...settings} className="slider_main">
           {data.map((d) => (
             <div className="slide_item">
-              <Video autoplay loop poster={d.thumb} className="vid-slide">
-                <source src={d.src} type="video/webm" />
-              </Video>
+              {/* <Video autoplay loop poster={items?.thumb} className="vid-slide">
+                <source src={items?.video} type="video/webm" />
+              </Video> */}
+      <iframe 
+      className="vid-slide"
+      width="700px"
+      height="400px"
+      src={items?.data[0]?.attributes?.t_url}>
+      </iframe>
             </div>
           ))}
         </Slider>

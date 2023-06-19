@@ -43,9 +43,9 @@ export default makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     padding: "0px 1px",
-    gap: "8px",
+    gap: "2px",
     height: "173px",
-    width: "22%",
+    width: "27%",
   },
   innerWrapper: { 
     position: "relative",
@@ -332,9 +332,9 @@ export default makeStyles((theme) => ({
   },
   heroRock:{
     position:"absolute",
-    top:"7%",
+    top:"6%",
     left:"15%",
-    width:"60px",
+    width:"80px",
     height:"80px",
 
   },
@@ -353,7 +353,7 @@ export default makeStyles((theme) => ({
     position:"absolute",
     width:"80%",
     height:"80%",
-    top:"0",
+    top:"3%",
     right:"15%",
     zIndex:-1,
   },
@@ -431,10 +431,11 @@ export default makeStyles((theme) => ({
     // alignSelf:"flex-start",
     position: 'absolute',
     left:"3%",
-    bottom:"10%",
+    bottom:"7%",
     zIndex:1,
    [theme.breakpoints.down('xs')]: {
     zIndex:"-1",
+    bottom:"3%",
   },
   }
 }));

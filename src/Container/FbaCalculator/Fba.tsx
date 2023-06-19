@@ -160,7 +160,7 @@ export const Fba = () => {
     
   }
   return (
-    <FbaContainer style={{ backgroundColor: "#FFFCFC",width:"100vw"}}>
+    <FbaContainer className="margin-nav" style={{ backgroundColor: "#FFFCFC",width:"100vw"}}>
        {loader && (
                 <div className="mainPreloaderMain">
                     <div className="mainPreloader">
@@ -188,13 +188,15 @@ export const Fba = () => {
             <div className="input-field">
               <input
                 type="text"
-                placeholder="Enter Amazon product's ASIN Number"
+                placeholder="Enter Amazon Product's ASIN Number"
                 value={value}
                 onChange={changeHandlar}
+                className="input"
+                style={{padding:"20px"}}
               ></input>
               <button 
               disabled={!value}
-              className="btn_FBACalculate"
+              className="btn_FBACalculate pointer"
               onClick={fetch}>Calculate</button>
             </div>
           </div>
@@ -265,25 +267,25 @@ export const Fba = () => {
             </div>
             <div className={classes.items}>
               <div>
-                <p>customerReviewsCount</p>
+                <h3>customerReviewsCount</h3>
                 <p> {pDetails&&pDetails?.data?.otherProducts?.products[0]?.customerReviewsCount?
               pDetails?.data?.otherProducts?.products[0]?.customerReviewsCount:
               "-"}</p>
               </div>
               <div >
-                <p>Product Id</p>
+                <h3>Product Id</h3>
                 <p>{pDetails&&pDetails?.data?.otherProducts?.products[0]?.asin?
               pDetails?.data?.otherProducts?.products[0]?.asin:
               "-"}</p>
               </div>
               <div>
-                <p>Price</p>
+                <h3>Price</h3>
                 <p>{country==="US"?"$":"₹"}{prDetails&&prDetails?.data?.price?.amount?
               prDetails?.data?.price?.amount:
               "0"}</p>
               </div>
               <div>
-                <p>Ratings</p>
+                <h3>Ratings</h3>
                 <p>{pDetails&&pDetails?.data?.otherProducts?.products[0]?.customerReviewsRating
 ?
               pDetails?.data?.otherProducts?.products[0]?.customerReviewsRating
@@ -325,7 +327,7 @@ export const Fba = () => {
             <div className={classes.write}>Referral Fee</div>
             <div className={classes.write}>Fixed Closing Fee</div>
             <div className={classes.write}>Variable Closing Fee</div>
-            <div className={classes.write}>Amazon fulfillment fees</div>
+            <div className={classes.write}>Amazon Fulfillment Fees</div>
             <div className={classes.write}>Storage Cost</div>
             <div className={classes.write}>Other Cost</div>
             {/* <div className={classes.write}>Total fulfillment cost</div>
@@ -343,7 +345,7 @@ export const Fba = () => {
               </select>
               <input
                 value={prDetails&&prDetails?.data?.price?.amount?
-                  prDetails?.data?.price?.amount:
+                  (prDetails?.data?.price?.amount)?.toFixed(2):
                   "0"}  
               type="text" className={classes.input}/>
               </div>
@@ -359,8 +361,8 @@ export const Fba = () => {
               <input
                value={pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.ReferralFee
                 ?.total?.amount?
-                pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.ReferralFee
-                ?.total?.amount:
+                (pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.ReferralFee
+                ?.total?.amount).toFixed(2):
                 "0"}
               type="text" className={classes.input}/>
               </div>
@@ -374,8 +376,8 @@ export const Fba = () => {
               <input
                value={pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.FixedClosingFee
                 ?.feeAmount?.amount?
-                pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.FixedClosingFee
-                ?.feeAmount?.amount:
+                (pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.FixedClosingFee
+                ?.feeAmount?.amount).toFixed(2):
                 "0"} 
                  
               type="text" className={classes.input}/>
@@ -390,8 +392,8 @@ export const Fba = () => {
               <input
                  value={pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.VariableClosingFee
                   ?.feeAmount?.amount?
-                  pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.VariableClosingFee  
-                  ?.feeAmount?.amount:
+                  (pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.VariableClosingFee  
+                  ?.feeAmount?.amount).toFixed(2):
                   "0"}
               type="text" className={classes.input}/>
               </div>
@@ -404,8 +406,8 @@ export const Fba = () => {
               </select>
               <input
                  value={pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.FulfillmentFee?.feeAmount?.amount?
-                  pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.FulfillmentFee  
-                  ?.feeAmount?.amount:
+                  (pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.FulfillmentFee  
+                  ?.feeAmount?.amount).toFixed(2):
                   "0"}
               type="text" className={classes.input}/>
               </div>
@@ -421,9 +423,9 @@ export const Fba = () => {
                   pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.MFN?.perUnitNonPeakStorageFee
 
                   ?.feeAmount?.amount?
-                  pfeeDetails?.data?.programFeeResultMap?.MFN?.perUnitNonPeakStorageFee
+                  (pfeeDetails?.data?.programFeeResultMap?.MFN?.perUnitNonPeakStorageFee
 
-                  ?.feeAmount?.amount:
+                  ?.feeAmount?.amount).toFixed(2):
                   "0"
                 }
               type="text" className={classes.input}/>
@@ -439,9 +441,9 @@ export const Fba = () => {
                   pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.MFN?.otherCost
 
                   ?.feeAmount?.amount?
-                  pfeeDetails?.data?.programFeeResultMap?.MFN?.otherCost
+                  (pfeeDetails?.data?.programFeeResultMap?.MFN?.otherCost
 
-                  ?.feeAmount?.amount:
+                  ?.feeAmount?.amount).toFixed(2):
                   "0"
                 }
               type="text" className={classes.input}/>
@@ -498,7 +500,7 @@ export const Fba = () => {
               </select>
               <input
                 value={prDetails&&prDetails?.data?.price?.amount?
-                prDetails?.data?.price?.amount:
+                (prDetails?.data?.price?.amount).toFixed(2):
                 "0"}
               type="text" className={classes.input}/>
               </div>
@@ -512,8 +514,8 @@ export const Fba = () => {
               <input
               value={pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.ReferralFee
                 ?.total?.amount?
-                pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.ReferralFee
-                ?.total?.amount:
+                (pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.ReferralFee
+                ?.total?.amount).toFixed(2):
                 "0"} 
               
               type="text" className={classes.input}/>
@@ -528,8 +530,8 @@ export const Fba = () => {
               <input
                  value={pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FixedClosingFee
                   ?.feeAmount?.amount?
-                  pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FixedClosingFee
-                  ?.feeAmount?.amount:
+                  (pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FixedClosingFee
+                  ?.feeAmount?.amount).toFixed(2):
                   "0"} 
               type="text" className={classes.input}/>
               </div>
@@ -543,8 +545,8 @@ export const Fba = () => {
               <input
                 value={pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.VariableClosingFee
                   ?.feeAmount?.amount?
-                  pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.VariableClosingFee
-                  ?.feeAmount?.amount:
+                  (pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.VariableClosingFee
+                  ?.feeAmount?.amount).toFixed(2):
                   "0"}
               type="text" className={classes.input}/>
               </div>
@@ -556,8 +558,8 @@ export const Fba = () => {
               </select>
               <input
                  value={pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FulfillmentFee?.feeAmount?.amount?
-                  pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FulfillmentFee  
-                  ?.feeAmount?.amount:
+                  (pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FulfillmentFee  
+                  ?.feeAmount?.amount).toFixed(2):
                   "0"}
               type="text" className={classes.input}/>
               </div>
@@ -573,9 +575,9 @@ export const Fba = () => {
                   pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.perUnitNonPeakStorageFee
 
                   ?.feeAmount?.amount?
-                  pfeeDetails?.data?.programFeeResultMap?.Core?.perUnitNonPeakStorageFee
+                  (pfeeDetails?.data?.programFeeResultMap?.Core?.perUnitNonPeakStorageFee
 
-                  ?.feeAmount?.amount:
+                  ?.feeAmount?.amount).toFixed(2):
                   "0"
                 }
               type="text" className={classes.input}/>
@@ -591,9 +593,9 @@ export const Fba = () => {
                   pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherCost
 
                   ?.feeAmount?.amount?
-                  pfeeDetails?.data?.programFeeResultMap?.Core?.otherCost
+                  (pfeeDetails?.data?.programFeeResultMap?.Core?.otherCost
 
-                  ?.feeAmount?.amount:
+                  ?.feeAmount?.amount).toFixed(2):
                   "0"
                 }
               type="text" className={classes.input}/>
@@ -849,31 +851,31 @@ export const Fba = () => {
               </div>
               <div className={classes.imageTextPara}>
                 <img src="../images/bag-dynamic-color.png" alt="img" height="61px" width="61px"></img>
-                <p>Shipping Costs</p>
+                <p>Shipping Costs.</p>
               </div>
               <div className={classes.imageTextPara}>
                 <img src="../images/locker-dynamic-gradient.png" alt="img" height="61px" width="61px"></img>
-                <p>Storage Warehousing Costs</p>
+                <p>Storage Warehousing Costs.</p>
               </div>
             </div>
             <div className={classes.sixthRight}>
               <div className={classes.imageTextPara}>
                 <img src="../images/rupee-dynamic-color.png" alt="img" height="61px" width="61px"></img>
-                <p>Costs of Goods</p>
+                <p>Costs Of Goods.</p>
               </div>
               <div className={classes.imageTextPara}>
                 <img src="../images/megaphone-dynamic-color.png" alt="img" height="61px" width="61px"></img>
-                <p>Market Costs products ads</p>
+                <p>Market Costs Products Ads.</p>
               </div>
               <div className={classes.imageTextPara}>
                 <img src="../images/User2.png" alt="img" height="61px" width="61px"></img>
-                <p>Product packing labelling cost.</p>
+                <p>Product Packing Labelling Cost.</p>
               </div>
             </div>
             <div className={classes.sixthRight}>
               <div className={classes.imageTextPara}>
                 <img src="../images/User3.png" alt="img" height="61px" width="61px"></img>
-                <p>Product sample and product cost.</p>
+                <p>Product Sample And Product Cost.</p>
               </div>
             </div>
           </div>
@@ -974,8 +976,7 @@ const FbaContainer = styled.div`
           }
 
           z-index:1;
-          input {
-           
+          .input {
             background: #e0e0e0;
             width: 70%;
             border: none;
