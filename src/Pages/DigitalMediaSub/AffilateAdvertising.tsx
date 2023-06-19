@@ -13,7 +13,7 @@ function AffilateAdvertising() {
     strategyHeading:"Our Affiliated Advertising Strategy",
     box:[
       {
-      image:"../images/Image10.png",
+      image:"../images/image10.png",
       heading:"Advanced Commission Strategies",
       subHeading:"Motivate the right partners by offering performance-based commission structures that go beyond the last click. ",
     },

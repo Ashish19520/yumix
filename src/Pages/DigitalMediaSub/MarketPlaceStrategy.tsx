@@ -13,12 +13,12 @@ function MarketPlaceStrategy() {
     strategyHeading:"Our Marketplace Strategy",
     box:[
       {
-      image:"../images/Image9.png",
+      image:"../images/image9.png",
       heading:"Integrated Search Strategies",
       subHeading:"With our Integrated Search Strategies, leverage the power of traditional and unconventional channels to drive meaningful results. ",
     },
     {
-      image:"../images/Image10.png",
+      image:"../images/image10.png",
       heading:"Monitor Products’ Retail Health",
       subHeading:"Strategically allocate budget through valuable insights into product profitability, growth potential, and scalability.",
     },

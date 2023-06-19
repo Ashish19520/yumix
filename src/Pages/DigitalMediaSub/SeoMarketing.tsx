@@ -13,7 +13,7 @@ function SeoMarketing() {
     strategyHeading:"Our SEO Marketing Strategy",
     box:[
       {
-      image:"../images/Image11.png",
+      image:"../images/image11.png",
       heading:"Using Tech to Prioritize",
       subHeading:"Uncover quick wins and long-term opportunities with our proprietary technology that merges ranking and analytics data. ",
     },

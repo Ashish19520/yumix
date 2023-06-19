@@ -13,7 +13,7 @@ function MarketingMeasuremnet() {
     strategyHeading:" Strategy",
     box:[
       {
-      image:"../images/Image11.png",
+      image:"../images/image11.png",
       heading:"Cross-Channel Reporting",
       subHeading:"Gain a consolidated perspective of insights from all your digital marketing endeavors to effectively optimize your media expenditure.",
     },

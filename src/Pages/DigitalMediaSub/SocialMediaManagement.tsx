@@ -13,12 +13,12 @@ function SocialMediaManagement() {
     strategyHeading:"Our Affiliated Advertising Strategy",
     box:[
       {
-      image:"../images/Image13.png",
+      image:"../images/image13.png",
       heading:"Paid Social Media Marketing Service",
       subHeading:"Boost brand presence, attract prospective leads, and achieve higher conversion rates with our tailored paid social media initiatives.",
     },
     {
-      image:"../images/Image12.png",
+      image:"../images/image12.png",
       heading:"Organic Social Media Marketing",
       subHeading:"Establish a solid base and cultivate a customer community through compelling content creation and strategic planning driven by data.",
     },

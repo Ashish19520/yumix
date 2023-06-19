@@ -13,7 +13,7 @@ function EmailMarketing() {
     strategyHeading:"Our Email Marketing Strategy",
     box:[
       {
-      image:"../images/Image14.png",
+      image:"../images/image14.png",
       heading:"Customized Creative",
       subHeading:"Craft a personalized and seamless email journey for your customers, delivering tailored messages to ensure a delightful user experience.",
     },
