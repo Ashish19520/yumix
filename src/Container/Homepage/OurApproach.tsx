@@ -40,7 +40,7 @@ export const OurApproach = () => {
           <div className="icons-zoom">
             <div className="icons">
               <div  className="singleicon">
-                <img className="ig" src="./images/A1.png"></img>
+                <img className="ig" id="stl1" src="./images/A1.png"></img>
                 <p>Schedule a Meeting</p>
               </div>
 
@@ -140,7 +140,13 @@ const MidBanner = styled.div`
           flex-direction: column;
           width: 100%;
         }
-
+        #stl1{
+          width:180px;
+          @media (max-width: 600px) {
+           
+            width: 220px;
+          }
+        }
         .singleicon {
           padding: 0px 10px;
           display: flex;
