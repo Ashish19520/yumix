@@ -72,7 +72,8 @@ function formatNumber(num: number): string {
                   <CountUp start={0} end={counterOn && response && response.length > 0 &&+formatNumber(response[1]?.attributes.count).split(' ')[0]} duration={2} delay={0} />
                     {counterOn && response && response.length > 0 && formatNumber(response[1]?.attributes.count).split(' ')[1]}
                   </h2>
-                  <p>ADVERTISING SERVICES</p>
+                  <p>AMAZON HEALTH CHECKUP</p>
+                
                 </div>
                 <div className="outter">
                   <h2>
@@ -80,7 +81,8 @@ function formatNumber(num: number): string {
                     {counterOn && response && response.length > 0 && formatNumber(response[2]?.attributes.count).split(' ')[1]}
                     
                   </h2>
-                  <p>AMAZON HEALTH CHECKUP</p>
+                  <p>AMAZON REIMBURSEMENTS</p>
+                  
                 </div>
                 <div className="outter">
                   <h2>
@@ -88,7 +90,7 @@ function formatNumber(num: number): string {
                     {counterOn && response && response.length > 0 && formatNumber(response[3]?.attributes.count).split(' ')[1]}
                     
                   </h2>
-                  <p>AMAZON REIMBURSEMENTS</p>
+                  <p>ADVERTISING SERVICES</p>
                 </div>
               </div>
             </Container>
