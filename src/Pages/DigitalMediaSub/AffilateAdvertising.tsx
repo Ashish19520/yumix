@@ -7,7 +7,7 @@ function AffilateAdvertising() {
   const data={
     heading:"Affiliate Advertising",
     subHeading:"Set performance-based guidelines with advertising affiliates to pay for results that directly impact your bottom line. ",
-    image:"../images/image2.png",
+    image:"../images/Image2.png",
     blackHeading:"Accelerate Business Growth with an Affiliate Marketing Agency",
     blackSubHeading:"Overcome challenges and maximize success in affiliate marketing with Eservz's expert services. Our team specializes in building lucrative affiliate programs that seamlessly integrate into your digital marketing strategies, ensuring incremental value and effective partner management.",
     strategyHeading:"Our Affiliated Advertising Strategy",

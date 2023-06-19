@@ -7,7 +7,7 @@ function AutomatedAdvertising() {
   const data={
     heading:"Automated Advertising",
     subHeading:"Engage customers at every stage of the funnel with personalized automated advertising strategies, reaching them wherever they are.",
-    image:"../images/image6.png",
+    image:"../images/Image6.png",
     blackHeading:"Powerful Automated Advertising: Reach, Influence, and Convert Your Customers",
     blackSubHeading:"As a leading automated advertising agency, we deliver consistent brand experiences throughout the customer journey. Our expert team partners with advanced automated buying technologies to execute effective digital media campaigns. Whether you seek to raise awareness, acquire customers, or drive in-store sales, we optimize your ad spend, reach valuable audiences, and deliver impactful ad experiences.",
     strategyHeading:"Our Automated Advertising Strategy",

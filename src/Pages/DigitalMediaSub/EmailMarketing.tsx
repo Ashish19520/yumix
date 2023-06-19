@@ -7,7 +7,7 @@ function EmailMarketing() {
   const data={
     heading:"Email Marketing",
     subHeading:"Foster brand engagement and optimize ROI by delivering tailored messages at the most opportune moments.",
-    image:"../images/image5.png",
+    image:"../images/Image5.png",
     blackHeading:"Merge the Power of Data and Creativity in Email Marketing",
     blackSubHeading:"Unleash the combined potential of data-driven insights and creative expertise in your email marketing campaigns. Our solutions encompass strategic planning, creative design, platform selection, and performance analysis, all aimed at integrating and expanding email marketing within your overall strategy. Experience enhanced customer engagement with our comprehensive approach.",
     strategyHeading:"Our Email Marketing Strategy",

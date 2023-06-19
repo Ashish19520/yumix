@@ -32,7 +32,7 @@ export default function DigitalMap() {
     {
       name: "SEO Marketing Services",
       type: "Drive brand discovery, enhance website engagement, and optimize conversions with our comprehensive cross-functional approach...",
-      image: "../images/Image3.png",
+      image: "../images/image3.png",
       open:"view more",
       add:"/digitalMedia/seoMarketing"
     },
