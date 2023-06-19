@@ -360,7 +360,7 @@ export const Fba = () => {
           </div>
           
             <div className={classes.secondRow}>
-              <h1>FBA</h1>
+              <h1>FBM</h1>
 
               <div className={classes.input}>
               <select value={country==="US"?"option1":"option2"}className={classes.selector}>
@@ -514,7 +514,7 @@ export const Fba = () => {
 
            
             <div className={classes.thirdRow}>
-              <h1>FBM</h1>
+              <h1>FBA</h1>
 
 
               <div className={classes.input}>
@@ -673,7 +673,7 @@ export const Fba = () => {
               width="100%"
             ></motion.img>
           <div className={classes.innerTwoContainer}>
-            <h2>FBA</h2>
+            <h2>FBM</h2>
             <div className={classes.innerThirdContainer}>
               <div>
                 <p>Net Profit</p>
@@ -727,7 +727,7 @@ export const Fba = () => {
             </div>
           </div>
           <div className={classes.innerTwoContainer}>
-            <h2>FBM</h2>
+            <h2>FBA</h2>
             <div className={classes.innerThirdContainer}>
               <div>
                 <p>Net Profit</p>
