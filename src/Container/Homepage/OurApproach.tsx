@@ -155,6 +155,8 @@ const MidBanner = styled.div`
           @media (max-width: 600px) {
             flex-direction: row;
             padding-bottom: 40px;
+            height:"150px";
+            width:"180px";
 
             &:nth-child(2) {
               transition-delay: 400ms;
@@ -201,6 +203,8 @@ const MidBanner = styled.div`
             margin-bottom: 20px;
             @media (max-width:600px){
               padding: 0px 20px;
+              width: 185px;
+              height:150px;
             }
             /* width:100%; */
           }
