@@ -666,7 +666,7 @@ export const Fba = () => {
       <Container fixed maxWidth='lg' className="container">
         <div className={classes.twoContainer}>
         <motion.img
-              src="../images/Line.png"
+              src="../images/line.png"
               className={classes.imageLines2}
               initial="hidden"
               animate="show"

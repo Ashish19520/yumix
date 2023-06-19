@@ -30,7 +30,7 @@ function Content({data}:any) {
         <div className='content-content'>
             <div className='content-heading'>{data.heading}</div>
             <div className='content-par'>{data.text}</div>
-             <img src="../images/ellipse 63.png" 
+             <img src="../images/Ellipse 63.png" 
             className='content-content-ellipse'
             alt="some"></img>
         </div>
