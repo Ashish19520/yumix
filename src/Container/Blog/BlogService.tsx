@@ -18,12 +18,12 @@ export default function BlogService() {
    add:"/analytics/customerExpierenceAnalytics"
   },
     {
-      name:"Email-marketing",
+      name:"Email-Marketing",
     add:"/digitalMedia/emailMarketing"
   },
 
     {
-      name:"Socila media management",
+      name:"Social Media Management",
     add:"/digitalMedia/socialMediaManagement"
   },
 
@@ -49,7 +49,7 @@ export default function BlogService() {
      add:"/digitalMedia/seoMarketing"
     },
     {
-      name:"Web & Mobile Developmen",
+      name:"Web & Mobile Development",
       add:"/customerExpierence/mobileWebDev"
   }];
 

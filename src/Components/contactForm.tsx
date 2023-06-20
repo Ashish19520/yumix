@@ -234,19 +234,19 @@ export default function ContactForm () {
                     style={{ ...style.input }}
                     onChange={changeHandalar}
                     validators={['required',"isEmail"]}
-                    errorMessages={['this field is required', 'email is not valid']}
+                    errorMessages={['This field is required', 'Email is not valid']}
                 />
 
 
 
                     <TextValidator
-                    placeholder='message*'
+                    placeholder='Message*'
                     name="message"
                     value={formData.message}
                     style={{ ...style.input }}
                     onChange={changeHandalar}
                     validators={['required','isUsernameUnique']}
-                    errorMessages={['this field is required','Blank spaces are not allowed']}
+                    errorMessages={['This field is required','Blank spaces are not allowed']}
                 />
                 {/* <input
                   type='text'

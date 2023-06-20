@@ -612,7 +612,6 @@ width:100%;
   font-size: 16px;
   line-height: 24px;
   /* margin:auto 0; */
-  width:80vw;
   letter-spacing: 0.25px;
   color: #636677;
   text-align: center;
@@ -621,8 +620,8 @@ width:100%;
 }
 
 #select-font-faq{
-  width: 747px;
-height: 24px;
+  /* width: 747px;
+height: 24px; */
 
 /* Title P 18 */
 
@@ -641,4 +640,9 @@ color: #3A3B44;
 }
 .margin-nav{
   margin-top: 100px;
+}
+.nav-active{
+  font-weight: 900;
+  color: Black;
+  text-decoration:none;
 }

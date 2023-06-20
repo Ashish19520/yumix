@@ -214,7 +214,7 @@ export const Fba = () => {
                     className="input"
                     onChange={changeHandlar}
                     validators={['required','isUsernameUnique','minTen']}
-                    errorMessages={['this field is required','Blank spaces are not allowed','A valid ASIN no contain 10 digits and no white spaces']}
+                    errorMessages={['This field is required','Blank spaces are not allowed','A valid ASIN no contain 10 digits and no white spaces']}
                 />
                 
               <button 
@@ -291,7 +291,7 @@ export const Fba = () => {
             </div>
             <div className={classes.items}>
               <div>
-                <h3>customerReviewsCount</h3>
+                <h3>Customer Reviews Count</h3>
                 <p> {pDetails&&pDetails?.data?.otherProducts?.products[0]?.customerReviewsCount?
               pDetails?.data?.otherProducts?.products[0]?.customerReviewsCount:
               "-"}</p>
@@ -358,7 +358,156 @@ export const Fba = () => {
             <div className={classes.write}>Selling proceeds</div>
             <div className={classes.write}>Cost of product</div> */}
           </div>
-          
+           
+
+          <div className={classes.thirdRow}>
+              <h1>FBA</h1>
+
+
+              <div className={classes.input}>
+              <select value={country==="US"?"option1":"option2"}className={classes.selector}>
+              <option value="option1"> $</option>
+              <option value="option2"> ₹</option>
+              </select>
+              <input
+                value={prDetails&&prDetails?.data?.price?.amount?
+                (prDetails?.data?.price?.amount).toFixed(2):
+                "0"}
+              type="text" className={classes.input}/>
+              </div>
+
+
+              <div className={classes.input}>
+              <select value={country==="US"?"option1":"option2"}className={classes.selector}>
+              <option value="option1"> $</option>
+              <option value="option2"> ₹</option>
+              </select>
+              <input
+              value={pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.ReferralFee
+                ?.total?.amount?
+                (pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.ReferralFee
+                ?.total?.amount).toFixed(2):
+                "0"} 
+              
+              type="text" className={classes.input}/>
+              </div>
+
+              
+              <div className={classes.input}>
+              <select value={country==="US"?"option1":"option2"}className={classes.selector}>
+              <option value="option1"> $</option>
+              <option value="option2"> ₹</option>
+              </select>
+              <input
+                 value={pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FixedClosingFee
+                  ?.total?.amount?
+                  (pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FixedClosingFee
+                  ?.total?.amount).toFixed(2):
+                  "0"} 
+              type="text" className={classes.input}/>
+              </div>
+
+             
+              <div className={classes.input}>
+              <select value={country==="US"?"option1":"option2"}className={classes.selector}>
+              <option value="option1"> $</option>
+              <option value="option2"> ₹</option>
+              </select>
+              <input
+                value={pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.VariableClosingFee
+                  ?.total?.amount?
+                  (pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.VariableClosingFee
+                  ?.total?.amount).toFixed(2):
+                  "0"}
+              type="text" className={classes.input}/>
+              </div>
+
+              <div className={classes.input}>
+              <select value={country==="US"?"option1":"option2"}className={classes.selector}>
+              <option value="option1"> $</option>
+              <option value="option2"> ₹</option>
+              </select>
+              <input
+                 value={pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FulfillmentFee?.total?.amount?
+                  (pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FulfillmentFee  
+                  ?.total?.amount).toFixed(2):
+                  "0"}
+              type="text" className={classes.input}/>
+              </div>
+
+
+              <div className={classes.input}>
+              <select value={country==="US"?"option1":"option2"}className={classes.selector}>
+              <option value="option1"> $</option>
+              <option value="option2"> ₹</option>
+              </select>
+              <input
+                value={
+                  pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.perUnitNonPeakStorageFee
+
+                  ?.total?.amount?
+                  (pfeeDetails?.data?.programFeeResultMap?.Core?.perUnitNonPeakStorageFee
+
+                  ?.total?.amount).toFixed(2):
+                  "0"
+                }
+              type="text" className={classes.input}/>
+              </div>
+
+              <div className={classes.input}>
+              <select value={country==="US"?"option1":"option2"}className={classes.selector}>
+              <option value="option1"> $</option>
+              <option value="option2"> ₹</option>
+              </select>
+              <input
+                 value={
+                  pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherCost
+
+                  ?.feeAmount?.amount?
+                  (pfeeDetails?.data?.programFeeResultMap?.Core?.otherCost
+
+                  ?.feeAmount?.amount).toFixed(2):
+                  "0"
+                }
+              type="text" className={classes.input}/>
+              </div>
+              
+              {/* <div className={classes.input}>
+              <select value={country==="US"?"option1":"option2"}className={classes.selector}>
+              <option value="option1"> $</option>
+              <option value="option2"> ₹</option>
+              </select>
+              <input
+                 value={pfeeDetails&&pfeeDetails?.mfn_fees_detail?.total_fulfillment_cost?
+                  pfeeDetails?.mfn_fees_detail?.total_fulfillment_cost:
+                  "0"}
+              type="text" className={classes.input}/>
+              </div>
+
+              <div className={classes.input}>
+              <select value={country==="US"?"option1":"option2"}className={classes.selector}>
+              <option value="option1"> $</option>
+              <option value="option2"> ₹</option>
+              </select>
+              <input
+                  value={pfeeDetails&&pfeeDetails?.mfn_fees_detail?.seller_proceeds?
+                    pfeeDetails?.mfn_fees_detail?.seller_proceeds:
+                    "0"} 
+              type="text" className={classes.input}/>
+              </div>
+
+              <div className={classes.input}>
+              <select value={country==="US"?"option1":"option2"}className={classes.selector}>
+              <option value="option1"> $</option>
+              <option value="option2"> ₹</option>
+              </select>
+              <input
+                 value={pfeeDetails&&pfeeDetails?.mfn_fees_detail?.product_cost?
+                  pfeeDetails?.mfn_fees_detail?.product_cost:
+                  "0"} 
+              type="text" className={classes.input}/>
+              </div> */}
+          </div>
             <div className={classes.secondRow}>
               <h1>FBM</h1>
 
@@ -513,154 +662,7 @@ export const Fba = () => {
             </div>
 
            
-            <div className={classes.thirdRow}>
-              <h1>FBA</h1>
-
-
-              <div className={classes.input}>
-              <select value={country==="US"?"option1":"option2"}className={classes.selector}>
-              <option value="option1"> $</option>
-              <option value="option2"> ₹</option>
-              </select>
-              <input
-                value={prDetails&&prDetails?.data?.price?.amount?
-                (prDetails?.data?.price?.amount).toFixed(2):
-                "0"}
-              type="text" className={classes.input}/>
-              </div>
-
-
-              <div className={classes.input}>
-              <select value={country==="US"?"option1":"option2"}className={classes.selector}>
-              <option value="option1"> $</option>
-              <option value="option2"> ₹</option>
-              </select>
-              <input
-              value={pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.ReferralFee
-                ?.total?.amount?
-                (pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.ReferralFee
-                ?.total?.amount).toFixed(2):
-                "0"} 
-              
-              type="text" className={classes.input}/>
-              </div>
-
-              
-              <div className={classes.input}>
-              <select value={country==="US"?"option1":"option2"}className={classes.selector}>
-              <option value="option1"> $</option>
-              <option value="option2"> ₹</option>
-              </select>
-              <input
-                 value={pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FixedClosingFee
-                  ?.total?.amount?
-                  (pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FixedClosingFee
-                  ?.total?.amount).toFixed(2):
-                  "0"} 
-              type="text" className={classes.input}/>
-              </div>
-
-             
-              <div className={classes.input}>
-              <select value={country==="US"?"option1":"option2"}className={classes.selector}>
-              <option value="option1"> $</option>
-              <option value="option2"> ₹</option>
-              </select>
-              <input
-                value={pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.VariableClosingFee
-                  ?.total?.amount?
-                  (pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.VariableClosingFee
-                  ?.total?.amount).toFixed(2):
-                  "0"}
-              type="text" className={classes.input}/>
-              </div>
-
-              <div className={classes.input}>
-              <select value={country==="US"?"option1":"option2"}className={classes.selector}>
-              <option value="option1"> $</option>
-              <option value="option2"> ₹</option>
-              </select>
-              <input
-                 value={pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FulfillmentFee?.total?.amount?
-                  (pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FulfillmentFee  
-                  ?.total?.amount).toFixed(2):
-                  "0"}
-              type="text" className={classes.input}/>
-              </div>
-
-
-              <div className={classes.input}>
-              <select value={country==="US"?"option1":"option2"}className={classes.selector}>
-              <option value="option1"> $</option>
-              <option value="option2"> ₹</option>
-              </select>
-              <input
-                value={
-                  pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.perUnitNonPeakStorageFee
-
-                  ?.total?.amount?
-                  (pfeeDetails?.data?.programFeeResultMap?.Core?.perUnitNonPeakStorageFee
-
-                  ?.total?.amount).toFixed(2):
-                  "0"
-                }
-              type="text" className={classes.input}/>
-              </div>
-
-              <div className={classes.input}>
-              <select value={country==="US"?"option1":"option2"}className={classes.selector}>
-              <option value="option1"> $</option>
-              <option value="option2"> ₹</option>
-              </select>
-              <input
-                 value={
-                  pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherCost
-
-                  ?.feeAmount?.amount?
-                  (pfeeDetails?.data?.programFeeResultMap?.Core?.otherCost
-
-                  ?.feeAmount?.amount).toFixed(2):
-                  "0"
-                }
-              type="text" className={classes.input}/>
-              </div>
-              
-              {/* <div className={classes.input}>
-              <select value={country==="US"?"option1":"option2"}className={classes.selector}>
-              <option value="option1"> $</option>
-              <option value="option2"> ₹</option>
-              </select>
-              <input
-                 value={pfeeDetails&&pfeeDetails?.mfn_fees_detail?.total_fulfillment_cost?
-                  pfeeDetails?.mfn_fees_detail?.total_fulfillment_cost:
-                  "0"}
-              type="text" className={classes.input}/>
-              </div>
-
-              <div className={classes.input}>
-              <select value={country==="US"?"option1":"option2"}className={classes.selector}>
-              <option value="option1"> $</option>
-              <option value="option2"> ₹</option>
-              </select>
-              <input
-                  value={pfeeDetails&&pfeeDetails?.mfn_fees_detail?.seller_proceeds?
-                    pfeeDetails?.mfn_fees_detail?.seller_proceeds:
-                    "0"} 
-              type="text" className={classes.input}/>
-              </div>
-
-              <div className={classes.input}>
-              <select value={country==="US"?"option1":"option2"}className={classes.selector}>
-              <option value="option1"> $</option>
-              <option value="option2"> ₹</option>
-              </select>
-              <input
-                 value={pfeeDetails&&pfeeDetails?.mfn_fees_detail?.product_cost?
-                  pfeeDetails?.mfn_fees_detail?.product_cost:
-                  "0"} 
-              type="text" className={classes.input}/>
-              </div> */}
-          </div>
+            
         </div>
       </Container>
       <Container fixed maxWidth='lg' className="container">
@@ -672,6 +674,60 @@ export const Fba = () => {
               animate="show"
               width="100%"
             ></motion.img>
+         
+          <div className={classes.innerTwoContainer}>
+            <h2>FBA</h2>
+            <div className={classes.innerThirdContainer}>
+              <div>
+                <p>Net Profit</p>
+                <h1>{country==="US"?"$":"₹"}{
+                pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core? (prDetails&&prDetails?.data?.price?.amount-
+                    +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FixedClosingFee
+                        ?.total?.amount)-
+
+
+                +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.ReferralFee
+                ?.total?.amount)-
+
+                +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.VariableClosingFee
+                  ?.total?.amount)-
+
+                 +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FulfillmentFee
+                 ?.total?.amount)-
+
+                 +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.perUnitNonPeakStorageFee
+                  ?.total?.amount)
+
+                //  +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherCost?.feeAmount?.amount)
+                )?.toFixed(2):0
+                }</h1>
+              </div>
+              <div>
+                <p>Net Margin</p>
+                <h1>%{
+              
+              pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?  (100-(( +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FixedClosingFee
+                        ?.total?.amount)+
+
+
+                +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.ReferralFee
+                ?.total?.amount)+
+
+                +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.VariableClosingFee
+                  ?.total?.amount)+
+
+                 +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FulfillmentFee
+                 ?.total?.amount)+
+
+                 +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.perUnitNonPeakStorageFee
+                  ?.total?.amount)
+
+                //  +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherCost?.feeAmount?.amount)
+                
+               )/ +(prDetails&&prDetails?.data?.price?.amount)*100))?.toFixed(2):0}</h1>
+              </div>
+            </div>
+          </div>
           <div className={classes.innerTwoContainer}>
             <h2>FBM</h2>
             <div className={classes.innerThirdContainer}>
@@ -719,59 +775,6 @@ export const Fba = () => {
 
                 //  +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.perUnitNonPeakStorageFee
                 //   ?.feeAmount?.amount)
-
-                //  +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherCost?.feeAmount?.amount)
-                
-               )/ +(prDetails&&prDetails?.data?.price?.amount)*100))?.toFixed(2):0}</h1>
-              </div>
-            </div>
-          </div>
-          <div className={classes.innerTwoContainer}>
-            <h2>FBA</h2>
-            <div className={classes.innerThirdContainer}>
-              <div>
-                <p>Net Profit</p>
-                <h1>{country==="US"?"$":"₹"}{
-                pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core? (prDetails&&prDetails?.data?.price?.amount-
-                    +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FixedClosingFee
-                        ?.total?.amount)-
-
-
-                +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.ReferralFee
-                ?.total?.amount)-
-
-                +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.VariableClosingFee
-                  ?.total?.amount)-
-
-                 +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FulfillmentFee
-                 ?.total?.amount)-
-
-                 +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.perUnitNonPeakStorageFee
-                  ?.total?.amount)
-
-                //  +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherCost?.feeAmount?.amount)
-                )?.toFixed(2):0
-                }</h1>
-              </div>
-              <div>
-                <p>Net Margin</p>
-                <h1>%{
-              
-              pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?  (100-(( +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FixedClosingFee
-                        ?.total?.amount)+
-
-
-                +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.ReferralFee
-                ?.total?.amount)+
-
-                +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.VariableClosingFee
-                  ?.total?.amount)+
-
-                 +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FulfillmentFee
-                 ?.total?.amount)+
-
-                 +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.perUnitNonPeakStorageFee
-                  ?.total?.amount)
 
                 //  +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherCost?.feeAmount?.amount)
                 
@@ -1035,7 +1038,8 @@ const FbaContainer = styled.div`
             line-height: 18px;
             letter-spacing: 0.01em;
             text-align: center;
-            height:50px;
+            height:55px;
+            cursor: pointer;
             margin-right:50px;
           }
         }

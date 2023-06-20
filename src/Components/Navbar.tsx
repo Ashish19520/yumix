@@ -47,6 +47,8 @@ export const Navbar = () => {
       },
     },
   };
+  
+
 
   return (
     <div className="outter_div_nav">
@@ -104,10 +106,11 @@ export const Navbar = () => {
               animate="show"
             >
               <motion.li variants={navText}>
-                <Link to="/" >Home</Link>
+                <Link 
+                to="/" >Home</Link>
               </motion.li>
               <motion.li variants={navText}>
-                <Link to="/aboutus">About Us</Link>
+                <Link to="/aboutus" >About Us</Link>
               </motion.li>
               <motion.li variants={navText}>
                 <Link to="/ourservices">Our Services</Link>
@@ -295,9 +298,9 @@ const Nav = styled.div`
             font-weight: 700;
           }
           &:focus {
-            font-weight: 700;
-            color: purple;
-            text-decoration:underline;
+            font-weight: 900;
+            color: Black;
+            text-decoration:none;
 
           }
         }
