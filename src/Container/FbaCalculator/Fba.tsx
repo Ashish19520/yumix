@@ -399,9 +399,9 @@ export const Fba = () => {
               </select>
               <input
                value={pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.FixedClosingFee
-                ?.feeAmount?.amount?
+                ?.total?.amount?
                 (pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.FixedClosingFee
-                ?.feeAmount?.amount).toFixed(2):
+                ?.total?.amount).toFixed(2):
                 "0"} 
                  
               type="text" className={classes.input}/>
@@ -415,9 +415,9 @@ export const Fba = () => {
               </select>
               <input
                  value={pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.VariableClosingFee
-                  ?.feeAmount?.amount?
+                  ?.total?.amount?
                   (pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.VariableClosingFee  
-                  ?.feeAmount?.amount).toFixed(2):
+                  ?.total?.amount).toFixed(2):
                   "0"}
               type="text" className={classes.input}/>
               </div>
@@ -429,9 +429,9 @@ export const Fba = () => {
               <option value="option2"> ₹</option>
               </select>
               <input
-                 value={pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.FulfillmentFee?.feeAmount?.amount?
+                 value={pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.FulfillmentFee?.total?.amount?
                   (pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.FulfillmentFee  
-                  ?.feeAmount?.amount).toFixed(2):
+                  ?.total?.amount).toFixed(2):
                   "0"}
               type="text" className={classes.input}/>
               </div>
@@ -446,10 +446,10 @@ export const Fba = () => {
                  value={
                   pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.MFN?.perUnitNonPeakStorageFee
 
-                  ?.feeAmount?.amount?
+                  ?.total?.amount?
                   (pfeeDetails?.data?.programFeeResultMap?.MFN?.perUnitNonPeakStorageFee
 
-                  ?.feeAmount?.amount).toFixed(2):
+                  ?.total?.amount).toFixed(2):
                   "0"
                 }
               type="text" className={classes.input}/>
@@ -464,10 +464,10 @@ export const Fba = () => {
                 value={
                   pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.MFN?.otherCost
 
-                  ?.feeAmount?.amount?
+                  ?.total?.amount?
                   (pfeeDetails?.data?.programFeeResultMap?.MFN?.otherCost
 
-                  ?.feeAmount?.amount).toFixed(2):
+                  ?.total?.amount).toFixed(2):
                   "0"
                 }
               type="text" className={classes.input}/>
@@ -553,9 +553,9 @@ export const Fba = () => {
               </select>
               <input
                  value={pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FixedClosingFee
-                  ?.feeAmount?.amount?
+                  ?.total?.amount?
                   (pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FixedClosingFee
-                  ?.feeAmount?.amount).toFixed(2):
+                  ?.total?.amount).toFixed(2):
                   "0"} 
               type="text" className={classes.input}/>
               </div>
@@ -568,9 +568,9 @@ export const Fba = () => {
               </select>
               <input
                 value={pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.VariableClosingFee
-                  ?.feeAmount?.amount?
+                  ?.total?.amount?
                   (pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.VariableClosingFee
-                  ?.feeAmount?.amount).toFixed(2):
+                  ?.total?.amount).toFixed(2):
                   "0"}
               type="text" className={classes.input}/>
               </div>
@@ -598,10 +598,10 @@ export const Fba = () => {
                 value={
                   pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.perUnitNonPeakStorageFee
 
-                  ?.feeAmount?.amount?
+                  ?.total?.amount?
                   (pfeeDetails?.data?.programFeeResultMap?.Core?.perUnitNonPeakStorageFee
 
-                  ?.feeAmount?.amount).toFixed(2):
+                  ?.total?.amount).toFixed(2):
                   "0"
                 }
               type="text" className={classes.input}/>
@@ -682,14 +682,14 @@ export const Fba = () => {
                     prDetails&&prDetails?.data?.price?.amount-
 
                     +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.FixedClosingFee
-                        ?.feeAmount?.amount)-
+                        ?.total?.amount)-
 
 
                 +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.ReferralFee
-                ?.feeAmount?.amount)-
+                ?.total?.amount)-
 
                 +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.VariableClosingFee
-                  ?.feeAmount?.amount)
+                  ?.total?.amount)
 
                 //  +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.FulfillmentFee
                 //  ?.feeAmount?.amount)-
@@ -705,14 +705,14 @@ export const Fba = () => {
                 <p>Net Margin</p>
                 <h1>%{pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?
                 (100-(( +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.FixedClosingFee
-                        ?.feeAmount?.amount)+
+                        ?.total?.amount)+
 
 
                 +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.ReferralFee
-                ?.feeAmount?.amount)+
+                ?.total?.amount)+
 
                 +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.VariableClosingFee
-                  ?.feeAmount?.amount)
+                  ?.total?.amount)
 
                 //  +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FulfillmentFee
                 //  ?.feeAmount?.amount)+
@@ -734,20 +734,20 @@ export const Fba = () => {
                 <h1>{country==="US"?"$":"₹"}{
                 pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core? (prDetails&&prDetails?.data?.price?.amount-
                     +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FixedClosingFee
-                        ?.feeAmount?.amount)-
+                        ?.total?.amount)-
 
 
                 +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.ReferralFee
-                ?.feeAmount?.amount)-
+                ?.total?.amount)-
 
                 +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.VariableClosingFee
-                  ?.feeAmount?.amount)-
+                  ?.total?.amount)-
 
                  +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FulfillmentFee
-                 ?.feeAmount?.amount)-
+                 ?.total?.amount)-
 
                  +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.perUnitNonPeakStorageFee
-                  ?.feeAmount?.amount)
+                  ?.total?.amount)
 
                 //  +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherCost?.feeAmount?.amount)
                 )?.toFixed(2):0
@@ -758,20 +758,20 @@ export const Fba = () => {
                 <h1>%{
               
               pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?  (100-(( +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FixedClosingFee
-                        ?.feeAmount?.amount)+
+                        ?.total?.amount)+
 
 
                 +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.ReferralFee
-                ?.feeAmount?.amount)+
+                ?.total?.amount)+
 
                 +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.VariableClosingFee
-                  ?.feeAmount?.amount)+
+                  ?.total?.amount)+
 
                  +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FulfillmentFee
-                 ?.feeAmount?.amount)+
+                 ?.total?.amount)+
 
                  +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.perUnitNonPeakStorageFee
-                  ?.feeAmount?.amount)
+                  ?.total?.amount)
 
                 //  +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherCost?.feeAmount?.amount)
                 
