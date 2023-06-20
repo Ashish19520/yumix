@@ -1004,6 +1004,7 @@ const FbaContainer = styled.div`
           .input {
             background: #e0e0e0;
             width: 100%;
+            height:55px;
             border: none;
             overflow:visible;
             &::placeholder {
@@ -1034,6 +1035,7 @@ const FbaContainer = styled.div`
             line-height: 18px;
             letter-spacing: 0.01em;
             text-align: center;
+            height:50px;
             margin-right:50px;
           }
         }

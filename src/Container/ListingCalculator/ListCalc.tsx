@@ -710,8 +710,8 @@ const ListContainer = styled.div`
           justify-content: flex-start;
           width: 100%;
           gap:10px;
+          
           input {
-           
             background: #e0e0e0;
             width: 100%;
             border: none;
@@ -736,10 +736,10 @@ const ListContainer = styled.div`
         
         .btn_FBACalculate {
           background-color: #5956e9;
+          height:50px;
           color: #e0e0e0;
           border: 0px;
           border-radius: 10px;
-          padding: 10px 25px;
           font-family: Poppins;
           font-size: 12px;
           font-weight: 500;
