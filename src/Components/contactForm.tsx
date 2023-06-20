@@ -263,7 +263,7 @@ export default function ContactForm () {
                   disabled={isSubmitting}
                   disableElevation
                   variant='contained'
-                  style={{ backgroundColor: '#5856e9', color: 'white' }}
+                  style={{ backgroundColor: '#5856e9', color: 'white',height:"50px"}}
                   sx={{
                     ...style.button,
                     color: 'white',
@@ -374,6 +374,7 @@ const style = {
     fontWeight: 600,
     fontFamily: 'Montserrat-semiBold',
     flex: '1 0 auto', 
+    height:"55px"
   } as React.CSSProperties,
   button: {
     borderRadius: '8px',
