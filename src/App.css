@@ -185,7 +185,7 @@ color: #808080;
   height:15px;
 }
 .imghero{
-  height: 45  0px;
+  height: 450px;
   width:500px;
 }
 .lines2{
@@ -235,7 +235,8 @@ color: #808080;
   }
   
   .cone {
-    display: none;
+    bottom:-2%;
+    left:0;
   }
   
   .line1 {

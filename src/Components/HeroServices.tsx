@@ -4,15 +4,24 @@ import { motion } from "framer-motion";
 import { ClassNames } from '@emotion/react';
 
 function HeroServices({data}:any) {
+ 
+  
+    const scroll = async () => {
+      if (window.innerWidth >= 768) {
+        window.scrollTo(0, 1300);
+      } else {
+        window.scrollTo(0, 2300);
+      }
+    }
   return (
     <>
-   <Container className='relative' >
+   <Container className='relative' style={{marginTop:"150px"}} >
     <div className='heroWrappe relative'
     id="hero">
         <div className='heroLef'>
             <div className='headTex'>{data.heading}</div>
              <div className='textPar'>{data.subHeading}</div>
-            <div className='btn'>Contact us</div>
+            <div className='btn' onClick={scroll}>Contact us</div>
         </div>
         <div className='heroRight relative'>
             <img src={data.image}
@@ -26,7 +35,7 @@ function HeroServices({data}:any) {
               className='cub'
             ></motion.img>
             <motion.img
-              src="../images/spec 1.png"
+              src="../images/Cone3.png"
               initial="hidden"
               animate="show"
               className='cone'
