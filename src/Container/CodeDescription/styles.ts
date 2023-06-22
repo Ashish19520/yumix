@@ -139,6 +139,7 @@ export default makeStyles((theme) => ({
     height: "48px",
     left: "383.5px",
     bottom: "20px",
+    transition:"all 2s 2s ease-in",
     [theme.breakpoints.down("sm")]: {
       left: "auto",
       right: "50%",

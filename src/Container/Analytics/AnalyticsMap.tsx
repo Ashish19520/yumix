@@ -134,6 +134,7 @@ const ServiceListWrapper = styled.div`
     font-family: Montserrat-Medium;
     color: #40424c;
     margin-top: 20px;
+    
 
     @media (max-width: 600px) {
       font-size: 11.79px;
@@ -141,6 +142,7 @@ const ServiceListWrapper = styled.div`
   }
   .hov{
     cursor: pointer;
+    color:purple;
   }
 
   .item-name {

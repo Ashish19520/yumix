@@ -29,7 +29,7 @@ function StategyCustomer() {
             <div className='wrapper'>
                 <div className='ft'>Strategy</div>
                 <div className='fx'>
-               <div className='textCircle'>Our team assists you in creating and implementing a comprehensive customer experience strategy, aiming to provide users with delightful interactions throughout their digital journey. Starting from the initial planning phase and mapping out the customer journey, we handle the development and management of all essential digital assets. Our strategists, analysts, designers, and developers work collaboratively to plan, produce, and optimize the creative elements necessary to establish meaningful connections with your customers.</div>
+               <div className='textCircl'>Our team assists you in creating and implementing a comprehensive customer experience strategy, aiming to provide users with delightful interactions throughout their digital journey. Starting from the initial planning phase and mapping out the customer journey, we handle the development and management of all essential digital assets. Our strategists, analysts, designers, and developers work collaboratively to plan, produce, and optimize the creative elements necessary to establish meaningful connections with your customers.</div>
                <img
                alt="img"
               src="../images/Round Cube2@3x.png"

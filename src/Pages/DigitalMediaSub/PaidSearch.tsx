@@ -8,7 +8,7 @@ function PaidSearch() {
     heading:"Paid Search (PPC) Marketing Services",
     subHeading:"Maximize results and your budget with a unique, granular approach to delivering the most relevant experience to your customers.",
     image:"../images/laptop.png",
-    blackHeading:"Capture and Convert Demand Through Paid Search, with a PPC Agency",
+    blackHeading:"Capture And Convert Demand Through Paid Search, With A PPC Agency",
     blackSubHeading:"Eservz started with paid search and has spent more than a decade using a successful strategy to obtain high returns and conversions. Our PPC services target customers at every stage of their journey by optimizing budget allocation and delivering personalized experiences based on data. Our customized approach uses different delivery methods to maximize your budget.",
     strategyHeading:"Our Paid Search Strategy",
     box:[

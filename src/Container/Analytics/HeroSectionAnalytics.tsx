@@ -68,7 +68,7 @@ export const HeroSectionAnalytics = () => {
   };
 
   return (
-    <ServicesWrapper>
+    <ServicesWrapper className="margin-nav">
       <Container maxWidth="lg" className="container">
         <div className="hero">
           <motion.img variants={lines}  initial="hidden" animate="show" src="../images/Group 38625@3x.png" className="img-line_bg"></motion.img>
@@ -136,7 +136,7 @@ const ServicesWrapper = styled.div`
       position: relative;
 
       @media(max-width:600px){
-        flex-direction: column-reverse;
+        flex-direction: column;
       }
 
       .img-cube_1 {

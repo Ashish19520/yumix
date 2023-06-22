@@ -145,6 +145,7 @@ color: #FFFFFF;
   gap: 10px;
   background-color: #F6F6FE;
   padding:40px;
+  border-radius: 20px;
 }
 .strategy-heading{
 
@@ -200,6 +201,7 @@ color: #808080;
   flex-direction: column-reverse;
   justify-content: center;
   align-content: center;
+  gap: 30px;
  }
  .black-Sectio{
   padding:5%;
@@ -209,6 +211,9 @@ color: #808080;
   align-content: center;
   justify-content: center;
   gap:15px;
+}
+.strategy-heading{
+  width: 100%;
 }
 .headTex{
   width: 100%;
@@ -668,7 +673,7 @@ color: #3A3B44;
 }
 /* .pinkCircle{
   @media(max-width:320px){
-    position:absolute;
-    top:40%;
+    position: absolute;
+    top:70%;
     }
 } */

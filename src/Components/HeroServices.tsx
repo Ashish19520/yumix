@@ -21,7 +21,7 @@ function HeroServices({data}:any) {
         <div className='heroLef'>
             <div className='headTex'>{data.heading}</div>
              <div className='textPar'>{data.subHeading}</div>
-            <div className='btn' onClick={scroll}>Contact us</div>
+            <div className='btn' onClick={scroll}>Contact Us</div>
         </div>
         <div className='heroRight relative'>
             <img src={data.image}
@@ -52,10 +52,10 @@ function HeroServices({data}:any) {
    <Container style={{marginTop:"150px"}}>
     <div className="black-Sectio">
         <div className='black-heading'>{data.blackHeading}</div>
-        <div className='black-para'>{data.blackSubHeading}</div>
+        <div className='black-para'><b className='black-para'>{data.blackSubHeading}</b></div>
     </div>
    </Container>
-   <Container style={{marginTop:"120px"}}>
+   <Container style={{marginTop:"120px",marginBottom:"50px"}}>
    <motion.img
               src="../images/10.png"
               initial="hidden"
@@ -64,7 +64,7 @@ function HeroServices({data}:any) {
               className='Lin'
             ></motion.img>
     <div className="strategy-wrapper relative">
-        <div className='strategy-heading'><h2>{data.strategyHeading}</h2></div>
+        <div className='strategy-heading'><h2 className='strategy-heading'>{data.strategyHeading}</h2></div>
         <div className='strategy-conten'>
             <div className='box1'>
                 <img src={data.box[0].image} alt="" />
