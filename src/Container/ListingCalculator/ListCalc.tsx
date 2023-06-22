@@ -415,14 +415,14 @@ function ListCalc() {
           <div className={classes.innerFifthContainer} >
             <div className={classes.innersecondFifthContainer}>
               <h2>Title</h2>
-              {/* <div className={classes.greenGood}>Good</div> */}
+              <div className={pDetails&&pDetails?.data?.otherProducts?.products[0]?.title?.length>150?`${classes.greenGood}`:`${classes.redGood}`}>Good</div>
             </div>
             <div className={classes.innersecondFifthContainer}  >
-            {/* <p>Title is possibly the most important part of the product listing. Ensure the title is readable, is relevant to your product and is keyword rich. Most of your main keywords go here.</p> */}
-              <p>{pDetails&&pDetails?.data?.otherProducts?.products[0]?.title?
+            <p>Title is possibly the most important part of the product listing. Ensure the title is readable, is relevant to your product and is keyword rich. Most of your main keywords go here.</p>
+              {/* <p>{pDetails&&pDetails?.data?.otherProducts?.products[0]?.title?
               pDetails?.data?.otherProducts?.products[0]?.title:
-              "Tilte here..."}</p>
-              {/* <img src="../images/Oval.png" alt="" height="72px" width="72px"/> */}
+              "-"}</p> */}
+              <img src="../images/Oval.png" alt="" height="72px" width="72px"/>
             </div>
           </div>
         </div>
@@ -432,13 +432,14 @@ function ListCalc() {
             <div className={classes.innersecondFifthContainer}>
               {/* <h4>Description</h4> */}
               <h2>Sales Rank</h2>
-              {/* <div className={classes.greenGood}>Good</div> */}
+              <div className={classes.greenGood}>Good</div>
             </div>
             <div className={classes.innersecondFifthContainer}  >
+            <p>Title is possibly the most important part of the product listing. Ensure the title is readable, is relevant to your product and is keyword rich. Most of your main keywords go here.</p>
             <p>{pDetails&&pDetails?.data?.otherProducts?.products[0]?.salesRank?
               pDetails?.data?.otherProducts?.products[0]?.salesRank:
-              "Rank here..."}</p>
-              {/* <img src="../images/Oval.png" alt="" height="72px" width="72px"/> */}
+              "-"}</p>
+              <img src="../images/Oval.png" alt="" height="72px" width="72px"/>
             </div>
           </div>
         </div>
@@ -447,13 +448,14 @@ function ListCalc() {
           <div className={classes.innerFifthContainer} >
             <div className={classes.innersecondFifthContainer}>
               <h2>Image </h2>
-              {/* <div className={classes.greenGood}>Good</div> */}
+              <div className={classes.greenGood}>Good</div>
             </div>
             <div className={classes.innersecondFifthContainer}  >
-              {/* <p>.</p> */}
-              <img src={pDetails&&pDetails?.data?.otherProducts?.products[0]?.imageUrl?
+            <p>Title is possibly the most important part of the product listing. Ensure the title is readable, is relevant to your product and is keyword rich. Most of your main keywords go here.</p>
+              {/* <img src={pDetails&&pDetails?.data?.otherProducts?.products[0]?.imageUrl?
               pDetails?.data?.otherProducts?.products[0]?.imageUrl:
-              "../images/61+lhpMw+2L 1.png"} alt="" height="72px" width="72px"/>
+              "../images/61+lhpMw+2L 1.png"} alt="" height="72px" width="72px"/> */}
+               <img src="../images/Oval.png" alt="" height="72px" width="72px"/>
             </div>
           </div>
         </div>
@@ -462,14 +464,14 @@ function ListCalc() {
           <div className={classes.innerFifthContainer} >
             <div className={classes.innersecondFifthContainer}>
               <h2>Ratings</h2>
-              {/* <div className={classes.greenGood}>Good</div> */}
+              <div className={classes.greenGood}>Good</div>
             </div>
             <div className={classes.innersecondFifthContainer}  >
-              {/* <p>Title is possibly the most important part of the product listing. Ensure the title is readable, is relevant to your product and is keyword rich. Most of your main keywords go here.</p> */}
+              <p>Title is possibly the most important part of the product listing. Ensure the title is readable, is relevant to your product and is keyword rich. Most of your main keywords go here.</p>
               <p>{pDetails&&pDetails?.data?.otherProducts?.products[0]?.customerReviewsRating?
               pDetails?.data?.otherProducts?.products[0]?.customerReviewsRating:
-              "Rating here..."}</p>
-              {/* <img src="../images/Frame 1000003793.png" alt="" height="72px" width="72px"/> */}
+              "-"}</p>
+              <img src="../images/Frame 1000003793.png" alt="" height="72px" width="72px"/>
             </div>
           </div>
         </div>
@@ -478,14 +480,14 @@ function ListCalc() {
           <div className={classes.innerFifthContainer} >
             <div className={classes.innersecondFifthContainer}>
               <h2>Reviews Count</h2>
-              {/* <div className={classes.greenGood}>Good</div> */}
+              <div className={classes.redGood}>Good</div>
             </div>
             <div className={classes.innersecondFifthContainer}  >
-              {/* <p>Title is possibly the most important part of the product listing. Ensure the title is readable, is relevant to your product and is keyword rich. Most of your main keywords go here.</p> */}
+              <p>Title is possibly the most important part of the product listing. Ensure the title is readable, is relevant to your product and is keyword rich. Most of your main keywords go here.</p>
               <p>{pDetails&&pDetails?.data?.otherProducts?.products[0]?.customerReviewsCount?
               pDetails?.data?.otherProducts?.products[0]?.customerReviewsCount:
-              "Review count here..."}</p>
-              {/* <img src="../images/Oval.png" alt="" height="72px" width="72px"/> */}
+              "-"}</p>
+              <img src="../images/Oval.png" alt="" height="72px" width="72px"/>
             </div>
           </div>
         </div>

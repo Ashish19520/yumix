@@ -682,8 +682,8 @@ export const Fba = () => {
                 <p>Net Profit</p>
                 <h1>{country==="US"?"$":"₹"}{
                 pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core? (prDetails&&prDetails?.data?.price?.amount-
-                    +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FixedClosingFee
-                        ?.total?.amount)-
+                 (country==="US" ?0:+(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FixedClosingFee
+                        ?.total?.amount))-
 
 
                 +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.ReferralFee
@@ -706,8 +706,9 @@ export const Fba = () => {
                 <p>Net Margin</p>
                 <h1>%{
               
-              pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?  (100-(( +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FixedClosingFee
-                        ?.total?.amount)+
+              pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?  (100-(( 
+                (country==="US"?0:+(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FixedClosingFee
+                        ?.total?.amount))+
 
 
                 +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.ReferralFee
@@ -737,8 +738,8 @@ export const Fba = () => {
                   pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?(
                     prDetails&&prDetails?.data?.price?.amount-
 
-                    +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.FixedClosingFee
-                        ?.total?.amount)-
+                    (country==="US"?0:+(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.FixedClosingFee
+                        ?.total?.amount))-
 
 
                 +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.ReferralFee
@@ -760,8 +761,9 @@ export const Fba = () => {
               <div>
                 <p>Net Margin</p>
                 <h1>%{pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?
-                (100-(( +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.FixedClosingFee
-                        ?.total?.amount)+
+                (100-(( 
+                  (country==="US"?0:+(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.FixedClosingFee
+                        ?.total?.amount))+
 
 
                 +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.ReferralFee

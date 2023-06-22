@@ -16,7 +16,8 @@ import { useDispatch } from 'react-redux'
 import { Dispatch } from 'redux'
 import { postForm } from '../actions/posts'
 import {ValidatorForm, TextValidator} from 'react-material-ui-form-validator'
-import { Height } from '@mui/icons-material'
+import { Height, Margin } from '@mui/icons-material'
+import { ClassNames } from '@emotion/react'
 
 const typingContainer = {
   hidden: { opacity: 0 },
@@ -196,9 +197,9 @@ export default function ContactForm () {
           </Alert>
         )}
         {failShow && (
-          <Alert severity='error'>
-            <AlertTitle>error</AlertTitle>
-            Your form has not been submitted Please Try again!
+          <Alert className='index' severity='error'>
+            <AlertTitle>Error</AlertTitle>
+            Your form has not been submitted Please try again.
           </Alert>
         )}
 
@@ -235,6 +236,15 @@ export default function ContactForm () {
                     onChange={changeHandalar}
                     validators={['required',"isEmail"]}
                     errorMessages={['This field is required', 'Email is not valid']}
+                    errorMessagesCustom={{
+                      required:{ 
+                        message: 'This field is required',
+                        className: 'custom-error-class'},
+                      isEmail: {
+                        message: 'Email is not valid',
+                        className: 'custom-error-class' // Add a custom CSS class here
+                      }
+                    }}
                 />
 
 
@@ -247,6 +257,7 @@ export default function ContactForm () {
                     onChange={changeHandalar}
                     validators={['required','isUsernameUnique']}
                     errorMessages={['This field is required','Blank spaces are not allowed']}
+                    errorStyle={{ marginLeft:"150px"}}
                 />
                 {/* <input
                   type='text'
@@ -366,7 +377,7 @@ const ImgWrapper = styled.div`
 `
 const style = {
   input: {
-    padding: 'none',
+    
     backgroundColor: 'white',
     borderRadius: '8px',
     border: 'none',
@@ -374,7 +385,9 @@ const style = {
     fontWeight: 600,
     fontFamily: 'Montserrat-semiBold',
     flex: '1 0 auto', 
-    height:"55px"
+    height:"55px",
+    padding: '0px',
+
   } as React.CSSProperties,
   button: {
     borderRadius: '8px',

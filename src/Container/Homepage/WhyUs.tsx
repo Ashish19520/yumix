@@ -183,6 +183,7 @@ function WhyUs () {
                 src={image}
                 alt=''
                 width='100%'
+                className='fold'
               />
             </Box>
 
@@ -316,7 +317,7 @@ function WhyUs () {
                     <Box
                       style={{
                         width: '2px',
-                        height: '150px',
+                        height: '180px',
                         backgroundColor:
                           selectedIndex > index ? '#5856e9' : '#D1D1D1',
                         display: index === points.length - 1 ? 'none' : 'block'
@@ -380,11 +381,17 @@ const FontWrapper = styled.div`
       font-size: 14px;
       margin: '100px';
     }
+    @media (max-width: 320px) {
+      font-size: 10px;
+    }
   }
 
   .whyus-para {
     @media (max-width: 600px) {
       font-size: 11px;
+    }
+    @media (max-width: 320px) {
+      font-size: 7px;
     }
   }
 `

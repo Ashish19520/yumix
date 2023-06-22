@@ -134,7 +134,7 @@ function CodeDesc() {
             className={classes.txtField}
             value={editorValue}  
             onChange={handleChange}
-            toolbarClassName={classes.toolbar}
+            // toolbarClassName={classes.toolbar}
             placeholder='write your product description here'
            />
            
@@ -150,7 +150,7 @@ function CodeDesc() {
             ref={inputRef as any}
             />
             <button className={`${classes.btn1} pointer`} onClick={copyHandlar}>
-              {copied?"copied":"copy code"}</button>
+              {copied?"Copied":"Copy code"}</button>
             
 
         </div>

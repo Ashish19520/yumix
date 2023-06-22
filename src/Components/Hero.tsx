@@ -246,11 +246,12 @@ export const Hero = () => {
         
 
         <div className="outter">
-          <div className="titleBox">
+          <div className="titleBox" style={{marginRight:"30px"}}>
             <motion.h1
               variants={typingContainer}
               initial="hidden"
               animate="show"
+              
             >
               {Array.from(
                 "The complete multi-channel solution for Brands and Retailers"

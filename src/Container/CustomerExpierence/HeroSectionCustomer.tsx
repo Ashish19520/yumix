@@ -68,11 +68,11 @@ export const HeroSectionCustomer = () => {
   };
 
   return (
-    <ServicesWrapper>
-      <Container maxWidth="lg" className="container  margin-nav">
+    <ServicesWrapper className="margin-nav">
+      <Container maxWidth="lg" className="container margin-nav ">
         <div className="hero">
           <motion.img variants={lines}  initial="hidden" animate="show" src="../images/Group 38625@3x.png" className="img-line_bg"></motion.img>
-          {/* <motion.img variants={lines}  initial="hidden" animate="show" src="../images/Vector 13@3x.png" className="img-line_bg_2"></motion.img> */}
+          <motion.img variants={lines}  initial="hidden" animate="show" src="../images/Vector 13@3x.png" className="img-line_bg_2"></motion.img>
           <motion.img variants={lines}  initial="hidden" animate="show" src="../images/Round Cube2@3x.png" className="img-cube_1"></motion.img>
           <motion.img variants={lines}  initial="hidden" animate="show" src="../images/FullRock1@3x.png" className="img-rock_1"></motion.img>
           <div className="text-wrapper">

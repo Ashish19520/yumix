@@ -4,6 +4,7 @@ import {TOKEN} from "../constants/actionTypes"
 const API = axios.create({
     
     baseURL: 'http://lb-eservz-1246575002.ap-south-1.elb.amazonaws.com:1337',
+    // baseURL: 'http://localhost:1337',
     
   });
   

@@ -646,3 +646,29 @@ color: #3A3B44;
   color: Black;
   text-decoration:none;
 }
+.custom-error-class{
+  margin-left: 0px;
+}
+.fold{
+  @media(max-width:320px){
+    height:150px;
+    width:150px;
+  }
+}
+.about-rock{
+  @media(max-width:320px){
+   position: absolute;
+   bottom:20%;
+  }
+}
+.about-button{
+  @media(max-width:600px){
+   width:200px;
+   }
+}
+/* .pinkCircle{
+  @media(max-width:320px){
+    position:absolute;
+    top:40%;
+    }
+} */

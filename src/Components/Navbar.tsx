@@ -1,128 +1,163 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react'
 // @ts-ignore
-import styled from "styled-components";
-import Container from "@mui/material/Container";
-import { Link,useNavigate } from "react-router-dom";
-import { FaFacebookF, FaGoogle, FaLinkedinIn } from "react-icons/fa";
-import { AiFillInstagram } from "react-icons/ai";
-import logo from "./logo.png";
-import { Grid } from "@mui/material";
-import { RxHamburgerMenu } from "react-icons/rx";
-import { AiOutlineClose } from "react-icons/ai";
-import { motion } from "framer-motion";
-import Calender from "./Calender";
+import styled from 'styled-components'
+import Container from '@mui/material/Container'
+import { Link, useNavigate } from 'react-router-dom'
+import { FaFacebookF, FaGoogle, FaLinkedinIn } from 'react-icons/fa'
+import { AiFillInstagram } from 'react-icons/ai'
+import logo from './logo.png'
+import { Grid } from '@mui/material'
+import { RxHamburgerMenu } from 'react-icons/rx'
+import { AiOutlineClose } from 'react-icons/ai'
+import { motion } from 'framer-motion'
+import Calender from './Calender'
 
 export const Navbar = () => {
-  const [drawerOpen, setDrawerOpen] = useState(false);
-  const [openCalender, setOpenCalender] = useState(false);
-  const navigate=useNavigate();
+  const [drawerOpen, setDrawerOpen] = useState(false)
+  const [openCalender, setOpenCalender] = useState(false)
+  const [activeIndex, setActiveIndex] = useState(9);
+  const navigate = useNavigate()
 
   useEffect(() => {
-    console.log("first", drawerOpen);
+    console.log('first', drawerOpen)
     // setDrawerOpen(!drawerOpen)
 
-    console.log("check", drawerOpen);
-  }, []);
-
+    console.log('check', drawerOpen)
+  }, [])
 
   const navAnimation = {
     show: {
       transition: {
         staggerChildren: 0.2,
         delayChildren: 2.3,
-        ease: "easeInOut",
-      },
-    },
-  };
+        ease: 'easeInOut'
+      }
+    }
+  }
   const navText = {
     hidden: {
       opacity: 0,
-      y: "-10px",
+      y: '-10px'
     },
     show: {
       opacity: 1,
       y: 0,
       transition: {
-        ease: "easeInOut",
-      },
-    },
-  };
+        ease: 'easeInOut'
+      }
+    }
+  }
   
+   
+   
+  const handleClick = (index:number) => {
+    setActiveIndex(index);
+  };
 
 
   return (
-    <div className="outter_div_nav">
+    <div className='outter_div_nav'>
       <SocialNavbar>
-        <Container maxWidth="lg" className="container">
+        <Container maxWidth='lg' className='container'>
           <Link
-            to="https://www.facebook.com/ESERVZ"
-            className="iconLink"
-            target="_blank"
+            to='https://www.facebook.com/ESERVZ'
+            className='iconLink'
+            target='_blank'
           >
-            <FaFacebookF color="#252f3e" size={16} />
+            <FaFacebookF color='#252f3e' size={16} />
           </Link>
           <Link
-            to="https://www.linkedin.com/company/eservz"
-            className="iconLink"
-            target="_blank"
+            to='https://www.linkedin.com/company/eservz'
+            className='iconLink'
+            target='_blank'
           >
-            <FaLinkedinIn color="#252f3e" size={16} />
+            <FaLinkedinIn color='#252f3e' size={16} />
           </Link>
           <Link
-            to="https://www.instagram.com/eservz_amz/"
-            className="iconLink"
-            target="_blank"
+            to='https://www.instagram.com/eservz_amz/'
+            className='iconLink'
+            target='_blank'
           >
-            <AiFillInstagram color="#252f3e" size={16} />
+            <AiFillInstagram color='#252f3e' size={16} />
           </Link>
         </Container>
       </SocialNavbar>
 
       <Nav drawer={drawerOpen}>
-        <Container maxWidth="lg" 
-        
-        className="container">
+        <Container maxWidth='lg' className='container'>
           <motion.div
-            className="insideNavbar"
+            className='insideNavbar'
             variants={navAnimation}
-            initial="hidden"
-            animate="show"
-            style={{ alignItems: "center" }}
+            initial='hidden'
+            animate='show'
+            style={{ alignItems: 'center' }}
           >
-            
             <motion.img
-              onClick={()=>{navigate('/')}}
-              src="/images/logo.png"
-              style={{ height: "68px", width: "68px",cursor: "pointer" }}
+              onClick={() => {
+                navigate('/')
+              }}
+              src='/images/logo.png'
+              style={{ height: '68px', width: '68px', cursor: 'pointer' }}
               variants={navText}
-              className="logo-img"
+              className='logo-img'
             ></motion.img>
           </motion.div>
           <div>
             <motion.ul
-              className="insideNav"
+              className='insideNav'
               variants={navAnimation}
-              initial="hidden"
-              animate="show"
+              initial='hidden'
+              animate='show'
             >
-              <motion.li variants={navText}>
-                <Link 
-                to="/" >Home</Link>
+              <motion.li 
+              className={activeIndex === 0 ? 'nav-active' : ''}
+              onClick={() => handleClick(0)}
+              variants={navText}
+             >
+                <Link   to='/'>
+                  Home
+                </Link>
               </motion.li>
-              <motion.li variants={navText}>
-                <Link to="/aboutus" >About Us</Link>
+
+              <motion.li variants={navText}
+              className={activeIndex === 1 ? 'nav-active' : ''}
+              onClick={() => handleClick(1)}
+              >
+                <Link to='/aboutus'
+                
+                >About Us</Link>
               </motion.li>
-              <motion.li variants={navText}>
-                <Link to="/ourservices">Our Services</Link>
+
+              <motion.li variants={navText}
+               className={activeIndex === 2 ? 'nav-active' : ''}
+               onClick={() => handleClick(2)}
+              >
+               <Link to='/ourservices' 
+                >Our Services</Link>
               </motion.li>
-              <motion.li variants={navText}>
-                <Link to="/works">Works</Link>
+
+              <motion.li variants={navText}
+             className={activeIndex === 3 ? 'nav-active' : ''}
+             onClick={() => handleClick(3)}
+             >
+                <Link to='/works'
+                >Works</Link>
               </motion.li>
-              <motion.li variants={navText}>
-                <Link to="/blogs">Blogs</Link>
+
+
+              <motion.li variants={navText}
+               className={activeIndex === 4 ? 'nav-active' : ''}
+               onClick={() => handleClick(4)}
+              >
+                <Link to='/blogs' >Blogs</Link>
               </motion.li>
-              <motion.li variants={navText}>
-                <Link to="/news">News</Link>
+
+
+              <motion.li variants={navText}
+            className={activeIndex === 5 ? 'nav-active' : ''}
+            onClick={() => handleClick(5)}>
+                <Link to='/news' >News</Link>
+
                 <Calender
                   open={openCalender}
                   setClose={() => setOpenCalender(false)}
@@ -130,65 +165,61 @@ export const Navbar = () => {
               </motion.li>
             </motion.ul>
           </div>
-          <motion.div variants={navAnimation} initial="hidden" animate="show">
+          <motion.div variants={navAnimation} initial='hidden' animate='show'>
             <motion.button
-              className="btn"
+              className='btn'
               variants={navText}
               onClick={() => setOpenCalender(true)}
             >
-              <span id="calender">Set Meeting</span>
+              <span id='calender'>Set Meeting</span>
             </motion.button>
           </motion.div>
           <button
             onClick={() => setDrawerOpen(!drawerOpen)}
-            className="hamburger"
+            className='hamburger'
           >
-            <RxHamburgerMenu
-              color="#5956E9"
-              
-              size={35}
-            />
+            <RxHamburgerMenu color='#5956E9' size={35} />
           </button>
         </Container>
-        <div className="drawer">
+        <div className='drawer'>
           <button
             onClick={() => setDrawerOpen(!drawerOpen)}
-            className="hamburger"
+            className='hamburger'
           >
-            <AiOutlineClose color="#5956E9" style={{padding:"unset"}} />
+            <AiOutlineClose color='#5956E9' style={{ padding: 'unset' }} />
           </button>
-          <div className="navbar">
+          <div className='navbar'>
             <ul
-              className="insideNav"
+              className='insideNav'
               onClick={() => {
-                setDrawerOpen(!drawerOpen);
+                setDrawerOpen(!drawerOpen)
               }}
             >
               <li>
-                <Link to="/">Home</Link>
+                <Link to='/'>Home</Link>
               </li>
               <li>
-                <Link to="/aboutus">About Us</Link>
+                <Link to='/aboutus'>About Us</Link>
               </li>
               <li>
-                <Link to="/ourservices">Our Services</Link>
+                <Link to='/ourservices'>Our Services</Link>
               </li>
               <li>
-                <Link to="/works">Works</Link>
+                <Link to='/works'>Works</Link>
               </li>
               <li>
-                <Link to="/blogs">Blog</Link>
+                <Link to='/blogs'>Blog</Link>
               </li>
               <li>
-                <Link to="/news">News</Link>
+                <Link to='/news'>News</Link>
               </li>
             </ul>
           </div>
         </div>
       </Nav>
     </div>
-  );
-};
+  )
+}
 
 //export default Navbar
 
@@ -200,7 +231,7 @@ const SocialNavbar = styled.div`
   position: fixed;
   width: 100%;
   z-index: 1000;
-  top:0;
+  top: 0;
   background-color: #eef1f8;
   .container {
     margin: auto;
@@ -216,14 +247,13 @@ const SocialNavbar = styled.div`
       }
     }
   }
-`;
+`
 
 type NavProps = {
-  drawer?: boolean;
-};
+  drawer?: boolean
+}
 
 const Nav = styled.div`
- 
   height: 120px;
   display: flex;
   justify-content: center;
@@ -247,7 +277,6 @@ const Nav = styled.div`
     position: fixed;
     z-index: 7;
     padding-top: 20px;
-  
 
     .insideNavbar {
       .logo-img {
@@ -255,13 +284,13 @@ const Nav = styled.div`
         z-index: 99;
         position: relative;
         @media (max-width: 600px) {
-         
         }
       }
     }
 
     .hamburger {
       display: none;
+      margin-right: 20px;
       @media (max-width: 900px) {
         display: block;
       }
@@ -300,14 +329,10 @@ const Nav = styled.div`
           &:focus {
             font-weight: 900;
             color: Black;
-            text-decoration:none;
-
+            text-decoration: none;
           }
         }
-       
       }
-
-      
     }
 
     .btn {
@@ -320,8 +345,8 @@ const Nav = styled.div`
       border-radius: 8px;
       background-color: #5956e9;
       border: 0px;
-      text-align:start;
-      padding:5px;
+      text-align: start;
+      padding: 5px;
 
       font-family: Montserrat;
       font-size: 14px;
@@ -350,7 +375,7 @@ const Nav = styled.div`
     height: 100vh;
     top: 0px;
     transform: ${(props: NavProps) =>
-      props.drawer ? "translateX(0%)" : "translateX(100%)"};
+      props.drawer ? 'translateX(0%)' : 'translateX(100%)'};
     transition: transform 0.5s;
     z-index: 99;
 
@@ -385,4 +410,4 @@ const Nav = styled.div`
       }
     }
   }
-`;
+`

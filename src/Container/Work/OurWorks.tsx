@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export const OurWorks = () => {
   const data1 = {
-    title: "Growing Sales for a Startup  Clothing Brand",
+    title: "Growing Sales For A Startup  Clothing Brand",
     subTitle:
       "While most digital marketing agencies excel at one or two channels, Eservz has deep expertise across all performance marketing services, which allows us to provide a rich digital marketing services offering.",
     btnText: "View Case Study",
@@ -15,7 +15,7 @@ export const OurWorks = () => {
   };
 
   const data2 = {
-    title: "Bringing Grocery store online",
+    title: "Bringing Grocery Store Online",
     subTitle:
       "While most digital marketing agencies excel at one or two channels, Eservz has deep expertise across all performance marketing services, which allows us to provide a rich digital marketing services offering.",
     btnText: "View Case Study",

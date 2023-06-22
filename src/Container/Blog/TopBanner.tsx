@@ -2,6 +2,7 @@ import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
+import { Margin } from "@mui/icons-material";
 
 
 const typingContainer = {
@@ -66,7 +67,7 @@ export default function TopBanner() {
             </motion.div>
         </Grid>
         <Grid item xs={12} md={7} sx={{textAlign:{xs:"center", md:"right"}, zIndex:1}}>
-            <motion.img src='/images/Illustrations.png' style={{maxHeight:"500px", width:"90%"}} alt="Blog Banner" variants={elements}  initial="hidden" animate="show"></motion.img>
+            <motion.img src='/images/Illustrations.png' style={{maxHeight:"500px", width:"90%",marginTop:"50px"}} alt="Blog Banner" variants={elements}  initial="hidden" animate="show"></motion.img>
         </Grid>
         <motion.div
           variants={elements}
@@ -75,7 +76,9 @@ export default function TopBanner() {
           className="title"
         >
         <Box style={style.blueDot}></Box>
-        <Box sx={{...style.bluredBox, top : {xs:"40%", md:"70%"}}}><img src="./images/Round Cube2@3x.png" width="100%"></img></Box>
+        <Box sx={{...style.bluredBox, top : {xs:"40%", md:"70%"}}}>
+          <img  src="./images/Round Cube2@3x.png" width="100%"></img>
+          </Box>
         <img src="./images/Rock2.png" style={style.bluredRock}></img>
         <img src="./images/aboutusThread.png" style={style.thread}></img>
         </motion.div>
@@ -123,7 +126,8 @@ const style = {
         width : "10%",
         minWidth : "80px",
         position : "absolute",
-        left : "0px"
+        left : "0px",
+       
     } as React.CSSProperties,
     bluredRock : {
         width : "15%",
@@ -132,6 +136,7 @@ const style = {
         top : "20px",
         right : "0px",
         zIndex : 2,
+        
     } as React.CSSProperties,
     thread : {
         width : "100%",

@@ -110,6 +110,7 @@ export default function TopBanner() {
             <Button
               disableElevation
               variant="outlined"
+              className="about-button"
               sx={{
                 ...style.button,
                 color: "#5856e9",
@@ -117,11 +118,12 @@ export default function TopBanner() {
               }}
               onClick={() => navigate("/works")}
             >
-              Our Portfolio
+                Our Portfolio  
             </Button>
             <HashLink to={"/aboutus#contactForm"} smooth>
               <Button
                 disableElevation
+                className="about-button"
                 variant="contained"
                 sx={{
                   ...style.buttonBorder,

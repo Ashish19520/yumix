@@ -28,10 +28,10 @@ export const ServiceWeProvide = () => {
       <ServiceWeProvideWrapper>
         <Container maxWidth="lg" className="container">
           <div className="title-box service-fade">
-            <img
+            {/* <img
               src="./images/Group 38608@3x.png"
               className="img-line_bg"
-            ></img>
+            ></img> */}
             <div className="title">Services We Provide</div>
             <div className="subtitle">
               Here are the services offered by Eservz

@@ -28,7 +28,7 @@ export default function BannerList() {
           </Typography>
         </Grid>
         <Grid item xs={12} md={4} sx={{textAlign:"center", position:{xs:"absolute", md:"relative"}, top:{xs:"-20px", md:"0px"}}}>
-          <img src="/images/Holding a pencil.png" alt="Holding Pencil" style={{width:"150px", scale:"2"}}/>
+          <img src="/images/Holding a pencil.png" alt="Holding Pencil" style={{width:"150px", scale:"2",marginLeft:"30px"}}/>
         </Grid>
       </Grid>
     </Box>

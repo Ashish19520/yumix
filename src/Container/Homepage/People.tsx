@@ -132,7 +132,7 @@ const Users = styled.div`
           margin-bottom: 16px;
           @media (max-width: 600px) {
             font-size: 16px;
-            text-align: left;
+            text-align: center;
 
         }
         }
@@ -148,7 +148,7 @@ const Users = styled.div`
           @media (max-width: 600px) {
             font-size: 14px;
             margin-bottom: 30px;
-            text-align: left;
+            text-align: center;
         }
         }
       }

@@ -53,7 +53,7 @@ export const MidWhoBanner = () => {
               Amazon.
             </p>
           </div>
-          <img src="./images/Round Cube2@3x.png" className="cube-img"></img>
+          <img  src="./images/Round Cube2@3x.png" className="cube-img"></img>
         </div>
       </Container>
     </Banner>
@@ -136,11 +136,13 @@ const Banner = styled.div`
         position: absolute;
         width: 20%;
         right: 0%;
-        bottom: -40px;
+        bottom: -52px;
+
         @media (max-width: 600px) {
           display: unset;
           bottom: -80%;
         }
+        
       }
 
       h2 {

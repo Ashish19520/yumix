@@ -68,8 +68,8 @@ export const HeroSectionDigital = () => {
   }
 
   return (
-    <ServicesWrapper>
-      <Container maxWidth='lg' className='container margin-nav'>
+    <ServicesWrapper className='margin-nav'>
+      <Container maxWidth='lg' className='container '>
         <div className='hero'>
           <motion.img
             variants={lines}
@@ -173,6 +173,10 @@ const ServicesWrapper = styled.div`
         left: 5%;
         bottom: 25%;
         z-index: 0;
+        @media (max-width: 350px) {
+          top: 2%;
+          right: 4%;
+        }
       }
 
       .img-line_bg {
