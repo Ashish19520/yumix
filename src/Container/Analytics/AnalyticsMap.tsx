@@ -133,7 +133,7 @@ const ServiceListWrapper = styled.div`
     font-size: 14px;
     font-family: Montserrat-Medium;
     color: #40424c;
-    margin-top: 20px;
+    margin-top: 20px; 
     
 
     @media (max-width: 600px) {

@@ -8,7 +8,8 @@ import { FETCH_POST,
      PRODUCT_DETAILS,
      PRODUCT_PRICE,
      PRODUCT_PROGRAM,
-     PRODUCT_FEES
+     PRODUCT_FEES,
+     LISTING_DETAILS
     } from "../constants/actionTypes";
 
 export default (state={},action:any)=>{
@@ -33,6 +34,8 @@ export default (state={},action:any)=>{
         return {...state, productProgram:action.payload};
         case PRODUCT_FEES:
         return {...state, productFees:action.payload};
+        case LISTING_DETAILS:
+        return {...state, listingDetails:action.payload};
         default:
             return state;   
     }   

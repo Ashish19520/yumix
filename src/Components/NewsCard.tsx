@@ -1,29 +1,62 @@
 import { Container } from "@mui/material";
-import React from "react";
+import React,{ useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import ReactHtmlParser from 'react-html-parser';
+import axios from 'axios';
 
 export const NewsCard = (props: any) => {
   
   const navigate=useNavigate();
+  // const [mainImage, setMainImage] = useState('');
 
   const openContent = ()=>{
     localStorage.setItem('data', JSON.stringify(props?.data));
     localStorage.setItem('counter', props?.page);
     navigate('/newsContent');
   }
+  // useEffect(() => {
+  //   const fetchMainImage = async () => {
+  //     try {
+  //       let headers = {
+  //         "Content-Type": "application/json",
+  //         "Accept": "application/json",
+  //         "Accept-Encoding": "gzip, deflate, br",
+  //         "User-Agent": "PostmanRuntime/7.32.2",
+  //         "x-amzn-RateLimit-Limit": "1"
+
+  //     };
+  //       const response = await axios.get(`https://cors-anywhere.herokuapp.com/${props?.data?.link}`,{
+  //         headers: headers
+  //       });
+  //       const htmlContent = response.data;
+  //       const parsedHTML = ReactHtmlParser(htmlContent);
+  //       const imageElements:any = parsedHTML.filter((element:any) => element.type === 'tag' && element?.name === 'img');
+
+  //       if (imageElements.length > 0) {
+  //         const mainImageUrl = imageElements[0].attribs.src;
+  //         setMainImage(mainImageUrl);
+  //       }
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   };
+
+  //   fetchMainImage();
+  // }, []);
+  
   return (
     <NewsCardWrapper>
       <Container maxWidth="lg" className="container">
         <div className="img-box">
-          <img src={(props?.data?.image[0])?(props?.data?.image[0]):"../images/Rectangle first.png"} 
-
-          height="180px" width="180" alt="img"></img>
+          <img src={props?.data?.[`media:content`][0]?.$?.url?props?.data?.[`media:content`][0]?.$?.url:"../images/Rectangle first.png"} 
+          alt="someimg"
+          height="180px" width="180" ></img>
         </div>
 
 
         <div className="title">
-          <p>{props?.data?.title[0]?.length>40?props?.data?.title[0].substring(0, 40)+"...":props?.data?.title[0]}</p>
+          <p>{props?.data?.title[0]?.length>40?props?.data?.title[0].substring(0, 40)+"":props?.data?.title[0]}</p>
         <p style={{color:"purple",cursor:"pointer"}} onClick={openContent}>Read more...</p>
         </div>
        

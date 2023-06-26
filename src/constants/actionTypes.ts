@@ -6,8 +6,13 @@ export const TESTIMONIALS="TESTIMONIALS";
 export const SITE_COUNTERS="SITECOUNTERS";
 export const FETCH_NEWS="FETCHNEWS";
 export const FETCH_BLOGS="FETCHBLOGS";
+
 // ############--------FBA-Details-------------##############
+
 export const PRODUCT_DETAILS="PRODUCTDETAILS";
 export const PRODUCT_PRICE="PRODUCTPRICE";
 export const PRODUCT_PROGRAM="PRODUCTPROGRAM";
 export const PRODUCT_FEES="PRODUCTFEES";
+
+// ############--------Price-Listing-------------##############
+export const LISTING_DETAILS="LISTINGDETAILS";

@@ -7,7 +7,7 @@ import useStyles from './style';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Dispatch } from 'redux';
-import { fetchProductDetails,fetchProductPriceDetails,fetchProductProgramDetails,fetchProductFeesDetails } from "../../actions/posts";
+import { fetchProductDetails,fetchProductPriceDetails,fetchProductProgramDetails,fetchProductFeesDetails,fetchListingDetails } from "../../actions/posts";
 import {ValidatorForm, TextValidator} from 'react-material-ui-form-validator'
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
@@ -17,100 +17,100 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 
 function ListCalc() {
   const classes = useStyles();
-  const [age, setAge] = React.useState('');
-  const [selectedIndex, setSelectedIndex] = useState<number>(0)
-  const [image, setImage] = useState<string>('/images/work1.png')
-  const [toggleFunction,setToggleFunction] = useState<boolean>(true)
+  // const [age, setAge] = React.useState('');
+  // const [selectedIndex, setSelectedIndex] = useState<number>(0)
+  // const [image, setImage] = useState<string>('/images/work1.png')
+  // const [toggleFunction,setToggleFunction] = useState<boolean>(true)
   const navigate=useNavigate();
 
-  const handleChange = (event: SelectChangeEvent) => {
-    setAge(event.target.value);
+  // const handleChange = (event: SelectChangeEvent) => {
+  //   setAge(event.target.value);
     
-  }
+  // }
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  const points = [
-    {
-      para : "Keywords impact listing visibility.",
-      image : "/images/work1.png"
-    },
-    {
-      para : "Search position affects discoverability.",
-      image : "/images/work2.png"
-    },
-    {
-      para : "Discoverability ensures visibility to potential buyer",
-      image : "/images/work3.png"
-    },
-    {
-      para : "Unfound listing is ineffective",
-      image : "/images/work4.png"
-    }
-  ]
-  const points2 = [
-    {
-      para : "Overview of the product and its specifications",
-      image : "/images/work1.png"
-    },
-    {
-      para : "In-depth view of product features and applications.",
-      image : "/images/work2.png"
-    },
-    {
-      para : "Emphasise brand and its unique story",
-      image : "/images/work3.png"
-    },
-    {
-      para : "Add images to give depth to your listing",
-      image : "/images/work4.png"
-    }
-  ]
-  function showElistratorOnSomeInterval(){
+  // const points = [
+  //   {
+  //     para : "Keywords impact listing visibility.",
+  //     image : "/images/work1.png"
+  //   },
+  //   {
+  //     para : "Search position affects discoverability.",
+  //     image : "/images/work2.png"
+  //   },
+  //   {
+  //     para : "Discoverability ensures visibility to potential buyer",
+  //     image : "/images/work3.png"
+  //   },
+  //   {
+  //     para : "Unfound listing is ineffective",
+  //     image : "/images/work4.png"
+  //   }
+  // ]
+  // const points2 = [
+  //   {
+  //     para : "Overview of the product and its specifications",
+  //     image : "/images/work1.png"
+  //   },
+  //   {
+  //     para : "In-depth view of product features and applications.",
+  //     image : "/images/work2.png"
+  //   },
+  //   {
+  //     para : "Emphasise brand and its unique story",
+  //     image : "/images/work3.png"
+  //   },
+  //   {
+  //     para : "Add images to give depth to your listing",
+  //     image : "/images/work4.png"
+  //   }
+  // ]
+  // function showElistratorOnSomeInterval(){
 
-    if(selectedIndex ===0 || selectedIndex <=3){
+  //   if(selectedIndex ===0 || selectedIndex <=3){
 
-      setTimeout(()=>{
-        setSelectedIndex(1)
-        setImage("/images/work2.png")
-      },2000)
+  //     setTimeout(()=>{
+  //       setSelectedIndex(1)
+  //       setImage("/images/work2.png")
+  //     },2000)
   
   
-      setTimeout(()=>{
-        setSelectedIndex(2)
-        setImage("/images/work3.png")
-      },4000)
+  //     setTimeout(()=>{
+  //       setSelectedIndex(2)
+  //       setImage("/images/work3.png")
+  //     },4000)
   
   
-      setTimeout(()=>{
-        setSelectedIndex(3)
-        setImage("/images/work4.png")
-      },6000)
+  //     setTimeout(()=>{
+  //       setSelectedIndex(3)
+  //       setImage("/images/work4.png")
+  //     },6000)
 
-      setTimeout(()=>{
-        setSelectedIndex(0)
-        setImage("/images/work1.png")
-      },8000)
+  //     setTimeout(()=>{
+  //       setSelectedIndex(0)
+  //       setImage("/images/work1.png")
+  //     },8000)
 
-    }
-  }
+  //   }
+  // }
 
-  if(selectedIndex === 0){
-    showElistratorOnSomeInterval()
-  }
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("animate__animated");
-          entry.target.classList.add("animate__fadeIn");
-        }
-      });
-    });
+  // if(selectedIndex === 0){
+  //   showElistratorOnSomeInterval()
+  // }
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver((entries) => {
+  //     entries.forEach((entry) => {
+  //       if (entry.isIntersecting) {
+  //         entry.target.classList.add("animate__animated");
+  //         entry.target.classList.add("animate__fadeIn");
+  //       }
+  //     });
+  //   });
 
-    const hiddenElements = document.querySelectorAll(".bannerList_hidden");
-    hiddenElements.forEach((el) => observer.observe(el));
-  }, []);
+  //   const hiddenElements = document.querySelectorAll(".bannerList_hidden");
+  //   hiddenElements.forEach((el) => observer.observe(el));
+  // }, []);
 
   const dispatch: Dispatch<any> = useDispatch();
   const [value,setValue]=useState();
@@ -120,6 +120,15 @@ function ListCalc() {
   const[prDetails,setprDetails]=useState<any>(null); 
   const[prgDetails,setprgDetails]=useState<any>(null); 
   const[pfeeDetails,setpfeeDetails]=useState<any>(null); 
+  const[listingDetails,setListingDetails]=useState<any>({
+    title:"",
+    rating:"",
+    price:"",
+    totalReviews:"",
+    mainImageLink:"",
+    images:[],
+    bulletPoints:[]
+  }); 
 
 
   const changeHandlar=(e:any)=>{
@@ -134,37 +143,44 @@ function ListCalc() {
 
   const fetch=async()=>{
     setLoader(true);
+
     const productDetails:any=await dispatch(fetchProductDetails(value,country));
     setpDetails(productDetails);
+
     const priceDetails:any=await dispatch(fetchProductPriceDetails(value,country));
     setprDetails(priceDetails);
-    
-    const programDetails:any=await dispatch(fetchProductProgramDetails(value,country));
-    setprgDetails(programDetails);
 
-    let data={
-      countryCode:productDetails?.data?.countryCode,
-      itemInfo: {
-        asin: productDetails?.data?.searchKey,
-        glProductGroupName: productDetails?.data?.otherProducts?.products[0]?.gl,
-        packageLength:productDetails?.data?.otherProducts?.products[0]?.length,
-        packageWidth: productDetails?.data?.otherProducts?.products[0]?.width,
-        packageHeight:productDetails?.data?.otherProducts?.products[0]?.height,
-        dimensionUnit: productDetails?.data?.otherProducts?.products[0]?.dimensionUnit,
-        packageWeight: productDetails?.data?.otherProducts?.products[0]?.weight,
-        weightUnit: productDetails?.data?.otherProducts?.products[0]?.weightUnit,
-        afnPriceStr: priceDetails?.data?.price?.amount,
-        mfnPriceStr: priceDetails?.data?.price?.amount,
-        mfnShippingPriceStr:priceDetails?.data?.shipping?.amount,
-        currency:country==="US"?"USD":"INR" ,
-        isNewDefined: false,
-      },
-      programIdList:[
-        "MFN",
-        "Core"]
-    }
-    const productFees:any=await dispatch(fetchProductFeesDetails(data,country));
-    setpfeeDetails(productFees);
+    const listingDetails:any=await dispatch(fetchListingDetails(value,country));
+    setListingDetails(listingDetails);
+    
+    // const programDetails:any=await dispatch(fetchProductProgramDetails(value,country));
+    // setprgDetails(programDetails);
+
+    // let data={
+    //   countryCode:productDetails?.data?.countryCode,
+    //   itemInfo: {
+    //     asin: productDetails?.data?.searchKey,
+    //     glProductGroupName: productDetails?.data?.otherProducts?.products[0]?.gl,
+    //     packageLength:productDetails?.data?.otherProducts?.products[0]?.length,
+    //     packageWidth: productDetails?.data?.otherProducts?.products[0]?.width,
+    //     packageHeight:productDetails?.data?.otherProducts?.products[0]?.height,
+    //     dimensionUnit: productDetails?.data?.otherProducts?.products[0]?.dimensionUnit,
+    //     packageWeight: productDetails?.data?.otherProducts?.products[0]?.weight,
+    //     weightUnit: productDetails?.data?.otherProducts?.products[0]?.weightUnit,
+    //     afnPriceStr: priceDetails?.data?.price?.amount,
+    //     mfnPriceStr: priceDetails?.data?.price?.amount,
+    //     mfnShippingPriceStr:priceDetails?.data?.shipping?.amount,
+    //     currency:country==="US"?"USD":"INR" ,
+    //     isNewDefined: false,
+    //   },
+    //   programIdList:[
+    //     "MFN",
+    //     "Core"]
+    // }
+    // const productFees:any=await dispatch(fetchProductFeesDetails(data,country));
+    // setpfeeDetails(productFees);
+
+
     setLoader(false); 
     
   }
@@ -174,9 +190,16 @@ function ListCalc() {
   const minTen = (value:any) => {
     return value.match(/^[^\s]{10}$/);
   };
-
+  // const { title
+  // rating,
+  // price,
+  // totalReviews,
+  // mainImageLink,
+  // images,
+  // bulletPoints}=listingDetails
   ValidatorForm.addValidationRule('isUsernameUnique', isUsernameUnique);
   ValidatorForm.addValidationRule('minTen', minTen);
+  console.log("-----",listingDetails)
   return (
     <ListContainer className="margin-nav" style={{ backgroundColor: "#FFFCFC" }}>
       {loader && (
@@ -415,14 +438,19 @@ function ListCalc() {
           <div className={classes.innerFifthContainer} >
             <div className={classes.innersecondFifthContainer}>
               <h2>Title</h2>
-              <div className={pDetails&&pDetails?.data?.otherProducts?.products[0]?.title?.length>150?`${classes.greenGood}`:`${classes.redGood}`}>Good</div>
+              <div className={listingDetails&&listingDetails?.title?.length>150?`${classes.greenGood}`:`${classes.redGood}`}>
+               {listingDetails&&listingDetails?.title?.length>150?"Good":"Bad"}
+                </div>
             </div>
             <div className={classes.innersecondFifthContainer}  >
-            <p>Title is possibly the most important part of the product listing. Ensure the title is readable, is relevant to your product and is keyword rich. Most of your main keywords go here.</p>
+            <p>Title is possibly the most important part of the product listing. Ensure the title is readable, is relevant to your product and is keyword rich. Most of your main keywords go here.
+              
+            </p>
               {/* <p>{pDetails&&pDetails?.data?.otherProducts?.products[0]?.title?
               pDetails?.data?.otherProducts?.products[0]?.title:
               "-"}</p> */}
-              <img src="../images/Oval.png" alt="" height="72px" width="72px"/>
+              <img src={listingDetails&&listingDetails?.title?.length>150?
+                "../images/Oval.png":"../images/Frame 1000003793.png"} alt="" height="72px" width="72px"/>
             </div>
           </div>
         </div>

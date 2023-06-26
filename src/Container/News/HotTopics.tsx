@@ -1,97 +1,101 @@
-import { Container } from "@mui/material";
-import { fontSize } from "@mui/system";
-import React, { useEffect,useState } from "react";
-import styled from "styled-components";
-import { useDispatch } from 'react-redux';
-import { Dispatch } from 'redux';
-import { fetchNews } from "../../actions/posts";
-import { useSelector } from "react-redux/es/exports";
+import { Container } from '@mui/material'
+import { fontSize } from '@mui/system'
+import React, { useEffect, useState } from 'react'
+import styled from 'styled-components'
+import { useDispatch } from 'react-redux'
+import { Dispatch } from 'redux'
+import { fetchNews } from '../../actions/posts'
+import { useSelector } from 'react-redux/es/exports'
 
 export const HotTopics = () => {
-
-  const [data, setData] = useState<{
-    [key: string]: any[];
-  }>({
-    image: [],
-    title: [],
-    pubDate: [],
-    link:[],
-    description: [],
-  });
   
- const dispatch: Dispatch<any> = useDispatch();
+  const [data, setData] =useState<any>(null)
+
+  const dispatch: Dispatch<any> = useDispatch()
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("animate__animated");
-          entry.target.classList.add("animate__fadeIn");
+          entry.target.classList.add('animate__animated')
+          entry.target.classList.add('animate__fadeIn')
         }
         // else {
         //   console.log("exit into zone");
         //   entry.target.classList.remove("animate__fadeIn");
         // }
-      });
-    });
+      })
+    })
 
-    const hiddenElements = document.querySelectorAll(".hidden");
-    hiddenElements.forEach((el) => observer.observe(el));
-  }, []);
+    const hiddenElements = document.querySelectorAll('.hidden')
+    hiddenElements.forEach(el => observer.observe(el))
+  }, [])
 
-  
-useEffect(()=>{
-  fetch();
-},[]);
+  useEffect(() => {
+    fetch()
+  }, [])
 
-
-const fetch=async ()=>{
-  const dat:any=await dispatch(fetchNews());
-  let random = Math.floor((Math.random() * 10) + 1);
-  setData(dat?.feedItems[random]);
-}
+  const fetch = async () => {
+    const dat: any = await dispatch(fetchNews())
+    let random = Math.floor(Math.random() * 10 + 1)
+    setData(dat?.feedItems[random])
+  }
   return (
     <HotTopicsWrapper>
-      <Container maxWidth="lg" className="container hidden">
-        <img src="./images/Ellipse 63@3x.png" className="img-dot_1"></img>
-        <img src="./images/Ellipse 65@3x.png" className="img-dot_2"></img>
-        <div className="hero-title">Hot Topics</div>
-        <div className="topicContainer">
-          <div className="img-box">
-          <img src={(data?.image[0])?(data?.image[0]):"../images/Rectangle first.png"} alt="img" width="100%" height="500px"></img>
-            <div className="img-text">
-              <div className="title">
-                {data?.title}
-              </div>
-              <div className="subtitle">
-              <p>{data?.pubDate[0]?.split("T")[0]}.</p>
+      <Container maxWidth='lg' className='container hidden'>
+        <img src='./images/Ellipse 63@3x.png' className='img-dot_1'></img>
+        <img src='./images/Ellipse 65@3x.png' className='img-dot_2'></img>
+        <div className='hero-title'>Hot Topics</div>
+        <div className='topicContainer'>
+          <div className='img-box'>
+            <img
+              src={
+                data?.[`media:content`][0]?.$?.url
+                  ? data?.[`media:content`][0]?.$?.url
+                  : '../images/Rectangle first.png'
+              }
+              alt='img'
+              width='100%'
+              height='500px'
+            ></img>
+            <div className='img-text'>
+              <div className='title'>{data?.title?.[0]}</div>
+              <div className='subtitle'>
+                <p>{data?.pubDate[0]?.split('T')[0]}.</p>
                 {/* <p>{data?.author}</p> */}
               </div>
             </div>
           </div>
-          <div className="text-box">
-            <div className="title">
+          <div className='text-box'>
+            <div className='title'>
               {/* {<span style={{fontFamily:"Poppins-semiBold",fontSize:"32px"}}>{newsString.split(" ")[0]}</span>}
               {<span className="text-span" style={{}}>{restOfString}</span>} */}
               <span
-                style={{ fontFamily: "Poppins-semiBold", fontSize: "32px" }}
+                style={{ fontFamily: 'Poppins-semiBold', fontSize: '32px' }}
               >
-               {data?.description[0]?.split(" ")[0]}
+                {data?.description[0]?.split(' ')[0]}
               </span>
 
-              <span style={{fontFamily:"Montserrat",paddingLeft:"8px",fontSize:"14px",}}>
-              {data?.description[0]?.split(" ").slice(1).join(" ")}
+              <span
+                style={{
+                  fontFamily: 'Montserrat',
+                  paddingLeft: '8px',
+                  fontSize: '14px'
+                }}
+              >
+                {data?.description[0]?.split(' ').slice(1).join(' ')}
               </span>
               {/* <br></br>
               <span className="read-more" style={{fontFamily:"Montserrat-SemiBold", marginTop:"40px", fontSize:"14px"}}>read more</span> */}
             </div>
-            <div className="subtitle"></div>
+            <div className='subtitle'></div>
           </div>
         </div>
       </Container>
     </HotTopicsWrapper>
-  );
-};
+   
+  )
+}
 const HotTopicsWrapper = styled.div`
   .container {
     margin: auto;
@@ -164,11 +168,10 @@ const HotTopicsWrapper = styled.div`
             @media (max-width: 600px) {
               margin-bottom: 10%;
               font-size: 12px;
-             
             }
             @media (max-width: 375px) {
               font-size: 10px;
-              margin-top: 20%;   
+              margin-top: 20%;
             }
           }
           .subtitle {
@@ -184,17 +187,16 @@ const HotTopicsWrapper = styled.div`
               padding-left: 25px;
             }
             @media (max-width: 600px) {
-              margin-top: -10%;   
+              margin-top: -10%;
             }
             @media (max-width: 300px) {
               font-size: 8px;
-              margin-top: -70%;   
+              margin-top: -70%;
             }
           }
         }
       }
       .text-box {
-       
         max-width: 40%;
         padding-left: 40px;
 
@@ -217,7 +219,7 @@ const HotTopicsWrapper = styled.div`
             padding-right: 40px;
           }
         }
-      }
+      } 
     }
   }
-`;
+`

@@ -17,7 +17,7 @@ export default makeStyles((theme) => ({
         position:"absolute",
         left:"2%",
         cursor:"pointer",
-        top:"-4%",
+        top:"-1%",
     },
     text:{ 
     marginTop:"70px",

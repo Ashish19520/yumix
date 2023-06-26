@@ -70,9 +70,9 @@ export const LatestNews = () => {
     <LatestNewsWrapper>
       <Container maxWidth="lg" className="container ">
         <div className="heading">Latest News</div>
-        <div className="cards ">
+        <div className="cards">
           
-          {currentItems?.length>0&&currentItems?.map((d:any) => (
+          {currentItems?.length>0&&currentItems?.map((d:any,index:number) => (
             <Grid
               item
               xs={12}
@@ -80,6 +80,7 @@ export const LatestNews = () => {
               md={4}
               style={{ padding: "20px 10px" }}
               className="eachCard latestnews_hidden"
+              key={index}
             >
               <NewsCard data={d} page={pageNO}/>
              

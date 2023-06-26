@@ -10,7 +10,8 @@ import {FETCH_POST,
      PRODUCT_DETAILS,
      PRODUCT_PRICE,
      PRODUCT_PROGRAM,
-     PRODUCT_FEES
+     PRODUCT_FEES,
+     LISTING_DETAILS
     } from "../constants/actionTypes";
 
 
@@ -113,6 +114,16 @@ export const fetchProductFeesDetails=(body:any,country:any)=>async (dispatch:Dis
     try {
        let {data}=await api.fetchProductFeesDetails(body,country);
     dispatch({type:PRODUCT_FEES,payload:data});
+    return data;
+    } catch (error) {
+        console.error(error);
+    }
+}
+// ############################-------Listing-ACTIONS---------------###########
+export const fetchListingDetails=(asin:any,country:any)=>async (dispatch:Dispatch<AnyAction>)=>{
+    try {
+       let {data}=await api.fetchListingDetails(asin,country);
+    dispatch({type:LISTING_DETAILS,payload:data});
     return data;
     } catch (error) {
         console.error(error);
