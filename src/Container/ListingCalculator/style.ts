@@ -4,7 +4,7 @@ export default makeStyles((theme:any) => ({
     wrapper: {
         display: 'flex',
         flexDirection: 'row',
-        gap:"25%",
+        gap:"20%",
         justifyContent: "flex-start",
         background: "#FFFCFC",
         [theme.breakpoints.down('sm')]: {
@@ -398,7 +398,7 @@ export default makeStyles((theme:any) => ({
         borderRadius: "8px",
         padding: "5px 0",
         gap: "10px",
-        background: "#D9ECCC",
+        background: "#00CC00",
         textAlign: "center",
         text: "center",
       },

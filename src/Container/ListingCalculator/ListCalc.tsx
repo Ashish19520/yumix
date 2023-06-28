@@ -812,9 +812,7 @@ useEffect(() => {
               >
                 {listingDetails &&
                 totalReviews &&
-                parseInt(
-                  totalReviews.replace(',', '').replace(' ratings', '')
-                ) >= 20
+                parseInt(totalReviews.match(/(\d+)\s+ratings/)[1]) >= 20
                   ? 'Good'
                   : 'Poor'}
               </div>
@@ -822,8 +820,8 @@ useEffect(() => {
             <div className={classes.innersecondFifthContainer}>
               {listingDetails &&
               totalReviews &&
-              parseInt(totalReviews.replace(',', '').replace(' ratings', '')) >=
-                20 ? (
+              parseInt(totalReviews.match(/(\d+)\s+ratings/)[1]) >= 20 
+                 ? (
                 <p>This is a good listing as there are 20+ reviews.</p>
               ) : (
                 <p>This is a poor listing as there are less than 20 reviews.</p>
