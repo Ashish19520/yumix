@@ -48,11 +48,17 @@ export const NewsCard = (props: any) => {
   return (
     <NewsCardWrapper>
       <Container maxWidth="lg" className="container">
-        <div className="img-box">
-          <img src={props?.data?.[`media:content`][0]?.$?.url?props?.data?.[`media:content`][0]?.$?.url:"../images/Rectangle first.png"} 
-          alt="someimg"
-          height="180px" width="180" ></img>
-        </div>
+      <div className="img-box">
+  <img
+    src={
+      (props?.data?.["media:content"]?.[0]?.["$"]?.url) ||
+      "../images/Rectangle first.png"
+    }
+    alt="someimg"
+    height="180px"
+    width="180px"
+  />
+</div>
 
 
         <div className="title">
