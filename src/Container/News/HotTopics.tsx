@@ -50,9 +50,8 @@ export const HotTopics = () => {
           <div className='img-box'>
             <img
               src={
-                data?.[`media:content`][0]?.$?.url
-                  ? data?.[`media:content`][0]?.$?.url
-                  : '../images/Rectangle first.png'
+                (data?.["media:content"]?.[0]?.["$"]?.url) ||
+                "../images/Rectangle first.png"
               }
               alt='img'
               width='100%'

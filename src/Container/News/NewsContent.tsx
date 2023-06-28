@@ -45,11 +45,10 @@ function NewsContent () {
           />
           <div style={{ position: 'relative', zIndex: 2 }}>
             <img
-              src={
-                data?.[`media:content`][0]?.$?.url
-                ? data?.[`media:content`][0]?.$?.url
-                : '../images/Rectangle first.png'
-              }
+             src={
+              (data?.["media:content"]?.[0]?.["$"]?.url) ||
+              "../images/Rectangle first.png"
+            }
               alt='img'
               width='100%'
               height='500px'
