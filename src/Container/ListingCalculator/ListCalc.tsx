@@ -1,35 +1,43 @@
-import React,{useEffect,useState} from 'react'
-import { Container,Switch,Select ,Typography} from "@mui/material";
-import styled from "styled-components";
-import { motion } from "framer-motion";
-import { SelectChangeEvent } from '@mui/material/Select';
-import useStyles from './style';
-import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { Dispatch } from 'redux';
-import { fetchProductDetails,fetchProductPriceDetails,fetchProductProgramDetails,fetchProductFeesDetails,fetchListingDetails } from "../../actions/posts";
-import {ValidatorForm, TextValidator} from 'react-material-ui-form-validator'
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
+import React, { useEffect, useState } from 'react'
+import { Container, Switch, Select, Typography } from '@mui/material'
+import styled from 'styled-components'
+import { motion } from 'framer-motion'
+import { SelectChangeEvent } from '@mui/material/Select'
+import useStyles from './style'
+import { useDispatch } from 'react-redux'
+
+import { useNavigate } from 'react-router-dom'
+import { Dispatch } from 'redux'
+
+import {
+  fetchProductDetails,
+  fetchProductPriceDetails,
+  fetchProductProgramDetails,
+  fetchProductFeesDetails,
+  fetchListingDetails
+} from '../../actions/posts'
+import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator'
+import Accordion from '@mui/material/Accordion'
+import AccordionSummary from '@mui/material/AccordionSummary'
+import AccordionDetails from '@mui/material/AccordionDetails'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import { Reviews } from '@mui/icons-material'
 
-
-function ListCalc() {
-  const classes = useStyles();
+function ListCalc () {
+  const classes = useStyles()
   // const [age, setAge] = React.useState('');
   // const [selectedIndex, setSelectedIndex] = useState<number>(0)
   // const [image, setImage] = useState<string>('/images/work1.png')
   // const [toggleFunction,setToggleFunction] = useState<boolean>(true)
-  const navigate=useNavigate();
+  const navigate = useNavigate()
 
   // const handleChange = (event: SelectChangeEvent) => {
   //   setAge(event.target.value);
-    
+
   // }
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    window.scrollTo(0, 0)
+  }, [])
   // const points = [
   //   {
   //     para : "Keywords impact listing visibility.",
@@ -74,14 +82,12 @@ function ListCalc() {
   //       setSelectedIndex(1)
   //       setImage("/images/work2.png")
   //     },2000)
-  
-  
+
   //     setTimeout(()=>{
   //       setSelectedIndex(2)
   //       setImage("/images/work3.png")
   //     },4000)
-  
-  
+
   //     setTimeout(()=>{
   //       setSelectedIndex(3)
   //       setImage("/images/work4.png")
@@ -112,47 +118,70 @@ function ListCalc() {
   //   hiddenElements.forEach((el) => observer.observe(el));
   // }, []);
 
-  const dispatch: Dispatch<any> = useDispatch();
-  const [value,setValue]=useState();
-  const [country,setCountry]=useState("US");
-  const [loader, setLoader] = useState(false);
-  const[pDetails,setpDetails]=useState<any>(null); 
-  const[prDetails,setprDetails]=useState<any>(null); 
-  const[prgDetails,setprgDetails]=useState<any>(null); 
-  const[pfeeDetails,setpfeeDetails]=useState<any>(null); 
-  const[listingDetails,setListingDetails]=useState<any>({
-    title:"",
-    rating:"",
-    price:"",
-    totalReviews:"",
-    mainImageLink:"",
-    images:[],
-    bulletPoints:[]
-  }); 
+  const dispatch: Dispatch<any> = useDispatch()
+  const [value, setValue] = useState()
+  const [country, setCountry] = useState('US')
+  const [loader, setLoader] = useState(false)
+  const [pDetails, setpDetails] = useState<any>(null)
+  const [prDetails, setprDetails] = useState<any>(null)
+  const [prgDetails, setprgDetails] = useState<any>(null)
+  const [pfeeDetails, setpfeeDetails] = useState<any>(null)
+  const [desc, setDesc] = useState<any>({
+    result: false,
+    value: 'Product description is going to list here.'
+  })
+  const [titleTest, setTitleTest] = useState<any>({
+    result: false,
+    value: 'Title result is going to list here.'
+  })
+  const [imgTest, setImgTest] = useState<any>({
+    result: false,
+    value: 'Image result is going to list here.'
+  })
+  
+  const [listingDetails, setListingDetails] = useState<any>({
+    title: '',
+    rating: '',
+    price: '',
+    totalReviews: '',
+    mainImageLink: '',
+    images: [],
+    bulletPoints: [],
+    pixels:{},
+    whiteImage:[]
+  })
 
-
-  const changeHandlar=(e:any)=>{
+  const changeHandlar = (e: any) => {
     setValue(e.target.value)
   }
-  const countryHandlar=(e:any)=>{
-   e.target.checked?setCountry("IN"):setCountry("US")
+  const countryHandlar = (e: any) => {
+    e.target.checked ? setCountry('IN') : setCountry('US')
   }
   useEffect(() => {
-    window.scrollTo(0, 700);
-  }, [loader]);
+    window.scrollTo(0, 700)
+  }, [loader])
 
-  const fetch=async()=>{
-    setLoader(true);
+  const fetch = async () => {
+    setLoader(true)
 
-    const productDetails:any=await dispatch(fetchProductDetails(value,country));
-    setpDetails(productDetails);
+    const productDetails: any = await dispatch(
+      fetchProductDetails(value, country)
+    )
+    setpDetails(productDetails)
 
-    const priceDetails:any=await dispatch(fetchProductPriceDetails(value,country));
-    setprDetails(priceDetails);
+    const priceDetails: any = await dispatch(
+      fetchProductPriceDetails(value, country)
+    )
+    setprDetails(priceDetails)
 
-    const listingDetails:any=await dispatch(fetchListingDetails(value,country));
-    setListingDetails(listingDetails);
-    
+    const listingDetails: any = await dispatch(
+      fetchListingDetails(value, country)
+    )
+    if(listingDetails){
+       setListingDetails(listingDetails)
+    }
+   
+
     // const programDetails:any=await dispatch(fetchProductProgramDetails(value,country));
     // setprgDetails(programDetails);
 
@@ -180,56 +209,261 @@ function ListCalc() {
     // const productFees:any=await dispatch(fetchProductFeesDetails(data,country));
     // setpfeeDetails(productFees);
 
-
-    setLoader(false); 
-    
+    setLoader(false)
   }
-  const isUsernameUnique = (value:any) => {
-    return value.trim() !== '';
-  };
-  const minTen = (value:any) => {
-    return value.match(/^[^\s]{10}$/);
-  };
-  // const { title
-  // rating,
-  // price,
-  // totalReviews,
-  // mainImageLink,
-  // images,
-  // bulletPoints}=listingDetails
-  ValidatorForm.addValidationRule('isUsernameUnique', isUsernameUnique);
-  ValidatorForm.addValidationRule('minTen', minTen);
-  console.log("-----",listingDetails)
+  const isUsernameUnique = (value: any) => {
+    return value.trim() !== ''
+  }
+  const minTen = (value: any) => {
+    return value.match(/^[^\s]{10}$/)
+  }
+  const {
+    title,
+    rating,
+    price,
+    totalReviews,
+    mainImageLink,
+    images,
+    bulletPoints,
+    pixels,
+    whiteImage
+  } = listingDetails
+
+  ValidatorForm.addValidationRule('isUsernameUnique', isUsernameUnique)
+  ValidatorForm.addValidationRule('minTen', minTen)
+
+// ################################ validate bullet Points #################################
+
+  function checkArrayElements (arr: string[]): {
+    result: boolean
+    value: string
+  } {
+    if (arr.length < 5) {
+      return {
+        result: false,
+        value:
+          'This is a poor listing as there are less than 5+ bullet points in the description.'
+      }
+    }
+
+    const minLength = 150
+
+    for (let i = 0; i < arr.length; i++) {
+      const element = arr[i]
+
+      if (element.length < minLength) {
+        return {
+          result: false,
+          value: `This is a poor listing as there is a bullet point with less than ${minLength} characters.`
+        }
+      }
+      const firstWord = element.split(' ')[0]
+      if (firstWord && firstWord[0] !== firstWord[0].toUpperCase()) {
+        return {
+          result: false,
+          value:
+            'This is a poor listing as the first letter of a bullet point is not capitalized.'
+        }
+      }
+      if (arr.reduce((total, element) => total + element.length, 0) < 1000) {
+        return {
+          result: false,
+          value:
+            'This is a poor listing as there are less than 1000+ characters in description or A+ content.'
+        }
+      }
+      const emojiRegex = /[\u{1F300}-\u{1F6FF}\u{2600}-\u{26FF}]/u
+      if (emojiRegex.test(element)) {
+        return {
+          result: false,
+          value:
+            'This is a poor listing as the bullet points contain emojis or icons.'
+        }
+      }
+      const words = element.split(' ');
+      const allWordsAreUpperCase = words.every(word => word === word.toUpperCase());
+     if (allWordsAreUpperCase) {
+      return {
+        result: false,
+        value: 'This is a poor listing as a bullet point contains all words in uppercase.'
+      };
+    }
+    }
+    return {
+      result: true,
+      value: `This is a good listing as description satisfies all conditions.`
+    }
+  }
+  const resultFunc = async () => {
+    const result = await checkArrayElements(bulletPoints)
+    setDesc(result)
+  }
+  useEffect(() => {
+    bulletPoints.length > 2 && resultFunc()
+  }, [bulletPoints])
+
+// ########################################validate TItle################################
+function validateString(string:string):{
+  result: boolean
+  value: string
+}  {
+  if (string.length <150) {
+    return {
+      result:false,
+      value:"This is a poor listing as there is less than 150 characters."
+    };
+  }
+  
+  const words = string.split(' ');
+  const firstWord = words[0];
+  
+  if (firstWord !== capitalize(firstWord)) {
+    return  {
+      result:false,
+      value:"This is a poor listing as first letter of title is not capitalized."
+    }
+   }
+    
+  if (containsEmoji(string)) {
+    return {
+      result:false,
+      value:"This is a poor listing as it contain emoji or some icons."
+    }
+   }
+    
+  if (containsRestrictedCharacters(string)) {
+    return {
+      result:false,
+      value:"This is a poor listing as it contain decorative characters (~!*$?_~{}#<>|*;^¬¦)."
+    }
+  }
+  
+  return {
+    result:true,
+    value:"This is a good listing as title satisfies all conditions."
+  } }
+
+
+function capitalize(word:string) {
+  return word.charAt(0).toUpperCase() + word.slice(1);
+}
+
+function containsEmoji(string:string) {
+  const regex = /[\uD800-\uDBFF][\uDC00-\uDFFF]/;
+  return regex.test(string);
+}
+function containsRestrictedCharacters(string:string) {
+  const restrictedChars = new Set("~!*$?_~{}#<>|*;^¬¦");
+  for (let i = 0; i < string.length; i++) {
+    if (restrictedChars.has(string[i])) {
+      return true;
+    }
+  }
+  return false;
+}
+const resultTitle = async () => {
+  const result = await validateString(title)
+  setTitleTest(result)
+}
+useEffect(() => {
+  title.length > 1 && resultTitle()
+}, [title])
+// ############################ validate Image ##########################
+
+     function validateImages(imageArray: string[], height:number,width:number,whiteImage:any):{
+      result: boolean
+      value: string
+    }{
+ 
+         if (imageArray.length === 0) {
+          return {
+            result: false,
+            value:"This is a poor listing as image count are less than seven."
+          };
+          }
+
+        if (imageArray.length < 7) {
+          return {
+            result: false,
+            value:"This is a poor listing as image count are less than seven."
+          };
+            }
+
+           if(height<1000&&width<1000) {
+            return {
+              result: false,
+              value:"This is a poor listing as main image is not in 1000 X 1000 px."
+            };
+           }
+           if(!checkForNonZeroValue(whiteImage)) {
+            return {
+              result: false,
+              value:"This is a poor listing as main image  not have a white background."
+            };
+           }
+
+
+  
+        const hasPlayIconOverlay = imageArray.some(image => image.includes("overlay"));
+        if (!hasPlayIconOverlay) {
+          return {
+            result: false,
+            value:"This is a poor listing as listing product not contain a video description."
+          }; }
+          
+        return  {
+          result: true,
+          value:"This is a good listing as image satisfies all conditions."
+        };}
+
+        function checkForNonZeroValue(objectsArray:any) {
+          return objectsArray.some((obj:any) => obj.x > 0 || obj.y > 0);
+        }
+
+        const imgResultFunc = async () => {
+          const result = await validateImages(images,pixels?.height,pixels.width,whiteImage)
+          setImgTest(result)
+        }
+        useEffect(() => {
+          images.length >1  && imgResultFunc()
+        }, [images])
   return (
-    <ListContainer className="margin-nav" style={{ backgroundColor: "#FFFCFC" }}>
+    <ListContainer
+      className='margin-nav'
+      style={{ backgroundColor: '#FFFCFC' }}
+    >
       {loader && (
-                <div className="mainPreloaderMain">
-                    <div className="mainPreloader">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                </div>
-            )}
-      <Container maxWidth="lg" className="container" >
-        <div className="hero_wrapper"  >
-          <div className={`info-box_FBA ${classes.index}`}  >
-            <div className="fba-Title">Optimise Listing Visibilty</div>
-            <div className="fba-subTitle">
-              Increase your Amazon sales and conversions with a perfectly optimised listing alongside on page factors.
-             
+        <div className='mainPreloaderMain'>
+          <div className='mainPreloader'>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      )}
+      <Container maxWidth='lg' className='container'>
+        <div className='hero_wrapper'>
+          <div className={`info-box_FBA ${classes.index}`}>
+            <div className='fba-Title'>Optimise Listing Visibilty</div>
+            <div className='fba-subTitle'>
+              Increase your Amazon sales and conversions with a perfectly
+              optimised listing alongside on page factors.
             </div>
-           <div >
-             US product<Switch 
-             onChange={countryHandlar}
-             className={` ${classes.index}`} />Indian Product</div>
-            
-              {/* <input
+            <div>
+              US product
+              <Switch
+                onChange={countryHandlar}
+                className={` ${classes.index}`}
+              />
+              Indian Product
+            </div>
+
+            {/* <input
                 type="text"
                 placeholder="Enter Amazon Product's ASIN Number"
                 value={value}
@@ -241,71 +475,72 @@ function ListCalc() {
                onClick={fetch} 
               className= {`btn_FBACalculate ${classes.index}`}>
                 Optimising Visibilty</button> */}
-          <ValidatorForm className="input-field" onSubmit={fetch}>
-               <TextValidator
-                   placeholder="Enter Amazon Product's ASIN Number"
-                    name="message"
-                    type="text"
-                    value={value}
-                    style={{borderRadius:"5px",width:"305px"}}
-                    className="input"
-                    onChange={changeHandlar}
-                    validators={['required','isUsernameUnique','minTen']}
-                    errorMessages={['This field is required','Blank spaces are not allowed','A valid ASIN no contain 10 digits and no white spaces']}
-                />
-                
-              <button 
-              // disabled={!value||value?.length<10||value.length>10}
-              className="btn_FBACalculate pointer"
-              >Calculate</button>
-              </ValidatorForm>
-            
-           </div>
-           <div className={`${classes.heroImg} box`} >
-           <motion.img
-              src="../images/Rock2@3x.png"
+            <ValidatorForm className='input-field' onSubmit={fetch}>
+              <TextValidator
+                placeholder="Enter Amazon Product's ASIN Number"
+                name='message'
+                type='text'
+                value={value}
+                style={{ borderRadius: '5px', width: '305px' }}
+                className='input'
+                onChange={changeHandlar}
+                validators={['required', 'isUsernameUnique', 'minTen']}
+                errorMessages={[
+                  'This field is required',
+                  'Blank spaces are not allowed',
+                  'A valid ASIN no contain 10 digits and no white spaces'
+                ]}
+              />
+
+              <button
+                // disabled={!value||value?.length<10||value.length>10}
+                className='btn_FBACalculate pointer'
+              >
+                Calculate
+              </button>
+            </ValidatorForm>
+          </div>
+          <div className={`${classes.heroImg} box`}>
+            <motion.img
+              src='../images/Rock2@3x.png'
               className={classes.imageLines6}
-              initial="hidden"
-              animate="show"
-              width="70%"
-              height="70%"
+              initial='hidden'
+              animate='show'
+              width='70%'
+              height='70%'
             ></motion.img>
-        <motion.img
-              src="../images/Ellipse.png"
+            <motion.img
+              src='../images/Ellipse.png'
               className={classes.imageLines5}
-              initial="hidden"
-              animate="show"
-              width="70%"
-              height="70%"
+              initial='hidden'
+              animate='show'
+              width='70%'
+              height='70%'
             ></motion.img>
             <img
-            className={`${classes.heroImg} hoverimg`}
-            src="../images/Saly-10.png"
-             alt="img"
-              height="517px" 
-              width="517px">
-              </img>
-
-
+              className={`${classes.heroImg} hoverimg`}
+              src='../images/Saly-10.png'
+              alt='img'
+              height='517px'
+              width='517px'
+            ></img>
           </div>
-          
         </div>
-        
-        
+
         <motion.img
-              src="../images/Group 38594.png"
-              className={classes.imageLines1}
-              initial="hidden"
-              animate="show"
-              width="100%"
-            ></motion.img>  
-             <motion.img
-              src="../images/Ellipse 63@3x.png"
-              className={classes.imageLines2}
-              initial="hidden"
-              animate="show"
-            ></motion.img>
-             {/* <motion.img
+          src='../images/Group 38594.png'
+          className={classes.imageLines1}
+          initial='hidden'
+          animate='show'
+          width='100%'
+        ></motion.img>
+        <motion.img
+          src='../images/Ellipse 63@3x.png'
+          className={classes.imageLines2}
+          initial='hidden'
+          animate='show'
+        ></motion.img>
+        {/* <motion.img
               src="../images/Ellipse 63@3x.png"
               className={classes.imageLines2}
               initial="hidden"
@@ -314,16 +549,19 @@ function ListCalc() {
               height="70%"
             ></motion.img> */}
       </Container>
-      <Container maxWidth='lg' className="container">
+      <Container maxWidth='lg' className='container'>
         <div className={classes.wrapper}>
           <div className={`${classes.relative} ${classes.index}`}>
-          <img src=
-            {pDetails&&pDetails?.data?.otherProducts?.products[0]?.imageUrl?
-              pDetails?.data?.otherProducts?.products[0]?.imageUrl:
-              "../images/61+lhpMw+2L 1.png"}
-              alt="img"
-             height="100px" 
-             width="100px"></img>
+            <img
+              src={
+                pDetails && pDetails?.data?.otherProducts?.products[0]?.imageUrl
+                  ? pDetails?.data?.otherProducts?.products[0]?.imageUrl
+                  : '../images/61+lhpMw+2L 1.png'
+              }
+              alt='img'
+              height='100px'
+              width='100px'
+            ></img>
             {/* <motion.img
               src="../images/Ellipse.png"
               className={classes.imageLines7}
@@ -332,50 +570,65 @@ function ListCalc() {
             ></motion.img> */}
           </div>
 
-
           <div className={classes.innerWrapper}>
             <div className={classes.innerimg}>
-            <h2> {pDetails&&pDetails?.data?.otherProducts?.products[0]?.title?
-              pDetails?.data?.otherProducts?.products[0]?.title:
-              "Your product is going to list here"}</h2>
+              <h2>
+                {' '}
+                {pDetails && pDetails?.data?.otherProducts?.products[0]?.title
+                  ? pDetails?.data?.otherProducts?.products[0]?.title
+                  : 'Your product is going to list here'}
+              </h2>
               <motion.img
-              src="../images/Ellipse 64.png"
-              className={classes.imageLines13}
-              initial="hidden"
-              animate="show"
-            ></motion.img>
+                src='../images/Ellipse 64.png'
+                className={classes.imageLines13}
+                initial='hidden'
+                animate='show'
+              ></motion.img>
             </div>
             <div className={classes.items}>
               <div className={classes.box}>
                 <h3>Customer Reviews Count</h3>
-                <p> {pDetails&&pDetails?.data?.otherProducts?.products[0]?.customerReviewsCount?
-              pDetails?.data?.otherProducts?.products[0]?.customerReviewsCount:
-              "-"}</p>
+                <p>
+                  {' '}
+                  {pDetails &&
+                  pDetails?.data?.otherProducts?.products[0]
+                    ?.customerReviewsCount
+                    ? pDetails?.data?.otherProducts?.products[0]
+                        ?.customerReviewsCount
+                    : '-'}
+                </p>
               </div>
               <div className={classes.box}>
-              <h3>Product Id</h3>
-                <p>{pDetails&&pDetails?.data?.otherProducts?.products[0]?.asin?
-              pDetails?.data?.otherProducts?.products[0]?.asin:
-              "-"}</p>
+                <h3>Product Id</h3>
+                <p>
+                  {pDetails && pDetails?.data?.otherProducts?.products[0]?.asin
+                    ? pDetails?.data?.otherProducts?.products[0]?.asin
+                    : '-'}
+                </p>
               </div>
               <div className={classes.box}>
-              <h3>Price</h3>
-                <p>{country==="US"?"$":"₹"}{prDetails&&prDetails?.data?.price?.amount?
-              prDetails?.data?.price?.amount:
-              "0"}</p>
+                <h3>Price</h3>
+                <p>
+                  {country === 'US' ? '$' : '₹'}
+                  {prDetails && prDetails?.data?.price?.amount
+                    ? prDetails?.data?.price?.amount
+                    : '0'}
+                </p>
               </div>
               <div className={classes.box}>
-              <h3>Ratings</h3>
-                <p>{pDetails&&pDetails?.data?.otherProducts?.products[0]?.customerReviewsRating
-?
-              pDetails?.data?.otherProducts?.products[0]?.customerReviewsRating
-              :
-              "-"}</p>
+                <h3>Ratings</h3>
+                <p>
+                  {pDetails &&
+                  pDetails?.data?.otherProducts?.products[0]
+                    ?.customerReviewsRating
+                    ? pDetails?.data?.otherProducts?.products[0]
+                        ?.customerReviewsRating
+                    : '-'}
+                </p>
               </div>
             </div>
           </div>
         </div>
-        
       </Container>
       {/* <Container maxWidth='lg' className="container">
         <div className={`${classes.twoContainer} `}>
@@ -409,12 +662,10 @@ function ListCalc() {
             ></motion.img>
       </Container>
         */}
-      <Container 
-      style={{marginTop:"150px"}}
-      className={classes.relative}>
+      <Container style={{ marginTop: '150px' }} className={classes.relative}>
         <div className={classes.fourthContainer}>
-        <div style={{zIndex:"5"}}>
-            <h1 >Analysis</h1>  
+          <div style={{ zIndex: '5' }}>
+            <h1>Analysis</h1>
           </div>
           <div className={classes.innerOneFourth}>
             {/* <p>4 possible error(s) analyzed.</p> */}
@@ -424,98 +675,160 @@ function ListCalc() {
             </div> */}
           </div>
         </div>
-         <motion.img
-              src="../images/Frame 54 (1).png"
-              className={classes.imageLines3}
-              initial="hidden"
-              animate="show"
-              width="70%"
-              height="70%"
-            ></motion.img>
+        <motion.img
+          src='../images/Frame 54 (1).png'
+          className={classes.imageLines3}
+          initial='hidden'
+          animate='show'
+          width='70%'
+          height='70%'
+        ></motion.img>
       </Container>
       <Container>
         <div className={classes.fifthContainer}>
-          <div className={classes.innerFifthContainer} >
+          <div className={classes.innerFifthContainer}>
             <div className={classes.innersecondFifthContainer}>
-              <h2>Title</h2>
-              <div className={listingDetails&&listingDetails?.title?.length>150?`${classes.greenGood}`:`${classes.redGood}`}>
-               {listingDetails&&listingDetails?.title?.length>150?"Good":"Bad"}
-                </div>
+              <h2 className={classes.wid}>Title</h2>
+              <div
+                className={
+                  listingDetails && title&&titleTest.result
+                    ? `${classes.greenGood}`
+                    : `${classes.redGood}`
+                }
+              >
+                {listingDetails && title&&titleTest.result ? 'Good': 'Poor'}
+              </div>
             </div>
-            <div className={classes.innersecondFifthContainer}  >
-            <p>Title is possibly the most important part of the product listing. Ensure the title is readable, is relevant to your product and is keyword rich. Most of your main keywords go here.
-              
-            </p>
+            <div className={classes.innersecondFifthContainer}>
+              <p>
+              {titleTest.value}
+              </p>
               {/* <p>{pDetails&&pDetails?.data?.otherProducts?.products[0]?.title?
               pDetails?.data?.otherProducts?.products[0]?.title:
               "-"}</p> */}
-              <img src={listingDetails&&listingDetails?.title?.length>150?
-                "../images/Oval.png":"../images/Frame 1000003793.png"} alt="" height="72px" width="72px"/>
+              {/* <img src={listingDetails&&listingDetails?.title?.length>150?
+                "../images/Oval.png":"../images/Frame 1000003793.png"} alt="" height="72px" width="72px"/> */}
             </div>
           </div>
         </div>
 
         <div className={classes.fifthContainer}>
-          <div className={classes.innerFifthContainer} >
+          <div className={classes.innerFifthContainer}>
             <div className={classes.innersecondFifthContainer}>
               {/* <h4>Description</h4> */}
-              <h2>Sales Rank</h2>
-              <div className={classes.greenGood}>Good</div>
+              <h2 className={classes.wid}>Description</h2>
+              <div
+                className={
+                  listingDetails && bulletPoints && desc.result
+                    ? classes.greenGood
+                    : classes.redGood
+                }
+              >
+                {listingDetails && bulletPoints && desc.result
+                  ? 'Good'
+                  : 'Poor'}
+              </div>
             </div>
-            <div className={classes.innersecondFifthContainer}  >
-            <p>Title is possibly the most important part of the product listing. Ensure the title is readable, is relevant to your product and is keyword rich. Most of your main keywords go here.</p>
-            <p>{pDetails&&pDetails?.data?.otherProducts?.products[0]?.salesRank?
-              pDetails?.data?.otherProducts?.products[0]?.salesRank:
-              "-"}</p>
-              <img src="../images/Oval.png" alt="" height="72px" width="72px"/>
+            <div className={classes.innersecondFifthContainer}>
+              <p>{desc?.value}</p>
+
+              {/* <img src={listingDetails&&bulletPoints&&desc?"../images/Oval.png":"../images/Frame 1000003793.png"}
+               alt="" height="72px" width="72px"/> */}
             </div>
           </div>
         </div>
 
         <div className={classes.fifthContainer}>
-          <div className={classes.innerFifthContainer} >
+          <div className={classes.innerFifthContainer}>
             <div className={classes.innersecondFifthContainer}>
-              <h2>Image </h2>
-              <div className={classes.greenGood}>Good</div>
+              <h2 className={classes.wid}>Image </h2>
+              <div className={listingDetails && images && imgTest.result
+                    ? classes.greenGood
+                    : classes.redGood
+                }>
+               
+               {listingDetails && images && imgTest.result?"Good":"Poor"}
+                </div>
             </div>
-            <div className={classes.innersecondFifthContainer}  >
-            <p>Title is possibly the most important part of the product listing. Ensure the title is readable, is relevant to your product and is keyword rich. Most of your main keywords go here.</p>
-              {/* <img src={pDetails&&pDetails?.data?.otherProducts?.products[0]?.imageUrl?
-              pDetails?.data?.otherProducts?.products[0]?.imageUrl:
-              "../images/61+lhpMw+2L 1.png"} alt="" height="72px" width="72px"/> */}
-               <img src="../images/Oval.png" alt="" height="72px" width="72px"/>
+            <div className={classes.innersecondFifthContainer}>
+              <p>
+              {imgTest?.value}
+              </p>
             </div>
           </div>
         </div>
 
-        <div className={classes.fifthContainer} style={{marginTop:"50px"}}>
-          <div className={classes.innerFifthContainer} >
+        <div className={classes.fifthContainer} >
+          <div className={classes.innerFifthContainer}>
             <div className={classes.innersecondFifthContainer}>
-              <h2>Ratings</h2>
-              <div className={classes.greenGood}>Good</div>
+              <h2 className={classes.wid}>Ratings</h2>
+              <div
+                className={
+                  listingDetails &&
+                  rating &&
+                  parseInt(rating.replace(',', '').replace(' ratings', '')) >= 4
+                    ? `${classes.greenGood}`
+                    : classes.redGood
+                }
+              >
+                {listingDetails &&
+                rating &&
+                parseInt(rating.replace(',', '').replace(' ratings', '')) >= 4
+                  ? `Good`
+                  : 'Poor'}
+              </div>
             </div>
-            <div className={classes.innersecondFifthContainer}  >
-              <p>Title is possibly the most important part of the product listing. Ensure the title is readable, is relevant to your product and is keyword rich. Most of your main keywords go here.</p>
-              <p>{pDetails&&pDetails?.data?.otherProducts?.products[0]?.customerReviewsRating?
-              pDetails?.data?.otherProducts?.products[0]?.customerReviewsRating:
-              "-"}</p>
-              <img src="../images/Frame 1000003793.png" alt="" height="72px" width="72px"/>
+            <div className={classes.innersecondFifthContainer}>
+              {listingDetails &&
+              rating &&
+              parseInt(rating.replace(',', '').replace(' ratings', '')) >= 4 ? (
+                <p>
+                  This is a good listing as the listing has 4+ average star
+                  rating.
+                </p>
+              ) : (
+                <p>
+                  This is a poor listing as the listing doesnot have 4+ average
+                  star rating.
+                </p>
+              )}
+              {/* <img src= {listingDetails&&rating&&parseInt(rating.replace(",", "").replace(" ratings", ""))>=4?"../images/Oval.png":"../images/Frame 1000003793.png"} alt="" height="72px" width="72px"/> */}
             </div>
           </div>
         </div>
 
         <div className={classes.fifthContainer}>
-          <div className={classes.innerFifthContainer} >
+          <div className={classes.innerFifthContainer}>
             <div className={classes.innersecondFifthContainer}>
-              <h2>Reviews Count</h2>
-              <div className={classes.redGood}>Good</div>
+              <h2 className={classes.wid}>Reviews</h2>
+              <div
+                className={
+                  listingDetails &&
+                  totalReviews &&
+                  parseInt(totalReviews.match(/(\d+)\s+ratings/)[1]) >= 20
+                    ? `${classes.greenGood}`
+                    : classes.redGood
+                }
+              >
+                {listingDetails &&
+                totalReviews &&
+                parseInt(
+                  totalReviews.replace(',', '').replace(' ratings', '')
+                ) >= 20
+                  ? 'Good'
+                  : 'Poor'}
+              </div>
             </div>
-            <div className={classes.innersecondFifthContainer}  >
-              <p>Title is possibly the most important part of the product listing. Ensure the title is readable, is relevant to your product and is keyword rich. Most of your main keywords go here.</p>
-              <p>{pDetails&&pDetails?.data?.otherProducts?.products[0]?.customerReviewsCount?
-              pDetails?.data?.otherProducts?.products[0]?.customerReviewsCount:
-              "-"}</p>
-              <img src="../images/Oval.png" alt="" height="72px" width="72px"/>
+            <div className={classes.innersecondFifthContainer}>
+              {listingDetails &&
+              totalReviews &&
+              parseInt(totalReviews.replace(',', '').replace(' ratings', '')) >=
+                20 ? (
+                <p>This is a good listing as there are 20+ reviews.</p>
+              ) : (
+                <p>This is a poor listing as there are less than 20 reviews.</p>
+              )}
+              {/* <img src= {listingDetails&&totalReviews&&parseInt(totalReviews.replace(",", "").replace(" ratings", ""))>=20?"../images/Oval.png":"../images/Frame 1000003793.png"} alt="" height="72px" width="72px"/> */}
             </div>
           </div>
         </div>
@@ -601,102 +914,154 @@ function ListCalc() {
           </div>
         </div>
       </Container> */}
-      
+
       <Container>
         <div className={classes.sixthContainer}>
           <h1>FAQS</h1>
           <div>
-          <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          <Typography id="select-font-faq"> Does the Amazon Listing Optimization tool work for all the Amazon marketplaces?</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography className='select-font'>
-          If your workplace involves selling products on Amazon, utilising listing optimization tools can be highly advantageous. They can assist you in improving your product listings, attracting more potential customers, and increasing sales. However, if your workplace does not involve selling products on Amazon or within the e-commerce industry, these tools may not be directly applicable to your specific business needs.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
+            <Accordion>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls='panel1a-content'
+                id='panel1a-header'
+              >
+                <Typography id='select-font-faq'>
+                  {' '}
+                  Does the Amazon Listing Optimization tool work for all the
+                  Amazon marketplaces?
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography className='select-font'>
+                  If your workplace involves selling products on Amazon,
+                  utilising listing optimization tools can be highly
+                  advantageous. They can assist you in improving your product
+                  listings, attracting more potential customers, and increasing
+                  sales. However, if your workplace does not involve selling
+                  products on Amazon or within the e-commerce industry, these
+                  tools may not be directly applicable to your specific business
+                  needs.
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
 
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          <Typography id="select-font-faq">What are the qualities of a good Amazon listing?</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography className='select-font'>
-          A good Amazon listing should have several key qualities. It should be concise and clear, providing relevant information about the product. The title should be descriptive and include keywords. High-quality images showcasing the product from different angles are essential. The listing should have accurate and detailed product descriptions, highlighting features and benefits. Including customer reviews and ratings helps build trust. Additionally, competitive pricing, well-organised bullet points, and effective use of search terms can improve visibility and attract potential buyer.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
+            <Accordion>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls='panel1a-content'
+                id='panel1a-header'
+              >
+                <Typography id='select-font-faq'>
+                  What are the qualities of a good Amazon listing?
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography className='select-font'>
+                  A good Amazon listing should have several key qualities. It
+                  should be concise and clear, providing relevant information
+                  about the product. The title should be descriptive and include
+                  keywords. High-quality images showcasing the product from
+                  different angles are essential. The listing should have
+                  accurate and detailed product descriptions, highlighting
+                  features and benefits. Including customer reviews and ratings
+                  helps build trust. Additionally, competitive pricing,
+                  well-organised bullet points, and effective use of search
+                  terms can improve visibility and attract potential buyer.
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
 
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          <Typography id="select-font-faq">How to optimize Amazon Listings?</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography className='select-font'>
-          To optimise Amazon listings, focus on keyword research to include relevant terms in titles, bullet points, and descriptions. Write compelling and concise product descriptions, use high-quality images, and request customer reviews. Optimise backend search terms, leverage enhanced brand content, and monitor and adjust your listings regularly for better performance.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
+            <Accordion>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls='panel1a-content'
+                id='panel1a-header'
+              >
+                <Typography id='select-font-faq'>
+                  How to optimize Amazon Listings?
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography className='select-font'>
+                  To optimise Amazon listings, focus on keyword research to
+                  include relevant terms in titles, bullet points, and
+                  descriptions. Write compelling and concise product
+                  descriptions, use high-quality images, and request customer
+                  reviews. Optimise backend search terms, leverage enhanced
+                  brand content, and monitor and adjust your listings regularly
+                  for better performance.
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
 
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          <Typography id="select-font-faq">How does Amazon decide the ranking of my products?</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography className='select-font'>
-          Amazon determines the ranking of products based on various factors including relevance, sales performance, customer reviews, pricing, and availability. The algorithm takes into account the product's title, description, and keywords, as well as the seller's performance metrics. Factors like conversion rate, customer satisfaction, and fulfilment method also play a role. Continuous optimization and updates to the algorithm influence the ranking of products on Amazon's platform.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-     
+            <Accordion>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls='panel1a-content'
+                id='panel1a-header'
+              >
+                <Typography id='select-font-faq'>
+                  How does Amazon decide the ranking of my products?
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography className='select-font'>
+                  Amazon determines the ranking of products based on various
+                  factors including relevance, sales performance, customer
+                  reviews, pricing, and availability. The algorithm takes into
+                  account the product's title, description, and keywords, as
+                  well as the seller's performance metrics. Factors like
+                  conversion rate, customer satisfaction, and fulfilment method
+                  also play a role. Continuous optimization and updates to the
+                  algorithm influence the ranking of products on Amazon's
+                  platform.
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
           </div>
         </div>
       </Container>
-      <Container className={classes.relative} style={{marginTop:"50px"}}>
-      <motion.img
-              src="../images/Frame 56.png"
-              className={classes.imageLines4}
-              initial="hidden"
-              animate="show"
-              width="100%"
-            ></motion.img>
+      <Container className={classes.relative} style={{ marginTop: '50px' }}>
+        <motion.img
+          src='../images/Frame 56.png'
+          className={classes.imageLines4}
+          initial='hidden'
+          animate='show'
+          width='100%'
+        ></motion.img>
         <div>
-          <div >
+          <div>
             <h3>Try out other resources for your business</h3>
           </div>
 
-          <div className={classes.innerSeventh} >
-            <div className={`${classes.img} ${classes.index} pointer`}
-             onClick={()=>navigate('/home/fbaCalculator')}>
-              <img src="../images/Rectangle first.png" alt="img" height="200px" width="369px"></img>
+          <div className={classes.innerSeventh}>
+            <div
+              className={`${classes.img} ${classes.index} pointer`}
+              onClick={() => navigate('/home/fbaCalculator')}
+            >
+              <img
+                src='../images/Rectangle first.png'
+                alt='img'
+                height='200px'
+                width='369px'
+              ></img>
               <p> Resources</p>
               <h2> FBA Calculator</h2>
             </div>
-            <div className={`${classes.img} ${classes.index} pointer`}
-             onClick={()=>navigate('/home/descriptionToCode')}>
-              <img src="../images/unsplash_s8HyIEe7lF0.png" alt="img" height="200px" width="369px"></img>
+            <div
+              className={`${classes.img} ${classes.index} pointer`}
+              onClick={() => navigate('/home/descriptionToCode')}
+            >
+              <img
+                src='../images/unsplash_s8HyIEe7lF0.png'
+                alt='img'
+                height='200px'
+                width='369px'
+              ></img>
               <p> Resources</p>
               <h2>Description to code</h2>
             </div>
           </div>
-
         </div>
       </Container>
     </ListContainer>
@@ -706,11 +1071,11 @@ const ListContainer = styled.div`
   .container {
     margin: auto;
     padding-top: 80px;
-    position :relative;
+    position: relative;
     .hero_wrapper {
       display: flex;
-      gap:70px;
-      align-items:center ;
+      gap: 70px;
+      align-items: center;
       justify-content: space-evenly;
       @media (max-width: 600px) {
         flex-direction: column;
@@ -733,7 +1098,7 @@ const ListContainer = styled.div`
         }
 
         .fba-subTitle {
-          styleName: Body M 16;
+          stylename: Body M 16;
           font-family: Montserrat;
           font-size: 16px;
           font-weight: 400;
@@ -743,11 +1108,11 @@ const ListContainer = styled.div`
         }
         .input-field {
           display: flex;
-          gap:15px;
+          gap: 15px;
           justify-content: flex-start;
           width: 100%;
-          gap:10px;
-          
+          gap: 10px;
+
           input {
             background: #e0e0e0;
             width: 100%;
@@ -760,61 +1125,59 @@ const ListContainer = styled.div`
             }
           }
 
-          
-        @media (max-width: 600px) {
-          width: 100%;
-          padding-left: unset;
-          flex-direction: column; 
-          gap:15px;
-          align-items: center;
-          justify-content: center;
-        }
+          @media (max-width: 600px) {
+            width: 100%;
+            padding-left: unset;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            justify-content: center;
+          }
 
-        
-        .btn_FBACalculate {
-          background-color: #5956e9;
-          height:55px;
-          color: #e0e0e0;
-          border: 0px;
-          border-radius: 10px;
-          font-family: Poppins;
-          font-size: 12px;
-          font-weight: 500;
-          line-height: 18px;
-          letter-spacing: 0.01em;
-          text-align: center;
-          margin-right:50px;
-          cursor: "pointer";
+          .btn_FBACalculate {
+            background-color: #5956e9;
+            height: 55px;
+            color: #e0e0e0;
+            border: 0px;
+            border-radius: 10px;
+            font-family: Poppins;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 18px;
+            letter-spacing: 0.01em;
+            text-align: center;
+            margin-right: 50px;
+            cursor: 'pointer';
+          }
         }
-        }
-      }.box{
-        width:50%;
+      }
+      .box {
+        width: 50%;
         position: relative;
         @media (max-width: 600px) {
           width: 100%;
           justify-content: center;
         }
       }
-      .hoverimg{
+      .hoverimg {
         width: 100%;
       }
     }
   }
-`;
-const FontWrapper=styled.div`
-  
-  .whyus-title{
-    @media (max-width:600px){
+`
+const FontWrapper = styled.div`
+  .whyus-title {
+    @media (max-width: 600px) {
       font-size: 14px;
-      margin:"100px"
+      margin: '100px';
     }
   }
 
-  .whyus-para{
-    @media(max-width:600px){
+  .whyus-para {
+    @media (max-width: 600px) {
       font-size: 11px;
     }
-  }`;
-
+  }
+`
 
 export default ListCalc

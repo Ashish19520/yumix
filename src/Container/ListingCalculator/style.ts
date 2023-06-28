@@ -409,9 +409,12 @@ export default makeStyles((theme:any) => ({
         borderRadius: "8px",
         padding: "5px 0",
         gap: "10px",
-        background: "#ECCCCC",
+        background: "#ffb03c",
         textAlign: "center",
         text: "center",
+      },
+      wid:{
+        width:"130px",
       },
       innerSeventh: {
         marginTop: "20px",

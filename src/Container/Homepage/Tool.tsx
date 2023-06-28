@@ -90,7 +90,7 @@ const onClickCodeDescriptionHandlar=()=>{
                   ></img>
                 </div>
                 <div className="info">
-                  <div className="infoTitle">FBA Calculator</div>
+                  <div className="infoTitle">RUN CALCULATOR</div>
                   <div className="subTitle">
                     FBM or FBA? Choose what’s right for your Amazon products.
                   </div>
@@ -106,7 +106,7 @@ const onClickCodeDescriptionHandlar=()=>{
                   ></img>
                 </div>
                 <div className="info">
-                  <div className="infoTitle">Listing Quality</div>
+                  <div className="infoTitle">CHECK LISTING QUALITY</div>
                   <div className="subTitle">
                     Increase your Amazon sales with optimised listing.
                   </div>
@@ -121,7 +121,7 @@ const onClickCodeDescriptionHandlar=()=>{
                   ></img>
                 </div>
                 <div className="info">
-                  <div className="infoTitle">Description to Code</div>
+                  <div className="infoTitle">TEXT TO CODE</div>
                   <div className="subTitle">
                     Convert descriptions to code with zero HTML knowledge.
                   </div>
