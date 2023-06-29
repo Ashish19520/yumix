@@ -126,6 +126,7 @@ function ListCalc () {
   const [prDetails, setprDetails] = useState<any>(null)
   const [prgDetails, setprgDetails] = useState<any>(null)
   const [pfeeDetails, setpfeeDetails] = useState<any>(null)
+  const [showListing, setShowListing] = useState<any>(false)
   const [desc, setDesc] = useState<any>({
     result: false,
     value: 'Product description is going to list here.'
@@ -179,6 +180,7 @@ function ListCalc () {
     )
     if(listingDetails){
        setListingDetails(listingDetails)
+       setShowListing(true);
     }
    
 
@@ -552,16 +554,16 @@ useEffect(() => {
       <Container maxWidth='lg' className='container'>
         <div className={classes.wrapper}>
           <div className={`${classes.relative} ${classes.index}`}>
-            <img
+            {pDetails && pDetails?.data?.otherProducts?.products[0]?.imageUrl?(<img
               src={
                 pDetails && pDetails?.data?.otherProducts?.products[0]?.imageUrl
                   ? pDetails?.data?.otherProducts?.products[0]?.imageUrl
-                  : '../images/61+lhpMw+2L 1.png'
+                  : ''
               }
               alt='img'
               height='100px'
               width='100px'
-            ></img>
+            ></img>):<p></p>}
             {/* <motion.img
               src="../images/Ellipse.png"
               className={classes.imageLines7}
@@ -662,6 +664,8 @@ useEffect(() => {
             ></motion.img>
       </Container>
         */}
+      {showListing?(
+        <>
       <Container style={{ marginTop: '150px' }} className={classes.relative}>
         <div className={classes.fourthContainer}>
           <div style={{ zIndex: '5' }}>
@@ -831,6 +835,7 @@ useEffect(() => {
           </div>
         </div>
       </Container>
+      </>):null};
       {/* <Container fixed  className="container">
         <div className={`${classes.fifthContainer} ${classes.relative}`}>
         <motion.img

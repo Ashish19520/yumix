@@ -262,13 +262,16 @@ export const Fba = () => {
       <Container fixed className="container">
         <div className={classes.wrapper}>
           <div className={`${classes.img} ${classes.index}`}>
-            <img src=
-            {pDetails&&pDetails?.data?.otherProducts?.products[0]?.imageUrl?
-              pDetails?.data?.otherProducts?.products[0]?.imageUrl:
-              "../images/61+lhpMw+2L 1.png"}
-              alt="img"
-             height="100px" 
-             width="100px"></img>
+          {pDetails && pDetails?.data?.otherProducts?.products[0]?.imageUrl?(<img
+              src={
+                pDetails && pDetails?.data?.otherProducts?.products[0]?.imageUrl
+                  ? pDetails?.data?.otherProducts?.products[0]?.imageUrl
+                  : ''
+              }
+              alt='img'
+              height='100px'
+              width='100px'
+            ></img>):<p></p>}
             {/* <motion.img
               src="../images/Ellipse 75@3x.png"
               className={classes.imageLines3}
