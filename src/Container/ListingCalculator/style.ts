@@ -225,6 +225,13 @@ export default makeStyles((theme:any) => ({
         width:"12px",
         height:"12px"
       },  
+      margin:{
+        marginTop:"150px",
+        [theme.breakpoints.down('xs')]: {
+          marginTop:"220px",
+        },
+        
+      },
       img: {
         width: "30%",
         position: "relative",
@@ -416,7 +423,7 @@ export default makeStyles((theme:any) => ({
         text: "center",
       },
       wid:{
-        width:"130px",
+        width:"150px",
       },
       innerSeventh: {
         marginTop: "20px",

@@ -102,7 +102,7 @@ export default makeStyles((theme) => ({
   write:{
     fontFamily: 'Montserrat',
     fontStyle: "normal",
-    fontWeight: 400,
+    fontWeight: 700,
     fontSize: "16px",
     lineHeight: "24px",
     display: "flex",
@@ -110,7 +110,7 @@ export default makeStyles((theme) => ({
     height:"30px",
     textAlign: "start",
     letterSpacing: "0.25px",
-    color: "#606060",
+    color: "black",
     [theme.breakpoints.down('sm')]: {
       fontSize: "10px",
       fontWeight: 100,

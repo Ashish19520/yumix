@@ -110,6 +110,7 @@ export const Fba = () => {
   const [loader, setLoader] = useState(false);
   const[pDetails,setpDetails]=useState<any>(null); 
   const[prDetails,setprDetails]=useState<any>(null); 
+  const[itemPrice,setItemPrice]=useState<any>(0); 
   const[prgDetails,setprgDetails]=useState<any>(null); 
   const[pfeeDetails,setpfeeDetails]=useState<any>(null); 
 
@@ -129,7 +130,7 @@ export const Fba = () => {
     setpDetails(productDetails);
     const priceDetails:any=await dispatch(fetchProductPriceDetails(value,country));
     setprDetails(priceDetails);
-    
+    setItemPrice((priceDetails?.data?.price?.amount).toFixed(2));
     
     const programDetails:any=await dispatch(fetchProductProgramDetails(value,country));
     setprgDetails(programDetails);
@@ -373,10 +374,14 @@ export const Fba = () => {
               <option value="option2"> ₹</option>
               </select>
               <input
-                value={prDetails&&prDetails?.data?.price?.amount?
-                (prDetails?.data?.price?.amount).toFixed(2):
-                "0"}
-              type="text" className={classes.input}/>
+                // value={prDetails&&prDetails?.data?.price?.amount?
+                // (prDetails?.data?.price?.amount).toFixed(2):
+                // "0"}
+                value={itemPrice}
+                type="text" 
+                onChange={(e)=>setItemPrice(e.target.value)}
+                className={classes.input}/>
+
               </div>
 
 
@@ -520,10 +525,13 @@ export const Fba = () => {
               <option value="option2"> ₹</option>
               </select>
               <input
-                value={prDetails&&prDetails?.data?.price?.amount?
-                  (prDetails?.data?.price?.amount)?.toFixed(2):
-                  "0"}  
-              type="text" className={classes.input}/>
+                // value={prDetails&&prDetails?.data?.price?.amount?
+                //   (prDetails?.data?.price?.amount)?.toFixed(2):
+                //   "0"}  
+                value={itemPrice}
+              type="text" 
+              onChange={(e)=>setItemPrice(e.target.value)}
+              className={classes.input}/>
               </div>
 
               
@@ -684,9 +692,9 @@ export const Fba = () => {
               <div>
                 <p>Net Profit</p>
                 <h1>{country==="US"?"$":"₹"}{
-                pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core? (prDetails&&prDetails?.data?.price?.amount-
-                 (country==="US" ?0:+(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FixedClosingFee
-                        ?.total?.amount))-
+                pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core? (itemPrice-
+                 +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FixedClosingFee
+                        ?.total?.amount)-
 
 
                 +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.ReferralFee
@@ -707,11 +715,11 @@ export const Fba = () => {
               </div>
               <div>
                 <p>Net Margin</p>
-                <h1>%{
+                <h1>{
               
               pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?  (100-(( 
-                (country==="US"?0:+(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FixedClosingFee
-                        ?.total?.amount))+
+                +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.FixedClosingFee
+                        ?.total?.amount)+
 
 
                 +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherFeeInfoMap?.ReferralFee
@@ -728,7 +736,7 @@ export const Fba = () => {
 
                 //  +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherCost?.feeAmount?.amount)
                 
-               )/ +(prDetails&&prDetails?.data?.price?.amount)*100))?.toFixed(2):0}</h1>
+               )/ +(itemPrice)*100))?.toFixed(2):0}%</h1>
               </div>
             </div>
           </div>
@@ -739,10 +747,10 @@ export const Fba = () => {
                 <p>Net Profit</p>
                 <h1>{country==="US"?"$":"₹"}{
                   pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?(
-                    prDetails&&prDetails?.data?.price?.amount-
+                    itemPrice-
 
-                    (country==="US"?0:+(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.FixedClosingFee
-                        ?.total?.amount))-
+                    +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.FixedClosingFee
+                        ?.total?.amount)-
 
 
                 +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.ReferralFee
@@ -763,10 +771,10 @@ export const Fba = () => {
               </div>  
               <div>
                 <p>Net Margin</p>
-                <h1>%{pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?
+                <h1>{pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?
                 (100-(( 
-                  (country==="US"?0:+(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.FixedClosingFee
-                        ?.total?.amount))+
+                  +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.FixedClosingFee
+                        ?.total?.amount)+
 
 
                 +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.MFN?.otherFeeInfoMap?.ReferralFee
@@ -783,7 +791,7 @@ export const Fba = () => {
 
                 //  +(pfeeDetails&&pfeeDetails?.data?.programFeeResultMap?.Core?.otherCost?.feeAmount?.amount)
                 
-               )/ +(prDetails&&prDetails?.data?.price?.amount)*100))?.toFixed(2):0}</h1>
+               )/ +(itemPrice)*100))?.toFixed(2):0}%</h1>
               </div>
             </div>
           </div>

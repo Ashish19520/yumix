@@ -99,12 +99,13 @@ export default function Footer() {
       >
         <Grid item xs={12} sm={4} md={3} p={3}>
           <img src="../images/logo.png" 
-          width="80px" 
+          width="160px" 
+          height="160px" 
           alt="logo" 
           style={{cursor:"pointer"}}
           onClick={onHomeNavigateHandlar} />
 
-          <Typography
+          {/* <Typography
             style={{
               color: "#404040",
               fontSize: "14px",
@@ -114,7 +115,7 @@ export default function Footer() {
           >
             Eservz is a leading and globally renowned e-commerce and Amazon
             specialist agency.
-          </Typography>
+          </Typography> */}
         </Grid>
         <Grid item xs={12} sm={4} md={3} p={3}>
           <Typography
@@ -227,7 +228,7 @@ export default function Footer() {
             <span onClick={handleOpen} style={{ marginBottom: "90px" }}>
               {/* <ImLocation2 size={16}/> */}
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.514821632699!2d81.962957!3d25.4160277!2m3!1f0!2f13.56!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39854cc6cba4ce4b%3A0xbe9ebdba200575e2!2sBIGHATCH%20CONSULTING%20PRIVATE%20LIMITED!5e0!3m2!1sen!2s!4v1621099034294!5m2!1sen!2s"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230614.64567786886!2d82.959499!3d25.311592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z!5e0!3m2!1sen!2sin!4v1681919513995!5m2!1sen!2sin"
                 width="100%"
                 height="150"
                 style={{ border: 0, marginTop: "10px" }}
@@ -306,7 +307,7 @@ export default function Footer() {
           </div>
         </DialogTitle>
         <DialogContent>
-          <iframe
+          {/* <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230614.64567786886!2d81.81434728271336!3d25.42643128665752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39854cc6cba4ce4b%3A0xbe9ebdba200575e2!2sBIGHATCH%20CONSULTING%20PRIVATE%20LIMITED!5e0!3m2!1sen!2sin!4v1681919513995!5m2!1sen!2sin"
             width="100%"
             height="450"
@@ -314,7 +315,7 @@ export default function Footer() {
             allowFullScreen={false}
             loading="lazy"
             referrerPolicy={"no-referrer-when-downgrade"}
-          ></iframe>
+          ></iframe> */}
         </DialogContent>
       </Dialog>
     </Box>

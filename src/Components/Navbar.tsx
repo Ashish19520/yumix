@@ -58,7 +58,13 @@ export const Navbar = () => {
   return (
     <div className='outter_div_nav'>
       <SocialNavbar>
+      <span
+            className='logo-title'
+          >
+             List Advertise Grow
+          </span> 
         <Container maxWidth='lg' className='container'>
+        
           <Link
             to='https://www.facebook.com/ESERVZ'
             className='iconLink'
@@ -66,6 +72,7 @@ export const Navbar = () => {
           >
             <FaFacebookF color='#252f3e' size={16} />
           </Link>
+          
           <Link
             to='https://www.linkedin.com/company/eservz'
             className='iconLink'
@@ -141,7 +148,7 @@ export const Navbar = () => {
              onClick={() => handleClick(3)}
              >
                 <Link to='/works'
-                >Works</Link>
+                >Portfolio</Link>
               </motion.li>
 
 
@@ -268,6 +275,7 @@ const Nav = styled.div`
     display:none;
 } */
 
+ 
   .container {
     margin: auto;
     display: flex;
