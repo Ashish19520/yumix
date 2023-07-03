@@ -90,7 +90,7 @@ export const OurWorks = () => {
           animate="show"
           className="title"
         >
-          {Array.from("Our Works").map((word, i) => (
+          {Array.from("Portfolio").map((word, i) => (
             <motion.span key={i} variants={typingText}>
               {word}
             </motion.span>

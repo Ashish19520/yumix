@@ -5,10 +5,8 @@ import { motion } from 'framer-motion'
 import { SelectChangeEvent } from '@mui/material/Select'
 import useStyles from './style'
 import { useDispatch } from 'react-redux'
-
 import { useNavigate } from 'react-router-dom'
 import { Dispatch } from 'redux'
-
 import {
   fetchProductDetails,
   fetchProductPriceDetails,
@@ -21,7 +19,7 @@ import Accordion from '@mui/material/Accordion'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
-import { Reviews } from '@mui/icons-material'
+import { ImageNotSupportedTwoTone, Reviews } from '@mui/icons-material'
 
 function ListCalc () {
   const classes = useStyles()
@@ -127,17 +125,27 @@ function ListCalc () {
   const [prgDetails, setprgDetails] = useState<any>(null)
   const [pfeeDetails, setpfeeDetails] = useState<any>(null)
   const [showListing, setShowListing] = useState<any>(false)
+  const [score, setScore] = useState<Array<any>>([]);
   const [desc, setDesc] = useState<any>({
-    result: false,
-    value: 'Product description is going to list here.'
+    fiveLengthTest:true,
+    lengthTest:true,
+    firstLetterTest:true,
+    emojiTest:true,
+    capsTest:true,
+    overallLengthTest:true,
+    
   })
   const [titleTest, setTitleTest] = useState<any>({
-    result: false,
-    value: 'Title result is going to list here.'
+    emojiTest:true,
+    lengthTest:true,
+    restrictedTest:true,
+    firstLetterTest:true,
   })
   const [imgTest, setImgTest] = useState<any>({
-    result: false,
-    value: 'Image result is going to list here.'
+    whiteBackgroundTest:true,
+    includeVideos:true,
+    sevenImages:true,
+    thousandPixels:true,
   })
   
   const [listingDetails, setListingDetails] = useState<any>({
@@ -182,34 +190,6 @@ function ListCalc () {
        setListingDetails(listingDetails)
        setShowListing(true);
     }
-   
-
-    // const programDetails:any=await dispatch(fetchProductProgramDetails(value,country));
-    // setprgDetails(programDetails);
-
-    // let data={
-    //   countryCode:productDetails?.data?.countryCode,
-    //   itemInfo: {
-    //     asin: productDetails?.data?.searchKey,
-    //     glProductGroupName: productDetails?.data?.otherProducts?.products[0]?.gl,
-    //     packageLength:productDetails?.data?.otherProducts?.products[0]?.length,
-    //     packageWidth: productDetails?.data?.otherProducts?.products[0]?.width,
-    //     packageHeight:productDetails?.data?.otherProducts?.products[0]?.height,
-    //     dimensionUnit: productDetails?.data?.otherProducts?.products[0]?.dimensionUnit,
-    //     packageWeight: productDetails?.data?.otherProducts?.products[0]?.weight,
-    //     weightUnit: productDetails?.data?.otherProducts?.products[0]?.weightUnit,
-    //     afnPriceStr: priceDetails?.data?.price?.amount,
-    //     mfnPriceStr: priceDetails?.data?.price?.amount,
-    //     mfnShippingPriceStr:priceDetails?.data?.shipping?.amount,
-    //     currency:country==="US"?"USD":"INR" ,
-    //     isNewDefined: false,
-    //   },
-    //   programIdList:[
-    //     "MFN",
-    //     "Core"]
-    // }
-    // const productFees:any=await dispatch(fetchProductFeesDetails(data,country));
-    // setpfeeDetails(productFees);
 
     setLoader(false)
   }
@@ -237,15 +217,23 @@ function ListCalc () {
 // ################################ validate bullet Points #################################
 
   function checkArrayElements (arr: string[]): {
-    result: boolean
-    value: string
+    fiveLengthTest:boolean,
+    lengthTest:boolean,
+    firstLetterTest:boolean,
+    emojiTest:boolean,
+    capsTest:boolean,
+    overallLengthTest:boolean,
   } {
+    let obj={
+      fiveLengthTest:true,
+      lengthTest:true,
+      firstLetterTest:true,
+      emojiTest:true,
+      capsTest:true,
+      overallLengthTest:true,
+    }
     if (arr.length < 5) {
-      return {
-        result: false,
-        value:
-          'This is a poor listing as there are less than 5+ bullet points in the description.'
-      }
+      obj.fiveLengthTest=false;
     }
 
     const minLength = 150
@@ -254,50 +242,29 @@ function ListCalc () {
       const element = arr[i]
 
       if (element.length < minLength) {
-        return {
-          result: false,
-          value: `This is a poor listing as there is a bullet point with less than ${minLength} characters.`
-        }
+        obj.lengthTest=false;
       }
       const firstWord = element.split(' ')[0]
       if (firstWord && firstWord[0] !== firstWord[0].toUpperCase()) {
-        return {
-          result: false,
-          value:
-            'This is a poor listing as the first letter of a bullet point is not capitalized.'
-        }
+        obj.firstLetterTest=false
       }
       if (arr.reduce((total, element) => total + element.length, 0) < 1000) {
-        return {
-          result: false,
-          value:
-            'This is a poor listing as there are less than 1000+ characters in description or A+ content.'
-        }
+        obj.overallLengthTest=false
       }
       const emojiRegex = /[\u{1F300}-\u{1F6FF}\u{2600}-\u{26FF}]/u
       if (emojiRegex.test(element)) {
-        return {
-          result: false,
-          value:
-            'This is a poor listing as the bullet points contain emojis or icons.'
-        }
+        obj.emojiTest=false;
       }
       const words = element.split(' ');
       const allWordsAreUpperCase = words.every(word => word === word.toUpperCase());
      if (allWordsAreUpperCase) {
-      return {
-        result: false,
-        value: 'This is a poor listing as a bullet point contains all words in uppercase.'
-      };
+      obj.capsTest=false;
+      }
     }
-    }
-    return {
-      result: true,
-      value: `This is a good listing as description satisfies all conditions.`
-    }
+    return desc;
   }
   const resultFunc = async () => {
-    const result = await checkArrayElements(bulletPoints)
+    const result = await checkArrayElements( bulletPoints )
     setDesc(result)
   }
   useEffect(() => {
@@ -306,44 +273,38 @@ function ListCalc () {
 
 // ########################################validate TItle################################
 function validateString(string:string):{
-  result: boolean
-  value: string
+    emojiTest:boolean,
+    lengthTest:boolean,
+    restrictedTest:boolean,
+    firstLetterTest:boolean,
 }  {
+  let obj={
+    emojiTest:true,
+    lengthTest:true,
+    restrictedTest:true,
+    firstLetterTest:true,
+  }
   if (string.length <150) {
-    return {
-      result:false,
-      value:"This is a poor listing as there is less than 150 characters."
-    };
+   obj.lengthTest=false;
   }
   
   const words = string.split(' ');
   const firstWord = words[0];
   
   if (firstWord !== capitalize(firstWord)) {
-    return  {
-      result:false,
-      value:"This is a poor listing as first letter of title is not capitalized."
-    }
+    obj.firstLetterTest=false;
    }
     
   if (containsEmoji(string)) {
-    return {
-      result:false,
-      value:"This is a poor listing as it contain emoji or some icons."
-    }
+    obj.emojiTest=false;
    }
     
   if (containsRestrictedCharacters(string)) {
-    return {
-      result:false,
-      value:"This is a poor listing as it contain decorative characters (~!*$?_~{}#<>|*;^¬¦)."
-    }
+    obj.restrictedTest=false;
   }
   
-  return {
-    result:true,
-    value:"This is a good listing as title satisfies all conditions."
-  } }
+  return obj;
+  }
 
 
 function capitalize(word:string) {
@@ -373,50 +334,42 @@ useEffect(() => {
 // ############################ validate Image ##########################
 
      function validateImages(imageArray: string[], height:number,width:number,whiteImage:any):{
-      result: boolean
-      value: string
+    whiteBackgroundTest:boolean,
+    includeVideos:boolean,
+    sevenImages:boolean,
+    thousandPixels:boolean,
     }{
+      let obj={
+        whiteBackgroundTest:true,
+        includeVideos:true,
+        sevenImages:true,
+        thousandPixels:true,
+      }
  
          if (imageArray.length === 0) {
-          return {
-            result: false,
-            value:"This is a poor listing as image count are less than seven."
-          };
+          obj.sevenImages=false;
           }
 
         if (imageArray.length < 7) {
-          return {
-            result: false,
-            value:"This is a poor listing as image count are less than seven."
-          };
+          obj.sevenImages=false;
             }
 
            if(height<1000&&width<1000) {
-            return {
-              result: false,
-              value:"This is a poor listing as main image is not in 1000 X 1000 px."
-            };
+           obj.thousandPixels=false;
            }
            if(!checkForNonZeroValue(whiteImage)) {
-            return {
-              result: false,
-              value:"This is a poor listing as main image  not have a white background."
-            };
+           obj.whiteBackgroundTest=false;
            }
 
 
   
-        const hasPlayIconOverlay = imageArray.some(image => image.includes("overlay"));
-        if (!hasPlayIconOverlay) {
-          return {
-            result: false,
-            value:"This is a poor listing as listing product not contain a video description."
-          }; }
+        const hasPlayIconOverlay = imageArray.some(image => image.includes("play"));
+        if (hasPlayIconOverlay===false) {
+         obj.includeVideos=false;
+        }
           
-        return  {
-          result: true,
-          value:"This is a good listing as image satisfies all conditions."
-        };}
+        return  obj;
+      }
 
         function checkForNonZeroValue(objectsArray:any) {
           return objectsArray.some((obj:any) => obj.x > 0 || obj.y > 0);
@@ -429,6 +382,37 @@ useEffect(() => {
         useEffect(() => {
           images.length >1  && imgResultFunc()
         }, [images])
+
+      const total=async()=>{
+        let totalScore=[];
+        for(let key in imgTest){
+          if(imgTest[key]){
+            totalScore.push(key);
+          }
+          
+        }
+        for(let key in desc){
+          if(desc[key]){
+            totalScore.push(key);
+          }
+          
+        }
+        for(let key in titleTest){
+          if(titleTest[key]){
+           totalScore.push(key)
+          }
+        }
+        if(listingDetails &&rating &&parseInt(rating.replace(',', '').replace(' ratings', '')) >= 4){
+          totalScore.push('rating');
+        }
+        if(listingDetails &&totalReviews &&parseInt(totalReviews.match(/(\d+)\s+ratings/)[1]) >= 20){
+          totalScore.push('review');
+        }
+        setScore(totalScore);
+      }
+      useEffect(()=>{
+        total();
+      },[imgTest,desc,title])
   return (
     <ListContainer
       className='margin-nav'
@@ -664,7 +648,7 @@ useEffect(() => {
             ></motion.img>
       </Container>
         */}
-      {showListing?(
+      {true?(
         <>
       <Container style={{ marginTop: '150px' }} className={classes.relative}>
         <div className={classes.fourthContainer}>
@@ -674,9 +658,9 @@ useEffect(() => {
           <div className={classes.innerOneFourth}>
             {/* <p>4 possible error(s) analyzed.</p> */}
             <p>5 details analyzed.</p>
-            {/* <div className="input-field">
-              <button className={classes.btnFBACalculate}>View all Errors</button>
-            </div> */}
+            <div className="input-field">
+              <h4> Total score:{(score.length/16)*100}%</h4>
+            </div>
           </div>
         </div>
         <motion.img
@@ -693,80 +677,141 @@ useEffect(() => {
           <div className={classes.innerFifthContainer}>
             <div className={classes.innersecondFifthContainer}>
               <h2 className={classes.wid}>Title</h2>
-              <div
-                className={
-                  listingDetails && title&&titleTest.result
-                    ? `${classes.greenGood}`
-                    : `${classes.redGood}`
-                }
-              >
-                {listingDetails && title&&titleTest.result ? 'Good': 'Poor'}
-              </div>
+
             </div>
             <div className={classes.innersecondFifthContainer}>
-              <p>
-              {titleTest.value}
+              <p className='txtWidth'>
+              Title does not contain symbols or emojis.
               </p>
-              {/* <p>{pDetails&&pDetails?.data?.otherProducts?.products[0]?.title?
-              pDetails?.data?.otherProducts?.products[0]?.title:
-              "-"}</p> */}
-              {/* <img src={listingDetails&&listingDetails?.title?.length>150?
-                "../images/Oval.png":"../images/Frame 1000003793.png"} alt="" height="72px" width="72px"/> */}
+              <img src={titleTest.emojiTest?
+                "../images/greenTick.png":"../images/redTick.png"} alt="" height="30px" width="30px"/>
             </div>
+            <div className={classes.innersecondFifthContainer}>
+              <p className='txtWidth'>
+              Title contains 150+ characters
+              </p>
+              <img src={titleTest.lengthTest?
+                "../images/greenTick.png":"../images/redTick.png"} alt="" height="30px" width="30px"/>
+            </div>
+            <div className={classes.innersecondFifthContainer}>
+              <p className='txtWidth'>
+              Title does't contains restricted characters {`~!*$?_~{}#|<>*;^¬¦`}
+              </p>
+              <img src={titleTest.restrictedTest?
+                "../images/greenTick.png":"../images/redTick.png"} alt="" height="30px" width="30px"/>
+            </div>
+            <div className={classes.innersecondFifthContainer}>
+              <p className='txtWidth'>
+              First letter of title is in uppercase.
+              </p>
+              <img src={titleTest.firstLetterTest?
+                "../images/greenTick.png":"../images/redTick.png"} alt="" height="30px" width="30px"/>
+            </div>
+            
           </div>
         </div>
 
-        <div className={classes.fifthContainer}>
+        <div className={classes.fifthContainer} style={{marginTop:"100px"}}>
           <div className={classes.innerFifthContainer}>
             <div className={classes.innersecondFifthContainer}>
               {/* <h4>Description</h4> */}
-              <h2 className={classes.wid}>Description</h2>
-              <div
-                className={
-                  listingDetails && bulletPoints && desc.result
-                    ? classes.greenGood
-                    : classes.redGood
-                }
-              >
-                {listingDetails && bulletPoints && desc.result
-                  ? 'Good'
-                  : 'Poor'}
-              </div>
+              <h2 className={classes.wid}>Bullet Points</h2>
+             
             </div>
             <div className={classes.innersecondFifthContainer}>
-              <p>{desc?.value}</p>
-
-              {/* <img src={listingDetails&&bulletPoints&&desc?"../images/Oval.png":"../images/Frame 1000003793.png"}
-               alt="" height="72px" width="72px"/> */}
+              <p className='txtWidth'>
+              5+ bullet points.
+              </p>
+              <img src={desc.fiveLengthTest?
+                "../images/greenTick.png":"../images/redTick.png"} alt="" height="30px" width="30px"/>
+            </div>
+            <div className={classes.innersecondFifthContainer}>
+              <p className='txtWidth'>
+              150+ characters in each bullet point.
+              </p>
+              <img src={desc.lengthTest?
+                "../images/greenTick.png":"../images/redTick.png"} alt="" height="30px" width="30px"/>
+            </div>
+            <div className={classes.innersecondFifthContainer}>
+              <p className='txtWidth'>
+              First letter of bullet points are capitalized.
+              </p>
+              <img src={desc.firstLetterTest?
+                "../images/greenTick.png":"../images/redTick.png"} alt="" height="30px" width="30px"/>
+            </div>
+            <div className={classes.innersecondFifthContainer}>
+              <p className='txtWidth'>
+              Bullet points are not in all caps or contain icons.
+              </p>
+              <img src={desc.capsTest?
+                "../images/greenTick.png":"../images/redTick.png"} alt="" height="30px" width="30px"/>
+            </div>
+            <div className={classes.innersecondFifthContainer}>
+              <p className='txtWidth'>
+              Bullet points does not contain icons.
+              </p>
+              <img src={desc.emojiTest?
+                "../images/greenTick.png":"../images/redTick.png"} alt="" height="30px" width="30px"/>
+            </div>
+            <div className={classes.innersecondFifthContainer}>
+              <p className='txtWidth'>
+              1000+ characters in description or A+ content.
+              </p>
+              <img src={desc.overallLengthTest  ?
+                "../images/greenTick.png":"../images/redTick.png"} alt="" height="30px" width="30px"/>
+              
             </div>
           </div>
         </div>
 
-        <div className={classes.fifthContainer}>
+        <div className={classes.fifthContainer} style={{marginTop:"150px"}}>
           <div className={classes.innerFifthContainer}>
             <div className={classes.innersecondFifthContainer}>
-              <h2 className={classes.wid}>Image </h2>
-              <div className={listingDetails && images && imgTest.result
+              <h2 className={classes.wid} >Image </h2>
+              {/* <div className={listingDetails && images && imgTest.result
                     ? classes.greenGood
                     : classes.redGood
                 }>
                
                {listingDetails && images && imgTest.result?"Good":"Poor"}
-                </div>
+                </div> */}
             </div>
             <div className={classes.innersecondFifthContainer}>
-              <p>
-              {imgTest?.value}
+              <p className='txtWidth'>
+              Main image is on a white background.
               </p>
+              <img src={imgTest.whiteBackgroundTest?
+                "../images/greenTick.png":"../images/redTick.png"} alt="" height="30px" width="30px"/>
+            </div>
+            <div className={classes.innersecondFifthContainer}>
+              <p className='txtWidth'>
+              Includes video.
+              </p>
+              <img src={imgTest.includeVideos?
+                "../images/greenTick.png":"../images/redTick.png"} alt="" height="30px" width="30px"/>
+            </div>
+            <div className={classes.innersecondFifthContainer}>
+              <p className='txtWidth'>
+              Main image is of 1000 X 1000 px .
+              </p>
+              <img src={imgTest.thousandPixels?
+                "../images/greenTick.png":"../images/redTick.png"} alt="" height="30px" width="30px"/>
+            </div>
+            <div className={classes.innersecondFifthContainer}>
+              <p className='txtWidth'>
+              7+ images.
+              </p>
+              <img src={imgTest.sevenImages?
+                "../images/greenTick.png":"../images/redTick.png"} alt="" height="30px" width="30px"/>
             </div>
           </div>
         </div>
 
-        <div className={classes.fifthContainer} >
+        <div className={classes.fifthContainer} style={{marginTop:"80px"}}>
           <div className={classes.innerFifthContainer}>
             <div className={classes.innersecondFifthContainer}>
-              <h2 className={classes.wid}>Ratings</h2>
-              <div
+              <h2 className={classes.wid} >Ratings</h2>
+              {/* <div
                 className={
                   listingDetails &&
                   rating &&
@@ -780,10 +825,10 @@ useEffect(() => {
                 parseInt(rating.replace(',', '').replace(' ratings', '')) >= 4
                   ? `Good`
                   : 'Poor'}
-              </div>
+              </div> */}
             </div>
-            <div className={classes.innersecondFifthContainer}>
-              {listingDetails &&
+            {/* <div className={classes.innersecondFifthContainer}> */}
+              {/* {listingDetails &&
               rating &&
               parseInt(rating.replace(',', '').replace(' ratings', '')) >= 4 ? (
                 <p>
@@ -795,17 +840,25 @@ useEffect(() => {
                   This is a poor listing as the listing doesnot have 4+ average
                   star rating.
                 </p>
-              )}
+              )} */}
               {/* <img src= {listingDetails&&rating&&parseInt(rating.replace(",", "").replace(" ratings", ""))>=4?"../images/Oval.png":"../images/Frame 1000003793.png"} alt="" height="72px" width="72px"/> */}
+              <div className={classes.innersecondFifthContainer}>
+              <p className='txtWidth'>
+              4+ average star ratings.
+              </p>
+              <img src={listingDetails &&
+              rating &&parseInt(rating.replace(',', '').replace(' ratings', '')) >= 4?
+                "../images/greenTick.png":"../images/redTick.png"} alt="" height="30px" width="30px"/>
             </div>
+            {/* </div> */}
           </div>
         </div>
 
-        <div className={classes.fifthContainer}>
+        <div className={classes.fifthContainer} >
           <div className={classes.innerFifthContainer}>
             <div className={classes.innersecondFifthContainer}>
-              <h2 className={classes.wid}>Reviews</h2>
-              <div
+              <h2 className={classes.wid}  >Reviews</h2>
+              {/* <div
                 className={
                   listingDetails &&
                   totalReviews &&
@@ -819,9 +872,9 @@ useEffect(() => {
                 parseInt(totalReviews.match(/(\d+)\s+ratings/)[1]) >= 20
                   ? 'Good'
                   : 'Poor'}
-              </div>
+              </div> */}
             </div>
-            <div className={classes.innersecondFifthContainer}>
+            {/* <div className={classes.innersecondFifthContainer}>
               {listingDetails &&
               totalReviews &&
               parseInt(totalReviews.match(/(\d+)\s+ratings/)[1]) >= 20 
@@ -829,8 +882,17 @@ useEffect(() => {
                 <p>This is a good listing as there are 20+ reviews.</p>
               ) : (
                 <p>This is a poor listing as there are less than 20 reviews.</p>
-              )}
+              )} */}
               {/* <img src= {listingDetails&&totalReviews&&parseInt(totalReviews.replace(",", "").replace(" ratings", ""))>=20?"../images/Oval.png":"../images/Frame 1000003793.png"} alt="" height="72px" width="72px"/> */}
+            {/* </div> */}
+            <div className={classes.innersecondFifthContainer}>
+              <p className='txtWidth'>
+              20+ reviews.
+              </p>
+              <img src={listingDetails &&
+              totalReviews &&
+              parseInt(totalReviews.match(/(\d+)\s+ratings/)[1]) >= 20 ?
+                "../images/greenTick.png":"../images/redTick.png"} alt="" height="30px" width="30px"/>
             </div>
           </div>
         </div>

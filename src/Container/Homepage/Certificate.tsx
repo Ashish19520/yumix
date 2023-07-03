@@ -41,6 +41,7 @@ console.log(response?.data[0]?.attributes?.t_url)
       <Container maxWidth="lg" className="container hidden">
         <div className="leftDiv">
           <img src="./images/Ellipse 64@3x.png" className="img-dot2"></img>
+          
           <div className="title">
             <h2>Authorised Seller Partner for Amazon</h2>
           </div>
@@ -52,10 +53,13 @@ console.log(response?.data[0]?.attributes?.t_url)
               launch, manage and grow your business on Amazon.
             </p>
           </div>
-          {/* <img src="./images/Ellipse 63@3x.png" className="img-dot3"></img> */}
+          <img src="./images/Ellipse 63@3x.png" className="img-dot3"></img>
         </div>
         <div className="rightDiv">
-          <img src="./images/certificate 1.png"></img>  
+          {/* <img src="./images/certificate 1.png"></img>   */}
+          <Video autoplay loop poster="./images/thumb2.png" className="vid-slide">
+                <source src="./videos/Video Testimonial.mp4" type="video/webm" />
+              </Video>
         </div>
       </Container>
     </Certif>
