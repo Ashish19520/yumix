@@ -62,7 +62,7 @@ export default function BannerList() {
     <Box className="bannerList_hidden" style={{maxWidth:"1200px", margin:"auto", padding:"80px 40px"}}>
       <Grid position="relative" container alignItems="center" style={{borderRadius:"40px", backgroundColor:"#EFF5FC", padding:"40px 60px"}}>
         <Grid item xs={12} md={8} sx={{paddingTop:{xs:"140px", md:"0px"}}}>
-          <div style={{display:"flex",gap:10}} >
+          <div style={{display:"flex",gap:10,flexWrap:"wrap"}} >
 
           <Typography fontSize="32px" fontFamily="Poppins-Medium" style={{color:`${listColor}`}} >
             List
