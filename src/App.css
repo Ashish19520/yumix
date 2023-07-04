@@ -662,6 +662,10 @@ color: #3A3B44;
 }
 .about-rock{
   @media(max-width:320px){
+    width:150px;
+    height: 150px;
+   }
+  @media(max-width:320px){
    position: absolute;
    bottom:20%;
   }
