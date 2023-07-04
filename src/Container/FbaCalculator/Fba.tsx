@@ -356,6 +356,7 @@ export const Fba = () => {
             <div className={classes.write}>Item Price
             &nbsp; &nbsp; <Tooltip 
               title="This is the product cost only. This excludes any other charges like shipping charges."
+              enterTouchDelay={0}
               classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
                arrow>
               <Button> <img src="../images/toolTip.png"
@@ -367,6 +368,7 @@ export const Fba = () => {
             <div className={classes.write}>Referral Fee
             &nbsp; &nbsp; <Tooltip 
               title="This fee is charged by Amazon at a flat percentage of your product cost."
+              enterTouchDelay={0}
               classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
                arrow>
               <Button> <img src="../images/toolTip.png"
@@ -378,6 +380,7 @@ export const Fba = () => {
             <div className={classes.write}>Fixed Closing Fee
             &nbsp; &nbsp; <Tooltip 
               title="Flat fee covers closing costs associated with a sale regardless of the price or size of the item."
+              enterTouchDelay={0}
               classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
                arrow>
               <Button> <img src="../images/toolTip.png"
@@ -389,6 +392,7 @@ export const Fba = () => {
             <div className={classes.write}>Variable Closing Fee
             &nbsp; &nbsp; <Tooltip 
               title="A variable fee charged per unit based on the item's price and the product category. "
+              enterTouchDelay={0}
               classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
                arrow>
               <Button> <img src="../images/toolTip.png"
@@ -398,8 +402,10 @@ export const Fba = () => {
            </Tooltip>
             </div>
             <div className={classes.write}>Amazon Fulfillment Fees
+            
             &nbsp; &nbsp; <Tooltip 
               title="This fee is charged for the pick, pack, and shipping services provided by Amazon. "
+              enterTouchDelay={0}
               classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
                arrow>
               <Button> <img src="../images/toolTip.png"
@@ -411,6 +417,7 @@ export const Fba = () => {
             <div className={classes.write}>Storage Cost
             &nbsp; &nbsp; <Tooltip 
               title="Fee based on the volume of space your products occupy and the duration of their storage."
+              enterTouchDelay={0}
               classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
                arrow>
               <Button> <img src="../images/toolTip.png"
@@ -422,6 +429,7 @@ export const Fba = () => {
             <div className={classes.write}>Other Cost
             &nbsp; &nbsp; <Tooltip 
               title="Any additional fees incurred by Amazon for returns, long-term storage, and other services."
+              enterTouchDelay={0}
               classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
                arrow>
               <Button> <img src="../images/toolTip.png"
