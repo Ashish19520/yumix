@@ -46,7 +46,7 @@ console.log(response?.data[0]?.attributes?.t_url)
             <h2>Authorised Seller Partner for Amazon</h2>
           </div>
           <div className="subtitle">
-            <p>
+            <p className="justify">
               ESERVZ is an authorise seller partner of Amazon, the world's
               largest eCommerce platform. We are professional service provider
               who are trained and certified by Amazon which empowers sellers to

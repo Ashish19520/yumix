@@ -13,6 +13,7 @@ import ListingCalculator from "../Pages/ListingCalculator";
 import DiscriptionToCode from "../Pages/DiscriptionToCode";
 import NewsContent from "../Container/News/NewsContent";
 import BlogContent from "../Container/Blog/BlogContent";
+import PrivacyPolicy from "../Pages/PrivacyPolicy";
 
 import DigitalMedia from "../Pages/DigitalMedia";
 import Analytics from "../Pages/Analytics";
@@ -35,6 +36,7 @@ import WebMobileCustomer from "../Pages/CustomerExpierence/WebMobileCustomer";
 import ContentMarketingCustomer from "../Pages/CustomerExpierence/ContentMarketingCustomer";
 import OurWorks1 from "../Pages/Content/OurWorks1";
 import OurWorks2 from "../Pages/Content/OurWorks2";
+import TermsAndConditions from "../Pages/TermsAndConditions";
 
 
 
@@ -49,6 +51,9 @@ const MainRouter = () => {
         <Route path="/aboutus" element={<AboutUs />} />
 
         <Route path="/ourservices" element={<Services />} />
+        <Route path="/termsAndConditions" element={<TermsAndConditions/>} />
+        <Route path="/privacyPolicy" element={<PrivacyPolicy/>} />
+        
         
         <Route path="/ourservices/digitalMedia" element={<DigitalMedia />} />
         <Route path="/digitalMedia/paidSearch" element={<PaidSearch/>} />

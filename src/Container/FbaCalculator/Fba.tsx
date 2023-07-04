@@ -1,4 +1,4 @@
-import { Container, Typography,Box,Switch } from "@mui/material";
+import { Container, Typography,Box,Switch,Tooltip,Button } from "@mui/material";
 import React,{useEffect,useState} from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
@@ -170,6 +170,8 @@ export const Fba = () => {
 
   ValidatorForm.addValidationRule('isUsernameUnique', isUsernameUnique);
   ValidatorForm.addValidationRule('minTen', minTen);
+
+  
   return (
     <FbaContainer className="margin-nav" style={{ backgroundColor: "#FFFCFC",width:"100vw"}}>
        {loader && (
@@ -351,13 +353,83 @@ export const Fba = () => {
             ></motion.img>  */}
           <div className={classes.firstRow}>
                         <h1>Labels</h1>
-            <div className={classes.write}>Item Price</div>
-            <div className={classes.write}>Referral Fee</div>
-            <div className={classes.write}>Fixed Closing Fee</div>
-            <div className={classes.write}>Variable Closing Fee</div>
-            <div className={classes.write}>Amazon Fulfillment Fees</div>
-            <div className={classes.write}>Storage Cost</div>
-            <div className={classes.write}>Other Cost</div>
+            <div className={classes.write}>Item Price
+            &nbsp; &nbsp; <Tooltip 
+              title="This is the product cost only. This excludes any other charges like shipping charges."
+              classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
+               arrow>
+              <Button> <img src="../images/toolTip.png"
+              height="15px"
+              width="15px"
+              alt="i"></img></Button>
+           </Tooltip>
+    </div>
+            <div className={classes.write}>Referral Fee
+            &nbsp; &nbsp; <Tooltip 
+              title="This fee is charged by Amazon at a flat percentage of your product cost."
+              classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
+               arrow>
+              <Button> <img src="../images/toolTip.png"
+              height="15px"
+              width="15px"
+              alt="i"></img></Button>
+           </Tooltip>
+            </div>
+            <div className={classes.write}>Fixed Closing Fee
+            &nbsp; &nbsp; <Tooltip 
+              title="Flat fee covers closing costs associated with a sale regardless of the price or size of the item."
+              classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
+               arrow>
+              <Button> <img src="../images/toolTip.png"
+              height="15px"
+              width="15px"
+              alt="i"></img></Button>
+           </Tooltip>
+            </div>
+            <div className={classes.write}>Variable Closing Fee
+            &nbsp; &nbsp; <Tooltip 
+              title="A variable fee charged per unit based on the item's price and the product category. "
+              classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
+               arrow>
+              <Button> <img src="../images/toolTip.png"
+              height="15px"
+              width="15px"
+              alt="i"></img></Button>
+           </Tooltip>
+            </div>
+            <div className={classes.write}>Amazon Fulfillment Fees
+            &nbsp; &nbsp; <Tooltip 
+              title="This fee is charged for the pick, pack, and shipping services provided by Amazon. "
+              classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
+               arrow>
+              <Button> <img src="../images/toolTip.png"
+              height="15px"
+              width="15px"
+              alt="i"></img></Button>
+           </Tooltip>
+            </div>
+            <div className={classes.write}>Storage Cost
+            &nbsp; &nbsp; <Tooltip 
+              title="Fee based on the volume of space your products occupy and the duration of their storage."
+              classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
+               arrow>
+              <Button> <img src="../images/toolTip.png"
+              height="15px"
+              width="15px"
+              alt="i"></img></Button>
+           </Tooltip>
+            </div>
+            <div className={classes.write}>Other Cost
+            &nbsp; &nbsp; <Tooltip 
+              title="Any additional fees incurred by Amazon for returns, long-term storage, and other services."
+              classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
+               arrow>
+              <Button> <img src="../images/toolTip.png"
+              height="15px"
+              width="15px"
+              alt="i"></img></Button>
+           </Tooltip>
+            </div>
             {/* <div className={classes.write}>Total fulfillment cost</div>
             <div className={classes.write}>Selling proceeds</div>
             <div className={classes.write}>Cost of product</div> */}

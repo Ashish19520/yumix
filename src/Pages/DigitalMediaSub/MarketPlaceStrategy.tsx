@@ -8,7 +8,7 @@ function MarketPlaceStrategy() {
     heading:"Marketplace Listing Services",
     subHeading:"Shape the journey of potential customers across the marketplace to elevate your chances of success and boost your revenue. ",
     image:"../images/Image.png",
-    blackHeading:"Unleash eCommerce Success with Our Marketplaces Listing Services",
+    blackHeading:"Unleash e Commerce Success with Our Marketplaces Listing Services",
     blackSubHeading:"Unlock extraordinary results beyond traditional search engines through our extensive search and product marketing expertise. Our marketplace listing services capitalize on lucrative opportunities like Amazon Advertising & Walmart Media Group, expanding your eCommerce initiatives and placing your brand in front of prospective buyers precisely when it matters most. Experience the power of targeted marketplace strategies that drive exponential growth for your business.",
     strategyHeading:"Our Marketplace Strategy",
     box:[

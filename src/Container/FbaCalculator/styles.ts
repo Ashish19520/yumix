@@ -118,6 +118,20 @@ export default makeStyles((theme) => ({
       lineHeight: "10px",
     },
   },
+  arrow: {
+    "&:before": {
+      border: "1px solid #E6E8ED"
+    },
+    color: theme.palette.common.white
+  },
+  tooltip: {
+    backgroundColor: theme.palette.common.white,
+    border: "1px solid #E6E8ED",
+    padding:"10px",
+    color: "#4A4A4A",
+    borderRadius: "10px",
+    fontSize: "16px",
+  },
   secondRow: {
     display: 'flex',
     flexDirection: 'column',

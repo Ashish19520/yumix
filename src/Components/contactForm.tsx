@@ -229,7 +229,7 @@ export default function ContactForm () {
                   onChange={changeHandalar}
                 /> */}
                  <TextValidator   
-                    placeholder='Email*'                 
+                    placeholder="Email*"            
                     name="email"
                     value={formData.email}
                     style={{ ...style.input }}

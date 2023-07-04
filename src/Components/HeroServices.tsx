@@ -21,7 +21,7 @@ function HeroServices({data}:any) {
         <div className='heroLef'>
             <div className='headTex'>{data.heading}</div>
              <div className='textPar'>{data.subHeading}</div>
-            <div className='btn' onClick={scroll}>Contact Us</div>
+            <div className='btn' onClick={scroll}>Contact US</div>
         </div>
         <div className='heroRight relative'>
             <img src={data.image}

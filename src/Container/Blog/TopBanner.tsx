@@ -61,7 +61,7 @@ export default function TopBanner() {
             </Typography>
             </motion.div>
             <motion.div variants={elements}  initial="hidden" animate="show">
-            <Typography variant="h2" className="blog-top-subtitle">
+            <Typography variant="h2" className="blog-top-subtitle justify">
                 Eservz is a leading and globally renowned e-commerce and Amazon specialist agency that provides cutting edge, groundbreaking and truly revolutionary back office support to e-commerce sellers, business owners and vendors on multiple online channels especially Amazon.
             </Typography>
             </motion.div>

@@ -648,7 +648,7 @@ useEffect(() => {
             ></motion.img>
       </Container>
         */}
-      {true?(
+      {showListing?(
         <>
       <Container style={{ marginTop: '150px' }} className={classes.relative}>
         <div className={classes.fourthContainer}>

@@ -52,11 +52,11 @@ export default function Footer() {
     },
     {
       link: "Terms & Conditions",
-      to: "/",
+      to: "/termsAndConditions",
     },
     {
       link: "Privacy Policy",
-      to: "/",
+      to: "/privacyPolicy",
     },
   ];
 

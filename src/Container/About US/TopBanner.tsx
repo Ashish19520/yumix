@@ -87,7 +87,7 @@ export default function TopBanner() {
           <motion.div variants={elements} initial="hidden" animate="show">
             <Typography
               variant="h2"
-              className="about_subtitle"
+              className="about_subtitle justify"
             
             >
               Eservz is a leading and globally renowned e-commerce and Amazon
@@ -122,7 +122,7 @@ export default function TopBanner() {
           <Box sx={{ ...style.bluredBox, top: { xs: "40%", md: "70%" } }}>
             <img src="./images/Round Cube2@3x.png" className="about-rock" width="100%"></img>
           </Box>
-          <img src="./images/Rock2.png" style={style.bluredRock}  ></img>
+          <img src="./images/Rock2.png" style={style.bluredRock} height="60px" width="60px" ></img>
           <img src="./images/aboutusThread.png" className="about-rock" style={style.thread}></img>
         </motion.div>
       </Grid>
@@ -164,7 +164,6 @@ const style = {
   } as React.CSSProperties,
   bluredRock: {
     width: "15%",
-    minWidth: "100px",
     position: "absolute",
     top: "20px",
     right: "0px",

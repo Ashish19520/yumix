@@ -702,3 +702,21 @@ color: #3A3B44;
     width:300px;
     };
 }
+.justify{
+  text-align: justify;
+}
+.m1{
+  margin-top: 20px;
+}
+.m2{
+  margin-top: 10px;
+}
+.ml{
+  margin-Left: 30px;
+}
+.privacy-header{
+  background-color: black;
+    color: white;
+    padding: 20px;
+    font-size: 20px;
+}
