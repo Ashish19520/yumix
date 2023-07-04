@@ -122,7 +122,7 @@ export default function TopBanner() {
           <Box sx={{ ...style.bluredBox, top: { xs: "40%", md: "70%" } }}>
             <img src="./images/Round Cube2@3x.png" className="about-rock" width="100%"></img>
           </Box>
-          <img src="./images/Rock2.png" style={style.bluredRock} height="60px" width="60px" ></img>
+          <img src="./images/Rock2.png" style={style.bluredRock}  width="100%" ></img>
           <img src="./images/aboutusThread.png" className="about-rock" style={style.thread}></img>
         </motion.div>
       </Grid>
