@@ -402,7 +402,6 @@ export const Fba = () => {
            </Tooltip>
             </div>
             <div className={classes.write}>Amazon Fulfillment Fees
-            
             &nbsp; &nbsp; <Tooltip 
               title="This fee is charged for the pick, pack, and shipping services provided by Amazon. "
               enterTouchDelay={0}

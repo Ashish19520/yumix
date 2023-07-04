@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core';
+import { Padding } from '@mui/icons-material';
 
 export default makeStyles((theme) => ({
   wrapper: {
@@ -127,10 +128,9 @@ export default makeStyles((theme) => ({
   tooltip: {
     backgroundColor: theme.palette.common.white,
     border: "1px solid #E6E8ED",
-    padding:"10px",
     color: "#4A4A4A",
-    borderRadius: "10px",
-    fontSize: "16px",
+    Padding:"10px",
+    fontSize: "16px"
   },
   secondRow: {
     display: 'flex',
