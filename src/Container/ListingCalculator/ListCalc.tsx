@@ -224,7 +224,7 @@ function ListCalc () {
     capsTest:boolean,
     overallLengthTest:boolean,
   } {
-    let obj={
+    let obj:any={
       fiveLengthTest:true,
       lengthTest:true,
       firstLetterTest:true,
@@ -232,6 +232,7 @@ function ListCalc () {
       capsTest:true,
       overallLengthTest:true,
     }
+    
     if (arr.length < 5) {
       obj.fiveLengthTest=false;
     }
@@ -679,7 +680,8 @@ useEffect(() => {
               <h2 className={classes.wid}>Title</h2>
 
             </div>
-            <div className={classes.innersecondFifthContainer}>
+            {title.length?<>
+              <div className={classes.innersecondFifthContainer}>
               <p className='txtWidth'>
               Title does not contain symbols or emojis.
               </p>
@@ -707,6 +709,8 @@ useEffect(() => {
               <img src={titleTest.firstLetterTest?
                 "../images/greenTick.png":"../images/redTick.png"} alt="" height="30px" width="30px"/>
             </div>
+            </>
+            :<h2 className='custom-bp'>Not Applicable</h2>}
             
           </div>
         </div>
@@ -718,6 +722,7 @@ useEffect(() => {
               <h2 className={classes.wid}>Bullet Points</h2>
              
             </div>
+            {bulletPoints?.length?(<>
             <div className={classes.innersecondFifthContainer}>
               <p className='txtWidth'>
               5+ bullet points.
@@ -761,6 +766,7 @@ useEffect(() => {
                 "../images/greenTick.png":"../images/redTick.png"} alt="" height="30px" width="30px"/>
               
             </div>
+            </>):<h3 className='custom-bp'>Not Applicable</h3>}
           </div>
         </div>
 

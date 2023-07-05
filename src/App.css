@@ -720,3 +720,9 @@ color: #3A3B44;
     padding: 20px;
     font-size: 20px;
 }
+.custom-bp{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
