@@ -695,8 +695,8 @@ color: #3A3B44;
 
 }
 .logo-title{
-  width:300px;
-  margin-left:70px;
+  width:250px;
+  /* margin-left:70px; */
   @media(max-width:600px){
     margin-left:15px;
     width:300px;

@@ -442,7 +442,7 @@ useEffect(() => {
               optimised listing alongside on page factors.
             </div>
             <div>
-              US product
+              US Product
               <Switch
                 onChange={countryHandlar}
                 className={` ${classes.index}`}
@@ -746,7 +746,7 @@ useEffect(() => {
             </div>
             <div className={classes.innersecondFifthContainer}>
               <p className='txtWidth'>
-              Bullet points are not in all caps or contain icons.
+              Bullet points are not in all caps.
               </p>
               <img src={desc.capsTest?
                 "../images/greenTick.png":"../images/redTick.png"} alt="" height="30px" width="30px"/>

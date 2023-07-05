@@ -196,7 +196,7 @@ export const Fba = () => {
               Check the profit a product can earn using fulfillment-by-Amazon
               (FBA)
             </div>  
-            US product<Switch  
+            US Product<Switch  
             onChange={countryHandlar} />Indian Product
             
               {/* <input
@@ -457,7 +457,7 @@ export const Fba = () => {
                 // (prDetails?.data?.price?.amount).toFixed(2):
                 // "0"}
                 value={itemPrice}
-                type="text" 
+                type="number" 
                 onChange={(e)=>setItemPrice(e.target.value)}
                 className={classes.input}/>
 
@@ -608,7 +608,7 @@ export const Fba = () => {
                 //   (prDetails?.data?.price?.amount)?.toFixed(2):
                 //   "0"}  
                 value={itemPrice}
-              type="text" 
+                type="number"  
               onChange={(e)=>setItemPrice(e.target.value)}
               className={classes.input}/>
               </div>

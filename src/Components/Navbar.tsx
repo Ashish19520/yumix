@@ -58,13 +58,14 @@ export const Navbar = () => {
   return (
     <div className='outter_div_nav'>
       <SocialNavbar>
-      <span
+     
+        <Container maxWidth='lg' className='container'>
+        <div
             className='logo-title'
           >
-             List Advertise Grow
-          </span> 
-        <Container maxWidth='lg' className='container'>
-        
+             List ∙ Advertise ∙ Grow
+          </div> 
+          <div style={{width:"110px"}}>
           <Link
             to='https://www.facebook.com/ESERVZ'
             className='iconLink'
@@ -87,6 +88,7 @@ export const Navbar = () => {
           >
             <AiFillInstagram color='#252f3e' size={16} />
           </Link>
+          </div>
         </Container>
       </SocialNavbar>
 
@@ -243,7 +245,7 @@ const SocialNavbar = styled.div`
   .container {
     margin: auto;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
 
     .iconLink {
