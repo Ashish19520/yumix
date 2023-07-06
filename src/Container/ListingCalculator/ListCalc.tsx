@@ -385,6 +385,7 @@ useEffect(() => {
         }, [images])
 
       const total=async()=>{
+
         let totalScore=[];
         if(images.length>0){
         for(let key in imgTest){
@@ -416,7 +417,7 @@ useEffect(() => {
           totalScore.push('review');
         }
         setScore(totalScore);
-        console.log("------------",totalScore);
+       
       }
      
       useEffect(()=>{

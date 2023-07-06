@@ -130,11 +130,11 @@ export const Fba = () => {
     setpDetails(productDetails);
     const priceDetails:any=await dispatch(fetchProductPriceDetails(value,country));
     setprDetails(priceDetails);
-    setItemPrice((priceDetails?.data?.price?.amount).toFixed(2));
+    setItemPrice((priceDetails?.data?.price?.amount||0).toFixed(2));
     
     const programDetails:any=await dispatch(fetchProductProgramDetails(value,country));
     setprgDetails(programDetails);
-
+    console.log("----------------------")
     let data={
       countryCode:productDetails?.data?.countryCode,
       itemInfo: {
@@ -146,8 +146,8 @@ export const Fba = () => {
         dimensionUnit: productDetails?.data?.otherProducts?.products[0]?.dimensionUnit,
         packageWeight: productDetails?.data?.otherProducts?.products[0]?.weight,
         weightUnit: productDetails?.data?.otherProducts?.products[0]?.weightUnit,
-        afnPriceStr: priceDetails?.data?.price?.amount,
-        mfnPriceStr: priceDetails?.data?.price?.amount,
+        afnPriceStr: priceDetails?.data?.price?.amount||0,
+        mfnPriceStr: priceDetails?.data?.price?.amount||0,
         mfnShippingPriceStr:priceDetails?.data?.shipping?.amount,
         currency:country==="US"?"USD":"INR" ,
         isNewDefined: false,
@@ -156,6 +156,7 @@ export const Fba = () => {
         "MFN",
         "Core"]
     }
+    console.log("+++++++++++++++++++++++++")
     const productFees:any=await dispatch(fetchProductFeesDetails(data,country));
     setpfeeDetails(productFees);
     setLoader(false); 
