@@ -54,6 +54,9 @@
     height: 39px;
     left: 0;
     top: -10%;
+    @media(max-width:350px){
+        top:2%;
+        };
 }
 .blueCircle{
     position: absolute;
@@ -61,6 +64,10 @@
     height: 26px;
     right: 20%;
     top: 10%;
+    @media(max-width:350px){
+        top:2%;
+        right:4%;
+        };
 }
 .orangeCircle{
     position: absolute;
@@ -68,4 +75,7 @@
     height: 24px;
     left: 15%;
     top: 70%;
+    @media(max-width:350px){
+       top:100%;
+        };
 }

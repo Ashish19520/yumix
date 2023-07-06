@@ -36,7 +36,7 @@ export const Homepage = () => {
       <Counter />
       <Tool />
       <WhyUs />
-      <People />
+      <People />  
       <FotterArea>
         <div className="cf">
           <ContactForm />

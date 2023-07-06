@@ -77,7 +77,7 @@ export default function TopBanner() {
         >
         <Box style={style.blueDot}></Box>
         <Box sx={{...style.bluredBox, top : {xs:"40%", md:"70%"}}}>
-          <img  src="./images/Round Cube2@3x.png" width="100%"></img>
+          <img  src="./images/Round Cube2@3x.png" className="logo-fold" width="100%"></img>
           </Box>
         <img src="./images/Rock2.png" style={style.bluredRock}></img>
         <img src="./images/aboutusThread.png" style={style.thread}></img>

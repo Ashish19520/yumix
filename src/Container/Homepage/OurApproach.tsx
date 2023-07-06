@@ -29,7 +29,7 @@ export const OurApproach = () => {
     });
 
     const hiddenElements = document.querySelectorAll(".banner");
-    hiddenElements.forEach((el) => observer.observe(el));
+    hiddenElements.forEach((el)   => observer.observe(el));
   }, []);
 
   return (
@@ -44,23 +44,23 @@ export const OurApproach = () => {
                 <p>Schedule a Meeting</p>
               </div>
 
-              <div className="singleicon">
-                <img className="ig" src="./images/A2.png"></img>
+               <div className="singleicon">
+                <img className="ig" id="stl1"src="./images/A2.png" width="100%"></img>
                 <p>Onboarding Process</p>
               </div>
 
               <div className="singleicon">
-                <img className="ig" src="./images/A3.png"></img>
+                <img className="ig" id="stl1" src="./images/A3.png"></img>
                 <p>Hire your amazon expert</p>
               </div>
 
               <div className="singleicon">
-                <img className="ig" src="./images/A4.png"></img>
+                <img className="ig" id="stl1" src="./images/A4.png"></img>
                 <p>Manage your business</p>
               </div>
 
               <div className="singleicon">
-                <img className="ig" src="./images/A5.png"></img>
+                <img className="ig" id="stl1" src="./images/A5.png"></img>
                 <p className="para">Focus on strategies and growth</p>
               </div>
             </div>
@@ -76,6 +76,9 @@ const MidBanner = styled.div`
   padding: 40px 0px 56px 0px;
 
   @media (max-width: 600px) {
+    padding: 40px 0px 0px 0px;
+  }
+  @media (max-width: 350px) {
     padding: 40px 0px 0px 0px;
   }
 
@@ -127,7 +130,7 @@ const MidBanner = styled.div`
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 100%;
+        width: 100vw;
   
 
         @media (max-width: 900px) {
@@ -140,11 +143,19 @@ const MidBanner = styled.div`
           flex-direction: column;
           width: 100%;
         }
+        @media (max-width: 350px) {
+          flex-direction: column;
+          width: 100%;
+        }
         #stl1{
           width:180px;
           @media (max-width: 600px) {
            
             width: 220px;
+          }
+          @media (max-width: 350px) {
+           
+            width: 150px;
           }
         }
         .singleicon {

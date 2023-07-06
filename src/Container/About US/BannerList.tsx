@@ -59,9 +59,9 @@ export default function BannerList() {
   
 
   return (
-    <Box className="bannerList_hidden" style={{maxWidth:"1200px", margin:"auto", padding:"80px 40px"}}>
+    <Box className="bannerList_hidden" style={{maxWidth:"1200px", margin:"auto", padding:"80px 20px"}}>
       <Grid position="relative" container alignItems="center" style={{borderRadius:"40px", backgroundColor:"#EFF5FC", padding:"40px 60px"}}>
-        <Grid item xs={12} md={8} sx={{paddingTop:{xs:"140px", md:"0px"}}}>
+        <Grid item xs={12} md={8} sx={{paddingTop:{xs:"140px", md:"0px",}}}>
           <div style={{display:"flex",gap:10,flexWrap:"wrap"}} >
 
           <Typography fontSize="32px" fontFamily="Poppins-Medium" style={{color:`${listColor}`}} >
@@ -85,7 +85,8 @@ export default function BannerList() {
           </Typography>
         </Grid>
         <Grid item xs={12} md={4} sx={{textAlign:"center", position:{xs:"absolute", md:"relative"}, top:{xs:"-20px", md:"0px"}}}>
-          <img src="/images/Holding a pencil.png" alt="Holding Pencil" style={{width:"150px", scale:"2",marginLeft:"30px"}}/>
+          
+          <img src="/images/Holding a pencil.png" alt="Holding Pencil" style={{width:"50%", scale:"2",marginLeft:"30px"}}/>
         </Grid>
       </Grid>
     </Box>

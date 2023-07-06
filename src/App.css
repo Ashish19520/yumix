@@ -695,12 +695,16 @@ color: #3A3B44;
 
 }
 .logo-title{
-  width:250px;
+  width:70%;
   /* margin-left:70px; */
   @media(max-width:600px){
     margin-left:15px;
     width:300px;
     };
+    @media(max-width:350px){
+      font-size: 13px;
+      width:150px;
+      };
 }
 .justify{
   text-align: justify;
@@ -725,4 +729,13 @@ color: #3A3B44;
     justify-content: center;
     align-items: center;
     margin-top: 100px;
+}
+.logo-fold{
+  @media(max-width:350px){
+    width: 80%;
+    position: absolute;
+    bottom: 20%;
+    left: -4%;
+    };
+  
 }
