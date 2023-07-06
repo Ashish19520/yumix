@@ -386,23 +386,29 @@ useEffect(() => {
 
       const total=async()=>{
         let totalScore=[];
+        if(images.length>0){
         for(let key in imgTest){
           if(imgTest[key]){
             totalScore.push(key);
           }
-          
         }
+      }
+        if(bulletPoints.length>0){
         for(let key in desc){
           if(desc[key]){
             totalScore.push(key);
           }
-          
+         }
         }
+       
+        if(title.length>0){
         for(let key in titleTest){
           if(titleTest[key]){
            totalScore.push(key)
-          }
+          
         }
+      }
+      }
         if(listingDetails &&rating &&parseInt(rating.replace(',', '').replace(' ratings', '')) >= 4){
           totalScore.push('rating');
         }
@@ -410,7 +416,9 @@ useEffect(() => {
           totalScore.push('review');
         }
         setScore(totalScore);
+        console.log("------------",totalScore);
       }
+     
       useEffect(()=>{
         total();
       },[imgTest,desc,title])
@@ -710,7 +718,7 @@ useEffect(() => {
                 "../images/greenTick.png":"../images/redTick.png"} alt="" height="30px" width="30px"/>
             </div>
             </>
-            :<h2 className='custom-bp'>Not Applicable</h2>}
+            :<h2 className='custom-bp'>Not Available</h2>}
             
           </div>
         </div>
@@ -766,7 +774,7 @@ useEffect(() => {
                 "../images/greenTick.png":"../images/redTick.png"} alt="" height="30px" width="30px"/>
               
             </div>
-            </>):<h3 className='custom-bp'>Not Applicable</h3>}
+            </>):<h3 className='custom-bp'>Not Available</h3>}
           </div>
         </div>
 
