@@ -18,7 +18,9 @@ export const fillForm=(data:any)=>API.post(`api/send-mails/sendmail`,data);
 export const clientList=()=>API.get(`api/clients`);
 export const testimonials=()=>API.get(`api/testimonials`);
 export const sitecounters=()=>API.get(`api/sitecounters`);
-export const blogs=()=>API.get(`api/blogs`);  
+export const blogs=()=>API.get(`api/blogs`);   
+export const ourGreatWorks=()=>API.get(`api/our-works`);  
+export const ourSingleGreatWorks=(id:number)=>API.get(`api/our-works/${id}`);  
 
 // export const fetchNews=()=>API.get(`api/latest-newsses/rss-feed`);
 export const fetchNews=()=>API.get(`api/latest-newsses/latest-news`);

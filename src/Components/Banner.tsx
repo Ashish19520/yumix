@@ -12,11 +12,11 @@ export const Banner = (props: any) => {
           <div className="title">{props.data.title}</div>
           <p className="subTitle">{props.data.subTitle}</p>
           <button className="btn"
-            onClick={()=>navigate(`${props.data.add}`)}
+            onClick={()=>navigate(`/works/${props.id}`)}
           >{props.data.btnText}
           </button>
         </div>
-        <div className="cb-right-box">
+        <div className="cb-right-box index">
           <img src={props.data.imgPath}></img>
         </div>
       </div>

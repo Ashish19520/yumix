@@ -1,27 +1,43 @@
-import { Container } from "@mui/material";
-import React, { useEffect } from "react";
+import { Container ,Pagination} from "@mui/material";
+import React, { useEffect,useState} from "react";
 import styled from "styled-components";
 import { Banner } from "../../Components/Banner";
 import { motion } from "framer-motion";
+import { useDispatch } from 'react-redux';
+import { Dispatch } from 'redux';
+import { fetchWorks } from "../../actions/posts";
+import { useSelector } from "react-redux/es/exports"
 
 export const OurWorks = () => {
-  const data1 = {
-    title: "Growing Sales For A Startup  Clothing Brand",
-    subTitle:
-      "While most digital marketing agencies excel at one or two channels, Eservz has deep expertise across all performance marketing services, which allows us to provide a rich digital marketing services offering.",
-    btnText: "View Case Study",
-    imgPath: "../images/Img1.png",
-    add:"/works/work1"
+  const [pageNO, setPageNO] = useState(()=>{
+    const storedValue = localStorage.getItem('workCounter');
+    return storedValue ? parseInt(storedValue) : 1;
+   });
+
+  const handlePage = (e:any,no:any) => {
+    window.scrollTo(0, 150.2857666015625);
+    localStorage.setItem('workCounter',no);
+    setPageNO(no);
   };
 
-  const data2 = {
-    title: "Bringing Grocery Store Online",
-    subTitle:
-      "While most digital marketing agencies excel at one or two channels, Eservz has deep expertise across all performance marketing services, which allows us to provide a rich digital marketing services offering.",
-    btnText: "View Case Study",
-    imgPath: "../images/Img2.png",
-    add:"/works/work2"
-  };
+  
+  const dispatch: Dispatch<any> = useDispatch()
+  const [data, setData] =useState<any>(null)
+  
+  useEffect(() => {
+    fetch()
+  }, [data])
+  
+const fetch = async () => {
+  const dat: any = await dispatch(fetchWorks())
+  setData(dat.data);
+}
+const itemsPerPage = 4;
+  const totalPages = Math.ceil(data?.length / itemsPerPage);
+  const startIndex = (pageNO - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentItems = data?.slice(startIndex, endIndex);
+  
 
   const typingContainer = {
     hidden: { opacity: 0 },
@@ -96,14 +112,38 @@ export const OurWorks = () => {
             </motion.span>
           ))}
         </motion.div>
-
-        <motion.div variants={elements}  initial="hidden" animate="show" className="BannerCloth bannerhidden">
+          
+        {/* <motion.div variants={elements}  initial="hidden" animate="show" className="BannerCloth bannerhidden">
           <Banner data={data1} direction={"regular"} />
         </motion.div>
         <div className="BannerGrocery bannerhidden">
           <Banner data={data2} direction={"reverse"} />
-        </div>
+        </div> */}
+        {currentItems&&currentItems?.map((arr:any, i:number) =>(
+           <div>
+           {i % 2 === 0 ? ( // Check if the index is even
+             <motion.div variants={elements} initial="hidden" animate="show" className="BannerCloth bannerhidden index">
+               <Banner data={arr.attributes} id={arr.id} direction={"regular"} />
+             </motion.div>
+           ) : ( // If the index is odd
+             <div className="BannerGrocery bannerhidden">
+               <Banner data={arr.attributes} id={arr.id} direction={"reverse"} />
+             </div>
+           )}
+         </div>
+        ))}
+               <div
+        className="pagination"
+        style={{ display: "flex", justifyContent: "center" }}
+      >
+        <Pagination
+         count={totalPages}
+         defaultPage={pageNO}
+          onChange={(event, pageNumber) => handlePage(event, pageNumber)}
+          color="primary" />
+      </div>
       </Container>
+  
     </WorkWrapper>
   );
 };
@@ -117,6 +157,7 @@ const WorkWrapper = styled.div`
       position: absolute;
       right: 10%;
       top: 6%;
+      z-index:1;
 
       @media (max-width: 900px) {
         display: none;
@@ -189,7 +230,14 @@ const WorkWrapper = styled.div`
     }
 
     .BannerCloth {
-      margin-bottom: 190px;
+      margin-bottom: 50px;
+
+      @media (max-width: 600px) {
+        margin-bottom: 100px;
+      }
+    }
+    .BannerGrocery {
+      margin-bottom: 50px;
 
       @media (max-width: 600px) {
         margin-bottom: 100px;

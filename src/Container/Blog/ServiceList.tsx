@@ -17,11 +17,12 @@ export default function ServiceList() {
   useEffect(()=>{
     dispatch(fetchBlogs());
   },[]);
+  
 
   const handlePage = (e:any,no:any) => {
     setPageNO(no);
   };
-  console.log()
+
   const itemsPerPage = 6;
   const totalPages = Math.ceil(response?.length / itemsPerPage);
   const startIndex = (pageNO - 1) * itemsPerPage;

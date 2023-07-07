@@ -9,7 +9,9 @@ import { FETCH_POST,
      PRODUCT_PRICE,
      PRODUCT_PROGRAM,
      PRODUCT_FEES,
-     LISTING_DETAILS
+     LISTING_DETAILS,
+     FETCH_WORKS,
+     FETCH_SINGLE_WORKS
     } from "../constants/actionTypes";
 
 export default (state={},action:any)=>{
@@ -26,6 +28,10 @@ export default (state={},action:any)=>{
         return {...state, fetchNews:action.payload};
         case FETCH_BLOGS:
         return {...state, fetchBlogs:action.payload};
+        case FETCH_WORKS:
+        return {...state, fetchWorks:action.payload};
+        case FETCH_SINGLE_WORKS:
+        return {...state, fetchSingleWork:action.payload};
         case PRODUCT_DETAILS:
         return {...state, productDetails:action.payload};
         case PRODUCT_PRICE:

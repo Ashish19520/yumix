@@ -11,7 +11,9 @@ import {FETCH_POST,
      PRODUCT_PRICE,
      PRODUCT_PROGRAM,
      PRODUCT_FEES,
-     LISTING_DETAILS
+     LISTING_DETAILS,
+     FETCH_WORKS,
+     FETCH_SINGLE_WORKS
     } from "../constants/actionTypes";
 
 
@@ -77,6 +79,24 @@ export const fetchBlogs=()=>async (dispatch:Dispatch<AnyAction>)=>{
     try {
        let {data}=await api.blogs();
     dispatch({type:FETCH_BLOGS,payload:data});
+    } catch (error) {
+        console.error(error);
+    }
+}
+export const fetchWorks=()=>async (dispatch:Dispatch<AnyAction>)=>{
+    try {
+       let {data}=await api.ourGreatWorks();
+    dispatch({type:FETCH_WORKS,payload:data});
+    return data;
+    } catch (error) {
+        console.error(error);
+    }
+}
+export const fetchSingleWorks=(id:number)=>async (dispatch:Dispatch<AnyAction>)=>{
+    try {
+       let {data}=await api.ourSingleGreatWorks(id);
+    dispatch({type:FETCH_SINGLE_WORKS,payload:data});
+    return data;
     } catch (error) {
         console.error(error);
     }
