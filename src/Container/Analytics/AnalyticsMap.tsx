@@ -11,21 +11,21 @@ export default function AnalyticsMap() {
       name: "Customer Experience Analytics",
       type: "Achieve improved conversion rates, seamless customer interactions, and enhanced UX with our bespoke testing methodologies and advanced...",
       image: "../images/Image8.png",
-      open:"view more",
+      open:"View more",
       add:"/analytics/customerExpierenceAnalytics",
     },
     {
       name: "Advanced Analytics",
-      type: "Gain comprehensive understanding to optimize your marketing budget with our integrated analytics methodology, allowing you to make...",
+      type: "Gain comprehensive understanding to optimize your marketing budget with our integrated analytic methodology, allowing you to make...",
       image: "../images/unsplash_eveI7MOcSmw.png",
-      open:"view more",
+      open:"View more",
       add:"/analytics/advancedAnalytics",
     },
     {
       name: "Platform Enablement",
       type: "Crafting and deploying a tailored assortment of tools and technologies to address your distinct data, measurement, and business requirements.",
       image: "../images/unsplash_H4ClLKv3pqw.png",
-      open:"view more",
+      open:"View more",
       add:"/analytics/platformEnablement"
     },
    
@@ -33,7 +33,7 @@ export default function AnalyticsMap() {
       name: "Marketing Measurement",
       type: "Make fast, informed decisions to drive your business forward with a detailed digital marketing measurement framework that eliminates data...",
       image: "../images/unsplash_s8HyIEe7lF0.png",
-      open:"view more",
+      open:"View more",
       add:"/analytics/marketMeasurement"
     },
   ];

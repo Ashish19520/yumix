@@ -6,7 +6,7 @@ import HeroServices from '../../Components/HeroServices'
 function AdvancedAnalytics() {
   const data={
     heading:"Advanced Analytics",
-    subHeading:"Gain comprehensive understanding to optimize your marketing budget with our integrated analytics methodology, allowing you to make smarter decisions with each dollar spent.",
+    subHeading:"Gain comprehensive understanding to optimize your marketing budget with our integrated analytic methodology, allowing you to make smarter decisions with each dollar spent.",
     image:"../images/unsplash_eveI7MOcSmw.png",
     blackHeading:"Turn Insights into Action",
     blackSubHeading:"Our advanced analytics solutions combine statistics, predictive analytics, customer modeling, and industry data to drive your organization's strategy. Our team evaluates your business data, including customers, competitors, and industry trends. We provide historical and future performance insights to help you allocate resources effectively and achieve your goals.",

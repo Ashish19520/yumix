@@ -6,7 +6,7 @@ import HeroServices from '../../Components/HeroServices'
 function AffilateAdvertising() {
   const data={
     heading:"Affiliate Advertising",
-    subHeading:"Set performance-based guidelines with advertising affiliates to pay for results that directly impact your bottom line. ",
+    subHeading:"Set performance-based guidelines with the advertising affiliate to pay for results that directly impact your bottom line. ",
     image:"../images/Image2.png",
     blackHeading:"Accelerate Business Growth with an Affiliate Marketing Agency",
     blackSubHeading:"Overcome challenges and maximize success in affiliate marketing with Eservz's expert services. Our team specializes in building lucrative affiliate programs that seamlessly integrate into your digital marketing strategies, ensuring incremental value and effective partner management.",
@@ -24,7 +24,7 @@ function AffilateAdvertising() {
     },
     {
       image:"../images/four.png",
-      heading:"Incrementality Measurement",
+      heading:"Incremental measurements",
       subHeading:"Analyze website traffic, track partner-driven customer acquisition, and measure pre-checkout conversions.",
     },
     ]

@@ -19,7 +19,7 @@ function SeoMarketing() {
     },
     {
       image:"../images/second.png",
-      heading:"In-House Expertise",
+      heading:"In-house Expertise",
       subHeading:"Decode your site's infrastructure and optimize SEO performance with the power of our on-site, fully integrated development team.",
     },
     {

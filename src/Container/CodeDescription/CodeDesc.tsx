@@ -135,7 +135,7 @@ function CodeDesc() {
             value={editorValue}  
             onChange={handleChange}
             // toolbarClassName={classes.toolbar}
-            placeholder='write your product description here'
+            placeholder='Write your product description here'
            />
            
 
@@ -150,7 +150,7 @@ function CodeDesc() {
             ref={inputRef as any}
             />
             <button className={`${classes.btn1} pointer`} onClick={copyHandlar}>
-              {copied?"Copied":"Copy code"}</button>
+              {copied?"Copied":"Copy Code"}</button>
             
 
         </div>
@@ -319,13 +319,13 @@ function CodeDesc() {
           <div className={classes.innerSeventh} >
             <div className={`${classes.img1} ${classes.index} pointer`}
             onClick={()=>navigate('/home/fbaCalculator')}>
-              <img src="../images/Rectangle first.png" alt="img" height="200px" width="368px"></img>
+              <img src="../images/Rectangle first.png" alt="img" className={classes.imges} height="200px"></img>
               <p> Resources</p>
               <h2> FBA Calculator</h2>
             </div>
             <div className={`${classes.img1} ${classes.index} pointer`}
              onClick={()=>navigate('/home/listingCalculator')}>
-              <img src="../images/Rectangle second.png" alt="img" height="200px" width="368px"></img>
+              <img src="../images/Rectangle second.png" alt="img" className={classes.imges} ></img>
               <p> Resources</p>
               <h2> Optimising Listing Library</h2>
             </div>

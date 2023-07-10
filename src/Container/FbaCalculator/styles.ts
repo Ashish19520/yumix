@@ -35,7 +35,14 @@ export default makeStyles((theme) => ({
       width: "100%",
     },
     [theme.breakpoints.down('sm')]: {
-      width: "80%",
+      width: "100%",
+    },
+  },
+  imges:{
+    height:"200px",
+    width:"368px",
+    [theme.breakpoints.down("sm")]: {
+      width: "100%",
     },
   },
   imageTextPara: {
@@ -84,6 +91,10 @@ export default makeStyles((theme) => ({
     gap: "30px",
     background: "#FFFCFC",
     position: "relative",
+    [theme.breakpoints.down('xs')]: {
+      width: "100%",
+      gap: "5%",
+    },
   },
   index:{
     zIndex:7,
@@ -99,6 +110,9 @@ export default makeStyles((theme) => ({
     background: "#FFFFFF",
     zIndex:1,
     borderRadius: "16px",
+    [theme.breakpoints.down('xs')]: {
+      width: "40%",
+    },
   },
   write:{
     fontFamily: 'Montserrat',
@@ -147,6 +161,10 @@ export default makeStyles((theme) => ({
       width:"33%",
       marginBottom: "20px",
     },
+    [theme.breakpoints.down('xs')]: {
+      width:"30%",
+      padding: "23px 5px",
+    },
   },
   input: {
     width: "80%",
@@ -186,7 +204,8 @@ export default makeStyles((theme) => ({
     zIndex:1, 
     marginBottom: "0px",
     [theme.breakpoints.down('xs')]: {
-      width:"33%",
+      width:"30%",
+      padding:"23px 5px",
       marginBottom: "20px",
     },
   },
@@ -279,11 +298,9 @@ export default makeStyles((theme) => ({
     alignItems: 'center',
     [theme.breakpoints.down('xs')]: {
         width: '100%',
-        maxWidth: '400px',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        paddingLeft:"30px"
       },
       [theme.breakpoints.down('sm')]: {
         width: '100%',
@@ -304,8 +321,14 @@ export default makeStyles((theme) => ({
     textAlign: 'center',
     marginBottom: '40px',
     [theme.breakpoints.down('xs')]: {
+      gap: '10px',
       width: '100%',
-      maxWidth: '400px',
+      maxWidth: '350px',
+    },
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+      maxWidth: '350px',
+      gap: '10px',
     },
   },
   innerSeventh: {
@@ -316,11 +339,11 @@ export default makeStyles((theme) => ({
     gap: '70px',
     [theme.breakpoints.down('xs')]: {
         width: '100%',
-        maxWidth: '400px',
+        gap:'10px'
       },
       [theme.breakpoints.down('sm')]: {
         width: '90%',
-        maxWidth: '280px',
+        gap:'10px'
       
       },
   },imageLines1:{

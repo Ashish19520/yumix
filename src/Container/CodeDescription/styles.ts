@@ -146,6 +146,13 @@ export default makeStyles((theme) => ({
       transform: "translateX(50%)",
     },
   },
+  imges:{
+    height:"200px",
+    width:"368px",
+    [theme.breakpoints.down("sm")]: {
+      width: "100%",
+    },
+  },
   txtField: {
     padding: "10px",
     width: "500px",
@@ -176,6 +183,12 @@ export default makeStyles((theme) => ({
   },
   img1: {
     width: "30%",
+    [theme.breakpoints.down("sm")]: {  
+      width: "100%",
+    },
+    [theme.breakpoints.down("xs")]: {  
+      width: "100%",
+    },
   },
   btn_FBACalculate: {
     

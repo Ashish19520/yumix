@@ -199,7 +199,7 @@ export default function ContactForm () {
         {failShow && (
           <Alert className='index' severity='error'>
             <AlertTitle>Error</AlertTitle>
-            Your form has not been submitted Please try again.
+            Your form has not been submitted. Please try again.
           </Alert>
         )}
 

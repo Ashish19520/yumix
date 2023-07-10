@@ -64,7 +64,7 @@ export const ServicesBanner = () => {
               strategy with the goal of delighting users along every stage of
               their digital journey​.
               <br />
-              <br /> From initial planning and journey mapping to development
+              <br /> From initial planning and journey mapping to the development
               and management of all of the necessary digital assets, our
               strategists, analysts, designers, and developers can plan,
               produce, and optimize the creative components needed to make

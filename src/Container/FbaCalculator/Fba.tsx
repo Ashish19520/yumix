@@ -1013,13 +1013,13 @@ export const Fba = () => {
             <div className={`${classes.img} ${classes.index} pointer`}
             onClick={()=>navigate('/home/listingCalculator')}>
 
-              <img src="../images/Rectangle second.png" alt="img" height="200px" width="368px"></img>
+              <img src="../images/Rectangle second.png" alt="img" className={classes.imges}></img>
               <p> Resources</p>
               <h2>Optimising Listing Library</h2>
             </div>
             <div className={`${classes.img} ${classes.index} pointer`}
              onClick={()=>navigate('/home/descriptionToCode')}>
-              <img src="../images/unsplash_s8HyIEe7lF0.png" alt="img" height="200px" width="368px"></img>
+              <img src="../images/unsplash_s8HyIEe7lF0.png" alt="img" className={classes.imges} ></img>
               <p> Resources</p>
               <h2>Desctiption to code</h2>
             </div>
@@ -1109,12 +1109,21 @@ const FbaContainer = styled.div`
             &:focus {
               outline: none;
             }
+            @media (max-width: 350px) {
+              padding-left:20px;
+            }
           }
 
           
         @media (max-width: 600px) {
           width: 100%;
           padding-left: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        @media (max-width: 350px) {
+          width: 80%;
           display: flex;
           align-items: center;
           justify-content: center;

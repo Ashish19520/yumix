@@ -1122,8 +1122,7 @@ useEffect(() => {
               <img
                 src='../images/Rectangle first.png'
                 alt='img'
-                height='200px'
-                width='369px'
+                className={classes.imges}
               ></img>
               <p> Resources</p>
               <h2> FBA Calculator</h2>
@@ -1135,8 +1134,7 @@ useEffect(() => {
               <img
                 src='../images/unsplash_s8HyIEe7lF0.png'
                 alt='img'
-                height='200px'
-                width='369px'
+                className={classes.imges}
               ></img>
               <p> Resources</p>
               <h2>Description to code</h2>

@@ -239,7 +239,14 @@ export default makeStyles((theme:any) => ({
           width: "100%",
         },
         [theme.breakpoints.down('sm')]: {
-          width: "80%",
+          width: "100%",
+        },
+      },
+      imges:{
+        height:"200px",
+        width:"368px",
+        [theme.breakpoints.down("sm")]: {
+          width: "100%",
         },
       },
       innerWrapper: {

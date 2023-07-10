@@ -12,56 +12,56 @@ export default function DigitalMap() {
       name: "Paid Search Marketing Services",
       type: "Maximize results and your budget with a unique, granular approach to delivering the most relevant experience to your customers.",
       image: "../images/laptop.png",
-      open:"view more",
+      open:"View more",
       add:"/digitalMedia/paidSearch"
     },
     {
       name: "Amazon Ads Services",
       type: "Enhance customer interaction on Amazon to exponentially increase your sales, spanning from creating awareness to driving purchases.",
       image: "../images/Background.png",
-      open:"view more",
+      open:"View more",
       add:"/digitalMedia/amazon"
     },
     {
       name: "Marketplace Listing Services",
       type: "Shape the journey of potential customers across the marketplace to elevate your chances of success and boost your revenue. ",
       image: "../images/Image.png",
-      open:"view more",
+      open:"View more",
       add:"/digitalMedia/marketPlace"
     },
     {
       name: "SEO Marketing Services",
       type: "Drive brand discovery, enhance website engagement, and optimize conversions with our comprehensive cross-functional approach...",
       image: "../images/image3.png",
-      open:"view more",
+      open:"View more",
       add:"/digitalMedia/seoMarketing"
     },
     {
       name: "Affiliate Advertising",
-      type: "Set performance-based guidelines with advertising affiliates to pay for results that directly impact your bottom line.",
+      type: "Set performance-based guidelines with the advertising affiliate to pay for results that directly impact your bottom line.",
       image: "../images/Image2.png",
-      open:"view more",
+      open:"View more",
       add:"/digitalMedia/affilateAdvertising"
     },
     {
       name: "Social Media Management",
-      type: "Grow your brand on the largest digital marketing stage with our audience-first approach, capturing attention and driving conversions across top...",
+      type: "Grow your brand on the largest digital marketing stage with our audience-first approach, capturing attention and driving conversions across the top...",
       image: "../images/Image4.png",
-      open:"view more",
+      open:"View more",
       add:"/digitalMedia/socialMediaManagement"
     },
     {
       name: "Email Marketing",
       type: "Foster brand engagement and optimize ROI by delivering tailored messages at the most opportune moments.",
       image: "../images/Image5.png",
-      open:"view more",
+      open:"View more",
       add:"/digitalMedia/emailMarketing"
     },
     {
       name: " Automated Advertising",
       type: "Engage customers at every stage of the funnel with personalized automated advertising strategies, reaching them wherever they are.",
       image: "../images/Image6.png",
-      open:"view more",
+      open:"View more",
       add:"/digitalMedia/automatedAdvertising"
     },
     

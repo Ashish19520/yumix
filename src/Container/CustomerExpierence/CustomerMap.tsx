@@ -13,14 +13,14 @@ export default function CustomerMap() {
       name: "Design",
       type: "Attract and impress your audience, outshine your competitors, and achieve business goals with unique data-driven content that wins over...",
       image: "../images/image19.png",
-      open:"view more",
+      open:"View more",
       add:"/customerExpierence/design"
     },
     {
       name: "Mobile & Web Development ",
       type: "Upgrade to a best-in-class website built to drive conversions, spotlight your brand in the best light, and optimize performance.",
       image: "../images/image18.png",
-      open:"view more",
+      open:"View more",
       add:"/customerExpierence/mobileWebDev"
     },
     {

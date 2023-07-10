@@ -25,7 +25,7 @@ function Amazon() {
     {
       image:"../images/four.png",
       heading:"Cross-Channel Integration",
-      subHeading:"Boost eCommerce sales through cross-channel integration. Align Amazon performance with other channels for maximum impact.",
+      subHeading:"Boost E-Commerce sales through cross-channel integration. Align Amazon performance with other channels for maximum impact.",
     },
     ]
   }

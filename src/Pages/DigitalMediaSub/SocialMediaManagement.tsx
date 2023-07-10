@@ -6,7 +6,7 @@ import HeroServices from '../../Components/HeroServices'
 function SocialMediaManagement() {
   const data={
     heading:"Social Media Management",
-    subHeading:"Grow your brand on the largest digital marketing stage with our audience-first approach, capturing attention and driving conversions across top platforms. ",
+    subHeading:"Grow your brand on the largest digital marketing stage with our audience-first approach, capturing attention and driving conversions across the top platforms. ",
     image: "../images/Image4.png",
     blackHeading:"Amplify Your Social Media Strategy for Maximum Impact Across Platforms",
     blackSubHeading:"Unlock the full power of social media marketing with our comprehensive and results-oriented approach. Our tailored strategies cover audience targeting, engaging messaging, and measurable KPIs to meet your brand's goals. With our expertise, we deliver consistent and impactful results across both established and emerging platforms throughout the customer journey.",

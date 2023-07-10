@@ -49,7 +49,7 @@ function WhyUs () {
   const points = [
     {
       title: 'Save Time',
-      para: 'Skip the Learning Curve. Eservz has the established best practices to help you quickly achieve your eCommerce and Amazon goals.',
+      para: 'Skip the Learning Curve. Eservz has the established best practices to help you quickly achieve your E-Commerce and Amazon goals.',
       image: '/images/work1.png'
     },
     {
