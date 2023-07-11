@@ -1,12 +1,15 @@
-import { Container ,Pagination} from "@mui/material";
+import { Container ,Pagination,Grid,Box,Typography} from "@mui/material";
 import React, { useEffect,useState} from "react";
 import styled from "styled-components";
 import { Banner } from "../../Components/Banner";
 import { motion } from "framer-motion";
 import { useDispatch } from 'react-redux';
 import { Dispatch } from 'redux';
-import { fetchWorks } from "../../actions/posts";
+import { fetchWorks,fetchCategories } from "../../actions/posts";
 import { useSelector } from "react-redux/es/exports"
+import { useNavigate } from "react-router-dom";
+import BlogService from "../Blog/BlogService";
+import PortfolioServices from "./PortfolioServices";
 
 export const OurWorks = () => {
   const [pageNO, setPageNO] = useState(()=>{
@@ -20,19 +23,33 @@ export const OurWorks = () => {
     setPageNO(no);
   };
 
-  
+  const navigate=useNavigate();
   const dispatch: Dispatch<any> = useDispatch()
   const [data, setData] =useState<any>(null)
+  const [category, setCategory] =useState<any>(null)
+  const [filter, setFilter] = useState<any>({
+    first:false,
+    second:false,
+    firstValue:"",
+    secondValue:""
+  })
+  const {first,second,firstValue,secondValue}=filter;
   
   useEffect(() => {
     fetch()
-  }, [data])
+  }, [filter])
+  
+    
   
 const fetch = async () => {
-  const dat: any = await dispatch(fetchWorks())
+  const dat: any = await dispatch(fetchWorks(first,second,firstValue,secondValue));
+  const res: any = await dispatch(fetchCategories())
   setData(dat.data);
+  setCategory(res.data);
 }
-const itemsPerPage = 4;
+
+
+const itemsPerPage = 9;
   const totalPages = Math.ceil(data?.length / itemsPerPage);
   const startIndex = (pageNO - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
@@ -73,12 +90,12 @@ const itemsPerPage = 4;
       },
     },
   };
-
+  
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          console.log("Entering into zone");
+
           entry.target.classList.add("animate__animated");
           entry.target.classList.add("animate__fadeIn");
         }
@@ -106,20 +123,63 @@ const itemsPerPage = 4;
           animate="show"
           className="title"
         >
-          {Array.from("Portfolio").map((word, i) => (
+          {Array.from("Our Portfolio").map((word, i) => (
             <motion.span key={i} variants={typingText}>
               {word}
             </motion.span>
           ))}
         </motion.div>
+
+        <PortfolioServices data={category} setFilter={setFilter} filter={filter}/>
+
+
+        <div className="services-list-imgs">
+        <Grid
+          container
+          style={{ maxWidth: "1200px", padding: "80px 20px", margin: "auto" }}
+        >
+
+          {currentItems?.length?currentItems&&currentItems?.map((item:any,index:number) => {
+            return (
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                md={4}
+                key={item.id}
+                style={{ padding: "20px 10px" }}
+              >
+                <Box
+                  style={{
+                    backgroundImage: `url(${item?.attributes?.imgPath})`,
+                    width: "100%",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    borderRadius: "12px",
+                    height: "200px",
+                  }}
+                />
+                <Typography className="item-type" 
+                style={{cursor:"pointer"}}
+                onClick={()=>navigate(`/works/${item?.id}`)}
+                >
+                  {item?.attributes?.title.substring(0, 44)}
+                  </Typography>
+                  <Typography className="item-type"
+                  style={{fontWeight:"700"}}>
           
-        {/* <motion.div variants={elements}  initial="hidden" animate="show" className="BannerCloth bannerhidden">
-          <Banner data={data1} direction={"regular"} />
-        </motion.div>
-        <div className="BannerGrocery bannerhidden">
-          <Banner data={data2} direction={"reverse"} />
-        </div> */}
-        {currentItems&&currentItems?.map((arr:any, i:number) =>(
+                  {item?.attributes?.Category.toUpperCase()}  
+                  </Typography>
+                
+              </Grid>
+            );
+          }):<div style={{margin:"0 auto"}}>
+          <h1>Sorry,no items match to your search</h1>
+        </div>
+        }
+        </Grid>
+      </div>
+        {/* {currentItems&&currentItems?.map((arr:any, i:number) =>(
            <div>
            {i % 2 === 0 ? ( // Check if the index is even
              <motion.div variants={elements} initial="hidden" animate="show" className="BannerCloth bannerhidden index">
@@ -131,7 +191,8 @@ const itemsPerPage = 4;
              </div>
            )}
          </div>
-        ))}
+        ))} */}
+
                <div
         className="pagination"
         style={{ display: "flex", justifyContent: "center" }}
@@ -156,7 +217,7 @@ const WorkWrapper = styled.div`
       width: 20%;
       position: absolute;
       right: 10%;
-      top: 6%;
+      top: 1%;
       z-index:1;
 
       @media (max-width: 900px) {

@@ -5,53 +5,8 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
 
-export default function BlogService() {
+export default function BlogService({data}:any) {
   const navigate=useNavigate();
-  const services = [
-    {name:"Affiliate & Influencer",
-    add:"/digitalMedia/affilateAdvertising"
-  },
-    {name:"Amazon",
-    add:"/digitalMedia/amazon"
-  },
-    {name:"Analytics",
-   add:"/analytics/customerExpierenceAnalytics"
-  },
-    {
-      name:"Email-Marketing",
-    add:"/digitalMedia/emailMarketing"
-  },
-
-    {
-      name:"Social Media Management",
-    add:"/digitalMedia/socialMediaManagement"
-  },
-
-    {
-      name:"Marketing & Retail Media",
-    add:"/analytics/marketMeasurement"
-    },
-    {
-      name:"Paid Search",
-    add:"/digitalMedia/paidSearch"
-    },
-    {
-      name:"Platform Enablement",
-    add:"/analytics/platformEnablement"
-    },
-    {
-      name:"Premium Content",
-    add:"/customerExpierence/contactMarketing"
-    },
-    
-    {
-    name:"SEO",
-     add:"/digitalMedia/seoMarketing"
-    },
-    {
-      name:"Web & Mobile Development",
-      add:"/customerExpierence/mobileWebDev"
-  }];
 
   const [flag, setFlag] = useState(true);
   
@@ -74,7 +29,6 @@ export default function BlogService() {
     const hiddenElements = document.querySelectorAll(".services-btn");
     hiddenElements.forEach((el) => observer.observe(el));
   }, []);
-
   return (
     <BlogServiceWrapper>
       <div className="services-btn">
@@ -96,7 +50,7 @@ export default function BlogService() {
               gap: "25px",
             }}
           >
-            {services.map((item, index) => {
+            {data?.map((item:any, index:number) => {
               return (
                 <Button
                   key={item.name}

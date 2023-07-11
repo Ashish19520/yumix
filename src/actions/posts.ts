@@ -13,7 +13,8 @@ import {FETCH_POST,
      PRODUCT_FEES,
      LISTING_DETAILS,
      FETCH_WORKS,
-     FETCH_SINGLE_WORKS
+     FETCH_SINGLE_WORKS,
+     FETCH_CATEGORY
     } from "../constants/actionTypes";
 
 
@@ -83,10 +84,19 @@ export const fetchBlogs=()=>async (dispatch:Dispatch<AnyAction>)=>{
         console.error(error);
     }
 }
-export const fetchWorks=()=>async (dispatch:Dispatch<AnyAction>)=>{
+export const fetchWorks=(first:boolean, second:boolean, firstValue:string, secondValue:string)=>async (dispatch:Dispatch<AnyAction>)=>{
     try {
-       let {data}=await api.ourGreatWorks();
+       let {data}=await api.ourGreatWorks(first, second, firstValue, secondValue);
     dispatch({type:FETCH_WORKS,payload:data});
+    return data;
+    } catch (error) {
+        console.error(error);
+    }
+}
+export const fetchCategories=()=>async (dispatch:Dispatch<AnyAction>)=>{
+    try {
+       let {data}=await api.category();
+    dispatch({type:FETCH_CATEGORY,payload:data});
     return data;
     } catch (error) {
         console.error(error);

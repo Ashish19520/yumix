@@ -11,7 +11,8 @@ import { FETCH_POST,
      PRODUCT_FEES,
      LISTING_DETAILS,
      FETCH_WORKS,
-     FETCH_SINGLE_WORKS
+     FETCH_SINGLE_WORKS,
+     FETCH_CATEGORY
     } from "../constants/actionTypes";
 
 export default (state={},action:any)=>{
@@ -30,6 +31,8 @@ export default (state={},action:any)=>{
         return {...state, fetchBlogs:action.payload};
         case FETCH_WORKS:
         return {...state, fetchWorks:action.payload};
+        case FETCH_CATEGORY:
+            return {...state, fetchCategory:action.payload};
         case FETCH_SINGLE_WORKS:
         return {...state, fetchSingleWork:action.payload};
         case PRODUCT_DETAILS:

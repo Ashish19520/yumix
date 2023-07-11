@@ -19,8 +19,25 @@ export const clientList=()=>API.get(`api/clients`);
 export const testimonials=()=>API.get(`api/testimonials`);
 export const sitecounters=()=>API.get(`api/sitecounters`);
 export const blogs=()=>API.get(`api/blogs`);   
-export const ourGreatWorks=()=>API.get(`api/our-works`);  
+// export const ourGreatWorks=(first,second,firstValue,secondValue)=>API.get(`api/our-works?filters[Category][$eq]=menFashion&filters[SubCategory][$eq]=formalShirts`);  
+export const ourGreatWorks = (first:boolean, second:boolean, firstValue:string, secondValue:string) => {
+  let endpoint = 'api/our-works';
+  let filters = {};
+
+  if (first && second) {
+    filters = {
+      Category: { $eq: firstValue },
+      SubCategory: { $eq: secondValue },
+    };
+  } else if (first) {
+    filters = { Category: { $eq: firstValue } };
+  }
+
+  return API.get(endpoint,{ params: { filters } } );
+};
+
 export const ourSingleGreatWorks=(id:number)=>API.get(`api/our-works/${id}`);  
+export const category=()=>API.get(`api/categories?populate=*`);    
 
 // export const fetchNews=()=>API.get(`api/latest-newsses/rss-feed`);
 export const fetchNews=()=>API.get(`api/latest-newsses/latest-news`);
