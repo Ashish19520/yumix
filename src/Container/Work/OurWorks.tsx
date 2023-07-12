@@ -43,10 +43,16 @@ export const OurWorks = () => {
   
 const fetch = async () => {
   const dat: any = await dispatch(fetchWorks(first,second,firstValue,secondValue));
-  const res: any = await dispatch(fetchCategories())
+  
   setData(dat.data);
+}
+const fetch2=async () => {
+  const res: any = await dispatch(fetchCategories())
   setCategory(res.data);
 }
+useEffect(()=>{
+  fetch2()
+  },[])
 
 
 const itemsPerPage = 9;
@@ -168,7 +174,8 @@ const itemsPerPage = 9;
                   <Typography className="item-type"
                   style={{fontWeight:"700"}}>
           
-                  {item?.attributes?.Category.toUpperCase()}  
+                  {/* {item?.attributes?.Category.toUpperCase()}   */}
+                  {item?.attributes?.category?.data?.attributes?.name.toUpperCase()}  
                   </Typography>
                 
               </Grid>

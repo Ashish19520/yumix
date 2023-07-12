@@ -21,23 +21,23 @@ export const sitecounters=()=>API.get(`api/sitecounters`);
 export const blogs=()=>API.get(`api/blogs`);   
 // export const ourGreatWorks=(first,second,firstValue,secondValue)=>API.get(`api/our-works?filters[Category][$eq]=menFashion&filters[SubCategory][$eq]=formalShirts`);  
 export const ourGreatWorks = (first:boolean, second:boolean, firstValue:string, secondValue:string) => {
-  let endpoint = 'api/our-works';
+  let endpoint = 'api/our-works?populate=*';
   let filters = {};
 
   if (first && second) {
     filters = {
-      Category: { $eq: firstValue },
-      SubCategory: { $eq: secondValue },
+      category:{name:{ $eq: firstValue }},
+      SubCategories: { name:{$eq: secondValue }},
     };
   } else if (first) {
-    filters = { Category: { $eq: firstValue } };
+    filters ={ category:{name:{ $eq: firstValue }}} ;
   }
 
   return API.get(endpoint,{ params: { filters } } );
 };
 
 export const ourSingleGreatWorks=(id:number)=>API.get(`api/our-works/${id}`);  
-export const category=()=>API.get(`api/categories?populate=*`);    
+export const category=()=>API.get(`api/categories?populate=sub_category`);    
 
 // export const fetchNews=()=>API.get(`api/latest-newsses/rss-feed`);
 export const fetchNews=()=>API.get(`api/latest-newsses/latest-news`);
