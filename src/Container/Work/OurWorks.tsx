@@ -163,6 +163,7 @@ const itemsPerPage = 9;
                     backgroundPosition: "center",
                     borderRadius: "12px",
                     height: "200px",
+                    backgroundRepeat: "no-repeat",
                   }}
                 />
                 <Typography className="item-type" 
