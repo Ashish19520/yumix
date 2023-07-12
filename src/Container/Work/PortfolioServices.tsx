@@ -39,8 +39,10 @@ export default function PortfolioServices({data,filter,setFilter}:any) {
     setFilter({
           ...filter,
           first: true,
+          second:false,
           firstValue:val
     });
+    setSelectedBottomButton(null);
       
   };
   useEffect(()=>{
@@ -70,7 +72,9 @@ export default function PortfolioServices({data,filter,setFilter}:any) {
 
       });
   }
-
+  function convertToTitleCase(str:string) {
+    return str.replace(/([a-z])([A-Z])/g, "$1 $2").replace(/^./, function(s) { return s.toUpperCase(); });
+  }
   return (
     <BlogServiceWrapper>
       <div className="services-btn">
@@ -81,7 +85,7 @@ export default function PortfolioServices({data,filter,setFilter}:any) {
            
             className="bs-title"
           >
-            Services We Provide
+            Category {filter?.first?" > "+filter?.firstValue.charAt(0).toUpperCase()+filter.firstValue.slice(1):""} {filter?.second?" > "+filter?.secondValue.charAt(0).toUpperCase()+filter.secondValue.slice(1):""}
           </Typography>
           <Box
             style={{
@@ -129,7 +133,8 @@ export default function PortfolioServices({data,filter,setFilter}:any) {
                     },
                   }}
                 >
-                  {item?.attributes?.name.charAt(0).toUpperCase() + item?.attributes?.name.slice(1)}
+                   {convertToTitleCase(item?.attributes?.name)}
+                  {/* {item?.attributes?.name.charAt(0).toUpperCase() + item?.attributes?.name.slice(1)} */}
                 </Button>
               );
             })}
@@ -184,7 +189,9 @@ export default function PortfolioServices({data,filter,setFilter}:any) {
                     },
                   }}
                 >
-                  {item?.attributes?.name.charAt(0).toUpperCase() + item?.attributes?.name.slice(1)}
+                 
+                  {/* {item?.attributes?.name.charAt(0).toUpperCase() + item?.attributes?.name.slice(1)} */}
+                  {convertToTitleCase(item?.attributes?.name)}
                 </Button>
               );
             }):null
