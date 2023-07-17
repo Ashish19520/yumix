@@ -25,7 +25,6 @@ export default makeStyles((theme) => ({
         alignItems: 'center',
         padding: "0px 1px",
         gap: "2px",
-        height: "150px",
         width: "20%",
         [theme.breakpoints.down('xs')]: {
             gap: '10px',
@@ -38,7 +37,7 @@ export default makeStyles((theme) => ({
           },
       },
       image:{
-        height:"60%",
+        height:"90px",
         width:"100%",
         [theme.breakpoints.down('xs')]: {
           width: '100%',

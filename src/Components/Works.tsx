@@ -26,21 +26,21 @@ const Works = () => {
               <div className="countBody">
                 <img src="./images/Ellipse 65@3x.png" className="img-dot1"></img>
                 <div className="outter">
-                  <img src="./images/amazon.png" className="img-dot2"></img>
+                  <img src="./images/amazon.png" className="img-dot2" height="90px"></img>
                   {/* <p>amazon</p> */}
                 </div>
                 <div className="outter">
-                <img src="./images/google.png" className="img-dot2"></img>
+                <img src="./images/google.png" height="60px" className="img-dot2"></img>
                   {/* <p>google</p> */}
                 
                 </div>
                 <div className="outter">
-                <img src="./images/shopify.png" className="img-dot2"></img>
+                <img src="./images/shopify.png" height="90px" className="img-dot2"></img>
                   {/* <p>shopify</p> */}
                   
                 </div>
                 <div className="outter">
-                <img src="./images/bigcommerce.png" className="img-dot2"></img>
+                <img src="./images/bigcommerce.png"  height="90px" className="img-dot2"></img>
                   {/* <p>big commerce</p> */}
                 </div>
               </div>
@@ -80,8 +80,8 @@ const Count = styled.div`
       }
 
       .img-dot2{
-        width:100%;
-        height:150px;
+        width:80%;
+        // height:120px;
         align-items: center;
       }
 
@@ -106,6 +106,7 @@ const Count = styled.div`
         justify-content:center;
         align-items:center;
         padding: 20px 40px;
+        height: 150px;
         border-right: 0.1px solid rgba(0, 0, 0, 0.3);
         &:last-of-type {
           border-right: unset;
