@@ -124,7 +124,7 @@ const ToolsToService = () => {
             </div>
             <div className={classes.imageTextPara}>
               <img
-                src='../images/rebatekey.png'
+                src='../images/Rebatekey.png'
                 alt='img'
                 className={classes.image}
               ></img>
@@ -132,7 +132,7 @@ const ToolsToService = () => {
             </div>
             <div className={classes.imageTextPara}>
               <img
-                src='../images/shipstation.png'
+                src='../images/Shipstation.png'
                 alt='img'
                 className={classes.image}
               ></img>
