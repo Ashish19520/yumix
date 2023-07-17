@@ -9,6 +9,7 @@ import OurLeaders from '../Container/About US/OurLeaders'
 import TopBanner from '../Container/About US/TopBanner'
 import { Typography } from '@mui/material'
 import styled from 'styled-components'
+import  Works  from '../Components/Works'
 
 export default function AboutUs() {
 
@@ -22,9 +23,10 @@ useEffect(()=>{
       <BannerList />
       <MidBanner />
       <TypoWrapper>
-      <Typography fontSize="32px" textAlign="center" width="100%" fontFamily="Poppins-SemiBold" color="#3A3B44" style={{maxWidth:"1100px", margin:"auto"}} className='about-typo'>Actions speak louder than words</Typography>
+      <Typography fontSize="32px" textAlign="center" width="100%" fontFamily="Poppins-SemiBold" color="#3A3B44" style={{maxWidth:"1100px", margin:"auto"}} className='about-typo'>Partners we Have Worked With</Typography>
       </TypoWrapper>
-      <Counter />
+      {/* <Counter /> */}
+       <Works/>
       <BottomBanner />
       <OurLeaders />
       <ContactForm />
