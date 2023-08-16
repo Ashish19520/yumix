@@ -90,12 +90,13 @@ export default function TopBanner() {
               className="about_subtitle justify"
             
             >
-              Eservz is a leading and globally renowned e-commerce and Amazon
-              specialist agency that provides cutting edge, groundbreaking and
-              truly revolutionary back office support to e-commerce sellers,
-              business owners and vendors on multiple online channels especially
-              Amazon.
+              Brands willing to sell online face several challenges like successful Launch on Marketplaces, Inventory Management, Order Processing and Fulfillment, Multi-channel Selling (Amazon, Walmart, eBay, Social Media Platforms, and your own website), Competitive Analysis, Account Management & Support, Marketing and PPC Advertising Management, Analytics and Reporting, Scalability and Growth. 
+
             </Typography>
+            <Typography 
+            variant="h2"
+            className="about_subtitle justify"> 
+            Partnering with Bighatch Consulting, commonly known as ESERVZ can help Brands & Resellers to overcome these complexities more effectively, save time and resources, improve operational efficiency, and focus on core business activities. </Typography>
           </motion.div>
         </Grid>
         <Grid
@@ -119,7 +120,7 @@ export default function TopBanner() {
           animate="show"
           className="title"
         >
-          <Box sx={{ ...style.bluredBox, top: { xs: "40%", md: "70%" } }}>
+          <Box sx={{ ...style.bluredBox, top: { xs: "30%", md: "75%" } }}>
             <img src="./images/Round Cube2@3x.png" className="logo-fold" width="100%"></img>
           </Box>
           <img src="./images/Rock2.png" style={style.bluredRock}   ></img>
@@ -132,6 +133,7 @@ export default function TopBanner() {
 
 const TopBannerWrapper = styled.div`
  .about_title {
+    margin-top:-50px;
     font-size: 40px;
     font-weight: 700;
     color: #0b0720;
@@ -144,7 +146,8 @@ const TopBannerWrapper = styled.div`
   }
 
   .about_subtitle {
-    margin-top: 40px;
+    margin-top: 15px;
+    z-indez:7;
     font-size: 16px;
     font-weight: 400;
     color: #696969;
@@ -165,7 +168,7 @@ const style = {
   bluredRock: {
     width: "15%",
     position: "absolute",
-    top: "20px",
+    top: "30px",
     right: "0px",
     zIndex: 2,
   } as React.CSSProperties,

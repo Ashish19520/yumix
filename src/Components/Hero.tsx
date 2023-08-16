@@ -262,9 +262,11 @@ export const Hero = () => {
               ))}
             </motion.h1>
             <motion.p variants={explainProduct} initial="hidden" animate="show">
-              With our complete multi-channel solution, you'll have access to
+              {/* With our complete multi-channel solution, you'll have access to
               everything you need to succeed in today's competitive online
-              marketplace.
+              marketplace. */}
+              Elevate Your Ecommerce Empire: Unleash Growth Across Amazon, Walmart, Your Own Website, and Beyond – With Team ESERVZ, Your Ultimate Destination for Holistic Ecommerce Success!
+
             </motion.p>
             <motion.img
               src="./images/FullRock2@3x.png"

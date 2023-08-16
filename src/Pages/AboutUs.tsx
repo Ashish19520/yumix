@@ -23,7 +23,7 @@ useEffect(()=>{
       <BannerList />
       <MidBanner />
       <TypoWrapper>
-      <Typography fontSize="32px" textAlign="center" width="100%" fontFamily="Poppins-SemiBold" color="#3A3B44" style={{maxWidth:"1100px", margin:"auto"}} className='about-typo'>Partners we Have Worked With</Typography>
+      <Typography fontSize="32px" textAlign="center" width="100%" fontFamily="Poppins-SemiBold" color="#3A3B44" style={{maxWidth:"1100px", margin:"auto"}} className='about-typo'>Collaborative Ventures We've Engaged In</Typography>
       </TypoWrapper>
       {/* <Counter /> */}
        <Works/>
@@ -42,6 +42,7 @@ const TypoWrapper=styled.div`
     font-size:32px; 
     text-align:center;
      width:100%;
+     
     font-family:Poppins-SemiBold;
     color:#3A3B44;
 

@@ -81,12 +81,23 @@ export default function BannerList() {
             List ∙ <span style={{color:'#828490'}}>Advertise ∙ Grow</span>
           </Typography> */}
           <Typography fontSize="16px" fontFamily="Montserrat" color="#828490" style={{marginTop:"15px"}}>
-            There are more than 30 Million product listing on Amazon Platform. Beat your FBA competitors with our listing audit and optimization service.
+          Our tagline, "List, Advertise & Grow" encapsulates our core approach. 
+          </Typography>
+          <Typography fontSize="16px" fontFamily="Montserrat" color="#828490" style={{marginTop:"15px"}}>
+          "List" signifies our expertise in curating and presenting products on online platforms.  
+          </Typography>
+          <Typography fontSize="16px" fontFamily="Montserrat" color="#828490" style={{marginTop:"15px"}}>
+          "Advertise" reflects our ability to market these products strategically. "Grow" underscores our commitment to expanding the brand's reach, customer engagement, and overall success in the digital marketplace.
+          </Typography>
+          <Typography fontSize="16px" fontFamily="Montserrat" color="#828490" style={{marginTop:"15px"}}>
+          We are Bighatch Consulting, also recognized as ESERVZ. Established in 2018 (officially registered in 2020), our team comprises experienced e-commerce specialists. Our mission is to offer expert assistance to brands and retailers with an online presence. Operating across the United States of America, United Kingdom, Canada, Australia, India, and various other markets, we serve as comprehensive multichannel eCommerce service providers.
+
           </Typography>
         </Grid>
-        <Grid item xs={12} md={4} sx={{textAlign:"center", position:{xs:"absolute", md:"relative"}, top:{xs:"-20px", md:"0px"}}}>
+        
+        <Grid item  xs={12} md={4} sx={{textAlign:"center", position:{xs:"absolute", md:"relative"}, top:{xs:"-20px", md:"0px"}}}>
           
-          <img src="/images/Holding a pencil.png" alt="Holding Pencil" style={{width:"50%", scale:"2",marginLeft:"30px"}}/>
+          <img className="hold-pencil" src="/images/Holding a pencil.png" alt="Holding Pencil"  />
         </Grid>
       </Grid>
     </Box>

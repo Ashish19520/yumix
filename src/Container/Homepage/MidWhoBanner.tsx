@@ -46,11 +46,13 @@ export const MidWhoBanner = () => {
             <img src="./images/Ellipse 63@3x.png" className="img-dot3"></img>
             <h2>Who's Eservz?</h2>
             <p>
-              Eservz is a leading and globally renowned e-commerce and Amazon
+              {/* Eservz is a leading and globally renowned e-commerce and Amazon
               specialist agency that provides cutting edge, groundbreaking and
               truly revolutionary back office support to e-commerce sellers,
               business owners and vendors on multiple online channels especially
-              Amazon.
+              Amazon. */}
+              We are Bighatch Consulting, also recognized as ESERVZ. Established in 2018 (officially registered in 2020), our team comprises experienced e-commerce specialists. Our mission is to offer expert assistance to brands and retailers with an online presence. Operating across the United States of America, United Kingdom, Canada, Australia, India, and various other markets, we serve as comprehensive multichannel eCommerce service providers.
+
             </p>
           </div>
           <img  src="./images/Round Cube2@3x.png" className="cube-img"></img>

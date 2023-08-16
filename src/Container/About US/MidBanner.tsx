@@ -91,7 +91,8 @@ export default function TopBanner() {
             className="title"
           >
             <Typography variant="h2" className="mid-title">
-              {Array.from("Commitment for excellence").map((word, i) => (
+            {/* {Array.from("Commitment for excellence").map((word, i) => ( */}
+              {Array.from("Recommendations, Testimonials & Trade References").map((word, i) => (
                 <motion.span key={i} variants={typingText}>
                   {word}
                 </motion.span>
@@ -101,14 +102,13 @@ export default function TopBanner() {
           <motion.div variants={elements} initial="hidden" animate="show">
             <Typography
               variant="h2"
-             
-              className="mid-sub"
-            >
-              Eservz is a leading and globally renowned e-commerce and Amazon
-              specialist agency that provides cutting edge, groundbreaking and
-              truly revolutionary back office support to e-commerce sellers,
-              business owners and vendors on multiple online channels especially
-              Amazon.
+              className="mid-sub">
+              Recommendations from industry experts, brands, and retailers and Video testimonials on our website serve as powerful social proof, showcasing the positive experiences and outcomes that clients have had working with our team.
+            </Typography>
+            <Typography
+              variant="h2"
+              className="mid-sub">
+             Trade references are another valuable resource that anyone can utilize to verify our track record and the quality of our services. By offering trade references on demand, we provide an opportunity for interested parties to directly reach out to previous clients and gain insights into their experiences working with our team.
             </Typography>
           </motion.div>
         </Grid>
@@ -132,9 +132,10 @@ export default function TopBanner() {
             position: "absolute",
             top: "50px",
             right: "50px",
+            
           }}
         ></Box>
-        <Box sx={{ ...style.bluredBox, bottom: { xs: "50%", md: "10%" } }}>
+        <Box className="box-blur" sx={{ ...style.bluredBox, bottom: { xs: "50%", md: "10%" } }}>
           <img src="./images/Round Cube2@3x.png" width="100%"></img>
         </Box>
       </Grid>
@@ -165,6 +166,16 @@ const MidBannerWrapper = styled.div`
       font-size: 14px;
     }
   }
+  .box-blur{
+    width: "10%",
+    position: "absolute",
+    top: "78%",
+    right: "30px",
+    zIndex:"-1",
+    @media(max-width:908px){
+      top: "90%",
+    }
+  }
 `;
 
 const style = {
@@ -180,7 +191,8 @@ const style = {
   bluredBox: {
     width: "10%",
     position: "absolute",
-    bottom: "80px",
+    top: "78%",
     right: "30px",
+    zIndex:"-1",
   } as React.CSSProperties,
 };

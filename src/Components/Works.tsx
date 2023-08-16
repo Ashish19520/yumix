@@ -25,14 +25,9 @@ const Works = () => {
             <Container maxWidth="xl" className="container">
               <div className="countBody">
                 <img src="./images/Ellipse 65@3x.png" className="img-dot1"></img>
-                <div className="outter">
-                  <img src="./images/amazon.png" className="img-dot2" height="90px"></img>
-                  {/* <p>amazon</p> */}
-                </div>
+               
                 <div className="outter">
                 <img src="./images/google.png" height="60px" className="img-dot2"></img>
-                  {/* <p>google</p> */}
-                
                 </div>
                 <div className="outter">
                 <img src="./images/shopify.png" height="90px" className="img-dot2"></img>
@@ -42,6 +37,22 @@ const Works = () => {
                 <div className="outter">
                 <img src="./images/bigcommerce.png"  height="90px" className="img-dot2"></img>
                   {/* <p>big commerce</p> */}
+                </div>
+                <div className="outter">
+                <img src="./images/fieo.png"  height="90px" className="img-dot2"></img>
+                  {/* <p>big commerce</p> */}
+                </div>
+                <div className="outter">
+                <img src="./images/walmart connect.png"  height="90px" className="img-dot2"></img>
+                  {/* <p>big commerce</p> */}
+                </div>
+                
+                <div className="outter">
+                <img src="./images/download.png"  height="90px" className="img-dot2"></img>
+                  {/* <p>big commerce</p> */}
+                </div>
+                <div className="outter">
+                  <img src="./images/amazon.png" className="img-dot2" height="90px"></img>
                 </div>
               </div>
             </Container>

@@ -75,7 +75,8 @@ export default function TopBanner() {
             className="title"
           >
             <Typography variant="h2" className="btmbanner-title">
-              {Array.from("We keep the focus on driving results").map(
+            {/* {Array.from("We keep the focus on driving results").map( */}
+              {Array.from("We're Dedicated to Achieving Results That Propel Your Ecommerce Success").map(
                 (word, i) => (
                   <motion.span key={i} variants={typingText}>
                     {word}
@@ -90,9 +91,11 @@ export default function TopBanner() {
               
               className="btmbanner-subtitle"
             >
-              With our complete multi-channel solution, you'll have access to
+              {/* With our complete multi-channel solution, you'll have access to
               everything you need to succeed in today's competitive online
-              marketplace.
+              marketplace. */}
+              Our primary emphasis remains on achieving tangible outcomes. Through our comprehensive multi-channel ecommerce service encompassing platforms such as Amazon, Walmart, eBay, and your custom website, you'll be equipped with a dedicated team of experts committed to fostering the growth necessary for triumphing in the dynamic and competitive online market.
+
             </Typography>
           </motion.div>
           <motion.div
