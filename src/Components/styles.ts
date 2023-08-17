@@ -29,10 +29,12 @@ export default makeStyles((theme) => ({
         [theme.breakpoints.down('xs')]: {
             gap: '10px',
             width: '20%',
+            height:"80%" 
           },
           [theme.breakpoints.down('sm')]: {
             gap: '10px',
-            width: '20%',   
+            width: '20%', 
+            height:"100%"  
            
           },
       },
@@ -40,19 +42,18 @@ export default makeStyles((theme) => ({
         height:"90px",
         width:"100%",
         [theme.breakpoints.down('xs')]: {
-          width: '100%',
-          height: '40%',
+          width: '120%',
+          height: '50% ',
          
         },
         [theme.breakpoints.down('sm')]: {
-          width: '100%',   
-          height: '40%',
+          width: '120%',
+          height: '25% ',
          
         },
       },
       
       feed:{
-        height:"10%",
-        width:"100%",
+        
       }
 }))

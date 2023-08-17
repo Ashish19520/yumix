@@ -22,7 +22,7 @@ const ToolsToService = () => {
           <div className={classes.sixthRight}>
             <div className={classes.imageTextPara}>
               <img
-                src='../images/Perpetua_Perpetua_launches_first_to_market_self_serve_Amazon_DSP.jpg'
+                src='../images/joinbrands.png'
                 alt='img'
                 className={classes.image}
               ></img>
@@ -30,7 +30,7 @@ const ToolsToService = () => {
             </div>
             <div className={classes.imageTextPara}>
               <img
-                src='../images/helium-logo.png'
+                src='../images/informed.png'
                 alt='img'
                 className={classes.image}
               ></img>
@@ -39,7 +39,7 @@ const ToolsToService = () => {
             
             <div className={classes.imageTextPara}>
               <img
-              src="../images/Rebatekey.png"
+              src="../images/pixelfy.png"
                 alt='img'
                 className={classes.image}
               ></img>
@@ -58,7 +58,7 @@ const ToolsToService = () => {
           <div className={classes.sixthRight}>
             <div className={classes.imageTextPara}>
               <img
-                src='../images/joinbrands.png'
+                src='../images/junglescout.png'
                 alt='img'
                 className={classes.image}
               ></img>
@@ -67,8 +67,7 @@ const ToolsToService = () => {
            
             <div className={classes.imageTextPara}>
               <img
-                src='../images/feedvisor.png'
-                style={{height:"30%",width:"90%"}}
+                src='../images/perputua.png'
                 alt='img'
                 className={classes.image}
   
@@ -77,7 +76,7 @@ const ToolsToService = () => {
             </div>
             <div className={classes.imageTextPara}>
               <img
-              src='../images/junglescout.jfif'
+              src='../images/helium10.png'
                 
                 alt='img'
                 className={classes.image}
@@ -86,7 +85,7 @@ const ToolsToService = () => {
             </div>
             <div className={classes.imageTextPara}>
               <img
-                src='../images/sentrykit.png'
+                src='../images/Rebatekey.png'
                 alt='img'
                 className={classes.image}
               ></img>
