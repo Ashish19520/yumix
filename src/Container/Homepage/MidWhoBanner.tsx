@@ -8,7 +8,7 @@ export const MidWhoBanner = () => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          console.log("Entering into zone");
+        
           // entry.target.classList.add("animate__animated");
           // entry.target.classList.add("animate__backInDown")
 
@@ -44,7 +44,7 @@ export const MidWhoBanner = () => {
         <div className="second">
           <div>
             <img src="./images/Ellipse 63@3x.png" className="img-dot3"></img>
-            <h2>Who's Eservz?</h2>
+            <h2>Who We Are?</h2>
             <p>
               {/* Eservz is a leading and globally renowned e-commerce and Amazon
               specialist agency that provides cutting edge, groundbreaking and

@@ -15,7 +15,8 @@ export default function BlogService({data}:any) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          console.log("Entering into zone");
+          
+
           entry.target.classList.add("animate__animated");
           entry.target.classList.add("animate__fadeIn");
         }

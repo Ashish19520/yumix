@@ -134,7 +134,7 @@ export const NewsContainer = () => {
               animate="show"
               className="title"
             >
-              {Array.from("News").map((word, i) => (
+              {Array.from("Welcome to the ESERVZ Ecommerce News Hub: Stay Informed, Stay Ahead").map((word, i) => (
                 <motion.span key={i} variants={typingText}>
                   {word}
                 </motion.span>
@@ -147,8 +147,18 @@ export const NewsContainer = () => {
               initial="hidden"
               animate="show"
             >
-              World's Best News for insights from experts about solutions and
-              progress in E-Commerce development.
+             Greetings, e-commerce enthusiasts and business visionaries! We're thrilled to introduce you to the ESERVZ Ecommerce News Hub – your central source for staying updated on the latest happenings, trends, and breakthroughs in the world of online commerce.
+
+            </motion.div>
+            <br/>
+            <motion.div
+              className="subtitle"
+              variants={elements}
+              initial="hidden"
+              animate="show"
+            >
+At Bighatch Consulting, also known as ESERVZ, we understand that the e-commerce landscape is dynamic and ever-evolving. As a forward-thinking agency, we're committed to keeping you well-informed and equipped with the knowledge you need to make strategic decisions for your e-commerce journey.
+
             </motion.div>
             <motion.img
               src="./images/Round Cube2@3x.png"

@@ -254,7 +254,7 @@ export const Hero = () => {
               
             >
               {Array.from(
-                "The complete multi-channel solution for Brands and Retailers"
+                "Elevate Your Ecommerce Empire"
               ).map((word, i) => (
                 <motion.span key={i} variants={typingText}>
                   {word}
@@ -265,7 +265,7 @@ export const Hero = () => {
               {/* With our complete multi-channel solution, you'll have access to
               everything you need to succeed in today's competitive online
               marketplace. */}
-              Elevate Your Ecommerce Empire: Unleash Growth Across Amazon, Walmart, Your Own Website, and Beyond – With Team ESERVZ, Your Ultimate Destination for Holistic Ecommerce Success!
+              Unleash Growth Across Amazon, Walmart, Your Own Website, and Beyond – With Team ESERVZ, Your Ultimate Destination for Holistic Ecommerce Success!
 
             </motion.p>
             <motion.img

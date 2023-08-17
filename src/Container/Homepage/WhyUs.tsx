@@ -48,23 +48,23 @@ function WhyUs () {
 
   const points = [
     {
-      title: 'Save Time',
-      para: 'Skip the Learning Curve. Eservz has the established best practices to help you quickly achieve your E-Commerce and Amazon goals.',
+      title: 'Strategic Expertise',
+      para: 'Team ESERVZ brings a wealth of ecommerce knowledge, ensuring your brand receives tailored strategies that optimize product listings, boost conversions, and enhance marketplace visibility.',
       image: '/images/work1.png'
     },
     {
-      title: 'Save Money',
-      para: 'No need to create a new department or hire additional staff. When you work with us, you get a new E‑Commerce division.',
+      title: 'Time, Money and Resource Savings',
+      para: 'Partnering with us means delegating operational tasks such as product listings, inventory management, PPC Ads management and marketplace compliance, freeing up your resources to concentrate on core business expansion.',
       image: '/images/work2.png'
     },
     {
-      title: 'Make Money',
-      para: 'We have worked with 100s of partners. We know what to do, what to analyze & how to focus on getting you a Return on Investment',
+      title: 'Customized Growth Strategies',
+      para: ' Our tailored approach means brands receive bespoke strategies that align with their unique identity, resulting in enhanced customer experiences, increased conversion rates, and sustainable revenue growth.',
       image: '/images/work3.png'
     },
     {
-      title: 'Be Secure',
-      para: 'We value the security of our partners & take your confidentiality very seriously. We are insured for any breaches of data, so you can rest at ease.',
+      title: 'Maximized Revenue Growth',
+      para: 'Through effective PPC campaigns, deals, and promotions, we drive targeted traffic, increase conversion rates, and generate a higher ROI, ultimately translating into sustained revenue growth for your brand',
       image: '/images/work4.png'
     }
   ]

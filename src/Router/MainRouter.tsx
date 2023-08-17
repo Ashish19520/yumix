@@ -36,6 +36,14 @@ import WebMobileCustomer from "../Pages/CustomerExpierence/WebMobileCustomer";
 import ContentMarketingCustomer from "../Pages/CustomerExpierence/ContentMarketingCustomer";
 import OurWorks1 from "../Pages/Content/OurWorks1";
 import TermsAndConditions from "../Pages/TermsAndConditions";
+import OnBoardingProcess from "../Pages/OnBoardingProcess";
+import CookiesPolicies from "../Pages/CookiesPolicies";
+import FrequentlyQuestions from "../Pages/FrequentlyQuestions";
+import PartnershipAndAffilations from "../Pages/PartnershipAndAffilations";
+import PaymentTerms from "../Pages/PaymentTerms";
+import ReturnAndRefund from "../Pages/ReturnAndRefund";
+import RequestContactForm from "../Pages/RequestContactForm";
+import ServiceDelivery from "../Pages/ServiceDelivery";
 
 
 
@@ -52,6 +60,14 @@ const MainRouter = () => {
         <Route path="/ourservices" element={<Services />} />
         <Route path="/termsAndConditions" element={<TermsAndConditions/>} />
         <Route path="/privacyPolicy" element={<PrivacyPolicy/>} />
+        <Route path="/onBoardingProcess" element={<OnBoardingProcess/>} />
+        <Route path="/cookies" element={<CookiesPolicies/>} />
+        <Route path="/questions" element={<FrequentlyQuestions/>} />
+        <Route path="/partner&affilations" element={<PartnershipAndAffilations/>} />
+        <Route path="/paymentTerms" element={<PaymentTerms/>} />
+        <Route path="/returnAndRefund" element={<ReturnAndRefund/>} />
+        <Route path="/requestContactForm" element={<RequestContactForm/>} />
+        <Route path="/serviceDelivery" element={<ServiceDelivery/>} />
         
         
         <Route path="/ourservices/digitalMedia" element={<DigitalMedia />} />

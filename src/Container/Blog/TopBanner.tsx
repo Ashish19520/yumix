@@ -43,7 +43,7 @@ const typingContainer = {
 
 export default function TopBanner() {
   return (
-    <TopBannerWrapper>
+    <TopBannerWrapper className="margin-nav">
     <Grid wrap="wrap-reverse" rowGap={4} position="relative" container alignItems="center" style={{maxWidth:"1200px", margin:"auto", padding:"80px 40px", overflow:"hidden"}}>
         <Grid item xs={12} md={5}>
         <motion.div
@@ -53,7 +53,7 @@ export default function TopBanner() {
           className="title"
         >
             <Typography variant="h2" className="blog-top-title">
-            {Array.from("Blogs").map((word, i) => (
+            {Array.from("Welcome to the ESERVZ Ecommerce Blog: Your Source for E-commerce Insights and Success").map((word, i) => (
             <motion.span key={i} variants={typingText}>
               {word}
             </motion.span>
@@ -61,8 +61,11 @@ export default function TopBanner() {
             </Typography>
             </motion.div>
             <motion.div variants={elements}  initial="hidden" animate="show">
-            <Typography variant="h2" className="blog-top-subtitle justify">
-                Eservz is a leading and globally renowned e-commerce and Amazon specialist agency that provides cutting edge, groundbreaking and truly revolutionary back office support to e-commerce sellers, business owners and vendors on multiple online channels especially Amazon.
+            <Typography variant="h2" className="blog-top-subtitle index justify">
+            Are you ready to unlock the full potential of your e-commerce venture? You're in the right place! Welcome to the ESERVZ Ecommerce Blog, your go-to resource for a wealth of knowledge, tips, and strategies to elevate your online business to new heights.
+         <br/>
+         At Bighatch Consulting, also known as ESERVZ, we're passionate about driving e-commerce success. With a team of dedicated experts, we've been helping businesses like yours navigate the dynamic and ever-evolving world of online commerce. Our mission is clear: to equip you with the tools and insights you need to thrive in the digital marketplace.
+
             </Typography>
             </motion.div>
         </Grid>
@@ -75,9 +78,9 @@ export default function TopBanner() {
           animate="show"
           className="title"
         >
-        <Box style={style.blueDot}></Box>
-        <Box sx={{...style.bluredBox, top : {xs:"40%", md:"90%"}}}>
-9        <img  src="./images/Round Cube2@3x.png" className="logo-fold" width="100%"></img>
+        {/* <Box style={style.blueDot}></Box> */}
+        <Box sx={{...style.bluredBox, top : {xs:"34%", md:"88%"}}}>
+        <img  src="./images/Round Cube2@3x.png" className="logo-fold" width="100%"></img>
           </Box>
         <img src="./images/Rock2.png" style={style.bluredRock}></img>
         <img src="./images/aboutusThread.png" style={style.thread}></img>
@@ -98,6 +101,10 @@ const TopBannerWrapper=styled.div`
    }
 }
 
+.blog-dot{
+  position:absolute;
+  top:-20%;
+}
 .blog-top-subtitle{
 
   margin-top:40px;
@@ -110,6 +117,7 @@ const TopBannerWrapper=styled.div`
   @media (max-width:600px){
     font-size: 14px;
   }
+  
 }
 `
 const style = {
@@ -123,7 +131,7 @@ const style = {
         left : "100px"
     } as React.CSSProperties,
     bluredBox : {
-        width : "10%",
+        width : "7%",
         minWidth : "80px",
         position : "absolute",
         left : "0px",
@@ -133,7 +141,7 @@ const style = {
         width : "15%",
         minWidth : "100px",
         position : "absolute",
-        top : "20px",
+        top : "40",
         right : "0px",
         zIndex : 2,
         
@@ -142,7 +150,7 @@ const style = {
         width : "100%",
         minWidth : "500px",
         position : "absolute",
-        top : "200px",
+        top : "270px",
         left : "20%",
     } as React.CSSProperties
 }

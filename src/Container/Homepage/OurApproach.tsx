@@ -41,27 +41,27 @@ export const OurApproach = () => {
             <div className="icons">
               <div  className="singleicon">
                 <img className="ig" id="stl1" src="./images/A1.png"></img>
-                <p>Schedule a Meeting</p>
+                <p>Marketplace Mastery</p>
               </div>
 
                <div className="singleicon">
                 <img className="ig" id="stl1"src="./images/A2.png" width="100%"></img>
-                <p>Onboarding Process</p>
+                <p>Conversion-focused Optimization</p>
               </div>
 
               <div className="singleicon">
                 <img className="ig" id="stl1" src="./images/A3.png"></img>
-                <p>Hire your amazon expert</p>
+                <p>Sustainable Success</p>
               </div>
 
               <div className="singleicon">
                 <img className="ig" id="stl1" src="./images/A4.png"></img>
-                <p>Manage your business</p>
+                <p>Strategic Product Positioning</p>
               </div>
 
               <div className="singleicon">
                 <img className="ig" id="stl1" src="./images/A5.png"></img>
-                <p className="para">Focus on strategies and growth</p>
+                <p className="para">Data-Driven Insights</p>
               </div>
             </div>
           </div>

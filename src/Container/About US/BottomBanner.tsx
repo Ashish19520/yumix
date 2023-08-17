@@ -76,13 +76,14 @@ export default function TopBanner() {
           >
             <Typography variant="h2" className="btmbanner-title">
             {/* {Array.from("We keep the focus on driving results").map( */}
-              {Array.from("We're Dedicated to Achieving Results That Propel Your Ecommerce Success").map(
+              {/* {Array.from("We're Dedicated to Achieving Results That Propel Your Ecommerce Success").map(
                 (word, i) => (
                   <motion.span key={i} variants={typingText}>
                     {word}
                   </motion.span>
                 )
-              )}
+              )} */}
+              We're Dedicated to Achieving Results That Propel Your Ecommerce Success
             </Typography>
           </motion.div>
           <motion.div variants={elements} initial="hidden" animate="show">

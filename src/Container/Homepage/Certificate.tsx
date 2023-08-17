@@ -43,14 +43,12 @@ console.log(response?.data[0]?.attributes?.t_url)
           <img src="./images/Ellipse 64@3x.png" className="img-dot2"></img>
           
           <div className="title">
-            <h2>Authorised Seller Partner for Amazon</h2>
+            <h2>What We Do?</h2>
           </div>
           <div className="subtitle">
             <p className="justify">
-              ESERVZ is an authorised seller partner of Amazon, the world's
-              largest E Commerce platform. We are a professional service provider
-              who is trained and certified by Amazon which empowers sellers to
-              launch, manage and grow your business on Amazon.
+            As a specialized ecommerce agency focused on dominant marketplaces such as Amazon, Walmart, eBay, and your very own website, we offer an array of expert services designed to propel your brand to new heights. We excel at orchestrating successful brand and product launches, meticulously meeting each platform's unique requirements.<br/>
+             Our services encompass comprehensive product listing creation, strategic optimizations, and adept inventory planning to ensure seamless restocking. We masterfully navigate PPC Ads campaigns, strategically employ deals, promos, and coupons, directing precise traffic to your product pages, thus enhancing conversion rates. Our dedication extends to cultivating ratings and reviews, ensuring compliance, and culminating in the ultimate objective: nurturing your brand's revenue growth.
             </p>
           </div>
           <img src="./images/Ellipse 63@3x.png" className="img-dot3"></img>

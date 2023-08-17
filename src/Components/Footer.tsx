@@ -58,6 +58,18 @@ export default function Footer() {
       link: "Privacy Policy",
       to: "/privacyPolicy",
     },
+    {
+      link: "On Boarding Process",
+      to: "/onBoardingProcess",
+    },
+    {
+      link: "Cookies Policy",
+      to: "/cookies",
+    },
+    {
+      link: "Frequently Asked Questions",
+      to: "/questions",
+    },
   ];
 
   const services = [
@@ -72,6 +84,26 @@ export default function Footer() {
     {
       link: "Customer Experience",
       to: "/ourservices#customerExperience",
+    },
+    {
+      link: "Partners And Affilations",
+      to: "/partner&affilations",
+    },
+    {
+      link: "Payment Terms",
+      to: "/paymentTerms",
+    },
+    {
+      link: "Returns And Refund Policy",
+      to: "/returnAndRefund",
+    },
+    {
+      link: "Request Contact Form ",
+      to: "/requestContactForm",
+    },
+    {
+      link: "Service Delivery Policy",
+      to: "/serviceDelivery",
     },
   ];
   const navigate = useNavigate();

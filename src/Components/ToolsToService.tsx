@@ -36,14 +36,7 @@ const ToolsToService = () => {
               ></img>
               {/* <p className={classes.type}>Shipping Costs.</p> */}
             </div>
-            <div className={classes.imageTextPara}>
-              <img
-                src='../images/edesk.png'
-                alt='img'
-                className={classes.image}
-              ></img>
-              {/* <p className={classes.type}>Storage Costs.</p> */}
-            </div>
+            
             <div className={classes.imageTextPara}>
               <img
               src="../images/Rebatekey.png"
@@ -54,12 +47,13 @@ const ToolsToService = () => {
             </div>
             <div className={classes.imageTextPara}>
               <img
-                src='../images/informed.jfif'
+              src="../images/getReviews.png"
                 alt='img'
-                className={classes.image}
+                height="200px"                className={classes.image}
               ></img>
               {/* <p className={classes.type}>Storage Costs.</p> */}
             </div>
+            
           </div>
           <div className={classes.sixthRight}>
             <div className={classes.imageTextPara}>
@@ -70,22 +64,7 @@ const ToolsToService = () => {
               ></img>
               {/* <p className={classes.type}>Costs Of Goods.</p> */}
             </div>
-            <div className={classes.imageTextPara}>
-              <img
-                src='../images/sellerapp.png'
-                alt='img'
-                className={classes.image}
-              ></img>
-              {/* <p className={classes.type}>Market Costs Products Ads.</p> */}
-            </div>
-            <div className={classes.imageTextPara}>
-              <img
-                src='../images/pixelfy.png'
-                alt='img'
-                className={classes.image}
-              ></img>
-              {/* <p className={classes.type}>Product Packing Labelling Cost.</p> */}
-            </div>
+           
             <div className={classes.imageTextPara}>
               <img
                 src='../images/feedvisor.png'
@@ -98,16 +77,6 @@ const ToolsToService = () => {
             </div>
             <div className={classes.imageTextPara}>
               <img
-                src='../images/Sellbrite.png'
-                alt='img'
-                className={classes.image}
-              ></img>
-              {/* <p className={classes.type}>Product Packing Labelling Cost.</p> */}
-            </div>
-          </div>
-          <div className={classes.sixthRight}>
-            <div className={classes.imageTextPara}>
-              <img
               src='../images/junglescout.jfif'
                 
                 alt='img'
@@ -117,31 +86,7 @@ const ToolsToService = () => {
             </div>
             <div className={classes.imageTextPara}>
               <img
-                src='../images/Shipstation.png'
-                alt='img'
-                className={classes.image}
-              ></img>
-              {/* <p className={classes.type}>Product Sample And Product Cost.</p> */}
-            </div>
-            <div className={classes.imageTextPara}>
-              <img
                 src='../images/sentrykit.png'
-                alt='img'
-                className={classes.image}
-              ></img>
-              {/* <p className={classes.type}>Product Sample And Product Cost.</p> */}
-            </div>
-            <div className={classes.imageTextPara}>
-              <img
-                src='../images/taxjar.png'
-                alt='img'
-                className={classes.image}
-              ></img>
-              {/* <p className={classes.type}>Product Sample And Product Cost.</p> */}
-            </div>
-            <div className={classes.imageTextPara}>
-              <img
-                src='../images/teikametrics-logo.jpg'
                 alt='img'
                 className={classes.image}
               ></img>

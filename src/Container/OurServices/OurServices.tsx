@@ -78,7 +78,7 @@ OurServices = () => {
           <motion.img variants={lines}  initial="hidden" animate="show" src="./images/FullRock1@3x.png" className="img-rock_1"></motion.img>
           <div className="text-wrapper">
           <motion.h1 variants={typingContainer} initial="hidden" animate="show">
-            {Array.from("Our Services").map((word, i) => (
+            {Array.from("Welcome to ESERVZ by Bighatch Consulting!").map((word, i) => (
               <motion.span key={i} variants={typingText}>
                 {word}
               </motion.span>
@@ -90,10 +90,18 @@ OurServices = () => {
             animate="show"
             className="subTitle"
           >
-            ESERVZ is a full cycle Amazon Business Management Agency. If you run
-            your business on Amazon Vendor Central or Amazon Seller Central, or
-            went for Amazon FBA or Amazon MFN we have everything to rock your
-            business.
+           Empowering Your Ecommerce Success Across Every Channel
+
+          </motion.div>
+          <motion.div
+            variants={explainProduct}
+            initial="hidden"
+            animate="show"
+            className="subTitle"
+          >
+           ESERVZ, your trusted partner in multi-channel ecommerce, is here to transform your brand's online journey into a resounding success story. As a pioneering ecommerce service provider, we specialize in seamless marketplace management, ensuring your brand thrives on platforms like Amazon, Walmart, eBay, and even your own dedicated website.
+
+
           </motion.div>
           </div>
           <motion.div
