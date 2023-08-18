@@ -1,13 +1,16 @@
 stages:
   - build
   - deploy
+
 build:
    stage: build
+   #when: manual
    only:
        - tags
    script:
       - mkdir -p dist
-      - npm install react-dates --legacy-peer-deps
+      #- npm install @mui/material @emotion/react @emotion/styled
+      - npm install  react-dates --legacy-peer-deps
       - CI= npm run build
       - ls
       - echo "Build Successfully"
@@ -16,30 +19,20 @@ build:
          - build/
        expire_in: 1 hour
    only:
-     - main
+    - main    
+
+
 deploy:
-  stage: deploy
-  image:
+   stage: deploy
+   #when: manual
+   image:
      name: amazon/aws-cli
      entrypoint: [""]
-  dependencies:
+   dependencies:
      - build
-  script:
-   # - npm install
-   # - npm run build
-    - aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
-    - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
-    - aws configure set default.region $AWS_DEFAULT_REGION
-    - aws configure set preview.cloudfront true
-    - aws s3 rm s3://$S3_BUCKET_NAME --region us-east-1 --exclude ""
-    - aws s3 sync ./build s3://$S3_BUCKET_NAME/ --acl=public-read --delete --exclude '.git/*'
-    - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_ID --paths /\*
-  variables:
-    S3_BUCKET_NAME: eservz-develop
-    AWS_DEFAULT_REGION: ap-south-1
-    CLOUDFRONT_ID: E3QOW41PPR3KZ4
- # when: manual
-  only:
+   script:
+     - aws --version
+     - aws s3 cp --acl public-read --recursive build s3://eservz-dev
+     - echo "deployed successfully"
+   only:
     - main
-  environment:
-    name: main
