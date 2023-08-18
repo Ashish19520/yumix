@@ -52,8 +52,15 @@ export const MidWhoBanner = () => {
               business owners and vendors on multiple online channels especially
               Amazon. */}
               We are Bighatch Consulting, also recognized as ESERVZ. Established in 2018 (officially registered in 2020), our team comprises experienced e-commerce specialists. Our mission is to offer expert assistance to brands and retailers with an online presence. Operating across the United States of America, United Kingdom, Canada, Australia, India, and various other markets, we serve as comprehensive multichannel eCommerce service providers.
-
             </p>
+          </div>
+          <div className="image-container">
+          <img className="logos" alt="logo"  src="./images/us.png"></img>
+          <img className="logos" alt="logo"  src="./images/uk.png"></img>
+          <img className="logos" alt="logo"  src="./images/canada.png"></img>
+          <img className="logos" alt="logo"  src="./images/aus.png"></img>
+          <img className="logos" alt="logo"  src="./images/in.png"></img>
+         
           </div>
           <img  src="./images/Round Cube2@3x.png" className="cube-img"></img>
         </div>
@@ -134,11 +141,24 @@ const Banner = styled.div`
         }
       }
 
+      .image-container {
+        display: flex;
+        flex-wrap:wrap;
+        justify-content: flex-start;
+        gap:2rem;
+        margin-top:15px;
+
+      }
+      .logos{
+        width:50px;
+        height:38px;
+      }
+
       .cube-img {
         position: absolute;
-        width: 20%;
+        width: 10%;
         right: 0%;
-        bottom: -52px;
+        bottom: 3rem;
 
         @media (max-width: 600px) {
           display: unset;

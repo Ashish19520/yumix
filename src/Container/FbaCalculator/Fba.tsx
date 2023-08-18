@@ -367,15 +367,18 @@ export const Fba = () => {
            </Tooltip>
     </div>
             <div className={classes.write}>Referral Fee
-            &nbsp; &nbsp; <Tooltip 
+            &nbsp; &nbsp; 
+            <Tooltip 
               title="This fee is charged by Amazon at a flat percentage of your product cost."
               enterTouchDelay={0}
               classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
                arrow>
-              <Button> <img src="../images/toolTip.png"
+              <Button> 
+                <img src="../images/toolTip.png"
               height="15px"
               width="15px"
-              alt="i"></img></Button>
+              alt="i"></img>
+              </Button>
            </Tooltip>
             </div>
             <div className={classes.write}>Fixed Closing Fee

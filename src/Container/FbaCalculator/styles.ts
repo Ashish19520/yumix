@@ -134,7 +134,7 @@ export default makeStyles((theme) => ({
     },
   },
   arrow: {
-    "&:before": {
+   " &:before": {
       border: "1px solid #E6E8ED"
     },
     color: theme.palette.common.white

@@ -8,32 +8,39 @@ import { useDispatch } from 'react-redux';
 import { Dispatch } from 'redux';
 import {  testimonialPlay} from "../../actions/posts"
 import { useSelector } from "react-redux/es/exports"
+import  Carousel from 'react-elastic-carousel'
+
 
 const data = [
   {
-    stars: 1,
-    title:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
-    name: "Jerome Bell",
-    designation: "Marketing Coordinator",
-    images: "./images/Avatar Image.png",
+    thumb:"../images/thumb2.png",
+   src:"../videos/Video Testimonial.mp4"
   },
   {
-    stars: 1,
-    title:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
-    name: "Cody Fisher",
-    designation: "President of Sales",
-    images: "./images/Avatar Image.png",
+    thumb:"../images/thumb2.png",
+    src:"../videos/Video Testimonial.mp4"
   },
   {
-    stars: 1,
-    title:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
-    name: "Robert Fox",
-    designation: "Web Designer",
-    images: "./images/Avatar Image.png",
+    thumb:"../images/thumb2.png",
+    src:"../videos/Video Testimonial.mp4"
   },
+  {
+    thumb:"../images/thumb2.png",
+    src:"../videos/Video Testimonial.mp4"
+  },
+  {
+    thumb:"../images/thumb2.png",
+    src:"../videos/Video Testimonial.mp4"
+  },
+  {
+    thumb:"../images/thumb2.png",
+    src:"../videos/Video Testimonial.mp4"
+  },
+  {
+    thumb:"../images/thumb2.png",
+    src:"../videos/Video Testimonial.mp4"
+  },
+
 ];
 
 export const People = () => {
@@ -63,35 +70,36 @@ export const People = () => {
   useEffect(()=>{
     dispatch(testimonialPlay())
   },[])
+  const breakPoints = [
+    { width: 1, itemsToShow: 1 },
+    { width: 550, itemsToShow: 2 },
+    { width: 768, itemsToShow: 3 },
+    { width: 1200, itemsToShow: 4 }
+  ];
+
+  
   return (
-    <Users>
+    <Users >
       <Container maxWidth="lg" className="container">
         <div className="aboutus">
           <div className="info">
-            <div className="title">What people say about us</div>
-            <div className="subTitle">See what people say about us</div>
+            <div className="title">Client Testimonials</div>
+            <div className="subTitle">Voices About Our Services</div>
           </div>
-          <motion.div className="cards">
-            {/* {data.map((d) => (
-              <motion.div
-                initial={{ opacity: 0, scale: 0, x: 100 }}
-                whileInView={{ opacity: 1, scale: 1, x: 0 }}
-                transition= {{duration: 0.6}}
-                // viewport={{once:true}}
-              >
-                <Card
-                  title={d.title}
-                  stars={d.stars}
-                  images={d.images}
-                  name={d.name}
-                  designation={d.designation}
-                />
-              </motion.div>
-            ))} */}
-
+         
+          <Carousel  breakPoints={breakPoints} itemsToScroll={2} itemsToShow={2} isRTL={false} className="carous">
+            {data.map((d,index) => (
+              // <video  loop poster={d?.thumb} height="500px" width="300px">
+              //   <source src={d?.src} height="500px" width="300px" type="video/mp4" />
+              // </video>
+              <iframe  key={index} title="iframe" width="420" height="315"
+                src="https://www.youtube.com/embed/tgbNymZ7vqY">
+              </iframe>
            
+            ))}
+             </Carousel>
 
-          </motion.div>
+
         </div>
         <VideoSlide items={response}/>
       </Container>
@@ -117,7 +125,6 @@ const Users = styled.div`
     .aboutus {
       .info {
         text-align: left;
-
         @media (max-width: 600px) {
           text-align: center;
         }
@@ -164,6 +171,7 @@ const Users = styled.div`
           margin-bottom: 20px;
         }
       }
+  
     }
   }
 `;

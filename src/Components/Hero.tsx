@@ -305,14 +305,14 @@ export const Hero = () => {
                 // transition={{duration:3, delay:.2, ease:"easeInOut"}}
               ></motion.img>
               <motion.img
-                src="./images/Rock2@3x.png"
+                src="./images/bag.png"
                variants={window.screen.width<601? imgProduct2:imgProduct1}
                 initial="hidden"
                 animate="show"
                 className="rock"
               ></motion.img>
               <motion.img
-                src="./images/partner-shopify@3x.png"
+                src="./images/Rock2@3x.png"
                variants={window.screen.width<601? imgProduct2:imgProduct1}
                 initial="hidden"
                 animate="show"
@@ -328,13 +328,13 @@ export const Hero = () => {
               
               
               <motion.img
-                src="./images/google-partner@3x.png"
+                src="./images/jacket.png"
                variants={window.screen.width<601? imgProduct2:imgProduct1}
                 initial="hidden"
                 animate="show"
                 className="google"
               ></motion.img>
-              <motion.img
+              {/* <motion.img
                 src="./images/partner-certified@3x.png"
                variants={window.screen.width<601? imgProduct2:imgProduct1}
                 initial="hidden"
@@ -342,7 +342,7 @@ export const Hero = () => {
                 className="certified"
                 transition={{duration:5, delay:2, ease:"easeInOut"}}
 
-              ></motion.img>
+              ></motion.img> */}
             </motion.div>
           </div>
         </div>
@@ -560,10 +560,10 @@ const HeroLayout = styled.div`
           .rock {
             transform-style: preserve-3d;
             transition: all .2s ease;
-            width: 30%;
+            width: 50%;
             position: absolute;
-            left: 0;
-            top: -40px !important;
+            left: -40px;
+            top: -70px !important;
             @media (max-width: 900px) {
               display: none;
             }
@@ -636,7 +636,7 @@ const HeroLayout = styled.div`
             transition: all .5s ease;
             width: 38%;
             position: absolute;
-            left: -129px;
+            left: -100px;
             top: 210px !important;
             @media (max-width: 900px) {
               display: none;

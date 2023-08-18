@@ -2,8 +2,7 @@ import { Container } from "@mui/material";
 import React, { useEffect,useState } from "react";
 import styled from "styled-components";
 //@ts-ignore
-import { DefaultPlayer as Video } from "react-html5video";
-import 'react-html5video/dist/styles.css'
+
 import { useDispatch } from 'react-redux';
 import { Dispatch } from 'redux';
 import {  testimonialPlay} from "../../actions/posts"
@@ -39,6 +38,10 @@ console.log(response?.data[0]?.attributes?.t_url)
   return (
     <Certif>
       <Container maxWidth="lg" className="container hidden">
+      <div className="rightDiv">
+          <img src="./images/i2.png" className="i2" ></img>  
+        
+        </div>
         <div className="leftDiv">
           <img src="./images/Ellipse 64@3x.png" className="img-dot2"></img>
           
@@ -53,12 +56,7 @@ console.log(response?.data[0]?.attributes?.t_url)
           </div>
           <img src="./images/Ellipse 63@3x.png" className="img-dot3"></img>
         </div>
-        <div className="rightDiv">
-          {/* <img src="./images/certificate 1.png"></img>   */}
-          <Video autoplay loop poster="./images/thumb2.png" className="vid-slide">
-                <source src="./videos/Video Testimonial.mp4" type="video/webm" />
-              </Video>
-        </div>
+        
       </Container>
     </Certif>
   );
@@ -100,7 +98,7 @@ const Certif = styled.div`
       position: absolute;
       width: 2%;
       top: 40px;
-      right: 85%;
+      left: 5%;
     }
 
     .leftDiv {
@@ -160,7 +158,9 @@ const Certif = styled.div`
         align-items: center;
         padding-bottom: 40px;
       }
-
+      .i2{
+        width: 80%;
+      }
       .rh5v-Volume_icon{
         height: 29px;
         width: 29px;
