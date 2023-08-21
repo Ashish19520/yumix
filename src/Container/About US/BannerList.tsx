@@ -97,7 +97,8 @@ export default function BannerList() {
         
         <Grid item  xs={12} md={4} sx={{textAlign:"center", position:{xs:"absolute", md:"relative"}, top:{xs:"-20px", md:"0px"}}}>
           
-          <img className="hold-pencil" src="/images/Holding a pencil.png" alt="Holding Pencil"  />
+          {/* <img className="hold-pencil" src="/images/Holding a pencil.png" alt="Holding Pencil"  /> */}
+          <img className="hold-pencil" src="/images/15 - Lucas with Jetpack.png" alt="Holding Pencil"  />
         </Grid>
       </Grid>
     </Box>

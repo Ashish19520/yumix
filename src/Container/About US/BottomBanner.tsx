@@ -83,7 +83,7 @@ export default function TopBanner() {
                   </motion.span>
                 )
               )} */}
-              We're Dedicated to Achieving Results That Propel Your Ecommerce Success
+              Recommendations, Testimonials & Trade References
             </Typography>
           </motion.div>
           <motion.div variants={elements} initial="hidden" animate="show">
@@ -95,8 +95,9 @@ export default function TopBanner() {
               {/* With our complete multi-channel solution, you'll have access to
               everything you need to succeed in today's competitive online
               marketplace. */}
-              Our primary emphasis remains on achieving tangible outcomes. Through our comprehensive multi-channel ecommerce service encompassing platforms such as Amazon, Walmart, eBay, and your custom website, you'll be equipped with a dedicated team of experts committed to fostering the growth necessary for triumphing in the dynamic and competitive online market.
-
+Recommendations from industry experts, brands, and retailers and Video testimonials on our website serve as powerful social proof, showcasing the positive experiences and outcomes that clients have had working with our team.
+<br/>
+Trade references are another valuable resource that anyone can utilize to verify our track record and the quality of our services. By offering trade references on demand, we provide an opportunity for interested parties to directly reach out to previous clients and gain insights into their experiences working with our team.
             </Typography>
           </motion.div>
           <motion.div

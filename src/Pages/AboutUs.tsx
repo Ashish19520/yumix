@@ -10,6 +10,8 @@ import TopBanner from '../Container/About US/TopBanner'
 import { Typography } from '@mui/material'
 import styled from 'styled-components'
 import  Works  from '../Components/Works'
+import AboutBottomBanner from '../Container/About US/AboutBottomBanner'
+import Team from '../Container/About US/Team'
 
 export default function AboutUs() {
 
@@ -21,15 +23,19 @@ useEffect(()=>{
     <div >
       <TopBanner/>
       <BannerList />
+      <Team/>
       <MidBanner />
+      
+      <BottomBanner />
+      <OurLeaders />
       <TypoWrapper>
       <Typography fontSize="32px" textAlign="center" width="100%" fontFamily="Poppins-SemiBold" color="#3A3B44" style={{maxWidth:"1100px", margin:"auto"}} className='about-typo'>Collaborative Ventures We've Engaged In</Typography>
       </TypoWrapper>
       {/* <Counter /> */}
        <Works/>
-      <BottomBanner />
-      <OurLeaders />
+       <AboutBottomBanner/>
       <ContactForm />
+      
       <Footer />
     </div>
   )

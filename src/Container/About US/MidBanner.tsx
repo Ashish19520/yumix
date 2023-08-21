@@ -68,21 +68,7 @@ export default function TopBanner() {
           overflow: "hidden",
         }}
       >
-        <Grid
-          item
-          xs={12}
-          md={6}
-          sx={{ textAlign: { xs: "center", md: "left" } }}
-        >
-          <motion.img
-            src="/images/Business-Success.png"
-            style={{ width: "80%" }}
-            alt="About Banner"
-            variants={elements}
-            initial="hidden"
-            animate="show"
-          ></motion.img>
-        </Grid>
+        
         <Grid item xs={12} md={6}>
           <motion.div
             variants={typingContainer}
@@ -92,7 +78,7 @@ export default function TopBanner() {
           >
             <Typography variant="h2" className="mid-title">
             {/* {Array.from("Commitment for excellence").map((word, i) => ( */}
-              {Array.from("Recommendations, Testimonials & Trade References").map((word, i) => (
+              {Array.from("We keep the focus on driving results ").map((word, i) => (
                 <motion.span key={i} variants={typingText}>
                   {word}
                 </motion.span>
@@ -103,14 +89,26 @@ export default function TopBanner() {
             <Typography
               variant="h2"
               className="mid-sub">
-              Recommendations from industry experts, brands, and retailers and Video testimonials on our website serve as powerful social proof, showcasing the positive experiences and outcomes that clients have had working with our team.
-            </Typography>
-            <Typography
-              variant="h2"
-              className="mid-sub">
-             Trade references are another valuable resource that anyone can utilize to verify our track record and the quality of our services. By offering trade references on demand, we provide an opportunity for interested parties to directly reach out to previous clients and gain insights into their experiences working with our team.
+Having a team with such diverse expertise allows for a holistic approach to e-commerce management. Each role contributes to specific aspects of online selling, including marketplace optimization, advertising, content creation, customer experience, and overall business growth.<br/>
+By leveraging the skills and knowledge of Team ESERVZ, brands and retailers can benefit from a comprehensive e-commerce strategy that drives sales, enhances brand reputation, and delivers a positive customer experience. <br/>
+Regular collaboration, clear communication, and continuous learning and improvement are key to maximizing the potential of your team and achieving success in the e-commerce space.
             </Typography>
           </motion.div>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          md={6}
+          sx={{ textAlign: { xs: "center", md: "left" } }}
+        >
+          <motion.img
+            src="/images/Business-Success.png"
+            style={{ width: "90%",marginLeft:"50px"}}
+            alt="About Banner"
+            variants={elements}
+            initial="hidden"
+            animate="show"
+          ></motion.img>
         </Grid>
         <Box
           style={{

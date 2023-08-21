@@ -24,35 +24,41 @@ const Works = () => {
           >
             <Container maxWidth="xl" className="container">
               <div className="countBody">
-                <img src="./images/Ellipse 65@3x.png" className="img-dot1"></img>
                
                 <div className="outter">
-                <img src="./images/google.png" height="60px" className="img-dot2"></img>
+                <img src="./images/FIEO Logo 1.png"  className="img-dot2"></img>
                 </div>
                 <div className="outter">
-                <img src="./images/shopify.png" height="90px" className="img-dot2"></img>
+                <img src="./images/amazon_ads_logo 1.png"  className="img-dot2"></img>
                   {/* <p>shopify</p> */}
                   
                 </div>
                 <div className="outter">
-                <img src="./images/bigcommerce.png"  height="90px" className="img-dot2"></img>
+                <img src="./images/WCM_Logo_V4 1.png"   className="img-dot2"></img>
                   {/* <p>big commerce</p> */}
                 </div>
                 <div className="outter">
-                <img src="./images/fieo.png"  height="90px" className="img-dot2"></img>
+                <img src="./images/perpetua-logo-indigo-black 1.png"   className="img-dot2"></img>
                   {/* <p>big commerce</p> */}
                 </div>
+              </div>
+            </Container>
+            <Container maxWidth="xl" className="container" style={{marginTop:"40px"}}>
+              <div className="countBody">
+                <img src="./images/Ellipse 65@3x.png" className="img-dot1"></img>
+               
+               
                 <div className="outter">
-                <img src="./images/walmart connect.png"  height="90px" className="img-dot2"></img>
+                <img src="./images/shopify 1.png"  className="img-dot3"></img>
                   {/* <p>big commerce</p> */}
                 </div>
                 
                 <div className="outter">
-                <img src="./images/download.png"  height="90px" className="img-dot2"></img>
+                <img src="./images/bigcommerce 1.png"   className="img-dot3"></img>
                   {/* <p>big commerce</p> */}
                 </div>
                 <div className="outter">
-                  <img src="./images/amazon.png" className="img-dot2" height="90px"></img>
+                  <img src="./images/google partners 1.png" className="img-dot3"></img>
                 </div>
               </div>
             </Container>
@@ -82,20 +88,45 @@ const Count = styled.div`
       align-items: center;
       justify-content: center;
       position: relative;
+      gap:0.5rem;
+      width:70vw;
+      margin:0 auto;
+     
+      @media (max-width: 600px) {
+        flex-direction: column;
+        width: 100%;
+        gap:2rem;
+      }
 
       .img-dot1{
         position: absolute;
         width: 3%;
-        left: -25px;
-        top: -35px;
+        left: -150px;
+        top: -75px;
+
       }
 
       .img-dot2{
         width:80%;
+        height:30%;
         // height:120px;
         align-items: center;
+        @media (max-width: 600px) {
+          width:60%;
+        height:35%;
+        }
       }
-
+      .img-dot3{
+        width:60%;
+        height:35%;
+        // height:120px;
+        align-items: center;
+        @media (max-width: 600px) 
+          width: 40%;
+          height:30%;
+          gap:2rem;
+        }
+      }
 
       @media (max-width: 420px) {
         flex-wrap: wrap;
@@ -111,25 +142,19 @@ const Count = styled.div`
         width: 100%;
       }
 
+
       .outter {
         display:flex;
         flex-direction:column;
         justify-content:center;
         align-items:center;
-        padding: 20px 40px;
-        height: 150px;
-        border-right: 0.1px solid rgba(0, 0, 0, 0.3);
-        &:last-of-type {
-          border-right: unset;
+        width:20%;
+        @media (max-width: 600px) {
+          flex-direction: column;
+          width: 100%;
+          gap:2rem;
         }
-        @media (max-width: 1115px) {
-          border-right: unset;
-        }
-        @media (max-width: 900px) {
-          padding: 20px 20px;
-        }
-        
-
+    
         h2 {
           font-family: Poppins-Bold;
           font-size: 80px;

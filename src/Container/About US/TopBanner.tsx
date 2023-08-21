@@ -106,7 +106,7 @@ export default function TopBanner() {
           sx={{ textAlign: { xs: "center", md: "right" }, zIndex: 1 }}
         >
           <motion.img
-            src="/images/about.png"
+            src="/images/Group 162930 (1).png"
             style={{ width: "90%" }}
             alt="About Banner"
             variants={elements}
@@ -166,10 +166,10 @@ const style = {
     left: "0px",
   } as React.CSSProperties,
   bluredRock: {
-    width: "15%",
+    width: "10%",
     position: "absolute",
-    top: "30px",
-    right: "0px",
+    top: "70px",
+    right: "70px",
     zIndex: 2,
   } as React.CSSProperties,
   thread: {
