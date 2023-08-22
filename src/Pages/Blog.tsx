@@ -4,7 +4,17 @@ import Footer from '../Components/Footer';
 import BlogService from '../Container/Blog/BlogService';
 import ServiceList from '../Container/Blog/ServiceList';
 import TopBanner from '../Container/Blog/TopBanner';
+import AboutBottomBanner from '../Container/About US/AboutBottomBanner';
+import Expect from '../Container/Blog/Expect';
 export default function Blog() {
+
+  const data={
+    heading:"Join Us on this Journey",
+    para:"The ESERVZ Ecommerce Blog is more than just a collection of articles; it's a community of e-commerce enthusiasts, entrepreneurs, and business owners dedicated to achieving e-commerce excellence. We invite you to explore our blog, engage with our content, and join the conversation.",
+    para2:" Your e-commerce success is our top priority, and we're excited to embark on this journey with you. Let's transform your vision into a thriving online business. Stay tuned for regular updates, valuable insights, and a wealth of resources that will propel your e-commerce venture forward.",
+    para3:"If you're ready to dive in, start exploring our latest blog posts now. Have questions or topics you'd like us to cover? We'd love to hear from you. Contact us at contact@eservz.com and let us know how we can best support your e-commerce aspirations."
+  }
+
   const services = [
     {name:"Affiliate & Influencer",
     add:"/digitalMedia/affilateAdvertising"
@@ -50,10 +60,38 @@ export default function Blog() {
       name:"Web & Mobile Development",
       add:"/customerExpierence/mobileWebDev"
   }];
+
+  const data2=[{
+    src:"../images/Group 162943.png",
+    head:"Expert Insights",
+    para:"Our blog is your gateway to the latest industry trends, best practices, and expert insights. We'll dive deep into topics ranging from marketplace management and digital marketing to website optimization and customer experience."
+},
+{
+    src:"../images/five.png",
+    head:"Category Managers",
+    para:"Category Managers focus on specific product categories and are responsible for optimizing product assortments, pricing, and promotions within those categories. They help ensure that the right products are listed in the right categories, leading to increased visibility and sales."
+
+
+},
+{
+    src:"../images/Group 162942.png",
+    head:"Guidance for Growth",
+    para:"Whether you're just starting your e-commerce journey or looking to take your established business to the next level, our blog will offer guidance that aligns with your goals."    },
+{
+    src:"../images/Group 162944.png",
+    head:"Success Stories",
+    para:"Learn from the successes of others. Our blog will feature inspiring case studies and success stories that showcase how businesses have transformed their e-commerce operations with our guidance.."
+},
+
+
+
+]
   return (
     <Box className="container margin-nav" style={{backgroundColor:"#FFFCFC"}}>
         <TopBanner />
-        <BlogService data={services} />
+        <Expect data={data2}/>
+        {/* <BlogService data={services} /> */}
+        <AboutBottomBanner data={data}/>
         <ServiceList />
         <ContactForm />
         <Footer/>

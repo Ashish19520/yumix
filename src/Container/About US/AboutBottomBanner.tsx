@@ -1,10 +1,13 @@
+import { type } from 'os';
 import React from 'react'
 
-const AboutBottomBanner = () => {
+const AboutBottomBanner = ({data}:any) => {
   return (
-    <div className='content-content' style={{width:"80vw",margin:"0 auto",textAlign:"center"}}>
-      <h1 className='fba-hero-right-heading'>We're Dedicated to Achieving Results That Propel Your Ecommerce Success</h1>
-      <p className='select-font'> Our primary emphasis remains on achieving tangible outcomes. Through our comprehensive multi-channel ecommerce service encompassing platforms such as Amazon, Walmart, eBay, and your custom website, you'll be equipped with a dedicated team of experts committed to fostering the growth necessary for triumphing in the dynamic and competitive online market.</p>
+    <div className='content-content' style={{width:"80vw",margin:"0 auto",textAlign:"center"}}> 
+      <h1 className='strategy-heading' >{data?.heading}</h1>
+      <p className='select-font'> {data?.para}</p>
+      <p className='select-font'> {data?.para2}</p>
+      <p className='select-font'> {data?.para3}</p>
     </div>
   )
 }

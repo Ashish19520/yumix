@@ -45,7 +45,7 @@ export default function TopBanner() {
   return (
     <TopBannerWrapper className="margin-nav">
     <Grid wrap="wrap-reverse" rowGap={4} position="relative" container alignItems="center" style={{maxWidth:"1200px", margin:"auto", padding:"80px 40px", overflow:"hidden"}}>
-        <Grid item xs={12} md={5}>
+        <Grid item xs={12} md={7}>
         <motion.div
           variants={typingContainer}
           initial="hidden"
@@ -69,8 +69,8 @@ export default function TopBanner() {
             </Typography>
             </motion.div>
         </Grid>
-        <Grid item xs={12} md={7} sx={{textAlign:{xs:"center", md:"right"}, zIndex:1}}>
-            <motion.img src='/images/Illustrations.png' style={{maxHeight:"500px", width:"90%",marginTop:"50px"}} alt="Blog Banner" variants={elements}  initial="hidden" animate="show"></motion.img>
+        <Grid item xs={12} md={5} sx={{textAlign:{xs:"center", md:"right"}, zIndex:1}}>
+            <motion.img src='/images/Illustrations.png' style={{maxHeight:"500px", width:"100%",marginTop:"50px"}} alt="Blog Banner" variants={elements}  initial="hidden" animate="show"></motion.img>
         </Grid>
         <motion.div
           variants={elements}
@@ -82,7 +82,7 @@ export default function TopBanner() {
         <Box sx={{...style.bluredBox, top : {xs:"34%", md:"88%"}}}>
         <img  src="./images/Round Cube2@3x.png" className="logo-fold" width="100%"></img>
           </Box>
-        <img src="./images/Rock2.png" style={style.bluredRock}></img>
+        {/* <img src="./images/Rock2.png" style={style.bluredRock}></img> */}
         <img src="./images/aboutusThread.png" style={style.thread}></img>
         </motion.div>
     </Grid>

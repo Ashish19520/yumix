@@ -85,7 +85,7 @@ export default function PortfolioServices({data,filter,setFilter}:any) {
            
             className="bs-title"
           >
-            Category {filter?.first?" > "+filter?.firstValue.charAt(0).toUpperCase()+filter.firstValue.slice(1):""} {filter?.second?" > "+filter?.secondValue.charAt(0).toUpperCase()+filter.secondValue.slice(1):""}
+            Our Clientele Spans Various Product Categories, Including: {filter?.first?" > "+filter?.firstValue.charAt(0).toUpperCase()+filter.firstValue.slice(1):""} {filter?.second?" > "+filter?.secondValue.charAt(0).toUpperCase()+filter.secondValue.slice(1):""}
           </Typography>
           <Box
             style={{

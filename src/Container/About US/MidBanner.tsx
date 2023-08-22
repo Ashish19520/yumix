@@ -61,6 +61,7 @@ export default function TopBanner() {
         position="relative"
         container
         alignItems="center"
+        justifyContent="center"
         style={{
           maxWidth: "1200px",
           margin: "auto",
@@ -102,8 +103,8 @@ Regular collaboration, clear communication, and continuous learning and improvem
           sx={{ textAlign: { xs: "center", md: "left" } }}
         >
           <motion.img
-            src="/images/Business-Success.png"
-            style={{ width: "90%",marginLeft:"50px"}}
+            src="/images/Group 162953.png"
+            style={{ width: "100%"}}
             alt="About Banner"
             variants={elements}
             initial="hidden"

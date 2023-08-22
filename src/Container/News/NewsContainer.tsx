@@ -203,7 +203,7 @@ const NewsWrapper = styled.div`
       }
 
       .text-box {
-        width: 50%;
+        width: 100%;
         display: flex;
         flex-direction: column;
         position: relative;
@@ -228,7 +228,7 @@ const NewsWrapper = styled.div`
           }
         }
         .subtitle {
-          width: 80%;
+          width: 100%;
           font-family: Montserrat;
           font-size: 16px;
           line-height: 1.5;
@@ -256,9 +256,8 @@ const NewsWrapper = styled.div`
       }
 
       .img-box {
-        width: 50%;
+        width: 70%;
         padding-left: 50px;
-
         position: relative;
 
         @media (max-width: 600px) {
@@ -276,10 +275,11 @@ const NewsWrapper = styled.div`
           }
         }
         .cone {
-          width: 15%;
+          width: 8%;
+          height: 15%;
           position: absolute;
           left: 80px;
-          bottom: 50px;
+          bottom: 70px;
           @media (max-width: 600px) {
             display: block;
             bottom: 0%;
@@ -287,10 +287,10 @@ const NewsWrapper = styled.div`
           }
         }
         .rock {
-          width: 30%;
+          width: 20%;
           position: absolute;
-          right: 80px;
-          top: 0;
+          right: 40px;
+          top: -20px;
           @media (max-width: 600px) {
             display: block;
             width: 25%;

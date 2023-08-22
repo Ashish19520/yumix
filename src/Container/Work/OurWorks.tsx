@@ -120,7 +120,7 @@ const itemsPerPage = 9;
     <WorkWrapper>
       <Container maxWidth="lg" className="container">
         <motion.img src="./images/Group 38636@3x.png" variants={elements}  initial="hidden" animate="show" className="img-line-bg"></motion.img>
-        <motion.img src="./images/Group 38637@3x.png" variants={elements}  initial="hidden" animate="show" className="img-line-bg_2"></motion.img>
+        {/* <motion.img src="./images/Group 38637@3x.png" variants={elements}  initial="hidden" animate="show" className="img-line-bg_2"></motion.img> */}
         <motion.img src="./images/Round Cube2@3x.png" variants={elements}  initial="hidden" animate="show" className="img-cube_1"></motion.img>
         <motion.img src="./images/Ellipse 63@3x.png" variants={elements}  initial="hidden" animate="show" className="img-dot_1"></motion.img>
         <motion.div
@@ -129,13 +129,18 @@ const itemsPerPage = 9;
           animate="show"
           className="title"
         >
-          {Array.from("Our Portfolio").map((word, i) => (
+          {Array.from("Our Diverse Client Portfolio: Elevating ESERVZ's Ecommerce Expertise").map((word, i) => (
             <motion.span key={i} variants={typingText}>
               {word}
             </motion.span>
           ))}
         </motion.div>
+        <Typography  className="about_subtitle justify">
+        At ESERVZ, we take pride in the impactful partnerships we've forged with a diverse range of industry-leading brands. Our extensive portfolio showcases our unwavering commitment to delivering exceptional e-commerce solutions across multiple platforms, including Amazon, Walmart, eBay, and our clients' own websites. We specialize in a wide spectrum of product categories, enabling businesses to thrive and excel in the competitive online marketplace.         
+          </Typography>
 
+            
+        
         <PortfolioServices data={category} setFilter={setFilter} filter={filter}/>
 
 
@@ -222,10 +227,10 @@ const WorkWrapper = styled.div`
     margin: auto;
     position: relative;
     .img-cube_1 {
-      width: 20%;
+      width: 10%;
       position: absolute;
-      right: 10%;
-      top: 1%;
+      right: 0%;
+      top: 2%;
       z-index:1;
 
       @media (max-width: 900px) {
@@ -235,6 +240,17 @@ const WorkWrapper = styled.div`
         display: block;
         top: 5%;
       }
+    }
+    .about_subtitle{
+      color: #696969;
+      text-align: center;
+      /* Body M 18 */
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 133.333% */
+    letter-spacing: 0.25px;
     }
 
     .img-line-bg {
@@ -280,7 +296,7 @@ const WorkWrapper = styled.div`
 
     .title {
       font-family: Poppins-Bold;
-      font-size: 120px;
+      font-size: 62px;
       line-height: 1.5;
       letter-spacing: -0.5px;
       text-align: left;
@@ -288,6 +304,7 @@ const WorkWrapper = styled.div`
       margin-bottom: 40px;
       margin-top: 40px;
       position: relative;
+      text-align: center;
       z-index: 1 !important;
 
       @media (max-width: 600px) {

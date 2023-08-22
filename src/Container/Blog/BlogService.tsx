@@ -34,7 +34,7 @@ export default function BlogService({data}:any) {
     <BlogServiceWrapper>
       <div className="services-btn">
         <Box
-          style={{ maxWidth: "1200px", padding: "80px 40px", margin: "auto" }}
+          style={{ maxWidth: "1200px", padding: "80px 40px", margin: "auto",}}
         >
           <Typography
            
