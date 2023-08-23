@@ -5,6 +5,7 @@ import { ServicesBanner } from '../Container/OurServices/ServicesBanner'
 import ContactForm from '../Components/contactForm'
 import Footer from '../Components/Footer'
 import ToolsToService from '../Components/ToolsToService'
+import ComprehensiveServices from '../Container/OurServices/ComprehensiveServices'
 
 export const Services = () => {
   return (
@@ -13,6 +14,7 @@ export const Services = () => {
         
         {/* <ServiceWeProvide/> */}
         {/* <ServicesBanner /> */}
+        <ComprehensiveServices/>
         <div className='about-content-container'>
           <p className='about-content-display'>
           Furthermore, we specialize in crafting ecommerce websites and applications using platforms such as<b> Magento, Shopify, and BigCommerce. </b> Additionally, our expertise extends to offering comprehensive accounting and bookkeeping services through <b>Quickbooks</b>.<br/>
