@@ -1,4 +1,5 @@
 import React from 'react'
+import { useEffect } from 'react'
 import { OurServices } from '../Container/OurServices/OurServices'
 import { ServiceWeProvide } from '../Container/OurServices/ServiceWeProvide'
 import { ServicesBanner } from '../Container/OurServices/ServicesBanner'
@@ -6,8 +7,17 @@ import ContactForm from '../Components/contactForm'
 import Footer from '../Components/Footer'
 import ToolsToService from '../Components/ToolsToService'
 import ComprehensiveServices from '../Container/OurServices/ComprehensiveServices'
+import { Navigate } from 'react-router-dom'
 
 export const Services = () => {
+  useEffect(() =>{
+
+    if (window.innerWidth >= 768) {
+      window.scrollTo(0, 900);
+    } else {
+      window.scrollTo(0, 700);
+    }
+  },[])
   return (
     <div>
         <OurServices />

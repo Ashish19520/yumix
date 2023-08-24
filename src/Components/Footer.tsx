@@ -35,22 +35,6 @@ export default function Footer() {
 
   const links = [
     {
-      link: "Home",
-      to: "/",
-    },
-    {
-      link: "About Us",
-      to: "/aboutus",
-    },
-    {
-      link: "Portfolio",
-      to: "/works",
-    },
-    {
-      link: "Contact Us",
-      to: "/#contactForm",
-    },
-    {
       link: "Terms & Conditions",
       to: "/termsAndConditions",
     },
@@ -69,21 +53,6 @@ export default function Footer() {
     {
       link: "Frequently Asked Questions",
       to: "/questions",
-    },
-  ];
-
-  const services = [
-    {
-      link: "Digital Media",
-      to: "/ourservices#digitalMedia",
-    },
-    {
-      link: "Analytics",
-      to: "/ourservices#analytics",
-    },
-    {
-      link: "Customer Experience",
-      to: "/ourservices#customerExperience",
     },
     {
       link: "Partners And Affilations",
@@ -105,6 +74,35 @@ export default function Footer() {
       link: "Service Delivery Policy",
       to: "/serviceDelivery",
     },
+  ];
+
+  const services = [
+    {
+      link: "Seller Onboarding",
+      to: "/ourservices",
+    },
+    {
+      link: "Brand Registry and Approval",
+      to: "/ourservices",
+    },
+    {
+      link: "Category Approval",
+      to: "/ourservices",
+    },
+    {
+      link: "Product Listings",
+      to: "/ourservices",
+    },
+
+    {
+      link: "Product Page Optimization",
+      to: "/ourservices",
+    }, 
+    {
+      link: "A+ Content Creation",
+      to: "/ourservices",
+    },  
+   
   ];
   const navigate = useNavigate();
   useEffect(() => {

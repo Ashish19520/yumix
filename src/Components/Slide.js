@@ -13,7 +13,7 @@ import { Dispatch } from 'redux';
 import {  clients} from "../actions/posts"
 import { useSelector } from "react-redux/es/exports"
 
-const PrevArrow: any = ({ onClick }: any) => (
+const PrevArrow = ({ onClick }) => (
   <div
     className="prev-arrow"
     onClick={() => {
@@ -24,7 +24,7 @@ const PrevArrow: any = ({ onClick }: any) => (
   </div>
 );
 
-const NextArrow: any = ({ onClick }: any) => (
+const NextArrow = ({ onClick }) => (
   <div
     className="next-arrow"
     onClick={() => {
@@ -36,37 +36,21 @@ const NextArrow: any = ({ onClick }: any) => (
 );
 
 export const Slide = () => {
-  const response=useSelector((state:any)=>state?.posts);
-  const dispatch: Dispatch<any> = useDispatch();
+  const response=useSelector((state)=>state?.posts);
+  const dispatch = useDispatch();
+  const [images,setImages]=useState();
   
   useEffect(()=>{
-    dispatch(clients())
+    fetch();
   },[]);
 
-
+  const fetch=async()=>{
+    let data= await dispatch(clients());
+    setImages(data?.data);
+  }
+  console.log(images?.[0]?.attributes?.clientImage?.data?.[0]?.attributes?.formats?.thumbnail?.url);
   
-  const data = [
-    {
-      id: "1",
-      src: "./images/Group 38629@3x.png",
-    },
-    {
-      id: "2",
-      src: "./images/Group 38628@3x.png",
-    },
-    {
-      id: "3",
-      src: "./images/Group 38627@3x.png",
-    },
-    {
-      id: "4",
-      src: "./images/Group 38626@3x.png",
-    },
-    {
-      id: "5",
-      src: "./images/Group 38628@3x.png",
-    },
-  ];
+  
 
   let settings = {
     dots: false,
@@ -92,9 +76,9 @@ export const Slide = () => {
     <SliderWrapper>
       <Container className="container">
         <Slider {...settings} className="slider_main">
-          {response?.clientList?.data?.map((data:any,index:number) => (  
+          {images?.data?.map((item,index) => (  
             <div className="slide_item" key={index}>
-              <img src={data.attributes.logo_url} alt="img" className="imgs"/>
+              <img src={item?.attributes?.clientImage?.data?.[0]?.attributes?.formats?.thumbnail?.url} alt="img" className="imgs"/>
             </div>
           ))}
         </Slider>

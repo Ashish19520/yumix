@@ -296,7 +296,7 @@ const WorkWrapper = styled.div`
 
     .title {
       font-family: Poppins-Bold;
-      font-size: 62px;
+      font-size: 40px;
       line-height: 1.5;
       letter-spacing: -0.5px;
       text-align: left;

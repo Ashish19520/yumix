@@ -45,6 +45,7 @@ export const clients=()=>async (dispatch:Dispatch<AnyAction>)=>{
     try {
        let {data}=await api.clientList();
     dispatch({type:CLIENT_LIST,payload:data});
+    return data;
     } catch (error) {
         console.error(error);
     }

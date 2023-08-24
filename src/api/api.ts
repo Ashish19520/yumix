@@ -3,8 +3,8 @@ import {TOKEN} from "../constants/actionTypes"
 
 const API = axios.create({
     
-    baseURL: 'http://3.108.131.11:1337',
-    // baseURL: 'http://localhost:1337',
+    // baseURL: 'http://3.108.131.11:1337',
+    baseURL: 'http://localhost:1337',
     
   });
   
@@ -15,7 +15,7 @@ const API = axios.create({
 
 export const fetchPost=()=>API.get(`api/sitecounters`);
 export const fillForm=(data:any)=>API.post(`api/send-mails/sendmail`,data);
-export const clientList=()=>API.get(`api/clients`);
+export const clientList=()=>API.get(`api/clients?populate=*`);
 export const testimonials=()=>API.get(`api/testimonials`);
 export const sitecounters=()=>API.get(`api/sitecounters`);
 export const blogs=()=>API.get(`api/blogs`);   
