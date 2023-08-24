@@ -63,13 +63,19 @@ export const People = () => {
       opacity: 1,
     },
   };
-  const response=useSelector((state:any)=>state?.posts?.testimonials);
-  const dispatch: Dispatch<any> = useDispatch();
+  const response=useSelector((state)=>state?.posts?.testimonials);
+  const dispatch= useDispatch();
+  const [videos,setVideos]=useState();
 
 
   useEffect(()=>{
-    dispatch(testimonialPlay())
+    fetch();
   },[])
+
+  const fetch=async()=>{
+    let data=await dispatch(testimonialPlay());
+    setVideos(data?.data)
+  }
   const breakPoints = [
     { width: 1, itemsToShow: 1 },
     { width: 550, itemsToShow: 2 },
@@ -87,13 +93,22 @@ export const People = () => {
             <div className="subTitle">Voices About Our Services</div>
           </div>
          
-          <Carousel  breakPoints={breakPoints} itemsToScroll={2} itemsToShow={2} isRTL={false} className="carous">
-            {data.map((d,index) => (
+          <Carousel 
+           breakPoints={breakPoints} 
+          itemsToScroll={1} 
+          itemsToShow={2}
+           isRTL={false}
+            className="carous">
+
+            {videos?.map((d,index) => (
               // <video  loop poster={d?.thumb} height="500px" width="300px">
               //   <source src={d?.src} height="500px" width="300px" type="video/mp4" />
               // </video>
               <iframe  key={index} title="iframe" width="420" height="315"
-                src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                // src="https://www.youtube.com/embed/tgbNymZ7vqY"
+                src={d?.attributes.t_url}
+                
+                >
               </iframe>
            
             ))}
@@ -101,7 +116,7 @@ export const People = () => {
 
 
         </div>
-        <VideoSlide items={response}/>
+        {/* <VideoSlide items={response}/> */}
       </Container>
     </Users>
   );

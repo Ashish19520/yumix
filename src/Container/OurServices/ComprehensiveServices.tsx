@@ -1,6 +1,17 @@
 import React from 'react'
 
+
 const ComprehensiveServices = () => {
+
+    const clickHandlar=()=>{
+        
+            if (window.innerWidth >= 768) {
+              window.scrollTo(0, 4700);
+            } else {
+              window.scrollTo(0, 2700);
+            }
+          
+    }
     const data=[
         {
             img:"../images/service1.png",
@@ -94,7 +105,7 @@ const ComprehensiveServices = () => {
     <h1 className='content-heading' style={{fontSize:"40px",marginTop:"70px"}}>Our Comprehensive Services:</h1>
     <div className='comprehensive-service'>
        {data.map((item,index)=>(
-       <div style={{width:"50%"}}>
+       <div style={{width:"50%"}} onClick={clickHandlar}>
         <div className="comprehensive-Content" style={{backgroundColor:item.backgroundColor}} key={index}>
           <img src={item.img} className='img-blog'></img>
         </div>

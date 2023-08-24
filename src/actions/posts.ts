@@ -53,7 +53,8 @@ export const clients=()=>async (dispatch:Dispatch<AnyAction>)=>{
 export const testimonialPlay=()=>async (dispatch:Dispatch<AnyAction>)=>{
     try {
        let {data}=await api.testimonials();
-    dispatch({type:TESTIMONIALS,payload:data});
+      dispatch({type:TESTIMONIALS,payload:data});
+      return data;
     } catch (error) {
         console.error(error);
     }

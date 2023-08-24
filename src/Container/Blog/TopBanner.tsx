@@ -45,7 +45,7 @@ export default function TopBanner() {
   return (
     <TopBannerWrapper className="margin-nav">
     <Grid wrap="wrap-reverse" rowGap={4} position="relative" container alignItems="center" style={{maxWidth:"1200px", margin:"auto", padding:"80px 40px", overflow:"hidden"}}>
-        <Grid item xs={12} md={7}>
+        <Grid item xs={12} md={8}>
         <motion.div
           variants={typingContainer}
           initial="hidden"
@@ -69,7 +69,7 @@ export default function TopBanner() {
             </Typography>
             </motion.div>
         </Grid>
-        <Grid item xs={12} md={5} sx={{textAlign:{xs:"center", md:"right"}, zIndex:1}}>
+        <Grid item xs={12} md={4} sx={{textAlign:{xs:"center", md:"right"}, zIndex:1}}>
             <motion.img src='/images/Illustrations.png' style={{maxHeight:"500px", width:"100%",marginTop:"50px"}} alt="Blog Banner" variants={elements}  initial="hidden" animate="show"></motion.img>
         </Grid>
         <motion.div
@@ -92,7 +92,7 @@ export default function TopBanner() {
 
 const TopBannerWrapper=styled.div`
 .blog-top-title{
-  font-size:40px;
+  font-size:32px;
    font-weight:700;
    color:#0B0720; 
    font-family:Poppins-Bold;

@@ -73,7 +73,7 @@ const content={
       <MidBanner />
       
       <BottomBanner />
-      <OurLeaders />
+      {/* <OurLeaders /> */}
       <TypoWrapper>
       <Typography fontSize="32px" textAlign="center" width="100%" fontFamily="Poppins-SemiBold" color="#3A3B44" style={{maxWidth:"1100px", margin:"auto"}} className='about-typo'>Collaborative Ventures We've Engaged In</Typography>
       </TypoWrapper>

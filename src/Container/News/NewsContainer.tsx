@@ -214,7 +214,7 @@ const NewsWrapper = styled.div`
 
         .title {
           font-family: Poppins-Bold;
-          font-size: 40px;
+          font-size: 30px;
           font-weight: bold;
           line-height: 1.25;
           letter-spacing: 0.25px;
@@ -259,15 +259,23 @@ const NewsWrapper = styled.div`
         width: 70%;
         padding-left: 50px;
         position: relative;
-
+       margin-right: -130px;
         @media (max-width: 600px) {
+          margin-right:0;
           width: 100%;
           padding-left: unset;
           display: flex;
           align-items: center;
           justify-content: center;
         }
-
+        @media (max-width: 600px) {
+          margin-right:0;
+        }
+        @media (max-width: 950px) {
+          margin-right:0;
+        }
+       
+        
         .subject {
           width: 75%;
           @media (max-width: 600px) {

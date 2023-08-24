@@ -51,11 +51,11 @@ export const OurApproach = () => {
                   arrow
                 >
                   <Button>
-                    <img
+                     <img
                       className='icon-info'
                       alt='info'
                       src='./images/roundInfo.png'
-                    ></img>
+                    ></img> 
                   </Button>
                 </Tooltip>
               </div>
@@ -85,7 +85,7 @@ export const OurApproach = () => {
               </div>
 
               <div className='singleicon'>
-                <img className='ig' id='stl1' src='./images/A1.png'></img>
+                <img className='ig' id='stl1' src='./images/A1.png' height="10px"></img>
                 <p className='para'>Conversion-focused Optimization</p>
                 <Tooltip
                   title=' Our team specializes in optimizing product listings to drive conversions. From compelling product descriptions to high-quality images, we create listings that turn browsers into buyers.'
@@ -150,7 +150,7 @@ export const OurApproach = () => {
 
 const MidBanner = styled.div`
   background: #fffcfc;
-  padding: 40px 0px 56px 0px;
+  padding: 10px;
 
   @media (max-width: 600px) {
     padding: 40px 0px 0px 0px;
@@ -206,7 +206,7 @@ const MidBanner = styled.div`
         display: flex;
         align-items: center;
         justify-content: space-evenly;
-        width: 100vw;
+        width: 90vw;
 
         @media (max-width: 900px) {
           flex-wrap: wrap;
@@ -216,14 +216,14 @@ const MidBanner = styled.div`
 
         @media (max-width: 600px) {
           flex-direction: column;
-          width: 100%;
+          width: 100vw;
         }
         @media (max-width: 350px) {
           flex-direction: column;
-          width: 100%;
+          width: 100vw;
         }
         #stl1 {
-          width: 140px;
+          width: 170px;
           @media (max-width: 600px) {
             width: 220px;
           }
@@ -315,6 +315,7 @@ const MidBanner = styled.div`
             height: 24px;
             flex-shrink: 0;
             cursor: pointer;
+            z-index:77;
           }
 
           p {
