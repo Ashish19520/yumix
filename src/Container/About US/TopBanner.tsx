@@ -87,16 +87,13 @@ export default function TopBanner() {
           <motion.div variants={elements} initial="hidden" animate="show">
             <Typography
               variant="h2"
-              className="about_subtitle justify"
+              className="about_subtitle "
             
             >
               Brands willing to sell online face several challenges like successful Launch on Marketplaces, Inventory Management, Order Processing and Fulfillment, Multi-channel Selling (Amazon, Walmart, eBay, Social Media Platforms, and your own website), Competitive Analysis, Account Management & Support, Marketing and PPC Advertising Management, Analytics and Reporting, Scalability and Growth. 
-
+<br/>Partnering with Bighatch Consulting, commonly known as ESERVZ can help Brands & Resellers to overcome these complexities more effectively, save time and resources, improve operational efficiency, and focus on core business activities. 
             </Typography>
-            <Typography 
-            variant="h2"
-            className="about_subtitle justify"> 
-            Partnering with Bighatch Consulting, commonly known as ESERVZ can help Brands & Resellers to overcome these complexities more effectively, save time and resources, improve operational efficiency, and focus on core business activities. </Typography>
+        
           </motion.div>
         </Grid>
         <Grid

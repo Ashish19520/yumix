@@ -119,7 +119,7 @@ const itemsPerPage = 9;
   return (
     <WorkWrapper>
       <Container maxWidth="lg" className="container">
-        <motion.img src="./images/Group 38636@3x.png" variants={elements}  initial="hidden" animate="show" className="img-line-bg"></motion.img>
+        {/* <motion.img src="./images/Group 38636@3x.png" variants={elements}  initial="hidden" animate="show" className="img-line-bg"></motion.img> */}
         {/* <motion.img src="./images/Group 38637@3x.png" variants={elements}  initial="hidden" animate="show" className="img-line-bg_2"></motion.img> */}
         <motion.img src="./images/Round Cube2@3x.png" variants={elements}  initial="hidden" animate="show" className="img-cube_1"></motion.img>
         <motion.img src="./images/Ellipse 63@3x.png" variants={elements}  initial="hidden" animate="show" className="img-dot_1"></motion.img>

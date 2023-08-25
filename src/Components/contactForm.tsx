@@ -45,7 +45,7 @@ export default function ContactForm () {
   const [failShow, setFailShow] = useState(false)
   const [formData, setFormData] = useState({
     email: '',
-    message: ''
+    message:''
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
 
@@ -73,7 +73,7 @@ export default function ContactForm () {
     }
     setFormData({
       email: '',
-      message: ''
+      message:''
     })
   }
   let flag = false

@@ -83,7 +83,7 @@ export default function TopBanner() {
         <img  src="./images/Round Cube2@3x.png" className="logo-fold" width="100%"></img>
           </Box>
         {/* <img src="./images/Rock2.png" style={style.bluredRock}></img> */}
-        <img src="./images/aboutusThread.png" style={style.thread}></img>
+        <img src="./images/Group 38633.png" style={style.thread}></img>
         </motion.div>
     </Grid>
     </TopBannerWrapper>
@@ -147,10 +147,10 @@ const style = {
         
     } as React.CSSProperties,
     thread : {
-        width : "100%",
+        width : "10%",
         minWidth : "500px",
         position : "absolute",
-        top : "270px",
-        left : "20%",
+        top : "40%",
+        right : "10%",
     } as React.CSSProperties
 }

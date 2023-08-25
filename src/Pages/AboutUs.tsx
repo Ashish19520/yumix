@@ -29,7 +29,7 @@ useEffect(()=>{
 },
 {
     src:"../images/Group 162946.png",
-    head:"Launch strategy expertss",
+    head:"Launch Strategy Experts",
     para:"Launch Strategy Experts develop comprehensive plans for launching new products or brands on online marketplaces. They outline the necessary steps, from product listing optimisation to marketing campaigns, to generate initial sales momentum and visibility."
 },
 {
@@ -71,13 +71,17 @@ const content={
       <BannerList />
       <Team data={data2} content={content}/>
       <MidBanner />
-      
+      <TypoWrapper>
+      <Typography fontSize="32px" textAlign="center" width="100%" fontFamily="Poppins-SemiBold" color="#3A3B44" style={{maxWidth:"1100px", margin:"auto"}} className='about-typo'>Actions speak louder than words</Typography>
+      </TypoWrapper>
+      <Counter />
       <BottomBanner />
       {/* <OurLeaders /> */}
+      
       <TypoWrapper>
       <Typography fontSize="32px" textAlign="center" width="100%" fontFamily="Poppins-SemiBold" color="#3A3B44" style={{maxWidth:"1100px", margin:"auto"}} className='about-typo'>Collaborative Ventures We've Engaged In</Typography>
       </TypoWrapper>
-      {/* <Counter /> */}
+      
        <Works/>
        <AboutBottomBanner data={data}/>
       <ContactForm />

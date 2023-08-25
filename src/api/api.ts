@@ -3,12 +3,12 @@ import {TOKEN} from "../constants/actionTypes"
 
 export const API = axios.create({
     
-    baseURL: 'http://3.108.131.11:1337',
-    // baseURL: 'http://localhost:1337',
+    // baseURL: 'http://3.108.131.11:1337',
+    baseURL: 'http://localhost:1337',
     
   });
-  export const baseUrl='http://3.108.131.11:1337';
-  // export const baseUrl='http://localhost:1337';
+  // export const baseUrl='http://3.108.131.11:1337';
+  export const baseUrl='http://localhost:1337';
   
   API.interceptors.request.use((req) => { 
       req.headers.authorization = `bearer ${TOKEN}`;

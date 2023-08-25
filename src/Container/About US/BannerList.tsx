@@ -84,10 +84,14 @@ export default function BannerList() {
           Our tagline, <b>"List, Advertise & Grow"</b> encapsulates our core approach. 
           </Typography>
           <Typography fontSize="16px" fontFamily="Montserrat" color="#828490" style={{marginTop:"15px"}}>
-          "List" signifies our expertise in curating and presenting products on online platforms.  
+          <b>"List"</b> signifies our expertise in curating and presenting products on online platforms.  
           </Typography>
           <Typography fontSize="16px" fontFamily="Montserrat" color="#828490" style={{marginTop:"15px"}}>
-          "Advertise" reflects our ability to market these products strategically. "Grow" underscores our commitment to expanding the brand's reach, customer engagement, and overall success in the digital marketplace.
+          <b>"Advertisement"</b> reflects our ability to market these products strategically.
+          </Typography>
+          <Typography fontSize="16px" fontFamily="Montserrat" color="#828490" style={{marginTop:"15px"}}>
+          
+           <b>"Grow"</b> underscores our commitment to expanding the brand's reach, customer engagement, and overall success in the digital marketplace.
           </Typography>
           <Typography fontSize="16px" fontFamily="Montserrat" color="#828490" style={{marginTop:"15px"}}>
           We are <b>Bighatch Consulting</b>, also recognized as <b>ESERVZ</b>. Established in 2018 (officially registered in 2020), our team comprises experienced e-commerce specialists. Our mission is to offer expert assistance to brands and retailers with an online presence. Operating across the United States of America, United Kingdom, Canada, Australia, India, and various other markets, we serve as comprehensive multichannel eCommerce service providers.

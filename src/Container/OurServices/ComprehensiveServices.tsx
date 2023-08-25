@@ -111,7 +111,7 @@ const ComprehensiveServices = () => {
         </div>
         <div className='comprehensive-text'>
             <h4>{item.head}</h4>
-            <p className='.about-content-display '>{item.para}</p>
+            <p className='about-content-display' style={{textAlign:"start"}}>{item.para}</p>
         </div>
         </div>
        

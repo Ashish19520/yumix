@@ -197,7 +197,7 @@ export default function PortfolioServices({data,filter,setFilter}:any) {
             }):null
         }
           </Box>
-          <Button
+          {/* <Button
             disableElevation
             variant="contained"
             sx={{
@@ -214,7 +214,7 @@ export default function PortfolioServices({data,filter,setFilter}:any) {
             onClick={() => setFlag(false)}
           >
             View All
-          </Button>
+          </Button> */}
         </Box>
       </div>
     </BlogServiceWrapper>

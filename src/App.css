@@ -792,20 +792,19 @@ color: #3A3B44;
   border-radius: 10px;
   background: #FFF;
   @media(max-width:600px){
-    width: 100%;
+    width: 100vw;
     padding: 10px 10px;
     text-align: justify;
     height:auto;
      };
-     @media(max-width:950px){
-      width: 100%;
-      padding: 10px 10px;
+     @media(max-width:600px){
+      width: 100vw;
       text-align: justify;
       height:auto;
        };
      @media(max-width:350px){
-      padding: 10px 10px;
-       width: 100%;
+      
+       width: 100vw;
        text-align: justify;
        height: auto;
         };
@@ -931,7 +930,12 @@ letter-spacing: 0.25px;
    width: 100%;
    padding: 10px;
      };
-
+     @media(max-width:950px){
+      
+     width: 100%;
+     padding: 40px 40px;
+       };
+  
      @media(max-width:350px){
       margin-top:-30px;
       width: 100%;
@@ -950,6 +954,11 @@ letter-spacing: 0.25px;
        width: 100%;
        padding:10px;
          };
+         @media(max-width:950px){
+      
+          width: 50%;
+          padding: 40px 40px;
+            };
 }
 
 .img-blog{
@@ -969,6 +978,12 @@ letter-spacing: 0.25px;
       padding: 10px;
        top:15%;
          };
+         @media(max-width:950px){
+      
+          width: 100%;
+          padding: 20px 20px;
+          top:10%;
+            };
 }
  .comprehensive-text{
   width: 70%;
@@ -979,6 +994,12 @@ letter-spacing: 0.25px;
     padding: 10px;
     margin-left: 0;
       };
+      @media(max-width:950px){
+      
+        width: 100%;
+        padding: 10px 10px;
+        margin-left: 0px;
+          };
  
       @media(max-width:350px){
        width: 100%;

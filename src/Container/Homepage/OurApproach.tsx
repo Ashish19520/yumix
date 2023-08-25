@@ -242,7 +242,7 @@ const MidBanner = styled.div`
           height: '190px';
 
           @media (max-width: 600px) {
-            flex-direction: row;
+            flex-direction: column;
             padding-bottom: 40px;
             height: '150px';
             width: '180px';

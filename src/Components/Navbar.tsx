@@ -214,7 +214,7 @@ export const Navbar = () => {
                 <Link to='/ourservices'>Our Services</Link>
               </li>
               <li>
-                <Link to='/works'>Works</Link>
+                <Link to='/works'>portfolio</Link>
               </li>
               <li>
                 <Link to='/blogs'>Blog</Link>

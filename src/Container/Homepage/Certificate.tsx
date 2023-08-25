@@ -50,7 +50,7 @@ console.log(response?.data[0]?.attributes?.t_url)
           </div>
           <div className="subtitle">
             <p className="justify">
-            As a specialized ecommerce agency focused on dominant marketplaces such as Amazon, Walmart, eBay, and your very own website, we offer an array of expert services designed to propel your brand to new heights. We excel at orchestrating successful brand and product launches, meticulously meeting each platform's unique requirements.<br/>
+            As a specialized ecommerce agency focused on dominant marketplaces such as <b>Amazon, Walmart, eBay, and your very own website,</b> we offer an array of expert services designed to propel your brand to new heights. We excel at orchestrating successful brand and product launches, meticulously meeting each platform's unique requirements.<br/>
              Our services encompass comprehensive product listing creation, strategic optimizations, and adept inventory planning to ensure seamless restocking. We masterfully navigate PPC Ads campaigns, strategically employ deals, promos, and coupons, directing precise traffic to your product pages, thus enhancing conversion rates. Our dedication extends to cultivating ratings and reviews, ensuring compliance, and culminating in the ultimate objective: nurturing your brand's revenue growth.
             </p>
           </div>

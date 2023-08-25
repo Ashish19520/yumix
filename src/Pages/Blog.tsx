@@ -67,14 +67,15 @@ export default function Blog() {
     para:"Our blog is your gateway to the latest industry trends, best practices, and expert insights. We'll dive deep into topics ranging from marketplace management and digital marketing to website optimization and customer experience."
 },
 {
-    src:"../images/five.png",
-    head:"Category Managers",
-    para:"Category Managers focus on specific product categories and are responsible for optimizing product assortments, pricing, and promotions within those categories. They help ensure that the right products are listed in the right categories, leading to increased visibility and sales."
+  src:"../images/Group 162942.png",
+    head:"Actionable Tips",
+    para:"We believe in providing actionable advice that you can implement immediately. Our blog posts are designed to empower you with practical strategies that deliver real results."
 
 
 },
 {
-    src:"../images/Group 162942.png",
+  src:"../images/five.png",
+    
     head:"Guidance for Growth",
     para:"Whether you're just starting your e-commerce journey or looking to take your established business to the next level, our blog will offer guidance that aligns with your goals."    },
 {
@@ -89,7 +90,7 @@ export default function Blog() {
   return (
     <Box className="container margin-nav" style={{backgroundColor:"#FFFCFC"}}>
         <TopBanner />
-        <Expect data={data2}/>
+        < Expect data={data2}/>
         {/* <BlogService data={services} /> */}
         <AboutBottomBanner data={data}/>
         <ServiceList />

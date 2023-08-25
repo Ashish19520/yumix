@@ -10,14 +10,7 @@ import ComprehensiveServices from '../Container/OurServices/ComprehensiveService
 import { Navigate } from 'react-router-dom'
 
 export const Services = () => {
-  useEffect(() =>{
 
-    if (window.innerWidth >= 768) {
-      window.scrollTo(0, 900);
-    } else {
-      window.scrollTo(0, 700);
-    }
-  },[])
   return (
     <div>
         <OurServices />

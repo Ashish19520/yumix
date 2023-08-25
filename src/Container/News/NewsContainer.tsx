@@ -179,7 +179,6 @@ At Bighatch Consulting, also known as ESERVZ, we understand that the e-commerce 
             <img src="./images/newRock2@3x.png" className="rock"></img>
             <img src="./images/Ellipse 62@3x.png" className="dot"></img>
             <img src="./images/Ellipse 62@3x.png" className="dottwo"></img>
-            <img src="./images/Group 38623@3x.png" className="line"></img>
           </motion.div>
         </div>
       </Container>

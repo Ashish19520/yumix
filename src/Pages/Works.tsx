@@ -23,7 +23,7 @@ export const Works = () => {
   }
 
   const data3=[{
-    src:"../images/Group 162943.png",
+    src:"../images/Group 162954.png",
     head:"Expert Insights",
     para:"Our experience spans diverse industries, giving us a deep understanding of what works best for each product category."
 },
