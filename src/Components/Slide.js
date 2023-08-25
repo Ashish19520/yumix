@@ -12,6 +12,7 @@ import { useDispatch } from 'react-redux';
 import { Dispatch } from 'redux';
 import {  clients} from "../actions/posts"
 import { useSelector } from "react-redux/es/exports"
+import { baseUrl } from "../api/api";
 
 const PrevArrow = ({ onClick }) => (
   <div
@@ -48,8 +49,7 @@ export const Slide = () => {
     let data= await dispatch(clients());
     setImages(data?.data);
   }
-  console.log(images?.[0]?.attributes?.clientImage?.data?.[0]?.attributes?.formats?.thumbnail?.url);
-  
+  console.log("---",images)
   
 
   let settings = {
@@ -76,9 +76,11 @@ export const Slide = () => {
     <SliderWrapper>
       <Container className="container">
         <Slider {...settings} className="slider_main">
-          {images?.data?.map((item,index) => (  
+          {images?.map((item,index) => (  
+           
             <div className="slide_item" key={index}>
-              <img src={item?.attributes?.clientImage?.data?.[0]?.attributes?.formats?.thumbnail?.url} alt="img" className="imgs"/>
+              {          console.log(item?.attributes?.clientImage?.data[0]?.attributes?.formats?.thumbnail?.url)}
+              <img src={baseUrl+item?.attributes?.clientImage?.data[0]?.attributes?.formats?.thumbnail?.url} alt="img" className="imgs"/>
             </div>
           ))}
         </Slider>

@@ -905,14 +905,13 @@ letter-spacing: 0.25px;
   margin:0 auto;
 
   @media(max-width:600px){
-    padding: 10px;
     padding:10px;
     height: auto;
     flex-direction: column;
      };
 
      @media(max-width:350px){
-      padding:10px;
+
       height: auto;
       flex-direction:column;
         };
@@ -928,15 +927,29 @@ letter-spacing: 0.25px;
   background-color: #EEEEEE;
   height: 230px;
   @media(max-width:600px){
+    margin-bottom:-30px;
    width: 100%;
    padding: 10px;
      };
 
      @media(max-width:350px){
+      margin-top:-30px;
       width: 100%;
       padding:10px;
         };
 
+}
+.main-service{
+  width: 50%;
+  @media(max-width:600px){
+    width: 100%;
+    padding: 10px;
+      };
+ 
+      @media(max-width:350px){
+       width: 100%;
+       padding:10px;
+         };
 }
 
 .img-blog{
@@ -944,9 +957,32 @@ letter-spacing: 0.25px;
   position: absolute;
   top:25%;
   border-radius: 15px;
+  @media(max-width:600px){
+    width: 100%;
+    padding: 10px;
+    top:15%;
+
+      };
+ 
+      @media(max-width:350px){
+       width: 100%;
+      padding: 10px;
+       top:15%;
+         };
 }
  .comprehensive-text{
   width: 70%;
   margin-top: 50px;
   margin-left: 70px;
+  @media(max-width:600px){
+    width: 100%;
+    padding: 10px;
+    margin-left: 0;
+      };
+ 
+      @media(max-width:350px){
+       width: 100%;
+       padding:10px;
+       margin-left: 0px;
+         };
 }
