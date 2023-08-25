@@ -50,13 +50,10 @@ export const OurApproach = () => {
                   classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
                   arrow
                 >
-                  <Button>
-                     <img
-                      className='icon-info'
-                      alt='info'
-                      src='./images/roundInfo.png'
-                    ></img> 
-                  </Button>
+                    <button className='btn' style={{borderRadius:"30px",width:"30px",height:"30px"}}>
+                   
+                   <h1><b>i</b> </h1>
+                  </button>
                 </Tooltip>
               </div>
 
@@ -74,13 +71,10 @@ export const OurApproach = () => {
                   classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
                   arrow
                 >
-                  <Button>
-                    <img
-                      className='icon-info'
-                      alt='info'
-                      src='./images/roundInfo.png'
-                    ></img>
-                  </Button>
+                    <button className='btn' style={{borderRadius:"30px",width:"30px",height:"30px"}}>
+                   
+                   <h1><b>i</b> </h1>
+                  </button>
                 </Tooltip>
               </div>
 
@@ -93,13 +87,10 @@ export const OurApproach = () => {
                   classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
                   arrow
                 >
-                  <Button>
-                    <img
-                      className='icon-info'
-                      alt='info'
-                      src='./images/roundInfo.png'
-                    ></img>
-                  </Button>
+                   <button className='btn' style={{borderRadius:"30px",width:"30px",height:"30px"}}>
+                   
+                   <h1><b>i</b> </h1>
+                  </button>
                 </Tooltip>
               </div>
 
@@ -112,13 +103,10 @@ export const OurApproach = () => {
                   classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
                   arrow
                 >
-                  <Button>
-                    <img
-                      className='icon-info'
-                      alt='info'
-                      src='./images/roundInfo.png'
-                    ></img>
-                  </Button>
+                  <button className='btn' style={{borderRadius:"30px",width:"30px",height:"30px"}}>
+                   
+                   <h1><b>i</b> </h1>
+                  </button>
                 </Tooltip>
               </div>
 
@@ -131,13 +119,10 @@ export const OurApproach = () => {
                   classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
                   arrow
                 >
-                  <Button>
-                    <img
-                      className='icon-info'
-                      alt='info'
-                      src='./images/roundInfo.png'
-                    ></img>
-                  </Button>
+                   <button className='btn' style={{borderRadius:"30px",width:"30px",height:"30px"}}>
+                   
+                   <h1><b>i</b> </h1>
+                  </button>
                 </Tooltip>
               </div>
             </div>
@@ -242,7 +227,7 @@ const MidBanner = styled.div`
           height: '190px';
 
           @media (max-width: 600px) {
-            flex-direction: column;
+            flex-direction: row;
             padding-bottom: 40px;
             height: '150px';
             width: '180px';

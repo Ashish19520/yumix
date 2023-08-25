@@ -11,38 +11,6 @@ import { useSelector } from "react-redux/es/exports"
 import  Carousel from 'react-elastic-carousel'
 
 
-const data = [
-  {
-    thumb:"../images/thumb2.png",
-   src:"../videos/Video Testimonial.mp4"
-  },
-  {
-    thumb:"../images/thumb2.png",
-    src:"../videos/Video Testimonial.mp4"
-  },
-  {
-    thumb:"../images/thumb2.png",
-    src:"../videos/Video Testimonial.mp4"
-  },
-  {
-    thumb:"../images/thumb2.png",
-    src:"../videos/Video Testimonial.mp4"
-  },
-  {
-    thumb:"../images/thumb2.png",
-    src:"../videos/Video Testimonial.mp4"
-  },
-  {
-    thumb:"../images/thumb2.png",
-    src:"../videos/Video Testimonial.mp4"
-  },
-  {
-    thumb:"../images/thumb2.png",
-    src:"../videos/Video Testimonial.mp4"
-  },
-
-];
-
 export const People = () => {
   const cardContainer = {
     hidden: { opacity: 1, scale: 0 },
@@ -63,7 +31,7 @@ export const People = () => {
       opacity: 1,
     },
   };
-  const response=useSelector((state)=>state?.posts?.testimonials);
+  
   const dispatch= useDispatch();
   const [videos,setVideos]=useState();
 
