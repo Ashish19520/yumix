@@ -191,7 +191,7 @@ const MidBanner = styled.div`
         display: flex;
         align-items: center;
         justify-content: space-evenly;
-        width: 90vw;
+        width: 100vw;
 
         @media (max-width: 900px) {
           flex-wrap: wrap;
@@ -315,7 +315,7 @@ const MidBanner = styled.div`
             @media (max-width: 600px) {
               font-size: 16px;
               margin-bottom: 20px;
-              padding: 0px 20px;
+              padding: 0px 0px;
             }
           }
 
