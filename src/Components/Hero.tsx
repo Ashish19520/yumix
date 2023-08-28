@@ -305,44 +305,52 @@ export const Hero = () => {
                 // transition={{duration:3, delay:.2, ease:"easeInOut"}}
               ></motion.img>
               <motion.img
-                src="./images/bag.png"
+                src="./images/Group 162964.png"
                variants={window.screen.width<601? imgProduct2:imgProduct1}
                 initial="hidden"
                 animate="show"
                 className="rock"
               ></motion.img>
               <motion.img
-                src="./images/Rock2@3x.png"
+                src="./images/Group 162959.png"
                variants={window.screen.width<601? imgProduct2:imgProduct1}
                 initial="hidden"
                 animate="show"
                 className="shopify"
               ></motion.img>
               <motion.img
-                src="./images/shoes.png"
+                src="./images/Group 162961.png"
                variants={window.screen.width<601? imgProduct2:imgProduct1}
                 initial="hidden"
                 animate="show"
-                className="shopify2"
+                className="amazon2"
+              ></motion.img>
+
+              <motion.img
+                src="./images/Group 162962.png"
+               variants={window.screen.width<601? imgProduct2:imgProduct1}
+                initial="hidden"
+                animate="show"
+                className="shopify3"
               ></motion.img>
               
               
               <motion.img
-                src="./images/jacket.png"
+                src="./images/Group 162960.png"
                variants={window.screen.width<601? imgProduct2:imgProduct1}
                 initial="hidden"
                 animate="show"
                 className="google"
               ></motion.img>
-              {/* <motion.img
-                src="./images/partner-certified@3x.png"
+              <motion.img
+                src="./images/Group 162963.png"
                variants={window.screen.width<601? imgProduct2:imgProduct1}
                 initial="hidden"
                 animate="show"
                 className="certified"
                 transition={{duration:5, delay:2, ease:"easeInOut"}}
 
-              ></motion.img> */}
+              ></motion.img>
             </motion.div>
           </div>
         </div>
@@ -560,22 +568,20 @@ const HeroLayout = styled.div`
           .rock {
             transform-style: preserve-3d;
             transition: all .2s ease;
-            width: 50%;
+            width: 30%;
             position: absolute;
-            left: -40px;
-            top: -70px !important;
+            left: 20px;
+            top: -20px !important;
             @media (max-width: 900px) {
               display: none;
             }
 
             @media (max-width: 600px) {
               display: unset;
-              width: 15%;
-              left: unset;
+              width: 30%;
               right: 0%;
-              top: -18% !important;
               /* width: 20%;
-              left: unset;
+              left: -17%; 
               top: -25% !important; */
 
               right: 30%;
@@ -593,27 +599,29 @@ const HeroLayout = styled.div`
           .shopify {
             transform-style: preserve-3d;
             transition: all 1.5s ease;
-            width: 38%;
+            width: 30%;
             position: absolute;
-            right: -50px;
-            top: 50px !important;
+            right: 30px;
+            top: -40px !important;
 
             @media (max-width: 900px) {
               display: none;
             }
 
             @media (max-width: 600px) {
+              margin-top:20px;
               display: unset;
+              top:200px;
               width: 25%;
               right: -2%;
               /* width: 20%;
               right: -10px; */
             }
           }
-          .shopify2 {
+          .shopify3 {
             transform-style: preserve-3d;
             transition: all 1.5s ease;
-            width: 38%;
+            width: 30%;
             position: absolute;
             right: -50px;
             top: 50% !important;
@@ -625,35 +633,55 @@ const HeroLayout = styled.div`
             @media (max-width: 600px) {
               display: unset;
               width: 25%;
-              right: -2%;
+              right: -15%;
               /* width: 20%;
               right: -10px; */
             }
           }
+          .amazon2 {
+            transform-style: preserve-3d;
+            transition: all 1.5s ease;
+            width: 30%;
+            position: absolute;
+            right: -50px;
+            top: 17% !important;
 
+            @media (max-width: 900px) {
+              display: none;
+            }
+
+            @media (max-width: 600px) {
+              display: unset;
+              width: 25%;
+              right: -10%;
+              top:15%;
+              /* width: 20%;
+              right: -10px; */
+            }
+          }
           .google {
             transform-style: preserve-3d;
             transition: all .5s ease;
-            width: 38%;
+            width: 30%;
             position: absolute;
             left: -100px;
-            top: 210px !important;
+            top: 150px !important;
             @media (max-width: 900px) {
               display: none;
             }
             @media (max-width: 600px) {
               display: unset;
-              left: 0%;
+              left: -15%;
               top: 40% !important;
               width: 25%;
             }
           }
 
           .certified {
-            width: 40%;
+            width: 30%;
             position: absolute;
-            left: -5%;
-            top: 375px !important;
+            left: -15%;
+            top: 250px !important;
             transform-style: preserve-3d;
             transition: all 1s ease;
             @media (max-width: 900px) {
@@ -662,7 +690,7 @@ const HeroLayout = styled.div`
             @media (max-width: 600px) {
               display: unset;
               width: 25%;
-              left: 15%;
+              left: -5%;
               top: unset !important;
               bottom: 0%;
             }

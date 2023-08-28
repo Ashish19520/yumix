@@ -49,38 +49,61 @@ export const Slide = () => {
     let data= await dispatch(clients());
     setImages(data?.data);
   }
-  console.log("---",images)
+  // console.log("---",images)
   
 
   let settings = {
     dots: false,
     infinite: true,
-    speed: 500,
-    slidesToShow: window.screen.width==600?3:4,
+    slidesToShow: 4,
     slidesToScroll: 1,
+    autoplay: true,
+    speed: 1000,
+    autoplaySpeed: 1000,
+    cssEase: "linear",
     responsive: [
       {
-        breakpoint: 900,
+        breakpoint: 1024,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 1,
-          dots: false,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: false
         }
       },
-    ],
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+    // nextArrow: <NextArrow />,
+    // prevArrow: <PrevArrow />,
   };
 
   return (
     <SliderWrapper>
       <Container className="container">
         <Slider {...settings} className="slider_main">
-          {images?.map((item,index) => (  
+          {images?.[0]?.attributes?.clientImage?.data?.map((item,index) => (  
            
             <div className="slide_item" key={index}>
-              {          console.log(item?.attributes?.clientImage?.data[0]?.attributes?.formats?.thumbnail?.url)}
-              <img src={baseUrl+item?.attributes?.clientImage?.data[0]?.attributes?.formats?.thumbnail?.url} alt="img" className="imgs"/>
+              {/* {          console.log(item?.attributes?.clientImage?.data[0]?.attributes?.formats?.thumbnail?.url)} */}
+              {/* {          console.log(item?.attributes?.url)} */}
+              <img 
+              // src={baseUrl+item?.attributes?.clientImage?.data[0]?.attributes?.formats?.thumbnail?.url} 
+              src={baseUrl+item?.attributes?.url} 
+              alt="img" className="imgs"/>
             </div>
           ))}
         </Slider>
@@ -133,20 +156,20 @@ const SliderWrapper = styled.div`
     }
 
     .slide_item {
-      padding: 0px 20px;
       display: flex;
-      align-items: center;
-      justify-content: center;
-
+      justify-content: flex-end;
+      align-items: flex-center;
+      height:auto;
+  
       img {
-        width: 200px;
-        height: 200px;
-        
-        padding: 0px 10%;
+        align-self: baseline;
+       width: 100%;
+       height: auto;
+      padding: 0px 10%;
         @media (max-width: 600px) {
           padding: unset;
-          width: 100px;
-          height:100px;
+          width: 100%;
+          height:auto;
           gap:15px;
         }
         

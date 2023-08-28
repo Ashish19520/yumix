@@ -27,15 +27,16 @@ export const Works = () => {
     head:"Expert Insights",
     para:"Our experience spans diverse industries, giving us a deep understanding of what works best for each product category."
 },
-{
-    src:"../images/tailor.png",
-    head:"Tailored Strategies",
-    para:"We don't believe in one-size-fits-all solutions. Each client benefits from strategies tailored to their unique needs and goals."
-},
+
 {
     src:"../images/bulb.png",
     head:"Innovation and Adaptability",
     para:"The ever-changing e-commerce landscape demands continuous innovation. Our strategies evolve alongside industry trends."
+},
+{
+  src:"../images/tailor.png",
+  head:"Tailored Strategies",
+  para:"We don't believe in one-size-fits-all solutions. Each client benefits from strategies tailored to their unique needs and goals."
 },
 {
     src:"../images/chat.png",

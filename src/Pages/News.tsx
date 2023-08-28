@@ -15,7 +15,8 @@ export const News = () => {
   const data2=[{
     src:"../images/Group 162943.png",
     head:"Industry Insights",
-    para:"Our news hub is your window into the e-commerce industry's inner workings. From emerging technologies and consumer behavior shifts to legislative updates and market trends, we'll provide you with insights that matter."},
+    para:"Our news hub is your window into the e-commerce industry's inner workings. From emerging tech and consumer behavior shifts to legislative updates and market trends, we'll provide you with insights that matter."
+  },
 {
     src:"../images/five.png",
     head:"Thought Leadership",

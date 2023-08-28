@@ -105,15 +105,22 @@ const ComprehensiveServices = () => {
     <h1 className='content-heading' style={{fontSize:"40px",marginTop:"70px"}}>Our Comprehensive Services:</h1>
     <div className='comprehensive-service'>
        {data.map((item,index)=>(
-       <div className="main-service" onClick={clickHandlar}>
-        <div className="comprehensive-Content" style={{backgroundColor:item.backgroundColor}} key={index}>
-          <img src={item.img} className='img-blog'></img>
-        </div>
+       <div className='comprehensive-service'>
+       {data.map((item,index)=>(
+       <div className='xyz' onClick={clickHandlar}>
+       <div className="comprehensive-Content"  key={index}>
+       <div className='inner-div' style={{backgroundColor:item.backgroundColor,height:"90%",  borderRadius: "15px", paddingTop: "50px"}}> </div>
+          <img src={item.img} className='img-blog' alt="img"/>
+       </div>
         <div className='comprehensive-text'>
-            <h4>{item.head}</h4>
-            <p className='about-content-display' style={{textAlign:"start"}}>{item.para}</p>
+           <div className='comprehensive-text-wrapper'>
+           <h4>{item.head}</h4>
+            <p className='.about-content-display'>{item.para}</p>
+           </div>
         </div>
         </div>
+       ))}
+    </div>
        
        ))}
     </div>

@@ -214,7 +214,7 @@ export const Navbar = () => {
                 <Link to='/ourservices'>Our Services</Link>
               </li>
               <li>
-                <Link to='/works'>portfolio</Link>
+                <Link to='/works'>Portfolio</Link>
               </li>
               <li>
                 <Link to='/blogs'>Blog</Link>
@@ -371,8 +371,11 @@ const Nav = styled.div`
         cursor: pointer;
       }
 
-      @media (max-width: 900px) {
-        display: none;
+      @media (max-width: 650px) {
+        display: static;
+        width:100px;
+        height:35px;
+        margin-bottom:7px;
       }
     }
   }

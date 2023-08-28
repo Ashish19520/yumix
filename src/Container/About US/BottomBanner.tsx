@@ -97,6 +97,7 @@ export default function TopBanner() {
               marketplace. */}
 Recommendations from industry experts, brands, and retailers and Video testimonials on our website serve as powerful social proof, showcasing the positive experiences and outcomes that clients have had working with our team.
 <br/>
+<br/>
 Trade references are another valuable resource that anyone can utilize to verify our track record and the quality of our services. By offering trade references on demand, we provide an opportunity for interested parties to directly reach out to previous clients and gain insights into their experiences working with our team.
             </Typography>
           </motion.div>

@@ -64,6 +64,7 @@ export default function TopBanner() {
             <Typography variant="h2" className="blog-top-subtitle index justify">
             Are you ready to unlock the full potential of your e-commerce venture? You're in the right place! Welcome to the ESERVZ Ecommerce Blog, your go-to resource for a wealth of knowledge, tips, and strategies to elevate your online business to new heights.
          <br/>
+         <br/>
          At Bighatch Consulting, also known as ESERVZ, we're passionate about driving e-commerce success. With a team of dedicated experts, we've been helping businesses like yours navigate the dynamic and ever-evolving world of online commerce. Our mission is clear: to equip you with the tools and insights you need to thrive in the digital marketplace.
 
             </Typography>

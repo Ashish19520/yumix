@@ -43,7 +43,7 @@ export default function Footer() {
       to: "/privacyPolicy",
     },
     {
-      link: "On Boarding Process",
+      link: "Onboarding Process",
       to: "/onBoardingProcess",
     },
     {
@@ -252,9 +252,9 @@ export default function Footer() {
           >
             Bighatch Consulting Private Limited
             <br />
-            88/1, H.K.D.Compound, G.T. Road,Mahespur, Lahartara, Varanasi,
+            HKD COMPOUND, G.T. ROAd LAHARTARA, VARANASI
             <br />
-            Uttar Pradesh, 221001, India
+            221006,INDIA
             <span onClick={handleOpen} style={{ marginBottom: "90px" }}>
               {/* <ImLocation2 size={16}/> */}
               <iframe
