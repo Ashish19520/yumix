@@ -103,8 +103,6 @@ const ComprehensiveServices = () => {
   return (
     <> 
     <h1 className='content-heading' style={{fontSize:"40px",marginTop:"70px"}}>Our Comprehensive Services:</h1>
-    <div className='comprehensive-service'>
-       {data.map((item,index)=>(
        <div className='comprehensive-service'>
        {data.map((item,index)=>(
        <div className='xyz' onClick={clickHandlar}>
@@ -122,8 +120,7 @@ const ComprehensiveServices = () => {
        ))}
     </div>
        
-       ))}
-    </div>
+   
     </>
   )
 }

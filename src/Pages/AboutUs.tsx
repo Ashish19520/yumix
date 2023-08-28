@@ -52,7 +52,7 @@ useEffect(()=>{
 {
     src:"../images/Group 162950.png",
     head:"PPC Advertisement Experts",
-    para:"PPC Advertisement Experts specialize in managing pay-per-click advertising campaigns on platforms like Amazon, Walmart, eBay, and Google. They conduct keyword research, optimize ad copy, monitor performance, and make data-driven adjustments to maximize ad ROI and drive sales."
+    para:"PPC Experts specialize in managing pay-per-click advertising campaigns on platforms like Amazon, Walmart, eBay, and Google. They conduct keyword research, optimize ad copy, monitor performance, and make data-driven adjustments to maximize ad ROI and drive sales."
    
 },
 {
