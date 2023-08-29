@@ -668,6 +668,16 @@ color: #3A3B44;
     width:150px;
   }
 }
+.team-content-para{
+  color: var(--greys-c-04, #3A3B44);
+/* Body M 16 */
+font-family: Montserrat;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px; /* 150% */
+letter-spacing: 0.25px;
+}
 .about-rock{
   @media(max-width:320px){
     width:150px;
@@ -752,8 +762,8 @@ color: #3A3B44;
   width:50%;
   scale:2;
   margin-left:30px;
-  @media(max-width:850px){
-    width: 28%;
+  @media(max-width:400px){
+    width: 100vw;
     height:80%;
     };
   
@@ -770,12 +780,12 @@ color: #3A3B44;
   @media(max-width:400px){
    flex-direction: column;
    width: 100vw;
-   text-align: justify;
+   /* text-align: justify; */
     };
     @media(max-width:350px){
       flex-direction: column;
       width: 100vw;
-      text-align: justify;
+      /* text-align: justify; */
        };
 }
 .team-box{
@@ -787,6 +797,7 @@ color: #3A3B44;
   padding: 20px 10px;
   align-items: center;
   gap:1rem;
+  padding:20px 80px;
   height:450px;
   box-shadow: 0px 16.55230140686035px 41.38515090942383px 0px rgba(47, 50, 125, 0.10);
   border-radius: 10px;
@@ -803,7 +814,7 @@ color: #3A3B44;
       height:auto;
        };
      @media(max-width:350px){
-      
+      padding: 0%;
        width: 100vw;
        text-align: justify;
        height: auto;

@@ -17,7 +17,7 @@ const Team = ({data,content}:any) => {
         <div className="team-box" key={index}>
             <img src={item.src} height="70px" width="70px" alt="img"></img>
             <h4 className='content-heading'>{item.head}</h4>
-            <p className='fba-hero-right-para justify'>{item.para}</p>
+            <p className='team-content-para justify'>{item.para}</p>
         </div>
         ))}
         
