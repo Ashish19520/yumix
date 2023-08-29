@@ -297,7 +297,7 @@ export default function Footer() {
           justifyContent: "center",
         }}
       >
-        <AiOutlineCopyrightCircle style={{ color: "#404040" }} />
+        
         <Typography
           style={{
             fontSize: "14px",
@@ -305,8 +305,7 @@ export default function Footer() {
             color: "#6A6A6A",
           }}
         >
-          <span style={{ color: "#6349FF" }}>Eservz 2023</span> all right
-          reserved
+          <span style={{ color: "#6349FF" }}>Copyright 2023</span>  <AiOutlineCopyrightCircle style={{ color: "#404040" }} /> Bighatch Consulting Private Limited. All Rights Reserved.
         </Typography>
       </Box>
       <Dialog
