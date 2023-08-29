@@ -90,9 +90,9 @@ export default function TopBanner() {
             <Typography
               variant="h2"
               className="mid-sub">
-Having a team with such diverse expertise allows for a holistic approach to e-commerce management. Each role contributes to specific aspects of online selling, including marketplace optimization, advertising, content creation, customer experience, and overall business growth.<br/><br/>
-By leveraging the skills and knowledge of Team ESERVZ, brands and retailers can benefit from a comprehensive e-commerce strategy that drives sales, enhances brand reputation, and delivers a positive customer experience. <br/><br/>
-Regular collaboration, clear communication, and continuous learning and improvement are key to maximizing the potential of your team and achieving success in the e-commerce space.
+                With a versatile team, a comprehensive e-commerce management approach is possible. Roles cover marketplace optimization, advertising, content, customer experience, and business growth. Team ESERVZ ensures robust e-commerce strategy, boosting sales, brand image, and customer satisfaction. Successful e-commerce relies on collaboration, communication, and ongoing learning for optimal outcomes.
+
+
             </Typography>
           </motion.div>
         </Grid>

@@ -95,10 +95,8 @@ export default function TopBanner() {
               {/* With our complete multi-channel solution, you'll have access to
               everything you need to succeed in today's competitive online
               marketplace. */}
-Recommendations from industry experts, brands, and retailers and Video testimonials on our website serve as powerful social proof, showcasing the positive experiences and outcomes that clients have had working with our team.
-<br/>
-<br/>
-Trade references are another valuable resource that anyone can utilize to verify our track record and the quality of our services. By offering trade references on demand, we provide an opportunity for interested parties to directly reach out to previous clients and gain insights into their experiences working with our team.
+Endorsements by industry leaders, brands, and video testimonials on our site offer robust social validation, highlighting clients' positive outcomes with us. On demand trade references further authenticate our track record, enabling direct contact with past clients for insights into their collaboration experiences.
+
             </Typography>
           </motion.div>
           <motion.div

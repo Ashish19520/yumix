@@ -253,13 +253,16 @@ export const Hero = () => {
               animate="show"
               
             >
-              {Array.from(
+              {/* {Array.from(
                 "Elevate Your Ecommerce Empire"
               ).map((word, i) => (
                 <motion.span key={i} variants={typingText}>
                   {word}
                 </motion.span>
-              ))}
+              ))} */}
+               <motion.span  variants={typingText}>
+               <span style={{color:"blue"}}>Elevate</span><br/> Your Ecommerce Empire
+                </motion.span>
             </motion.h1>
             <motion.p variants={explainProduct} initial="hidden" animate="show">
               {/* With our complete multi-channel solution, you'll have access to
@@ -305,21 +308,23 @@ export const Hero = () => {
                 // transition={{duration:3, delay:.2, ease:"easeInOut"}}
               ></motion.img>
               <motion.img
-                src="./images/Group 162964.png"
+               src="./images/Group 162961.png"
+                
                variants={window.screen.width<601? imgProduct2:imgProduct1}
                 initial="hidden"
                 animate="show"
                 className="rock"
               ></motion.img>
               <motion.img
-                src="./images/Group 162959.png"
+              src="./images/Group 162964.png"
+                
                variants={window.screen.width<601? imgProduct2:imgProduct1}
                 initial="hidden"
                 animate="show"
                 className="shopify"
               ></motion.img>
-              <motion.img
-                src="./images/Group 162961.png"
+              <motion.img 
+                src="./images/Group 162959.png"
                variants={window.screen.width<601? imgProduct2:imgProduct1}
                 initial="hidden"
                 animate="show"
@@ -336,14 +341,15 @@ export const Hero = () => {
               
               
               <motion.img
-                src="./images/Group 162960.png"
+              src="./images/Group 162963.png"
+              
                variants={window.screen.width<601? imgProduct2:imgProduct1}
                 initial="hidden"
                 animate="show"
                 className="google"
               ></motion.img>
               <motion.img
-                src="./images/Group 162963.png"
+                  src="./images/Group 162960.png"
                variants={window.screen.width<601? imgProduct2:imgProduct1}
                 initial="hidden"
                 animate="show"
