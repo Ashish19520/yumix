@@ -134,7 +134,7 @@ export const NewsContainer = () => {
               animate="show"
               className="title"
             >
-              {Array.from("Welcome to the ESERVZ Ecommerce News Hub: Stay Informed, Stay Ahead").map((word, i) => (
+              {Array.from("Welcome to the ESERVZ e-Commerce News Hub: Stay Informed, Stay Ahead").map((word, i) => (
                 <motion.span key={i} variants={typingText}>
                   {word}
                 </motion.span>
@@ -147,7 +147,7 @@ export const NewsContainer = () => {
               initial="hidden"
               animate="show"
             >
-             Greetings, e-commerce enthusiasts and business visionaries! We're thrilled to introduce you to the ESERVZ Ecommerce News Hub – your central source for staying updated on the latest happenings, trends, and breakthroughs in the world of online commerce.
+             Greetings, e-Commerce enthusiasts and business visionaries! We're thrilled to introduce you to the ESERVZ e-Commerce News Hub – your central source for staying updated on the latest happenings, trends, and breakthroughs in the world of online commerce.
 
             </motion.div>
             <br/>
@@ -157,7 +157,7 @@ export const NewsContainer = () => {
               initial="hidden"
               animate="show"
             >
-At Bighatch Consulting, also known as ESERVZ, we understand that the e-commerce landscape is dynamic and ever-evolving. As a forward-thinking agency, we're committed to keeping you well-informed and equipped with the knowledge you need to make strategic decisions for your e-commerce journey.
+At Bighatch Consulting, also known as ESERVZ, we understand that the e-Commerce landscape is dynamic and ever-evolving. As a forward-thinking agency, we're committed to keeping you well-informed and equipped with the knowledge you need to make strategic decisions for your e-Commerce journey.
 
             </motion.div>
             <motion.img

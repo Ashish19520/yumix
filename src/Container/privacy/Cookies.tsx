@@ -69,7 +69,7 @@ const Cookies = () => {
     By using our website, you agree to the use of cookies as outlined in this Cookies Policy. If you have any questions or concerns about our use of cookies, please contact us at contact@eservz.com
     </p>
     <p  className='justify m1 '>
-    Thank you for choosing Bighatch Consulting, also known as ESERVZ, for your e-commerce needs.    </p>
+    Thank you for choosing Bighatch Consulting, also known as ESERVZ, for your e-Commerce needs.    </p>
         </div>  
           
    </Container>

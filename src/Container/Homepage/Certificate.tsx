@@ -50,7 +50,7 @@ console.log(response?.data[0]?.attributes?.t_url)
           </div>
           <div className="subtitle">
             <p className="justify">
-            As a specialized e-commerce agency, we focus on leading marketplaces like Amazon, Walmart, eBay, and your website. Our services drive your brand to new heights through expert solutions. From successful launches to precise PPC Ads, we ensure seamless restocking, optimize strategies, and enhance conversion rates. Trust us for ratings, compliance, and ultimate revenue growth.
+            As a specialized e-Commerce agency, we focus on leading marketplaces like Amazon, Walmart, eBay, and your website. Our services drive your brand to new heights through expert solutions. From successful launches to precise PPC Ads, we ensure seamless restocking, optimize strategies, and enhance conversion rates. Trust us for ratings, compliance, and ultimate revenue growth.
             </p>
           </div>
           <img src="./images/Ellipse 63@3x.png" className="img-dot3"></img>

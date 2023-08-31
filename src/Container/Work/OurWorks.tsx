@@ -129,14 +129,14 @@ const itemsPerPage = 9;
           animate="show"
           className="title"
         >
-          {Array.from("Our Diverse Client Portfolio: Elevating ESERVZ's Ecommerce Expertise").map((word, i) => (
+          {Array.from("Our Diverse Client Portfolio: Elevating ESERVZ's e-Commerce Expertise").map((word, i) => (
             <motion.span key={i} variants={typingText}>
               {word}
             </motion.span>
           ))}
         </motion.div>
         <Typography  className="about_subtitle justify">
-        At ESERVZ, we take pride in the impactful partnerships we've forged with a diverse range of industry-leading brands. Our extensive portfolio showcases our unwavering commitment to delivering exceptional e-commerce solutions across multiple platforms, including Amazon, Walmart, eBay, and our clients' own websites. We specialize in a wide spectrum of product categories, enabling businesses to thrive and excel in the competitive online marketplace.         
+        At ESERVZ, we take pride in the impactful partnerships we've forged with a diverse range of industry-leading brands. Our extensive portfolio showcases our unwavering commitment to delivering exceptional e-Commerce solutions across multiple platforms, including Amazon, Walmart, eBay, and our clients' own websites. We specialize in a wide spectrum of product categories, enabling businesses to thrive and excel in the competitive online marketplace.         
           </Typography>
 
             

@@ -250,7 +250,7 @@ function CodeDesc() {
         </AccordionSummary>
         <AccordionDetails>
           <Typography className='select-font'>
-          If your workplace involves selling products on Amazon, utilising listing optimization tools can be highly advantageous. They can assist you in improving your product listings, attracting more potential customers, and increasing sales. However, if your workplace does not involve selling products on Amazon or within the e-commerce industry, these tools may not be directly applicable to your specific business needs.
+          If your workplace involves selling products on Amazon, utilising listing optimization tools can be highly advantageous. They can assist you in improving your product listings, attracting more potential customers, and increasing sales. However, if your workplace does not involve selling products on Amazon or within the e-Commerce industry, these tools may not be directly applicable to your specific business needs.
           </Typography>
         </AccordionDetails>
       </Accordion>

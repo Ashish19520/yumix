@@ -19,8 +19,8 @@ useEffect(()=>{
   window.scroll(0,0)
 },[])
   const data={
-    heading:"We're Dedicated to Achieving Results That Propel Your Ecommerce Success",
-    para:"Our primary emphasis remains on achieving tangible outcomes. Through our comprehensive multi-channel ecommerce service encompassing platforms such as Amazon, Walmart, eBay, and your custom website, you'll be equipped with a dedicated team of experts committed to fostering the growth necessary for triumphing in the dynamic and competitive online market."
+    heading:"We're Dedicated to Achieving Results That Propel Your e-Commerce Success",
+    para:"Our primary emphasis remains on achieving tangible outcomes. Through our comprehensive multi-channel e-Commerce service encompassing platforms such as Amazon, Walmart, eBay, and your custom website, you'll be equipped with a dedicated team of experts committed to fostering the growth necessary for triumphing in the dynamic and competitive online market."
   }
   const data2=[{
     src:"../images/Group 162947.png",
@@ -62,7 +62,7 @@ useEffect(()=>{
 ]
 const content={
   heading:"Our Team",
-  para:"Our team consists of various experts and professionals having years of experience and who possess a deep understanding of e-commerce operations, trends, and strategies. They can provide valuable insights and guidance on overall e-commerce strategies, marketplace optimization, and industry best practices",
+  para:"Our team consists of various experts and professionals having years of experience and who possess a deep understanding of e-Commerce operations, trends, and strategies. They can provide valuable insights and guidance on overall e-Commerce strategies, marketplace optimization, and industry best practices",
   para2:""
 }
   return (

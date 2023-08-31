@@ -25,7 +25,7 @@ At Bighatch Consulting, also known as ESERVZ, our commitment to excellence is fo
         Website:<a href='https://www.fieo.org/' target='blank'> https://www.fieo.org/ </a>
         </p> 
         <p  className='justify m1'>
-        Our affiliation with FIEO amplifies our global reach and reinforces our dedication to international e-commerce excellence.
+        Our affiliation with FIEO amplifies our global reach and reinforces our dedication to international e-Commerce excellence.
         </p>
         
     </div>
@@ -38,7 +38,7 @@ At Bighatch Consulting, also known as ESERVZ, our commitment to excellence is fo
         Website:<a href='https://advertising.amazon.com/partners ' target='blank'>https://advertising.amazon.com/partners </a>
         </p>
         <p  className='justify m1'>
-        As Amazon Ad Partners, we possess the insights and strategies to optimize your presence on one of the world's largest e-commerce platforms.
+        As Amazon Ad Partners, we possess the insights and strategies to optimize your presence on one of the world's largest e-Commerce platforms.
         </p>
        
     </div>
@@ -53,7 +53,7 @@ At Bighatch Consulting, also known as ESERVZ, our commitment to excellence is fo
  </a>
         </p>
         <p  className='justify m1'>
-        Our partnership with Walmart Connect empowers us to navigate the dynamic landscape of Walmart's e-commerce ecosystem.
+        Our partnership with Walmart Connect empowers us to navigate the dynamic landscape of Walmart's e-Commerce ecosystem.
         </p>
        
     </div>
@@ -67,7 +67,7 @@ At Bighatch Consulting, also known as ESERVZ, our commitment to excellence is fo
         Website:<a href='https://www.shopify.com/in/partners  ' target='blank'> https://www.shopify.com/in/partners  </a>
         </p>
         <p  className='justify m1'>
-        Our affiliation with Shopify enhances our ability to create compelling online storefronts and e-commerce experiences.
+        Our affiliation with Shopify enhances our ability to create compelling online storefronts and e-Commerce experiences.
         </p>
        
     </div>
@@ -81,7 +81,7 @@ At Bighatch Consulting, also known as ESERVZ, our commitment to excellence is fo
         Website:<a href='https://partners.bigcommerce.com/' target='blank'> https://partners.bigcommerce.com/</a>
         </p>
         <p  className='justify m1'>
-        Our collaboration with BigCommerce fuels our capability to deliver exceptional e-commerce solutions on this robust platform.
+        Our collaboration with BigCommerce fuels our capability to deliver exceptional e-Commerce solutions on this robust platform.
         </p>
        
     </div>
@@ -110,16 +110,16 @@ At Bighatch Consulting, also known as ESERVZ, our commitment to excellence is fo
         Website:<a href='https://perpetua.io/ ' target='blank'>https://perpetua.io/ </a>
         </p>
         <p  className='justify m1'>
-        Our partnership with Perpetua adds a layer of expertise in optimizing advertising campaigns for e-commerce growth.
+        Our partnership with Perpetua adds a layer of expertise in optimizing advertising campaigns for e-Commerce growth.
         </p>
         <p  className='justify m1'>
-        These partnerships reflect our dedication to staying at the forefront of industry trends and technologies. They are a testament to our commitment to delivering innovative and impactful solutions that drive e-commerce success for our clients.
+        These partnerships reflect our dedication to staying at the forefront of industry trends and technologies. They are a testament to our commitment to delivering innovative and impactful solutions that drive e-Commerce success for our clients.
         </p>
         <p  className='justify m1'>
         We are honoured to collaborate with these esteemed organizations and are excited to leverage these partnerships to your advantage. If you have any questions about our affiliations or how they enhance our services, please feel free to reach out to us at [contact email].
         </p>
         <p  className='justify m1'>
-        Thank you for choosing Bighatch Consulting - ESERVZ as your trusted e-commerce partner.
+        Thank you for choosing Bighatch Consulting - ESERVZ as your trusted e-Commerce partner.
         </p>
     </div>
 

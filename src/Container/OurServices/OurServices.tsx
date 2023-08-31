@@ -91,7 +91,7 @@ OurServices = () => {
             animate="show"
             className="subTitle"
           >
-           Empowering Your Ecommerce Success Across Every Channel
+           Empowering Your e-Commerce Success Across Every Channel
 
           </motion.div>
           <motion.div
@@ -100,7 +100,7 @@ OurServices = () => {
             animate="show"
             className="subTitle"
           >
-           ESERVZ, your trusted partner in multi-channel ecommerce, is here to transform your brand's online journey into a resounding success story. As a pioneering ecommerce service provider, we specialize in seamless marketplace management, ensuring your brand thrives on platforms like Amazon, Walmart, eBay, and even your own dedicated website.
+           ESERVZ, your trusted partner in multi-channel e-Commerce, is here to transform your brand's online journey into a resounding success story. As a pioneering e-Commerce service provider, we specialize in seamless marketplace management, ensuring your brand thrives on platforms like Amazon, Walmart, eBay, and even your own dedicated website.
 
 
           </motion.div>

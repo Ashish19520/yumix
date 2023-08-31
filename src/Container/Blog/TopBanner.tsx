@@ -53,7 +53,7 @@ export default function TopBanner() {
           className="title"
         >
             <Typography variant="h2" className="blog-top-title">
-            {Array.from("Welcome to the ESERVZ Ecommerce Blog: Your Source for E-commerce Insights and Success").map((word, i) => (
+            {Array.from("Welcome to the ESERVZ e-Commerce Blog: Your Source for e-Commerce Insights and Success").map((word, i) => (
             <motion.span key={i} variants={typingText}>
               {word}
             </motion.span>
@@ -62,10 +62,10 @@ export default function TopBanner() {
             </motion.div>
             <motion.div variants={elements}  initial="hidden" animate="show">
             <Typography variant="h2" className="blog-top-subtitle index justify">
-            Are you ready to unlock the full potential of your e-commerce venture? You're in the right place! Welcome to the ESERVZ Ecommerce Blog, your go-to resource for a wealth of knowledge, tips, and strategies to elevate your online business to new heights.
+            Are you ready to unlock the full potential of your e-Commerce venture? You're in the right place! Welcome to the ESERVZ e-Commerce Blog, your go-to resource for a wealth of knowledge, tips, and strategies to elevate your online business to new heights.
          <br/>
          <br/>
-         At Bighatch Consulting, also known as ESERVZ, we're passionate about driving e-commerce success. With a team of dedicated experts, we've been helping businesses like yours navigate the dynamic and ever-evolving world of online commerce. Our mission is clear: to equip you with the tools and insights you need to thrive in the digital marketplace.
+         At Bighatch Consulting, also known as ESERVZ, we're passionate about driving e-Commerce success. With a team of dedicated experts, we've been helping businesses like yours navigate the dynamic and ever-evolving world of online commerce. Our mission is clear: to equip you with the tools and insights you need to thrive in the digital marketplace.
 
             </Typography>
             </motion.div>

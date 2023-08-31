@@ -51,7 +51,7 @@ export const MidWhoBanner = () => {
               truly revolutionary back office support to e-commerce sellers,
               business owners and vendors on multiple online channels especially
               Amazon. */}
-              We are Bighatch Consulting, known as ESERVZ, renowned for our team of skilled e-commerce experts. Our goal is to provide adept support to online brands and retailers. With a global presence encompassing the USA, UK, Canada, Australia, India, and more, we serve as extensive multichannel eCommerce partners
+              We are Bighatch Consulting, known as ESERVZ, renowned for our team of skilled e-Commerce experts. Our goal is to provide adept support to online brands and retailers. With a global presence encompassing the USA, UK, Canada, Australia, India, and more, we serve as extensive multichannel e-Commerce partners
             </p>
           </div>
           <div className="image-container">

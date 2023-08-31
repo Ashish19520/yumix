@@ -114,7 +114,7 @@ export const OurApproach = () => {
                 <img className='ig' id='stl1' src='./images/A10.png'></img>
                 <p className='para'>Sustainable Success</p>
                 <Tooltip
-                  title="We're not just about short-term gains. Our agency focuses on building a sustainable, long-term ecommerce success story for your brand, adapting to trends and evolving marketplace dynamics."
+                  title="We're not just about short-term gains. Our agency focuses on building a sustainable, long-term e-Commerce success story for your brand, adapting to trends and evolving marketplace dynamics."
                   enterTouchDelay={0}
                   classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
                   arrow

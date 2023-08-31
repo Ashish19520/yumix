@@ -19,7 +19,7 @@ export const Works = () => {
   }
   const data2={
     para:"As we continue to collaborate with industry-known brands and expand our footprint, our portfolio serves as a living testament to the value we provide. Your business's growth is our priority, and we're excited to bring our expertise to the table. Join the ranks of our satisfied clients and experience the ESERVZ difference.",
-    para2:"  Thank you for considering ESERVZ as your trusted e-commerce partner."
+    para2:"  Thank you for considering ESERVZ as your trusted e-Commerce partner."
   }
 
   const data3=[{
@@ -31,7 +31,7 @@ export const Works = () => {
 {
     src:"../images/bulb.png",
     head:"Innovation and Adaptability",
-    para:"The ever-changing e-commerce landscape demands continuous innovation. Our strategies evolve alongside industry trends."
+    para:"The ever-changing e-Commerce landscape demands continuous innovation. Our strategies evolve alongside industry trends."
 },
 {
   src:"../images/tailor.png",
@@ -41,7 +41,7 @@ export const Works = () => {
 {
     src:"../images/chat.png",
     head:"Client-Centric Approach",
-    para:"Our success is rooted in your success. We're committed to achieving your e-commerce aspirations and exceeding your expectations."
+    para:"Our success is rooted in your success. We're committed to achieving your e-Commerce aspirations and exceeding your expectations."
 
 
 },

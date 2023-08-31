@@ -49,7 +49,7 @@ function WhyUs () {
   const points = [
     {
       title: 'Strategic Expertise',
-      para: 'Team ESERVZ brings a wealth of ecommerce knowledge, ensuring your brand receives tailored strategies that optimize product listings, boost conversions, and enhance marketplace visibility.',
+      para: 'Team ESERVZ brings a wealth of e-Commerce knowledge, ensuring your brand receives tailored strategies that optimize product listings, boost conversions, and enhance marketplace visibility.',
       image: '/images/work1.png'
     },
     {

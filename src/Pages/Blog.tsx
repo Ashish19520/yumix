@@ -10,9 +10,9 @@ export default function Blog() {
 
   const data={
     heading:"Join Us on this Journey",
-    para:"The ESERVZ Ecommerce Blog is more than just a collection of articles; it's a community of e-commerce enthusiasts, entrepreneurs, and business owners dedicated to achieving e-commerce excellence. We invite you to explore our blog, engage with our content, and join the conversation.",
-    para2:" Your e-commerce success is our top priority, and we're excited to embark on this journey with you. Let's transform your vision into a thriving online business. Stay tuned for regular updates, valuable insights, and a wealth of resources that will propel your e-commerce venture forward.",
-    para3:"If you're ready to dive in, start exploring our latest blog posts now. Have questions or topics you'd like us to cover? We'd love to hear from you. Contact us at contact@eservz.com and let us know how we can best support your e-commerce aspirations."
+    para:"The ESERVZ e-Commerce Blog is more than just a collection of articles; it's a community of e-Commerce enthusiasts, entrepreneurs, and business owners dedicated to achieving e-Commerce excellence. We invite you to explore our blog, engage with our content, and join the conversation.",
+    para2:" Your e-Commerce success is our top priority, and we're excited to embark on this journey with you. Let's transform your vision into a thriving online business. Stay tuned for regular updates, valuable insights, and a wealth of resources that will propel your  venture forward.",
+    para3:"If you're ready to dive in, start exploring our latest blog posts now. Have questions or topics you'd like us to cover? We'd love to hear from you. Contact us at contact@eservz.com and let us know how we can best support your e-Commerce aspirations."
   }
 
   const services = [
@@ -77,11 +77,11 @@ export default function Blog() {
   src:"../images/five.png",
     
     head:"Guidance for Growth",
-    para:"Whether you're just starting your e-commerce journey or looking to take your established business to the next level, our blog will offer guidance that aligns with your goals."    },
+    para:"Whether you're just starting your e-Commerce journey or looking to take your established business to the next level, our blog will offer guidance that aligns with your goals."    },
 {
     src:"../images/Group 162944.png",
     head:"Success Stories",
-    para:"Learn from the successes of others. Our blog will feature inspiring case studies and success stories that showcase how businesses have transformed their e-commerce operations with our guidance.."
+    para:"Learn from the successes of others. Our blog will feature inspiring case studies and success stories that showcase how businesses have transformed their e-Commerce operations with our guidance.."
 },
 
 

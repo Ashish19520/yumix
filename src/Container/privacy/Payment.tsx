@@ -40,7 +40,7 @@ const Payment = () => {
          Please select the payment option that aligns with your preference and requirements. Should you have any questions or need assistance with the payment process, our dedicated team is here to help. Feel free to reach out to us at contact@eservz.com for any inquiries.
     </p>
     <p  className='justify m1'>
-    Thank you for choosing Bighatch Consulting, also known as ESERVZ, for your e-commerce needs. We look forward to a successful collaboration.
+    Thank you for choosing Bighatch Consulting, also known as ESERVZ, for your e-Commerce needs. We look forward to a successful collaboration.
     </p>
         </div>  
        

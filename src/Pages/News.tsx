@@ -15,12 +15,12 @@ export const News = () => {
   const data2=[{
     src:"../images/Group 162943.png",
     head:"Industry Insights",
-    para:"Our news hub is your window into the e-commerce industry's inner workings. From emerging tech and consumer behavior shifts to legislative updates and market trends, we'll provide you with insights that matter."
+    para:"Our news hub is your window into the e-ommerce industry's inner workings. From emerging tech and consumer behavior shifts to legislative updates and market trends, we'll provide you with insights that matter."
   },
 {
     src:"../images/five.png",
     head:"Thought Leadership",
-    para:"Our team of e-commerce experts will share their perspectives and expertise on a wide range of topics. Brace yourself for thought-provoking articles that challenge conventions and inspire strategic thinking."
+    para:"Our team of e-Commerce experts will share their perspectives and expertise on a wide range of topics. Brace yourself for thought-provoking articles that challenge conventions and inspire strategic thinking."
 
 },
 {
@@ -31,12 +31,12 @@ export const News = () => {
     {
     src:"../images/Group 162944.png",
     head:"Client Success Stories",
-    para:"Our team of e-commerce experts will share their perspectives and expertise on a wide range of topics. Brace yourself for thought-provoking articles that challenge conventions and inspire strategic thinking."},]
+    para:"Our team of e-Commerce experts will share their perspectives and expertise on a wide range of topics. Brace yourself for thought-provoking articles that challenge conventions and inspire strategic thinking."},]
 
     const data={
       heading:"Join the Conversation",
-      para:"Join the Conversation: We invite you to explore our news hub, engage with our articles, and join the conversation. Your insights, comments, and feedback enrich the dialogue and contribute to a vibrant community of e-commerce aficionados..",
-      para2:" As we embark on this journey together, we encourage you to bookmark the ESERVZ Ecommerce News Hub and make it your go-to destination for all things e-commerce. The future of online commerce awaits, and we're here to guide you through every twist and turn.",
+      para:"Join the Conversation: We invite you to explore our news hub, engage with our articles, and join the conversation. Your insights, comments, and feedback enrich the dialogue and contribute to a vibrant community of e-Commerce aficionados..",
+      para2:" As we embark on this journey together, we encourage you to bookmark the ESERVZ e-Commerce News Hub and make it your go-to destination for all things e-Commerce. The future of online commerce awaits, and we're here to guide you through every twist and turn.",
       para3:""
     }
   return (

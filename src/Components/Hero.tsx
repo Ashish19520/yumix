@@ -261,14 +261,14 @@ export const Hero = () => {
                 </motion.span>
               ))} */}
                <motion.span  variants={typingText}>
-               <span style={{color:"blue"}}>Elevate</span><br/> Your Ecommerce Empire
+               <span style={{color:"blue"}}>Elevate</span><br/> Your e-Commerce Empire
                 </motion.span>
             </motion.h1>
             <motion.p variants={explainProduct} initial="hidden" animate="show">
               {/* With our complete multi-channel solution, you'll have access to
               everything you need to succeed in today's competitive online
               marketplace. */}
-              Unleash Growth Across Amazon, Walmart, Your Own Website, and Beyond – With Team ESERVZ, Your Ultimate Destination for Holistic Ecommerce Success!
+              Unleash Growth Across Amazon, Walmart, Your Own Website, and Beyond – With Team ESERVZ, Your Ultimate Destination for Holistic e-Commerce Success!
 
             </motion.p>
             <motion.img

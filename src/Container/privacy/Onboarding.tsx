@@ -12,7 +12,7 @@ const Onboarding = () => {
     <div>
         
         <p  className='justify m2'>
-        Welcome to Bighatch Consulting, also known as ESERVZ! We're thrilled to have you onboard and look forward to partnering with you to achieve your e-commerce goals. Our client onboarding process is designed to ensure a seamless and productive start to our collaboration. Here's what you can expect:
+        Welcome to Bighatch Consulting, also known as ESERVZ! We're thrilled to have you onboard and look forward to partnering with you to achieve your e-Commerce goals. Our client onboarding process is designed to ensure a seamless and productive start to our collaboration. Here's what you can expect:
             </p>
     </div>
     
@@ -68,10 +68,10 @@ const Onboarding = () => {
          <div>
         <h3 className='justify m1'>Ongoing Support and Future Collaborations:</h3>
         <p  className='justify m1'>
-         Our partnership doesn't end with the completion of the project. We're here to provide ongoing support, answer any questions you may have, and explore opportunities for future collaborations to further enhance your e-commerce success.
+         Our partnership doesn't end with the completion of the project. We're here to provide ongoing support, answer any questions you may have, and explore opportunities for future collaborations to further enhance your e-Commerce success.
          </p>
          <p  className='justify m1'>
-         We are committed to delivering excellence and ensuring your journey with Bighatch Consulting - ESERVZ is a rewarding one. If you have any questions or would like to initiate the onboarding process, please reach out to us at contact@eservz. Thank you for choosing us as your e-commerce partner.         </p>
+         We are committed to delivering excellence and ensuring your journey with Bighatch Consulting - ESERVZ is a rewarding one. If you have any questions or would like to initiate the onboarding process, please reach out to us at contact@eservz. Thank you for choosing us as your e-Commerce partner.         </p>
         </div>  
    </Container>
   )

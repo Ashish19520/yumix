@@ -90,7 +90,7 @@ export default function TopBanner() {
             <Typography
               variant="h2"
               className="mid-sub">
-                With a versatile team, a comprehensive e-commerce management approach is possible. Roles cover marketplace optimization, advertising, content, customer experience, and business growth. Team ESERVZ ensures robust e-commerce strategy, boosting sales, brand image, and customer satisfaction. Successful e-commerce relies on collaboration, communication, and ongoing learning for optimal outcomes.
+                With a versatile team, a comprehensive e-Commerce management approach is possible. Roles cover marketplace optimization, advertising, content, customer experience, and business growth. Team ESERVZ ensures robust e-Commerce strategy, boosting sales, brand image, and customer satisfaction. Successful e-Commerce relies on collaboration, communication, and ongoing learning for optimal outcomes.
 
 
             </Typography>

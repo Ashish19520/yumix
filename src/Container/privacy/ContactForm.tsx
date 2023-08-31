@@ -12,10 +12,10 @@ const ContactForm = () => {
     <div>
         
         <p  className='justify m2'>
-        Welcome to Bighatch Consulting, also known as ESERVZ! We are delighted to provide you with a seamless and efficient way to explore our comprehensive range of e-commerce services. Our "Request a Quote" or "Contact Form" is designed to make it convenient for potential clients like you to submit inquiries, seek information, and request personalized quotes tailored to your specific needs.
+        Welcome to Bighatch Consulting, also known as ESERVZ! We are delighted to provide you with a seamless and efficient way to explore our comprehensive range of e-Commerce services. Our "Request a Quote" or "Contact Form" is designed to make it convenient for potential clients like you to submit inquiries, seek information, and request personalized quotes tailored to your specific needs.
             </p>
             <p  className='justify m2'>
-        Whether you're envisioning a robust marketplace management strategy, seeking to enhance your brand's online presence, or looking to optimize your digital marketing efforts, our team of e-commerce experts is here to assist you every step of the way.
+        Whether you're envisioning a robust marketplace management strategy, seeking to enhance your brand's online presence, or looking to optimize your digital marketing efforts, our team of e-Commerce experts is here to assist you every step of the way.
 
             </p>
     </div>
@@ -40,17 +40,17 @@ const ContactForm = () => {
         </p>
         <h4 className='justify m1'>Initiating Collaboration: </h4>
         <p  className='justify '>
-         Should you choose to proceed with our services based on the quote provided, we will guide you through the next steps, including signing a Service Agreement and making the necessary arrangements to kick-start your e-commerce journey with us.
+         Should you choose to proceed with our services based on the quote provided, we will guide you through the next steps, including signing a Service Agreement and making the necessary arrangements to kick-start your e-Commerce journey with us.
         </p>
         
         <p  className='justify m1'>
-        At Bighatch Consulting - ESERVZ, we are dedicated to helping you achieve your e-commerce aspirations. Our Request a Quote or Contact Form is a gateway to unlocking a world of e-commerce possibilities. We understand that every project begins with a conversation, and we eagerly await the opportunity to connect with you.
+        At Bighatch Consulting - ESERVZ, we are dedicated to helping you achieve your e-Commerce aspirations. Our Request a Quote or Contact Form is a gateway to unlocking a world of e-Commerce possibilities. We understand that every project begins with a conversation, and we eagerly await the opportunity to connect with you.
         </p>
         <p  className='justify m1'>
-        Ready to take the next step or have a question in mind? Feel free to reach out to us through our Request a Quote or Contact Form, or you can directly contact us at [contact email]. Your e-commerce success is our priority.
+        Ready to take the next step or have a question in mind? Feel free to reach out to us through our Request a Quote or Contact Form, or you can directly contact us at [contact email]. Your e-Commerce success is our priority.
         </p>
         <p  className='justify m1'>
-        Thank you for considering Bighatch Consulting - ESERVZ as your trusted e-commerce partner.        </p>
+        Thank you for considering Bighatch Consulting - ESERVZ as your trusted e-Commerce partner.        </p>
           </div>
     
         

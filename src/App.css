@@ -825,8 +825,7 @@ letter-spacing: 0.25px;
 .team-box-expert{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  text-align: center;
+  justify-content: flex-start;
   width:40%;
   padding: 20px 10px;
   align-items: center;

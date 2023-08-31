@@ -1018,7 +1018,7 @@ useEffect(() => {
                   advantageous. They can assist you in improving your product
                   listings, attracting more potential customers, and increasing
                   sales. However, if your workplace does not involve selling
-                  products on Amazon or within the e-commerce industry, these
+                  products on Amazon or within the e-Commerce industry, these
                   tools may not be directly applicable to your specific business
                   needs.
                 </Typography>

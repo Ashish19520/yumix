@@ -16,7 +16,7 @@ const ComprehensiveServices = () => {
         {
             img:"../images/service1.png",
             head:"Seller Onboarding",
-            para:"Kickstart your ecommerce journey hassle-free with our expert guidance, ensuring a smooth entry onto various marketplaces",
+            para:"Kickstart your e-Commerce journey hassle-free with our expert guidance, ensuring a smooth entry onto various marketplaces",
             backgroundColor:"#EEEEEE"
         },
         {

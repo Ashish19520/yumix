@@ -12,14 +12,14 @@ const RefundPolicy = () => {
     <div>
         <h5 className='justify m1'>Last Updated: 08/01/2023</h5>
         <p  className='justify m2'>
-        Thank you for choosing Bighatch Consulting, also known as ESERVZ, for your e-commerce consultancy needs. This Returns and Refund Policy ("Policy") outlines the terms and conditions governing returns, refunds, and cancellations for the services provided by Bighatch Consulting. By engaging our services, you acknowledge and agree to comply with the terms set forth in this Policy. Please read this Policy carefully before proceeding.
+        Thank you for choosing Bighatch Consulting, also known as ESERVZ, for your e-Commerce consultancy needs. This Returns and Refund Policy ("Policy") outlines the terms and conditions governing returns, refunds, and cancellations for the services provided by Bighatch Consulting. By engaging our services, you acknowledge and agree to comply with the terms set forth in this Policy. Please read this Policy carefully before proceeding.
                         </p>
     </div>
 
     <div>
         <h3 className='justify m1'> Scope of Services:</h3>
         <p  className='justify '>
-        Bighatch Consulting offers a range of e-commerce consultancy and services, as outlined in the Service Agreement between the client ("you" or "your") and Bighatch Consulting. The specific services, deliverables, and terms for each engagement will be detailed in the Service Agreement.
+        Bighatch Consulting offers a range of e-Commerce consultancy and services, as outlined in the Service Agreement between the client ("you" or "your") and Bighatch Consulting. The specific services, deliverables, and terms for each engagement will be detailed in the Service Agreement.
         </p>
     </div>
 
@@ -80,7 +80,7 @@ const RefundPolicy = () => {
         </p>
        
         <p  className='justify m1'>
-        Thank you for choosing Bighatch Consulting, also known as ESERVZ, for your e-commerce needs.        </p>
+        Thank you for choosing Bighatch Consulting, also known as ESERVZ, for your e-Commerce needs.        </p>
         </div>  
         
           

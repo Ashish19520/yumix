@@ -18,7 +18,7 @@ export const TermAndCondi = () => {
       <div>
         <h3 className='justify m1'>Services</h3>
         <p className='justify '>
-        Bighatch Consulting provides various e-commerce consultancy and services to clients, including but not limited to marketplace management, website development, and digital marketing. The specifics of each engagement will be outlined in a separate Service Agreement.        </p>
+        Bighatch Consulting provides various e-Commerce consultancy and services to clients, including but not limited to marketplace management, website development, and digital marketing. The specifics of each engagement will be outlined in a separate Service Agreement.        </p>
         
       </div>
       <div>
@@ -88,7 +88,7 @@ export const TermAndCondi = () => {
         By using our website and services, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions. If you have any questions or concerns about these Terms, please contact us at contact@eservz.com.
         </p>
         <p className='justify m1'>
-        Thank you for choosing Bighatch Consulting, also known as ESERVZ, as your preferred e-commerce partner.        </p>
+        Thank you for choosing Bighatch Consulting, also known as ESERVZ, as your preferred e-Commerce partner.        </p>
       </div>
     </Container>
   )

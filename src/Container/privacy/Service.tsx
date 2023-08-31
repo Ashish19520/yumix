@@ -11,14 +11,14 @@ const Service = () => {
     <div>
         <h5 className='justify m1'>Last Updated: 08/01/2023</h5>
         <p  className='justify m2'>
-        Welcome to Bighatch Consulting, also known as ESERVZ. This Service Delivery Policy ("Policy") outlines the terms and conditions governing the delivery of our e-commerce consultancy and services to you ("client," "you," or "your"). By engaging our services, you acknowledge and agree to comply with the terms set forth in this Policy. Please read this Policy carefully before proceeding.
+        Welcome to Bighatch Consulting, also known as ESERVZ. This Service Delivery Policy ("Policy") outlines the terms and conditions governing the delivery of our e-Commerce consultancy and services to you ("client," "you," or "your"). By engaging our services, you acknowledge and agree to comply with the terms set forth in this Policy. Please read this Policy carefully before proceeding.
                         </p>
     </div>
 
     <div>
         <h3 className='justify m1'> Scope of Services:</h3>
         <p  className='justify '>
-        Bighatch Consulting offers a range of e-commerce consultancy and services, including but not limited to marketplace management, website development, digital marketing, and strategic guidance. The specific services, deliverables, and terms for each engagement will be outlined in a separate Service Agreement.
+        Bighatch Consulting offers a range of e-Commerce consultancy and services, including but not limited to marketplace management, website development, digital marketing, and strategic guidance. The specific services, deliverables, and terms for each engagement will be outlined in a separate Service Agreement.
         </p>
     </div>
 
@@ -100,7 +100,7 @@ const Service = () => {
         By engaging our services, you acknowledge that you have read, understood, and agreed to be bound by this Service Delivery Policy. If you have any questions or concerns about this Policy, please contact us at contact@eservz.com        </p>
 
         <p  className='justify m1 '>
-        Thank you for choosing Bighatch Consulting, also known as ESERVZ, as your trusted e-commerce partner.        </p>
+        Thank you for choosing Bighatch Consulting, also known as ESERVZ, as your trusted e-Commerce partner.        </p>
     
         </div>  
         
