@@ -49,7 +49,7 @@ export const Slide = () => {
     let data= await dispatch(clients());
     setImages(data?.data);
   }
-  // console.log("---",images)
+
   
 
   let settings = {
@@ -95,14 +95,14 @@ export const Slide = () => {
     <SliderWrapper>
       <Container className="container">
         <Slider {...settings} className="slider_main">
-          {images?.[0]?.attributes?.clientImage?.data?.map((item,index) => (  
-           
+        {/* {images?.[0]?.attributes?.clientImage?.data?.map((item,index) => (   */}
+          {images?.map((item,index) => (  
             <div className="slide_item" key={index}>
               {/* {          console.log(item?.attributes?.clientImage?.data[0]?.attributes?.formats?.thumbnail?.url)} */}
               {/* {          console.log(item?.attributes?.url)} */}
               <img 
-              // src={baseUrl+item?.attributes?.clientImage?.data[0]?.attributes?.formats?.thumbnail?.url} 
-              src={baseUrl+item?.attributes?.url} 
+              src={baseUrl+item?.attributes?.clientImage?.data[0]?.attributes?.formats?.thumbnail?.url} 
+              // src={baseUrl+item?.attributes?.url} 
               alt="img" className="imgs"/>
             </div>
           ))}
