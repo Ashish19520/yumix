@@ -146,6 +146,27 @@ export default function Footer() {
             Eservz is a leading and globally renowned e-commerce and Amazon
             specialist agency.
           </Typography> */}
+           <Typography
+               
+               style={{
+                 color: "#404040",
+                 fontSize: "1rem",
+                 lineHeight: "18px",
+                 fontFamily: "Montserrat",
+                 textAlign: "left",
+                 padding:"0px 25px",
+                 cursor: "pointer",
+                 marginTop: "1rem",
+               }}
+             >
+              Powered by
+              <a href="https://www.i2pify.com/"
+               className="pointer"
+               target="blank"
+               color="black"
+               style={{textDecoration:"none"}}
+               > i2pify</a>
+             </Typography>
         </Grid>
         <Grid item xs={12} sm={4} md={3} p={3}>
           <Typography
@@ -307,7 +328,9 @@ export default function Footer() {
         >
           <span style={{ color: "#6349FF" }}>Copyright 2023</span>  <AiOutlineCopyrightCircle style={{ color: "#404040" }} /> Bighatch Consulting Private Limited. All Rights Reserved.
         </Typography>
+       
       </Box>
+     
       <Dialog
         open={open}
         onClose={handleClose}

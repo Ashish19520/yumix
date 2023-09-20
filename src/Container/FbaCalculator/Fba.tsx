@@ -134,7 +134,7 @@ export const Fba = () => {
     
     const programDetails:any=await dispatch(fetchProductProgramDetails(value,country));
     setprgDetails(programDetails);
-    console.log("----------------------")
+   
     let data={
       countryCode:productDetails?.data?.countryCode,
       itemInfo: {

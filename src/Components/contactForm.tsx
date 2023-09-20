@@ -164,11 +164,7 @@ export default function ContactForm () {
     return value.trim() !== '';
   };
   ValidatorForm.addValidationRule('isUsernameUnique', isUsernameUnique);
-  const labelStyle = {
-    border: 'none',
-    outline: 'none',
-    // Add any other desired styles to remove the border around the label
-  };
+ 
   return (
     <Box
       sx={{
