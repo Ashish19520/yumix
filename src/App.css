@@ -1011,8 +1011,7 @@ letter-spacing: 0.25px;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  padding:0 7rem;
-  padding-left:27rem;
+  padding-left:27%;
   @media (max-width: 768px) {
     align-items: flex-start;
     justify-content: flex-start;

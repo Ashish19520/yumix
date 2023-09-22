@@ -1,5 +1,6 @@
 import {
   Box,
+  Container,
   Dialog,
   DialogContent,
   DialogTitle,
@@ -115,6 +116,7 @@ export default function Footer() {
  }
  
   return (
+    <Container>
         <Box
           style={{ width: "100%", backgroundColor: "white", padding: "80px 40px" }}
         >
@@ -290,8 +292,6 @@ export default function Footer() {
       </Grid>
       <Box 
       className="custommmm-box">
-      
-        
         <Typography
           style={{
             fontSize: "14px",
@@ -313,8 +313,8 @@ export default function Footer() {
                  cursor: "pointer",
                  display:"flex",
                  alignItems: "start",
-                 justifyContent: "center",
-                 gap:"10px"  
+                 marginRight:"-10%"
+ 
                }}
              >
               Powered by 
@@ -322,8 +322,10 @@ export default function Footer() {
                className="pointer"
                target="blank"
                color="black"
-               style={{textDecoration:"none"}}>
+               style={{textDecoration:"none",marginLeft:"-20px"}}>
                 <img src="./images/i2pify.png"
+
+                width="40%"
                alt="img"/>
                </a>
         </Typography>
@@ -368,5 +370,6 @@ export default function Footer() {
         </DialogContent>
       </Dialog>
     </Box>
+    </Container>
   );
 }
