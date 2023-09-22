@@ -291,25 +291,7 @@ export default function Footer() {
       <Box 
       className="custommmm-box">
       
-         <Typography   
-               style={{
-                 color: "#404040",
-                 fontSize: "1rem",
-                 lineHeight: "18px",
-                 fontFamily: "Montserrat",
-                 textAlign: "start",
-                 cursor: "pointer",
-                
-               }}
-             >
-              Powered by
-              <a href="https://www.i2pify.com/"
-               className="pointer"
-               target="blank"
-               color="black"
-               style={{textDecoration:"none"}}
-               > i2pify</a>
-        </Typography>
+        
         <Typography
           style={{
             fontSize: "14px",
@@ -321,7 +303,30 @@ export default function Footer() {
         >
           <span style={{ color: "#6349FF" }}>Copyright 2023</span>  <AiOutlineCopyrightCircle style={{ color: "#404040" }} /> Bighatch Consulting Private Limited. All Rights Reserved.
         </Typography>
-       
+        <Typography   
+               style={{
+                 color: "#404040",
+                 fontSize: "1rem",
+                 lineHeight: "18px",
+                 fontFamily: "Montserrat",
+                 textAlign: "center",
+                 cursor: "pointer",
+                 display:"flex",
+                 alignItems: "start",
+                 justifyContent: "center",
+                 gap:"10px"  
+               }}
+             >
+              Powered by 
+              <a href="https://www.i2pify.com/"
+               className="pointer"
+               target="blank"
+               color="black"
+               style={{textDecoration:"none"}}>
+                <img src="./images/i2pify.png"
+               alt="img"/>
+               </a>
+        </Typography>
       </Box>
      
       <Dialog
