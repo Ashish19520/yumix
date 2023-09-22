@@ -44,14 +44,34 @@ export const NewsCard = (props: any) => {
 
   //   fetchMainImage();
   // }, []);
-  
+  console.log("---",props)
   return (
     <NewsCardWrapper>
-      <Container maxWidth="lg" className="container">
+      {/* <Container maxWidth="lg" className="container">
       <div className="img-box">
   <img
     src={
       (props?.data?.["media:content"]?.[0]?.["$"]?.url) ||
+      "../images/Rectangle first.png"
+    }
+    alt="someimg"
+    height="180px"
+    width="180px"
+  />
+</div>
+
+
+        <div className="title">
+          <p>{props?.data?.title[0]?.length>40?props?.data?.title[0].substring(0, 40)+"":props?.data?.title[0]}</p>
+        <p style={{color:"purple",cursor:"pointer"}} onClick={openContent}>Read more...</p>
+        </div>
+      
+      </Container> */}
+      <Container maxWidth="lg" className="container">
+      <div className="img-box">
+  <img
+    src={
+      (props?.data?.image) ||
       "../images/Rectangle first.png"
     }
     alt="someimg"

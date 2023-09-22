@@ -31,7 +31,11 @@ function NewsContent () {
   //     "publishedAt": "2023-05-15T10:37:57Z",
   //     "content": "If you often feel that you have a lot to accomplish but fall short of time in your business life, you are not alone. A majority of entrepreneurs feel this way. But, thanks to Zapier, you no longer ha…"
   // }
-  const sanitizedHtmlString = data?.['content:encoded'][0]?.replace(/<img[^>]+>/g,'');
+
+
+  console.log("----",data);
+  // const sanitizedHtmlString = data?.['content:encoded'][0]?.replace(/<img[^>]+>/g,'');
+  const sanitizedHtmlString = data?.description[0]?.replace(/<img[^>]+>/g,'');
   return (
     <>
       <Container
@@ -45,8 +49,12 @@ function NewsContent () {
           />
           <div style={{ position: 'relative', zIndex: 2 }}>
             <img
-             src={
-              (data?.["media:content"]?.[0]?.["$"]?.url) ||
+            //  src={
+            //   (data?.["media:content"]?.[0]?.["$"]?.url) ||
+            //   "../images/Rectangle first.png"
+            // }
+            src={
+              (data?.image) ||
               "../images/Rectangle first.png"
             }
               alt='img'
