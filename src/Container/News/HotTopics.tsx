@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux'
 import { Dispatch } from 'redux'
-import { fetchNews } from '../../actions/posts'
+import { fetchNews1 } from '../../actions/posts'
 import { useSelector } from 'react-redux/es/exports'
 
 export const HotTopics = () => {
@@ -36,7 +36,7 @@ export const HotTopics = () => {
   }, [])
 
   const fetch = async () => {
-    const dat: any = await dispatch(fetchNews())
+    const dat: any = await dispatch(fetchNews1())
     let random = Math.floor(Math.random() * 10 + 1)
     setData(dat?.feedItems[random])
   }

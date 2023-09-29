@@ -69,15 +69,19 @@ export const NewsCard = (props: any) => {
       </Container> */}
       <Container maxWidth="lg" className="container">
       <div className="img-box">
-  <img
-    src={
+        {props.index===1?
+  <img src={
       (props?.data?.image) ||
-      "../images/Rectangle first.png"
-    }
+      "../images/Rectangle first.png"}
     alt="someimg"
     height="180px"
     width="180px"
   />
+  :( 
+  <img src={(props?.data?.description?.[0].split('src="')[1]?.split('"')[0]) ||"../images/Rectangle first.png"}
+  alt="someimg"
+  height="180px"
+  width="180px"/>)}
 </div>
 
 

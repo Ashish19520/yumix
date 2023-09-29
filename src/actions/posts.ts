@@ -5,7 +5,11 @@ import {FETCH_POST,
     CLIENT_LIST,
     TESTIMONIALS,
      SITE_COUNTERS,
-     FETCH_NEWS,
+     FETCH_NEWS1,
+     FETCH_NEWS2,
+     FETCH_NEWS3,
+     FETCH_NEWS4,
+     FETCH_NEWS5,
      FETCH_BLOGS,
      PRODUCT_DETAILS,
      PRODUCT_PRICE,
@@ -69,15 +73,53 @@ export const siteCounters=()=>async (dispatch:Dispatch<AnyAction>)=>{
         console.error(error);
     }
 }
-export const fetchNews=()=>async (dispatch:Dispatch<AnyAction>)=>{
+export const fetchNews1=()=>async (dispatch:Dispatch<AnyAction>)=>{
     try {
-       let {data}=await api.fetchNews();
-    dispatch({type:FETCH_NEWS,payload:data});
+        let {data}=await api.fetchNews1();
+        dispatch({type:FETCH_NEWS1,payload:data});
+        return data;
+    } catch (error) {
+        console.error(error);
+    }
+}
+export const fetchNews2=()=>async (dispatch:Dispatch<AnyAction>)=>{
+    try {
+       let {data}=await api.fetchNews2();
+    dispatch({type:FETCH_NEWS2,payload:data});
     return data;
     } catch (error) {
         console.error(error);
     }
 }
+export const fetchNews3=()=>async (dispatch:Dispatch<AnyAction>)=>{
+    try {
+       let {data}=await api.fetchNews3();
+    dispatch({type:FETCH_NEWS3,payload:data});
+    return data;
+    } catch (error) {
+        console.error(error);
+    }
+}
+export const fetchNews4=()=>async (dispatch:Dispatch<AnyAction>)=>{
+    try {
+       let {data}=await api.fetchNews4();
+    dispatch({type:FETCH_NEWS4,payload:data});
+    return data;
+    } catch (error) {
+        console.error(error);
+    }
+}
+export const fetchNews5=()=>async (dispatch:Dispatch<AnyAction>)=>{
+    try {
+       let {data}=await api.fetchNews5();
+    dispatch({type:FETCH_NEWS5,payload:data});
+    return data;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+
 export const fetchBlogs=()=>async (dispatch:Dispatch<AnyAction>)=>{
     try {
        let {data}=await api.blogs();

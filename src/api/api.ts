@@ -41,8 +41,13 @@ export const ourGreatWorks = (first:boolean, second:boolean, firstValue:string, 
 export const ourSingleGreatWorks=(id:number)=>API.get(`api/our-works/${id}`);  
 export const category=()=>API.get(`api/categories?populate=sub_category`);    
 
-export const fetchNews=()=>API.get(`api/latest-newsses/rss-feed`);
-// export const fetchNews=()=>API.get(`api/latest-newsses/latest-news`);
+export const fetchNews1=()=>API.get(`api/latest-newsses/rss-feed`);
+export const fetchNews2=()=>API.get(`api/latest-newsses/shopify`);
+export const fetchNews3=()=>API.get(`api/latest-newsses/store-factory`);
+export const fetchNews4=()=>API.get(`api/latest-newsses/latest-news`);
+export const fetchNews5=()=>API.get(`api/latest-newsses/marketingword`);
+
+
 
 // ####### ----  FBA   -----#######################
 export const fetchProductDetails=(asin:any,country:any)=>API.get(`api/fbas/getDetails/${asin}?country=${country} `);

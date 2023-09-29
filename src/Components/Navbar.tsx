@@ -25,29 +25,29 @@ export const Navbar = () => {
     console.log('check', drawerOpen)
   }, [])
 
-  const navAnimation = {
-    show: {
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 2.3,
-        ease: 'easeInOut'
+    const navAnimation = {
+      show: {
+        transition: {
+          staggerChildren: 0.2,
+          delayChildren: 2.3,
+          ease: 'easeInOut'
+        }
       }
     }
-  }
-  const navText = {
-    hidden: {
-      opacity: 0,
-      y: '-10px'
-    },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        ease: 'easeInOut'
+    const navText = {
+      hidden: {
+        opacity: 0,
+        y: '-10px'
+      },
+      show: {
+        opacity: 1,
+        y: 0,
+        transition: {
+          ease: 'easeInOut'
+        }
       }
     }
-  }
-  
+    
    
    
   const handleClick = (index:number) => {

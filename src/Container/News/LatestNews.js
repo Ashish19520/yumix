@@ -1,4 +1,4 @@
-import { Button, Container, Grid ,Pagination} from "@mui/material";
+import { Container, Grid ,Pagination} from "@mui/material";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { NewsCard } from "../../Components/NewsCard";
@@ -6,27 +6,63 @@ import { getNews } from "../../api/services";
 import { useNavigate } from "react-router-dom";
 import NewsContent from "./NewsContent";
 import { useDispatch } from 'react-redux';
-import { Dispatch } from 'redux';
-import { fetchNews } from "../../actions/posts";
-import { useSelector } from "react-redux/es/exports";
+
+import { fetchNews1,fetchNews2, fetchNews3, fetchNews4,fetchNews5 } from "../../actions/posts";
+
 
 
 
 export const LatestNews = () => {
-//  const [response,setResponse] =useState<Array<{}>>([]);;
+
  const [pageNO, setPageNO] = useState(()=>{
   const storedValue = localStorage.getItem('counter');
   return storedValue ? parseInt(storedValue) : 1;
  });
- const navigate=useNavigate();
- const response=useSelector((state:any)=>state?.posts?.fetchNews?.feedItems);
- const dispatch: Dispatch<any> = useDispatch();
 
+ const [response,setResponse]=useState();
+ const [index,setIndex]=useState();
+ const [loader, setLoader] = useState(false);
+
+ const navigate=useNavigate();
+//  const response=useSelector((state:any)=>state?.posts?.fetchNews?.feedItems);
+ const dispatch = useDispatch();
+
+
+
+const loadingNews=async()=>{
+  const fetchNewsFunctions = [
+    fetchNews3,
+    fetchNews4,
+    fetchNews5,
+    fetchNews1,
+    fetchNews2,
+    
+  ]; 
+  setLoader(true);
+  let number=0;
+   for (const fetchNewsFunction of fetchNewsFunctions) {
+    const news = await dispatch(fetchNewsFunction());
+    number++;
+    if (news?.message === 'success') {
+      setResponse(news?.feedItems);
+      setIndex(number);
+      localStorage.setItem("status",number);
+      setLoader(false);
+      break;
+    }
+  }
+}
+
+
+
+useEffect(()=>{
+  loadingNews();
+},[pageNO])
 
   useEffect(()=>{
-    dispatch(fetchNews());
    window.scrollTo(0, 1350.2857666015625);
   },[pageNO]);
+
 
   const itemsPerPage = 8;
   const totalPages = Math.ceil(response?.length / itemsPerPage);
@@ -63,16 +99,30 @@ export const LatestNews = () => {
 
  
  
-  const handlePage = (e:any,no:any) => {
+  const handlePage = (e,no) => {
     setPageNO(no);
   };
   return (
     <LatestNewsWrapper>
+      {loader && (
+                <div className="mainPreloaderMain">
+                    <div className="mainPreloader">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            )}
       <Container maxWidth="lg" className="container ">
         <div className="heading">Latest News</div>
         <div className="cards">
           
-          {currentItems?.length>0&&currentItems?.map((d:any,index:number) => (
+          {currentItems?.length>0&&currentItems?.map((d,index) => (
             <Grid
               item
               xs={12}
@@ -82,7 +132,7 @@ export const LatestNews = () => {
               className="eachCard latestnews_hidden"
               key={index}
             >
-              <NewsCard data={d} page={pageNO}/>
+              <NewsCard index={index} data={d} page={pageNO}/>
              
             </Grid>
           

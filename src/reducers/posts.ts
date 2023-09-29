@@ -4,7 +4,7 @@ import { FETCH_POST,
     TESTIMONIALS,
     SITE_COUNTERS,
      FETCH_BLOGS,
-     FETCH_NEWS,
+     FETCH_NEWS1,
      PRODUCT_DETAILS,
      PRODUCT_PRICE,
      PRODUCT_PROGRAM,
@@ -25,7 +25,7 @@ export default (state={},action:any)=>{
             return {...state, testimonials:action.payload};
         case SITE_COUNTERS:
                 return {...state, sitecounters:action.payload};
-        case FETCH_NEWS:      
+        case FETCH_NEWS1:      
         return {...state, fetchNews:action.payload};
         case FETCH_BLOGS:
         return {...state, fetchBlogs:action.payload};
