@@ -63,7 +63,7 @@ export const Navbar = () => {
         <div
             className='logo-title'
           >
-             List ∙ Advertise ∙ Grow
+           Transform Your Goals Into Reality
           </div> 
           <div style={{width:"110px"}}>
           <Link
@@ -105,8 +105,8 @@ export const Navbar = () => {
               onClick={() => {
                 navigate('/')
               }}
-              src='/images/logo.png'
-              style={{ height: '68px', width: '68px', cursor: 'pointer' }}
+              src='/yumix/yt.png'
+              style={{ height: '100apx', width: '100px', cursor: 'pointer' }}
               variants={navText}
               className='logo-img'
             ></motion.img>
@@ -155,14 +155,22 @@ export const Navbar = () => {
 
 
               <motion.li variants={navText}
+             className={activeIndex === 3 ? 'nav-active' : ''}
+             onClick={() => handleClick(3)}
+             >
+                <Link to='/training' >Training & placements</Link>
+              </motion.li>
+
+
+              {/* <motion.li variants={navText}
                className={activeIndex === 4 ? 'nav-active' : ''}
                onClick={() => handleClick(4)}
               >
                 <Link to='/blogs' >Blogs</Link>
-              </motion.li>
+              </motion.li> */}
 
 
-              <motion.li variants={navText}
+              {/* <motion.li variants={navText}
             className={activeIndex === 5 ? 'nav-active' : ''}
             onClick={() => handleClick(5)}>
                 <Link to='/news' >News</Link>
@@ -171,7 +179,7 @@ export const Navbar = () => {
                   open={openCalender}
                   setClose={() => setOpenCalender(false)}
                 />
-              </motion.li>
+              </motion.li> */}
             </motion.ul>
           </div>
           <motion.div variants={navAnimation} initial='hidden' animate='show'>

@@ -42,8 +42,8 @@ export const OurApproach = () => {
           <div className='icons-zoom'>
             <div className='icons'>
               <div className='singleicon'>
-                <img className='ig' id='stl1' src='./images/A2.png'></img>
-                <p className='para'>Marketplace Mastery</p>
+                <img className='ig' id='stl1' src='./yumix/5.png'></img>
+                <p className='para'>Marketing Mastery</p>
                 <Tooltip
                   title='Unlock the full potential of Amazon and Walmart with our proven expertise. We navigate the intricacies of these platforms, positioning your products for maximum visibility and sales growth.'
                   enterTouchDelay={0}
@@ -61,10 +61,10 @@ export const OurApproach = () => {
                 <img
                   className='ig'
                   id='stl1'
-                  src='./images/A3.png'
+                  src='./yumix/6.png'
                   width='100%'
                 ></img>
-                <p className='para'>Strategic Product Positioning</p>
+                <p className='para'> Strategic Thinking  </p>
                 <Tooltip
                   title=' We strategically position your products to stand out in the crowded marketplace, ensuring they catch the eyes of your target audience and outshine the competition.'
                   enterTouchDelay={0}
@@ -79,7 +79,7 @@ export const OurApproach = () => {
               </div>
 
               <div className='singleicon'>
-                <img className='ig' id='stl1' src='./images/A1.png' height="10px"></img>
+                <img className='ig' id='stl1' src='./yumix/7.png' height="10px"></img>
                 <p className='para'>Conversion-focused Optimization</p>
                 <Tooltip
                   title=' Our team specializes in optimizing product listings to drive conversions. From compelling product descriptions to high-quality images, we create listings that turn browsers into buyers.'
@@ -95,7 +95,7 @@ export const OurApproach = () => {
               </div>
 
               <div className='singleicon'>
-                <img className='ig' id='stl1' src='./images/A9.png'></img>
+                <img className='ig' id='stl1' src='./yumix/8.png'></img>
                 <p className='para'>Data-Driven Insights</p>
                 <Tooltip
                   title="Harness the power of data to make informed decisions. We analyse key metrics and consumer behaviour to refine strategies, enhancing your brand's performance on Amazon and Walmart."
@@ -111,7 +111,7 @@ export const OurApproach = () => {
               </div>
 
               <div className='singleicon'>
-                <img className='ig' id='stl1' src='./images/A10.png'></img>
+                <img className='ig' id='stl1' src='./yumix/9.png'></img>
                 <p className='para'>Sustainable Success</p>
                 <Tooltip
                   title="We're not just about short-term gains. Our agency focuses on building a sustainable, long-term e-Commerce success story for your brand, adapting to trends and evolving marketplace dynamics."

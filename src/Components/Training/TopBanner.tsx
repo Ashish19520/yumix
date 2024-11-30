@@ -54,14 +54,14 @@ export default function TopBanner() {
   }, []);
 
   return (
-    <MidBannerWrapper>
+    <TopBannerWrapper className="container margin-nav">
       <Grid
+        wrap="wrap-reverse"
         className="ourLeaders_hidden"
         rowGap={4}
         position="relative"
         container
         alignItems="center"
-        justifyContent="center"
         style={{
           maxWidth: "1200px",
           margin: "auto",
@@ -69,17 +69,15 @@ export default function TopBanner() {
           overflow: "hidden",
         }}
       >
-        
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={5}>
           <motion.div
             variants={typingContainer}
             initial="hidden"
             animate="show"
             className="title"
           >
-            <Typography variant="h2" className="mid-title">
-            {/* {Array.from("Commitment for excellence").map((word, i) => ( */}
-              {Array.from("We keep the focus on driving resultss ").map((word, i) => (
+            <Typography variant="h2" className="about_title">
+              {Array.from("Empowering Careers Through Industry-Leading Training and Placement").map((word, i) => (
                 <motion.span key={i} variants={typingText}>
                   {word}
                 </motion.span>
@@ -89,109 +87,92 @@ export default function TopBanner() {
           <motion.div variants={elements} initial="hidden" animate="show">
             <Typography
               variant="h2"
-              className="mid-sub">
-                With a versatile team, a comprehensive e-Commerce management approach is possible. Roles cover marketplace optimization, advertising, content, customer experience, and business growth. Team ESERVZ ensures robust e-Commerce strategy, boosting sales, brand image, and customer satisfaction. Successful e-Commerce relies on collaboration, communication, and ongoing learning for optimal outcomes.
-
-
+              className="about_subtitle "
+            
+            >
+Transform your career with our expert-led training programs and extensive placement network. Join the thousands of students who have successfully launched their careers with us!
             </Typography>
+        
           </motion.div>
         </Grid>
         <Grid
           item
           xs={12}
-          md={6}
-          sx={{ textAlign: { xs: "center", md: "left" } }}
+          md={7}
+          sx={{ textAlign: { xs: "center", md: "right" }, zIndex: 1 }}
         >
           <motion.img
-            src="/images/Group 162953.png"
-            style={{ width: "100%"}}
+            src="/images/Group 162930 (1).png"
+            style={{ width: "90%" }}
             alt="About Banner"
             variants={elements}
             initial="hidden"
             animate="show"
           ></motion.img>
         </Grid>
-        <Box
-          style={{
-            borderRadius: "50%",
-            width: "40px",
-            height: "40px",
-            backgroundColor: "#FE70A3",
-            position: "absolute",
-            top: "20px",
-            left: "20px",
-          }}
-        ></Box>
-        <Box
-          style={{
-            borderRadius: "50%",
-            width: "28px",
-            height: "28px",
-            backgroundColor: "#4A90E2",
-            position: "absolute",
-            top: "50px",
-            right: "50px",
-            
-          }}
-        ></Box>
-        <Box className="box-blur" sx={{ ...style.bluredBox, bottom: { xs: "50%", md: "10%" } }}>
-          <img src="./images/Round Cube2@3x.png" width="100%"></img>
-        </Box>
+        <motion.div
+          variants={elements}
+          initial="hidden"
+          animate="show"
+          className="title"
+        >
+          <Box sx={{ ...style.bluredBox, top: { xs: "30%", md: "75%" } }}>
+            <img src="./images/Round Cube2@3x.png" className="logo-fold" width="100%"></img>
+          </Box>
+          <img src="./images/Rock2.png" style={style.bluredRock}   ></img>
+          <img src="./images/aboutusThread.png" className="about-rock" style={style.thread}></img>
+        </motion.div>
       </Grid>
-    </MidBannerWrapper>
+    </TopBannerWrapper>
   );
 }
 
-const MidBannerWrapper = styled.div`
-  .mid-title {
-    font-size: 32px;
+const TopBannerWrapper = styled.div`
+ .about_title {
+    margin-top:-50px;
+    font-size: 40px;
     font-weight: 700;
-    color: #3a3b44;
-    font-family: Poppins-SemiBold;
+    color: #0b0720;
+    font-family: "Poppins-Bold";
 
     @media (max-width: 600px) {
+      padding-top: 40px;
       font-size: 16px;
     }
   }
 
-  .mid-sub {
-    margin-top: 20px;
+  .about_subtitle {
+    margin-top: 15px;
+    z-indez:7;
     font-size: 16px;
     font-weight: 400;
-    color: #828490;
-    font-family: "Montserrat";
+    color: #696969;
+    font-family: Montserrat;
     line-height: 24px;
-    @media(max-width:600px){
+    @media (max-width: 600px) {
       font-size: 14px;
     }
   }
-  .box-blur{
-    width: "10%",
-    position: "absolute",
-    top: "78%",
-    right: "30px",
-    zIndex:"-1",
-    @media(max-width:908px){
-      top: "90%",
-    }
-  }
 `;
-
 const style = {
-  blueDot: {
-    width: "30px",
-    aspectRatio: 1,
-    backgroundColor: "#5956E9",
-    borderRadius: "50%",
-    position: "absolute",
-    top: "100px",
-    left: "100px",
-  } as React.CSSProperties,
   bluredBox: {
     width: "10%",
+    minWidth: "80px",
     position: "absolute",
-    top: "78%",
-    right: "30px",
-    zIndex:"-1",
+    left: "0px",
+  } as React.CSSProperties,
+  bluredRock: {
+    width: "10%",
+    position: "absolute",
+    top: "70px",
+    right: "70px",
+    zIndex: 2,
+  } as React.CSSProperties,
+  thread: {
+    width: "100%",
+    minWidth: "500px",
+    position: "absolute",
+    top: "200px",
+    left: "20%",
   } as React.CSSProperties,
 };

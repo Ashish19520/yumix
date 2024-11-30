@@ -48,24 +48,24 @@ function WhyUs () {
 
   const points = [
     {
-      title: 'Strategic Expertise',
-      para: 'Team ESERVZ brings a wealth of e-Commerce knowledge, ensuring your brand receives tailored strategies that optimize product listings, boost conversions, and enhance marketplace visibility.',
-      image: '/images/work1.png'
+      title: 'Industry-Leading Expertise',
+      para: 'At Yumix Technologies, our team brings expert knowledge in cloud solutions, custom software, AI, and more. We deliver tailored digital solutions that optimize performance and fuel growth for your business.',
+      image: '/yumix/16.png'
     },
     {
-      title: 'Time, Money and Resource Savings',
-      para: 'Partnering with us means delegating operational tasks such as product listings, inventory management, PPC Ads management and marketplace compliance, freeing up your resources to concentrate on core business expansion.',
-      image: '/images/work2.png'
+      title: 'Maximize Operational Efficiency',
+      para: 'Partnering with us means freeing up time and resources. We handle the technical complexities—from system integrations to data security—so you can focus on scaling your business.',
+      image: '/yumix/17.png'
     },
     {
-      title: 'Customized Growth Strategies',
-      para: ' Our tailored approach means brands receive bespoke strategies that align with their unique identity, resulting in enhanced customer experiences, increased conversion rates, and sustainable revenue growth.',
-      image: '/images/work3.png'
+      title: 'Tailored Solutions for Your Growth',
+      para: 'We create customized strategies that align with your unique needs. Whether improving your platform or enhancing data management, our solutions are designed for long-term, sustainable growth.',
+      image: '/yumix/18.png'
     },
     {
-      title: 'Maximized Revenue Growth',
-      para: 'Through effective PPC campaigns, deals, and promotions, we drive targeted traffic, increase conversion rates, and generate a higher ROI, ultimately translating into sustained revenue growth for your brand',
-      image: '/images/work4.png'
+      title: 'Unlock Scalable Revenue Growth',
+      para: 'Our technology-driven solutions help boost revenue and optimize performance. We focus on increasing customer engagement and unlocking new revenue streams to accelerate your growth.',
+      image: '/yumix/19.png'
     }
   ]
 
@@ -73,7 +73,7 @@ function WhyUs () {
     if (selectedIndex === 0 || selectedIndex <= 3) {
       setTimeout(() => {
         setSelectedIndex(1)
-        setImage('/images/work2.png')
+        setImage('/yumix/16.png')
         setImage_blue_rock_top('95%')
         setImage_blue_rock_left('70%')
         setImage_yellow_rock_top('-28%')
@@ -88,7 +88,7 @@ function WhyUs () {
 
       setTimeout(() => {
         setSelectedIndex(2)
-        setImage('/images/work3.png')
+        setImage('/yumix/17.png')
         setImage_blue_rock_top('-20%')
         setImage_blue_rock_left('70%')
         setImage_yellow_rock_top('92%')
@@ -103,7 +103,7 @@ function WhyUs () {
 
       setTimeout(() => {
         setSelectedIndex(3)
-        setImage('/images/work4.png')
+        setImage('/yumix/18.png')
         setImage_blue_rock_top('-35%')
         setImage_blue_rock_left('13%')
         setImage_yellow_rock_top('80%')
@@ -118,7 +118,7 @@ function WhyUs () {
 
       setTimeout(() => {
         setSelectedIndex(0)
-        setImage('/images/work1.png')
+        setImage('/yumix/19.png')
         setImage_blue_rock_top('80%')
         setImage_blue_rock_left('15%')
         setImage_yellow_rock_top('-20%')
@@ -139,10 +139,19 @@ function WhyUs () {
 
   return (
     <Box style={{ background: '#fffcfc' }}>
+              <h1 style={{textAlign:"center",marginBottom:"1rem"}}>Industry-Leading Expertise
+</h1>
+<p style={{width:"80vw",margin:"0 auto",marginBottom:"1rem"}}>At Yumix Technologies, we offer a full spectrum of digital solutions to drive your business forward. Our team brings expert knowledge in Cloud Solutions, Custom Software Development, Artificial Intelligence, and more, enabling us to deliver tailored solutions that optimize performance and fuel growth.
+</p>
+<p style={{width:"80vw",margin:"0 auto",marginBottom:"1rem"}}>Beyond our foundational digital marketing services—such as SEO, social media strategy, content marketing, and paid advertising—we specialize in comprehensive service-based solutions. This includes Frontend and Backend Development, Mobile App Development (iOS, Android, and Hybrid), and Quality Assurance, ensuring seamless, high-quality user experiences across all platforms.
+</p>
+<p style={{width:"80vw",margin:"0 auto",marginBottom:"1rem"}}>With a blend of creativity, technology, and strategic insight, Yumix Technologies is dedicated to connecting brands with their target audiences, driving engagement, and delivering measurable, impactful results.
+</p>
       <Box
         className='bannerList_hidden'
         style={{ maxWidth: '100%', margin: 'auto', padding: '100px' }}
       >
+
         <Grid container alignItems='center'>
           <Grid
             position='relative'
@@ -282,7 +291,7 @@ function WhyUs () {
                 width='100%'
               />
             </Box>
-          </Grid>
+          </Grid> 
           <Grid item xs={12} md={6}>
             {points.map((item, index) => {
               return (

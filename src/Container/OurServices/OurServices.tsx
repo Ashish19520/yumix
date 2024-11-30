@@ -79,29 +79,29 @@ OurServices = () => {
           <motion.img variants={lines}  initial="hidden" animate="show" src="./images/FullRock1@3x.png" className="img-rock_1"></motion.img>
           <div className="text-wrapper">
           <motion.h1 variants={typingContainer} initial="hidden" animate="show">
-            {Array.from("Welcome to ESERVZ by Bighatch Consulting!").map((word, i) => (
+            {Array.from("Welcome to Yumix Technologies – Your Partner in Digital Innovation!!").map((word, i) => (
               <motion.span key={i} variants={typingText}>
                 {word}
               </motion.span>
             ))}
           </motion.h1>
+            {/* <motion.div
+              variants={explainProduct}
+              initial="hidden"
+              animate="show"
+              className="subTitle"
+            >
+            Empowering Your e-Commerce Success Across Every Channel
+
+            </motion.div> */}
           <motion.div
             variants={explainProduct}
             initial="hidden"
             animate="show"
             className="subTitle"
           >
-           Empowering Your e-Commerce Success Across Every Channel
-
-          </motion.div>
-          <motion.div
-            variants={explainProduct}
-            initial="hidden"
-            animate="show"
-            className="subTitle"
-          >
-           ESERVZ, your trusted partner in multi-channel e-Commerce, is here to transform your brand's online journey into a resounding success story. As a pioneering e-Commerce service provider, we specialize in seamless marketplace management, ensuring your brand thrives on platforms like Amazon, Walmart, eBay, and even your own dedicated website.
-
+where we transform ideas into digital experiences. Our team specializes in a wide range of services, from cutting-edge digital marketing to robust mobile and web development, quality assurance, and more. Explore our services to see how we can help fuel your business growth.
+              
 
           </motion.div>
           </div>

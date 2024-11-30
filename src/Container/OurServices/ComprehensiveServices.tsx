@@ -15,90 +15,90 @@ const ComprehensiveServices = () => {
     const data=[
         {
             img:"../images/service1.png",
-            head:"Seller Onboarding",
-            para:"Kickstart your e-Commerce journey hassle-free with our expert guidance, ensuring a smooth entry onto various marketplaces",
+            head:" Digital Marketing",
+            para:"We create data-driven, customized digital marketing strategies designed to increase brand visibility, engage target audiences, and drive conversions. Our comprehensive approach ensures your brand reaches its full potential in the digital space.",
             backgroundColor:"#EEEEEE"
         },
         {
             img:"../images/service2.png",
-            head:"Brand Registry and Approval",
-            para:"Secure your brand's identity and build trust among customers through efficient brand registration and approval processes.", 
+            head:"Frontend Development",
+            para:"We build visually appealing, highly responsive interfaces that enhance user experience and reflect your brand’s identity. Our frontend solutions are optimized for performance across all devices, from desktops to mobile.", 
             backgroundColor:"#FFE7E3"        },
         {
             img:"../images/service3.png",
-            head:"Category Approval",
-            para:"We navigate complex category approvals, expanding your reach across diverse product segments.", 
+            head:" Backend Development",
+            para:"Our backend development services are the backbone of your digital presence. We create secure, scalable, and high-performing systems that enable seamless functionality and data management for your applications.", 
             backgroundColor:"#DAE4FF"
         },
         {
             img:"../images/service4.png",
-            head:"Product Listings",
-            para:"Our meticulous approach to product listings guarantees that your offerings stand out, driving engagement and conversions.",
+            head:"Mobile App Development    ",
+            para:" We develop custom mobile applications that provide a seamless experience on both iOS and Android, as well as hybrid solutions. Our apps are designed with usability, performance, and functionality at their core, meeting the diverse needs of users.",
             backgroundColor:"#FFE7CA"
         },
         {
             img:"../images/service5.png",
-            head:"Product Page Optimization",
-            para:"Elevate your product pages with compelling visuals, persuasive descriptions, and valuable information to maximize customer interest.",
+            head:" Quality Assurance (QA)",
+            para:"Quality is our priority. Our dedicated QA team rigorously tests every solution to ensure it meets the highest standards of functionality, security, and performance. With both manual and automated testing, we ensure that your applications run smoothly and reliably.",
             backgroundColor:"#EEEEEE"
         },
         {
             img:"../images/service6.png",
-            head:"A+ Content Creation",
-            para:"Captivate your audience with enhanced content, showcasing your brand's uniqueness and fostering customer loyalty.",
+            head:"Cloud Solutions",
+            para:"Our cloud solutions enable businesses to operate more flexibly and scale efficiently. From migration to cloud-native development, we tailor our services to fit your needs, whether you're working with AWS, Azure, or Google Cloud.",
             backgroundColor:"#FFE7CA"
            
         },
         {
             img:"../images/service7.png",
-            head:"Brand Store",
-            para:"Establish a captivating online storefront that resonates with your brand's essence, guiding customers through an immersive shopping experience.",
+            head:" Custom Software Development",
+            para:" For businesses with unique needs, our custom software development services provide fully tailored solutions that align with your business goals and processes. We bring your ideas to life with innovative, efficient, and scalable software.",
             backgroundColor:"#DAE4FF"
         },
         {
             img:"../images/service8.png",
-            head:"Inventory Planning and Management",
-            para:"Stay ahead of demand with our strategic inventory planning, restocking, and reconciliation services.",
+            head:" Artificial Intelligence (AI) Solutions",
+            para:" We harness the power of AI to help businesses automate processes, gain deeper insights, and provide more personalized user experiences. Our AI solutions include machine learning, predictive analytics, and natural language processing.",
             backgroundColor:"#FFE7E3" 
         },
         {
             img:"../images/service9.png",
-            head:"Fulfilment Expertise (FBA & WFS)",
-            para:"Effortlessly manage order fulfilment, whether through Amazon's FBA or Walmart's WFS, ensuring timely deliveries and customer satisfaction.", 
+            head:"UI/UX Design",
+            para:" We design user interfaces that are not only visually appealing but also user-centric, ensuring a seamless and intuitive experience. Whether it's a website, mobile app, or enterprise platform, our UI/UX design services focus on enhancing usability, functionality, and engagement.", 
             backgroundColor:"#EEEEEE"
         },
         {
             img:"../images/service10.png",
-            head:"PPC Ads Management",
-            para:"Drive targeted traffic and amplify sales with our data-driven Pay-Per-Click (PPC) advertising strategies.",
+            head:"Graphic Design",
+            para:" Our graphic design services help you communicate your brand’s message with clarity and creativity. From logos and branding to marketing materials and digital content, we design visually stunning graphics that resonate with your target audience.",
             backgroundColor:"#FFE7E3" 
         },
         
-        {
-            img:"../images/service11.png",
-            head:"Deals, Promos & Coupons",
-            para:"Attract and engage customers through compelling deals, promotions, and coupon campaigns.",
-                        backgroundColor:"#DAE4FF",
-        },
-        {
-            img:"../images/service12.png",
-            head:"Traffic Boost and Conversion Optimization",
-            para:"We enhance your online presence, driving traffic and optimizing conversion rates for sustained growth.",    
-            backgroundColor:"#FFE7CA"
-        },
-        {
-            img:"../images/service13.png",
-            head:"Marketplace Compliance",
-            para:"Navigate marketplace regulations seamlessly with our expert guidance, ensuring adherence to policies and guidelines.",
-            backgroundColor:"#EEEEEE"
+        // {
+        //     img:"../images/service11.png",
+        //     head:"Deals, Promos & Coupons",
+        //     para:"Attract and engage customers through compelling deals, promotions, and coupon campaigns.",
+        //                 backgroundColor:"#DAE4FF",
+        // },
+        // {
+        //     img:"../images/service12.png",
+        //     head:"Traffic Boost and Conversion Optimization",
+        //     para:"We enhance your online presence, driving traffic and optimizing conversion rates for sustained growth.",    
+        //     backgroundColor:"#FFE7CA"
+        // },
+        // {
+        //     img:"../images/service13.png",
+        //     head:"Marketplace Compliance",
+        //     para:"Navigate marketplace regulations seamlessly with our expert guidance, ensuring adherence to policies and guidelines.",
+        //     backgroundColor:"#EEEEEE"
             
-        },
-        {
-            img:"../images/service14.png",
-            head:"Reviews and Ratings Management",
-            para:"Foster a positive reputation through proactive review and rating management, building trust among potential buyers.",
-            backgroundColor:"#FFE7E3" 
-        },
+        // },
+        // {
+        //     img:"../images/service14.png",
+        //     head:"Reviews and Ratings Management",
+        //     para:"Foster a positive reputation through proactive review and rating management, building trust among potential buyers.",
+        //     backgroundColor:"#FFE7E3" 
+        // },
     ]
   return (
     <> 

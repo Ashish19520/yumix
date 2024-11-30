@@ -61,36 +61,42 @@ function formatNumber(num: number): string {
                 <img src="./images/Ellipse 65@3x.png" className="img-dot1"></img>
                 <div className="outter">
                   <h2>
-                  <CountUp start={0} end={counterOn && response && response.length > 0 &&+formatNumber(response[0]?.attributes.count).split(' ')[0]} duration={2} delay={0} />
-                    {counterOn && response && response.length > 0 && formatNumber(response[0]?.attributes.count).split(' ')[1]}
+                  {/* <CountUp start={0} end={counterOn && response && response.length > 0 &&+formatNumber(response[0]?.attributes.count).split(' ')[0]} duration={2} delay={0} />
+                    {counterOn && response && response.length > 0 && formatNumber(response[0]?.attributes.count).split(' ')[1]} */}
+                    <CountUp start={0} end={100}/><sup className="blue">+</sup>
                     
                   </h2>
-                  <p>CATALOG MANAGEMENT</p>
+                  <p>ACTIVE CLIENTS</p>
                 </div>
                 <div className="outter">
                   <h2>
-                  <CountUp start={0} end={counterOn && response && response.length > 0 &&+formatNumber(response[1]?.attributes.count).split(' ')[0]} duration={2} delay={0} />
-                    {counterOn && response && response.length > 0 && formatNumber(response[1]?.attributes.count).split(' ')[1]}
+                  {/* <CountUp start={0} end={counterOn && response && response.length > 0 &&+formatNumber(response[1]?.attributes.count).split(' ')[0]} duration={2} delay={0} />
+                    {counterOn && response && response.length > 0 && formatNumber(response[1]?.attributes.count).split(' ')[1]} */}
+                                        <CountUp start={0} end={530}/><sup className="blue">+</sup>
+
                   </h2>
-                  <p>AMAZON HEALTH CHECKUP</p>
+                  <p>PROJECTS COMPLETED</p>
                 
                 </div>
                 <div className="outter">
                   <h2>
-                  <CountUp start={0} end={counterOn && response && response.length > 0 &&+formatNumber(response[2]?.attributes.count).split(' ')[0]} duration={2} delay={0} />
-                    {counterOn && response && response.length > 0 && formatNumber(response[2]?.attributes.count).split(' ')[1]}
-                    
+                  {/* <CountUp start={0} end={counterOn && response && response.length > 0 &&+formatNumber(response[2]?.attributes.count).split(' ')[0]} duration={2} delay={0} />
+                    {counterOn && response && response.length > 0 && formatNumber(response[2]?.attributes.count).split(' ')[1]} */}
+                                                            <CountUp start={0} end={5}/><sup className="blue">+</sup>
+
                   </h2>
-                  <p>AMAZON REIMBURSEMENTS</p>
+                  
+                  <p>GLOROIUS YEARS</p>
                   
                 </div>
                 <div className="outter">
                   <h2>
-                  <CountUp start={0} end={counterOn && response && response.length > 0 &&+formatNumber(response[3]?.attributes.count).split(' ')[0]} duration={4} delay={0} />
-                    {counterOn && response && response.length > 0 && formatNumber(response[3]?.attributes.count).split(' ')[1]}
-                    
+                  {/* <CountUp start={0} end={counterOn && response && response.length > 0 &&+formatNumber(response[3]?.attributes.count).split(' ')[0]} duration={4} delay={0} />
+                    {counterOn && response && response.length > 0 && formatNumber(response[3]?.attributes.count).split(' ')[1]} */}
+                                                                                <CountUp start={0} end={20}/><sup className="blue">+</sup>
+
                   </h2>
-                  <p>ADVERTISING SERVICES</p>
+                  <p>PROFFESIONAL TEAM</p>
                 </div>
               </div>
             </Container>

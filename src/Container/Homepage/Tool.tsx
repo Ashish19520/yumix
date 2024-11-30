@@ -76,57 +76,71 @@ const onClickCodeDescriptionHandlar=()=>{
         <Container maxWidth="lg" className="container">
           <div className="outter">
             <img src="./images/FullRock2@3x.png" className="fRock-img-1"></img>
-            <div className="title">
-              Resources that'll  help scale your business
-            </div>
+            <h2 className="title" style={{marginLeft:"8rem"}}>  How We Drive Your Growth
+            </h2>
             <div className="tool">
               {/* <img src="./images/Group 38634@3x.png" className="img-bg-2"></img> */}
               <img src="./images/Group 38635@3x.png" className="img-bg-1"></img>
               <div className="box hoverimg">
                 <div className="fba">
                   <img
-                    src="./images/brisia111.png"
+                    src="./yumix/11.png"
                     className="images-tools-bounce1"
                   ></img>
                 </div>
                 <div className="info">
-                  <div className="infoTitle">FBA CALCULATOR </div>
+                  <div className="infoTitle">Discovery & Consultation </div>
                   <div className="subTitle">
-                    FBM or FBA? Choose what’s right for your Amazon products.
+                  We begin by understanding your business, challenges, and goals. This phase sets the foundation for all the solutions we propose.
                   </div>
-                  <div className="link" onClick={onClickHandlar}>RUN CALCULATOR</div>
+                  {/* <div className="link" onClick={onClickHandlar}>RUN CALCULATOR</div> */}
                 </div>
               </div>
 
               <div className="box hoverimg">
                 <div className="lq">
                   <img
-                    src="./images/14 - Brisa doing Checklist.png"
+                    src="./yumix/12.png"
                     className="images-tools-bounce2"
                   ></img>
                 </div>
                 <div className="info">
-                  <div className="infoTitle">LISTING QUALITY</div>
+                  <div className="infoTitle">Solution Design & Development</div>
                   <div className="subTitle">
-                    Increase your Amazon sales with optimised listing.
-                  </div>
-                  <div className="link" onClick={onClickListingHandlar}>CHECK LISTING QUALITY</div>
+                  we design tailored solutions that are both innovative and practical, leveraging the latest technologies.                  </div>
+                  {/* <div className="link" onClick={onClickListingHandlar}>CHECK LISTING QUALITY</div> */}
                 </div>
               </div>
               <div className="box hoverimg">
                 <div className="dtc">
                   <img
-                    src="./images/18 - Lucas Floats with His Laptop.png"
+                    src="./yumix/14.png"
                     className="images-tools-bounce3"
                   ></img>
                 </div>
                 <div className="info">
-                  <div className="infoTitle">DESCRIPTION TO CODE</div>
+                  <div className="infoTitle"> Implementation & Testing</div>
                   <div className="subTitle">
-                    Convert descriptions to code with zero HTML knowledge.
-                  </div>
-                  <div className="link" onClick={onClickCodeDescriptionHandlar}>CONVERT NOW</div>
+                  We implement your solutions, ensuring they are thoroughly tested and optimized for performance, security, and scalability.                  </div>
+                  {/* <div className="link" onClick={onClickCodeDescriptionHandlar}>CONVERT NOW</div> */}
                 </div>
+                
+              </div>
+              <div className="box hoverimg">
+                <div className="dtc">
+                  <img
+                    src="./yumix/15.png"
+                    className="images-tools-bounce3"
+                  ></img>
+                </div>
+                <div className="info">
+                  <div className="infoTitle"> Launch & Support </div>
+                  <div className="subTitle">
+                  Once your solution is deployed, we provide ongoing support, monitoring, and updates to ensure continued success and growth.
+                 </div>
+                  {/* <div className="link" onClick={onClickCodeDescriptionHandlar}>CONVERT NOW</div> */}
+                </div>
+                
               </div>
             </div>
           </div>
@@ -164,7 +178,7 @@ const ToolDiv = styled.div`
     .outter {
       display: flex;
       flex-direction: column;
-      align-items: center;
+     
       position: relative;
 
       .fRock-img-1 {
@@ -182,7 +196,7 @@ const ToolDiv = styled.div`
       }
 
       .title {
-        text-align: center;
+        text-align: center !important;
         max-width: 40%;
         font-size: 32px;
         font-weight: 600;
@@ -202,8 +216,10 @@ const ToolDiv = styled.div`
       }
       .tool {
         display: flex;
+        gap:1rem;
+
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
         width: 100%;
         position: relative;
 
@@ -273,7 +289,7 @@ const ToolDiv = styled.div`
             border-radius: 500px;
             background-color: #eff5fc;
             img {
-              width: 75%;
+              width: 100%;
               transition: all 0.2s ease-in-out !important;
 
               &:hover {
@@ -303,7 +319,7 @@ const ToolDiv = styled.div`
             border-radius: 500px;
             background-color: #e6e2ff;
             img {
-              width: 100%;
+              width: 90%;
 
               transition: all 0.2s ease-in-out !important;
 
@@ -318,7 +334,7 @@ const ToolDiv = styled.div`
           display: flex;
           flex-direction: column;
           align-items: center;
-          justify-content: center;
+          justify-content: flex-start;
 
           &:hover ~ .box {
             img {
@@ -331,7 +347,7 @@ const ToolDiv = styled.div`
           }
           .infoTitle {
             font-family: Poppins-semiBold;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 600;
             line-height: 1.33;
             color: #3a3b44;
@@ -344,10 +360,10 @@ const ToolDiv = styled.div`
           }
           .subTitle {
             font-family: Montserrat;
-            font-size: 16px;
+            font-size: 14px;
             line-height: 1.5;
             letter-spacing: 0.25px;
-            text-align: center;
+            text-align: left;
             color: #828490;
             margin: 8px 0px;
             @media (max-width: 600px) {

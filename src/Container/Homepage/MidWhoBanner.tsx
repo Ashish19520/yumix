@@ -37,7 +37,7 @@ export const MidWhoBanner = () => {
         <div className="first">
           <img src="./images/Ellipse 65@3x.png" className="img-dot1"></img>
           <div className="image-who">
-            <img src="./images/Ecommerce_10.png"></img>
+            <img src="./yumix/4.png"></img>
           </div>
           <img src="./images/Ellipse 64@3x.png" className="img-dot2"></img>
         </div>
@@ -51,15 +51,15 @@ export const MidWhoBanner = () => {
               truly revolutionary back office support to e-commerce sellers,
               business owners and vendors on multiple online channels especially
               Amazon. */}
-              We are Bighatch Consulting, known as ESERVZ, renowned for our team of skilled e-Commerce experts. Our goal is to provide adept support to online brands and retailers. With a global presence encompassing the USA, UK, Canada, Australia, India, and more, we serve as extensive multichannel e-Commerce partners
+Our team of passionate marketers, designers, strategists, and developers works collaboratively to build powerful digital experiences. We specialize in creating data-driven strategies that optimize every aspect of your online presence from development to marketing.
             </p>
           </div>
           <div className="image-container">
-          <img className="logos" alt="logo"  src="./images/us.png"></img>
-          <img className="logos" alt="logo"  src="./images/uk.png"></img>
-          <img className="logos" alt="logo"  src="./images/canada.png"></img>
-          <img className="logos" alt="logo"  src="./images/aus.png"></img>
           <img className="logos" alt="logo"  src="./images/in.png"></img>
+         <img className="logos" alt="logo"  src="./images/us.png"></img>
+          {/*  <img className="logos" alt="logo"  src="./images/uk.png"></img>
+          <img className="logos" alt="logo"  src="./images/canada.png"></img> */}
+          <img className="logos" alt="logo"  src="./images/aus.png"></img>
          
           </div>
           <img  src="./images/Round Cube2@3x.png" className="cube-img"></img>

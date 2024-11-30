@@ -294,10 +294,10 @@ export default function ContactForm () {
               </Box>
             </ValidatorForm>
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={3}>
             <img
               className='img-sub_aboutus'
-              src='../images/brisaTakingParcelRight.png'
+              src='../yumix/20.png'
               width='80%'
               style={{ scale: '1.7' }}
             />
@@ -340,6 +340,8 @@ const FormWrapper = styled.div`
 
   .img-sub_aboutus {
     margin-left: 90px;
+    margin-top:40px;
+    margin-bottom:-40px;
 
     @media (max-width: 600px) {
       margin-left: unset;

@@ -43,65 +43,80 @@ export default function Footer() {
       link: "Privacy Policy",
       to: "/privacyPolicy",
     },
-    {
-      link: "Onboarding Process",
-      to: "/onBoardingProcess",
-    },
-    {
-      link: "Cookies Policy",
-      to: "/cookies",
-    },
+    // {
+    //   link: "Onboarding Process",
+    //   to: "/onBoardingProcess",
+    // },
+    // {
+    //   link: "Cookies Policy",
+    //   to: "/cookies",
+    // },
     {
       link: "Frequently Asked Questions",
       to: "/questions",
     },
-    {
-      link: "Partners And Affilations",
-      to: "/partner&affilations",
-    },
-    {
-      link: "Payment Terms",
-      to: "/paymentTerms",
-    },
-    {
-      link: "Returns And Refund Policy",
-      to: "/returnAndRefund",
-    },
-    {
-      link: "Request Contact Form ",
-      to: "/requestContactForm",
-    },
-    {
-      link: "Service Delivery Policy",
-      to: "/serviceDelivery",
-    },
+    // {
+    //   link: "Partners And Affilations",
+    //   to: "/partner&affilations",
+    // },
+    // {
+    //   link: "Payment Terms",
+    //   to: "/paymentTerms",
+    // },
+    // {
+    //   link: "Returns And Refund Policy",
+    //   to: "/returnAndRefund",
+    // },
+    // {
+    //   link: "Request Contact Form ",
+    //   to: "/requestContactForm",
+    // },
+    // {
+    //   link: "Service Delivery Policy",
+    //   to: "/serviceDelivery",
+    // },
   ];
 
   const services = [
-    {
-      link: "Seller Onboarding",
-      to: "/ourservices",
+  {
+      link:"Digital marketing",
+      to:"digital-marketing"
     },
     {
-      link: "Brand Registry and Approval",
-      to: "/ourservices",
+      link: "Frontend Development",
+      to: "/frontend-development",
     },
     {
-      link: "Category Approval",
-      to: "/ourservices",
+      link: "Backend Development",
+      to: "/bakcend-development",
     },
     {
-      link: "Product Listings",
-      to: "/ourservices",
+      link: "Mobile App Development",
+      to: "/mobile-development",
     },
-
     {
-      link: "Product Page Optimization",
-      to: "/ourservices",
+      link: "Quality Assurance",
+      to: "/quality-assurance",
+    },
+    {
+      link: "Cloud Solutions",
+      to: "/cloud-solution",
+    },
+      {
+      link: "Custom Software Development",
+      to: "/custom-development"
     }, 
     {
-      link: "A+ Content Creation",
-      to: "/ourservices",
+      link: "Artificial Intelligence(AI) Solutions",
+      to: "/artificial-intelligence",
+    },  
+    {
+      link: "UI & UX Designs",
+      to: "/designs-developments",
+    },  
+    {
+      link: "Graphic Designing",
+      to: "/graphic-development",
     },  
    
   ];
@@ -129,13 +144,32 @@ export default function Footer() {
           borderBottom: "2px solid #E8E8E8",
         }}
       >
-        <Grid item xs={12} sm={4} md={3} p={3}>
-          <img src="../images/logo.png" 
+        <Grid style={{marginTop:"-2.5rem"}} item xs={12} sm={4} md={3} p={3}>
+          <img src="../yumix/yt.png" 
           width="160px" 
           height="160px" 
           alt="logo" 
           style={{cursor:"pointer"}}
           onClick={onHomeNavigateHandlar} />
+
+<Typography
+              
+                style={{
+                  width:"10rem",
+                  textAlign:"justify",
+                  color: "#404040",
+                  fontSize: "12px",
+                  lineHeight: "18px",
+                  fontFamily: "Montserrat",
+                  cursor: "pointer",
+                  marginBottom: "16px",
+                }}
+              >
+               The future of business is digital, and at Yumix Technologies, we are here to help you build it. Our expert team is ready to partner with you to create lasting solutions that will not only transform your business but position you as a leader in your industry.
+              </Typography>
+
+                  
+          
 
           {/* <Typography
             style={{
@@ -253,15 +287,16 @@ export default function Footer() {
               marginBottom: "16px",
             }}
           >
-            Bighatch Consulting Private Limited
+            {/* Bighatch Consulting Private Limited */}
+            Yumix Technologies pvt ltd.
             <br />
-            HKD COMPOUND, G.T. ROAd LAHARTARA, VARANASI
+            Street no. 3, Sarfabad Sec, 73, Gautam Buddha Nagar, 
             <br />
-            221006,INDIA
+            Noida, Uttar Pradesh 201307
             <span onClick={handleOpen} style={{ marginBottom: "90px" }}>
               {/* <ImLocation2 size={16}/> */}
               <iframe
-                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230614.64567786886!2d81.81434728271336!3d25.42643128665752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39854cc6cba4ce4b%3A0xbe9ebdba200575e2!2sBIGHATCH%20CONSULTING%20PRIVATE%20LIMITED!5e0!3m2!1sen!2sin!4v1681919513995!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed/v1/place?q=yumix+technologies+sarfabad+sector+73&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
                 height="150"
                 style={{ border: 0, marginTop: "10px" }}
                 allowFullScreen={false}
@@ -273,17 +308,17 @@ export default function Footer() {
           <Box style={{ display: "flex", alignItems: "center", gap: "10px" }}>
             <AiFillInstagram
               onClick={() =>
-                window.open("https://www.instagram.com/eservz_amz/")
+                window.open("https://www.instagram.com/yumixtechnologies/p/DCOqKX5zgIV/")
               }
               style={{ fontSize: "32px", color: "#949494", cursor: "pointer" }}
             />
             <FaFacebook
-              onClick={() => window.open("https://www.facebook.com/ESERVZ")}
+              onClick={() => window.open("https://www.facebook.com/yumixtechnologies")}
               style={{ fontSize: "28px", color: "#949494", cursor: "pointer" }}
             />
             <AiFillLinkedin
               onClick={() =>
-                window.open("https://www.linkedin.com/company/eservz")
+                window.open("https://in.linkedin.com/company/yumixtechnologies")
               }
               style={{ fontSize: "30px", color: "#949494", cursor: "pointer" }}
             />
@@ -301,7 +336,7 @@ export default function Footer() {
           
           }}
         >
-          <span style={{ color: "#6349FF" }}>Copyright 2023</span>  <AiOutlineCopyrightCircle style={{ color: "#404040" }} /> Bighatch Consulting Private Limited. All Rights Reserved.
+          <span style={{ color: "#6349FF" }}>Copyright 2025</span>  <AiOutlineCopyrightCircle style={{ color: "#404040" }} /> Yumix technologies Private Limited. All Rights Reserved.
         </Typography>
         <Typography   
                style={{
@@ -318,14 +353,13 @@ export default function Footer() {
                }}
              >
               Powered by 
-              <a href="https://www.i2pify.com/"
+              <a href="https://yumixtechnologies.com/"
                className="pointer"
                target="blank"
                color="black"
-               style={{textDecoration:"none",marginLeft:"-20px"}}>
-                <img src="./images/i2pify.png"
-
-                width="40%"
+               style={{textDecoration:"none",marginLeft:"-80px",marginTop:"-10px"}}>
+                <img src="./yumix/yt.png"
+                width="20%"
                alt="img"/>
                </a>
         </Typography>

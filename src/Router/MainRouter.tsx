@@ -44,6 +44,7 @@ import PaymentTerms from "../Pages/PaymentTerms";
 import ReturnAndRefund from "../Pages/ReturnAndRefund";
 import RequestContactForm from "../Pages/RequestContactForm";
 import ServiceDelivery from "../Pages/ServiceDelivery";
+import Training from "../Pages/Training";
 
 
 
@@ -56,6 +57,7 @@ const MainRouter = () => {
         <Route path="/" element={<Homepage />} />
         <Route path="*" element={<h1>404 Page,not found</h1>} />
         <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/training" element={<Training />} />
 
         <Route path="/ourservices" element={<Services />} />
         <Route path="/termsAndConditions" element={<TermsAndConditions/>} />

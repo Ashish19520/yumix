@@ -1044,8 +1044,14 @@ letter-spacing: 0.25px;
    
   }
 }
+.blue{
+  color: #5956E9 !important;
+}
 
 
 
+.bold {
 
+  font-weight:700;
+  }
 

@@ -8,7 +8,7 @@ import { Dispatch } from 'redux';
 import {  testimonialPlay} from "../../actions/posts"
 import { useSelector } from "react-redux/es/exports"
 
-export const Certificate = () => {
+export const TrainingProgram = () => {
   const response=useSelector((state:any)=>state?.posts?.testimonials);
   const dispatch: Dispatch<any> = useDispatch();
   const [brands,setBrands]=useState();
@@ -37,7 +37,9 @@ export const Certificate = () => {
 console.log(response?.data[0]?.attributes?.t_url)
   return (
     <Certif>
+         <h1 style={{textAlign:"center",fontWeight:"700",fontSize:"3rem",marginBottom:"2rem"}}>About Our Training Programs</h1>
       <Container maxWidth="lg" className="container hidden">
+       
       <div className="rightDiv">
           <img src="./yumix/10.png" className="i2" ></img>  
         
@@ -46,15 +48,29 @@ console.log(response?.data[0]?.attributes?.t_url)
           <img src="./images/Ellipse 64@3x.png" className="img-dot2"></img>
           
           <div className="title">
-            <h2>What We Do?</h2>
+            <h2>Why Choose Our Training Programs?</h2>
           </div>
           <div className="subtitle">
             <p className="justify">
-            We are a dynamic digital solutions agency committed to helping brands grow and thrive in the digital landscape. Our expertise spans a wide range of services, including Digital Marketing, Frontend and Backend Development, Mobile App Development (iOS, Android, and Hybrid), and Quality Assurance. 
-    <br/> <br/>
-With a blend of creativity, strategic insight, and cutting-edge technology, we develop customized digital marketing campaigns that boost visibility, engage target audiences, and drive meaningful conversions. Our team excels in SEO, social media, content marketing, and paid advertising, ensuring a comprehensive approach that delivers measurable growth. By connecting businesses with their ideal customers, we turn engagement into lasting impact and measurable results.
+            Our training programs are designed to equip students with the latest skills and knowledge required to excel in today’s competitive job market. With a focus on practical, hands-on learning, our courses cover a wide range of fields including Software Development, Data Science, Digital Marketing,Quality Assurance and more.   
             </p>
           </div>
+          <ul style={{listStyleType: "square", paddingLeft: "20px" }} className="subtitle" >
+
+            <li className="mt justify"><span className="bold">Industry-Expert Instructors:</span> Learn from professionals with real-world experience.
+            </li>
+            
+            <li className="mt justify"><span className="bold">Updated Curriculum:</span> Courses designed based on the latest industry trends and requirements.
+            rience."
+            </li>
+            
+            <li className="mt justify"><span className="bold">Industry-Expert Instructors:</span> Work on live projects and build a portfolio that stands out.
+
+            </li>
+            
+            <li className="mt justify"><span className="bold">Certification:</span> Earn certifications recognized by top companies worldwide.
+            </li>   
+          </ul>
           <img src="./images/Ellipse 63@3x.png" className="img-dot3"></img>
         </div>
         
@@ -64,7 +80,6 @@ With a blend of creativity, strategic insight, and cutting-edge technology, we d
 };
 
 const Certif = styled.div`
-  background: #fffcfc;
   padding: 60px 0px;
 
   @media (max-width: 600px) {
@@ -74,7 +89,7 @@ const Certif = styled.div`
     margin: auto;
 
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     position: relative;
 
@@ -86,7 +101,7 @@ const Certif = styled.div`
     .img-dot2 {
       position: absolute;
       width: 2%;
-      top: -50px;
+      top: 3rem;
       right: 65%;
 
       @media (max-width: 600px) {
@@ -98,7 +113,7 @@ const Certif = styled.div`
     .img-dot3 {
       position: absolute;
       width: 2%;
-      top: 40px;
+      top: 2rem;
       left: 5%;
     }
 
@@ -136,12 +151,20 @@ const Certif = styled.div`
         letter-spacing: 0.25px;
         text-align: left;
         color: #828490;
++
 
         @media (max-width: 600px) {
           text-align: center;
           margin-bottom: 40px;
           font-size: 14px;
         }
+          .mt{
+          margin-top:1rem;
+          }
+          .bold {
+
+          font-weight:700;
+          }
       }
     }
     .rightDiv {

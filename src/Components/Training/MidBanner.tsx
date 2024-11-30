@@ -38,7 +38,7 @@ const elements = {
   },
 };
 
-export default function TopBanner() {
+export default function MidBanner() {
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -79,7 +79,7 @@ export default function TopBanner() {
           >
             <Typography variant="h2" className="mid-title">
             {/* {Array.from("Commitment for excellence").map((word, i) => ( */}
-              {Array.from("We keep the focus on driving resultss ").map((word, i) => (
+              {Array.from("Comprehensive Placement Assistance ").map((word, i) => (
                 <motion.span key={i} variants={typingText}>
                   {word}
                 </motion.span>
@@ -90,10 +90,23 @@ export default function TopBanner() {
             <Typography
               variant="h2"
               className="mid-sub">
-                With a versatile team, a comprehensive e-Commerce management approach is possible. Roles cover marketplace optimization, advertising, content, customer experience, and business growth. Team ESERVZ ensures robust e-Commerce strategy, boosting sales, brand image, and customer satisfaction. Successful e-Commerce relies on collaboration, communication, and ongoing learning for optimal outcomes.
-
+Our dedicated placement team works tirelessly to help students find the right opportunities after training. From resume building workshops to mock interviews, we provide the support you need to land your dream job.
 
             </Typography>
+            <ul style={{listStyleType: "square", marginTop:"1rem" }} className="mid-sub" >
+
+            <li className="mt justify"><span className="bold">Industry-Expert Instructors:</span> Learn from professionals with real-world experience.
+            </li>
+            
+            <li className="mt justify"><span className="bold">Interview Preparation</span> Mock interviews and feedback sessions to build confidence.
+            </li>
+            
+            <li className="mt justify"><span className="bold">Placement Drives</span>Get access to exclusive placement drives with top companies.
+            </li>
+            
+            <li className="mt justify"><span className="bold">100% Placement Support</span>We work with you until you find a job that matches your skills.
+            </li>   
+          </ul>
           </motion.div>
         </Grid>
         <Grid

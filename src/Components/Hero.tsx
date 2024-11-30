@@ -261,14 +261,17 @@ export const Hero = () => {
                 </motion.span>
               ))} */}
                <motion.span  variants={typingText}>
-               <span style={{color:"blue"}}>Elevate</span><br/> Your e-Commerce Empire
+               <span style={{color:"blue"}}>Yumix Technologies
+
+</span><br/>Empire Building Starts Here
                 </motion.span>
             </motion.h1>
             <motion.p variants={explainProduct} initial="hidden" animate="show">
               {/* With our complete multi-channel solution, you'll have access to
               everything you need to succeed in today's competitive online
               marketplace. */}
-              Unleash Growth Across Amazon, Walmart, Your Own Website, and Beyond – With Team ESERVZ, Your Ultimate Destination for Holistic e-Commerce Success!
+we turn ideas into scalable solutions that fuel business growth. As innovators in cutting-edge technology, we empower businesses to thrive in a fast-evolving digital world.
+
 
             </motion.p>
             <motion.img
@@ -300,14 +303,15 @@ export const Hero = () => {
               },1000)
               }
               
-                src="./images/3 - Brisa Shops Online.png"
+                src="./yumix/2-removebg-preview.png"
                variants={window.screen.width<601? imgProduct2:imgProduct1}
+              //  style={{width:"450px"}} 
                 initial="hidden"
                 animate="show"
                 className="image_baisa_shop"
                 // transition={{duration:3, delay:.2, ease:"easeInOut"}}
               ></motion.img>
-              <motion.img
+              {/* <motion.img
                src="./images/Group 162961.png"
                 
                variants={window.screen.width<601? imgProduct2:imgProduct1}
@@ -356,7 +360,7 @@ export const Hero = () => {
                 className="certified"
                 transition={{duration:5, delay:2, ease:"easeInOut"}}
 
-              ></motion.img>
+              ></motion.img> */}
             </motion.div>
           </div>
         </div>
@@ -562,7 +566,7 @@ const HeroLayout = styled.div`
           aspect-ratio: 1;
           border-radius: 500px;
           background-color: #eff5fc;
-          margin-left: -42px;
+          margin-left: -80px; 
           /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
           @media (max-width: 600px) {
             aspect-ratio: 1;
@@ -598,7 +602,7 @@ const HeroLayout = styled.div`
             transform-style: preserve-3d;
             transition: all 1.6s ease;
             height:100%;
-            width:70%;
+            width:100%;
 
           }
 
@@ -703,7 +707,7 @@ const HeroLayout = styled.div`
           }
 
           #subject {
-            margin-left: 55px;
+            // margin-left: 55px;
             border:"1px solid red"
           }
 
